@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MHT-CET College Advisor</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#form">Skip to form</a>
+<header>
+  <h1>MHT-CET College Advisor</h1>
+  <p>Find Maharashtra engineering colleges and branches that suit your percentile, preferences and budget.</p>
+  <p class="status" id="dataStatus" role="status"></p>
+</header>
+
+<main>
+<form id="form" novalidate>
+
+  <fieldset>
+    <legend>A. Academic details</legend>
+    <div class="field">
+      <label for="percentile">MHT-CET percentile <span class="req">*</span></label>
+      <input id="percentile" type="text" inputmode="decimal" placeholder="e.g. 92.4567891" autocomplete="off" aria-describedby="percentile-help percentile-err">
+      <small id="percentile-help">Between 0 and 100. Up to 7 decimal places.</small>
+      <small class="err" id="percentile-err" role="alert"></small>
+    </div>
+    <div class="field">
+      <label for="year">Admission year</label>
+      <select id="year" aria-describedby="year-help"></select>
+      <small id="year-help">"Automatic" lets the system pick the current admission year. Change only if needed.</small>
+    </div>
+    <div class="field">
+      <label for="candidateType">Candidate type <span class="req">*</span></label>
+      <select id="candidateType" aria-describedby="candidateType-err"></select>
+      <small class="err" id="candidateType-err" role="alert"></small>
+    </div>
+    <div class="field">
+      <label for="category">Category <span class="req">*</span></label>
+      <select id="category" aria-describedby="category-err"></select>
+      <small class="err" id="category-err" role="alert"></small>
+    </div>
+    <div class="field">
+      <label for="gender">Gender (optional)</label>
+      <select id="gender"></select>
+      <small>Asked only because some seat types (for example seats reserved for women) depend on it. You may skip it.</small>
+    </div>
+    <div class="field">
+      <span class="label">Additional eligibility (optional)</span>
+      <div id="extras" class="checks"></div>
+      <small>Cutoff lists differ for these groups, so tick only what applies to you.</small>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>B. Preferred branches <span class="req">*</span></legend>
+    <p class="hint">Choose in order of preference: 1 is your top choice. At least one is required.</p>
+    <div id="branches"></div>
+    <button type="button" class="secondary" id="addBranch">+ Add another branch</button>
+    <small class="err" id="branches-err" role="alert"></small>
+  </fieldset>
+
+  <fieldset>
+    <legend>C. Preferred districts <span class="req">*</span></legend>
+    <label class="inline"><input type="checkbox" id="anyDistrict"> Any district in Maharashtra</label>
+    <p class="hint">Otherwise choose in order of preference: 1 is your top choice.</p>
+    <div id="districts"></div>
+    <button type="button" class="secondary" id="addDistrict">+ Add another district</button>
+    <small class="err" id="districts-err" role="alert"></small>
+  </fieldset>
+
+  <fieldset>
+    <legend>D. Budget</legend>
+    <div class="field">
+      <label for="maxFee">Maximum yearly fee you can afford (₹) <span class="req">*</span></label>
+      <input id="maxFee" type="text" inputmode="numeric" placeholder="e.g. 150000" autocomplete="off" aria-describedby="fee-err">
+      <small class="err" id="fee-err" role="alert"></small>
+    </div>
+    <div class="field">
+      <label for="feeBasis">This budget is for</label>
+      <select id="feeBasis">
+        <option value="tuition">Tuition fee only</option>
+        <option value="total">Total yearly expenses (tuition + hostel, transport, exams, etc.)</option>
+      </select>
+      <small>Tuition fee is not the full cost of attending. Where official data covers only tuition, results will say so.</small>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>E. What matters most to you?</legend>
+    <label class="inline"><input type="checkbox" id="balanced" checked> Balanced choice</label>
+    <div id="priorities" class="checks"></div>
+    <small>Pick one or more. Choosing a specific priority switches off "Balanced".</small>
+  </fieldset>
+
+  <div class="actions">
+    <button type="submit" class="primary">Show my recommendations</button>
+    <button type="reset" class="secondary" id="resetBtn">Clear form</button>
+  </div>
+  <small class="err" id="form-err" role="alert"></small>
+</form>
+
+<section id="results" aria-live="polite" hidden>
+  <h2>Your request</h2>
+  <p class="notice" id="resultNote"></p>
+  <details open><summary>Request that will be sent to the recommendation service</summary><pre id="payload"></pre></details>
+</section>
+</main>
+
+<footer>
+  <p><strong>Disclaimer:</strong> This tool gives guidance based on past data. A cutoff or vacancy figure is not a guarantee of admission. Final eligibility, option selection and admission depend on official CET Cell rules, the CAP process, seat availability and your verified documents.</p>
+  <p>We do not ask for your name, phone or email, and nothing you enter here is stored by this page.</p>
+</footer>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
