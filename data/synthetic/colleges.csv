@@ -1,0 +1,13 @@
+college_code,college_name,district,city,college_type,status,previous_college_code,source_doc_id,retrieved_date,validation_status,is_synthetic
+SYN01,SYNTHETIC Institute of Technology A,Pune,Pune,Private Unaided,active,,SYN-DOC-012,,validated,TRUE
+SYN02,SYNTHETIC Institute of Technology B,Pune,Pune,Autonomous,active,,SYN-DOC-012,,validated,TRUE
+SYN03,SYNTHETIC Institute of Technology C,Pune,Pune,Private Unaided,active,,SYN-DOC-012,,validated,TRUE
+SYN04,SYNTHETIC Institute of Technology D,Mumbai Suburban,Mumbai,Autonomous,active,,SYN-DOC-012,,validated,TRUE
+SYN05,SYNTHETIC Institute of Technology E,Mumbai Suburban,Mumbai,Private Unaided,active,,SYN-DOC-012,,validated,TRUE
+SYN06,SYNTHETIC Institute of Technology F,Nagpur,Nagpur,Government-Aided,active,,SYN-DOC-012,,validated,TRUE
+SYN07,SYNTHETIC Institute of Technology G,Nagpur,Nagpur,Private Unaided,active,,SYN-DOC-012,,validated,TRUE
+SYN08,SYNTHETIC Institute of Technology H,Thane,Thane,Private Unaided,active,,SYN-DOC-012,,validated,TRUE
+SYN09,SYNTHETIC Institute of Technology I,Nashik,Nashik,Private Unaided,active,,SYN-DOC-012,,validated,TRUE
+SYN10,SYNTHETIC Institute of Technology J,Kolhapur,Kolhapur,Government-Aided,active,,SYN-DOC-012,,validated,TRUE
+SYN11,SYNTHETIC Institute of Technology K,Chhatrapati Sambhajinagar (Aurangabad),Chhatrapati,Private Unaided,active,,SYN-DOC-012,,validated,TRUE
+SYN12,SYNTHETIC Institute of Technology L,Sangli,Sangli,Government-Aided,active,,SYN-DOC-012,,validated,TRUE

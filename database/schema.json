@@ -1,0 +1,1101 @@
+{
+ "schema_version": "0.1",
+ "note": "Stage 3 draft. Enums for categories/branches will be refined from official data.",
+ "tables": {
+  "colleges": {
+   "description": "One row per college, keyed by its official college code. Never merge colleges by name similarity.",
+   "primary_key": [
+    "college_code"
+   ],
+   "unique": null,
+   "columns": [
+    {
+     "name": "college_code",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "college_name",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "district",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "city",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "college_type",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "active",
+      "closed",
+      "renamed"
+     ]
+    },
+    {
+     "name": "previous_college_code",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "source_doc_id",
+     "type": "str",
+     "required": true,
+     "fk": "source_documents.doc_id"
+    },
+    {
+     "name": "retrieved_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "pending",
+      "validated",
+      "rejected"
+     ]
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "college_name_history": {
+   "description": "Keeps old names so renames never destroy history.",
+   "primary_key": [
+    "college_code",
+    "valid_from_year"
+   ],
+   "unique": null,
+   "columns": [
+    {
+     "name": "college_code",
+     "type": "str",
+     "required": true,
+     "fk": "colleges.college_code"
+    },
+    {
+     "name": "college_name",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "valid_from_year",
+     "type": "year",
+     "required": true
+    },
+    {
+     "name": "valid_to_year",
+     "type": "year",
+     "required": false
+    },
+    {
+     "name": "source_doc_id",
+     "type": "str",
+     "required": true,
+     "fk": "source_documents.doc_id"
+    },
+    {
+     "name": "retrieved_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "pending",
+      "validated",
+      "rejected"
+     ]
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "branches": {
+   "description": "One row per college-branch (a 'choice'). choice_code is the stable identifier used everywhere else.",
+   "primary_key": [
+    "choice_code"
+   ],
+   "unique": null,
+   "columns": [
+    {
+     "name": "choice_code",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "college_code",
+     "type": "str",
+     "required": true,
+     "fk": "colleges.college_code"
+    },
+    {
+     "name": "branch_code",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "branch_name",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "branch_group",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "valid_from_year",
+     "type": "year",
+     "required": false
+    },
+    {
+     "name": "valid_to_year",
+     "type": "year",
+     "required": false
+    },
+    {
+     "name": "source_doc_id",
+     "type": "str",
+     "required": true,
+     "fk": "source_documents.doc_id"
+    },
+    {
+     "name": "retrieved_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "pending",
+      "validated",
+      "rejected"
+     ]
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "seat_intake": {
+   "description": "Sanctioned/approved intake. This is NOT vacancy and must never be used as vacancy.",
+   "primary_key": [
+    "intake_id"
+   ],
+   "unique": null,
+   "columns": [
+    {
+     "name": "intake_id",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "choice_code",
+     "type": "str",
+     "required": true,
+     "fk": "branches.choice_code"
+    },
+    {
+     "name": "academic_year",
+     "type": "year",
+     "required": true
+    },
+    {
+     "name": "intake_type",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "sanctioned",
+      "approved"
+     ]
+    },
+    {
+     "name": "seats",
+     "type": "int",
+     "required": true
+    },
+    {
+     "name": "source_doc_id",
+     "type": "str",
+     "required": true,
+     "fk": "source_documents.doc_id"
+    },
+    {
+     "name": "retrieved_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "pending",
+      "validated",
+      "rejected"
+     ]
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "seat_types": {
+   "description": "Reference list of official seat/cutoff groups. Lets the engine match a student's category, gender and candidate type to the right cutoff list.",
+   "primary_key": [
+    "seat_type_code"
+   ],
+   "unique": null,
+   "columns": [
+    {
+     "name": "seat_type_code",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "candidate_type",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "category",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "gender_scope",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "seat_level",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "description",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "is_provisional",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "historical_cutoffs": {
+   "description": "Cutoffs of completed admission years.",
+   "primary_key": [
+    "cutoff_id"
+   ],
+   "unique": [
+    "choice_code",
+    "admission_year",
+    "cap_round",
+    "seat_type_code"
+   ],
+   "columns": [
+    {
+     "name": "cutoff_id",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "choice_code",
+     "type": "str",
+     "required": true,
+     "fk": "branches.choice_code"
+    },
+    {
+     "name": "admission_year",
+     "type": "year",
+     "required": true
+    },
+    {
+     "name": "cap_round",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "I",
+      "II",
+      "III",
+      "IV"
+     ]
+    },
+    {
+     "name": "seat_type_code",
+     "type": "str",
+     "required": true,
+     "fk": "seat_types.seat_type_code"
+    },
+    {
+     "name": "cutoff_percentile",
+     "type": "percentile",
+     "required": true
+    },
+    {
+     "name": "cutoff_rank",
+     "type": "int",
+     "required": false
+    },
+    {
+     "name": "published_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "source_doc_id",
+     "type": "str",
+     "required": true,
+     "fk": "source_documents.doc_id"
+    },
+    {
+     "name": "retrieved_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "pending",
+      "validated",
+      "rejected"
+     ]
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "current_cutoffs": {
+   "description": "Cutoffs of the current admission year, one row per published CAP round.",
+   "primary_key": [
+    "cutoff_id"
+   ],
+   "unique": [
+    "choice_code",
+    "admission_year",
+    "cap_round",
+    "seat_type_code"
+   ],
+   "columns": [
+    {
+     "name": "cutoff_id",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "choice_code",
+     "type": "str",
+     "required": true,
+     "fk": "branches.choice_code"
+    },
+    {
+     "name": "admission_year",
+     "type": "year",
+     "required": true
+    },
+    {
+     "name": "cap_round",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "I",
+      "II",
+      "III",
+      "IV"
+     ]
+    },
+    {
+     "name": "seat_type_code",
+     "type": "str",
+     "required": true,
+     "fk": "seat_types.seat_type_code"
+    },
+    {
+     "name": "cutoff_percentile",
+     "type": "percentile",
+     "required": true
+    },
+    {
+     "name": "cutoff_rank",
+     "type": "int",
+     "required": false
+    },
+    {
+     "name": "published_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "source_doc_id",
+     "type": "str",
+     "required": true,
+     "fk": "source_documents.doc_id"
+    },
+    {
+     "name": "retrieved_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "pending",
+      "validated",
+      "rejected"
+     ]
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "vacancies": {
+   "description": "Genuine vacancy positions ONLY. Round must be III or IV and the source document must be of type vacancy_position. seat_type_code may be 'ALL' for a branch total.",
+   "primary_key": [
+    "vacancy_id"
+   ],
+   "unique": [
+    "choice_code",
+    "admission_year",
+    "cap_round",
+    "seat_type_code"
+   ],
+   "columns": [
+    {
+     "name": "vacancy_id",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "choice_code",
+     "type": "str",
+     "required": true,
+     "fk": "branches.choice_code"
+    },
+    {
+     "name": "admission_year",
+     "type": "year",
+     "required": true
+    },
+    {
+     "name": "cap_round",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "III",
+      "IV"
+     ]
+    },
+    {
+     "name": "seat_type_code",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "vacancy_count",
+     "type": "int",
+     "required": true
+    },
+    {
+     "name": "published_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "source_doc_id",
+     "type": "str",
+     "required": true,
+     "fk": "source_documents.doc_id"
+    },
+    {
+     "name": "retrieved_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "pending",
+      "validated",
+      "rejected"
+     ]
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "fees": {
+   "description": "Fees with an explicit type, so tuition is never presented as total cost.",
+   "primary_key": [
+    "fee_id"
+   ],
+   "unique": null,
+   "columns": [
+    {
+     "name": "fee_id",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "college_code",
+     "type": "str",
+     "required": true,
+     "fk": "colleges.college_code"
+    },
+    {
+     "name": "choice_code",
+     "type": "str",
+     "required": false,
+     "fk": "branches.choice_code"
+    },
+    {
+     "name": "academic_year",
+     "type": "year",
+     "required": true
+    },
+    {
+     "name": "fee_type",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "tuition",
+      "total",
+      "hostel",
+      "other"
+     ]
+    },
+    {
+     "name": "annual_fee_inr",
+     "type": "int",
+     "required": true
+    },
+    {
+     "name": "fee_scope",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "source_doc_id",
+     "type": "str",
+     "required": true,
+     "fk": "source_documents.doc_id"
+    },
+    {
+     "name": "retrieved_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "pending",
+      "validated",
+      "rejected"
+     ]
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "accreditation": {
+   "description": "NBA applies per program (choice_code); NAAC per institution. Validity dates are stored so expired grades can be flagged.",
+   "primary_key": [
+    "accreditation_id"
+   ],
+   "unique": null,
+   "columns": [
+    {
+     "name": "accreditation_id",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "college_code",
+     "type": "str",
+     "required": true,
+     "fk": "colleges.college_code"
+    },
+    {
+     "name": "choice_code",
+     "type": "str",
+     "required": false,
+     "fk": "branches.choice_code"
+    },
+    {
+     "name": "body",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "NBA",
+      "NAAC"
+     ]
+    },
+    {
+     "name": "scope",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "program",
+      "institution"
+     ]
+    },
+    {
+     "name": "status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "accredited",
+      "not_accredited",
+      "expired",
+      "unknown"
+     ]
+    },
+    {
+     "name": "grade",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "valid_from",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "valid_to",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "source_doc_id",
+     "type": "str",
+     "required": true,
+     "fk": "source_documents.doc_id"
+    },
+    {
+     "name": "retrieved_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "pending",
+      "validated",
+      "rejected"
+     ]
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "placements": {
+   "description": "Placement facts with year, metric and scope.",
+   "primary_key": [
+    "placement_id"
+   ],
+   "unique": null,
+   "columns": [
+    {
+     "name": "placement_id",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "college_code",
+     "type": "str",
+     "required": true,
+     "fk": "colleges.college_code"
+    },
+    {
+     "name": "choice_code",
+     "type": "str",
+     "required": false,
+     "fk": "branches.choice_code"
+    },
+    {
+     "name": "placement_year",
+     "type": "year",
+     "required": true
+    },
+    {
+     "name": "metric",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "placement_percent",
+      "median_package_lpa",
+      "average_package_lpa",
+      "highest_package_lpa",
+      "students_placed"
+     ]
+    },
+    {
+     "name": "value",
+     "type": "float",
+     "required": true
+    },
+    {
+     "name": "scope",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "institution",
+      "branch"
+     ]
+    },
+    {
+     "name": "source_doc_id",
+     "type": "str",
+     "required": true,
+     "fk": "source_documents.doc_id"
+    },
+    {
+     "name": "retrieved_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "pending",
+      "validated",
+      "rejected"
+     ]
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "quality_indicators": {
+   "description": "System-calculated 0-10 estimates (never official). is_estimate must be TRUE and the method documented.",
+   "primary_key": [
+    "indicator_id"
+   ],
+   "unique": null,
+   "columns": [
+    {
+     "name": "indicator_id",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "college_code",
+     "type": "str",
+     "required": true,
+     "fk": "colleges.college_code"
+    },
+    {
+     "name": "indicator",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "teaching",
+      "infrastructure",
+      "placement"
+     ]
+    },
+    {
+     "name": "score_0_10",
+     "type": "score10",
+     "required": true
+    },
+    {
+     "name": "is_estimate",
+     "type": "bool",
+     "required": true
+    },
+    {
+     "name": "method_version",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "evidence_summary",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "computed_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "source_doc_id",
+     "type": "str",
+     "required": true,
+     "fk": "source_documents.doc_id"
+    },
+    {
+     "name": "retrieved_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "pending",
+      "validated",
+      "rejected"
+     ]
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "source_documents": {
+   "description": "Every downloaded/entered source file, with URL, checksum and dates.",
+   "primary_key": [
+    "doc_id"
+   ],
+   "unique": null,
+   "columns": [
+    {
+     "name": "doc_id",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "source_name",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "source_url",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "filename",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "sha256",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "admission_year",
+     "type": "year",
+     "required": false
+    },
+    {
+     "name": "doc_type",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "cutoff",
+      "vacancy_position",
+      "seat_matrix",
+      "fee_notice",
+      "accreditation_list",
+      "placement_report",
+      "college_list",
+      "other"
+     ]
+    },
+    {
+     "name": "cap_round",
+     "type": "str",
+     "required": false,
+     "enum": [
+      "I",
+      "II",
+      "III",
+      "IV"
+     ]
+    },
+    {
+     "name": "published_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "retrieved_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "pending",
+      "validated",
+      "rejected"
+     ]
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "refresh_status": {
+   "description": "One row per update attempt. Used to show 'last checked' and 'last successful update'.",
+   "primary_key": [
+    "run_id"
+   ],
+   "unique": null,
+   "columns": [
+    {
+     "name": "run_id",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "started_at",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "finished_at",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "success",
+      "failed",
+      "skipped",
+      "no_new_data"
+     ]
+    },
+    {
+     "name": "admission_year_detected",
+     "type": "year",
+     "required": false
+    },
+    {
+     "name": "data_version_published",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "message",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "data_version": {
+   "description": "Published dataset versions; exactly one is the last-known-good.",
+   "primary_key": [
+    "data_version"
+   ],
+   "unique": null,
+   "columns": [
+    {
+     "name": "data_version",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "created_at",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "is_last_known_good",
+     "type": "bool",
+     "required": true
+    },
+    {
+     "name": "admission_year",
+     "type": "year",
+     "required": false
+    },
+    {
+     "name": "row_count_summary",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "notes",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  }
+ }
+}

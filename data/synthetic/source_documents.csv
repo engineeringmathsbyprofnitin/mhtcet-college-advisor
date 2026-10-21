@@ -1,0 +1,13 @@
+doc_id,source_name,source_url,filename,sha256,admission_year,doc_type,cap_round,published_date,retrieved_date,validation_status,is_synthetic
+SYN-DOC-001,SYNTHETIC source,https://example.invalid/SYN-DOC-001,SYN-DOC-001.csv,,2023-24,cutoff,IV,2026-01-01,2026-10-20,validated,TRUE
+SYN-DOC-002,SYNTHETIC source,https://example.invalid/SYN-DOC-002,SYN-DOC-002.csv,,2024-25,cutoff,IV,2026-01-01,2026-10-20,validated,TRUE
+SYN-DOC-003,SYNTHETIC source,https://example.invalid/SYN-DOC-003,SYN-DOC-003.csv,,2025-26,cutoff,IV,2026-01-01,2026-10-20,validated,TRUE
+SYN-DOC-004,SYNTHETIC source,https://example.invalid/SYN-DOC-004,SYN-DOC-004.csv,,2026-27,cutoff,I,2026-01-01,2026-10-20,validated,TRUE
+SYN-DOC-005,SYNTHETIC source,https://example.invalid/SYN-DOC-005,SYN-DOC-005.csv,,2026-27,cutoff,II,2026-01-01,2026-10-20,validated,TRUE
+SYN-DOC-006,SYNTHETIC source,https://example.invalid/SYN-DOC-006,SYN-DOC-006.csv,,2026-27,cutoff,III,2026-01-01,2026-10-20,validated,TRUE
+SYN-DOC-007,SYNTHETIC source,https://example.invalid/SYN-DOC-007,SYN-DOC-007.csv,,2026-27,vacancy_position,III,2026-01-01,2026-10-20,validated,TRUE
+SYN-DOC-008,SYNTHETIC source,https://example.invalid/SYN-DOC-008,SYN-DOC-008.csv,,2026-27,seat_matrix,,2026-01-01,2026-10-20,validated,TRUE
+SYN-DOC-009,SYNTHETIC source,https://example.invalid/SYN-DOC-009,SYN-DOC-009.csv,,2026-27,fee_notice,,2026-01-01,2026-10-20,validated,TRUE
+SYN-DOC-010,SYNTHETIC source,https://example.invalid/SYN-DOC-010,SYN-DOC-010.csv,,,accreditation_list,,2026-01-01,2026-10-20,validated,TRUE
+SYN-DOC-011,SYNTHETIC source,https://example.invalid/SYN-DOC-011,SYN-DOC-011.csv,,2025-26,placement_report,,2026-01-01,2026-10-20,validated,TRUE
+SYN-DOC-012,SYNTHETIC source,https://example.invalid/SYN-DOC-012,SYN-DOC-012.csv,,2026-27,college_list,,2026-01-01,2026-10-20,validated,TRUE

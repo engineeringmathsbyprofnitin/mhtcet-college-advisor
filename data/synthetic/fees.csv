@@ -1,0 +1,14 @@
+fee_id,college_code,choice_code,academic_year,fee_type,annual_fee_inr,fee_scope,source_doc_id,retrieved_date,validation_status,is_synthetic
+FEE01969,SYN01,,2026-27,tuition,209000,Open/State,SYN-DOC-009,,validated,TRUE
+FEE01970,SYN01,,2026-27,total,290000,Open/State incl. hostel,SYN-DOC-009,,validated,TRUE
+FEE01977,SYN02,,2026-27,tuition,193000,Open/State,SYN-DOC-009,,validated,TRUE
+FEE01984,SYN03,,2026-27,tuition,141000,Open/State,SYN-DOC-009,,validated,TRUE
+FEE01990,SYN04,,2026-27,tuition,197500,Open/State,SYN-DOC-009,,validated,TRUE
+FEE01991,SYN04,,2026-27,total,283500,Open/State incl. hostel,SYN-DOC-009,,validated,TRUE
+FEE01996,SYN05,,2026-27,tuition,154000,Open/State,SYN-DOC-009,,validated,TRUE
+FEE02002,SYN06,,2026-27,tuition,179000,Open/State,SYN-DOC-009,,validated,TRUE
+FEE02009,SYN07,,2026-27,tuition,125000,Open/State,SYN-DOC-009,,validated,TRUE
+FEE02015,SYN08,,2026-27,tuition,142500,Open/State,SYN-DOC-009,,validated,TRUE
+FEE02019,SYN09,,2026-27,tuition,161500,Open/State,SYN-DOC-009,,validated,TRUE
+FEE02024,SYN10,,2026-27,tuition,166000,Open/State,SYN-DOC-009,,validated,TRUE
+FEE02029,SYN11,,2026-27,tuition,132500,Open/State,SYN-DOC-009,,validated,TRUE

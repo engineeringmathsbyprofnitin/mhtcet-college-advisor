@@ -2,21 +2,21 @@
 
 ## Completed
 - Stage 1: repository structure and documents.
-- Stage 2: student input form (frontend/index.html, styles.css, app.js, config.js) + root index.html redirect.
+- Stage 2: student input form (frontend/). Verified by 10 automated jsdom checks; real phone/desktop look to be confirmed by owner.
+- Stage 3: database schema (15 tables), CSV templates, validator, SYNTHETIC test data.
 
-## Verified (automated, simulated browser jsdom, 10 checks passed)
-- Empty form blocked; percentile range/decimals checked; duplicate branch rejected; fee with commas parsed; "Any district"; Balanced/priority exclusivity; valid input produces expected request JSON.
+## Verified (Stage 3)
+- database/validate_data.py reports 0 errors on data/synthetic.
+- 19 unit tests pass (tests/test_stage3_schema.py): clean data passes; bad percentile, vacancy round I, seat-matrix used as vacancy source, vacancy above intake, negative vacancy, duplicate rows, unknown college, missing required, unlabelled estimate, bad dates/years and two last-known-good versions are all rejected.
+- While building, the validator caught a genuine bug in the synthetic generator (a reference to a non-existent branch), which was fixed.
 
-## NOT yet verified
-- Appearance on real phones/desktops, screen-reader use, GitHub Pages deployment (owner must check after upload).
-
-## Not implemented
-- No database, recommendation engine, API, data ingestion, results table, workflows.
+## NOT verified / not implemented
+- No real CET Cell data has been used anywhere. Synthetic data proves only that the schema and validator work.
+- Recommendation engine, Google Sheet, API, ingestion, workflows, deployment.
 
 ## Known issues / placeholders
-- Category, candidate-type, extra-eligibility and branch lists in frontend/config.js are PROVISIONAL, typed by hand; to be replaced with official CET Cell lists (Stages 7-9).
-- "Automatic" admission year is only a flag for now; real detection is Stage 7.
-- Some seat types (e.g., ladies, state-level vs home-university) may need extra inputs once official rules are checked.
+- Seat types, categories, candidate types and branch names are provisional (see frontend/config.js and seat_types table).
+- Schema may need small changes once real documents are parsed (Stage 9).
 
 ## Next task
-Stage 3: database schema + synthetic test data (docs/PROMPTS.md has the prompt).
+Stage 4: recommendation engine + documented rules + tests on synthetic data.

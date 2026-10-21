@@ -1,0 +1,5 @@
+seat_type_code,candidate_type,category,gender_scope,seat_level,description,is_provisional
+GOPENS,Maharashtra State candidate,Open,,State Level,SYNTHETIC/provisional seat type,TRUE
+GOBCS,Maharashtra State candidate,OBC,,State Level,SYNTHETIC/provisional seat type,TRUE
+GSCS,Maharashtra State candidate,SC,,State Level,SYNTHETIC/provisional seat type,TRUE
+LOPENS,Maharashtra State candidate,Open,Female,State Level,SYNTHETIC/provisional seat type,TRUE

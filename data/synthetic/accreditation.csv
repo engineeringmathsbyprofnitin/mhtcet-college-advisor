@@ -1,0 +1,13 @@
+accreditation_id,college_code,choice_code,body,scope,status,grade,valid_from,valid_to,source_doc_id,retrieved_date,validation_status,is_synthetic
+ACC01971,SYN01,,NAAC,institution,accredited,A++,2018-04-01,2028-03-31,SYN-DOC-010,,validated,TRUE
+ACC01972,SYN01,SYN01-B02,NBA,program,accredited,,2022-07-01,2028-06-30,SYN-DOC-010,,validated,TRUE
+ACC01978,SYN02,,NAAC,institution,accredited,A+,2018-04-01,2028-03-31,SYN-DOC-010,,validated,TRUE
+ACC01979,SYN02,SYN02-B01,NBA,program,accredited,,2022-07-01,2028-06-30,SYN-DOC-010,,validated,TRUE
+ACC01985,SYN03,,NAAC,institution,accredited,A,2018-04-01,2028-03-31,SYN-DOC-010,,validated,TRUE
+ACC01992,SYN04,,NAAC,institution,accredited,B++,2018-04-01,2028-03-31,SYN-DOC-010,,validated,TRUE
+ACC01993,SYN04,SYN04-B01,NBA,program,accredited,,2022-07-01,2028-06-30,SYN-DOC-010,,validated,TRUE
+ACC01997,SYN05,,NAAC,institution,accredited,A++,2018-04-01,2028-03-31,SYN-DOC-010,,validated,TRUE
+ACC02003,SYN06,,NAAC,institution,expired,A+,2018-04-01,2023-03-31,SYN-DOC-010,,validated,TRUE
+ACC02004,SYN06,SYN06-B01,NBA,program,accredited,,2022-07-01,2028-06-30,SYN-DOC-010,,validated,TRUE
+ACC02010,SYN07,,NAAC,institution,accredited,A,2018-04-01,2028-03-31,SYN-DOC-010,,validated,TRUE
+ACC02016,SYN08,,NAAC,institution,accredited,B++,2018-04-01,2028-03-31,SYN-DOC-010,,validated,TRUE

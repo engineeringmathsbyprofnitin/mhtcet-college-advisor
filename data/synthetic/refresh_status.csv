@@ -1,0 +1,2 @@
+run_id,started_at,finished_at,status,admission_year_detected,data_version_published,message,is_synthetic
+SYN-RUN-001,2026-10-20T10:00:00Z,2026-10-20T10:05:00Z,success,2026-27,SYN-v1,SYNTHETIC,TRUE

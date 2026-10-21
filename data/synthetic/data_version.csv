@@ -1,0 +1,2 @@
+data_version,created_at,is_last_known_good,admission_year,row_count_summary,notes,is_synthetic
+SYN-v1,2026-10-20T10:05:00Z,TRUE,2026-27,synthetic,Synthetic test dataset,TRUE

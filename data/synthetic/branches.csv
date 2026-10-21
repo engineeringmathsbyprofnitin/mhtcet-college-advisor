@@ -1,0 +1,80 @@
+choice_code,college_code,branch_code,branch_name,branch_group,valid_from_year,valid_to_year,source_doc_id,retrieved_date,validation_status,is_synthetic
+SYN01-B02,SYN01,B02,Computer Engineering,COMP,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN01-B03,SYN01,B03,Information Technology,IT,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN01-B04,SYN01,B04,Artificial Intelligence and Data Science,AIDS,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN01-B05,SYN01,B05,Electronics and Telecommunication Engineering,ENTC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN01-B06,SYN01,B06,Mechanical Engineering,MECH,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN01-B07,SYN01,B07,Civil Engineering,CIVIL,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN02-B01,SYN02,B01,Computer Science and Engineering,CSE,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN02-B02,SYN02,B02,Computer Engineering,COMP,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN02-B03,SYN02,B03,Information Technology,IT,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN02-B04,SYN02,B04,Artificial Intelligence and Data Science,AIDS,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN02-B05,SYN02,B05,Electronics and Telecommunication Engineering,ENTC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN02-B06,SYN02,B06,Mechanical Engineering,MECH,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN02-B08,SYN02,B08,Electrical Engineering,ELEC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN03-B01,SYN03,B01,Computer Science and Engineering,CSE,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN03-B02,SYN03,B02,Computer Engineering,COMP,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN03-B03,SYN03,B03,Information Technology,IT,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN03-B04,SYN03,B04,Artificial Intelligence and Data Science,AIDS,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN03-B05,SYN03,B05,Electronics and Telecommunication Engineering,ENTC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN03-B07,SYN03,B07,Civil Engineering,CIVIL,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN03-B08,SYN03,B08,Electrical Engineering,ELEC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN04-B01,SYN04,B01,Computer Science and Engineering,CSE,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN04-B02,SYN04,B02,Computer Engineering,COMP,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN04-B03,SYN04,B03,Information Technology,IT,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN04-B04,SYN04,B04,Artificial Intelligence and Data Science,AIDS,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN04-B06,SYN04,B06,Mechanical Engineering,MECH,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN04-B07,SYN04,B07,Civil Engineering,CIVIL,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN05-B01,SYN05,B01,Computer Science and Engineering,CSE,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN05-B02,SYN05,B02,Computer Engineering,COMP,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN05-B03,SYN05,B03,Information Technology,IT,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN05-B05,SYN05,B05,Electronics and Telecommunication Engineering,ENTC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN05-B06,SYN05,B06,Mechanical Engineering,MECH,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN05-B07,SYN05,B07,Civil Engineering,CIVIL,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN05-B08,SYN05,B08,Electrical Engineering,ELEC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN06-B01,SYN06,B01,Computer Science and Engineering,CSE,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN06-B02,SYN06,B02,Computer Engineering,COMP,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN06-B04,SYN06,B04,Artificial Intelligence and Data Science,AIDS,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN06-B05,SYN06,B05,Electronics and Telecommunication Engineering,ENTC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN06-B06,SYN06,B06,Mechanical Engineering,MECH,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN06-B07,SYN06,B07,Civil Engineering,CIVIL,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN06-B08,SYN06,B08,Electrical Engineering,ELEC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN07-B01,SYN07,B01,Computer Science and Engineering,CSE,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN07-B03,SYN07,B03,Information Technology,IT,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN07-B04,SYN07,B04,Artificial Intelligence and Data Science,AIDS,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN07-B05,SYN07,B05,Electronics and Telecommunication Engineering,ENTC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN07-B06,SYN07,B06,Mechanical Engineering,MECH,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN07-B07,SYN07,B07,Civil Engineering,CIVIL,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN08-B02,SYN08,B02,Computer Engineering,COMP,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN08-B03,SYN08,B03,Information Technology,IT,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN08-B04,SYN08,B04,Artificial Intelligence and Data Science,AIDS,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN08-B05,SYN08,B05,Electronics and Telecommunication Engineering,ENTC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN08-B06,SYN08,B06,Mechanical Engineering,MECH,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN08-B07,SYN08,B07,Civil Engineering,CIVIL,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN09-B01,SYN09,B01,Computer Science and Engineering,CSE,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN09-B02,SYN09,B02,Computer Engineering,COMP,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN09-B03,SYN09,B03,Information Technology,IT,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN09-B04,SYN09,B04,Artificial Intelligence and Data Science,AIDS,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN09-B05,SYN09,B05,Electronics and Telecommunication Engineering,ENTC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN09-B06,SYN09,B06,Mechanical Engineering,MECH,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN09-B08,SYN09,B08,Electrical Engineering,ELEC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN10-B01,SYN10,B01,Computer Science and Engineering,CSE,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN10-B02,SYN10,B02,Computer Engineering,COMP,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN10-B03,SYN10,B03,Information Technology,IT,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN10-B04,SYN10,B04,Artificial Intelligence and Data Science,AIDS,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN10-B05,SYN10,B05,Electronics and Telecommunication Engineering,ENTC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN10-B07,SYN10,B07,Civil Engineering,CIVIL,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN11-B01,SYN11,B01,Computer Science and Engineering,CSE,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN11-B02,SYN11,B02,Computer Engineering,COMP,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN11-B03,SYN11,B03,Information Technology,IT,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN11-B04,SYN11,B04,Artificial Intelligence and Data Science,AIDS,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN11-B06,SYN11,B06,Mechanical Engineering,MECH,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN11-B07,SYN11,B07,Civil Engineering,CIVIL,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN11-B08,SYN11,B08,Electrical Engineering,ELEC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN12-B01,SYN12,B01,Computer Science and Engineering,CSE,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN12-B02,SYN12,B02,Computer Engineering,COMP,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN12-B03,SYN12,B03,Information Technology,IT,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN12-B05,SYN12,B05,Electronics and Telecommunication Engineering,ENTC,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN12-B06,SYN12,B06,Mechanical Engineering,MECH,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN12-B07,SYN12,B07,Civil Engineering,CIVIL,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN12-B08,SYN12,B08,Electrical Engineering,ELEC,2023-24,,SYN-DOC-012,,validated,TRUE

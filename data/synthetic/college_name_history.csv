@@ -1,0 +1,13 @@
+college_code,college_name,valid_from_year,valid_to_year,source_doc_id,retrieved_date,validation_status,is_synthetic
+SYN01,SYNTHETIC Institute of Technology A,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN02,SYNTHETIC Institute of Technology B,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN03,SYNTHETIC Institute of Technology C,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN04,SYNTHETIC Institute of Technology D,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN05,SYNTHETIC Institute of Technology E,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN06,SYNTHETIC Institute of Technology F,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN07,SYNTHETIC Institute of Technology G,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN08,SYNTHETIC Institute of Technology H,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN09,SYNTHETIC Institute of Technology I,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN10,SYNTHETIC Institute of Technology J,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN11,SYNTHETIC Institute of Technology K,2023-24,,SYN-DOC-012,,validated,TRUE
+SYN12,SYNTHETIC Institute of Technology L,2023-24,,SYN-DOC-012,,validated,TRUE
