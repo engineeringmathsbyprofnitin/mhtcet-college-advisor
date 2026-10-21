@@ -84,6 +84,15 @@ def validate(folder):
         if r["valid_from"] and r["valid_to"] and r["valid_to"]<r["valid_from"]: err("accreditation",i,"DATE_ORDER","valid_to before valid_from")
     for i,r in enumerate(data["quality_indicators"],start=2):
         if r["is_estimate"]!="TRUE": err("quality_indicators",i,"ESTIMATE_FLAG","calculated ratings must be labelled is_estimate=TRUE")
+    pm={}
+    for r in data["placements"]:
+        if r["metric"] in ("students_placed","students_eligible"):
+            try: pm.setdefault((r["college_code"],r["choice_code"],r["placement_year"],r["scope"]),{})[r["metric"]]=float(r["value"])
+            except ValueError: pass
+    for k,v in pm.items():
+        if "students_placed" in v and "students_eligible" in v and v["students_placed"]>v["students_eligible"]: err("placements",0,"PLACED_EXCEEDS_ELIGIBLE",str(k))
+    for i,r in enumerate(data["placements"],start=2):
+        if r["metric"]=="placement_percent" and r["value"] and float(r["value"])>100: err("placements",i,"PERCENT_RANGE","placement_percent above 100")
     if sum(1 for r in data["data_version"] if r["is_last_known_good"]=="TRUE")!=1: err("data_version",0,"LAST_KNOWN_GOOD","exactly one version must be last-known-good")
     return E
 if __name__=="__main__":

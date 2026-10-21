@@ -90,6 +90,15 @@ for i,(cc,dist,tier,typ) in enumerate(cols):
     if i%4!=3:
         add("placements",placement_id=nid("PLC"),college_code=cc,placement_year="2025-26",metric="placement_percent",value=f"{40+tier*50:.1f}",scope="institution",source_doc_id=SD("placement_report","2025-26"))
         add("placements",placement_id=nid("PLC"),college_code=cc,placement_year="2025-26",metric="median_package_lpa",value=f"{3+tier*6:.1f}",scope="institution",source_doc_id=SD("placement_report","2025-26"))
+    if i%4==0:
+        for m,v in (("students_eligible","300"),("students_placed",str(int(300*(0.4+tier*0.5)))),("companies_visited",str(20+int(tier*60))),("lowest_package_lpa","2.5")):
+            add("placements",placement_id=nid("PLC"),college_code=cc,placement_year="2025-26",metric=m,value=v,scope="institution",source_doc_id=SD("placement_report","2025-26"))
+    if i not in (5,9):    # SYN06 and SYN10 have no hostel data on purpose
+        if i==4: add("hostels",hostel_id=nid("HOS"),college_code=cc,hostel_for="both",availability="not_available",source_doc_id=SD("college_list",CUR))
+        else:
+            add("hostels",hostel_id=nid("HOS"),college_code=cc,hostel_for="boys",availability="available",hostel_type="on_campus",seat_capacity=str(random.choice([150,250,400])),source_doc_id=SD("college_list",CUR))
+            add("hostels",hostel_id=nid("HOS"),college_code=cc,hostel_for="girls",availability=random.choice(["available","limited"]),hostel_type="on_campus",seat_capacity=str(random.choice([100,150,200])),source_doc_id=SD("college_list",CUR))
+        if i in (0,3): pass
     if i<10:
         for ind in ("teaching","infrastructure"):
             add("quality_indicators",indicator_id=nid("QI"),college_code=cc,indicator=ind,score_0_10=f"{3+tier*5+random.uniform(-.5,.5):.1f}",is_estimate="TRUE",

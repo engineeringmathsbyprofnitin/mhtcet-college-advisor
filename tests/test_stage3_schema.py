@@ -62,4 +62,23 @@ class T(unittest.TestCase):
     def test_current_year_has_no_round_IV(self):
         rounds={r["cap_round"] for r in csv.DictReader(open(os.path.join(SYN,"current_cutoffs.csv")))}
         self.assertEqual(rounds,{"I","II","III"})
+    def test_hostel_table_exists_and_clean(self):
+        self.assertIn("hostels",V.SCHEMA)
+        self.assertTrue(list(csv.DictReader(open(os.path.join(SYN,"hostels.csv")))))
+    def test_bad_hostel_availability_rejected(self):
+        d=mutate("hostels",lambda r:r[0].update(availability="maybe")); self.assertIn("BAD_ENUM",codes(d))
+    def test_colleges_without_hostel_data_exist(self):
+        h={r["college_code"] for r in csv.DictReader(open(os.path.join(SYN,"hostels.csv")))}
+        c={r["college_code"] for r in csv.DictReader(open(os.path.join(SYN,"colleges.csv")))}
+        self.assertTrue(c-h)   # must display "Not available", not "no hostel"
+    def test_placed_above_eligible_rejected(self):
+        def f(r):
+            for x in r:
+                if x["metric"]=="students_placed": x["value"]="99999"; break
+        self.assertIn("PLACED_EXCEEDS_ELIGIBLE",codes(mutate("placements",f)))
+    def test_placement_percent_above_100_rejected(self):
+        def f(r):
+            for x in r:
+                if x["metric"]=="placement_percent": x["value"]="140"; break
+        self.assertIn("PERCENT_RANGE",codes(mutate("placements",f)))
 if __name__=="__main__": unittest.main()

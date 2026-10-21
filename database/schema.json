@@ -782,7 +782,10 @@
       "median_package_lpa",
       "average_package_lpa",
       "highest_package_lpa",
-      "students_placed"
+      "lowest_package_lpa",
+      "students_eligible",
+      "students_placed",
+      "companies_visited"
      ]
     },
     {
@@ -798,6 +801,92 @@
       "institution",
       "branch"
      ]
+    },
+    {
+     "name": "source_doc_id",
+     "type": "str",
+     "required": true,
+     "fk": "source_documents.doc_id"
+    },
+    {
+     "name": "retrieved_date",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "validation_status",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "pending",
+      "validated",
+      "rejected"
+     ]
+    },
+    {
+     "name": "is_synthetic",
+     "type": "bool",
+     "required": true
+    }
+   ]
+  },
+  "hostels": {
+   "description": "Whether a college offers hostel accommodation, for whom, and capacity. The hostel FEE is stored in the fees table (fee_type = hostel).",
+   "primary_key": [
+    "hostel_id"
+   ],
+   "unique": null,
+   "columns": [
+    {
+     "name": "hostel_id",
+     "type": "str",
+     "required": true
+    },
+    {
+     "name": "college_code",
+     "type": "str",
+     "required": true,
+     "fk": "colleges.college_code"
+    },
+    {
+     "name": "hostel_for",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "boys",
+      "girls",
+      "both"
+     ]
+    },
+    {
+     "name": "availability",
+     "type": "str",
+     "required": true,
+     "enum": [
+      "available",
+      "limited",
+      "not_available",
+      "unknown"
+     ]
+    },
+    {
+     "name": "hostel_type",
+     "type": "str",
+     "required": false,
+     "enum": [
+      "on_campus",
+      "off_campus"
+     ]
+    },
+    {
+     "name": "seat_capacity",
+     "type": "int",
+     "required": false
+    },
+    {
+     "name": "notes",
+     "type": "str",
+     "required": false
     },
     {
      "name": "source_doc_id",

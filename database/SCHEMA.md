@@ -1,10 +1,11 @@
-# Database schema (Stage 3 draft, v0.1)
+# Database schema (Stage 3 draft, v0.2)
 
 Each table is one CSV file now and one Google Sheet tab later (Stage 5). `database/schema.json` is the machine-readable version used by `validate_data.py`; this file is generated from it.
 
 ## Golden rules built into the schema
 - **Vacancy is separate from intake.** `seat_intake` holds sanctioned/approved seats; `vacancies` holds only genuine vacancy positions. Vacancy rows must have `cap_round` III or IV and a source document of type `vacancy_position`. A vacancy can never exceed the sanctioned intake.
-- **Missing means missing.** No row = "Not available". Never write 0 for unknown data.
+- **Missing means missing.** No row = "Not available". Never write 0 for unknown data, and never treat a missing hostel row as "no hostel".
+- **Hostel availability is in `hostels`; hostel cost is in `fees`** (fee_type = hostel).
 - **Provenance on every data row:** `source_doc_id` (points to `source_documents`), `retrieved_date`, `validation_status`.
 - **Estimates are labelled:** `quality_indicators.is_estimate` must be TRUE.
 - **Nothing is destroyed on change:** renames go to `college_name_history`; validity dates are kept for accreditation.
@@ -173,9 +174,24 @@ Key: `placement_id`
 | college_code* | str | links to colleges.college_code |
 | choice_code | str | links to branches.choice_code |
 | placement_year* | year |  |
-| metric* | str | one of: placement_percent, median_package_lpa, average_package_lpa, highest_package_lpa, students_placed |
+| metric* | str | one of: placement_percent, median_package_lpa, average_package_lpa, highest_package_lpa, lowest_package_lpa, students_eligible, students_placed, companies_visited |
 | value* | float |  |
 | scope* | str | one of: institution, branch |
+
+## hostels
+Whether a college offers hostel accommodation, for whom, and capacity. The hostel FEE is stored in the fees table (fee_type = hostel).
+
+Key: `hostel_id`
+
+| Column | Type | Notes |
+|---|---|---|
+| hostel_id* | str |  |
+| college_code* | str | links to colleges.college_code |
+| hostel_for* | str | one of: boys, girls, both |
+| availability* | str | one of: available, limited, not_available, unknown |
+| hostel_type | str | one of: on_campus, off_campus |
+| seat_capacity | int |  |
+| notes | str |  |
 
 ## quality_indicators
 System-calculated 0-10 estimates (never official). is_estimate must be TRUE and the method documented.
