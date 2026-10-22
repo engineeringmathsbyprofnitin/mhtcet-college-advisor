@@ -50,6 +50,26 @@
      "required": false
     },
     {
+     "name": "college_website",
+     "type": "url",
+     "required": false
+    },
+    {
+     "name": "autonomy_status",
+     "type": "str",
+     "required": false,
+     "enum": [
+      "autonomous",
+      "non_autonomous",
+      "unknown"
+     ]
+    },
+    {
+     "name": "campus_area_acres",
+     "type": "float",
+     "required": false
+    },
+    {
      "name": "source_doc_id",
      "type": "str",
      "required": true,

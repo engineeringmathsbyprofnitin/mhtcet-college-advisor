@@ -81,4 +81,14 @@ class T(unittest.TestCase):
             for x in r:
                 if x["metric"]=="placement_percent": x["value"]="140"; break
         self.assertIn("PERCENT_RANGE",codes(mutate("placements",f)))
+    def test_college_new_fields_present(self):
+        rows=list(csv.DictReader(open(os.path.join(SYN,"colleges.csv"))))
+        for f in ("college_website","autonomy_status","campus_area_acres"): self.assertIn(f,rows[0])
+        self.assertTrue(any(r["campus_area_acres"]=="" for r in rows))   # unknown stays blank, not 0
+    def test_bad_website_rejected(self):
+        d=mutate("colleges",lambda r:r[0].update(college_website="www.example.com")); self.assertIn("BAD_TYPE",codes(d))
+    def test_bad_autonomy_rejected(self):
+        d=mutate("colleges",lambda r:r[0].update(autonomy_status="yes")); self.assertIn("BAD_ENUM",codes(d))
+    def test_zero_campus_area_rejected(self):
+        d=mutate("colleges",lambda r:r[0].update(campus_area_acres="0")); self.assertIn("AREA_RANGE",codes(d))
 if __name__=="__main__": unittest.main()

@@ -30,8 +30,8 @@ doc(n,"placement_report","2025-26"); n+=1
 doc(n,"college_list",CUR); n+=1
 SD=lambda typ,y="",r="":docs[(typ,y,r)]
 
-cols=[("SYN01","Pune",1.0,"Private Unaided"),("SYN02","Pune",0.9,"Autonomous"),("SYN03","Pune",0.5,"Private Unaided"),
-("SYN04","Mumbai Suburban",0.95,"Autonomous"),("SYN05","Mumbai Suburban",0.6,"Private Unaided"),("SYN06","Nagpur",0.8,"Government-Aided"),
+cols=[("SYN01","Pune",1.0,"Private Unaided"),("SYN02","Pune",0.9,"Private Unaided"),("SYN03","Pune",0.5,"Private Unaided"),
+("SYN04","Mumbai Suburban",0.95,"Private Unaided"),("SYN05","Mumbai Suburban",0.6,"Private Unaided"),("SYN06","Nagpur",0.8,"Government-Aided"),
 ("SYN07","Nagpur",0.4,"Private Unaided"),("SYN08","Thane",0.55,"Private Unaided"),("SYN09","Nashik",0.65,"Private Unaided"),
 ("SYN10","Kolhapur",0.7,"Government-Aided"),("SYN11","Chhatrapati Sambhajinagar (Aurangabad)",0.45,"Private Unaided"),("SYN12","Sangli",0.5,"Government-Aided")]
 BR=[("B01","Computer Science and Engineering","CSE",1.0),("B02","Computer Engineering","COMP",0.97),("B03","Information Technology","IT",0.93),
@@ -48,6 +48,8 @@ def nid(p):
 choices=[]
 for i,(cc,dist,tier,typ) in enumerate(cols):
     add("colleges",college_code=cc,college_name=f"SYNTHETIC Institute of Technology {chr(65+i)}",district=dist,city=dist.split(" ")[0],college_type=typ,status="active",
+        college_website=f"https://example.invalid/{cc.lower()}",autonomy_status=("autonomous" if i in (1,3) else "unknown" if i==11 else "non_autonomous"),
+        campus_area_acres=("" if i in (6,11) else str(round(5+tier*30,1))),
         source_doc_id=SD("college_list",CUR),is_synthetic="TRUE")
     add("college_name_history",college_code=cc,college_name=f"SYNTHETIC Institute of Technology {chr(65+i)}",valid_from_year="2023-24",source_doc_id=SD("college_list",CUR))
     for j,(bc,bn,grp,pop) in enumerate(BR):

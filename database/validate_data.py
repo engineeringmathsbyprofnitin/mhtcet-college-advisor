@@ -14,6 +14,8 @@ def check_type(v,t):
         if t=="percentile": return 0<=float(v)<=100
         if t=="score10": return 0<=float(v)<=10
         if t=="date": return isdate(v)
+        if t=="url": return bool(re.match(r"^https?://\S+$",v))
+        if t=="float" and False: pass
         if t=="bool": return v in ("TRUE","FALSE")
         if t=="year":
             if not YEAR.match(v): return False
@@ -93,6 +95,11 @@ def validate(folder):
         if "students_placed" in v and "students_eligible" in v and v["students_placed"]>v["students_eligible"]: err("placements",0,"PLACED_EXCEEDS_ELIGIBLE",str(k))
     for i,r in enumerate(data["placements"],start=2):
         if r["metric"]=="placement_percent" and r["value"] and float(r["value"])>100: err("placements",i,"PERCENT_RANGE","placement_percent above 100")
+    for i,r in enumerate(data["colleges"],start=2):
+        if r["campus_area_acres"]:
+            try:
+                if float(r["campus_area_acres"])<=0: err("colleges",i,"AREA_RANGE","campus_area_acres must be above 0")
+            except ValueError: pass
     if sum(1 for r in data["data_version"] if r["is_last_known_good"]=="TRUE")!=1: err("data_version",0,"LAST_KNOWN_GOOD","exactly one version must be last-known-good")
     return E
 if __name__=="__main__":

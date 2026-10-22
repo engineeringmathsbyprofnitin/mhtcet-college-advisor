@@ -3,11 +3,11 @@
 ## Completed
 - Stage 1: repository structure and documents.
 - Stage 2: student input form (frontend/). Verified by 10 automated jsdom checks; real phone/desktop look to be confirmed by owner.
-- Stage 3: database schema (16 tables, v0.2: added hostels and richer placement metrics), CSV templates, validator, SYNTHETIC test data.
+- Stage 3: database schema (16 tables, v0.3: hostels, richer placement metrics, college website, autonomy status, campus area), CSV templates, validator, SYNTHETIC test data.
 
 ## Verified (Stage 3)
 - database/validate_data.py reports 0 errors on data/synthetic.
-- 24 unit tests pass (tests/test_stage3_schema.py): clean data passes; bad percentile, vacancy round I, seat-matrix used as vacancy source, vacancy above intake, negative vacancy, duplicate rows, unknown college, missing required, unlabelled estimate, bad dates/years and two last-known-good versions are all rejected.
+- 28 unit tests pass (tests/test_stage3_schema.py): clean data passes; bad percentile, vacancy round I, seat-matrix used as vacancy source, vacancy above intake, negative vacancy, duplicate rows, unknown college, missing required, unlabelled estimate, bad dates/years and two last-known-good versions are all rejected.
 - While building, the validator caught a genuine bug in the synthetic generator (a reference to a non-existent branch), which was fixed.
 
 ## NOT verified / not implemented

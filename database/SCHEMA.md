@@ -1,4 +1,4 @@
-# Database schema (Stage 3 draft, v0.2)
+# Database schema (Stage 3 draft, v0.3)
 
 Each table is one CSV file now and one Google Sheet tab later (Stage 5). `database/schema.json` is the machine-readable version used by `validate_data.py`; this file is generated from it.
 
@@ -28,6 +28,9 @@ Key: `college_code`
 | college_type | str |  |
 | status* | str | one of: active, closed, renamed |
 | previous_college_code | str |  |
+| college_website | url |  |
+| autonomy_status | str | one of: autonomous, non_autonomous, unknown |
+| campus_area_acres | float |  |
 
 ## college_name_history
 Keeps old names so renames never destroy history.

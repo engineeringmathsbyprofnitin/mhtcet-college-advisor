@@ -10,7 +10,7 @@ def C(name,typ="str",req=False,**kw): return (name,typ,req,kw)
 ROUNDS=["I","II","III","IV"]
 T = {
  "colleges": dict(pk=["college_code"], cols=[C("college_code","str",True),C("college_name","str",True),C("district","str",True),C("city"),C("college_type"),
-    C("status","str",True,enum=["active","closed","renamed"]),C("previous_college_code")], prov=True,
+    C("status","str",True,enum=["active","closed","renamed"]),C("previous_college_code"),C("college_website","url"),C("autonomy_status","str",False,enum=["autonomous","non_autonomous","unknown"]),C("campus_area_acres","float")], prov=True,
     desc="One row per college, keyed by its official college code. Never merge colleges by name similarity."),
  "college_name_history": dict(pk=["college_code","valid_from_year"], cols=[C("college_code","str",True,fk="colleges.college_code"),C("college_name","str",True),C("valid_from_year",Y,True),C("valid_to_year",Y)], prov=True,
     desc="Keeps old names so renames never destroy history."),

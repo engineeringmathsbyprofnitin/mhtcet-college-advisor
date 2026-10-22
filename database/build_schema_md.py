@@ -2,7 +2,7 @@
 import json, os
 H=os.path.dirname(os.path.abspath(__file__))
 S=json.load(open(os.path.join(H,"schema.json")))["tables"]
-o=["# Database schema (Stage 3 draft, v0.2)\n",
+o=["# Database schema (Stage 3 draft, v0.3)\n",
 "Each table is one CSV file now and one Google Sheet tab later (Stage 5). `database/schema.json` is the machine-readable version used by `validate_data.py`; this file is generated from it.\n",
 "## Golden rules built into the schema",
 "- **Vacancy is separate from intake.** `seat_intake` holds sanctioned/approved seats; `vacancies` holds only genuine vacancy positions. Vacancy rows must have `cap_round` III or IV and a source document of type `vacancy_position`. A vacancy can never exceed the sanctioned intake.",
