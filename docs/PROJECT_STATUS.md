@@ -2,21 +2,24 @@
 
 ## Completed
 - Stage 1: repository structure and documents.
-- Stage 2: student input form (frontend/). Verified by 10 automated jsdom checks; real phone/desktop look to be confirmed by owner.
-- Stage 3: database schema (16 tables, v0.3: hostels, richer placement metrics, college website, autonomy status, campus area), CSV templates, validator, SYNTHETIC test data.
+- Stage 2: student input form (frontend/). 10 automated checks passed; real phone/desktop look to be confirmed by owner.
+- Stage 3: database schema v0.3 (16 tables), templates, validator, SYNTHETIC test data. 28 tests pass.
+- Stage 4: recommendation engine (recommendation/engine.js), rules in docs/RANKING_RULES.md, 42 tests in tests/engine.test.js.
 
-## Verified (Stage 3)
-- database/validate_data.py reports 0 errors on data/synthetic.
-- 28 unit tests pass (tests/test_stage3_schema.py): clean data passes; bad percentile, vacancy round I, seat-matrix used as vacancy source, vacancy above intake, negative vacancy, duplicate rows, unknown college, missing required, unlabelled estimate, bad dates/years and two last-known-good versions are all rejected.
-- While building, the validator caught a genuine bug in the synthetic generator (a reference to a non-existent branch), which was fixed.
+## Verified (Stage 4)
+- 42 of 42 tests pass (Node.js, synthetic + small hand-made datasets): admission-year calculation, 3-year history window, round priority IV>III>II>I, vacancy IV-else-III only (no mixing, no Round I/II, seat matrix rejected, zero vs missing), seat-type matching, branch/district filters and renamed districts, fee filtering (tuition vs total), labels and thresholds, trend handling, priority-based ranking, missing data, accreditation validity, NBA program scope, ignoring unvalidated rows, result limits and honest messages, determinism, input not modified.
+- Engine loads and runs outside Node (simulated Apps Script/browser environment).
+- A sample student on synthetic data gave a sensible, explainable ranking.
 
 ## NOT verified / not implemented
-- No real CET Cell data has been used anywhere. Synthetic data proves only that the schema and validator work.
-- Recommendation engine, Google Sheet, API, ingestion, workflows, deployment.
+- No real CET Cell data used anywhere. Passing tests prove the rules are coded as written, not that real data is handled correctly.
+- Thresholds and weights are not calibrated.
+- Not yet connected to a Google Sheet, API or the web form (Stages 5-6).
+- Extra eligibility (TFWS/Defence/PWD) not applied. Whether reserved-category students may use Open seats is an assumption to verify.
 
 ## Known issues / placeholders
-- Seat types, categories, candidate types and branch names are provisional (see frontend/config.js and seat_types table).
+- Seat types, categories, candidate types and branch names are provisional.
 - Schema may need small changes once real documents are parsed (Stage 9).
 
 ## Next task
-Stage 4: recommendation engine + documented rules + tests on synthetic data.
+Stage 5: Google Sheet setup + Apps Script API.
