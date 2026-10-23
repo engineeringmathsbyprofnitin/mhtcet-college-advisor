@@ -275,6 +275,36 @@ test("fit score: more margin never lowers fit, and is capped at 100", () => {
   const fit = pct => run(Object.assign(base(), { percentile: pct }), simple(80)).results[0].componentScores.fit;
   assert.ok(fit(78) < fit(80) && fit(80) < fit(82) && fit(82) <= fit(90)); assert.equal(fit(99), 100);
 });
+test("percentile gaps near the top count for more than gaps lower down", () => {
+  const lab = (pct, cut) => { const r = run(Object.assign(base(), { percentile: pct }), simple(cut)).results; return r.length ? r[0].suitability : "excluded"; };
+  assert.equal(lab(98.5, 99), "Ambitious choice");            // raw gap only -0.5, but at the 99th percentile that is large
+  assert.equal(lab(98.9, 99), "Possible but uncertain");
+  assert.equal(lab(99.4, 99), "Historically more suitable");
+  assert.equal(lab(99.9, 99.5), "Historically more suitable");
+  assert.equal(lab(79.5, 80), "Possible but uncertain");       // same raw gap mid-range is minor
+  assert.equal(lab(47, 50), "Possible but uncertain");         // lower down, a 3-point gap counts for less
+  assert.equal(lab(90, 99), "excluded");
+});
+test("scaled margin is reported alongside the raw margin", () => {
+  const x = run(Object.assign(base(), { percentile: 98.5 }), simple(99)).results[0];
+  assert.equal(x.marginVsExpected, -0.5); assert.equal(x.scaledMargin, -5);
+  assert.ok(x.explanation.some(l => /small percentile gap means many ranks/.test(l)));
+});
+test("earlier current rounds count for less than Round IV when averaging", () => {
+  const exp = round => { const D = simple(80); D.addCut("current_cutoffs", "A-1", "2026-27", round, "GOPENS", 90); return run(base(), D).results[0].expectedCutoff; };
+  assert.equal(exp("IV"), 84); assert.equal(exp("III"), 83.68); assert.equal(exp("I"), 82.5);
+  assert.ok(exp("IV") > exp("III") && exp("III") > exp("II") && exp("II") > exp("I"));
+});
+test("a college with less evidence is slightly penalised; full-data colleges are not", () => {
+  const D = simple(80);
+  const withPenalty = run(base(), D).results[0], without = run(base(), D, { coverage: { floor: 1 } }).results[0];
+  assert.ok(withPenalty.score < without.score); assert.ok(withPenalty.dataCompleteness < 1);
+  const full = twoColleges(); full.accreditation.push({ accreditation_id: "AA", college_code: "A", choice_code: "", body: "NAAC", scope: "institution", status: "accredited", grade: "A", valid_to: "2030-01-01", source_doc_id: "D-CUT", validation_status: "validated" });
+  full.quality_indicators.push({ indicator_id: "q1", college_code: "A", indicator: "teaching", score_0_10: "8", is_estimate: "TRUE", method_version: "t", computed_date: "2026-01-01", source_doc_id: "D-CUT", validation_status: "validated" },
+    { indicator_id: "q2", college_code: "A", indicator: "infrastructure", score_0_10: "8", is_estimate: "TRUE", method_version: "t", computed_date: "2026-01-01", source_doc_id: "D-CUT", validation_status: "validated" });
+  const a = run(Object.assign(base(), { maxAnnualFeeINR: 250000 }), full).results.find(x => x.choiceCode === "A-1");
+  assert.equal(a.dataCompleteness, 1);
+});
 test("synthetic data is flagged so the UI can warn", () => { assert.equal(R.recommend(base(), SYN, AS_OF).meta.usingSyntheticData, true); });
 test("engine is deterministic", () => {
   const a = JSON.stringify(R.recommend(base(), SYN, AS_OF)), b = JSON.stringify(R.recommend(base(), SYN, AS_OF)); assert.equal(a, b);

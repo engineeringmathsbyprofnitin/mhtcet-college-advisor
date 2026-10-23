@@ -16,6 +16,12 @@
     openCategoryName: "Open",
     thresholds: { saferMargin: 1.0, uncertainTolerance: 2.0, ambitiousLimit: 6.0 },
     evidenceWeights: { current: 0.4, hist: [0.3, 0.2, 0.1] },
+    // Earlier CAP rounds show higher cutoffs than the final round, so they count for less.
+    currentWeightByRound: { IV: 0.4, III: 0.35, II: 0.30, I: 0.20 },
+    // Percentile gaps near the top mean many more ranks than gaps lower down. Gaps are scaled by
+    // anchor / (100 - cutoff), with (100 - cutoff) limited to [minDistance, maxDistance]. At a cutoff of 80 the factor is 1.
+    scale: { anchor: 20, minDistance: 2, maxDistance: 40 },
+    coverage: { floor: 0.9 },   // score is multiplied by floor + (1-floor) x share-of-weight-with-data
     trend: { weight: 0.5, maxAdjust: 3.0 },
     limitedEvidencePenalty: 0.85,
     maxResults: 20,
@@ -50,6 +56,10 @@
   }
   function norm(s) { return String(s || "").trim().toLowerCase(); }
   function clamp(x, lo, hi) { return Math.max(lo, Math.min(hi, x)); }
+  function scaleGap(gap, ref, cfg) {
+    var d = clamp(100 - ref, cfg.scale.minDistance, cfg.scale.maxDistance);
+    return gap * cfg.scale.anchor / d;
+  }
   function round2(x) { return Math.round(x * 100) / 100; }
   function groupBy(rows, keyFn) {
     var m = new Map();
@@ -203,7 +213,7 @@
 
       // cutoffs
       var points = [], cur = pickCutoff(curBy.get(b.choice_code), eligible, cfg);
-      if (cur) points.push({ label: "current", age: 0, value: cur.value, w: cfg.evidenceWeights.current });
+      if (cur) points.push({ label: "current", age: 0, value: cur.value, w: cfg.currentWeightByRound[cur.round] !== undefined ? cfg.currentWeightByRound[cur.round] : cfg.evidenceWeights.current });
       var hist = histYears.map(function (y, i) {
         var h = pickCutoff(histBy.get(b.choice_code + "|" + y), eligible, cfg);
         if (h) points.push({ label: "hist" + (i + 1), age: i + 1, value: h.value, w: cfg.evidenceWeights.hist[i] || 0 });
@@ -218,15 +228,15 @@
       var trend = 0;
       if (hp.length >= 2) trend = (hp[hp.length - 1].value - hp[0].value) / (hp[0].age - hp[hp.length - 1].age);
       var adj = clamp(cfg.trend.weight * Math.max(trend, 0), 0, cfg.trend.maxAdjust);
-      var expected = avg + adj, margin = student.percentile - expected;
+      var expected = avg + adj, rawMargin = student.percentile - expected, margin = scaleGap(rawMargin, expected, cfg);
       var maxCut = Math.max.apply(null, points.map(function (p) { return p.value; }));
       var t = cfg.thresholds, label;
       if (margin < -t.ambitiousLimit) { funnel.belowRange++; return; }
       if (points.length < 2) label = "Limited evidence";
-      else if (student.percentile >= maxCut + t.saferMargin) label = "Historically more suitable";
+      else if (scaleGap(student.percentile - maxCut, maxCut, cfg) >= t.saferMargin) label = "Historically more suitable";
       else if (margin >= -t.uncertainTolerance) label = "Possible but uncertain";
       else label = "Ambitious choice";
-      base.expected = expected; base.margin = margin; base.label = label; base.trendAdj = adj; base.trend = trend; base.maxCut = maxCut;
+      base.expected = expected; base.margin = margin; base.rawMargin = rawMargin; base.label = label; base.trendAdj = adj; base.trend = trend; base.maxCut = maxCut;
       cands.push(base);
     });
 
@@ -258,9 +268,11 @@
         fee: c.fee.value !== null && c.fee.basisMatches ? clamp(100 - 70 * c.fee.value / input.maxAnnualFeeINR, 0, 100) : null,
         accreditation: acc.score
       };
-      var num = 0, den = 0, have = 0;
-      COMPONENTS.forEach(function (k) { if (sc[k] !== null) { num += wvec[k] * sc[k]; den += wvec[k]; have++; } });
+      var num = 0, den = 0, totalW = 0;
+      COMPONENTS.forEach(function (k) { totalW += wvec[k]; if (sc[k] !== null) { num += wvec[k] * sc[k]; den += wvec[k]; } });
+      var cover = totalW ? den / totalW : 0;
       var score = den ? num / den : 0;
+      score *= cfg.coverage.floor + (1 - cfg.coverage.floor) * cover;   // more evidence breaks near-ties
       if (c.label === "Limited evidence") score *= cfg.limitedEvidencePenalty;
       // vacancy nudges the ranking slightly; it never changes the suitability label and is never a guarantee
       var vacNote = 0;
@@ -289,9 +301,9 @@
         teaching: teaching ? { score_0_10: teaching.score, isEstimate: teaching.isEstimate, method: teaching.method } : null,
         placement: plc ? { metric: "placement_percent", value: plc.value, year: plc.year, scope: plc.scope } : null,
         nba: acc.nba, naac: acc.naac,
-        suitability: c.label, expectedCutoff: round2(c.expected), marginVsExpected: round2(c.margin),
-        componentScores: sc, dataCompleteness: round2(have / COMPONENTS.length),
-        explanation: explain(c, input, currentYear, vac, vacRound, plc, teaching, infra, acc, anyDistrict, sc),
+        suitability: c.label, expectedCutoff: round2(c.expected), marginVsExpected: round2(c.rawMargin), scaledMargin: round2(c.margin),
+        componentScores: sc, dataCompleteness: round2(cover),
+        explanation: explain(c, input, currentYear, vac, vacRound, plc, teaching, infra, acc, anyDistrict, sc, cfg),
         sources: sources, _tie: [c.br, c.dr]
       };
     });
@@ -377,12 +389,14 @@
   function basicInfo(c) {
     return { choiceCode: c.b.choice_code, collegeName: c.col.college_name, branchName: c.b.branch_name, district: c.col.district, reason: "No usable cutoff data for your category in the last three years or the current year." };
   }
-  function explain(c, input, curYear, vac, vacRound, plc, teaching, infra, acc, anyDistrict, sc) {
+  function explain(c, input, curYear, vac, vacRound, plc, teaching, infra, acc, anyDistrict, sc, cfg) {
     var L = [], p = input.percentile;
     L.push("Matches your branch choice #" + c.br + " (" + c.b.branch_name + ").");
     L.push(anyDistrict ? "Located in " + c.col.district + " (you chose any district)." : "Located in " + c.col.district + ", your district choice #" + c.dr + ".");
     var parts = c.points.map(function (pt) { return (pt.label === "current" ? "current " + curYear : "year " + c.hist[pt.age - 1].year) + ": " + pt.value.toFixed(2); });
     L.push("Your percentile " + p + " compared with cutoffs (" + parts.join("; ") + "); expected cutoff about " + c.expected.toFixed(2) + (c.trendAdj > 0 ? " (includes +" + c.trendAdj.toFixed(2) + " because earlier cutoffs were rising)" : "") + ".");
+    var fac = cfg.scale.anchor / clamp(100 - c.expected, cfg.scale.minDistance, cfg.scale.maxDistance);
+    if (fac > 1.5) L.push("At this cutoff level a small percentile gap means many ranks, so gaps are weighted more heavily.");
     L.push("Assessment: " + c.label + ". This is a rule-based guide from past cutoffs, not a probability or a guarantee.");
     if (c.cur && c.cur.round !== "IV") L.push("Current-year cutoff is from CAP Round " + c.cur.round + "; earlier rounds usually show higher cutoffs than the final round, so this may look tougher than the final outcome.");
     if (c.points.length < 3) L.push("Only " + c.points.length + " cutoff data point(s) available; treat with extra caution.");

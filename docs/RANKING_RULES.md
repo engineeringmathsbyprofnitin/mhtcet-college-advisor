@@ -1,4 +1,4 @@
-# Recommendation engine: ranking rules (Stage 4, v0.1)
+# Recommendation engine: ranking rules (Stage 4, v0.2)
 
 Code: `recommendation/engine.js`. Everything below is deterministic: the same input and data always give the same output.
 **None of the numbers below has been statistically calibrated.** They are sensible starting values, kept in one place (`DEFAULTS` in the engine) so they can be tuned later against real data. The output must never be described as a "probability" or "chance".
@@ -25,30 +25,45 @@ Code: `recommendation/engine.js`. Everything below is deterministic: the same in
 | Validation | Only rows with `validation_status = validated` are used. |
 
 ## 3. Suitability labels
-Let *expected cutoff* = weighted average of the available cutoffs (current 0.4; the three past years 0.3, 0.2, 0.1; weights re-scaled when some are missing) **plus a small trend adjustment**: if the past-year cutoffs were rising, add 0.5 × the yearly rise (maximum +3). Falling cutoffs are **not** credited (conservative, because one easy year may not repeat). The trend uses past years only, so a partial current round never fakes a trend.
-Margin = student percentile − expected cutoff.
+
+**Expected cutoff** = weighted average of the available cutoffs, plus a small trend adjustment.
+- Weights: the three past years 0.3, 0.2, 0.1. The current-year weight depends on the round it comes from, because earlier rounds show higher cutoffs than the final round: Round IV 0.40, III 0.35, II 0.30, I 0.20. Weights are re-scaled when some data points are missing.
+- Trend: if the past-year cutoffs were rising, add 0.5 x the yearly rise (maximum +3). Falling cutoffs are **not** credited (conservative, because one easy year may not repeat). The trend uses past years only, so a partial current round never fakes a trend.
+
+**Percentile gaps are scaled (new in v0.2).** One percentile point is worth far more ranks near the top than lower down, so a gap is multiplied by `20 / (100 - cutoff)` (the distance 100 - cutoff is limited to between 2 and 40). At a cutoff of 80 the factor is 1, so nothing changes mid-range.
+
+| Cutoff | Factor | Raw gap of 1 point counts as |
+|---|---|---|
+| 99.0 or higher | 10.0 | 10 points |
+| 95 | 4.0 | 4 points |
+| 90 | 2.0 | 2 points |
+| 80 | 1.0 | 1 point |
+| 60 or lower | 0.5 | 0.5 points |
+
+Scaled margin = scaled gap between the student's percentile and the expected cutoff. The raw margin is also reported.
 
 | Label | Rule |
 |---|---|
 | Insufficient data | No usable cutoff at all. Listed separately, **not ranked**. |
 | Limited evidence | Only one cutoff data point. Ranked, with a 15% score reduction. |
-| Historically more suitable | Student percentile ≥ the highest available cutoff + 1.0 |
-| Possible but uncertain | Margin ≥ −2.0 (and not in the row above) |
-| Ambitious choice | Margin between −6.0 and −2.0 |
-| (not shown) | Margin below −6.0: not realistic, counted but excluded |
+| Historically more suitable | Scaled gap between the student and the **highest** available cutoff is at least +1.0 |
+| Possible but uncertain | Scaled margin of at least -2.0 (and not in the row above) |
+| Ambitious choice | Scaled margin between -6.0 and -2.0 |
+| (not shown) | Scaled margin below -6.0: not realistic, counted but excluded |
 
-Vacancy never changes a label. It only nudges the ranking score by ±1 point (some vacancy reported / zero reported) and is explained to the student as "not a guarantee".
-When the current cutoff comes from a round before IV, the explanation warns that earlier rounds usually show higher cutoffs than the final round.
+Vacancy never changes a label. It only nudges the ranking score by +1 or -1 point (some vacancy reported / zero reported) and is explained to the student as "not a guarantee". When the current cutoff comes from a round before IV, the explanation warns that earlier rounds usually show higher cutoffs than the final round.
 
-## 4. Ranking score (0–100)
-Each component is scored 0–100; a component with **no data is left out and the others are re-scaled** (missing data is never turned into zero or an invented rating):
-- **fit** = 70 + 6 × margin, limited to 0–100
-- **branch** = 100 − 15 × (rank − 1), minimum 40
+## 4. Ranking score (0-100)
+Each component is scored 0-100. A component with **no data is left out and the others are re-scaled** (missing data is never turned into zero or an invented rating):
+- **fit** = 70 + 6 x scaled margin, limited to 0-100
+- **branch** = 100 - 15 x (rank - 1), minimum 40
 - **district** = same for district rank; "ANY" = 70 for all
 - **placement** = placement percent
-- **teaching / infrastructure** = estimate × 10
-- **fee** = 100 − 70 × fee / budget
+- **teaching / infrastructure** = estimate x 10
+- **fee** = 100 - 70 x fee / budget
 - **accreditation** = NAAC grade (A++ 100, A+ 85, A 70, B++ 55, B+ 40, B 30, C 20) + 15 if the program has valid NBA; valid NBA alone = 60
+
+**Evidence-coverage factor (new in v0.2).** Leaving out missing components is fair, but it could let a college with little data edge past one with the same scores and more data. So the final score is multiplied by `0.90 + 0.10 x (share of the total weight that has data)`. A college with every component known is not reduced; the maximum reduction is small. The share is reported as `dataCompleteness`.
 
 Weights by priority (each column sums to 1; if several priorities are chosen, their weights are averaged):
 
@@ -66,11 +81,11 @@ Weights by priority (each column sums to 1; if several priorities are chosen, th
 Ties are broken by branch preference rank, then district preference rank, then choice code (so results are stable).
 
 ## 5. Known limitations (be honest with students)
-- Thresholds and weights are judgement-based, not calibrated against outcomes. Percentile gaps near the top matter more than the same gap lower down; the engine does not model this yet.
+- Thresholds and weights are judgement-based, not calibrated against outcomes. The percentile-gap scaling is a simple approximation (it does not use real rank data); real rank/percentile tables could replace it later.
 - Past cutoffs do not guarantee a future cutoff or a seat.
 - Extra eligibility claims (TFWS, Defence, PWD) are **not applied** yet; the response says so.
 - Home-university vs other-than-home-university rules, and other CAP details, will need real seat-type data (Stages 7–9).
 - Results are only as good as the data loaded; synthetic data is flagged in `meta.usingSyntheticData`.
 
 ## 6. What the engine returns (per result)
-rank, college name/code, branch name/code, district, website, autonomy, three past-year cutoffs (year, value, round, seat type), current cutoff (value, round), vacancy (value, round or "Vacancy data unavailable"), fee (value, type, year, status), infrastructure/teaching estimates, placement, NBA, NAAC, suitability label, expected cutoff, margin, component scores, data completeness, plain-language explanation lines, and source documents. Missing items are `null`; the web page will display "Not available".
+rank, college name/code, branch name/code, district, website, autonomy, three past-year cutoffs (year, value, round, seat type), current cutoff (value, round), vacancy (value, round or "Vacancy data unavailable"), fee (value, type, year, status), infrastructure/teaching estimates, placement, NBA, NAAC, suitability label, expected cutoff, raw and scaled margin, component scores, data completeness, plain-language explanation lines, and source documents. Missing items are `null`; the web page will display "Not available".
