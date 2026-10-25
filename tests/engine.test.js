@@ -305,6 +305,11 @@ test("a college with less evidence is slightly penalised; full-data colleges are
   const a = run(Object.assign(base(), { maxAnnualFeeINR: 250000 }), full).results.find(x => x.choiceCode === "A-1");
   assert.equal(a.dataCompleteness, 1);
 });
+test("seat types used are listed in sorted order whatever the table order", () => {
+  const D = clone(SYN); D.seat_types.reverse();
+  const a = R.recommend(Object.assign(base(), { gender: "Female", category: "OBC" }), SYN, AS_OF), b = R.recommend(Object.assign(base(), { gender: "Female", category: "OBC" }), D, AS_OF);
+  assert.deepEqual(a.meta.seatTypesUsed, ["GOBCS", "GOPENS", "LOPENS"]); assert.deepEqual(a.meta.seatTypesUsed, b.meta.seatTypesUsed);
+});
 test("synthetic data is flagged so the UI can warn", () => { assert.equal(R.recommend(base(), SYN, AS_OF).meta.usingSyntheticData, true); });
 test("engine is deterministic", () => {
   const a = JSON.stringify(R.recommend(base(), SYN, AS_OF)), b = JSON.stringify(R.recommend(base(), SYN, AS_OF)); assert.equal(a, b);

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data check - MHT-CET College Advisor</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><h1>Data check</h1><p>A technical page to confirm the data files load and the engine runs in your browser. Students do not need this page.</p></header>
+<main>
+  <section id="results" style="display:block">
+    <h2>1. Data files</h2>
+    <p class="notice" id="status">Checking…</p>
+    <pre id="manifest"></pre>
+    <h2>2. Sample recommendation</h2>
+    <p>Sample student: 93.5 percentile, OBC, Female, Maharashtra State, CSE / IT / Computer Engineering, Pune or Mumbai Suburban, budget Rs 2,00,000 tuition, priority placements.</p>
+    <button class="primary" id="run" type="button">Run sample</button>
+    <p id="runStatus" role="status"></p>
+    <pre id="out"></pre>
+  </section>
+</main>
+<footer><p>Guidance only. Not a guarantee of admission.</p></footer>
+<script src="config.js"></script>
+<script src="engine.js"></script>
+<script src="dataloader.js"></script>
+<script src="data-check.js"></script>
+</body>
+</html>

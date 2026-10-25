@@ -2,7 +2,9 @@
    IMPORTANT: category, candidate-type and branch lists below are placeholders typed by hand.
    In Stages 7-9 they will be replaced by lists taken from official CET Cell data. */
 window.APP_CONFIG = {
-  API_URL: "",   // Stage 5/6: paste your Apps Script web-app URL here. Empty = not connected.
+  DATA_MODE: "static",       // "static" = the browser loads published data files and runs the engine itself (chosen design).
+  DATA_BASE_URL: "data/",    // folder of the published data files, relative to the page. Can be changed to your own hosting later.
+  API_URL: "",               // optional: Apps Script address (only used if DATA_MODE is "api"; not needed for the static design).
   DATA_NOTE: "Data not connected yet (Stage 2 preview)",
   candidateTypes: [
     "Maharashtra State candidate",

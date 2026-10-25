@@ -160,7 +160,7 @@
     if (succ) meta.lastSuccessfulUpdate = succ.finished_at;
     if (lkg && lkg.is_synthetic === "TRUE") meta.usingSyntheticData = true;
 
-    var eligibleCodes = eligibleSeatTypes(student, data.seat_types, cfg);
+    var eligibleCodes = eligibleSeatTypes(student, data.seat_types, cfg).sort();   // sorted so output never depends on table order
     var eligible = new Set(eligibleCodes);
     meta.seatTypesUsed = eligibleCodes;
     if (!eligibleCodes.length) {
