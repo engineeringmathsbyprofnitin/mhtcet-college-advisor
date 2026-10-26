@@ -33,3 +33,54 @@ button.secondary{background:#fff;color:var(--brand);border:1px solid var(--brand
 pre{overflow-x:auto;background:#10141f;color:#d7e3ff;padding:12px;border-radius:8px;font-size:.85rem}
 footer{color:var(--muted);font-size:.9rem}
 @media(min-width:640px){.field.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}}
+
+/* ===== Stage 6: results ===== */
+.banner{margin:0;padding:10px 16px;font-weight:700}
+.banner.danger{background:#fde8ea;color:#7a0016;border:2px solid #b00020;border-radius:8px}
+#dataBanner{border-radius:0;border-width:0 0 3px 0;text-align:center}
+#results{max-width:100%}
+#results .lead{font-size:1.1rem;font-weight:600}
+.funnel{color:var(--muted);padding-left:20px}
+.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;margin:12px 0;background:#fff}
+table.results{border-collapse:collapse;min-width:1500px;width:100%;font-size:.92rem}
+table.results caption{position:absolute;left:-9999px}
+table.results th,table.results td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.results th{background:#eef2fb;position:sticky;top:0;white-space:nowrap}
+table.results td small.sub,table.results td .sub{display:block;color:var(--muted);font-size:.8rem}
+table.results td a.sub{color:var(--brand)}
+tr.result td.rank{font-size:1.1rem}
+tr.why td{background:#fafbff;padding:4px 10px 10px}
+tr.why summary{cursor:pointer;color:var(--brand);font-weight:600;min-height:32px}
+.explain,.sources{margin:6px 0 6px 18px;padding:0}
+.sub-h{font-weight:700;margin:8px 0 2px}
+.badge{display:inline-block;padding:3px 8px;border-radius:12px;font-weight:700;font-size:.82rem;border:2px solid}
+.s-more{background:#e3f6ea;color:#0b5b2e;border-color:#0b6b3a}
+.s-possible{background:#fff4d6;color:#6b4a00;border-color:#b07a00}
+.s-ambitious{background:#fde8ea;color:#7a0016;border-color:#b00020}
+.s-limited{background:#eceff4;color:#3a4256;border-color:#6a7488}
+.datainfo{color:var(--muted);font-size:.9rem}
+.datainfo p{margin:4px 0}
+.insufficient{margin:10px 0}
+#toggleMore,#printBtn{margin:8px 8px 8px 0}
+@media (max-width:800px){
+  .table-scroll{overflow:visible;border:0;background:none}
+  table.results,table.results tbody{display:block;min-width:0}
+  table.results thead{position:absolute;left:-9999px}
+  tbody[hidden]{display:none}
+  tr.result{display:block;background:#fff;border:1px solid var(--line);border-radius:10px 10px 0 0;margin-top:14px;padding:6px 10px}
+  tr.why{display:block;background:#fafbff;border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px}
+  table.results td{display:flex;justify-content:space-between;gap:12px;border:0;border-bottom:1px dashed var(--line);padding:6px 0}
+  table.results td::before{content:attr(data-label);font-weight:700;color:var(--ink);min-width:38%;max-width:42%}
+  table.results td>*{text-align:right}
+  table.results td:first-child{font-size:1.15rem}
+  tr.why td{display:block;border:0}
+  tr.why td::before{content:none}
+}
+@media print{
+  header,form,.no-print,#dataBanner,#toggleMore,footer a{display:none!important}
+  #moreRows[hidden]{display:table-row-group!important}
+  .table-scroll{overflow:visible;border:0}
+  table.results{min-width:0;font-size:.62rem}
+  tr.why details{display:block}
+  tr.why details>*:not(summary){display:block}
+}

@@ -168,6 +168,12 @@
       return { ok: true, meta: meta, counts: { totalChoices: data.branches.length, ranked: 0 }, results: [], insufficientData: [] };
     }
 
+    var ownCategoryKnown = data.seat_types.some(function (st) {
+      return st.candidate_type === student.candidateType && st.category === student.category && (!st.gender_scope || st.gender_scope === student.gender);
+    });
+    if (student.category !== cfg.openCategoryName && !ownCategoryKnown)
+      warnings.push("No cutoff data for the category \"" + student.category + "\" is loaded yet, so only Open-category cutoffs were used. Your real chances in your own category may be different.");
+
     var docs = new Map(data.source_documents.map(function (d) { return [d.doc_id, d]; }));
     var colleges = new Map(data.colleges.map(function (c) { return [c.college_code, c]; }));
     var histBy = groupBy(data.historical_cutoffs, function (r) { return r.choice_code + "|" + r.admission_year; });

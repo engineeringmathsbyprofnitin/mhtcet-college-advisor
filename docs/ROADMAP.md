@@ -5,7 +5,7 @@
 4. Recommendation engine + tests - done
 5. (original) Google Sheet + Apps Script API - built, now OPTIONAL
 5B. Static data publishing + browser loader + data-check page - **done (needs the owner's browser check)**
-6. Connect the form to the loader, show the results table (top 5 + "Show more suitable choices (6-20)"), live test
+6. Connect the form to the loader, show the results table (top 5 + "Show more suitable choices (6-20)") - **built and tested in simulation; owner real-device check pending**
 7. Official source discovery + dynamic admission-year detection
 8. Automatic downloading + raw-file archiving
 9. Real Excel/CSV/HTML/PDF parsing; measure real data size

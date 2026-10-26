@@ -1,12 +1,12 @@
-/* app.js - Stage 2: builds the form, validates input, shows the request payload.
-   It does NOT yet contact any server or compute recommendations. */
+/* app.js - builds the form, validates input, loads the data files and shows the ranked report (Stage 6).
+   The calculation runs in the student's own browser. Nothing the student types is sent anywhere. */
 (function () {
   "use strict";
   var C = window.APP_CONFIG;
   var $ = function (id) { return document.getElementById(id); };
 
   function fillSelect(sel, items, placeholder) {
-    sel.innerHTML = "";
+    sel.textContent = "";
     if (placeholder !== null) {
       var p = document.createElement("option");
       p.value = ""; p.textContent = placeholder; sel.appendChild(p);
@@ -86,7 +86,21 @@
     $("addDistrict").disabled = e.target.checked;
   });
 
-  $("dataStatus").textContent = C.DATA_NOTE;
+  // ---- data header: version, admission year, freshness, synthetic warning
+  function showDataHeader() {
+    DataLoader.getManifest({ baseUrl: C.DATA_BASE_URL, fetchFn: timedFetch }).then(function (m) {
+      var days = m.last_successful_update ? Math.floor((Date.now() - Date.parse(m.last_successful_update)) / 86400000) : null;
+      var txt = "Data version " + m.data_version + " \u00B7 admission year " + m.current_admission_year + " \u00B7 last updated " + (m.last_successful_update ? m.last_successful_update.slice(0, 10) : "unknown");
+      if (days !== null && !isNaN(days) && days > 14) txt += " \u00B7 this data may be out of date";
+      $("dataStatus").textContent = txt;
+      if (m.is_synthetic) { $("dataBanner").textContent = "TEST DATA: every college and number on this site is made up for testing. Do not use it to make decisions."; $("dataBanner").hidden = false; }
+    }).catch(function () { $("dataStatus").textContent = "The data could not be loaded. Please check your internet connection and reload the page."; });
+  }
+  function timedFetch(url, init) {
+    var ctl = typeof AbortController !== "undefined" ? new AbortController() : null, t = ctl ? setTimeout(function () { ctl.abort(); }, 20000) : null;
+    return fetch(url, Object.assign({}, init || {}, ctl ? { signal: ctl.signal } : {})).then(function (r) { if (t) clearTimeout(t); return r; }, function (e) { if (t) clearTimeout(t); throw e; });
+  }
+  showDataHeader();
 
   // Validation
   function setErr(id, msg) { $(id).textContent = msg || ""; }
@@ -142,22 +156,25 @@
     };
   }
 
+  var busy = false;
   $("form").addEventListener("submit", function (e) {
     e.preventDefault();
-    var payload = validate();
-    var res = $("results");
+    if (busy) return;
+    var payload = validate(), res = $("results");
     if (!payload) { res.hidden = true; return; }
-    $("payload").textContent = JSON.stringify(payload, null, 2);
-    $("resultNote").textContent = C.API_URL
-      ? "API address is set, but sending requests is added in Stage 6."
-      : "Stage 2 preview: your inputs are valid, but no recommendation service is connected yet, so no colleges are shown.";
-    res.hidden = false;
-    res.scrollIntoView({ behavior: "smooth" });
+    busy = true; $("submitBtn").disabled = true; $("submitBtn").textContent = "Finding colleges\u2026";
+    ResultsView.renderLoading(res); res.focus(); 
+    DataLoader.recommend(payload, { baseUrl: C.DATA_BASE_URL, fetchFn: timedFetch }).then(function (r) {
+      var h = ResultsView.render(res, r); if (h && h.focus) h.focus();
+      if (res.scrollIntoView) res.scrollIntoView({ behavior: "smooth" });
+    }).catch(function (err) {
+      ResultsView.renderProblem(res, err && err.name === "LoadError" ? err.message : "Something went wrong while preparing your results. Please reload the page and try again.");
+    }).then(function () { busy = false; $("submitBtn").disabled = false; $("submitBtn").textContent = "Show my recommendations"; });
   });
 
   $("form").addEventListener("reset", function () {
     setTimeout(function () {
-      clearErrs(); $("results").hidden = true; balanced.checked = true;
+      clearErrs(); $("results").hidden = true; $("results").textContent = ""; balanced.checked = true;
       $("districts").querySelectorAll("select").forEach(function (s) { s.disabled = false; });
       $("addDistrict").disabled = false;
     }, 0);

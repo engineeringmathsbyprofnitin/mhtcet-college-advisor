@@ -5,7 +5,6 @@ window.APP_CONFIG = {
   DATA_MODE: "static",       // "static" = the browser loads published data files and runs the engine itself (chosen design).
   DATA_BASE_URL: "data/",    // folder of the published data files, relative to the page. Can be changed to your own hosting later.
   API_URL: "",               // optional: Apps Script address (only used if DATA_MODE is "api"; not needed for the static design).
-  DATA_NOTE: "Data not connected yet (Stage 2 preview)",
   candidateTypes: [
     "Maharashtra State candidate",
     "All India candidate",

@@ -11,8 +11,9 @@
 <header>
   <h1>MHT-CET College Advisor</h1>
   <p>Find Maharashtra engineering colleges and branches that suit your percentile, preferences and budget.</p>
-  <p class="status" id="dataStatus" role="status"></p>
+  <p class="status" id="dataStatus" role="status">Checking data…</p>
 </header>
+<div id="dataBanner" class="banner danger" role="alert" hidden></div>
 
 <main>
 <form id="form" novalidate>
@@ -94,24 +95,23 @@
   </fieldset>
 
   <div class="actions">
-    <button type="submit" class="primary">Show my recommendations</button>
+    <button type="submit" class="primary" id="submitBtn">Show my recommendations</button>
     <button type="reset" class="secondary" id="resetBtn">Clear form</button>
   </div>
   <small class="err" id="form-err" role="alert"></small>
 </form>
 
-<section id="results" aria-live="polite" hidden>
-  <h2>Your request</h2>
-  <p class="notice" id="resultNote"></p>
-  <details open><summary>Request that will be sent to the recommendation service</summary><pre id="payload"></pre></details>
-</section>
+<section id="results" tabindex="-1" aria-live="polite" hidden></section>
 </main>
 
 <footer>
   <p><strong>Disclaimer:</strong> This tool gives guidance based on past data. A cutoff or vacancy figure is not a guarantee of admission. Final eligibility, option selection and admission depend on official CET Cell rules, the CAP process, seat availability and your verified documents.</p>
-  <p>We do not ask for your name, phone or email, and nothing you enter here is stored by this page.</p>
+  <p>We do not ask for your name, phone or email. Your percentile, branches, districts and budget stay on your own device: the calculation runs in your browser and nothing you enter is sent to or stored by us. (Like any web page, your browser downloads the data file for your category group.)</p>
 </footer>
 <script src="config.js"></script>
+<script src="engine.js"></script>
+<script src="dataloader.js"></script>
+<script src="results.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

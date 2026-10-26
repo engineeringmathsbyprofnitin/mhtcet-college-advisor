@@ -310,6 +310,10 @@ test("seat types used are listed in sorted order whatever the table order", () =
   const a = R.recommend(Object.assign(base(), { gender: "Female", category: "OBC" }), SYN, AS_OF), b = R.recommend(Object.assign(base(), { gender: "Female", category: "OBC" }), D, AS_OF);
   assert.deepEqual(a.meta.seatTypesUsed, ["GOBCS", "GOPENS", "LOPENS"]); assert.deepEqual(a.meta.seatTypesUsed, b.meta.seatTypesUsed);
 });
+test("a category with no cutoff list loaded gets a visible warning; known categories do not", () => {
+  const w = c => R.recommend(Object.assign(base(), { category: c }), SYN, AS_OF).meta.warnings.filter(x => /No cutoff data for the category/.test(x));
+  assert.equal(w("ST").length, 1); assert.match(w("ST")[0], /"ST"/); assert.equal(w("OBC").length, 0); assert.equal(w("Open").length, 0);
+});
 test("synthetic data is flagged so the UI can warn", () => { assert.equal(R.recommend(base(), SYN, AS_OF).meta.usingSyntheticData, true); });
 test("engine is deterministic", () => {
   const a = JSON.stringify(R.recommend(base(), SYN, AS_OF)), b = JSON.stringify(R.recommend(base(), SYN, AS_OF)); assert.equal(a, b);

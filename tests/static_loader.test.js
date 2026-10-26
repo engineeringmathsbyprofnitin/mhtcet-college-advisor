@@ -56,6 +56,11 @@ test("only the files a student needs are downloaded", async () => {
   const f2 = makeFetch(); await L.recommend(INPUT({ candidateType: "All India candidate" }), opts(f2)); assert.equal(f2.calls.length, 2);   // no matching seat type: no cutoff files
   const f3 = makeFetch(); await L.recommend(INPUT({ category: "SC", gender: "Female" }), opts(f3)); assert.equal(f3.calls.length, 5);          // GOPENS, GSCS, LOPENS + 2
 });
+test("getManifest reads only the index file", async () => {
+  const f = makeFetch(); const m = await L.getManifest({ baseUrl: "data/", fetchFn: f });
+  assert.equal(m.data_version, "SYN-v1"); assert.equal(f.calls.length, 1);
+  await assert.rejects(L.getManifest({ baseUrl: "data/", fetchFn: makeFetch({ mutate: (u, b) => Buffer.from('{"format":9}') }) }), e => e.code === "BAD_MANIFEST");
+});
 test("results report which files were used and how much was downloaded", async () => {
   const r = await L.recommend(INPUT(), opts(makeFetch())); assert.ok(r.meta.dataFiles.length >= 3); assert.ok(r.meta.dataBytesDownloaded > 0); assert.equal(r.meta.dataVersion, "SYN-v1");
 });

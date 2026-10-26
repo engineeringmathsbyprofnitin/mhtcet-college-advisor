@@ -53,6 +53,17 @@
     });
   }
 
+  /** Reads only the small index file (data version, dates, synthetic flag). Used for the page header. */
+  function getManifest(options) {
+    var o = options || {}, base = o.baseUrl || "data/";
+    var opts = { fetchFn: o.fetchFn || function (u, init) { return fetch(u, init); }, fetchOptions: { cache: "no-cache" } };
+    return fetchBytes(base + "manifest.json", opts).then(function (b) {
+      var m = parse(b, base + "manifest.json");
+      if (!m || m.format !== 1 || !m.base || !m.cutoffs) throw LoadError("BAD_MANIFEST", "The data index is not in the expected format.");
+      return m;
+    });
+  }
+
   /** Loads everything needed for one student and returns {data, manifest, files, bytes}. */
   function loadForStudent(student, options) {
     var o = options || {};
@@ -93,5 +104,5 @@
     });
   }
 
-  return { loadForStudent: loadForStudent, recommend: recommend, expand: expand };
+  return { loadForStudent: loadForStudent, recommend: recommend, getManifest: getManifest, expand: expand };
 });
