@@ -1,25 +1,28 @@
 # Project status
 
-## Completed
-- Stages 1-4: structure, form, schema v0.3 (16 tables), recommendation engine v0.2.
-- Stage 5 (optional): Google Sheet workbook + Apps Script API. Not used by the website.
-- Stage 5B: static data publishing (database/export_static.py), loader (frontend/dataloader.js), data-check page. Verified by owner on computer (473 ms) and phone (886 ms): 111 KB from 4 files, 9 results.
-- Stage 6: the form now loads the data files, runs the engine in the browser and shows the ranked report (frontend/results.js, app.js, index.html, styles.css).
+## Completed and owner-verified
+Stages 1-4, 5B (static data files; 473 ms computer / 886 ms phone) and 6 (form -> ranked report; owner ran the checklist and it behaved as described).
+
+## Stage 7 built (code + simulated-site tests); live run pending
+- ingestion/admission_year.py: decides the current admission year from evidence; previous three years; statuses confirmed / previous_cycle_latest / new_cycle_announced / newer_documents_unreachable / unknown.
+- ingestion/classify.py: cutoff, vacancy position, ACAP list, seat matrix, etc.; round, group (MH / AI / Diploma), year, qualifiers, reasons.
+- ingestion/html_extract.py: links with menu and table context (colspan / rowspan).
+- ingestion/http_client.py: polite fetcher (robots.txt, allow-list of official hosts, no redirects off-list, pacing, limited retries, request cap).
+- ingestion/discover.py: orchestrates discovery, checks reachability with HEAD only, writes data/raw/discovery/latest.json (keeps the last good report if a run fails), step summary.
+- .github/workflows/discover-sources.yml: manual + weekly run.
+- docs/CETCELL_SOURCES.md: what the official portals look like (observed 26 Oct 2026).
 
 ## Verified (automated)
-148 tests pass in six suites: engine 48, loader 14, UI 21 (real page in a simulated browser), Apps Script API 22, exporter 15, schema 28. The UI tests cover: header and test-data banner; empty-form errors; top-5 table with working "Show more suitable choices (6-20)"; all 15 report columns with correct year headings; "Not available" / "Vacancy data unavailable" instead of blanks; tuition never presented as total cost; estimates labelled; explanations and sources per result; honest messages for few/zero results, unknown category, unsupported candidate type; focus handling; double-submit protection; friendly network-failure message and retry; tampered file refused; HTML injection impossible; accessibility basics; print and clear; no data typed by the student is sent anywhere or stored.
-Changes made while building Stage 6: engine now warns when the student's own category has no cutoff list (previously silent); loader gained getManifest().
+80 Stage 7 tests pass (year logic 17, classifier/reader 20, simulated-site discovery 38, workflow file 5): happy path with 41 documents, correct matrix and strict selection preview, robots.txt obeyed, CAPTCHA/password/403/503/timeouts handled, redirects off the allow-list not followed, request cap enforced, unreachable documents not counted as evidence, between-cycles behaviour, missing previous year chased through its own pages, failed run keeps the last good report. The workflow YAML was parsed and checked (a real syntax error was found and fixed).
 
 ## NOT verified
-- How the pages look and feel on real phones/computers (layout and CSS were not seen by me): owner checks per docs/STAGE6_SETUP.md.
-- Real CET Cell data (none used). Real data size and phone speed (Stage 9).
-- Weights/thresholds are uncalibrated; reserved-can-use-Open-seats is an assumption; TFWS/Defence/PWD not applied.
-- Fingerprint check is skipped on browsers without Web Crypto (very old browsers / non-https).
+- The live CET Cell site: my test pages were modelled on what a web page reader showed (menu, CAP page, engineering portal). The real HTML may differ in detail. The GitHub Action run is the real test (owner: docs/STAGE7_SETUP.md).
+- robots.txt of the official hosts has not been read by the project yet.
+- No document has been downloaded or parsed yet (Stages 8-9). Discovering a link is not the same as parsing it.
+- Earlier caveats still apply: no real data in the recommendation engine; uncalibrated weights; reserved-can-use-Open-seats assumption; TFWS/Defence/PWD not applied.
 
-## Known issues / placeholders
-- Seat types, categories, candidate types and branch names are provisional (frontend/config.js and seat_types).
-- Publishing data is a manual command until Stage 14.
-- The results table has 15 columns; on desktop it scrolls sideways inside its box.
+## Open questions (docs/CETCELL_SOURCES.md)
+Which list counts as the Round IV vacancy (provisional position vs after-CAP ACAP list); Diploma lists; how OMS/J&K/Defence candidates appear in the cutoff lists.
 
 ## Next task
-Fix whatever the owner finds in the Stage 6 real-device check, then Stage 7: official CET Cell source discovery and dynamic admission-year detection.
+Owner runs the live discovery; I fix whatever differs from the real site; then Stage 8 (download + archive).
