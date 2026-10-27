@@ -38,6 +38,11 @@ def site(over=None):
     # every document answers HEAD with 200 by default
     import re
     for m in re.finditer(r'href="(https://[^"]+\.pdf)"', fixture("fe2026_home.html")):
-        r[("HEAD", m.group(1))] = PDF
+        u = m.group(1)
+        if "://fe2026.mahacet.org/" in u:      # behaves like the real server: HEAD says 404 although the file exists; a normal request works
+            r[("HEAD", u)] = (404, {"Content-Type": "text/html"}, b"not found")
+            r[("GET", u)] = (206, dict(PDF[1], **{"Content-Range": "bytes 0-0/123456"}), b"%")
+        else:
+            r[("HEAD", u)] = PDF
     r.update(over or {})
     return r

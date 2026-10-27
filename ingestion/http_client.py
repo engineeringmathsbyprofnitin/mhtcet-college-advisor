@@ -65,6 +65,7 @@ class PoliteFetcher:
         self.log, self.count, self.last = [], 0, {}
         self.robots = {}          # host -> (RobotFileParser | None, state)
         self.robots_state = {}    # host -> "allowed_all" | "rules" | "unreadable"
+        self.head_unreliable = set()   # hosts that answer HEAD wrongly (seen live: fe2026.mahacet.org answers 404 to HEAD for PDFs that exist)
 
     # ---- low level
     def _wait(self, host):
@@ -130,9 +131,13 @@ class PoliteFetcher:
         return Response(url, blocked="too_many_redirects")
 
     def head_check(self, url):
-        """Is the file reachable? Uses HEAD; if the server refuses HEAD, asks for just the first byte. Downloads nothing else."""
-        r = self.fetch(url, "HEAD")
-        if r.blocked: return r
-        if r.status in (403, 405, 501):
-            r = self.fetch(url, "GET", headers={"Range": "bytes=0-0"}, max_bytes=1)
-        return r
+        """Is the file reachable? Tries HEAD first. If HEAD is refused or answered 'not found', asks for just the first byte with a
+        normal GET (nothing else is downloaded). A host whose HEAD answers proved wrong is remembered, so later checks go straight to GET."""
+        host = urlparse(url).netloc.lower()
+        if host not in self.head_unreliable:
+            r = self.fetch(url, "HEAD")
+            if r.blocked or r.ok: return r
+            if r.status is None or r.status not in (400, 401, 403, 404, 405, 501): return r      # server trouble: do not guess
+        r2 = self.fetch(url, "GET", headers={"Range": "bytes=0-0"}, max_bytes=1)
+        if host not in self.head_unreliable and r2.status in (200, 206): self.head_unreliable.add(host)
+        return r2

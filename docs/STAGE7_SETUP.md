@@ -20,3 +20,9 @@ This makes GitHub's computers read the official CET Cell pages once, politely, a
 Copy the Summary text (or a screenshot). If the run is red, also copy the line starting with OBSTACLE. Do not worry if something looks different from what I expected: the point of this run is to check my reading of the real site.
 
 Notes: the same job runs automatically every Monday. GitHub switches scheduled jobs off if a repository has no activity for 60 days; pressing Run workflow once switches them back on.
+
+## Re-run after the fix (27 Oct 2026)
+1. Unzip `mhtcet-stage7-fix1.zip` and upload its folders (`ingestion`, `tests`, `docs`) the same way. Same-named files are replaced.
+2. Actions -> Discover official sources -> Run workflow. Wait 3-4 minutes (it is slightly slower now).
+3. In the Summary you should see **"Documents found: 41; unreachable: 0."** and about 48 requests. The year table is unchanged.
+4. Send me the Summary lines again (or just "unreachable: 0").

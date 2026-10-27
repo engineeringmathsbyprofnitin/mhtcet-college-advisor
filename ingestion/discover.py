@@ -123,13 +123,22 @@ def run_discovery(fetcher, today=None, verify=True, history=3, start_url=START_U
         for py in previous_years(cur, history):          # only fetch an older portal if the current one did not list that year
             if not any(d["year"] == py and d["doc_type"] == "cutoff" for d in docs): read_year(py)
 
+        def check(d):
+            if not d["is_file"] or not host_allowed(urlparse(d["url"]).netloc): return
+            r = fetcher.head_check(d["url"])
+            if r.blocked: d["verification"] = {"reachable": None, "note": r.blocked}; return
+            st = r.status
+            reach = True if (r.ok or st == 206) else (False if (st is not None and 400 <= st < 500 and st != 429) else None)   # None = could not tell (server trouble)
+            d["verification"] = {"reachable": reach, "status": st, "content_type": r.headers.get("content-type"), "content_length": r.headers.get("content-length"),
+                                 "last_modified": r.headers.get("last-modified"), "etag": r.headers.get("etag")}
+
         if verify:
-            for d in docs:
-                if not d["is_file"] or not host_allowed(urlparse(d["url"]).netloc): continue
-                r = fetcher.head_check(d["url"])
-                if r.blocked: d["verification"] = {"reachable": None, "note": r.blocked}; continue
-                d["verification"] = {"reachable": bool(r.ok or r.status == 206), "status": r.status, "content_type": r.headers.get("content-type"),
-                                     "content_length": r.headers.get("content-length"), "last_modified": r.headers.get("last-modified"), "etag": r.headers.get("etag")}
+            for d in docs: check(d)
+            for py in previous_years(cur, history):      # listed files that do not open: look for the same year's own pages for another route
+                mine = [d for d in docs if d["year"] == py and d["doc_type"] == "cutoff"]
+                if mine and all((d["verification"] or {}).get("reachable") is False for d in mine):
+                    before = len(docs); read_year(py)
+                    for d in docs[before:]: check(d)
     except BudgetExceeded as e:
         obstacle("", "request_budget_exhausted", str(e)); rep["status"] = "partial"
 
@@ -158,10 +167,14 @@ def _finish(rep, fetcher):
     return rep
 
 
+def _usable(d):
+    return (d.get("verification") or {}).get("reachable") is not False
+
+
 def _matrix(docs):
     m = {}
     for d in docs:
-        if not d["year"]: continue
+        if not d["year"] or not _usable(d): continue
         y = m.setdefault(d["year_label"], {"cutoff": {}, "vacancy_position": [], "vacancy_after_cap": False, "seat_matrix": False})
         if d["doc_type"] == "cutoff" and d["cap_round"]:
             rs = y["cutoff"].setdefault(d["scope"] or "unknown", [])
@@ -178,7 +191,7 @@ def _preview(docs, ay):
     cy = ay.get("current_start_year")
     if cy is None: return None
     def pick(doc_type, rnd, scope=None):
-        c = [d for d in docs if d["year"] == cy and d["doc_type"] == doc_type and d["cap_round"] == rnd and not d["supplementary"] and (scope is None or d["scope"] == scope)]
+        c = [d for d in docs if _usable(d) and d["year"] == cy and d["doc_type"] == doc_type and d["cap_round"] == rnd and not d["supplementary"] and (scope is None or d["scope"] == scope)]
         return [{"url": d["url"], "scope": d["scope"], "qualifiers": d["qualifiers"]} for d in c]
     out = {"year": label(cy), "cutoff_round_used": ay.get("latest_cutoff_round"), "cutoff_documents": {}, "vacancy_round_used": ay.get("vacancy_round"), "vacancy_documents": []}
     for scope in ("MH", "AI"):

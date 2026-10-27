@@ -42,7 +42,9 @@ class Happy(unittest.TestCase):
     def test_notes_tell_the_owner_about_the_look_alike_documents(self):
         t = " ".join(self.rep["notes"]); self.assertIn("ACAP", t); self.assertIn("Supplementary", t); self.assertIn("Diploma", t)
     def test_files_are_checked_for_reachability_but_not_downloaded(self):
-        self.assertTrue(all(c[0] in ("GET", "HEAD") for c in self.tr.calls)); self.assertTrue(all(c[0] == "HEAD" for c in self.tr.calls if c[1].endswith(".pdf")))
+        self.assertTrue(all(c[0] in ("GET", "HEAD") for c in self.tr.calls))
+        for m, u, h in self.tr.calls:                                        # a file is only ever probed: HEAD, or a GET asking for the first byte
+            if u.endswith(".pdf") and m == "GET": self.assertEqual(h.get("Range"), "bytes=0-0", u)
         d = self.rep["documents"][0]; self.assertTrue(d["verification"]["reachable"]); self.assertEqual(d["verification"]["content_type"], "application/pdf"); self.assertEqual(d["verification"]["etag"], '"abc"')
     def test_only_discovered_official_addresses_were_requested(self):
         found = {d["url"] for d in self.rep["documents"]} | {HOME, CAP26, FE26}
@@ -133,6 +135,30 @@ class Reachability(unittest.TestCase):
             if k[0] == "HEAD" and "2026ENGG_" in k[1]: routes[k] = (404, {}, b""); routes[("GET", k[1])] = (404, {}, b"")
         rep, _, _ = run(routes); a = rep["admission_year"]
         self.assertEqual(a["current_label"], "2025-26"); self.assertEqual(a["status"], "newer_documents_unreachable"); self.assertTrue(any("could not be opened" in w for w in a["warnings"]))
+    def test_server_that_wrongly_says_404_to_HEAD_is_handled_and_remembered(self):
+        # this is what the real fe2026.mahacet.org did on the first live run: HEAD 404, normal request fine
+        rep, tr, _ = run()
+        old = [d for d in rep["documents"] if d["year_label"] in ("2023-24", "2024-25", "2025-26")]
+        self.assertEqual(len(old), 26); self.assertTrue(all(d["verification"]["reachable"] for d in old))
+        heads = [u for m, u, h in tr.calls if m == "HEAD" and "://fe2026.mahacet.org/" in u]; self.assertEqual(len(heads), 1)      # learned after the first one
+        self.assertEqual(rep["admission_year"]["warnings"], []); self.assertTrue(all(p["has_cutoffs"] for p in rep["admission_year"]["previous"]))
+    def test_server_trouble_is_unknown_not_unreachable(self):
+        u = "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_MH_CutOff.pdf"
+        rep, tr, _ = run(site({("HEAD", u): (503, {}, b"")}))
+        d = [x for x in rep["documents"] if x["url"] == u][0]; self.assertIsNone(d["verification"]["reachable"])
+        self.assertEqual(rep["matrix"]["2026-27"]["cutoff"]["MH"], ["I", "II", "III", "IV"])          # unknown still counts; only 'does not open' is dropped
+        self.assertEqual([x for x in tr.calls if x[0] == "GET" and x[1] == u], [])                    # no guessing with extra requests on server trouble
+    def test_listed_files_that_do_not_open_are_replaced_by_the_years_own_pages(self):
+        routes = site()
+        for k in list(routes):
+            if "fe2026.mahacet.org/2023/" in k[1]: routes[k] = (404, {}, b"")
+        cap23 = '<html><body><h2>Under Graduate Courses</h2><ul><li><a href="https://fe2023.mahacet.org/StaticPages/HomePage">B.E/ B.Tech</a></li></ul></body></html>'
+        fe23 = '<html><body><ul>' + "".join('<li><a href="https://cappublicdocs2023.blob.core.windows.net/documents/2023ENGG_CAP%d_MH_CutOff.pdf">CAP Round %s MH Cut Off</a></li>' % (n, r) for n, r in ((1, "I"), (2, "II"), (3, "III"))) + '</ul></body></html>'
+        routes[("GET", "https://cetcell.mahacet.org/admissions/")] = html(cap23); routes[("GET", "https://fe2023.mahacet.org/StaticPages/HomePage")] = html(fe23)
+        for n in (1, 2, 3): routes[("HEAD", "https://cappublicdocs2023.blob.core.windows.net/documents/2023ENGG_CAP%d_MH_CutOff.pdf" % n)] = PDF
+        rep, tr, _ = run(routes)
+        self.assertIn("2023-24", rep["portals"]); self.assertEqual(rep["matrix"]["2023-24"]["cutoff"], {"MH": ["I", "II", "III"]})   # only the files that open are counted
+        self.assertTrue(rep["admission_year"]["previous"][2]["has_cutoffs"]); self.assertEqual(rep["status"], "ok")
     def test_no_verify_option_makes_no_head_requests(self):
         rep, tr, _ = run(verify=False); self.assertEqual(tr.urls("HEAD"), []); self.assertIsNone(rep["documents"][0]["verification"])
 

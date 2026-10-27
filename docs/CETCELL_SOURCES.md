@@ -1,4 +1,4 @@
-# What the official CET Cell sources look like (observed 26 Oct 2026)
+# What the official CET Cell sources look like (observed 26-27 Oct 2026)
 
 I read these pages with a web page reader, not with the project's own downloader. Page structure below is what the reader showed; the live GitHub Action run (docs/STAGE7_SETUP.md) is what proves the project's code can read the same pages.
 
@@ -40,3 +40,23 @@ Consequence: for the two older years the "latest round" is Round III. The engine
 1. **Which list is "the Round IV vacancy"?** The brief says "CAP Round IV vacancy position", so the code uses the "Provisional Vacancy Position for CAP Round-IV" list. The ACAP list is kept separately. To be confirmed in Stage 11 (a possible later feature: show ACAP seats as extra information).
 2. **Diploma lists**: not used for first-year admissions unless you decide otherwise.
 3. **Candidate groups**: only MH and AI cutoff lists exist for each round. How "Other Than Maharashtra (OMS)", J&K and Defence candidates appear (they have their own merit lists) will be examined when the documents are read in Stage 9.
+
+## First live run (27 Oct 2026, GitHub Actions) - what it showed
+- Status ok, 47 requests, no obstacles. robots.txt: cetcell.mahacet.org has rules (our requests were allowed); fe2026.mahacet.org and the Azure host have none.
+- The 41 documents, the year/round matrix and the strict selection matched my simulation exactly: current year 2026-27 confirmed, cutoff round IV, vacancy round IV (the "Provisional Vacancy Position for CAP Round-IV" list), previous years 2025-26 (I-IV), 2024-25 (I-III), 2023-24 (I-III).
+- **Bug found by the live run:** the 26 previous-year files showed "404". They do exist (I opened `.../2025/2025ENGG_CAP4_AI_CutOff.pdf`, a 97-page list); the server answers 404 to the HEAD test request but serves a normal request. Fixed: if HEAD fails, the check asks for one byte with a normal request, remembers which hosts behave this way, and treats server trouble as "unknown" rather than "unreachable".
+
+## What the cutoff files contain (read from the first ~40 pages of the 2025-26 CAP IV All India list)
+These points matter for Stage 9 (reading the files) and Stage 10 (matching a student):
+1. **The cutoff is a merit number, with a score in brackets.** Example row: "Merit 17639 (84.6827154) ... Computer Science and Engineering". The bracket is the percentile/score; the number is the rank.
+2. **In the All India list the bracket is not always an MHT-CET percentile.** The "Merit Exam" column says JEE (Main) percentile, NEET score, or MHT-CET percentile depending on the row ("JEE to AI", "NEET-2025 to AI", "MHT-CET to AI"). A student's MHT-CET percentile can only be compared with rows whose exam is MHT-CET.
+3. **Seat type codes** look like GOPENO, GOBCH, LOPENO, GSCH, GNT1H, LNT3O, DEFOBCO: first letter G (general) or L (ladies), then the category, then a last letter H, O or S. I believe H = Home University, O = Other Than Home University, S = State level (to be confirmed from the document's own legend). Which one applies to a student depends on whether the student belongs to the college's home university area. **The form does not ask this yet**; likely a new input ("home university region") is needed. Open question for the owner.
+4. **A 10-digit choice code** identifies each college-branch (first 5 digits = institute code, e.g. 03147). Many rows share one choice code (one per seat type).
+5. **Some rows have no figures** (blank brackets) and the text order in the PDF varies (institute name before or after the code). Missing values must stay missing, and the reader must anchor on the choice code. Stage 9 will be developed against real downloaded files.
+6. I have **not yet looked at the Maharashtra State (MH) lists**; they probably show state merit numbers with MHT-CET percentiles.
+
+## Updated open questions
+1. Which list counts as "the Round IV vacancy" (provisional position vs after-CAP ACAP list).
+2. Diploma lists (not used unless you decide).
+3. How OMS, J&K and Defence candidates appear; and **whether to add a "home university" question to the form** (item 3 above).
+4. How to treat All India list rows whose bracket is a JEE or NEET score (item 2 above).
