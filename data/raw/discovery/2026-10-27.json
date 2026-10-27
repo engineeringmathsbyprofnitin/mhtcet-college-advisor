@@ -10,7 +10,10 @@
   "current_label": "2026-27",
   "current_start_year": 2026,
   "established_years": [
-   2026
+   2026,
+   2025,
+   2024,
+   2023
   ],
   "latest_cutoff_round": "IV",
   "menu_years": [
@@ -579,12 +582,12 @@
    },
    "url": "https://fe2026.mahacet.org/2023/2023SeatMatrix.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"e0d2c4eb0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2023,
    "year_label": "2023-24"
@@ -617,12 +620,12 @@
    },
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP1_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"bf6349e90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2023,
    "year_label": "2023-24"
@@ -655,12 +658,12 @@
    },
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP1_AI_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"dcdb1de90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:11 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2023,
    "year_label": "2023-24"
@@ -693,12 +696,12 @@
    },
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP2_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"6ff38de90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2023,
    "year_label": "2023-24"
@@ -731,12 +734,12 @@
    },
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP2_AI_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"9d41be90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:11 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2023,
    "year_label": "2023-24"
@@ -769,12 +772,12 @@
    },
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"b24585e90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2023,
    "year_label": "2023-24"
@@ -807,12 +810,12 @@
    },
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_AI_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"67a042e90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2023,
    "year_label": "2023-24"
@@ -845,12 +848,12 @@
    },
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff_Diploma.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"6ff38de90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2023,
    "year_label": "2023-24"
@@ -880,12 +883,12 @@
    },
    "url": "https://fe2026.mahacet.org/2024/2024SeatMatrix.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"99d5c0eb0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2024,
    "year_label": "2024-25"
@@ -918,12 +921,12 @@
    },
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP1_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"8f3c54ea0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:13 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2024,
    "year_label": "2024-25"
@@ -956,12 +959,12 @@
    },
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP1_AI_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"1eab6e90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2024,
    "year_label": "2024-25"
@@ -994,12 +997,12 @@
    },
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP2_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"2daeb3ea0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:14 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2024,
    "year_label": "2024-25"
@@ -1032,12 +1035,12 @@
    },
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP2_AI_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"429cae90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2024,
    "year_label": "2024-25"
@@ -1070,12 +1073,12 @@
    },
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"4e2a90eb0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:15 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2024,
    "year_label": "2024-25"
@@ -1108,12 +1111,12 @@
    },
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_AI_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"e59564ea0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:13 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2024,
    "year_label": "2024-25"
@@ -1146,12 +1149,12 @@
    },
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff_Diploma.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"5b83bfea0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:14 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2024,
    "year_label": "2024-25"
@@ -1181,12 +1184,12 @@
    },
    "url": "https://fe2026.mahacet.org/2025/2025SeatMatrix.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"cfe14aef0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:22 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2025,
    "year_label": "2025-26"
@@ -1219,12 +1222,12 @@
    },
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP1_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"b0c738ed0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:18 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2025,
    "year_label": "2025-26"
@@ -1257,12 +1260,12 @@
    },
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP1_AI_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"c3ccadeb0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2025,
    "year_label": "2025-26"
@@ -1295,12 +1298,12 @@
    },
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP2_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"eebf1ec0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2025,
    "year_label": "2025-26"
@@ -1333,12 +1336,12 @@
    },
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP2_AI_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"47c8f0eb0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2025,
    "year_label": "2025-26"
@@ -1371,12 +1374,12 @@
    },
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP3_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"462b25ec0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2025,
    "year_label": "2025-26"
@@ -1409,12 +1412,12 @@
    },
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP3_AI_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"7b7ecec0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2025,
    "year_label": "2025-26"
@@ -1447,12 +1450,12 @@
    },
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"52df5fec0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:17 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2025,
    "year_label": "2025-26"
@@ -1485,12 +1488,12 @@
    },
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_AI_CutOff.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"a2612eec0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2025,
    "year_label": "2025-26"
@@ -1523,18 +1526,18 @@
    },
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff_Diploma.pdf",
    "verification": {
-    "content_length": "103",
-    "content_type": "text/html",
-    "etag": null,
-    "last_modified": null,
-    "reachable": false,
-    "status": 404
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"236b42ec0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:17 GMT",
+    "reachable": true,
+    "status": 206
    },
    "year": 2025,
    "year_label": "2025-26"
   }
  ],
- "generated_at": "2026-10-27T03:33:02Z",
+ "generated_at": "2026-10-27T10:36:24Z",
  "matrix": {
   "2023-24": {
    "cutoff": {
@@ -1654,35 +1657,35 @@
   {
    "error": null,
    "method": "GET",
-   "ms": 128,
+   "ms": 570,
    "status": 200,
    "url": "https://cetcell.mahacet.org/robots.txt"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 1251,
+   "ms": 771,
    "status": 200,
    "url": "https://cetcell.mahacet.org/"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 1295,
+   "ms": 1219,
    "status": 200,
    "url": "https://cetcell.mahacet.org/cap-_2026-27/"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 1090,
+   "ms": 1071,
    "status": 404,
    "url": "https://fe2026.mahacet.org/robots.txt"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 1388,
+   "ms": 1403,
    "status": 200,
    "url": "https://fe2026.mahacet.org/StaticPages/HomePage"
   },
@@ -1696,292 +1699,299 @@
   {
    "error": null,
    "method": "HEAD",
-   "ms": 944,
+   "ms": 945,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_ACAP.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 923,
+   "ms": 947,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 931,
+   "ms": 940,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_MH_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 2395,
+   "ms": 938,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_Diploma_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 942,
+   "ms": 926,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP4.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 930,
+   "ms": 948,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_MH_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 930,
+   "ms": 925,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 923,
+   "ms": 958,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP3.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 933,
+   "ms": 922,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP3_NewInstitute_CourtOder.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 938,
+   "ms": 929,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP2.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 938,
+   "ms": 935,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 918,
+   "ms": 932,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_MH_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 928,
+   "ms": 943,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_MH_CutOff_V1.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 955,
+   "ms": 928,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 917,
+   "ms": 920,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026_fe_seatmatrix_V1.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 985,
+   "ms": 1079,
    "status": 404,
    "url": "https://fe2026.mahacet.org/2023/2023SeatMatrix.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 938,
-   "status": 404,
+   "method": "GET",
+   "ms": 924,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2023/2023SeatMatrix.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 925,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP1_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 950,
-   "status": 404,
+   "method": "GET",
+   "ms": 944,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP1_AI_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 1036,
-   "status": 404,
+   "method": "GET",
+   "ms": 929,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP2_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 934,
-   "status": 404,
+   "method": "GET",
+   "ms": 1137,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP2_AI_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 1104,
-   "status": 404,
+   "method": "GET",
+   "ms": 922,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 957,
-   "status": 404,
+   "method": "GET",
+   "ms": 929,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_AI_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 931,
-   "status": 404,
+   "method": "GET",
+   "ms": 921,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff_Diploma.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 950,
-   "status": 404,
+   "method": "GET",
+   "ms": 936,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024SeatMatrix.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
+   "method": "GET",
    "ms": 932,
-   "status": 404,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP1_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 956,
-   "status": 404,
+   "method": "GET",
+   "ms": 943,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP1_AI_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 923,
-   "status": 404,
+   "method": "GET",
+   "ms": 930,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP2_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 1003,
-   "status": 404,
+   "method": "GET",
+   "ms": 926,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP2_AI_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 1003,
-   "status": 404,
+   "method": "GET",
+   "ms": 923,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 920,
-   "status": 404,
+   "method": "GET",
+   "ms": 953,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_AI_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
+   "method": "GET",
    "ms": 929,
-   "status": 404,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff_Diploma.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 930,
-   "status": 404,
+   "method": "GET",
+   "ms": 945,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025SeatMatrix.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 988,
-   "status": 404,
+   "method": "GET",
+   "ms": 943,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP1_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 964,
-   "status": 404,
+   "method": "GET",
+   "ms": 1001,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP1_AI_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 1090,
-   "status": 404,
+   "method": "GET",
+   "ms": 927,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP2_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 950,
-   "status": 404,
+   "method": "GET",
+   "ms": 922,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP2_AI_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 958,
-   "status": 404,
+   "method": "GET",
+   "ms": 932,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP3_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 1295,
-   "status": 404,
+   "method": "GET",
+   "ms": 950,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP3_AI_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 931,
-   "status": 404,
+   "method": "GET",
+   "ms": 943,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 972,
-   "status": 404,
+   "method": "GET",
+   "ms": 929,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_AI_CutOff.pdf"
   },
   {
    "error": null,
-   "method": "HEAD",
-   "ms": 952,
-   "status": 404,
+   "method": "GET",
+   "ms": 921,
+   "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff_Diploma.pdf"
   }
  ],
- "requests_made": 47,
+ "requests_made": 48,
  "robots": {
   "cappublicdocs2026.blob.core.windows.net": "allowed_all",
   "cetcell.mahacet.org": "rules",
