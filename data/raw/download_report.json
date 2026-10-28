@@ -1,10 +1,10 @@
 {
- "bytes_downloaded": 59831180,
+ "bytes_downloaded": 0,
  "counts": {
-  "new": 17
+  "unchanged": 17
  },
  "deferred": 24,
- "generated_at": "2026-10-28T13:58:31Z",
+ "generated_at": "2026-10-28T14:05:56Z",
  "problems": [],
  "required_missing": [],
  "results": [
@@ -15,7 +15,7 @@
    "note": null,
    "scope": "AI",
    "size_bytes": 516141,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_AI_CutOff.pdf",
    "why": "current year 2026-27 cutoff, CAP Round I (AI)",
    "year_label": "2026-27"
@@ -27,7 +27,7 @@
    "note": null,
    "scope": "AI",
    "size_bytes": 476457,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_AI_CutOff.pdf",
    "why": "current year 2026-27 cutoff, CAP Round II (AI)",
    "year_label": "2026-27"
@@ -39,7 +39,7 @@
    "note": null,
    "scope": "AI",
    "size_bytes": 417679,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_AI_CutOff.pdf",
    "why": "current year 2026-27 cutoff, CAP Round III (AI)",
    "year_label": "2026-27"
@@ -51,7 +51,7 @@
    "note": null,
    "scope": "AI",
    "size_bytes": 389559,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_AI_CutOff.pdf",
    "why": "current year 2026-27 cutoff, CAP Round IV (AI)",
    "year_label": "2026-27"
@@ -63,7 +63,7 @@
    "note": null,
    "scope": "MH",
    "size_bytes": 4258374,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_MH_CutOff_V1.pdf",
    "why": "current year 2026-27 cutoff, CAP Round I (MH)",
    "year_label": "2026-27"
@@ -75,7 +75,7 @@
    "note": null,
    "scope": "MH",
    "size_bytes": 4886602,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_MH_CutOff.pdf",
    "why": "current year 2026-27 cutoff, CAP Round II (MH)",
    "year_label": "2026-27"
@@ -87,7 +87,7 @@
    "note": null,
    "scope": "MH",
    "size_bytes": 3719450,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_MH_CutOff.pdf",
    "why": "current year 2026-27 cutoff, CAP Round III (MH)",
    "year_label": "2026-27"
@@ -99,7 +99,7 @@
    "note": null,
    "scope": "MH",
    "size_bytes": 3239980,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_MH_CutOff.pdf",
    "why": "current year 2026-27 cutoff, CAP Round IV (MH)",
    "year_label": "2026-27"
@@ -111,7 +111,7 @@
    "note": null,
    "scope": null,
    "size_bytes": 11560393,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026_fe_seatmatrix_V1.pdf",
    "why": "current year seat matrix (sanctioned seats, not vacancy)",
    "year_label": "2026-27"
@@ -123,7 +123,7 @@
    "note": null,
    "scope": null,
    "size_bytes": 9652347,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP3.pdf",
    "why": "current year vacancy position, CAP Round III",
    "year_label": "2026-27"
@@ -135,7 +135,7 @@
    "note": null,
    "scope": null,
    "size_bytes": 9889564,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP4.pdf",
    "why": "current year vacancy position, CAP Round IV",
    "year_label": "2026-27"
@@ -147,7 +147,7 @@
    "note": null,
    "scope": "AI",
    "size_bytes": 390782,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_AI_CutOff.pdf",
    "why": "previous year 2025-26 cutoff, final round IV (AI)",
    "year_label": "2025-26"
@@ -159,7 +159,7 @@
    "note": null,
    "scope": "MH",
    "size_bytes": 3064798,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff.pdf",
    "why": "previous year 2025-26 cutoff, final round IV (MH)",
    "year_label": "2025-26"
@@ -171,7 +171,7 @@
    "note": null,
    "scope": "AI",
    "size_bytes": 401271,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_AI_CutOff.pdf",
    "why": "previous year 2024-25 cutoff, final round III (AI)",
    "year_label": "2024-25"
@@ -183,7 +183,7 @@
    "note": null,
    "scope": "MH",
    "size_bytes": 3517458,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff.pdf",
    "why": "previous year 2024-25 cutoff, final round III (MH)",
    "year_label": "2024-25"
@@ -195,7 +195,7 @@
    "note": null,
    "scope": "AI",
    "size_bytes": 432025,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_AI_CutOff.pdf",
    "why": "previous year 2023-24 cutoff, final round III (AI)",
    "year_label": "2023-24"
@@ -207,7 +207,7 @@
    "note": null,
    "scope": "MH",
    "size_bytes": 3018300,
-   "status": "new",
+   "status": "unchanged",
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff.pdf",
    "why": "previous year 2023-24 cutoff, final round III (MH)",
    "year_label": "2023-24"
