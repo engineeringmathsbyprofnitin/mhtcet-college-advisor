@@ -21,8 +21,7 @@ Copy the Summary text (or a screenshot). If the run is red, also copy the line s
 
 Notes: the same job runs automatically every Monday. GitHub switches scheduled jobs off if a repository has no activity for 60 days; pressing Run workflow once switches them back on.
 
-## Re-run after the fix (27 Oct 2026)
-1. Unzip `mhtcet-stage7-fix1.zip` and upload its folders (`ingestion`, `tests`, `docs`) the same way. Same-named files are replaced.
-2. Actions -> Discover official sources -> Run workflow. Wait 3-4 minutes (it is slightly slower now).
-3. In the Summary you should see **"Documents found: 41; unreachable: 0."** and about 48 requests. The year table is unchanged.
-4. Send me the Summary lines again (or just "unreachable: 0").
+## Final update (27 Oct 2026): clean summary page, real file sizes, newer GitHub software
+1. Unzip `mhtcet-stage7-fix2.zip` and upload its folders `ingestion`, `tests` and `docs` as before (same-named files are replaced).
+2. Update the workflow file by hand (GitHub hides `.github` from uploads on some computers): in your repository open `.github/workflows/discover-sources.yml`, click the pencil icon (Edit), select all, paste the new text from the zip file `.github/workflows/discover-sources.yml`, click **Commit changes**.
+3. Actions -> Discover official sources -> Run workflow. The Summary page should now show **one** report only (no "failed" report), and the yellow "Node.js 20 is deprecated" warning should be gone.

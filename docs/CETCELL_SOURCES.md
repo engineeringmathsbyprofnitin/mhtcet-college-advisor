@@ -46,6 +46,8 @@ Consequence: for the two older years the "latest round" is Round III. The engine
 - The 41 documents, the year/round matrix and the strict selection matched my simulation exactly: current year 2026-27 confirmed, cutoff round IV, vacancy round IV (the "Provisional Vacancy Position for CAP Round-IV" list), previous years 2025-26 (I-IV), 2024-25 (I-III), 2023-24 (I-III).
 - **Bug found by the live run:** the 26 previous-year files showed "404". They do exist (I opened `.../2025/2025ENGG_CAP4_AI_CutOff.pdf`, a 97-page list); the server answers 404 to the HEAD test request but serves a normal request. Fixed: if HEAD fails, the check asks for one byte with a normal request, remembers which hosts behave this way, and treats server trouble as "unknown" rather than "unreachable".
 
+- **Second live run (27 Oct 2026):** status ok, 48 requests, 41 documents, 0 unreachable; the first fe2026 file check answered HEAD 404, the next 26 went straight to the one-byte request, as designed.
+
 ## What the cutoff files contain (read from the first ~40 pages of the 2025-26 CAP IV All India list)
 These points matter for Stage 9 (reading the files) and Stage 10 (matching a student):
 1. **The cutoff is a merit number, with a score in brackets.** Example row: "Merit 17639 (84.6827154) ... Computer Science and Engineering". The bracket is the percentile/score; the number is the rank.

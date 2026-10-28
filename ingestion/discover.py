@@ -129,7 +129,10 @@ def run_discovery(fetcher, today=None, verify=True, history=3, start_url=START_U
             if r.blocked: d["verification"] = {"reachable": None, "note": r.blocked}; return
             st = r.status
             reach = True if (r.ok or st == 206) else (False if (st is not None and 400 <= st < 500 and st != 429) else None)   # None = could not tell (server trouble)
-            d["verification"] = {"reachable": reach, "status": st, "content_type": r.headers.get("content-type"), "content_length": r.headers.get("content-length"),
+            cl, cr = r.headers.get("content-length"), r.headers.get("content-range", "")
+            m = re.search(r"/(\d+)\s*$", cr)
+            size = int(m.group(1)) if m else (int(cl) if (st == 200 and cl and cl.isdigit()) else None)    # a 206 one-byte probe reports 1 byte in Content-Length; the real size is in Content-Range
+            d["verification"] = {"reachable": reach, "status": st, "content_type": r.headers.get("content-type"), "size_bytes": size, "content_length": cl,
                                  "last_modified": r.headers.get("last-modified"), "etag": r.headers.get("etag")}
 
         if verify:
@@ -230,6 +233,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--out", default="data/raw/discovery"); ap.add_argument("--today"); ap.add_argument("--no-verify", action="store_true")
     ap.add_argument("--max-requests", type=int, default=150); ap.add_argument("--delay", type=float, default=1.0)
+    ap.add_argument("--github-summary", action="store_true", help="also append the readable summary to the GitHub run page (only the real run uses this)")
     a = ap.parse_args(argv)
     today = date.fromisoformat(a.today) if a.today else date.today()
     rep = run_discovery(PoliteFetcher(min_delay=a.delay, max_requests=a.max_requests), today, verify=not a.no_verify)
@@ -241,7 +245,7 @@ def main(argv=None):
         open(os.path.join(a.out, "latest.json"), "w", encoding="utf-8").write(text)
         open(os.path.join(a.out, "%s.json" % today.isoformat()), "w", encoding="utf-8").write(text)
     md = render_markdown(rep); print(md)
-    summ = os.environ.get("GITHUB_STEP_SUMMARY")
+    summ = os.environ.get("GITHUB_STEP_SUMMARY") if a.github_summary else None
     if summ: open(summ, "a", encoding="utf-8").write(md + "\n")
     return 0 if rep["status"] != "failed" else 2
 

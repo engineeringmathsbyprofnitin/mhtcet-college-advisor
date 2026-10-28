@@ -17,5 +17,13 @@ class T(unittest.TestCase):
         self.assertLess([i for i, n in enumerate(names) if "Self-tests" in n][0], [i for i, n in enumerate(names) if n.startswith("Discover sources")][0])
     def test_report_is_saved_even_if_discovery_fails(self):
         save = [s for s in self.w["jobs"]["discover"]["steps"] if "Save the report" in s.get("name", "")][0]; self.assertEqual(save.get("if"), "always()")
+    def test_only_the_real_run_writes_the_run_page_summary(self):
+        steps = {s.get("name", ""): s for s in self.w["jobs"]["discover"]["steps"]}
+        real = [s for n, s in steps.items() if n.startswith("Discover sources")][0]; tests = [s for n, s in steps.items() if n.startswith("Self-tests")][0]
+        self.assertIn("--github-summary", real["run"]); self.assertNotIn("--github-summary", tests["run"])
+    def test_pinned_runner_and_current_action_versions(self):
+        self.assertNotIn("latest", self.w["jobs"]["discover"]["runs-on"])
+        uses = [s["uses"] for s in self.w["jobs"]["discover"]["steps"] if "uses" in s]
+        for u in uses: self.assertNotRegex(u, r"@v[1-4]$", u)       # v1-v4 of these actions run on the retired Node 20
     def test_has_a_timeout_and_no_overlapping_runs(self): self.assertLessEqual(self.w["jobs"]["discover"]["timeout-minutes"], 30); self.assertIn("concurrency", self.w)
 if __name__ == "__main__": unittest.main()

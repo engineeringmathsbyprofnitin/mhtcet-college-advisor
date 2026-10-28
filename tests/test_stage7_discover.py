@@ -142,6 +142,9 @@ class Reachability(unittest.TestCase):
         self.assertEqual(len(old), 26); self.assertTrue(all(d["verification"]["reachable"] for d in old))
         heads = [u for m, u, h in tr.calls if m == "HEAD" and "://fe2026.mahacet.org/" in u]; self.assertEqual(len(heads), 1)      # learned after the first one
         self.assertEqual(rep["admission_year"]["warnings"], []); self.assertTrue(all(p["has_cutoffs"] for p in rep["admission_year"]["previous"]))
+    def test_real_file_sizes_are_recorded_from_both_kinds_of_check(self):
+        rep, _, _ = run(); sizes = {d["verification"]["size_bytes"] for d in rep["documents"]}
+        self.assertEqual(sizes, {123456})                                   # 200/HEAD gives Content-Length, 206 gives the total in Content-Range, never '1 byte'
     def test_server_trouble_is_unknown_not_unreachable(self):
         u = "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_MH_CutOff.pdf"
         rep, tr, _ = run(site({("HEAD", u): (503, {}, b"")}))
@@ -182,10 +185,10 @@ class Seasons(unittest.TestCase):
         self.assertNotIn("https://cetcell.mahacet.org/cap-_2025-26/", tr.urls())          # only the missing year was chased
 
 class Cli(unittest.TestCase):
-    def _main(self, routes, out, today="2026-10-26"):
+    def _main(self, routes, out, today="2026-10-26", flags=()):
         clock = Clock(); tr = FakeTransport(routes)
         orig = D.PoliteFetcher; D.PoliteFetcher = lambda **kw: PoliteFetcher(tr, sleep=clock.sleep, clock=clock.now, **kw)
-        try: return D.main(["--out", out, "--today", today])
+        try: return D.main(["--out", out, "--today", today] + list(flags))
         finally: D.PoliteFetcher = orig
     def test_good_run_writes_latest_and_dated_report(self):
         out = tempfile.mkdtemp(); self.assertEqual(self._main(site(), out), 0)
@@ -196,7 +199,13 @@ class Cli(unittest.TestCase):
         self.assertEqual(open(os.path.join(out, "latest.json")).read(), before); self.assertTrue(os.path.exists(os.path.join(out, "last_failed.json"))); self.assertFalse(os.path.exists(os.path.join(out, "2026-10-27.json")))
     def test_github_step_summary_is_written_when_available(self):
         out = tempfile.mkdtemp(); sm = os.path.join(out, "summary.md"); os.environ["GITHUB_STEP_SUMMARY"] = sm
-        try: self._main(site(), out)
+        try: self._main(site(), out, flags=["--github-summary"])
         finally: del os.environ["GITHUB_STEP_SUMMARY"]
         self.assertIn("Current admission year:** 2026-27", open(sm).read())
+    def test_self_tests_can_never_pollute_the_real_run_page(self):
+        # bug seen live: tests that pretend the site is down wrote 'failed' reports into the real GitHub summary page
+        out = tempfile.mkdtemp(); sm = os.path.join(out, "summary.md"); os.environ["GITHUB_STEP_SUMMARY"] = sm
+        try: self._main(site(), out); self._main(site({("GET", HOME): (500, {}, b"")}), out, "2026-10-27")
+        finally: del os.environ["GITHUB_STEP_SUMMARY"]
+        self.assertFalse(os.path.exists(sm))
 if __name__ == "__main__": unittest.main()
