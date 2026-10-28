@@ -11,7 +11,7 @@ class T(unittest.TestCase):
         self.w = yaml.safe_load(self.text); self.on = self.w.get("on", self.w.get(True))
     def test_runs_by_hand_and_on_a_schedule(self): self.assertIn("workflow_dispatch", self.on); self.assertTrue(self.on["schedule"][0]["cron"])
     def test_only_needed_permission_and_no_secrets(self):
-        self.assertEqual(self.w["permissions"], {"contents": "write"}); self.assertNotIn("secrets.", self.text); self.assertNotIn("pull_request_target", self.text)
+        import re; self.assertEqual(self.w["permissions"], {"contents": "write"}); self.assertTrue(set(re.findall(r"secrets\.([A-Za-z_]+)", self.text)) <= {"GITHUB_TOKEN"}); self.assertNotIn("pull_request_target", self.text)      # only GitHub's own built-in token, nothing else
     def test_runs_offline_tests_before_touching_the_website(self):
         names = [s.get("name", s.get("uses", "")) for s in self.w["jobs"]["discover"]["steps"]]
         self.assertLess([i for i, n in enumerate(names) if "Self-tests" in n][0], [i for i, n in enumerate(names) if n.startswith("Discover sources")][0])
@@ -25,5 +25,5 @@ class T(unittest.TestCase):
         self.assertNotIn("latest", self.w["jobs"]["discover"]["runs-on"])
         uses = [s["uses"] for s in self.w["jobs"]["discover"]["steps"] if "uses" in s]
         for u in uses: self.assertNotRegex(u, r"@v[1-4]$", u)       # v1-v4 of these actions run on the retired Node 20
-    def test_has_a_timeout_and_no_overlapping_runs(self): self.assertLessEqual(self.w["jobs"]["discover"]["timeout-minutes"], 30); self.assertIn("concurrency", self.w)
+    def test_has_a_timeout_and_no_overlapping_runs(self): self.assertLessEqual(self.w["jobs"]["discover"]["timeout-minutes"], 60); self.assertIn("concurrency", self.w)
 if __name__ == "__main__": unittest.main()

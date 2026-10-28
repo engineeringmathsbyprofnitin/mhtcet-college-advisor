@@ -1,30 +1,24 @@
 # Project status
 
 ## Completed and owner-verified
-Stages 1-4, 5B (static data files; 473 ms computer / 886 ms phone) and 6 (form -> ranked report; owner ran the checklist and it behaved as described).
+Stages 1-4, 5B, 6 and 7 (live discovery on the real CET Cell site: 2026-27 confirmed, 41 documents, 0 unreachable).
 
-## Stage 7 DONE and verified live (27 Oct 2026)
-- ingestion/admission_year.py: decides the current admission year from evidence; previous three years; statuses confirmed / previous_cycle_latest / new_cycle_announced / newer_documents_unreachable / unknown.
-- ingestion/classify.py: cutoff, vacancy position, ACAP list, seat matrix, etc.; round, group (MH / AI / Diploma), year, qualifiers, reasons.
-- ingestion/html_extract.py: links with menu and table context (colspan / rowspan).
-- ingestion/http_client.py: polite fetcher (robots.txt, allow-list of official hosts, no redirects off-list, pacing, limited retries, request cap).
-- ingestion/discover.py: orchestrates discovery, checks reachability with HEAD only, writes data/raw/discovery/latest.json (keeps the last good report if a run fails), step summary.
-- .github/workflows/discover-sources.yml: manual + weekly run.
-- docs/CETCELL_SOURCES.md: what the official portals look like (observed 26 Oct 2026).
+## Stage 8 built (code + simulated-site tests); live run pending
+- ingestion/policy.py: which documents are needed and why (17 files, about 57 MB measured from the real report).
+- ingestion/download.py: polite download, change detection (size + ETag/Last-Modified), content checks (complete, right type, size limits), SHA-256 fingerprint, versions, never replaces a good file with a bad one.
+- ingestion/archive.py: manifest (data/raw/manifest.json), content-based file names, upload plan / confirm / verify.
+- .github/workflows/discover-sources.yml: discover -> download -> store originals in GitHub Releases (one per year) -> save reports; weekly + manual, optional force.
+- docs/RAW_ARCHIVE.md: design, limits (checked against GitHub's documentation), risks.
 
 ## Verified (automated)
-87 Stage 7 tests pass (year logic 17, classifier/reader 20, simulated-site discovery 43, workflow file 7): happy path with 41 documents, correct matrix and strict selection preview, robots.txt obeyed, CAPTCHA/password/403/503/timeouts handled, redirects off the allow-list not followed, request cap enforced, unreachable documents not counted as evidence, between-cycles behaviour, missing previous year chased through its own pages, failed run keeps the last good report. The workflow YAML was parsed and checked (a real syntax error was found and fixed).
-
-## Live result (owner ran the GitHub Action)
-Status ok, 47 requests, no obstacles, robots.txt read and obeyed; 41 documents found exactly as predicted; current year 2026-27 confirmed, cutoff round IV, vacancy round IV; previous years 2025-26 / 2024-25 / 2023-24. Bug found: previous-year files reported 404 because that server answers 404 to HEAD requests; fixed with a one-byte GET fallback (tests reproduce it). Second live run confirmed the fix: status ok, 48 requests, 41 documents, 0 unreachable (15 opened by the quick check, 26 by the one-byte fallback).
-A second defect was found from the run page: the self-tests (which pretend the site is down) had been writing their pretend 'failed' reports into the real GitHub summary page. Fixed: the summary is now written only by the real run (`--github-summary`), with a test. The report now also records each file's true size (needed to plan Stage 8 downloads), and the workflow uses current action versions on a pinned Ubuntu 24.04 runner.
+146 Python tests pass across Stages 7 and 8 (Stage 8: 12 policy, 39 download/archive, 8 workflow): first run archives 17 files with safe names and records address, meaning and fingerprint; a second run downloads nothing; a replaced file becomes a second version with the old one kept and a CHANGED alert; same bytes with new validators are not a change; a file whose earlier upload failed is fetched again; identical content at two addresses stored once; truncated downloads, web pages in place of PDFs, wrong signatures, missing end markers, empty replies, 404s, repeated 503s, robots.txt refusals, file-size and total-size limits and the request budget all fail safely without damaging earlier good copies; manifest is deterministic and written atomically; file names cannot escape their folder; the workflow uses only GitHub's built-in token, never overwrites an original, never commits original files to git.
 
 ## NOT verified
-- No document has been downloaded or parsed yet (Stages 8-9). Discovering a link is not the same as parsing it.
-- Earlier caveats still apply: no real data in the recommendation engine; uncalibrated weights; reserved-can-use-Open-seats assumption; TFWS/Defence/PWD not applied.
+- The real servers: whether the real PDFs pass the content checks (complete-file and PDF-signature checks), whether Last-Modified/ETag are honest on the fe2026 server, upload to GitHub Releases from the Action. The first live run (docs/STAGE8_SETUP.md) tests all of this.
+- Nothing has been read inside the documents yet (Stage 9). Earlier caveats still apply: no real data in the recommendation engine, uncalibrated weights, reserved-can-use-Open-seats assumption, TFWS/Defence/PWD not applied.
 
 ## Open questions (docs/CETCELL_SOURCES.md)
-Which list counts as the Round IV vacancy (provisional position vs after-CAP ACAP list); Diploma lists; how OMS/J&K/Defence candidates appear in the cutoff lists.
+Which list counts as the Round IV vacancy; Diploma lists; OMS/J&K/Defence; whether to add a home-university question to the form; JEE/NEET-based All India rows.
 
 ## Next task
-Owner runs the live discovery; I fix whatever differs from the real site; then Stage 8 (download + archive).
+Owner runs the live archive twice; I fix anything it shows; then Stage 9 (read the PDFs into tables).
