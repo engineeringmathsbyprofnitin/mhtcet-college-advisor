@@ -1,0 +1,10 @@
+.env
+*.key
+secrets*
+__pycache__/
+.DS_Store
+# Stage 8: original documents live in GitHub Releases, not in git
+data/raw/files/
+plan.txt
+uploaded.txt
+*.tmp
