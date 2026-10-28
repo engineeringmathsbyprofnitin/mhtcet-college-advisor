@@ -1,0 +1,764 @@
+{
+ "documents": {
+  "17a52eece95e": {
+   "cap_round": "II",
+   "confidence": "high",
+   "current_sha256": "6815ec9c7391e7924e73f5d8d109cef703620d4df9ad126b95e4220fd6c5e6a4",
+   "doc_type": "cutoff",
+   "file_name": "2026ENGG_CAP2_AI_CutOff.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "17a52eece95e",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "CAP Round II AI Cut Off",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "scope": "AI",
+   "selected_because": "current year 2026-27 cutoff, CAP Round II (AI)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_AI_CutOff.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "0x8DEF90C6D4ED580",
+     "http_status": 200,
+     "last_modified": "Thu, 13 Aug 2026 07:28:10 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "6815ec9c7391e7924e73f5d8d109cef703620d4df9ad126b95e4220fd6c5e6a4",
+     "size_bytes": 476457
+    }
+   ],
+   "year_label": "2026-27"
+  },
+  "1c34806eed76": {
+   "cap_round": "IV",
+   "confidence": "high",
+   "current_sha256": "b3fc6ce1a4cebd44c4b118fd78407deaf30e6d718092cdba05b20b3c31d48da1",
+   "doc_type": "vacancy_position",
+   "file_name": "FE2026_Vacancy_For_CAP4.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "1c34806eed76",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "Provisional Vacancy Position for CAP Round-IV",
+   "portal_year": "2026-27",
+   "qualifiers": [
+    "provisional"
+   ],
+   "scope": null,
+   "selected_because": "current year vacancy position, CAP Round IV",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP4.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "0x8DF05A63DC83508",
+     "http_status": 200,
+     "last_modified": "Sat, 29 Aug 2026 08:19:26 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "b3fc6ce1a4cebd44c4b118fd78407deaf30e6d718092cdba05b20b3c31d48da1",
+     "size_bytes": 9889564
+    }
+   ],
+   "year_label": "2026-27"
+  },
+  "3c0ae32e50b5": {
+   "cap_round": "III",
+   "confidence": "high",
+   "current_sha256": "bb8add06029af9cd672094c18d30c2c512ddd9d23fe0cd1cd1e4afd034bb122b",
+   "doc_type": "cutoff",
+   "file_name": "2026ENGG_CAP3_AI_CutOff.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "3c0ae32e50b5",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "CAP Round III AI Cut Off",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "scope": "AI",
+   "selected_because": "current year 2026-27 cutoff, CAP Round III (AI)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_AI_CutOff.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "0x8DF01B28AB11DF8",
+     "http_status": 200,
+     "last_modified": "Mon, 24 Aug 2026 07:37:25 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "bb8add06029af9cd672094c18d30c2c512ddd9d23fe0cd1cd1e4afd034bb122b",
+     "size_bytes": 417679
+    }
+   ],
+   "year_label": "2026-27"
+  },
+  "5cca111ab19e": {
+   "cap_round": null,
+   "confidence": "high",
+   "current_sha256": "2f89945c0f368e340471e5d8482ed5a75664c41d76083fef363971630ed40e7a",
+   "doc_type": "seat_matrix",
+   "file_name": "2026_fe_seatmatrix_V1.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "5cca111ab19e",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "Institute-wise Category-wise Seats (Seat Matrix) for CAP Round-I",
+   "portal_year": "2026-27",
+   "qualifiers": [
+    "version_1"
+   ],
+   "scope": null,
+   "selected_because": "current year seat matrix (sanctioned seats, not vacancy)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026_fe_seatmatrix_V1.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "0x8DEECA2596ADDC8",
+     "http_status": 200,
+     "last_modified": "Tue, 28 Jul 2026 12:18:36 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "2f89945c0f368e340471e5d8482ed5a75664c41d76083fef363971630ed40e7a",
+     "size_bytes": 11560393
+    }
+   ],
+   "year_label": "2026-27"
+  },
+  "72d088abe5f8": {
+   "cap_round": "III",
+   "confidence": "high",
+   "current_sha256": "9db0899eaf0cd73a8bb00d065a06a434c9b949f05e8713d875a9daaa7172f18c",
+   "doc_type": "cutoff",
+   "file_name": "2024ENGG_CAP3_CutOff.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "72d088abe5f8",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "scope": "MH",
+   "selected_because": "previous year 2024-25 cutoff, final round III (MH)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "\"4e2a90eb0add1:0\"",
+     "http_status": 200,
+     "last_modified": "Thu, 02 Jul 2026 08:58:15 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "9db0899eaf0cd73a8bb00d065a06a434c9b949f05e8713d875a9daaa7172f18c",
+     "size_bytes": 3517458
+    }
+   ],
+   "year_label": "2024-25"
+  },
+  "7e22f7987d1a": {
+   "cap_round": "III",
+   "confidence": "high",
+   "current_sha256": "0bedd926581d76eb4d1278fa36cc54554370c43196885dbb522b664e8691afed",
+   "doc_type": "cutoff",
+   "file_name": "2023ENGG_CAP3_CutOff.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "7e22f7987d1a",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "scope": "MH",
+   "selected_because": "previous year 2023-24 cutoff, final round III (MH)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "\"b24585e90add1:0\"",
+     "http_status": 200,
+     "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "0bedd926581d76eb4d1278fa36cc54554370c43196885dbb522b664e8691afed",
+     "size_bytes": 3018300
+    }
+   ],
+   "year_label": "2023-24"
+  },
+  "849259897545": {
+   "cap_round": "IV",
+   "confidence": "high",
+   "current_sha256": "58ca7fe5ca89dc7a4ac559f5efdd34804a62333d51ca2736ec6389bdd09471ac",
+   "doc_type": "cutoff",
+   "file_name": "2025ENGG_CAP4_CutOff.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "849259897545",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "scope": "MH",
+   "selected_because": "previous year 2025-26 cutoff, final round IV (MH)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "\"52df5fec0add1:0\"",
+     "http_status": 200,
+     "last_modified": "Thu, 02 Jul 2026 08:58:17 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "58ca7fe5ca89dc7a4ac559f5efdd34804a62333d51ca2736ec6389bdd09471ac",
+     "size_bytes": 3064798
+    }
+   ],
+   "year_label": "2025-26"
+  },
+  "894129b129e2": {
+   "cap_round": "IV",
+   "confidence": "high",
+   "current_sha256": "2d9546975769c81f2de04cfba265424f0a083851aee1ac367b82ec58bf3ba68e",
+   "doc_type": "cutoff",
+   "file_name": "2025ENGG_CAP4_AI_CutOff.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "894129b129e2",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "scope": "AI",
+   "selected_because": "previous year 2025-26 cutoff, final round IV (AI)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_AI_CutOff.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "\"a2612eec0add1:0\"",
+     "http_status": 200,
+     "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "2d9546975769c81f2de04cfba265424f0a083851aee1ac367b82ec58bf3ba68e",
+     "size_bytes": 390782
+    }
+   ],
+   "year_label": "2025-26"
+  },
+  "a3fbbeb1922f": {
+   "cap_round": "III",
+   "confidence": "high",
+   "current_sha256": "529503df69ab95f182264dd29dc2a2e46f4ec6df548f954d0b9e87cf7901ad6e",
+   "doc_type": "vacancy_position",
+   "file_name": "FE2026_Vacancy_For_CAP3.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "a3fbbeb1922f",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "Provisional Vacancy Position for CAP Round-III",
+   "portal_year": "2026-27",
+   "qualifiers": [
+    "provisional"
+   ],
+   "scope": null,
+   "selected_because": "current year vacancy position, CAP Round III",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP3.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "0x8DEFE29EFBBE880",
+     "http_status": 200,
+     "last_modified": "Wed, 19 Aug 2026 19:42:00 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "529503df69ab95f182264dd29dc2a2e46f4ec6df548f954d0b9e87cf7901ad6e",
+     "size_bytes": 9652347
+    }
+   ],
+   "year_label": "2026-27"
+  },
+  "a77a897d9812": {
+   "cap_round": "III",
+   "confidence": "high",
+   "current_sha256": "112ff9fd5224d9fb704db2ce0de37947ae626680c0ebc1bcd00ad0fd653a3014",
+   "doc_type": "cutoff",
+   "file_name": "2026ENGG_CAP3_MH_CutOff.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "a77a897d9812",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "CAP Round III MH Cut Off",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "scope": "MH",
+   "selected_because": "current year 2026-27 cutoff, CAP Round III (MH)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_MH_CutOff.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "0x8DF01B2B5DAF659",
+     "http_status": 200,
+     "last_modified": "Mon, 24 Aug 2026 07:38:37 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "112ff9fd5224d9fb704db2ce0de37947ae626680c0ebc1bcd00ad0fd653a3014",
+     "size_bytes": 3719450
+    }
+   ],
+   "year_label": "2026-27"
+  },
+  "aa56f55ffb44": {
+   "cap_round": "IV",
+   "confidence": "high",
+   "current_sha256": "8fb2c6dfef0ef9d3c71087167c0b79898d144e7221e7d51392eceddbaf4aa1aa",
+   "doc_type": "cutoff",
+   "file_name": "2026ENGG_CAP4_AI_CutOff.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "aa56f55ffb44",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "CAP Round IV AI Cut Off",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "scope": "AI",
+   "selected_because": "current year 2026-27 cutoff, CAP Round IV (AI)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_AI_CutOff.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "0x8DF099746E88195",
+     "http_status": 200,
+     "last_modified": "Thu, 03 Sep 2026 08:42:24 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "8fb2c6dfef0ef9d3c71087167c0b79898d144e7221e7d51392eceddbaf4aa1aa",
+     "size_bytes": 389559
+    }
+   ],
+   "year_label": "2026-27"
+  },
+  "b591eb313bed": {
+   "cap_round": "III",
+   "confidence": "high",
+   "current_sha256": "51e9ce347ce527fdc626ba8acc42e63af59b158fe0bf431dc1ff90c4285211b4",
+   "doc_type": "cutoff",
+   "file_name": "2023ENGG_CAP3_AI_CutOff.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "b591eb313bed",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "scope": "AI",
+   "selected_because": "previous year 2023-24 cutoff, final round III (AI)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_AI_CutOff.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "\"67a042e90add1:0\"",
+     "http_status": 200,
+     "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "51e9ce347ce527fdc626ba8acc42e63af59b158fe0bf431dc1ff90c4285211b4",
+     "size_bytes": 432025
+    }
+   ],
+   "year_label": "2023-24"
+  },
+  "c34f07d51b97": {
+   "cap_round": "I",
+   "confidence": "high",
+   "current_sha256": "9c89832627f09c01330b44168d8e1f5321f74181b0b461ced0fdc4f4f0946f85",
+   "doc_type": "cutoff",
+   "file_name": "2026ENGG_CAP1_AI_CutOff.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "c34f07d51b97",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "CAP Round I AI Cutoff",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "scope": "AI",
+   "selected_because": "current year 2026-27 cutoff, CAP Round I (AI)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_AI_CutOff.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "0x8DEF09D8238CABB",
+     "http_status": 200,
+     "last_modified": "Sun, 02 Aug 2026 13:54:01 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "9c89832627f09c01330b44168d8e1f5321f74181b0b461ced0fdc4f4f0946f85",
+     "size_bytes": 516141
+    }
+   ],
+   "year_label": "2026-27"
+  },
+  "cfcfe0bfaad1": {
+   "cap_round": "II",
+   "confidence": "high",
+   "current_sha256": "8b7c41c0a52cf6278ae7fecb27d1d452d832d00ceb085e252c5b7c9029191427",
+   "doc_type": "cutoff",
+   "file_name": "2026ENGG_CAP2_MH_CutOff.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "cfcfe0bfaad1",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "CAP Round II MH Cut Off",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "scope": "MH",
+   "selected_because": "current year 2026-27 cutoff, CAP Round II (MH)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_MH_CutOff.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "0x8DEF90C96D139A2",
+     "http_status": 200,
+     "last_modified": "Thu, 13 Aug 2026 07:29:19 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "8b7c41c0a52cf6278ae7fecb27d1d452d832d00ceb085e252c5b7c9029191427",
+     "size_bytes": 4886602
+    }
+   ],
+   "year_label": "2026-27"
+  },
+  "d182d9fde638": {
+   "cap_round": "I",
+   "confidence": "high",
+   "current_sha256": "c8e0b040da945bf58a28b22221946b2b1b0cbc5065d30b0f6867919c552fe1f3",
+   "doc_type": "cutoff",
+   "file_name": "2026ENGG_CAP1_MH_CutOff_V1.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "d182d9fde638",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "CAP Round I MH CutOff",
+   "portal_year": "2026-27",
+   "qualifiers": [
+    "version_1"
+   ],
+   "scope": "MH",
+   "selected_because": "current year 2026-27 cutoff, CAP Round I (MH)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_MH_CutOff_V1.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "0x8DEF622A5CF9F12",
+     "http_status": 200,
+     "last_modified": "Sun, 09 Aug 2026 14:29:40 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "c8e0b040da945bf58a28b22221946b2b1b0cbc5065d30b0f6867919c552fe1f3",
+     "size_bytes": 4258374
+    }
+   ],
+   "year_label": "2026-27"
+  },
+  "de5db3abba15": {
+   "cap_round": "IV",
+   "confidence": "high",
+   "current_sha256": "84c5f413530e0b877090465861b986fff7e1a2a818ccd5e6a5981710e8710a84",
+   "doc_type": "cutoff",
+   "file_name": "2026ENGG_CAP4_MH_CutOff.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "de5db3abba15",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "CAP Round IV MH Cut Off",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "scope": "MH",
+   "selected_because": "current year 2026-27 cutoff, CAP Round IV (MH)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_MH_CutOff.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "0x8DF0997BAE00169",
+     "http_status": 200,
+     "last_modified": "Thu, 03 Sep 2026 08:45:38 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "84c5f413530e0b877090465861b986fff7e1a2a818ccd5e6a5981710e8710a84",
+     "size_bytes": 3239980
+    }
+   ],
+   "year_label": "2026-27"
+  },
+  "ef272a40faa6": {
+   "cap_round": "III",
+   "confidence": "high",
+   "current_sha256": "e93a009d4368472e87de76aca37b9da228eb6445dfefaa144edff7ecab2585e0",
+   "doc_type": "cutoff",
+   "file_name": "2024ENGG_CAP3_AI_CutOff.pdf",
+   "first_seen": "2026-10-28T13:58:31Z",
+   "id": "ef272a40faa6",
+   "last_checked": "2026-10-28T13:58:31Z",
+   "last_error": null,
+   "last_result": "new",
+   "last_success": "2026-10-28T13:58:31Z",
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "scope": "AI",
+   "selected_because": "previous year 2024-25 cutoff, final round III (AI)",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_AI_CutOff.pdf",
+   "versions": [
+    {
+     "content_type": "application/pdf",
+     "etag": "\"e59564ea0add1:0\"",
+     "http_status": 200,
+     "last_modified": "Thu, 02 Jul 2026 08:58:13 GMT",
+     "retrieved_at": "2026-10-28T13:58:31Z",
+     "sha256": "e93a009d4368472e87de76aca37b9da228eb6445dfefaa144edff7ecab2585e0",
+     "size_bytes": 401271
+    }
+   ],
+   "year_label": "2024-25"
+  }
+ },
+ "files": {
+  "0bedd926581d76eb4d1278fa36cc54554370c43196885dbb522b664e8691afed": {
+   "asset_name": "0bedd926581d76eb__2023ENGG_CAP3_CutOff.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2023-24",
+   "sha256": "0bedd926581d76eb4d1278fa36cc54554370c43196885dbb522b664e8691afed",
+   "size_bytes": 3018300,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff.pdf"
+   ]
+  },
+  "112ff9fd5224d9fb704db2ce0de37947ae626680c0ebc1bcd00ad0fd653a3014": {
+   "asset_name": "112ff9fd5224d9fb__2026ENGG_CAP3_MH_CutOff.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2026-27",
+   "sha256": "112ff9fd5224d9fb704db2ce0de37947ae626680c0ebc1bcd00ad0fd653a3014",
+   "size_bytes": 3719450,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_MH_CutOff.pdf"
+   ]
+  },
+  "2d9546975769c81f2de04cfba265424f0a083851aee1ac367b82ec58bf3ba68e": {
+   "asset_name": "2d9546975769c81f__2025ENGG_CAP4_AI_CutOff.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2025-26",
+   "sha256": "2d9546975769c81f2de04cfba265424f0a083851aee1ac367b82ec58bf3ba68e",
+   "size_bytes": 390782,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_AI_CutOff.pdf"
+   ]
+  },
+  "2f89945c0f368e340471e5d8482ed5a75664c41d76083fef363971630ed40e7a": {
+   "asset_name": "2f89945c0f368e34__2026_fe_seatmatrix_V1.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2026-27",
+   "sha256": "2f89945c0f368e340471e5d8482ed5a75664c41d76083fef363971630ed40e7a",
+   "size_bytes": 11560393,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://cappublicdocs2026.blob.core.windows.net/documents/2026_fe_seatmatrix_V1.pdf"
+   ]
+  },
+  "51e9ce347ce527fdc626ba8acc42e63af59b158fe0bf431dc1ff90c4285211b4": {
+   "asset_name": "51e9ce347ce527fd__2023ENGG_CAP3_AI_CutOff.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2023-24",
+   "sha256": "51e9ce347ce527fdc626ba8acc42e63af59b158fe0bf431dc1ff90c4285211b4",
+   "size_bytes": 432025,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_AI_CutOff.pdf"
+   ]
+  },
+  "529503df69ab95f182264dd29dc2a2e46f4ec6df548f954d0b9e87cf7901ad6e": {
+   "asset_name": "529503df69ab95f1__FE2026_Vacancy_For_CAP3.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2026-27",
+   "sha256": "529503df69ab95f182264dd29dc2a2e46f4ec6df548f954d0b9e87cf7901ad6e",
+   "size_bytes": 9652347,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP3.pdf"
+   ]
+  },
+  "58ca7fe5ca89dc7a4ac559f5efdd34804a62333d51ca2736ec6389bdd09471ac": {
+   "asset_name": "58ca7fe5ca89dc7a__2025ENGG_CAP4_CutOff.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2025-26",
+   "sha256": "58ca7fe5ca89dc7a4ac559f5efdd34804a62333d51ca2736ec6389bdd09471ac",
+   "size_bytes": 3064798,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff.pdf"
+   ]
+  },
+  "6815ec9c7391e7924e73f5d8d109cef703620d4df9ad126b95e4220fd6c5e6a4": {
+   "asset_name": "6815ec9c7391e792__2026ENGG_CAP2_AI_CutOff.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2026-27",
+   "sha256": "6815ec9c7391e7924e73f5d8d109cef703620d4df9ad126b95e4220fd6c5e6a4",
+   "size_bytes": 476457,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_AI_CutOff.pdf"
+   ]
+  },
+  "84c5f413530e0b877090465861b986fff7e1a2a818ccd5e6a5981710e8710a84": {
+   "asset_name": "84c5f413530e0b87__2026ENGG_CAP4_MH_CutOff.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2026-27",
+   "sha256": "84c5f413530e0b877090465861b986fff7e1a2a818ccd5e6a5981710e8710a84",
+   "size_bytes": 3239980,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_MH_CutOff.pdf"
+   ]
+  },
+  "8b7c41c0a52cf6278ae7fecb27d1d452d832d00ceb085e252c5b7c9029191427": {
+   "asset_name": "8b7c41c0a52cf627__2026ENGG_CAP2_MH_CutOff.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2026-27",
+   "sha256": "8b7c41c0a52cf6278ae7fecb27d1d452d832d00ceb085e252c5b7c9029191427",
+   "size_bytes": 4886602,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_MH_CutOff.pdf"
+   ]
+  },
+  "8fb2c6dfef0ef9d3c71087167c0b79898d144e7221e7d51392eceddbaf4aa1aa": {
+   "asset_name": "8fb2c6dfef0ef9d3__2026ENGG_CAP4_AI_CutOff.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2026-27",
+   "sha256": "8fb2c6dfef0ef9d3c71087167c0b79898d144e7221e7d51392eceddbaf4aa1aa",
+   "size_bytes": 389559,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_AI_CutOff.pdf"
+   ]
+  },
+  "9c89832627f09c01330b44168d8e1f5321f74181b0b461ced0fdc4f4f0946f85": {
+   "asset_name": "9c89832627f09c01__2026ENGG_CAP1_AI_CutOff.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2026-27",
+   "sha256": "9c89832627f09c01330b44168d8e1f5321f74181b0b461ced0fdc4f4f0946f85",
+   "size_bytes": 516141,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_AI_CutOff.pdf"
+   ]
+  },
+  "9db0899eaf0cd73a8bb00d065a06a434c9b949f05e8713d875a9daaa7172f18c": {
+   "asset_name": "9db0899eaf0cd73a__2024ENGG_CAP3_CutOff.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2024-25",
+   "sha256": "9db0899eaf0cd73a8bb00d065a06a434c9b949f05e8713d875a9daaa7172f18c",
+   "size_bytes": 3517458,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff.pdf"
+   ]
+  },
+  "b3fc6ce1a4cebd44c4b118fd78407deaf30e6d718092cdba05b20b3c31d48da1": {
+   "asset_name": "b3fc6ce1a4cebd44__FE2026_Vacancy_For_CAP4.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2026-27",
+   "sha256": "b3fc6ce1a4cebd44c4b118fd78407deaf30e6d718092cdba05b20b3c31d48da1",
+   "size_bytes": 9889564,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP4.pdf"
+   ]
+  },
+  "bb8add06029af9cd672094c18d30c2c512ddd9d23fe0cd1cd1e4afd034bb122b": {
+   "asset_name": "bb8add06029af9cd__2026ENGG_CAP3_AI_CutOff.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2026-27",
+   "sha256": "bb8add06029af9cd672094c18d30c2c512ddd9d23fe0cd1cd1e4afd034bb122b",
+   "size_bytes": 417679,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_AI_CutOff.pdf"
+   ]
+  },
+  "c8e0b040da945bf58a28b22221946b2b1b0cbc5065d30b0f6867919c552fe1f3": {
+   "asset_name": "c8e0b040da945bf5__2026ENGG_CAP1_MH_CutOff_V1.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2026-27",
+   "sha256": "c8e0b040da945bf58a28b22221946b2b1b0cbc5065d30b0f6867919c552fe1f3",
+   "size_bytes": 4258374,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_MH_CutOff_V1.pdf"
+   ]
+  },
+  "e93a009d4368472e87de76aca37b9da228eb6445dfefaa144edff7ecab2585e0": {
+   "asset_name": "e93a009d4368472e__2024ENGG_CAP3_AI_CutOff.pdf",
+   "extension": ".pdf",
+   "release_tag": "raw-2024-25",
+   "sha256": "e93a009d4368472e87de76aca37b9da228eb6445dfefaa144edff7ecab2585e0",
+   "size_bytes": 401271,
+   "uploaded": true,
+   "uploaded_at": null,
+   "urls": [
+    "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_AI_CutOff.pdf"
+   ]
+  }
+ },
+ "schema_version": 1,
+ "updated_at": "2026-10-28T13:58:31Z"
+}
