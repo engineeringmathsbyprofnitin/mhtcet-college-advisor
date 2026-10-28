@@ -57,7 +57,7 @@
    }
   ],
   "status": "confirmed",
-  "today": "2026-10-27",
+  "today": "2026-10-28",
   "vacancy_round": "IV",
   "vacancy_rounds_found": [
    "II",
@@ -95,6 +95,7 @@
     "etag": "0x8DF0DD447ACE9ED",
     "last_modified": "Tue, 08 Sep 2026 18:09:09 GMT",
     "reachable": true,
+    "size_bytes": 9895903,
     "status": 200
    },
    "year": 2026,
@@ -127,6 +128,7 @@
     "etag": "0x8DF099746E88195",
     "last_modified": "Thu, 03 Sep 2026 08:42:24 GMT",
     "reachable": true,
+    "size_bytes": 389559,
     "status": 200
    },
    "year": 2026,
@@ -159,6 +161,7 @@
     "etag": "0x8DF0997BAE00169",
     "last_modified": "Thu, 03 Sep 2026 08:45:38 GMT",
     "reachable": true,
+    "size_bytes": 3239980,
     "status": 200
    },
    "year": 2026,
@@ -191,6 +194,7 @@
     "etag": "0x8DF0997951B99EB",
     "last_modified": "Thu, 03 Sep 2026 08:44:35 GMT",
     "reachable": true,
+    "size_bytes": 121524,
     "status": 200
    },
    "year": 2026,
@@ -224,6 +228,7 @@
     "etag": "0x8DF05A63DC83508",
     "last_modified": "Sat, 29 Aug 2026 08:19:26 GMT",
     "reachable": true,
+    "size_bytes": 9889564,
     "status": 200
    },
    "year": 2026,
@@ -256,6 +261,7 @@
     "etag": "0x8DF01B2B5DAF659",
     "last_modified": "Mon, 24 Aug 2026 07:38:37 GMT",
     "reachable": true,
+    "size_bytes": 3719450,
     "status": 200
    },
    "year": 2026,
@@ -288,6 +294,7 @@
     "etag": "0x8DF01B28AB11DF8",
     "last_modified": "Mon, 24 Aug 2026 07:37:25 GMT",
     "reachable": true,
+    "size_bytes": 417679,
     "status": 200
    },
    "year": 2026,
@@ -321,6 +328,7 @@
     "etag": "0x8DEFE29EFBBE880",
     "last_modified": "Wed, 19 Aug 2026 19:42:00 GMT",
     "reachable": true,
+    "size_bytes": 9652347,
     "status": 200
    },
    "year": 2026,
@@ -356,6 +364,7 @@
     "etag": "0x8DEFF5D68C22F91",
     "last_modified": "Fri, 21 Aug 2026 08:22:58 GMT",
     "reachable": true,
+    "size_bytes": 152833,
     "status": 200
    },
    "year": 2026,
@@ -389,6 +398,7 @@
     "etag": "0x8DEF3D54204B998",
     "last_modified": "Thu, 06 Aug 2026 16:10:39 GMT",
     "reachable": true,
+    "size_bytes": 9682292,
     "status": 200
    },
    "year": 2026,
@@ -421,6 +431,7 @@
     "etag": "0x8DEF90C6D4ED580",
     "last_modified": "Thu, 13 Aug 2026 07:28:10 GMT",
     "reachable": true,
+    "size_bytes": 476457,
     "status": 200
    },
    "year": 2026,
@@ -453,6 +464,7 @@
     "etag": "0x8DEF90C96D139A2",
     "last_modified": "Thu, 13 Aug 2026 07:29:19 GMT",
     "reachable": true,
+    "size_bytes": 4886602,
     "status": 200
    },
    "year": 2026,
@@ -487,6 +499,7 @@
     "etag": "0x8DEF622A5CF9F12",
     "last_modified": "Sun, 09 Aug 2026 14:29:40 GMT",
     "reachable": true,
+    "size_bytes": 4258374,
     "status": 200
    },
    "year": 2026,
@@ -519,6 +532,7 @@
     "etag": "0x8DEF09D8238CABB",
     "last_modified": "Sun, 02 Aug 2026 13:54:01 GMT",
     "reachable": true,
+    "size_bytes": 516141,
     "status": 200
    },
    "year": 2026,
@@ -552,6 +566,7 @@
     "etag": "0x8DEECA2596ADDC8",
     "last_modified": "Tue, 28 Jul 2026 12:18:36 GMT",
     "reachable": true,
+    "size_bytes": 11560393,
     "status": 200
    },
    "year": 2026,
@@ -587,6 +602,7 @@
     "etag": "\"e0d2c4eb0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
     "reachable": true,
+    "size_bytes": 9317893,
     "status": 206
    },
    "year": 2023,
@@ -625,6 +641,7 @@
     "etag": "\"bf6349e90add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
     "reachable": true,
+    "size_bytes": 3612571,
     "status": 206
    },
    "year": 2023,
@@ -663,6 +680,7 @@
     "etag": "\"dcdb1de90add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:11 GMT",
     "reachable": true,
+    "size_bytes": 462917,
     "status": 206
    },
    "year": 2023,
@@ -701,6 +719,7 @@
     "etag": "\"6ff38de90add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
     "reachable": true,
+    "size_bytes": 3916544,
     "status": 206
    },
    "year": 2023,
@@ -739,6 +758,7 @@
     "etag": "\"9d41be90add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:11 GMT",
     "reachable": true,
+    "size_bytes": 448047,
     "status": 206
    },
    "year": 2023,
@@ -777,6 +797,7 @@
     "etag": "\"b24585e90add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
     "reachable": true,
+    "size_bytes": 3018300,
     "status": 206
    },
    "year": 2023,
@@ -815,6 +836,7 @@
     "etag": "\"67a042e90add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
     "reachable": true,
+    "size_bytes": 432025,
     "status": 206
    },
    "year": 2023,
@@ -853,6 +875,7 @@
     "etag": "\"6ff38de90add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
     "reachable": true,
+    "size_bytes": 460354,
     "status": 206
    },
    "year": 2023,
@@ -888,6 +911,7 @@
     "etag": "\"99d5c0eb0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
     "reachable": true,
+    "size_bytes": 10135589,
     "status": 206
    },
    "year": 2024,
@@ -926,6 +950,7 @@
     "etag": "\"8f3c54ea0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:13 GMT",
     "reachable": true,
+    "size_bytes": 4136871,
     "status": 206
    },
    "year": 2024,
@@ -964,6 +989,7 @@
     "etag": "\"1eab6e90add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
     "reachable": true,
+    "size_bytes": 470793,
     "status": 206
    },
    "year": 2024,
@@ -1002,6 +1028,7 @@
     "etag": "\"2daeb3ea0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:14 GMT",
     "reachable": true,
+    "size_bytes": 4644290,
     "status": 206
    },
    "year": 2024,
@@ -1040,6 +1067,7 @@
     "etag": "\"429cae90add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
     "reachable": true,
+    "size_bytes": 450015,
     "status": 206
    },
    "year": 2024,
@@ -1078,6 +1106,7 @@
     "etag": "\"4e2a90eb0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:15 GMT",
     "reachable": true,
+    "size_bytes": 3517458,
     "status": 206
    },
    "year": 2024,
@@ -1116,6 +1145,7 @@
     "etag": "\"e59564ea0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:13 GMT",
     "reachable": true,
+    "size_bytes": 401271,
     "status": 206
    },
    "year": 2024,
@@ -1154,6 +1184,7 @@
     "etag": "\"5b83bfea0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:14 GMT",
     "reachable": true,
+    "size_bytes": 105196,
     "status": 206
    },
    "year": 2024,
@@ -1189,6 +1220,7 @@
     "etag": "\"cfe14aef0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:22 GMT",
     "reachable": true,
+    "size_bytes": 10680272,
     "status": 206
    },
    "year": 2025,
@@ -1227,6 +1259,7 @@
     "etag": "\"b0c738ed0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:18 GMT",
     "reachable": true,
+    "size_bytes": 4190500,
     "status": 206
    },
    "year": 2025,
@@ -1265,6 +1298,7 @@
     "etag": "\"c3ccadeb0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
     "reachable": true,
+    "size_bytes": 493270,
     "status": 206
    },
    "year": 2025,
@@ -1303,6 +1337,7 @@
     "etag": "\"eebf1ec0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
     "reachable": true,
+    "size_bytes": 4665708,
     "status": 206
    },
    "year": 2025,
@@ -1341,6 +1376,7 @@
     "etag": "\"47c8f0eb0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
     "reachable": true,
+    "size_bytes": 471602,
     "status": 206
    },
    "year": 2025,
@@ -1379,6 +1415,7 @@
     "etag": "\"462b25ec0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
     "reachable": true,
+    "size_bytes": 3484744,
     "status": 206
    },
    "year": 2025,
@@ -1417,6 +1454,7 @@
     "etag": "\"7b7ecec0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
     "reachable": true,
+    "size_bytes": 410971,
     "status": 206
    },
    "year": 2025,
@@ -1455,6 +1493,7 @@
     "etag": "\"52df5fec0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:17 GMT",
     "reachable": true,
+    "size_bytes": 3064798,
     "status": 206
    },
    "year": 2025,
@@ -1493,6 +1532,7 @@
     "etag": "\"a2612eec0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
     "reachable": true,
+    "size_bytes": 390782,
     "status": 206
    },
    "year": 2025,
@@ -1531,13 +1571,14 @@
     "etag": "\"236b42ec0add1:0\"",
     "last_modified": "Thu, 02 Jul 2026 08:58:17 GMT",
     "reachable": true,
+    "size_bytes": 107472,
     "status": 206
    },
    "year": 2025,
    "year_label": "2025-26"
   }
  ],
- "generated_at": "2026-10-27T10:36:24Z",
+ "generated_at": "2026-10-28T03:14:11Z",
  "matrix": {
   "2023-24": {
    "cutoff": {
@@ -1657,336 +1698,336 @@
   {
    "error": null,
    "method": "GET",
-   "ms": 570,
+   "ms": 488,
    "status": 200,
    "url": "https://cetcell.mahacet.org/robots.txt"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 771,
+   "ms": 1592,
    "status": 200,
    "url": "https://cetcell.mahacet.org/"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 1219,
+   "ms": 1582,
    "status": 200,
    "url": "https://cetcell.mahacet.org/cap-_2026-27/"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 1071,
+   "ms": 933,
    "status": 404,
    "url": "https://fe2026.mahacet.org/robots.txt"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 1403,
+   "ms": 1269,
    "status": 200,
    "url": "https://fe2026.mahacet.org/StaticPages/HomePage"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 954,
+   "ms": 887,
    "status": 400,
    "url": "https://cappublicdocs2026.blob.core.windows.net/robots.txt"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 945,
+   "ms": 855,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_ACAP.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 947,
+   "ms": 826,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 940,
+   "ms": 863,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_MH_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 938,
+   "ms": 855,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_Diploma_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 926,
+   "ms": 851,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP4.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 948,
+   "ms": 860,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_MH_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 925,
+   "ms": 887,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 958,
+   "ms": 857,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP3.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 922,
+   "ms": 889,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP3_NewInstitute_CourtOder.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 929,
+   "ms": 852,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP2.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 935,
+   "ms": 860,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 932,
+   "ms": 858,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_MH_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 943,
+   "ms": 868,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_MH_CutOff_V1.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 928,
+   "ms": 908,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 920,
+   "ms": 832,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026_fe_seatmatrix_V1.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 1079,
+   "ms": 889,
    "status": 404,
    "url": "https://fe2026.mahacet.org/2023/2023SeatMatrix.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 924,
+   "ms": 895,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023SeatMatrix.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 925,
+   "ms": 916,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP1_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 944,
+   "ms": 895,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP1_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 929,
+   "ms": 863,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP2_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 1137,
+   "ms": 859,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP2_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 922,
+   "ms": 938,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 929,
+   "ms": 860,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 921,
+   "ms": 890,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff_Diploma.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 936,
+   "ms": 1039,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024SeatMatrix.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 932,
+   "ms": 857,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP1_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 943,
+   "ms": 837,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP1_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 930,
+   "ms": 900,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP2_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 926,
+   "ms": 881,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP2_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 923,
+   "ms": 891,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 953,
+   "ms": 835,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 929,
+   "ms": 855,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff_Diploma.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 945,
+   "ms": 834,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025SeatMatrix.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 943,
+   "ms": 963,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP1_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 1001,
+   "ms": 856,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP1_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 927,
+   "ms": 997,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP2_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 922,
+   "ms": 894,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP2_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 932,
+   "ms": 921,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP3_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 950,
+   "ms": 827,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP3_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 943,
+   "ms": 848,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 929,
+   "ms": 1082,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 921,
+   "ms": 869,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff_Diploma.pdf"
   }

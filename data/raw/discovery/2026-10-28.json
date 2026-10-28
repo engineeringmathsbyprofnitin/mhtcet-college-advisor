@@ -1,0 +1,2082 @@
+{
+ "admission_year": {
+  "assumption": "The CAP for admission year Y-(Y+1) is held during calendar year Y (seen for 2023-24 to 2026-27). This only affects the status label, not which year is chosen.",
+  "current_cutoff_rounds": [
+   "I",
+   "II",
+   "III",
+   "IV"
+  ],
+  "current_label": "2026-27",
+  "current_start_year": 2026,
+  "established_years": [
+   2026,
+   2025,
+   2024,
+   2023
+  ],
+  "latest_cutoff_round": "IV",
+  "menu_years": [
+   2026,
+   2025,
+   2024,
+   2023,
+   2022
+  ],
+  "previous": [
+   {
+    "cutoff_rounds": [
+     "I",
+     "II",
+     "III",
+     "IV"
+    ],
+    "has_cutoffs": true,
+    "label": "2025-26",
+    "start_year": 2025
+   },
+   {
+    "cutoff_rounds": [
+     "I",
+     "II",
+     "III"
+    ],
+    "has_cutoffs": true,
+    "label": "2024-25",
+    "start_year": 2024
+   },
+   {
+    "cutoff_rounds": [
+     "I",
+     "II",
+     "III"
+    ],
+    "has_cutoffs": true,
+    "label": "2023-24",
+    "start_year": 2023
+   }
+  ],
+  "status": "confirmed",
+  "today": "2026-10-28",
+  "vacancy_round": "IV",
+  "vacancy_rounds_found": [
+   "II",
+   "III",
+   "IV"
+  ],
+  "warnings": []
+ },
+ "documents": [
+  {
+   "cap_round": "IV",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "vacancy_after_cap",
+   "id": "dabadd2fbbcc",
+   "is_file": true,
+   "link_text": "Vacant Seats after CAP IV (ACAP)",
+   "portal_year": "2026-27",
+   "qualifiers": [
+    "acap"
+   ],
+   "reasons": [
+    "vacancy list AFTER the CAP rounds (ACAP): not a CAP round vacancy position",
+    "round IV from link text/headings",
+    "year 2026-27 from file name"
+   ],
+   "scope": null,
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_ACAP.pdf",
+   "verification": {
+    "content_length": "9895903",
+    "content_type": "application/pdf",
+    "etag": "0x8DF0DD447ACE9ED",
+    "last_modified": "Tue, 08 Sep 2026 18:09:09 GMT",
+    "reachable": true,
+    "size_bytes": 9895903,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": "IV",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "aa56f55ffb44",
+   "is_file": true,
+   "link_text": "CAP Round IV AI Cut Off",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round IV from link text/headings",
+    "group AI",
+    "year 2026-27 from file name"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "389559",
+    "content_type": "application/pdf",
+    "etag": "0x8DF099746E88195",
+    "last_modified": "Thu, 03 Sep 2026 08:42:24 GMT",
+    "reachable": true,
+    "size_bytes": 389559,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": "IV",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "de5db3abba15",
+   "is_file": true,
+   "link_text": "CAP Round IV MH Cut Off",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round IV from link text/headings",
+    "group MH",
+    "year 2026-27 from file name"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_MH_CutOff.pdf",
+   "verification": {
+    "content_length": "3239980",
+    "content_type": "application/pdf",
+    "etag": "0x8DF0997BAE00169",
+    "last_modified": "Thu, 03 Sep 2026 08:45:38 GMT",
+    "reachable": true,
+    "size_bytes": 3239980,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": "IV",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "f44d30ecc796",
+   "is_file": true,
+   "link_text": "Diploma Cut off CAP Round IV",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round IV from link text/headings",
+    "group DIPLOMA",
+    "year 2026-27 from file name"
+   ],
+   "scope": "DIPLOMA",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_Diploma_CutOff.pdf",
+   "verification": {
+    "content_length": "121524",
+    "content_type": "application/pdf",
+    "etag": "0x8DF0997951B99EB",
+    "last_modified": "Thu, 03 Sep 2026 08:44:35 GMT",
+    "reachable": true,
+    "size_bytes": 121524,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": "IV",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "vacancy_position",
+   "id": "1c34806eed76",
+   "is_file": true,
+   "link_text": "Provisional Vacancy Position for CAP Round-IV",
+   "portal_year": "2026-27",
+   "qualifiers": [
+    "provisional"
+   ],
+   "reasons": [
+    "mentions vacancy",
+    "round IV from link text/headings",
+    "year 2026-27 from file name"
+   ],
+   "scope": null,
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP4.pdf",
+   "verification": {
+    "content_length": "9889564",
+    "content_type": "application/pdf",
+    "etag": "0x8DF05A63DC83508",
+    "last_modified": "Sat, 29 Aug 2026 08:19:26 GMT",
+    "reachable": true,
+    "size_bytes": 9889564,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": "III",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "a77a897d9812",
+   "is_file": true,
+   "link_text": "CAP Round III MH Cut Off",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round III from link text/headings",
+    "group MH",
+    "year 2026-27 from file name"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_MH_CutOff.pdf",
+   "verification": {
+    "content_length": "3719450",
+    "content_type": "application/pdf",
+    "etag": "0x8DF01B2B5DAF659",
+    "last_modified": "Mon, 24 Aug 2026 07:38:37 GMT",
+    "reachable": true,
+    "size_bytes": 3719450,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": "III",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "3c0ae32e50b5",
+   "is_file": true,
+   "link_text": "CAP Round III AI Cut Off",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round III from link text/headings",
+    "group AI",
+    "year 2026-27 from file name"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "417679",
+    "content_type": "application/pdf",
+    "etag": "0x8DF01B28AB11DF8",
+    "last_modified": "Mon, 24 Aug 2026 07:37:25 GMT",
+    "reachable": true,
+    "size_bytes": 417679,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": "III",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "vacancy_position",
+   "id": "a3fbbeb1922f",
+   "is_file": true,
+   "link_text": "Provisional Vacancy Position for CAP Round-III",
+   "portal_year": "2026-27",
+   "qualifiers": [
+    "provisional"
+   ],
+   "reasons": [
+    "mentions vacancy",
+    "round III from link text/headings",
+    "year 2026-27 from file name"
+   ],
+   "scope": null,
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP3.pdf",
+   "verification": {
+    "content_length": "9652347",
+    "content_type": "application/pdf",
+    "etag": "0x8DEFE29EFBBE880",
+    "last_modified": "Wed, 19 Aug 2026 19:42:00 GMT",
+    "reachable": true,
+    "size_bytes": 9652347,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": "III",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "vacancy_position",
+   "id": "c5aa75acc5ed",
+   "is_file": true,
+   "link_text": "Provisional Vacancy Position for New Institute as per Court Order in CAP Round-III",
+   "portal_year": "2026-27",
+   "qualifiers": [
+    "provisional",
+    "court_order",
+    "new_institute"
+   ],
+   "reasons": [
+    "mentions vacancy",
+    "round III from link text/headings",
+    "year 2026-27 from file name"
+   ],
+   "scope": null,
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": true,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP3_NewInstitute_CourtOder.pdf",
+   "verification": {
+    "content_length": "152833",
+    "content_type": "application/pdf",
+    "etag": "0x8DEFF5D68C22F91",
+    "last_modified": "Fri, 21 Aug 2026 08:22:58 GMT",
+    "reachable": true,
+    "size_bytes": 152833,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": "II",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "vacancy_position",
+   "id": "8fde41bc9be3",
+   "is_file": true,
+   "link_text": "Provisional Vacancy Position for CAP Round-II",
+   "portal_year": "2026-27",
+   "qualifiers": [
+    "provisional"
+   ],
+   "reasons": [
+    "mentions vacancy",
+    "round II from link text/headings",
+    "year 2026-27 from file name"
+   ],
+   "scope": null,
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP2.pdf",
+   "verification": {
+    "content_length": "9682292",
+    "content_type": "application/pdf",
+    "etag": "0x8DEF3D54204B998",
+    "last_modified": "Thu, 06 Aug 2026 16:10:39 GMT",
+    "reachable": true,
+    "size_bytes": 9682292,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": "II",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "17a52eece95e",
+   "is_file": true,
+   "link_text": "CAP Round II AI Cut Off",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round II from link text/headings",
+    "group AI",
+    "year 2026-27 from file name"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "476457",
+    "content_type": "application/pdf",
+    "etag": "0x8DEF90C6D4ED580",
+    "last_modified": "Thu, 13 Aug 2026 07:28:10 GMT",
+    "reachable": true,
+    "size_bytes": 476457,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": "II",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "cfcfe0bfaad1",
+   "is_file": true,
+   "link_text": "CAP Round II MH Cut Off",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round II from link text/headings",
+    "group MH",
+    "year 2026-27 from file name"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_MH_CutOff.pdf",
+   "verification": {
+    "content_length": "4886602",
+    "content_type": "application/pdf",
+    "etag": "0x8DEF90C96D139A2",
+    "last_modified": "Thu, 13 Aug 2026 07:29:19 GMT",
+    "reachable": true,
+    "size_bytes": 4886602,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": "I",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "d182d9fde638",
+   "is_file": true,
+   "link_text": "CAP Round I MH CutOff",
+   "portal_year": "2026-27",
+   "qualifiers": [
+    "version_1"
+   ],
+   "reasons": [
+    "mentions cut off",
+    "round I from link text/headings",
+    "group MH",
+    "year 2026-27 from file name"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_MH_CutOff_V1.pdf",
+   "verification": {
+    "content_length": "4258374",
+    "content_type": "application/pdf",
+    "etag": "0x8DEF622A5CF9F12",
+    "last_modified": "Sun, 09 Aug 2026 14:29:40 GMT",
+    "reachable": true,
+    "size_bytes": 4258374,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": "I",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "c34f07d51b97",
+   "is_file": true,
+   "link_text": "CAP Round I AI Cutoff",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round I from link text/headings",
+    "group AI",
+    "year 2026-27 from file name"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "516141",
+    "content_type": "application/pdf",
+    "etag": "0x8DEF09D8238CABB",
+    "last_modified": "Sun, 02 Aug 2026 13:54:01 GMT",
+    "reachable": true,
+    "size_bytes": 516141,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": null,
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "seat_matrix",
+   "id": "5cca111ab19e",
+   "is_file": true,
+   "link_text": "Institute-wise Category-wise Seats (Seat Matrix) for CAP Round-I",
+   "portal_year": "2026-27",
+   "qualifiers": [
+    "version_1"
+   ],
+   "reasons": [
+    "mentions seat matrix",
+    "round I from link text/headings",
+    "year 2026-27 from file name"
+   ],
+   "scope": null,
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": null,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026_fe_seatmatrix_V1.pdf",
+   "verification": {
+    "content_length": "11560393",
+    "content_type": "application/pdf",
+    "etag": "0x8DEECA2596ADDC8",
+    "last_modified": "Tue, 28 Jul 2026 12:18:36 GMT",
+    "reachable": true,
+    "size_bytes": 11560393,
+    "status": 200
+   },
+   "year": 2026,
+   "year_label": "2026-27"
+  },
+  {
+   "cap_round": null,
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "seat_matrix",
+   "id": "de3c03160b65",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions seat matrix",
+    "year 2023-24 from table row / link text"
+   ],
+   "scope": null,
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "Seat Matrix"
+    ],
+    "row_label": "2023-24"
+   },
+   "url": "https://fe2026.mahacet.org/2023/2023SeatMatrix.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"e0d2c4eb0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "size_bytes": 9317893,
+    "status": 206
+   },
+   "year": 2023,
+   "year_label": "2023-24"
+  },
+  {
+   "cap_round": "I",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "173c0d717ee4",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round I from link text/headings",
+    "group MH",
+    "year 2023-24 from table row / link text"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-I Cut Off",
+     "MH"
+    ],
+    "row_label": "2023-24"
+   },
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP1_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"bf6349e90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "size_bytes": 3612571,
+    "status": 206
+   },
+   "year": 2023,
+   "year_label": "2023-24"
+  },
+  {
+   "cap_round": "I",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "d359b07b6cf6",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round I from link text/headings",
+    "group AI",
+    "year 2023-24 from table row / link text"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-I Cut Off",
+     "AI"
+    ],
+    "row_label": "2023-24"
+   },
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP1_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"dcdb1de90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:11 GMT",
+    "reachable": true,
+    "size_bytes": 462917,
+    "status": 206
+   },
+   "year": 2023,
+   "year_label": "2023-24"
+  },
+  {
+   "cap_round": "II",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "ea883dba075d",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round II from link text/headings",
+    "group MH",
+    "year 2023-24 from table row / link text"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-II Cut Off",
+     "MH"
+    ],
+    "row_label": "2023-24"
+   },
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP2_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"6ff38de90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "size_bytes": 3916544,
+    "status": 206
+   },
+   "year": 2023,
+   "year_label": "2023-24"
+  },
+  {
+   "cap_round": "II",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "28afaca54df4",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round II from link text/headings",
+    "group AI",
+    "year 2023-24 from table row / link text"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-II Cut Off",
+     "AI"
+    ],
+    "row_label": "2023-24"
+   },
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP2_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"9d41be90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:11 GMT",
+    "reachable": true,
+    "size_bytes": 448047,
+    "status": 206
+   },
+   "year": 2023,
+   "year_label": "2023-24"
+  },
+  {
+   "cap_round": "III",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "7e22f7987d1a",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round III from link text/headings",
+    "group MH",
+    "year 2023-24 from table row / link text"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-III Cut Off",
+     "MH"
+    ],
+    "row_label": "2023-24"
+   },
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"b24585e90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "size_bytes": 3018300,
+    "status": 206
+   },
+   "year": 2023,
+   "year_label": "2023-24"
+  },
+  {
+   "cap_round": "III",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "b591eb313bed",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round III from link text/headings",
+    "group AI",
+    "year 2023-24 from table row / link text"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-III Cut Off",
+     "AI"
+    ],
+    "row_label": "2023-24"
+   },
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"67a042e90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "size_bytes": 432025,
+    "status": 206
+   },
+   "year": 2023,
+   "year_label": "2023-24"
+  },
+  {
+   "cap_round": "III",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "1539903cf050",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round III from link text/headings",
+    "group DIPLOMA",
+    "year 2023-24 from table row / link text"
+   ],
+   "scope": "DIPLOMA",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-III Cut Off",
+     "Diploma"
+    ],
+    "row_label": "2023-24"
+   },
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff_Diploma.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"6ff38de90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "size_bytes": 460354,
+    "status": 206
+   },
+   "year": 2023,
+   "year_label": "2023-24"
+  },
+  {
+   "cap_round": null,
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "seat_matrix",
+   "id": "0f5b6cc58cc4",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions seat matrix",
+    "year 2024-25 from table row / link text"
+   ],
+   "scope": null,
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "Seat Matrix"
+    ],
+    "row_label": "2024-25"
+   },
+   "url": "https://fe2026.mahacet.org/2024/2024SeatMatrix.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"99d5c0eb0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "size_bytes": 10135589,
+    "status": 206
+   },
+   "year": 2024,
+   "year_label": "2024-25"
+  },
+  {
+   "cap_round": "I",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "3279853eb063",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round I from link text/headings",
+    "group MH",
+    "year 2024-25 from table row / link text"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-I Cut Off",
+     "MH"
+    ],
+    "row_label": "2024-25"
+   },
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP1_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"8f3c54ea0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:13 GMT",
+    "reachable": true,
+    "size_bytes": 4136871,
+    "status": 206
+   },
+   "year": 2024,
+   "year_label": "2024-25"
+  },
+  {
+   "cap_round": "I",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "b117ba80fcee",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round I from link text/headings",
+    "group AI",
+    "year 2024-25 from table row / link text"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-I Cut Off",
+     "AI"
+    ],
+    "row_label": "2024-25"
+   },
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP1_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"1eab6e90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "size_bytes": 470793,
+    "status": 206
+   },
+   "year": 2024,
+   "year_label": "2024-25"
+  },
+  {
+   "cap_round": "II",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "d5f79412f511",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round II from link text/headings",
+    "group MH",
+    "year 2024-25 from table row / link text"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-II Cut Off",
+     "MH"
+    ],
+    "row_label": "2024-25"
+   },
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP2_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"2daeb3ea0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:14 GMT",
+    "reachable": true,
+    "size_bytes": 4644290,
+    "status": 206
+   },
+   "year": 2024,
+   "year_label": "2024-25"
+  },
+  {
+   "cap_round": "II",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "cb2cd96fddf2",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round II from link text/headings",
+    "group AI",
+    "year 2024-25 from table row / link text"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-II Cut Off",
+     "AI"
+    ],
+    "row_label": "2024-25"
+   },
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP2_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"429cae90add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:12 GMT",
+    "reachable": true,
+    "size_bytes": 450015,
+    "status": 206
+   },
+   "year": 2024,
+   "year_label": "2024-25"
+  },
+  {
+   "cap_round": "III",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "72d088abe5f8",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round III from link text/headings",
+    "group MH",
+    "year 2024-25 from table row / link text"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-III Cut Off",
+     "MH"
+    ],
+    "row_label": "2024-25"
+   },
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"4e2a90eb0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:15 GMT",
+    "reachable": true,
+    "size_bytes": 3517458,
+    "status": 206
+   },
+   "year": 2024,
+   "year_label": "2024-25"
+  },
+  {
+   "cap_round": "III",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "ef272a40faa6",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round III from link text/headings",
+    "group AI",
+    "year 2024-25 from table row / link text"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-III Cut Off",
+     "AI"
+    ],
+    "row_label": "2024-25"
+   },
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"e59564ea0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:13 GMT",
+    "reachable": true,
+    "size_bytes": 401271,
+    "status": 206
+   },
+   "year": 2024,
+   "year_label": "2024-25"
+  },
+  {
+   "cap_round": "III",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "5e1a4310dae5",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round III from link text/headings",
+    "group DIPLOMA",
+    "year 2024-25 from table row / link text"
+   ],
+   "scope": "DIPLOMA",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-III Cut Off",
+     "Diploma"
+    ],
+    "row_label": "2024-25"
+   },
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff_Diploma.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"5b83bfea0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:14 GMT",
+    "reachable": true,
+    "size_bytes": 105196,
+    "status": 206
+   },
+   "year": 2024,
+   "year_label": "2024-25"
+  },
+  {
+   "cap_round": null,
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "seat_matrix",
+   "id": "d7a6dcd0d739",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions seat matrix",
+    "year 2025-26 from table row / link text"
+   ],
+   "scope": null,
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "Seat Matrix"
+    ],
+    "row_label": "2025-26"
+   },
+   "url": "https://fe2026.mahacet.org/2025/2025SeatMatrix.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"cfe14aef0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:22 GMT",
+    "reachable": true,
+    "size_bytes": 10680272,
+    "status": 206
+   },
+   "year": 2025,
+   "year_label": "2025-26"
+  },
+  {
+   "cap_round": "I",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "354c4086232e",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round I from link text/headings",
+    "group MH",
+    "year 2025-26 from table row / link text"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-I Cut Off",
+     "MH"
+    ],
+    "row_label": "2025-26"
+   },
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP1_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"b0c738ed0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:18 GMT",
+    "reachable": true,
+    "size_bytes": 4190500,
+    "status": 206
+   },
+   "year": 2025,
+   "year_label": "2025-26"
+  },
+  {
+   "cap_round": "I",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "16a32c4a891b",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round I from link text/headings",
+    "group AI",
+    "year 2025-26 from table row / link text"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-I Cut Off",
+     "AI"
+    ],
+    "row_label": "2025-26"
+   },
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP1_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"c3ccadeb0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "size_bytes": 493270,
+    "status": 206
+   },
+   "year": 2025,
+   "year_label": "2025-26"
+  },
+  {
+   "cap_round": "II",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "a819cba3e777",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round II from link text/headings",
+    "group MH",
+    "year 2025-26 from table row / link text"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-II Cut Off",
+     "MH"
+    ],
+    "row_label": "2025-26"
+   },
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP2_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"eebf1ec0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "size_bytes": 4665708,
+    "status": 206
+   },
+   "year": 2025,
+   "year_label": "2025-26"
+  },
+  {
+   "cap_round": "II",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "2f4d878581f8",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round II from link text/headings",
+    "group AI",
+    "year 2025-26 from table row / link text"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-II Cut Off",
+     "AI"
+    ],
+    "row_label": "2025-26"
+   },
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP2_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"47c8f0eb0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "size_bytes": 471602,
+    "status": 206
+   },
+   "year": 2025,
+   "year_label": "2025-26"
+  },
+  {
+   "cap_round": "III",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "94639da66b69",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round III from link text/headings",
+    "group MH",
+    "year 2025-26 from table row / link text"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-III Cut Off",
+     "MH"
+    ],
+    "row_label": "2025-26"
+   },
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP3_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"462b25ec0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "size_bytes": 3484744,
+    "status": 206
+   },
+   "year": 2025,
+   "year_label": "2025-26"
+  },
+  {
+   "cap_round": "III",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "033297456af4",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round III from link text/headings",
+    "group AI",
+    "year 2025-26 from table row / link text"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-III Cut Off",
+     "AI"
+    ],
+    "row_label": "2025-26"
+   },
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP3_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"7b7ecec0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "size_bytes": 410971,
+    "status": 206
+   },
+   "year": 2025,
+   "year_label": "2025-26"
+  },
+  {
+   "cap_round": "IV",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "849259897545",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round IV from link text/headings",
+    "group MH",
+    "year 2025-26 from table row / link text"
+   ],
+   "scope": "MH",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-IV Cut Off",
+     "MH"
+    ],
+    "row_label": "2025-26"
+   },
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"52df5fec0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:17 GMT",
+    "reachable": true,
+    "size_bytes": 3064798,
+    "status": 206
+   },
+   "year": 2025,
+   "year_label": "2025-26"
+  },
+  {
+   "cap_round": "IV",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "894129b129e2",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round IV from link text/headings",
+    "group AI",
+    "year 2025-26 from table row / link text"
+   ],
+   "scope": "AI",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-IV Cut Off",
+     "AI"
+    ],
+    "row_label": "2025-26"
+   },
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_AI_CutOff.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"a2612eec0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:16 GMT",
+    "reachable": true,
+    "size_bytes": 390782,
+    "status": 206
+   },
+   "year": 2025,
+   "year_label": "2025-26"
+  },
+  {
+   "cap_round": "IV",
+   "confidence": "high",
+   "course": "engineering",
+   "doc_type": "cutoff",
+   "id": "cd6931433839",
+   "is_file": true,
+   "link_text": "View",
+   "portal_year": "2026-27",
+   "qualifiers": [],
+   "reasons": [
+    "mentions cut off",
+    "round IV from link text/headings",
+    "group DIPLOMA",
+    "year 2025-26 from table row / link text"
+   ],
+   "scope": "DIPLOMA",
+   "source_page": "https://fe2026.mahacet.org/StaticPages/HomePage",
+   "supplementary": false,
+   "table": {
+    "col_headers": [
+     "CAP Round-IV Cut Off",
+     "Diploma"
+    ],
+    "row_label": "2025-26"
+   },
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff_Diploma.pdf",
+   "verification": {
+    "content_length": "1",
+    "content_type": "application/pdf",
+    "etag": "\"236b42ec0add1:0\"",
+    "last_modified": "Thu, 02 Jul 2026 08:58:17 GMT",
+    "reachable": true,
+    "size_bytes": 107472,
+    "status": 206
+   },
+   "year": 2025,
+   "year_label": "2025-26"
+  }
+ ],
+ "generated_at": "2026-10-28T03:14:11Z",
+ "matrix": {
+  "2023-24": {
+   "cutoff": {
+    "AI": [
+     "I",
+     "II",
+     "III"
+    ],
+    "DIPLOMA": [
+     "III"
+    ],
+    "MH": [
+     "I",
+     "II",
+     "III"
+    ]
+   },
+   "seat_matrix": true,
+   "vacancy_after_cap": false,
+   "vacancy_position": []
+  },
+  "2024-25": {
+   "cutoff": {
+    "AI": [
+     "I",
+     "II",
+     "III"
+    ],
+    "DIPLOMA": [
+     "III"
+    ],
+    "MH": [
+     "I",
+     "II",
+     "III"
+    ]
+   },
+   "seat_matrix": true,
+   "vacancy_after_cap": false,
+   "vacancy_position": []
+  },
+  "2025-26": {
+   "cutoff": {
+    "AI": [
+     "I",
+     "II",
+     "III",
+     "IV"
+    ],
+    "DIPLOMA": [
+     "IV"
+    ],
+    "MH": [
+     "I",
+     "II",
+     "III",
+     "IV"
+    ]
+   },
+   "seat_matrix": true,
+   "vacancy_after_cap": false,
+   "vacancy_position": []
+  },
+  "2026-27": {
+   "cutoff": {
+    "AI": [
+     "I",
+     "II",
+     "III",
+     "IV"
+    ],
+    "DIPLOMA": [
+     "IV"
+    ],
+    "MH": [
+     "I",
+     "II",
+     "III",
+     "IV"
+    ]
+   },
+   "seat_matrix": true,
+   "vacancy_after_cap": true,
+   "vacancy_position": [
+    "II",
+    "III",
+    "IV"
+   ]
+  }
+ },
+ "menu": {
+  "cap_years": {
+   "2022-23": "https://cetcell.mahacet.org/2022-2023-3/",
+   "2023-24": "https://cetcell.mahacet.org/admissions/",
+   "2024-25": "https://cetcell.mahacet.org/2024-2025/",
+   "2025-26": "https://cetcell.mahacet.org/cap-_2025-26/",
+   "2026-27": "https://cetcell.mahacet.org/cap-_2026-27/"
+  },
+  "found": true
+ },
+ "notes": [
+  "A 'vacant seats after CAP' (ACAP) list exists. It is recorded separately and is NOT used as a CAP Round IV vacancy position. Owner to confirm this reading in Stage 11.",
+  "Supplementary vacancy lists (new institutes / court orders) exist. They are kept apart from the main round lists.",
+  "Diploma-holder cutoff lists exist. They are not used for first-year admissions unless the owner decides otherwise."
+ ],
+ "obstacles": [],
+ "portals": {
+  "2026-27": {
+   "alternatives": [],
+   "cap_page": "https://cetcell.mahacet.org/cap-_2026-27/",
+   "fetched": true,
+   "found_by": "link text 'B.E/ B.Tech'",
+   "portal_url": "https://fe2026.mahacet.org/StaticPages/HomePage"
+  }
+ },
+ "request_log": [
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 488,
+   "status": 200,
+   "url": "https://cetcell.mahacet.org/robots.txt"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 1592,
+   "status": 200,
+   "url": "https://cetcell.mahacet.org/"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 1582,
+   "status": 200,
+   "url": "https://cetcell.mahacet.org/cap-_2026-27/"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 933,
+   "status": 404,
+   "url": "https://fe2026.mahacet.org/robots.txt"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 1269,
+   "status": 200,
+   "url": "https://fe2026.mahacet.org/StaticPages/HomePage"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 887,
+   "status": 400,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/robots.txt"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 855,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_ACAP.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 826,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 863,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_MH_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 855,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_Diploma_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 851,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP4.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 860,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_MH_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 887,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 857,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP3.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 889,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP3_NewInstitute_CourtOder.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 852,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP2.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 860,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 858,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_MH_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 868,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_MH_CutOff_V1.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 908,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 832,
+   "status": 200,
+   "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026_fe_seatmatrix_V1.pdf"
+  },
+  {
+   "error": null,
+   "method": "HEAD",
+   "ms": 889,
+   "status": 404,
+   "url": "https://fe2026.mahacet.org/2023/2023SeatMatrix.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 895,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2023/2023SeatMatrix.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 916,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP1_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 895,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP1_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 863,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP2_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 859,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP2_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 938,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 860,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 890,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff_Diploma.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 1039,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2024/2024SeatMatrix.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 857,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP1_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 837,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP1_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 900,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP2_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 881,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP2_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 891,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 835,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 855,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff_Diploma.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 834,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2025/2025SeatMatrix.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 963,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP1_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 856,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP1_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 997,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP2_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 894,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP2_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 921,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP3_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 827,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP3_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 848,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 1082,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_AI_CutOff.pdf"
+  },
+  {
+   "error": null,
+   "method": "GET",
+   "ms": 869,
+   "status": 206,
+   "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff_Diploma.pdf"
+  }
+ ],
+ "requests_made": 48,
+ "robots": {
+  "cappublicdocs2026.blob.core.windows.net": "allowed_all",
+  "cetcell.mahacet.org": "rules",
+  "fe2026.mahacet.org": "allowed_all"
+ },
+ "schema_version": 1,
+ "selection_preview": {
+  "cutoff_documents": {
+   "AI": {
+    "documents": [
+     {
+      "qualifiers": [],
+      "scope": "AI",
+      "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_AI_CutOff.pdf"
+     }
+    ],
+    "round": "IV"
+   },
+   "MH": {
+    "documents": [
+     {
+      "qualifiers": [],
+      "scope": "MH",
+      "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_MH_CutOff.pdf"
+     }
+    ],
+    "round": "IV"
+   }
+  },
+  "cutoff_round_used": "IV",
+  "vacancy_documents": [
+   {
+    "qualifiers": [
+     "provisional"
+    ],
+    "scope": null,
+    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP4.pdf"
+   }
+  ],
+  "vacancy_round_used": "IV",
+  "year": "2026-27"
+ },
+ "start_url": "https://cetcell.mahacet.org/",
+ "status": "ok",
+ "tool_version": "0.1",
+ "warnings": []
+}
