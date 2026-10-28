@@ -1,12 +1,15 @@
 name: Discover official sources
 
+# Looks at the official CET Cell pages, finds this year's and previous years' engineering CAP documents,
+# decides the current admission year and checks that the files can be opened. It does NOT download or read the documents yet.
+# Run it by hand: Actions tab -> "Discover official sources" -> Run workflow. It also runs once a week.
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 3 * * 1"
+    - cron: "17 3 * * 1"      # Mondays 03:17 UTC (about 08:47 in India)
 
 permissions:
-  contents: write
+  contents: write              # needed only to save the report file into data/raw/discovery
 
 concurrency:
   group: discover-sources
@@ -14,12 +17,12 @@ concurrency:
 
 jobs:
   discover:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -27,7 +30,7 @@ jobs:
         run: python -m unittest tests/test_stage7_year.py tests/test_stage7_classify.py tests/test_stage7_discover.py
 
       - name: "Discover sources (polite - robots.txt obeyed, about 1 request per second)"
-        run: python -m ingestion.discover --out data/raw/discovery
+        run: python -m ingestion.discover --out data/raw/discovery --github-summary
 
       - name: "Save the report in the repository"
         if: always()
@@ -44,7 +47,7 @@ jobs:
 
       - name: "Keep a copy of the report with this run"
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: discovery-report
           path: data/raw/discovery
