@@ -1,15 +1,22 @@
-name: Discover official sources
+name: Discover and archive official documents
 
-# Looks at the official CET Cell pages, finds this year's and previous years' engineering CAP documents,
-# decides the current admission year and checks that the files can be opened. It does NOT download or read the documents yet.
-# Run it by hand: Actions tab -> "Discover official sources" -> Run workflow. It also runs once a week.
+# 1. Looks at the official CET Cell pages, decides the current admission year and checks the files open (Stage 7).
+# 2. Downloads the documents the project needs, but only new or changed ones, and checks each is a complete file (Stage 8).
+# 3. Stores the original files in GitHub Releases (one release per admission year) and records them in data/raw/manifest.json.
+# It does NOT read inside the documents yet.
+# Run by hand: Actions tab -> this workflow -> Run workflow. It also runs once a week.
 on:
   workflow_dispatch:
+    inputs:
+      force_download:
+        description: "Download every needed document again, even if it has not changed"
+        type: boolean
+        default: false
   schedule:
     - cron: "17 3 * * 1"      # Mondays 03:17 UTC (about 08:47 in India)
 
 permissions:
-  contents: write              # needed only to save the report file into data/raw/discovery
+  contents: write              # saves reports into the repository and creates releases for the original files
 
 concurrency:
   group: discover-sources
@@ -18,7 +25,7 @@ concurrency:
 jobs:
   discover:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v6
 
@@ -27,28 +34,61 @@ jobs:
           python-version: "3.12"
 
       - name: "Self-tests (offline, no website is contacted)"
-        run: python -m unittest tests/test_stage7_year.py tests/test_stage7_classify.py tests/test_stage7_discover.py
+        run: python -m unittest tests/test_stage7_year.py tests/test_stage7_classify.py tests/test_stage7_discover.py tests/test_stage8_policy.py tests/test_stage8_download.py
 
       - name: "Discover sources (polite - robots.txt obeyed, about 1 request per second)"
         run: python -m ingestion.discover --out data/raw/discovery --github-summary
 
-      - name: "Save the report in the repository"
+      - name: "Download the documents we need (only new or changed ones)"
+        env:
+          FORCE_FLAG: ${{ inputs.force_download && '--force' || '' }}
+        run: python -m ingestion.download --report data/raw/discovery/latest.json --github-summary $FORCE_FLAG
+
+      - name: "Store new original files in GitHub Releases"
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python -m ingestion.archive plan --manifest data/raw/manifest.json --files data/raw/files > plan.txt
+          : > uploaded.txt
+          while IFS='|' read -r tag asset sha; do
+            [ -z "$tag" ] && continue
+            if ! gh release view "$tag" > /dev/null 2>&1; then
+              gh release create "$tag" --title "Original CAP documents $tag" --notes "Original documents downloaded unchanged from the official CET Cell portal. File names start with the first 16 characters of the file's SHA-256 fingerprint. Do not edit." --latest=false
+            fi
+            if gh release view "$tag" --json assets -q '.assets[].name' | grep -qxF "$asset"; then
+              echo "already stored: $asset"; echo "$sha" >> uploaded.txt
+            elif gh release upload "$tag" "data/raw/files/$asset"; then
+              echo "stored: $asset"; echo "$sha" >> uploaded.txt
+            else
+              echo "UPLOAD FAILED: $asset (it will be tried again next run)"
+            fi
+          done < plan.txt
+          if [ -s uploaded.txt ]; then python -m ingestion.archive confirm --manifest data/raw/manifest.json --shas uploaded.txt; fi
+          python -m ingestion.archive verify --manifest data/raw/manifest.json --files data/raw/files
+          echo "Original files stored in releases this run: $(wc -l < uploaded.txt)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: "Save the reports in the repository"
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw/discovery
+          git add data/raw/discovery data/raw/manifest.json data/raw/download_report.json
           if git diff --cached --quiet; then
-            echo "Report unchanged."
+            echo "Reports unchanged."
           else
-            git commit -m "Update source discovery report"
+            git commit -m "Update source discovery and document archive reports"
+            git pull --rebase origin main
             git push
           fi
 
-      - name: "Keep a copy of the report with this run"
+      - name: "Keep a copy of the reports with this run"
         if: always()
         uses: actions/upload-artifact@v6
         with:
-          name: discovery-report
-          path: data/raw/discovery
+          name: reports
+          path: |
+            data/raw/discovery
+            data/raw/manifest.json
+            data/raw/download_report.json
           if-no-files-found: ignore
