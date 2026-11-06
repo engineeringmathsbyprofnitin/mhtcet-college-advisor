@@ -1,0 +1,88 @@
+name: Read the archived documents
+
+# Reads the archived cutoff PDFs (State and All India lists) into normalized tables and builds the master tables (Stage 9).
+# The new tables are built in a temporary folder and replace data/normalized ONLY if everything is complete and problem-free;
+# otherwise the previous data is kept. Run by hand: Actions tab -> this workflow -> Run workflow. It also runs weekly, after the archive job.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "47 4 * * 1"      # Mondays 04:47 UTC, about 90 minutes after the archive job
+
+permissions:
+  contents: write              # saves the normalized tables into the repository
+
+concurrency:
+  group: read-documents
+  cancel-in-progress: false
+
+jobs:
+  read:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: "Install the PDF tool (poppler)"
+        run: command -v pdftotext > /dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)
+
+      - name: "Self-tests (offline)"
+        run: python -m unittest tests/test_stage9a.py tests/test_stage9b.py tests/test_stage9c.py
+
+      - name: "Fetch the archived PDFs from the releases"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p data/raw/files
+          python -m ingestion.archive needed --manifest data/raw/manifest.json > needed.txt
+          test -s needed.txt || { echo "No archived cutoff files are listed in the manifest"; exit 1; }
+          while IFS='|' read -r tag asset sha; do
+            [ -z "$tag" ] && continue
+            gh release download "$tag" --pattern "$asset" --dir data/raw/files --clobber
+          done < needed.txt
+          echo "Fetched $(wc -l < needed.txt) files"
+
+      - name: "Read the State (Maharashtra) lists"
+        run: python -m ingestion.parse_mh --manifest data/raw/manifest.json --files data/raw/files --out build/normalized/cutoffs_mh
+
+      - name: "Read the All India lists"
+        run: python -m ingestion.parse_ai --manifest data/raw/manifest.json --files data/raw/files --out build/normalized/cutoffs_ai --mh-dir build/normalized/cutoffs_mh
+
+      - name: "Build the master tables"
+        run: python -m ingestion.master --mh-dir build/normalized/cutoffs_mh --ai-dir build/normalized/cutoffs_ai --out build/normalized/master
+
+      - name: "Summary"
+        if: always()
+        run: python -m ingestion.reports build/normalized
+
+      - name: "Replace the normalized data (only because every step above succeeded)"
+        if: success()
+        run: |
+          rm -rf data/normalized/cutoffs_mh data/normalized/cutoffs_ai data/normalized/master
+          mkdir -p data/normalized
+          cp -r build/normalized/cutoffs_mh build/normalized/cutoffs_ai build/normalized/master data/normalized/
+
+      - name: "Save the normalized data in the repository"
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/normalized
+          if git diff --cached --quiet; then
+            echo "Normalized data unchanged."
+          else
+            git commit -m "Update normalized cutoff data and master tables"
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: "Keep the reports with this run"
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: reading-reports
+          path: build/normalized/**/*.json
+          if-no-files-found: ignore
