@@ -3,7 +3,7 @@
 ## Completed and owner-verified
 Stages 1-4, 5B, 6, 7 and 8.
 
-## Stage 9 built (9a, 9b, 9c); live GitHub run of 9c pending
+## Stage 9 done; live GitHub run of 9c confirmed (all lists complete, 0 problems)
 - 9a State lists: 148,004 cells, every printed percentile accounted for. 9b All India lists: 10,615 rows. 9c master tables: 403 colleges, 2,511 courses, 105 seat codes (all recognised), 14 home-university values; 0 problems (docs/STAGE9A.md, STAGE9B.md, STAGE9C.md).
 - Normalized data in data/normalized (cutoffs_mh, cutoffs_ai, master; about 4.1 MB). 236 Python tests pass across Stages 7-9.
 - New workflow .github/workflows/parse-documents.yml repeats the reading on GitHub from the archived PDFs and replaces the data only if everything is complete.
@@ -21,6 +21,8 @@ Stages 1-4, 5B, 6, 7 and 8.
 
 ## Open questions
 Home-university dropdown; Round IV vacancy = provisional position vs ACAP list; Diploma lists; OMS/J&K/Defence; treatment of JEE/NEET-based All India rows.
+
+## Stage 10a built (seat-code / section eligibility, docs/STAGE10A.md); owner upload pending
 
 ## Next task
 Owner runs the reading workflow; then Stage 10 (validation, which seat codes apply to which student, historical comparison and current-round fallback), split into small parts.
