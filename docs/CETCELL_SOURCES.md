@@ -62,3 +62,16 @@ These points matter for Stage 9 (reading the files) and Stage 10 (matching a stu
 2. Diploma lists (not used unless you decide).
 3. How OMS, J&K and Defence candidates appear; and **whether to add a "home university" question to the form** (item 3 above).
 4. How to treat All India list rows whose bracket is a JEE or NEET score (item 2 above).
+
+## Confirmed while reading the State lists (Stage 9a, 29 Oct 2026)
+- The legend printed on every page confirms: **last letter H = Home University, O = Other than Home University, S = State Level**; first letter G = General, L = Ladies. In the State lists the number is the **State General Merit No.** and the bracket the **Merit Percentile**.
+- The "Status" line of every course names its **Home University** (autonomous institutes: "Autonomous Institute"). So a "home university" question can offer a real list of universities taken from the data. **Open question for the owner:** add it to the form? Without it, a student's Home/Other-than-Home seat codes cannot be chosen correctly.
+- The State lists are block-structured (institute, course, status, sections, stage rows), not a plain table. Details and the traps found: docs/STAGE9A.md.
+- The All India lists (96 pages) are a plain table of about 999 rows per file with columns Sr. No., All India merit number (score in brackets), choice code, institute, course, Merit Exam, Type, Seat Type. In the 2026-27 Round IV list the Merit Exam is JEE for 879 rows and MHT-CET for 109 (a few others); Type is "AI to AI" (945), "MH to AI" (53), "MI to AI" (1). Only MHT-CET rows can be compared with an MHT-CET percentile.
+
+## Correction (Stage 9b, 31 Oct 2026)
+The All India lists are **not** about 999 rows: they hold 1,299 to 2,004 rows each (10,615 in the 7 archived lists). My earlier figure of 999 came from a rough count that missed every row numbered 1,000 or more (printed "1,000"). For 2026-27 Round IV the 1,335 rows are 1,203 JEE-based and 132 MHT-CET-based (not 879 and 109). Types over all files: "AI to AI" 10,099, "MH to AI" 485, "MI to AI" 31. Details: docs/STAGE9B.md.
+
+## Home universities and seat-code families (Stage 9c, 4 Nov 2026)
+- The State lists name 13 universities (10 regional state universities plus Deemed to be University, Dr. Babasaheb Ambedkar Technological University, Lonere and SNDT Women's University) and one non-university value, "Autonomous Institute" (132 colleges: they have no home university). Details and counts: docs/STAGE9C.md. This supports a home-university dropdown in the form (owner to decide).
+- 105 seat codes across all lists; families: regular G/L (54), PWD (24), defence (17), ORPHAN (4), PHC (2, older years), and TFWS, EWS, MI (minority), AI (All India seat). The meaning of "R" in DEFR.../PWDR... codes and of the final letter of ORPHAN codes is not defined in the lists; they are stored as printed.

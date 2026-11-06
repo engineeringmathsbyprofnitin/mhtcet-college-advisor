@@ -8,6 +8,7 @@ Commands (used by the GitHub Action):
   python -m ingestion.archive plan    --manifest M --files DIR      lists files still to upload:  tag|asset|sha256
   python -m ingestion.archive confirm --manifest M --shas FILE      marks those files as uploaded
   python -m ingestion.archive verify  --manifest M --files DIR      re-checks stored files against their fingerprints
+  python -m ingestion.archive needed  --manifest M [--scopes MH,AI]  lists the stored cutoff files the readers need:  tag|asset|sha256
 """
 import argparse, hashlib, json, os, re, sys
 
@@ -64,6 +65,16 @@ def current_version(doc):
     return None
 
 
+def needed_downloads(m, scopes=("MH", "AI"), doc_type="cutoff"):
+    """Archived, already-stored files the readers need: (release tag, asset name, sha256), sorted."""
+    out = set()
+    for d in m["documents"].values():
+        if d.get("doc_type") == doc_type and d.get("scope") in scopes and d.get("current_sha256"):
+            f = m["files"].get(d["current_sha256"])
+            if f and f.get("uploaded"): out.add((f["release_tag"], f["asset_name"], f["sha256"]))
+    return sorted(out)
+
+
 def plan_uploads(m, files_dir):
     out = []
     for sha, f in sorted(m["files"].items()):
@@ -95,10 +106,13 @@ def verify_store(m, files_dir):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("command", choices=["plan", "confirm", "verify"]); ap.add_argument("--manifest", default="data/raw/manifest.json")
-    ap.add_argument("--files", default="data/raw/files"); ap.add_argument("--shas"); ap.add_argument("--now")
+    ap.add_argument("command", choices=["plan", "confirm", "verify", "needed"]); ap.add_argument("--manifest", default="data/raw/manifest.json")
+    ap.add_argument("--files", default="data/raw/files"); ap.add_argument("--shas"); ap.add_argument("--now"); ap.add_argument("--scopes", default="MH,AI")
     a = ap.parse_args(argv)
     m = load_manifest(a.manifest)
+    if a.command == "needed":
+        for tag, asset, sha in needed_downloads(m, tuple(x for x in a.scopes.split(",") if x)): print("%s|%s|%s" % (tag, asset, sha))
+        return 0
     if a.command == "plan":
         for tag, asset, sha in plan_uploads(m, a.files): print("%s|%s|%s" % (tag, asset, sha))
         return 0

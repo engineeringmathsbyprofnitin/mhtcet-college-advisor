@@ -1,0 +1,16 @@
+{
+ "generated_at": "2026-11-04T00:00:00Z",
+ "problem_count": 0,
+ "problems": [],
+ "summary": {
+  "colleges": 403,
+  "colleges_with_name_changes": 33,
+  "courses": 2511,
+  "courses_only_in_all_india_list": 1,
+  "courses_with_name_changes": 12,
+  "home_universities": 14,
+  "problems": 0,
+  "seat_codes": 105,
+  "seat_codes_not_recognised": 0
+ }
+}

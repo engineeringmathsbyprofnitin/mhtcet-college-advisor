@@ -1,24 +1,26 @@
 # Project status
 
 ## Completed and owner-verified
-Stages 1-4, 5B, 6 and 7 (live discovery on the real CET Cell site: 2026-27 confirmed, 41 documents, 0 unreachable).
+Stages 1-4, 5B, 6, 7 and 8.
 
-## Stage 8 built (code + simulated-site tests); live run pending
-- ingestion/policy.py: which documents are needed and why (17 files, about 57 MB measured from the real report).
-- ingestion/download.py: polite download, change detection (size + ETag/Last-Modified), content checks (complete, right type, size limits), SHA-256 fingerprint, versions, never replaces a good file with a bad one.
-- ingestion/archive.py: manifest (data/raw/manifest.json), content-based file names, upload plan / confirm / verify.
-- .github/workflows/discover-sources.yml: discover -> download -> store originals in GitHub Releases (one per year) -> save reports; weekly + manual, optional force.
-- docs/RAW_ARCHIVE.md: design, limits (checked against GitHub's documentation), risks.
-
-## Verified (automated)
-146 Python tests pass across Stages 7 and 8 (Stage 8: 12 policy, 39 download/archive, 8 workflow): first run archives 17 files with safe names and records address, meaning and fingerprint; a second run downloads nothing; a replaced file becomes a second version with the old one kept and a CHANGED alert; same bytes with new validators are not a change; a file whose earlier upload failed is fetched again; identical content at two addresses stored once; truncated downloads, web pages in place of PDFs, wrong signatures, missing end markers, empty replies, 404s, repeated 503s, robots.txt refusals, file-size and total-size limits and the request budget all fail safely without damaging earlier good copies; manifest is deterministic and written atomically; file names cannot escape their folder; the workflow uses only GitHub's built-in token, never overwrites an original, never commits original files to git.
+## Stage 9 built (9a, 9b, 9c); live GitHub run of 9c pending
+- 9a State lists: 148,004 cells, every printed percentile accounted for. 9b All India lists: 10,615 rows. 9c master tables: 403 colleges, 2,511 courses, 105 seat codes (all recognised), 14 home-university values; 0 problems (docs/STAGE9A.md, STAGE9B.md, STAGE9C.md).
+- Normalized data in data/normalized (cutoffs_mh, cutoffs_ai, master; about 4.1 MB). 236 Python tests pass across Stages 7-9.
+- New workflow .github/workflows/parse-documents.yml repeats the reading on GitHub from the archived PDFs and replaces the data only if everything is complete.
+- Owner action pending: upload the Stage 9 files once (the 9c zip is cumulative), create the new workflow file, run it (docs/STAGE9C_SETUP.md).
 
 ## NOT verified
-- The real servers: whether the real PDFs pass the content checks (complete-file and PDF-signature checks), whether Last-Modified/ETag are honest on the fe2026 server, upload to GitHub Releases from the Action. The first live run (docs/STAGE8_SETUP.md) tests all of this.
-- Nothing has been read inside the documents yet (Stage 9). Earlier caveats still apply: no real data in the recommendation engine, uncalibrated weights, reserved-can-use-Open-seats assumption, TFWS/Defence/PWD not applied.
+- The live GitHub run of the reading (poppler version there, release downloads, committing the data).
+- Stage meaning and seat-code matching (Stage 10); vacancy and seat-matrix parsing (Stage 11); real data size/speed in the browser.
+- Earlier caveats: no real data in the recommendation engine yet; uncalibrated weights; reserved-can-use-Open-seats assumption; TFWS/Defence/PWD not applied.
 
-## Open questions (docs/CETCELL_SOURCES.md)
-Which list counts as the Round IV vacancy; Diploma lists; OMS/J&K/Defence; whether to add a home-university question to the form; JEE/NEET-based All India rows.
+## Findings that change later work
+- Seat codes end in H / O / S and each course names its Home University: a home-university dropdown (13 universities) is needed in the form (owner to decide).
+- A few official State-list cells are internally inconsistent (same merit number, two percentiles): to be handled in Stage 10.
+- Only MHT-CET rows (about 10%) of the All India lists are comparable with an MHT-CET percentile.
+
+## Open questions
+Home-university dropdown; Round IV vacancy = provisional position vs ACAP list; Diploma lists; OMS/J&K/Defence; treatment of JEE/NEET-based All India rows.
 
 ## Next task
-Owner runs the live archive twice; I fix anything it shows; then Stage 9 (read the PDFs into tables).
+Owner runs the reading workflow; then Stage 10 (validation, which seat codes apply to which student, historical comparison and current-round fallback), split into small parts.

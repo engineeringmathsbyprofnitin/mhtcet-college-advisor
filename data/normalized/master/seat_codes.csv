@@ -1,0 +1,106 @@
+code,family,gender_scope,category,level_letter,level_meaning,variant,lists,first_year,last_year,cells
+AI,all_india_seat,,,,,,AI,2023-24,2026-27,10099
+DEFNT2S,defence,,NT2,S,State Level,,MH,2026-27,2026-27,1
+DEFNT3S,defence,,NT3,S,State Level,,MH,2026-27,2026-27,1
+DEFO,defence,,,O,Other Than Home University,,AI,2023-24,2023-24,2
+DEFOBCO,defence,,OBC,O,Other Than Home University,,AI,2025-26,2025-26,1
+DEFOBCS,defence,,OBC,S,State Level,,MH,2023-24,2026-27,2173
+DEFOPENS,defence,,OPEN,S,State Level,,MH,2023-24,2026-27,4067
+DEFRNT1S,defence,,NT1,S,State Level,R,MH,2024-25,2026-27,5
+DEFRNT2S,defence,,NT2,S,State Level,R,MH,2023-24,2026-27,36
+DEFRNT3S,defence,,NT3,S,State Level,R,MH,2025-26,2026-27,30
+DEFROBCS,defence,,OBC,S,State Level,R,MH,2023-24,2026-27,401
+DEFRSCS,defence,,SC,S,State Level,R,MH,2023-24,2026-27,28
+DEFRSEBCS,defence,,SEBC,S,State Level,R,MH,2024-25,2026-27,206
+DEFRSTS,defence,,ST,S,State Level,R,MH,2023-24,2026-27,2
+DEFRVJS,defence,,VJ,S,State Level,R,MH,2026-27,2026-27,9
+DEFSCS,defence,,SC,S,State Level,,MH,2023-24,2026-27,890
+DEFSEBCS,defence,,SEBC,S,State Level,,MH,2024-25,2026-27,641
+DEFSTS,defence,,ST,S,State Level,,MH,2026-27,2026-27,3
+EWS,ews,,,,,,MH,2023-24,2026-27,5872
+GNT1H,regular,General,NT1,H,Home University,,AI+MH,2023-24,2026-27,1330
+GNT1O,regular,General,NT1,O,Other Than Home University,,AI+MH,2023-24,2026-27,680
+GNT1S,regular,General,NT1,S,State Level,,MH,2023-24,2026-27,1170
+GNT2H,regular,General,NT2,H,Home University,,AI+MH,2023-24,2026-27,1798
+GNT2O,regular,General,NT2,O,Other Than Home University,,AI+MH,2023-24,2026-27,1023
+GNT2S,regular,General,NT2,S,State Level,,MH,2023-24,2026-27,1489
+GNT3H,regular,General,NT3,H,Home University,,AI+MH,2023-24,2026-27,1178
+GNT3O,regular,General,NT3,O,Other Than Home University,,AI+MH,2023-24,2026-27,596
+GNT3S,regular,General,NT3,S,State Level,,MH,2023-24,2026-27,1110
+GOBCH,regular,General,OBC,H,Home University,,AI+MH,2023-24,2026-27,4831
+GOBCO,regular,General,OBC,O,Other Than Home University,,AI+MH,2023-24,2026-27,3742
+GOBCS,regular,General,OBC,S,State Level,,MH,2023-24,2026-27,3002
+GOPENH,regular,General,OPEN,H,Home University,,AI+MH,2023-24,2026-27,7831
+GOPENO,regular,General,OPEN,O,Other Than Home University,,AI+MH,2023-24,2026-27,7200
+GOPENS,regular,General,OPEN,S,State Level,,MH,2023-24,2026-27,5245
+GSCH,regular,General,SC,H,Home University,,AI+MH,2023-24,2026-27,3846
+GSCO,regular,General,SC,O,Other Than Home University,,AI+MH,2023-24,2026-27,2878
+GSCS,regular,General,SC,S,State Level,,MH,2023-24,2026-27,2609
+GSEBCH,regular,General,SEBC,H,Home University,,AI+MH,2024-25,2026-27,3080
+GSEBCO,regular,General,SEBC,O,Other Than Home University,,AI+MH,2024-25,2026-27,2354
+GSEBCS,regular,General,SEBC,S,State Level,,MH,2024-25,2026-27,2429
+GSTH,regular,General,ST,H,Home University,,AI+MH,2023-24,2026-27,2685
+GSTO,regular,General,ST,O,Other Than Home University,,AI+MH,2023-24,2026-27,1899
+GSTS,regular,General,ST,S,State Level,,MH,2023-24,2026-27,2099
+GVJH,regular,General,VJ,H,Home University,,AI+MH,2023-24,2026-27,1548
+GVJO,regular,General,VJ,O,Other Than Home University,,AI+MH,2023-24,2026-27,832
+GVJS,regular,General,VJ,S,State Level,,MH,2023-24,2026-27,1370
+LNT1H,regular,Ladies,NT1,H,Home University,,AI+MH,2023-24,2026-27,603
+LNT1O,regular,Ladies,NT1,O,Other Than Home University,,AI+MH,2023-24,2026-27,286
+LNT1S,regular,Ladies,NT1,S,State Level,,MH,2023-24,2026-27,653
+LNT2H,regular,Ladies,NT2,H,Home University,,AI+MH,2023-24,2026-27,876
+LNT2O,regular,Ladies,NT2,O,Other Than Home University,,AI+MH,2023-24,2026-27,431
+LNT2S,regular,Ladies,NT2,S,State Level,,MH,2023-24,2026-27,932
+LNT3H,regular,Ladies,NT3,H,Home University,,AI+MH,2023-24,2026-27,578
+LNT3O,regular,Ladies,NT3,O,Other Than Home University,,AI+MH,2023-24,2026-27,245
+LNT3S,regular,Ladies,NT3,S,State Level,,MH,2023-24,2026-27,567
+LOBCH,regular,Ladies,OBC,H,Home University,,AI+MH,2023-24,2026-27,3335
+LOBCO,regular,Ladies,OBC,O,Other Than Home University,,AI+MH,2023-24,2026-27,2158
+LOBCS,regular,Ladies,OBC,S,State Level,,MH,2023-24,2026-27,2317
+LOPENH,regular,Ladies,OPEN,H,Home University,,AI+MH,2023-24,2026-27,6118
+LOPENO,regular,Ladies,OPEN,O,Other Than Home University,,AI+MH,2023-24,2026-27,4931
+LOPENS,regular,Ladies,OPEN,S,State Level,,MH,2023-24,2026-27,4460
+LSCH,regular,Ladies,SC,H,Home University,,AI+MH,2023-24,2026-27,2354
+LSCO,regular,Ladies,SC,O,Other Than Home University,,AI+MH,2023-24,2026-27,1446
+LSCS,regular,Ladies,SC,S,State Level,,MH,2023-24,2026-27,1951
+LSEBCH,regular,Ladies,SEBC,H,Home University,,AI+MH,2024-25,2026-27,1959
+LSEBCO,regular,Ladies,SEBC,O,Other Than Home University,,AI+MH,2024-25,2026-27,1072
+LSEBCS,regular,Ladies,SEBC,S,State Level,,MH,2024-25,2026-27,1748
+LSTH,regular,Ladies,ST,H,Home University,,AI+MH,2023-24,2026-27,1453
+LSTO,regular,Ladies,ST,O,Other Than Home University,,AI+MH,2023-24,2026-27,868
+LSTS,regular,Ladies,ST,S,State Level,,MH,2023-24,2026-27,1423
+LVJH,regular,Ladies,VJ,H,Home University,,AI+MH,2023-24,2026-27,746
+LVJO,regular,Ladies,VJ,O,Other Than Home University,,AI+MH,2023-24,2026-27,388
+LVJS,regular,Ladies,VJ,S,State Level,,MH,2023-24,2026-27,814
+MI,minority,,,,,,AI+MH,2023-24,2026-27,2759
+ORPHAN,orphan,,,,,,AI+MH,2023-24,2025-26,713
+ORPHAN2,orphan,,,,,2,AI,2026-27,2026-27,1
+ORPHANI,orphan,,,,,I,MH,2026-27,2026-27,875
+ORPHANN,orphan,,,,,N,MH,2026-27,2026-27,882
+PHCH,phc,,,H,Home University,,AI,2023-24,2025-26,10
+PHCOBCH,phc,,OBC,H,Home University,,AI,2025-26,2025-26,1
+PWDNT2S,pwd,,NT2,S,State Level,,MH,2026-27,2026-27,1
+PWDNT3S,pwd,,NT3,S,State Level,,MH,2026-27,2026-27,1
+PWDOBCH,pwd,,OBC,H,Home University,,MH,2023-24,2026-27,1158
+PWDOBCS,pwd,,OBC,S,State Level,,MH,2023-24,2026-27,888
+PWDOPENH,pwd,,OPEN,H,Home University,,MH,2023-24,2026-27,2377
+PWDOPENS,pwd,,OPEN,S,State Level,,MH,2023-24,2026-27,1502
+PWDRNT1S,pwd,,NT1,S,State Level,R,MH,2026-27,2026-27,10
+PWDRNT2H,pwd,,NT2,H,Home University,R,MH,2024-25,2024-25,1
+PWDRNT2S,pwd,,NT2,S,State Level,R,MH,2026-27,2026-27,5
+PWDRNT3S,pwd,,NT3,S,State Level,R,MH,2026-27,2026-27,4
+PWDROBCH,pwd,,OBC,H,Home University,R,MH,2023-24,2026-27,16
+PWDROBCS,pwd,,OBC,S,State Level,R,MH,2023-24,2026-27,108
+PWDRSCH,pwd,,SC,H,Home University,R,MH,2026-27,2026-27,2
+PWDRSCS,pwd,,SC,S,State Level,R,MH,2026-27,2026-27,11
+PWDRSEBCH,pwd,,SEBC,H,Home University,R,MH,2026-27,2026-27,2
+PWDRSEBCS,pwd,,SEBC,S,State Level,R,MH,2026-27,2026-27,11
+PWDRSTH,pwd,,ST,H,Home University,R,MH,2026-27,2026-27,2
+PWDRSTS,pwd,,ST,S,State Level,R,MH,2026-27,2026-27,4
+PWDRVJS,pwd,,VJ,S,State Level,R,MH,2026-27,2026-27,7
+PWDSCH,pwd,,SC,H,Home University,,MH,2023-24,2026-27,385
+PWDSCS,pwd,,SC,S,State Level,,MH,2023-24,2026-27,520
+PWDSEBCH,pwd,,SEBC,H,Home University,,MH,2024-25,2026-27,267
+PWDSEBCS,pwd,,SEBC,S,State Level,,MH,2024-25,2026-27,345
+PWDSTS,pwd,,ST,S,State Level,,MH,2026-27,2026-27,2
+TFWS,tfws,,,,,,MH,2023-24,2026-27,6716

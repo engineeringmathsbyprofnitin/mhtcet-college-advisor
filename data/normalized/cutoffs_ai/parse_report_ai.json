@@ -1,0 +1,376 @@
+{
+ "all_ok": true,
+ "files": [
+  {
+   "asset": "51e9ce347ce527fd__2023ENGG_CAP3_AI_CutOff.pdf",
+   "blank_rows": 0,
+   "cap_round": "III",
+   "complete": true,
+   "cross_check_with_state_list": {
+    "checked": 1299,
+    "course_name_differs": 0,
+    "course_name_truncated_in_ai_list": 91,
+    "examples": [],
+    "institute_name_differs": 0,
+    "not_in_state_list": 16
+   },
+   "merit_exams": {
+    "JEE(Main)": 1119,
+    "MHT-CET": 180
+   },
+   "output": "2023-24_round-III_AI.csv.gz",
+   "pages": 93,
+   "printed_choice_codes": 1299,
+   "problem_count": 0,
+   "problems": [],
+   "rows": 1299,
+   "seat_types": {
+    "AI": 1054,
+    "DEFO": 2,
+    "GNT1H": 32,
+    "GNT1O": 1,
+    "GNT2H": 20,
+    "GNT2O": 2,
+    "GNT3H": 10,
+    "GNT3O": 2,
+    "GOBCH": 31,
+    "GOBCO": 8,
+    "GOPENH": 3,
+    "GOPENO": 6,
+    "GSCH": 14,
+    "GSCO": 5,
+    "GSTH": 10,
+    "GSTO": 2,
+    "GVJH": 3,
+    "GVJO": 1,
+    "LNT1H": 11,
+    "LNT1O": 1,
+    "LNT2H": 7,
+    "LNT2O": 1,
+    "LNT3H": 1,
+    "LOBCH": 20,
+    "LOBCO": 3,
+    "LOPENH": 8,
+    "LOPENO": 6,
+    "LSCH": 8,
+    "LSCO": 3,
+    "LSTH": 3,
+    "LSTO": 2,
+    "LVJH": 2,
+    "LVJO": 1,
+    "MI": 6,
+    "ORPHAN": 3,
+    "PHCH": 7
+   },
+   "source_sha256": "51e9ce347ce527fdc626ba8acc42e63af59b158fe0bf431dc1ff90c4285211b4",
+   "types": {
+    "AI to AI": 1054,
+    "MH to AI": 239,
+    "MI to AI": 6
+   },
+   "year_label": "2023-24"
+  },
+  {
+   "asset": "e93a009d4368472e__2024ENGG_CAP3_AI_CutOff.pdf",
+   "blank_rows": 3,
+   "cap_round": "III",
+   "complete": true,
+   "cross_check_with_state_list": {
+    "checked": 1399,
+    "course_name_differs": 0,
+    "course_name_truncated_in_ai_list": 75,
+    "examples": [],
+    "institute_name_differs": 0,
+    "not_in_state_list": 5
+   },
+   "merit_exams": {
+    "JEE": 1248,
+    "JEE(Main)-2024": 5,
+    "MHT-CET": 130,
+    "MHT-CET-PCB 2024": 2,
+    "MHT-CET-PCM 2024": 1,
+    "NEET-2024": 13
+   },
+   "output": "2024-25_round-III_AI.csv.gz",
+   "pages": 100,
+   "printed_choice_codes": 1399,
+   "problem_count": 0,
+   "problems": [],
+   "rows": 1399,
+   "seat_types": {
+    "AI": 1297,
+    "GNT1H": 11,
+    "GNT2H": 10,
+    "GNT3H": 4,
+    "GNT3O": 1,
+    "GOBCH": 14,
+    "GOBCO": 2,
+    "GOPENH": 3,
+    "GOPENO": 2,
+    "GSCH": 7,
+    "GSCO": 1,
+    "GSEBCH": 4,
+    "GSEBCO": 1,
+    "GSTH": 6,
+    "GSTO": 2,
+    "GVJH": 1,
+    "LNT1H": 2,
+    "LNT2H": 5,
+    "LNT3H": 1,
+    "LOBCH": 2,
+    "LOBCO": 2,
+    "LOPENH": 1,
+    "LOPENO": 2,
+    "LSEBCH": 2,
+    "LSEBCO": 1,
+    "LSTH": 2,
+    "LSTO": 2,
+    "LVJH": 2,
+    "MI": 6,
+    "ORPHAN": 1,
+    "PHCH": 2
+   },
+   "source_sha256": "e93a009d4368472e87de76aca37b9da228eb6445dfefaa144edff7ecab2585e0",
+   "types": {
+    "AI to AI": 1297,
+    "MH to AI": 96,
+    "MI to AI": 6
+   },
+   "year_label": "2024-25"
+  },
+  {
+   "asset": "2d9546975769c81f__2025ENGG_CAP4_AI_CutOff.pdf",
+   "blank_rows": 3,
+   "cap_round": "IV",
+   "complete": true,
+   "cross_check_with_state_list": {
+    "checked": 1353,
+    "course_name_differs": 0,
+    "course_name_truncated_in_ai_list": 68,
+    "examples": [],
+    "institute_name_differs": 0,
+    "not_in_state_list": 12
+   },
+   "merit_exams": {
+    "JEE": 1218,
+    "JEE(Main)-2025": 10,
+    "MHT-CET": 113,
+    "MHT-CET-PCB 2025": 1,
+    "MHT-CET-PCM 2025": 1,
+    "NEET-2025": 10
+   },
+   "output": "2025-26_round-IV_AI.csv.gz",
+   "pages": 97,
+   "printed_choice_codes": 1353,
+   "problem_count": 0,
+   "problems": [],
+   "rows": 1353,
+   "seat_types": {
+    "AI": 1264,
+    "DEFOBCO": 1,
+    "GNT1H": 14,
+    "GNT1O": 2,
+    "GNT2H": 7,
+    "GNT2O": 1,
+    "GNT3H": 5,
+    "GOBCH": 11,
+    "GOPENH": 1,
+    "GOPENO": 2,
+    "GSCH": 5,
+    "GSCO": 4,
+    "GSEBCH": 1,
+    "GSEBCO": 2,
+    "GSTH": 4,
+    "LNT2H": 1,
+    "LNT3O": 1,
+    "LOBCH": 5,
+    "LOBCO": 1,
+    "LOPENO": 4,
+    "LSCH": 3,
+    "LSEBCH": 2,
+    "LSTH": 2,
+    "LSTO": 2,
+    "LVJO": 1,
+    "MI": 4,
+    "ORPHAN": 1,
+    "PHCH": 1,
+    "PHCOBCH": 1
+   },
+   "source_sha256": "2d9546975769c81f2de04cfba265424f0a083851aee1ac367b82ec58bf3ba68e",
+   "types": {
+    "AI to AI": 1264,
+    "MH to AI": 85,
+    "MI to AI": 4
+   },
+   "year_label": "2025-26"
+  },
+  {
+   "asset": "9c89832627f09c01__2026ENGG_CAP1_AI_CutOff.pdf",
+   "blank_rows": 0,
+   "cap_round": "I",
+   "complete": true,
+   "cross_check_with_state_list": {
+    "checked": 2004,
+    "course_name_differs": 0,
+    "course_name_truncated_in_ai_list": 121,
+    "examples": [],
+    "institute_name_differs": 0,
+    "not_in_state_list": 0
+   },
+   "merit_exams": {
+    "JEE": 1504,
+    "JEE(Main)-2026": 16,
+    "MHT-CET": 483,
+    "MHT-CET-PCB 2026": 1
+   },
+   "output": "2026-27_round-I_AI.csv.gz",
+   "pages": 144,
+   "printed_choice_codes": 2004,
+   "problem_count": 0,
+   "problems": [],
+   "rows": 2004,
+   "seat_types": {
+    "AI": 2004
+   },
+   "source_sha256": "9c89832627f09c01330b44168d8e1f5321f74181b0b461ced0fdc4f4f0946f85",
+   "types": {
+    "AI to AI": 2004
+   },
+   "year_label": "2026-27"
+  },
+  {
+   "asset": "6815ec9c7391e792__2026ENGG_CAP2_AI_CutOff.pdf",
+   "blank_rows": 0,
+   "cap_round": "II",
+   "complete": true,
+   "cross_check_with_state_list": {
+    "checked": 1753,
+    "course_name_differs": 0,
+    "course_name_truncated_in_ai_list": 116,
+    "examples": [],
+    "institute_name_differs": 0,
+    "not_in_state_list": 0
+   },
+   "merit_exams": {
+    "JEE": 1494,
+    "JEE(Main)-2026": 15,
+    "MHT-CET": 244
+   },
+   "output": "2026-27_round-II_AI.csv.gz",
+   "pages": 126,
+   "printed_choice_codes": 1753,
+   "problem_count": 0,
+   "problems": [],
+   "rows": 1753,
+   "seat_types": {
+    "AI": 1744,
+    "MI": 9
+   },
+   "source_sha256": "6815ec9c7391e7924e73f5d8d109cef703620d4df9ad126b95e4220fd6c5e6a4",
+   "types": {
+    "AI to AI": 1744,
+    "MI to AI": 9
+   },
+   "year_label": "2026-27"
+  },
+  {
+   "asset": "bb8add06029af9cd__2026ENGG_CAP3_AI_CutOff.pdf",
+   "blank_rows": 0,
+   "cap_round": "III",
+   "complete": true,
+   "cross_check_with_state_list": {
+    "checked": 1472,
+    "course_name_differs": 0,
+    "course_name_truncated_in_ai_list": 88,
+    "examples": [],
+    "institute_name_differs": 0,
+    "not_in_state_list": 0
+   },
+   "merit_exams": {
+    "JEE": 1314,
+    "JEE(Main)-2026": 13,
+    "MHT-CET": 144,
+    "MHT-CET-PCB 2026": 1
+   },
+   "output": "2026-27_round-III_AI.csv.gz",
+   "pages": 106,
+   "printed_choice_codes": 1472,
+   "problem_count": 0,
+   "problems": [],
+   "rows": 1472,
+   "seat_types": {
+    "AI": 1467,
+    "MI": 5
+   },
+   "source_sha256": "bb8add06029af9cd672094c18d30c2c512ddd9d23fe0cd1cd1e4afd034bb122b",
+   "types": {
+    "AI to AI": 1467,
+    "MI to AI": 5
+   },
+   "year_label": "2026-27"
+  },
+  {
+   "asset": "8fb2c6dfef0ef9d3__2026ENGG_CAP4_AI_CutOff.pdf",
+   "blank_rows": 0,
+   "cap_round": "IV",
+   "complete": true,
+   "cross_check_with_state_list": {
+    "checked": 1335,
+    "course_name_differs": 0,
+    "course_name_truncated_in_ai_list": 86,
+    "examples": [],
+    "institute_name_differs": 0,
+    "not_in_state_list": 0
+   },
+   "merit_exams": {
+    "JEE": 1191,
+    "JEE(Main)-2026": 12,
+    "MHT-CET": 130,
+    "MHT-CET-PCB 2026": 2
+   },
+   "output": "2026-27_round-IV_AI.csv.gz",
+   "pages": 96,
+   "printed_choice_codes": 1335,
+   "problem_count": 0,
+   "problems": [],
+   "rows": 1335,
+   "seat_types": {
+    "AI": 1269,
+    "GNT1H": 9,
+    "GNT2H": 10,
+    "GNT2O": 3,
+    "GNT3H": 3,
+    "GOBCH": 8,
+    "GOPENH": 2,
+    "GOPENO": 3,
+    "GSCH": 2,
+    "GSEBCH": 3,
+    "GSEBCO": 1,
+    "GSTH": 4,
+    "GSTO": 1,
+    "GVJH": 1,
+    "GVJO": 1,
+    "LNT1H": 1,
+    "LNT2H": 2,
+    "LNT3H": 2,
+    "LOBCH": 1,
+    "LOPENO": 2,
+    "LSCH": 1,
+    "LSEBCH": 1,
+    "LSEBCO": 1,
+    "LSTH": 1,
+    "LSTO": 1,
+    "MI": 1,
+    "ORPHAN2": 1
+   },
+   "source_sha256": "8fb2c6dfef0ef9d3c71087167c0b79898d144e7221e7d51392eceddbaf4aa1aa",
+   "types": {
+    "AI to AI": 1269,
+    "MH to AI": 65,
+    "MI to AI": 1
+   },
+   "year_label": "2026-27"
+  }
+ ],
+ "generated_at": "2026-10-31T00:00:00Z"
+}
