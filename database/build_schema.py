@@ -64,7 +64,11 @@ for name,t in T.items():
     cols=[dict(name=n,type=ty,required=rq,**kw) for (n,ty,rq,kw) in t["cols"]]
     if t["prov"]: cols+= [dict(name=n,type=ty,required=rq,**kw) for (n,ty,rq,kw) in PROV]
     schema[name]=dict(description=t["desc"],primary_key=t["pk"],unique=t.get("unique"),columns=cols)
-json.dump({"schema_version":"0.1","note":"Stage 3 draft. Enums for categories/branches will be refined from official data.","tables":schema},open("schema.json","w"),indent=1)
+# v0.4 (Stage 10b): real State-list cells carry section, stage, merit number and merit exam (optional; blank in synthetic data)
+for _t in ("historical_cutoffs","current_cutoffs"):
+    schema[_t]["columns"]+=[dict(name=n,type=ty,required=False) for n,ty in (("section","str"),("stage","str"),("merit_no","int"),("merit_exam","str"))]
+    schema[_t]["unique"]=["choice_code","admission_year","cap_round","seat_type_code","section","stage"]
+json.dump({"schema_version":"0.4","note":"v0.4 (Stage 10b): cutoff tables gain section, stage, merit_no, merit_exam (optional; blank in synthetic data). Stage meanings are not defined by the official documents.","tables":schema},open("schema.json","w"),indent=1)
 os.makedirs("templates",exist_ok=True)
 for name,t in schema.items():
     with open(f"templates/{name}.csv","w",newline="") as f: csv.writer(f).writerow([c["name"] for c in t["columns"]])

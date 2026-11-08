@@ -1,4 +1,4 @@
-# Database schema (Stage 3 draft, v0.3)
+# Database schema (v0.4 (Stage 10b))
 
 Each table is one CSV file now and one Google Sheet tab later (Stage 5). `database/schema.json` is the machine-readable version used by `validate_data.py`; this file is generated from it.
 
@@ -90,7 +90,7 @@ Key: `seat_type_code`
 ## historical_cutoffs
 Cutoffs of completed admission years.
 
-Key: `cutoff_id` · Must be unique together: `choice_code, admission_year, cap_round, seat_type_code`
+Key: `cutoff_id` · Must be unique together: `choice_code, admission_year, cap_round, seat_type_code, section, stage`
 
 | Column | Type | Notes |
 |---|---|---|
@@ -102,11 +102,15 @@ Key: `cutoff_id` · Must be unique together: `choice_code, admission_year, cap_r
 | cutoff_percentile* | percentile |  |
 | cutoff_rank | int |  |
 | published_date | date |  |
+| section | str |  |
+| stage | str |  |
+| merit_no | int |  |
+| merit_exam | str |  |
 
 ## current_cutoffs
 Cutoffs of the current admission year, one row per published CAP round.
 
-Key: `cutoff_id` · Must be unique together: `choice_code, admission_year, cap_round, seat_type_code`
+Key: `cutoff_id` · Must be unique together: `choice_code, admission_year, cap_round, seat_type_code, section, stage`
 
 | Column | Type | Notes |
 |---|---|---|
@@ -118,6 +122,10 @@ Key: `cutoff_id` · Must be unique together: `choice_code, admission_year, cap_r
 | cutoff_percentile* | percentile |  |
 | cutoff_rank | int |  |
 | published_date | date |  |
+| section | str |  |
+| stage | str |  |
+| merit_no | int |  |
+| merit_exam | str |  |
 
 ## vacancies
 Genuine vacancy positions ONLY. Round must be III or IV and the source document must be of type vacancy_position. seat_type_code may be 'ALL' for a branch total.

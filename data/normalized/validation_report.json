@@ -1,0 +1,592 @@
+{
+ "errors": {},
+ "warnings": {
+  "ROW_HOME_UNIVERSITY_BLANK": 34978,
+  "ROW_HOME_UNIVERSITY_DIFFERS_FROM_MASTER": 2190,
+  "CONFLICTING_MERIT_PERCENTILE": 134,
+  "PERCENTILE_RISES_WITH_MERIT_NO": 7,
+  "PERCENTILE_RISES_OVER_HALF_POINT": 1066,
+  "BLANK_HOME_UNIVERSITY_ROWS_COURSE_PRINTS_ONE_VALUE_ELSEWHERE": 33859,
+  "BLANK_HOME_UNIVERSITY_ROWS_NEVER_PRINTED_FOR_COURSE": 1119,
+  "AI_BLANK_SCORE_KEPT_BLANK": 6
+ },
+ "examples": {
+  "ROW_HOME_UNIVERSITY_DIFFERS_FROM_MASTER": [
+   [
+    "2023-24_round-III_MH.csv.gz",
+    "02114",
+    "Dr. Babasaheb Ambedkar Marathwada University",
+    "Autonomous Institute"
+   ],
+   [
+    "2023-24_round-III_MH.csv.gz",
+    "02114",
+    "Dr. Babasaheb Ambedkar Marathwada University",
+    "Autonomous Institute"
+   ],
+   [
+    "2023-24_round-III_MH.csv.gz",
+    "02114",
+    "Dr. Babasaheb Ambedkar Marathwada University",
+    "Autonomous Institute"
+   ],
+   [
+    "2023-24_round-III_MH.csv.gz",
+    "02114",
+    "Dr. Babasaheb Ambedkar Marathwada University",
+    "Autonomous Institute"
+   ],
+   [
+    "2023-24_round-III_MH.csv.gz",
+    "02114",
+    "Dr. Babasaheb Ambedkar Marathwada University",
+    "Autonomous Institute"
+   ],
+   [
+    "2023-24_round-III_MH.csv.gz",
+    "02114",
+    "Dr. Babasaheb Ambedkar Marathwada University",
+    "Autonomous Institute"
+   ],
+   [
+    "2023-24_round-III_MH.csv.gz",
+    "02114",
+    "Dr. Babasaheb Ambedkar Marathwada University",
+    "Autonomous Institute"
+   ],
+   [
+    "2023-24_round-III_MH.csv.gz",
+    "02114",
+    "Dr. Babasaheb Ambedkar Marathwada University",
+    "Autonomous Institute"
+   ]
+  ],
+  "PERCENTILE_RISES_WITH_MERIT_NO": [
+   [
+    "2023-24_round-III_MH.csv.gz",
+    16,
+    "of which over 0.5 percentile:",
+    16,
+    "largest:",
+    60.8725
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    200,
+    "of which over 0.5 percentile:",
+    185,
+    "largest:",
+    98.0461
+   ],
+   [
+    "2025-26_round-IV_MH.csv.gz",
+    148,
+    "of which over 0.5 percentile:",
+    136,
+    "largest:",
+    96.6486
+   ],
+   [
+    "2026-27_round-III_MH.csv.gz",
+    202,
+    "of which over 0.5 percentile:",
+    166,
+    "largest:",
+    8.1225
+   ],
+   [
+    "2026-27_round-II_MH.csv.gz",
+    272,
+    "of which over 0.5 percentile:",
+    194,
+    "largest:",
+    8.9916
+   ],
+   [
+    "2026-27_round-IV_MH.csv.gz",
+    174,
+    "of which over 0.5 percentile:",
+    155,
+    "largest:",
+    76.7428
+   ],
+   [
+    "2026-27_round-I_MH.csv.gz",
+    317,
+    "of which over 0.5 percentile:",
+    214,
+    "largest:",
+    9.9126
+   ]
+  ],
+  "CONFLICTING_MERIT_PERCENTILE": [
+   [
+    "2024-25_round-III_MH.csv.gz",
+    78502,
+    [
+     "71.7115000",
+     "73.6262684"
+    ]
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    114194,
+    [
+     "54.1800379",
+     "57.3310702"
+    ]
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    120112,
+    [
+     "50.9307179",
+     "54.3493855"
+    ]
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    97348,
+    [
+     "63.0701676",
+     "65.5936675"
+    ]
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    132976,
+    [
+     "42.8773305",
+     "46.7839893"
+    ]
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    31577,
+    [
+     "89.3223371",
+     "90.0869898"
+    ]
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    22329,
+    [
+     "92.5934223",
+     "93.0647199"
+    ]
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    174764,
+    [
+     "10.4465918",
+     "6.5004331"
+    ]
+   ],
+   [
+    "2025-26_round-IV_MH.csv.gz",
+    103719,
+    [
+     "65.8992965",
+     "68.7032705"
+    ]
+   ],
+   [
+    "2025-26_round-IV_MH.csv.gz",
+    171541,
+    [
+     "29.0442453",
+     "33.7278107"
+    ]
+   ],
+   [
+    "2025-26_round-IV_MH.csv.gz",
+    82572,
+    [
+     "73.8000589",
+     "75.8217373"
+    ]
+   ],
+   [
+    "2025-26_round-IV_MH.csv.gz",
+    71269,
+    [
+     "78.2722320",
+     "79.7828107"
+    ]
+   ],
+   [
+    "2025-26_round-IV_MH.csv.gz",
+    140614,
+    [
+     "48.5587427",
+     "52.8151445"
+    ]
+   ],
+   [
+    "2025-26_round-IV_MH.csv.gz",
+    58481,
+    [
+     "82.3322294",
+     "83.5987187"
+    ]
+   ],
+   [
+    "2025-26_round-IV_MH.csv.gz",
+    87842,
+    [
+     "72.1028020",
+     "74.1785747"
+    ]
+   ],
+   [
+    "2026-27_round-III_MH.csv.gz",
+    110332,
+    [
+     "72.5022286",
+     "74.5629550"
+    ]
+   ],
+   [
+    "2026-27_round-III_MH.csv.gz",
+    40784,
+    [
+     "90.3030767",
+     "91.1313556"
+    ]
+   ],
+   [
+    "2026-27_round-III_MH.csv.gz",
+    127741,
+    [
+     "67.2460619",
+     "69.5116791"
+    ]
+   ],
+   [
+    "2026-27_round-III_MH.csv.gz",
+    110644,
+    [
+     "72.4223602",
+     "74.5338019"
+    ]
+   ],
+   [
+    "2026-27_round-III_MH.csv.gz",
+    89549,
+    [
+     "78.1871974",
+     "79.7704743"
+    ]
+   ],
+   [
+    "2026-27_round-III_MH.csv.gz",
+    3299,
+    [
+     "99.2353800",
+     "99.3007281"
+    ]
+   ],
+   [
+    "2026-27_round-III_MH.csv.gz",
+    64536,
+    [
+     "84.4651484",
+     "85.7883172"
+    ]
+   ],
+   [
+    "2026-27_round-III_MH.csv.gz",
+    40176,
+    [
+     "90.4743555",
+     "91.2344156"
+    ]
+   ],
+   [
+    "2026-27_round-II_MH.csv.gz",
+    81614,
+    [
+     "80.2462012",
+     "81.8262863"
+    ]
+   ],
+   [
+    "2026-27_round-II_MH.csv.gz",
+    24155,
+    [
+     "94.3099035",
+     "94.8426320"
+    ]
+   ],
+   [
+    "2026-27_round-II_MH.csv.gz",
+    52996,
+    [
+     "87.3937627",
+     "88.3422902"
+    ]
+   ],
+   [
+    "2026-27_round-II_MH.csv.gz",
+    101705,
+    [
+     "74.8210845",
+     "76.6805182"
+    ]
+   ],
+   [
+    "2026-27_round-II_MH.csv.gz",
+    115112,
+    [
+     "71.0421393",
+     "73.1027107"
+    ]
+   ],
+   [
+    "2026-27_round-II_MH.csv.gz",
+    101737,
+    [
+     "74.8210845",
+     "76.6804465"
+    ]
+   ],
+   [
+    "2026-27_round-II_MH.csv.gz",
+    119735,
+    [
+     "69.7766245",
+     "71.8444878"
+    ]
+   ],
+   [
+    "2026-27_round-II_MH.csv.gz",
+    160514,
+    [
+     "55.4914407",
+     "58.9154678"
+    ]
+   ],
+   [
+    "2026-27_round-IV_MH.csv.gz",
+    134053,
+    [
+     "65.3107562",
+     "67.9203695"
+    ]
+   ],
+   [
+    "2026-27_round-IV_MH.csv.gz",
+    138303,
+    [
+     "63.5528650",
+     "66.1844177"
+    ]
+   ],
+   [
+    "2026-27_round-IV_MH.csv.gz",
+    145950,
+    [
+     "60.9157012",
+     "63.6505588"
+    ]
+   ],
+   [
+    "2026-27_round-IV_MH.csv.gz",
+    134251,
+    [
+     "65.3107562",
+     "67.7447372"
+    ]
+   ],
+   [
+    "2026-27_round-IV_MH.csv.gz",
+    15065,
+    [
+     "96.4895380",
+     "96.7953236"
+    ]
+   ],
+   [
+    "2026-27_round-IV_MH.csv.gz",
+    75504,
+    [
+     "81.9137967",
+     "83.1624186"
+    ]
+   ],
+   [
+    "2026-27_round-IV_MH.csv.gz",
+    64536,
+    [
+     "84.4651484",
+     "85.7883172"
+    ]
+   ],
+   [
+    "2026-27_round-IV_MH.csv.gz",
+    122629,
+    [
+     "68.7336094",
+     "71.0421393"
+    ]
+   ],
+   [
+    "2026-27_round-I_MH.csv.gz",
+    28070,
+    [
+     "93.3993174",
+     "93.9617023"
+    ]
+   ],
+   [
+    "2026-27_round-I_MH.csv.gz",
+    81381,
+    [
+     "80.4293972",
+     "81.8599034"
+    ]
+   ],
+   [
+    "2026-27_round-I_MH.csv.gz",
+    26654,
+    [
+     "93.7060041",
+     "94.2622611"
+    ]
+   ],
+   [
+    "2026-27_round-I_MH.csv.gz",
+    69201,
+    [
+     "83.3956241",
+     "84.5398340"
+    ]
+   ],
+   [
+    "2026-27_round-I_MH.csv.gz",
+    105922,
+    [
+     "73.6760290",
+     "75.5424063"
+    ]
+   ],
+   [
+    "2026-27_round-I_MH.csv.gz",
+    16660,
+    [
+     "96.1068782",
+     "96.4579224"
+    ]
+   ],
+   [
+    "2026-27_round-I_MH.csv.gz",
+    85355,
+    [
+     "79.3766715",
+     "80.7422798"
+    ]
+   ],
+   [
+    "2026-27_round-I_MH.csv.gz",
+    30689,
+    [
+     "92.7467219",
+     "93.4182496"
+    ]
+   ]
+  ],
+  "AI_BLANK_SCORE_KEPT_BLANK": [
+   [
+    "2024-25_round-III_AI.csv.gz",
+    "0321937210"
+   ],
+   [
+    "2024-25_round-III_AI.csv.gz",
+    "0419329310"
+   ],
+   [
+    "2024-25_round-III_AI.csv.gz",
+    "0419361210"
+   ],
+   [
+    "2025-26_round-IV_AI.csv.gz",
+    "0321924610"
+   ],
+   [
+    "2025-26_round-IV_AI.csv.gz",
+    "0322229310"
+   ],
+   [
+    "2025-26_round-IV_AI.csv.gz",
+    "0536592110"
+   ]
+  ]
+ },
+ "lists": [
+  {
+   "file": "2023-24_round-III_MH.csv.gz",
+   "year": "2023-24",
+   "round": "III",
+   "rows": 12471,
+   "conflicting_merit_numbers": 0,
+   "order_inversions": 16
+  },
+  {
+   "file": "2024-25_round-III_MH.csv.gz",
+   "year": "2024-25",
+   "round": "III",
+   "rows": 16735,
+   "conflicting_merit_numbers": 10,
+   "order_inversions": 200
+  },
+  {
+   "file": "2025-26_round-IV_MH.csv.gz",
+   "year": "2025-26",
+   "round": "IV",
+   "rows": 13745,
+   "conflicting_merit_numbers": 7,
+   "order_inversions": 148
+  },
+  {
+   "file": "2026-27_round-III_MH.csv.gz",
+   "year": "2026-27",
+   "round": "III",
+   "rows": 19839,
+   "conflicting_merit_numbers": 19,
+   "order_inversions": 202
+  },
+  {
+   "file": "2026-27_round-II_MH.csv.gz",
+   "year": "2026-27",
+   "round": "II",
+   "rows": 34391,
+   "conflicting_merit_numbers": 36,
+   "order_inversions": 272
+  },
+  {
+   "file": "2026-27_round-IV_MH.csv.gz",
+   "year": "2026-27",
+   "round": "IV",
+   "rows": 14764,
+   "conflicting_merit_numbers": 10,
+   "order_inversions": 174
+  },
+  {
+   "file": "2026-27_round-I_MH.csv.gz",
+   "year": "2026-27",
+   "round": "I",
+   "rows": 36059,
+   "conflicting_merit_numbers": 52,
+   "order_inversions": 317
+  }
+ ],
+ "latest_round_per_year": {
+  "2023-24": "III",
+  "2024-25": "III",
+  "2025-26": "IV",
+  "2026-27": "IV"
+ },
+ "ok": true
+}

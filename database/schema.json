@@ -1,6 +1,6 @@
 {
- "schema_version": "0.1",
- "note": "Stage 3 draft. Enums for categories/branches will be refined from official data.",
+ "schema_version": "0.4",
+ "note": "v0.4 (Stage 10b): cutoff tables gain section, stage, merit_no, merit_exam (optional; blank in synthetic data). Stage meanings are not defined by the official documents.",
  "tables": {
   "colleges": {
    "description": "One row per college, keyed by its official college code. Never merge colleges by name similarity.",
@@ -343,7 +343,9 @@
     "choice_code",
     "admission_year",
     "cap_round",
-    "seat_type_code"
+    "seat_type_code",
+    "section",
+    "stage"
    ],
    "columns": [
     {
@@ -419,6 +421,26 @@
      "name": "is_synthetic",
      "type": "bool",
      "required": true
+    },
+    {
+     "name": "section",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "stage",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "merit_no",
+     "type": "int",
+     "required": false
+    },
+    {
+     "name": "merit_exam",
+     "type": "str",
+     "required": false
     }
    ]
   },
@@ -431,7 +453,9 @@
     "choice_code",
     "admission_year",
     "cap_round",
-    "seat_type_code"
+    "seat_type_code",
+    "section",
+    "stage"
    ],
    "columns": [
     {
@@ -507,6 +531,26 @@
      "name": "is_synthetic",
      "type": "bool",
      "required": true
+    },
+    {
+     "name": "section",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "stage",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "merit_no",
+     "type": "int",
+     "required": false
+    },
+    {
+     "name": "merit_exam",
+     "type": "str",
+     "required": false
     }
    ]
   },
