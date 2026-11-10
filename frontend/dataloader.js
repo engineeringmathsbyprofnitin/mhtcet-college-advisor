@@ -14,8 +14,8 @@
     "quality_indicators", "source_documents", "refresh_status", "data_version"];
 
   function expand(t) {
-    var cols = t.columns;
-    return t.rows.map(function (r) { var o = {}; for (var i = 0; i < cols.length; i++) o[cols[i]] = r[i]; return o; });
+    var cols = t.columns, dict = t.dict || {};          // dict: columns whose repeated texts are stored once and referenced by number
+    return t.rows.map(function (r) { var o = {}; for (var i = 0; i < cols.length; i++) o[cols[i]] = dict[cols[i]] ? dict[cols[i]][r[i]] : r[i]; return o; });
   }
   function hex(buf) {
     return Array.prototype.map.call(new Uint8Array(buf), function (b) { return ("0" + b.toString(16)).slice(-2); }).join("");
@@ -96,7 +96,7 @@
   function recommend(input, options) {
     var o = options || {};
     var R = o.Recommender || (typeof Recommender !== "undefined" ? Recommender : null);
-    var student = { candidateType: input && input.candidateType, category: input && input.category, gender: (input && input.gender) || null };
+    var student = { candidateType: input && input.candidateType, category: input && input.category, gender: (input && input.gender) || null, flags: (input && input.extraEligibility) || [] };
     return loadForStudent(student, o).then(function (L) {
       var res = R.recommend(input, L.data, o.engineOptions);
       if (res && res.meta) { res.meta.dataFiles = L.files; res.meta.dataBytesDownloaded = L.bytes; res.meta.dataGeneratedAt = L.manifest.generated_at; }

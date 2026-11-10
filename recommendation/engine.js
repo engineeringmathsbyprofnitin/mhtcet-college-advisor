@@ -110,27 +110,89 @@
   }
 
   /* ---------- seat-type matching ---------- */
+  var SEC = {
+    STATE: "State Level",
+    HU_HU: "Home University Seats Allotted to Home University Candidates",
+    HU_OHU: "Home University Seats Allotted to Other Than Home University Candidates",
+    OHU_HU: "Other Than Home University Seats Allotted to Home University Candidates",
+    OHU_OHU: "Other Than Home University Seats Allotted to Other Than Home University Candidates"
+  };
+  var AUTONOMOUS = "Autonomous Institute";
+  function genderOk(scope, gender) {
+    if (!scope) return true;
+    var sc = norm(scope), g = norm(gender);
+    if (sc === "general") return true;                       // G seats are for everyone
+    if (sc === "ladies") return g === "female";
+    return sc === g;
+  }
+  function flagsOf(s) { var f = {}; (s.flags || []).forEach(function (x) { f[x] = true; }); return f; }
+  // Which seat types can this student use? (Home-university rules are applied later, row by row.)
+  // Seat variants whose meaning the official documents do not define (R, I, N, 2) are never matched.
   function eligibleSeatTypes(s, seatTypes, cfg) {
+    var fl = flagsOf(s), open = norm(cfg.openCategoryName), cat = norm(s.category);
     return seatTypes.filter(function (st) {
       if (st.candidate_type !== s.candidateType) return false;
-      var catOk = st.category === s.category || (cfg.includeOpenSeatsForReserved && st.category === cfg.openCategoryName);
-      if (!catOk) return false;
-      return !st.gender_scope || st.gender_scope === s.gender;
+      var fam = st.family || "regular", stCat = norm(st.category);
+      var catOk = stCat === cat || (cfg.includeOpenSeatsForReserved && stCat === open);
+      if (fam === "regular") return catOk && genderOk(st.gender_scope, s.gender);
+      if (fam === "ews") return !!fl.ews;
+      if (fam === "tfws") return !!fl.tfws;
+      if (fam === "pwd" || fam === "phc") return !!fl.pwd && !st.variant && catOk;
+      if (fam === "defence") return !!fl.defence && !st.variant && catOk;
+      if (fam === "orphan") return !!fl.orphan && !st.variant;
+      return false;                                           // minority and anything unknown: not matched automatically
     }).map(function (st) { return st.seat_type_code; });
+  }
+  // How does a cutoff row relate to this student's home university? 'ok' | 'no' | 'unknown' (+ needSame)
+  function homeRelation(r, student) {
+    var sec = r.section;
+    if (!sec || sec === SEC.STATE) return { rel: "ok" };
+    if (sec !== SEC.HU_HU && sec !== SEC.HU_OHU && sec !== SEC.OHU_HU && sec !== SEC.OHU_OHU) return { rel: "no" };   // all-India / minority / new sections
+    var needSame = sec === SEC.HU_HU || sec === SEC.OHU_HU;
+    var cu = r.home_university;
+    if (cu === AUTONOMOUS) return { rel: "no" };
+    if (!cu || !student.homeUniversity) return { rel: "unknown", needSame: needSame };
+    return { rel: (norm(cu) === norm(student.homeUniversity)) === needSame ? "ok" : "no" };
   }
 
   /* ---------- cutoff picking ---------- */
-  function pickCutoff(rows, eligible, cfg) {
+  function usable(r, eligible) { return eligible.has(r.seat_type_code) && r.cutoff_percentile !== "" && isFinite(+r.cutoff_percentile); }
+  // Lowest eligible cutoff of one round. hyp ('same'|'diff') settles rows whose home-university relation is unknown.
+  function pickInRound(rows, rd, eligible, student, hyp) {
+    var cand = [];
+    rows.forEach(function (r) {
+      if (r.cap_round !== rd || !usable(r, eligible)) return;
+      var h = homeRelation(r, student);
+      if (h.rel === "no") return;
+      if (h.rel === "unknown" && (h.needSame ? hyp !== "same" : hyp !== "diff")) return;
+      cand.push({ r: r, unclear: h.rel === "unknown" });
+    });
+    if (!cand.length) return null;
+    cand.sort(function (a, b) { return (+a.r.cutoff_percentile) - (+b.r.cutoff_percentile) || (a.r.seat_type_code < b.r.seat_type_code ? -1 : 1); });
+    var c = cand[0];
+    return { value: +c.r.cutoff_percentile, round: rd, seatType: c.r.seat_type_code, docId: c.r.source_doc_id, unclear: c.unclear };
+  }
+  // If some rows' home-university relation is unknown, both possibilities are tried and the HIGHER (harder) cutoff is used: never over-promise.
+  function pickRound(rows, rd, eligible, student) {
+    var a = pickInRound(rows, rd, eligible, student, "same"), b = pickInRound(rows, rd, eligible, student, "diff");
+    var anyUnknown = rows.some(function (r) { return r.cap_round === rd && usable(r, eligible) && homeRelation(r, student).rel === "unknown"; });
+    var best = !a ? b : !b ? a : (b.value > a.value ? b : a);
+    if (best && anyUnknown && (a || b)) best = Object.assign({}, best, { unclear: !!(a && a.unclear) || !!(b && b.unclear) || !(a && b && a.value === b.value) });
+    return best;
+  }
+  function pickCutoff(rows, eligible, cfg, student) {
     if (!rows) return null;
     for (var i = 0; i < cfg.roundPriority.length; i++) {
-      var rd = cfg.roundPriority[i];
-      var cand = rows.filter(function (r) { return r.cap_round === rd && eligible.has(r.seat_type_code) && r.cutoff_percentile !== "" && isFinite(+r.cutoff_percentile); });
-      if (cand.length) {
-        cand.sort(function (a, b) { return (+a.cutoff_percentile) - (+b.cutoff_percentile) || (a.seat_type_code < b.seat_type_code ? -1 : 1); });
-        return { value: +cand[0].cutoff_percentile, round: rd, seatType: cand[0].seat_type_code, docId: cand[0].source_doc_id };
-      }
+      var p = pickRound(rows, cfg.roundPriority[i], eligible, student || {});
+      if (p) return p;
     }
     return null;
+  }
+  // Every published round of the current year, so students can see rounds I-IV (null = no eligible cutoff in that round).
+  function roundFigures(rows, eligible, cfg, student) {
+    var out = {};
+    ["I", "II", "III", "IV"].forEach(function (rd) { var p = rows ? pickRound(rows, rd, eligible, student || {}) : null; out[rd] = p ? { value: p.value, seatType: p.seatType, unclear: !!p.unclear } : null; });
+    return out;
   }
 
   /* ---------- main ---------- */
@@ -148,9 +210,11 @@
     if (!currentYear) return { ok: false, errors: ["Cannot determine the current admission year from the data. Please choose the admission year."] };
     var histYears = previousYears(currentYear, cfg.historyYears);
 
-    var student = { percentile: input.percentile, candidateType: input.candidateType, category: input.category, gender: input.gender || null };
+    var student = { percentile: input.percentile, candidateType: input.candidateType, category: input.category, gender: input.gender || null,
+                    homeUniversity: input.homeUniversity || null, flags: input.extraEligibility || [] };
     var priorities = (input.priorities && input.priorities.length) ? input.priorities : ["balanced"];
-    if (input.extraEligibility && input.extraEligibility.length) warnings.push("Extra eligibility claims (" + input.extraEligibility.join(", ") + ") are not applied yet because no matching official cutoff data is loaded.");
+    var specialLoaded = data.seat_types.some(function (st) { return st.family && st.family !== "regular"; });
+    if (input.extraEligibility && input.extraEligibility.length && !specialLoaded) warnings.push("Extra eligibility claims (" + input.extraEligibility.join(", ") + ") are not applied yet because no matching official cutoff data is loaded.");
 
     var meta = {
       dataVersion: lkg ? lkg.data_version : null, currentAdmissionYear: currentYear, historicalYears: histYears,
@@ -169,9 +233,9 @@
     }
 
     var ownCategoryKnown = data.seat_types.some(function (st) {
-      return st.candidate_type === student.candidateType && st.category === student.category && (!st.gender_scope || st.gender_scope === student.gender);
+      return st.candidate_type === student.candidateType && norm(st.category) === norm(student.category) && (st.family || "regular") === "regular" && genderOk(st.gender_scope, student.gender);
     });
-    if (student.category !== cfg.openCategoryName && !ownCategoryKnown)
+    if (norm(student.category) !== norm(cfg.openCategoryName) && !ownCategoryKnown)
       warnings.push("No cutoff data for the category \"" + student.category + "\" is loaded yet, so only Open-category cutoffs were used. Your real chances in your own category may be different.");
 
     var docs = new Map(data.source_documents.map(function (d) { return [d.doc_id, d]; }));
@@ -202,6 +266,8 @@
     var matchedBranchNames = new Set();
 
     var funnel = { totalChoices: 0, afterBranch: 0, afterDistrict: 0, afterFee: 0, belowRange: 0, insufficientData: 0, ranked: 0 };
+    var hasHuRows = data.current_cutoffs.concat(data.historical_cutoffs).some(function (r) { return r.section && r.section !== SEC.STATE && r.home_university !== AUTONOMOUS && [SEC.HU_HU, SEC.HU_OHU, SEC.OHU_HU, SEC.OHU_OHU].indexOf(r.section) >= 0; });
+    if (hasHuRows && !student.homeUniversity) warnings.push("You did not choose a home university, so Home University and Other Than Home University seats were checked both ways and the harder (higher) cutoff was used. Choose your home university for a sharper result.");
     var cands = [], insufficient = [];
 
     data.branches.forEach(function (b) {
@@ -221,11 +287,11 @@
       var points = [], cur = pickCutoff(curBy.get(b.choice_code), eligible, cfg);
       if (cur) points.push({ label: "current", age: 0, value: cur.value, w: cfg.currentWeightByRound[cur.round] !== undefined ? cfg.currentWeightByRound[cur.round] : cfg.evidenceWeights.current });
       var hist = histYears.map(function (y, i) {
-        var h = pickCutoff(histBy.get(b.choice_code + "|" + y), eligible, cfg);
+        var h = pickCutoff(histBy.get(b.choice_code + "|" + y), eligible, cfg, student);
         if (h) points.push({ label: "hist" + (i + 1), age: i + 1, value: h.value, w: cfg.evidenceWeights.hist[i] || 0 });
-        return h ? { year: y, value: h.value, round: h.round, seatType: h.seatType, docId: h.docId } : { year: y, value: null, round: null, seatType: null, docId: null };
+        return h ? { year: y, value: h.value, round: h.round, seatType: h.seatType, docId: h.docId, homeUniversityUnclear: !!h.unclear } : { year: y, value: null, round: null, seatType: null, docId: null };
       });
-      var base = { b: b, col: col, br: br, dr: dr, fee: fee, cur: cur, hist: hist, points: points };
+      var base = { b: b, col: col, br: br, dr: dr, fee: fee, cur: cur, hist: hist, points: points, rounds: roundFigures(curBy.get(b.choice_code), eligible, cfg, student) };
       if (!points.length) { funnel.insufficientData++; insufficient.push(basicInfo(base)); return; }
 
       var wsum = points.reduce(function (s, p) { return s + p.w; }, 0);
@@ -300,7 +366,8 @@
         branchCode: b.branch_code, branchName: b.branch_name, district: col.district,
         collegeWebsite: col.college_website || null, autonomy: col.autonomy_status || null,
         historicalCutoffs: c.hist,
-        currentCutoff: c.cur ? { year: currentYear, value: c.cur.value, round: c.cur.round, seatType: c.cur.seatType } : null,
+        currentCutoff: c.cur ? { year: currentYear, value: c.cur.value, round: c.cur.round, seatType: c.cur.seatType, homeUniversityUnclear: !!c.cur.unclear } : null,
+        currentRounds: c.rounds,
         vacancy: vac ? { value: vac.value, round: vacRound, status: "ok" } : { value: null, round: null, status: "Vacancy data unavailable" },
         fee: { value: c.fee.value, type: c.fee.type, academicYear: c.fee.year, status: c.fee.status, tuitionLowerBound: c.fee.tuitionFloor },
         infrastructure: infra ? { score_0_10: infra.score, isEstimate: infra.isEstimate, method: infra.method } : null,
@@ -400,6 +467,7 @@
     L.push("Matches your branch choice #" + c.br + " (" + c.b.branch_name + ").");
     L.push(anyDistrict ? "Located in " + c.col.district + " (you chose any district)." : "Located in " + c.col.district + ", your district choice #" + c.dr + ".");
     var parts = c.points.map(function (pt) { return (pt.label === "current" ? "current " + curYear : "year " + c.hist[pt.age - 1].year) + ": " + pt.value.toFixed(2); });
+    if ((c.cur && c.cur.unclear) || c.hist.some(function (h) { return h.homeUniversityUnclear; })) L.push("Home university unclear for this course in some lists, so the harder of the two possible cutoffs was used.");
     L.push("Your percentile " + p + " compared with cutoffs (" + parts.join("; ") + "); expected cutoff about " + c.expected.toFixed(2) + (c.trendAdj > 0 ? " (includes +" + c.trendAdj.toFixed(2) + " because earlier cutoffs were rising)" : "") + ".");
     var fac = cfg.scale.anchor / clamp(100 - c.expected, cfg.scale.minDistance, cfg.scale.maxDistance);
     if (fac > 1.5) L.push("At this cutoff level a small percentile gap means many ranks, so gaps are weighted more heavily.");

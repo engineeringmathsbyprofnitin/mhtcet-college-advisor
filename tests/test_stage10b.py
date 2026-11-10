@@ -69,7 +69,7 @@ class T(unittest.TestCase):
         self.assertEqual(sum(l["rows"] for l in r["lists"]), 148004)
     def test_schema_v04_columns(self):
         s = json.load(open(os.path.join(V.ROOT, "database", "schema.json")))
-        self.assertIn(s["schema_version"], ("0.4", "0.5"))
+        self.assertGreaterEqual(float(s["schema_version"]), 0.4)
         for t in ("historical_cutoffs", "current_cutoffs"):
             names = [c["name"] for c in s["tables"][t]["columns"]]
             for c in ("section", "stage", "merit_no", "merit_exam"): self.assertIn(c, names)

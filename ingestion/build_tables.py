@@ -61,7 +61,7 @@ def seat_type_rows(seat_codes):
     for c, i in sorted(seat_codes.items()):
         out.append({"seat_type_code": c, "candidate_type": "Maharashtra State candidate", "category": i["category"] or fam.get(i["family"], i["family"]),
                     "gender_scope": i.get("gender_scope", ""), "seat_level": {"H": "Home University", "O": "Other Than Home University", "S": "State Level"}.get(c[-1], ""),
-                    "description": "family=%s variant=%s (official legend: first letter G/L, last letter H/O/S)" % (i["family"], i.get("variant", "")), "is_provisional": "FALSE"})
+                    "description": "family=%s variant=%s (official legend: first letter G/L, last letter H/O/S)" % (i["family"], i.get("variant", "")), "is_provisional": "FALSE", "family": i["family"], "variant": i.get("variant", "")})
     return out
 
 def read_gz(p):
@@ -91,14 +91,18 @@ def build(base=N, plan=None, outdir=None):
     used = {r["choice_code"] for r in cur + his}
     courses = [c for c in rd("courses.csv") if c["choice_code"] in used]
     colleges = {c["institute_code"]: c for c in rd("colleges.csv")}
+    latest_doc = {}
+    for r in his + cur: latest_doc[r["choice_code"]] = r["source_doc_id"]          # provenance: the newest list the course appears in
+    col_doc = {}
+    for c in courses: col_doc[c["institute_code"]] = latest_doc[c["choice_code"]]
     ccodes = sorted({c["institute_code"] for c in courses})
     col_rows = [{"college_code": ic, "college_name": colleges[ic]["institute_name"], "district": NA, "city": "", "college_type": colleges[ic]["status_latest"],
                  "status": "active", "previous_college_code": "", "college_website": "", "autonomy_status": "autonomous" if colleges[ic]["home_university_latest"] == "Autonomous Institute" else "unknown",
-                 "campus_area_acres": "", "source_doc_id": "", "retrieved_date": "", "validation_status": "validated", "is_synthetic": "FALSE"} for ic in ccodes]
+                 "campus_area_acres": "", "source_doc_id": col_doc[ic], "retrieved_date": "", "validation_status": "validated", "is_synthetic": "FALSE"} for ic in ccodes]
     sha_of = {r["source_doc_id"] for r in cur + his}
     yr_rd = {doc_id(r["source_sha256"]): (r["year_label"], r["cap_round"]) for _, rows in sel for r in rows}
     br_rows = [{"choice_code": c["choice_code"], "college_code": c["institute_code"], "branch_code": c["choice_code"][5:], "branch_name": c["course_name"], "branch_group": "",
-                "valid_from_year": c["first_year"], "valid_to_year": "", "source_doc_id": "", "retrieved_date": "", "validation_status": "validated", "is_synthetic": "FALSE"} for c in courses]
+                "valid_from_year": c["first_year"], "valid_to_year": "", "source_doc_id": latest_doc[c["choice_code"]], "retrieved_date": "", "validation_status": "validated", "is_synthetic": "FALSE"} for c in courses]
     man = json.load(open(os.path.join(ROOT, "data", "raw", "manifest.json")))["files"]
     docs = []
     for sha, m in sorted(man.items()):

@@ -86,6 +86,8 @@ Key: `seat_type_code`
 | seat_level | str |  |
 | description | str |  |
 | is_provisional* | bool |  |
+| family | str |  |
+| variant | str |  |
 
 ## historical_cutoffs
 Cutoffs of completed admission years.

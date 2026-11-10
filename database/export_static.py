@@ -19,12 +19,13 @@ BASE_TABLES = ["colleges", "branches", "seat_types", "vacancies", "fees", "accre
                "quality_indicators", "source_documents", "refresh_status", "data_version"]
 CUTOFF_TABLES = ["historical_cutoffs", "current_cutoffs"]
 KEEP = {  # only the columns the engine/website need (everything else stays in the database)
-    "historical_cutoffs": ["choice_code", "admission_year", "cap_round", "seat_type_code", "cutoff_percentile", "source_doc_id"],
-    "current_cutoffs": ["choice_code", "admission_year", "cap_round", "seat_type_code", "cutoff_percentile", "source_doc_id"],
+    "historical_cutoffs": ["choice_code", "admission_year", "cap_round", "seat_type_code", "cutoff_percentile", "source_doc_id", "section", "home_university", "home_university_basis"],
+    "current_cutoffs": ["choice_code", "admission_year", "cap_round", "seat_type_code", "cutoff_percentile", "source_doc_id", "section", "home_university", "home_university_basis"],
     "vacancies": ["choice_code", "admission_year", "cap_round", "seat_type_code", "vacancy_count", "source_doc_id"],
     "fees": ["college_code", "choice_code", "academic_year", "fee_type", "annual_fee_inr", "fee_scope", "source_doc_id"],
     "branches": ["choice_code", "college_code", "branch_code", "branch_name", "branch_group"],
 }
+DICT_COLS = {t: ["cap_round", "admission_year", "source_doc_id", "section", "home_university", "home_university_basis"] for t in ("historical_cutoffs", "current_cutoffs")}
 DROP_DEFAULT = {"validation_status", "retrieved_date", "is_synthetic"}
 KEEP_ALL = {"data_version", "source_documents", "refresh_status", "seat_types"}   # small, shown to students or used for checks
 SAFE_CODE = re.compile(r"^[A-Za-z0-9_-]{1,30}$")
@@ -38,7 +39,16 @@ def read(folder, t):
 def compact(rows, table, schema_cols):
     cols = [c for c in schema_cols if (c in KEEP[table] if table in KEEP else (table in KEEP_ALL or c not in DROP_DEFAULT))]
     body = sorted([[r.get(c, "") for c in cols] for r in rows])
-    return {"columns": cols, "rows": body}
+    out = {"columns": cols, "rows": body}
+    if table in DICT_COLS:           # repeated long texts are stored once and referenced by number (keeps the files small)
+        d = {}
+        for c in DICT_COLS[table]:
+            if c in cols:
+                i = cols.index(c); vals = sorted({r[i] for r in body}); idx = {v: n for n, v in enumerate(vals)}
+                d[c] = vals
+                for r in body: r[i] = idx[r[i]]
+        out["dict"] = d
+    return out
 
 def dumps(obj):
     return json.dumps(obj, ensure_ascii=False, separators=(",", ":"), sort_keys=True).encode("utf-8")
