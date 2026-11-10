@@ -582,11 +582,105 @@
    "order_inversions": 317
   }
  ],
- "latest_round_per_year": {
-  "2023-24": "III",
-  "2024-25": "III",
-  "2025-26": "IV",
-  "2026-27": "IV"
+ "parsed_rounds_per_year": {
+  "2023-24": [
+   "III"
+  ],
+  "2024-25": [
+   "III"
+  ],
+  "2025-26": [
+   "IV"
+  ],
+  "2026-27": [
+   "I",
+   "II",
+   "III",
+   "IV"
+  ]
+ },
+ "plan": {
+  "ok": true,
+  "current_year": "2026-27",
+  "year_status": "confirmed",
+  "rounds_done": [
+   "I",
+   "II",
+   "III",
+   "IV"
+  ],
+  "latest_round": "IV",
+  "next_round_expected": null,
+  "cycle_note": "all four CAP rounds are published; later supplementary lists are not used",
+  "history": [
+   {
+    "label": "2025-26",
+    "rounds_published": [
+     "I",
+     "II",
+     "III",
+     "IV"
+    ],
+    "round_used": "IV"
+   },
+   {
+    "label": "2024-25",
+    "rounds_published": [
+     "I",
+     "II",
+     "III"
+    ],
+    "round_used": "III"
+   },
+   {
+    "label": "2023-24",
+    "rounds_published": [
+     "I",
+     "II",
+     "III"
+    ],
+    "round_used": "III"
+   }
+  ],
+  "history_years_without_cutoffs": [],
+  "required_lists": [
+   {
+    "year": "2026-27",
+    "round": "I",
+    "role": "current"
+   },
+   {
+    "year": "2026-27",
+    "round": "II",
+    "role": "current"
+   },
+   {
+    "year": "2026-27",
+    "round": "III",
+    "role": "current"
+   },
+   {
+    "year": "2026-27",
+    "round": "IV",
+    "role": "current"
+   },
+   {
+    "year": "2025-26",
+    "round": "IV",
+    "role": "history"
+   },
+   {
+    "year": "2024-25",
+    "round": "III",
+    "role": "history"
+   },
+   {
+    "year": "2023-24",
+    "round": "III",
+    "role": "history"
+   }
+  ],
+  "decision_warnings": []
  },
  "ok": true
 }

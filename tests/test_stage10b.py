@@ -1,7 +1,9 @@
 """Stage 10b tests: the cutoff validator finds the traps it is meant to find. Run: python -m unittest tests/test_stage10b.py -v"""
 import csv, gzip, json, os, shutil, sys, tempfile, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from ingestion import validate_cutoffs as V
+from ingestion import validate_cutoffs as V, plan as P
+DEC = {"current_label": "2026-27", "status": "confirmed", "current_cutoff_rounds": ["IV"],
+       "previous": [{"label": "2025-26", "cutoff_rounds": ["I", "IV"]}, {"label": "2024-25", "cutoff_rounds": ["III"]}, {"label": "2023-24", "cutoff_rounds": ["III"]}]}
 HDR = "year_label,cap_round,list_type,institute_code,institute_name,choice_code,course_name,status,home_university,section,seat_pool,allotted_to,stage,seat_code,merit_no,percentile,page,source_sha256".split(",")
 AIH = "year_label,cap_round,list_type,sr_no,merit_no,score,choice_code,institute_code,institute_name,course_name,merit_exam,merit_exam_kind,ai_type,seat_type,page,note,source_sha256".split(",")
 def mh(yr="2026-27", rd="IV", **k):
@@ -24,9 +26,14 @@ def make(rows_by_file, ai=None):
     return d
 def good_years():
     return {"a.csv.gz": [mh("2026-27", "IV")], "b.csv.gz": [mh("2025-26", "IV")], "c.csv.gz": [mh("2024-25", "III")], "d.csv.gz": [mh("2023-24", "III")]}
+def ai_row(yr, rd, score="99.0"):
+    return dict(year_label=yr, cap_round=rd, list_type="AI", sr_no="1", merit_no="1", score=score, choice_code="0000111110", institute_code="00001", institute_name="X",
+                course_name="C", merit_exam="MHT-CET", merit_exam_kind="MHT-CET", ai_type="MH to AI", seat_type="AI", page="1", note="", source_sha256="a")
 def run(files, ai=None):
-    d = make(files, ai)
-    try: return V.validate(d)
+    base_ai = {"ai%d.csv.gz" % i: [ai_row(y, r)] for i, (y, r) in enumerate([("2026-27", "IV"), ("2025-26", "IV"), ("2024-25", "III"), ("2023-24", "III")])}
+    base_ai.update(ai or {})
+    d = make(files, base_ai)
+    try: return V.validate(d, plan=P.make_plan(DEC))
     finally: shutil.rmtree(d)
 
 class T(unittest.TestCase):
@@ -48,17 +55,17 @@ class T(unittest.TestCase):
     def test_blank_home_university_classified(self):
         f = good_years(); f["a.csv.gz"] = [mh(home_university="")]            # course prints "Pune" in the other lists
         w = run(f)["warnings"]; self.assertEqual(w["BLANK_HOME_UNIVERSITY_ROWS_COURSE_PRINTS_ONE_VALUE_ELSEWHERE"], 1)
-    def test_year_rules(self):
-        f = good_years(); del f["d.csv.gz"]; self.assertEqual(run(f)["errors"]["YEAR_MISSING"], 1)
-        f = good_years(); f["a.csv.gz"] = [mh("2026-27", "III")]; self.assertIn("LATEST_ROUND_UNEXPECTED", run(f)["errors"])
-        f = good_years(); f["e.csv.gz"] = [mh("2021-22", "III")]; self.assertIn("YEAR_OUTSIDE_RULE", run(f)["errors"])
+    def test_year_rules_follow_the_plan(self):
+        f = good_years(); del f["d.csv.gz"]; self.assertIn("PLANNED_LIST_NOT_PARSED", run(f)["errors"])
+        f = good_years(); f["a.csv.gz"] = [mh("2026-27", "III")]; self.assertIn("PLANNED_LIST_NOT_PARSED", run(f)["errors"])
+        f = good_years(); f["e.csv.gz"] = [mh("2021-22", "III")]; self.assertIn("YEAR_OUTSIDE_PLAN", run(f)["errors"])
     def test_ai_blank_score_kept_and_reported(self):
         ai = {"x.csv.gz": [dict(year_label="2026-27", cap_round="IV", list_type="AI", sr_no="1", merit_no="1", score="", choice_code="0000111110", institute_code="00001",
                                 institute_name="X", course_name="C", merit_exam="MHT-CET", merit_exam_kind="MHT-CET", ai_type="MH to AI", seat_type="AI", page="1", note="", source_sha256="a")]}
         self.assertEqual(run(good_years(), ai)["warnings"]["AI_BLANK_SCORE_KEPT_BLANK"], 1)
     def test_real_data_has_no_errors_and_expected_latest_rounds(self):
         r = V.validate()
-        self.assertEqual(r["errors"], {}); self.assertEqual(r["latest_round_per_year"], V.EXPECTED_LATEST)
+        self.assertEqual(r["errors"], {}); self.assertEqual(r["parsed_rounds_per_year"], {"2023-24": ["III"], "2024-25": ["III"], "2025-26": ["IV"], "2026-27": ["I", "II", "III", "IV"]})
         self.assertEqual(sum(l["rows"] for l in r["lists"]), 148004)
     def test_schema_v04_columns(self):
         s = json.load(open(os.path.join(V.ROOT, "database", "schema.json")))

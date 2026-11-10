@@ -26,5 +26,7 @@ Home-university dropdown; Round IV vacancy = provisional position vs ACAP list; 
 
 ## Stage 10b built (cutoff validator: 0 errors, oddities documented in docs/STAGE10B.md; schema v0.4); owner upload pending
 
+## Stage 10c-1 built (automatic data plan, docs/STAGE10C1.md); owner upload pending
+
 ## Next task
 Owner runs the reading workflow; then Stage 10 (validation, which seat codes apply to which student, historical comparison and current-round fallback), split into small parts.

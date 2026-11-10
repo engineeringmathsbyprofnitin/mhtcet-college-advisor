@@ -5,9 +5,7 @@ import csv, gzip, json, os, re, sys
 from collections import defaultdict, Counter
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 N = os.path.join(ROOT, "data", "normalized")
-CURRENT = "2026-27"
-HISTORY = ["2025-26", "2024-25", "2023-24"]            # the three admission years before the current one
-EXPECTED_LATEST = {"2026-27": "IV", "2025-26": "IV", "2024-25": "III", "2023-24": "III"}   # latest round published per year (from the archive)
+from ingestion import plan as P                          # the automatic plan: which year, which rounds (never hard-coded here)
 ROUND_ORDER = {"I": 1, "II": 2, "III": 3, "IV": 4}
 KNOWN_STAGES = {"I", "II", "VII", "I-Non", "MH"}
 PCT = re.compile(r"^\d{1,3}\.\d{7}$")
@@ -19,7 +17,8 @@ def read_plain(path):
     with open(path, newline="", encoding="utf-8") as f:
         return list(csv.DictReader(f))
 
-def validate(base=N, max_examples=8):
+def validate(base=N, max_examples=8, plan=None):
+    plan = plan or P.make_plan(json.load(open(P.DISCOVERY))["admission_year"])
     mh_dir, ai_dir, mdir = (os.path.join(base, x) for x in ("cutoffs_mh", "cutoffs_ai", "master"))
     colleges = {r["institute_code"]: r for r in read_plain(os.path.join(mdir, "colleges.csv"))}
     courses = {r["choice_code"]: r for r in read_plain(os.path.join(mdir, "courses.csv"))}
@@ -28,12 +27,12 @@ def validate(base=N, max_examples=8):
     err, warn, ex = Counter(), Counter(), defaultdict(list)
     def E(k, e=None): err[k] += 1; (e is not None and len(ex[k]) < max_examples and ex[k].append(e))
     def W(k, e=None): warn[k] += 1; (e is not None and len(ex[k]) < max_examples and ex[k].append(e))
-    lists, rounds_seen = [], defaultdict(set)
+    lists, rounds_seen, parsed = [], defaultdict(set), {"MH": set(), "AI": set()}
     printed, blank = defaultdict(set), Counter()          # per course: home-university values printed / blank rows
     for fn in sorted(os.listdir(mh_dir)):
         if not fn.endswith(".csv.gz"): continue
         rows = read(os.path.join(mh_dir, fn))
-        yr, rd = rows[0]["year_label"], rows[0]["cap_round"]; rounds_seen[yr].add(rd)
+        yr, rd = rows[0]["year_label"], rows[0]["cap_round"]; rounds_seen[yr].add(rd); parsed["MH"].add((yr, rd))
         by_merit = defaultdict(set); pairs = []
         for r in rows:
             if (r["year_label"], r["cap_round"]) != (yr, rd): E("MIXED_LIST_IN_FILE", fn)
@@ -77,24 +76,26 @@ def validate(base=N, max_examples=8):
     warn["BLANK_HOME_UNIVERSITY_ROWS_NEVER_PRINTED_FOR_COURSE"] = nev
     for fn in sorted(os.listdir(ai_dir)):
         if not fn.endswith(".csv.gz"): continue
-        rows = read(os.path.join(ai_dir, fn)); yr, rd = rows[0]["year_label"], rows[0]["cap_round"]; rounds_seen[yr].add(rd)
+        rows = read(os.path.join(ai_dir, fn)); yr, rd = rows[0]["year_label"], rows[0]["cap_round"]; rounds_seen[yr].add(rd); parsed["AI"].add((yr, rd))
         for r in rows:
             if r["choice_code"][:5] != r["institute_code"]: E("AI_CHOICE_CODE_INSTITUTE_MISMATCH", (fn, r["choice_code"]))
             if r["institute_code"] not in colleges: E("AI_INSTITUTE_NOT_IN_MASTER", (fn, r["institute_code"]))
             if not r["score"]: W("AI_BLANK_SCORE_KEPT_BLANK", (fn, r["choice_code"]))
             if r["merit_exam_kind"] not in ("JEE", "NEET", "MHT-CET"): W("AI_UNLISTED_EXAM_KIND", r["merit_exam_kind"])
-    # year / round rules
-    for yr, want in EXPECTED_LATEST.items():
-        got = rounds_seen.get(yr)
-        if not got: E("YEAR_MISSING", yr)
-        elif max(got, key=ROUND_ORDER.get) != want: E("LATEST_ROUND_UNEXPECTED", (yr, sorted(got)))
+    # year / round rules come from the automatic plan
+    if not plan.get("ok"): E("NO_PLAN", plan.get("problem"))
+    need = {(x["year"], x["round"]) for x in plan.get("required_lists", [])}
+    for scope in ("MH", "AI"):
+        for yr, rd in sorted(need - parsed[scope]): E("PLANNED_LIST_NOT_PARSED", (scope, yr, rd))
+        for yr, rd in sorted(parsed[scope] - need): W("PARSED_LIST_NOT_IN_PLAN", (scope, yr, rd))
+    planned_years = {x["year"] for x in plan.get("required_lists", [])}
     for yr in rounds_seen:
-        if yr != CURRENT and yr not in HISTORY: E("YEAR_OUTSIDE_RULE", yr)
+        if planned_years and yr not in planned_years: E("YEAR_OUTSIDE_PLAN", yr)
     warn = Counter({k: v for k, v in warn.items() if v})
     return {"errors": dict(err), "warnings": dict(warn), "examples": {k: v for k, v in ex.items()}, "lists": lists,
-            "latest_round_per_year": {y: max(r, key=ROUND_ORDER.get) for y, r in rounds_seen.items()}, "ok": not err}
+            "parsed_rounds_per_year": {y: sorted(r, key=ROUND_ORDER.get) for y, r in rounds_seen.items()}, "plan": plan, "ok": not err}
 
 if __name__ == "__main__":
     rep = validate()
     with open(os.path.join(N, "validation_report.json"), "w") as f: json.dump(rep, f, indent=1, default=list)
-    print(json.dumps({k: rep[k] for k in ("ok", "errors", "warnings", "latest_round_per_year")}, indent=1)); sys.exit(0 if rep["ok"] else 1)
+    print(json.dumps({k: rep[k] for k in ("ok", "errors", "warnings", "parsed_rounds_per_year")}, indent=1)); sys.exit(0 if rep["ok"] else 1)
