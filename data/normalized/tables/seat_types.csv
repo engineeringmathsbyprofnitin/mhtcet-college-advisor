@@ -1,0 +1,106 @@
+seat_type_code,candidate_type,category,gender_scope,seat_level,description,is_provisional
+AI,Maharashtra State candidate,all_india_seat,,,"family=all_india_seat variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFNT2S,Maharashtra State candidate,NT2,,State Level,"family=defence variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFNT3S,Maharashtra State candidate,NT3,,State Level,"family=defence variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFO,Maharashtra State candidate,Defence,,Other Than Home University,"family=defence variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFOBCO,Maharashtra State candidate,OBC,,Other Than Home University,"family=defence variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFOBCS,Maharashtra State candidate,OBC,,State Level,"family=defence variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFOPENS,Maharashtra State candidate,OPEN,,State Level,"family=defence variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFRNT1S,Maharashtra State candidate,NT1,,State Level,"family=defence variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFRNT2S,Maharashtra State candidate,NT2,,State Level,"family=defence variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFRNT3S,Maharashtra State candidate,NT3,,State Level,"family=defence variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFROBCS,Maharashtra State candidate,OBC,,State Level,"family=defence variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFRSCS,Maharashtra State candidate,SC,,State Level,"family=defence variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFRSEBCS,Maharashtra State candidate,SEBC,,State Level,"family=defence variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFRSTS,Maharashtra State candidate,ST,,State Level,"family=defence variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFRVJS,Maharashtra State candidate,VJ,,State Level,"family=defence variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFSCS,Maharashtra State candidate,SC,,State Level,"family=defence variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFSEBCS,Maharashtra State candidate,SEBC,,State Level,"family=defence variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+DEFSTS,Maharashtra State candidate,ST,,State Level,"family=defence variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+EWS,Maharashtra State candidate,EWS,,State Level,"family=ews variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GNT1H,Maharashtra State candidate,NT1,General,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GNT1O,Maharashtra State candidate,NT1,General,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GNT1S,Maharashtra State candidate,NT1,General,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GNT2H,Maharashtra State candidate,NT2,General,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GNT2O,Maharashtra State candidate,NT2,General,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GNT2S,Maharashtra State candidate,NT2,General,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GNT3H,Maharashtra State candidate,NT3,General,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GNT3O,Maharashtra State candidate,NT3,General,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GNT3S,Maharashtra State candidate,NT3,General,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GOBCH,Maharashtra State candidate,OBC,General,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GOBCO,Maharashtra State candidate,OBC,General,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GOBCS,Maharashtra State candidate,OBC,General,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GOPENH,Maharashtra State candidate,OPEN,General,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GOPENO,Maharashtra State candidate,OPEN,General,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GOPENS,Maharashtra State candidate,OPEN,General,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GSCH,Maharashtra State candidate,SC,General,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GSCO,Maharashtra State candidate,SC,General,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GSCS,Maharashtra State candidate,SC,General,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GSEBCH,Maharashtra State candidate,SEBC,General,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GSEBCO,Maharashtra State candidate,SEBC,General,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GSEBCS,Maharashtra State candidate,SEBC,General,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GSTH,Maharashtra State candidate,ST,General,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GSTO,Maharashtra State candidate,ST,General,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GSTS,Maharashtra State candidate,ST,General,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GVJH,Maharashtra State candidate,VJ,General,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GVJO,Maharashtra State candidate,VJ,General,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+GVJS,Maharashtra State candidate,VJ,General,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LNT1H,Maharashtra State candidate,NT1,Ladies,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LNT1O,Maharashtra State candidate,NT1,Ladies,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LNT1S,Maharashtra State candidate,NT1,Ladies,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LNT2H,Maharashtra State candidate,NT2,Ladies,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LNT2O,Maharashtra State candidate,NT2,Ladies,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LNT2S,Maharashtra State candidate,NT2,Ladies,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LNT3H,Maharashtra State candidate,NT3,Ladies,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LNT3O,Maharashtra State candidate,NT3,Ladies,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LNT3S,Maharashtra State candidate,NT3,Ladies,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LOBCH,Maharashtra State candidate,OBC,Ladies,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LOBCO,Maharashtra State candidate,OBC,Ladies,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LOBCS,Maharashtra State candidate,OBC,Ladies,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LOPENH,Maharashtra State candidate,OPEN,Ladies,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LOPENO,Maharashtra State candidate,OPEN,Ladies,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LOPENS,Maharashtra State candidate,OPEN,Ladies,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LSCH,Maharashtra State candidate,SC,Ladies,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LSCO,Maharashtra State candidate,SC,Ladies,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LSCS,Maharashtra State candidate,SC,Ladies,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LSEBCH,Maharashtra State candidate,SEBC,Ladies,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LSEBCO,Maharashtra State candidate,SEBC,Ladies,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LSEBCS,Maharashtra State candidate,SEBC,Ladies,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LSTH,Maharashtra State candidate,ST,Ladies,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LSTO,Maharashtra State candidate,ST,Ladies,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LSTS,Maharashtra State candidate,ST,Ladies,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LVJH,Maharashtra State candidate,VJ,Ladies,Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LVJO,Maharashtra State candidate,VJ,Ladies,Other Than Home University,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+LVJS,Maharashtra State candidate,VJ,Ladies,State Level,"family=regular variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+MI,Maharashtra State candidate,Minority,,,"family=minority variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+ORPHAN,Maharashtra State candidate,Orphan,,,"family=orphan variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+ORPHAN2,Maharashtra State candidate,Orphan,,,"family=orphan variant=2 (official legend: first letter G/L, last letter H/O/S)",FALSE
+ORPHANI,Maharashtra State candidate,Orphan,,,"family=orphan variant=I (official legend: first letter G/L, last letter H/O/S)",FALSE
+ORPHANN,Maharashtra State candidate,Orphan,,,"family=orphan variant=N (official legend: first letter G/L, last letter H/O/S)",FALSE
+PHCH,Maharashtra State candidate,PHC,,Home University,"family=phc variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+PHCOBCH,Maharashtra State candidate,OBC,,Home University,"family=phc variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDNT2S,Maharashtra State candidate,NT2,,State Level,"family=pwd variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDNT3S,Maharashtra State candidate,NT3,,State Level,"family=pwd variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDOBCH,Maharashtra State candidate,OBC,,Home University,"family=pwd variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDOBCS,Maharashtra State candidate,OBC,,State Level,"family=pwd variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDOPENH,Maharashtra State candidate,OPEN,,Home University,"family=pwd variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDOPENS,Maharashtra State candidate,OPEN,,State Level,"family=pwd variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDRNT1S,Maharashtra State candidate,NT1,,State Level,"family=pwd variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDRNT2H,Maharashtra State candidate,NT2,,Home University,"family=pwd variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDRNT2S,Maharashtra State candidate,NT2,,State Level,"family=pwd variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDRNT3S,Maharashtra State candidate,NT3,,State Level,"family=pwd variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDROBCH,Maharashtra State candidate,OBC,,Home University,"family=pwd variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDROBCS,Maharashtra State candidate,OBC,,State Level,"family=pwd variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDRSCH,Maharashtra State candidate,SC,,Home University,"family=pwd variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDRSCS,Maharashtra State candidate,SC,,State Level,"family=pwd variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDRSEBCH,Maharashtra State candidate,SEBC,,Home University,"family=pwd variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDRSEBCS,Maharashtra State candidate,SEBC,,State Level,"family=pwd variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDRSTH,Maharashtra State candidate,ST,,Home University,"family=pwd variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDRSTS,Maharashtra State candidate,ST,,State Level,"family=pwd variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDRVJS,Maharashtra State candidate,VJ,,State Level,"family=pwd variant=R (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDSCH,Maharashtra State candidate,SC,,Home University,"family=pwd variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDSCS,Maharashtra State candidate,SC,,State Level,"family=pwd variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDSEBCH,Maharashtra State candidate,SEBC,,Home University,"family=pwd variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDSEBCS,Maharashtra State candidate,SEBC,,State Level,"family=pwd variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+PWDSTS,Maharashtra State candidate,ST,,State Level,"family=pwd variant= (official legend: first letter G/L, last letter H/O/S)",FALSE
+TFWS,Maharashtra State candidate,TFWS,,State Level,"family=tfws variant= (official legend: first letter G/L, last letter H/O/S)",FALSE

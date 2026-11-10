@@ -1,6 +1,6 @@
 {
- "schema_version": "0.4",
- "note": "v0.4 (Stage 10b): cutoff tables gain section, stage, merit_no, merit_exam (optional; blank in synthetic data). Stage meanings are not defined by the official documents.",
+ "schema_version": "0.5",
+ "note": "v0.5 (Stage 10c-2): cutoff tables gain section, stage, merit_no, merit_exam (v0.4) and home_university + home_university_basis (printed|inferred|unknown|not_needed), all optional; blank in synthetic data. Stage meanings are not defined by the official documents.",
  "tables": {
   "colleges": {
    "description": "One row per college, keyed by its official college code. Never merge colleges by name similarity.",
@@ -441,6 +441,16 @@
      "name": "merit_exam",
      "type": "str",
      "required": false
+    },
+    {
+     "name": "home_university",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "home_university_basis",
+     "type": "str",
+     "required": false
     }
    ]
   },
@@ -549,6 +559,16 @@
     },
     {
      "name": "merit_exam",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "home_university",
+     "type": "str",
+     "required": false
+    },
+    {
+     "name": "home_university_basis",
      "type": "str",
      "required": false
     }

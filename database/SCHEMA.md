@@ -1,4 +1,4 @@
-# Database schema (v0.4 (Stage 10b))
+# Database schema (v0.4 (Stage 10c-2))
 
 Each table is one CSV file now and one Google Sheet tab later (Stage 5). `database/schema.json` is the machine-readable version used by `validate_data.py`; this file is generated from it.
 
@@ -106,6 +106,8 @@ Key: `cutoff_id` · Must be unique together: `choice_code, admission_year, cap_r
 | stage | str |  |
 | merit_no | int |  |
 | merit_exam | str |  |
+| home_university | str |  |
+| home_university_basis | str |  |
 
 ## current_cutoffs
 Cutoffs of the current admission year, one row per published CAP round.
@@ -126,6 +128,8 @@ Key: `cutoff_id` · Must be unique together: `choice_code, admission_year, cap_r
 | stage | str |  |
 | merit_no | int |  |
 | merit_exam | str |  |
+| home_university | str |  |
+| home_university_basis | str |  |
 
 ## vacancies
 Genuine vacancy positions ONLY. Round must be III or IV and the source document must be of type vacancy_position. seat_type_code may be 'ALL' for a branch total.

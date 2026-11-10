@@ -1,0 +1,17 @@
+{
+ "current_year": "2026-27",
+ "current_rows": 104225,
+ "history_rows": 42602,
+ "colleges": 403,
+ "branches": 2510,
+ "seat_types": 105,
+ "source_documents": 7,
+ "home_university_basis": {
+  "printed": 112122,
+  "not_needed": 13578,
+  "inferred": 20622,
+  "unknown": 505
+ },
+ "excluded_printed_zero_percentile_cells": 16,
+ "district": "Not available for every college (not printed in the lists)"
+}

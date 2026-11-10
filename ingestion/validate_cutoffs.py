@@ -38,6 +38,7 @@ def validate(base=N, max_examples=8, plan=None):
             if (r["year_label"], r["cap_round"]) != (yr, rd): E("MIXED_LIST_IN_FILE", fn)
             if r["percentile"] and not PCT.match(r["percentile"]): E("BAD_PERCENTILE_FORMAT", (fn, r["percentile"]))
             elif r["percentile"] and not 0 <= float(r["percentile"]) <= 100: E("PERCENTILE_OUT_OF_RANGE", (fn, r["percentile"]))
+            if r["percentile"] and PCT.match(r["percentile"]) and float(r["percentile"]) <= 0: W("PRINTED_ZERO_PERCENTILE", (fn, r["choice_code"], r["seat_code"], r["merit_no"]))
             if not r["percentile"]: E("BLANK_PERCENTILE", (fn, r["choice_code"], r["seat_code"]))
             if not r["merit_no"].isdigit(): E("BAD_MERIT_NO", (fn, r["merit_no"]))
             if r["stage"] not in KNOWN_STAGES and not r["stage"].startswith("I-Non"): W("UNLISTED_STAGE", r["stage"])

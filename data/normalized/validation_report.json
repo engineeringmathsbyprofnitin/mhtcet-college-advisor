@@ -6,6 +6,7 @@
   "CONFLICTING_MERIT_PERCENTILE": 134,
   "PERCENTILE_RISES_WITH_MERIT_NO": 7,
   "PERCENTILE_RISES_OVER_HALF_POINT": 1066,
+  "PRINTED_ZERO_PERCENTILE": 16,
   "BLANK_HOME_UNIVERSITY_ROWS_COURSE_PRINTS_ONE_VALUE_ELSEWHERE": 33859,
   "BLANK_HOME_UNIVERSITY_ROWS_NEVER_PRINTED_FOR_COURSE": 1119,
   "AI_BLANK_SCORE_KEPT_BLANK": 6
@@ -117,6 +118,56 @@
     214,
     "largest:",
     9.9126
+   ]
+  ],
+  "PRINTED_ZERO_PERCENTILE": [
+   [
+    "2024-25_round-III_MH.csv.gz",
+    "0303653410",
+    "TFWS",
+    "5776"
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    "0412308210",
+    "TFWS",
+    "24997"
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    "0415108210",
+    "TFWS",
+    "38207"
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    "0500350310",
+    "TFWS",
+    "24553"
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    "0617708210",
+    "TFWS",
+    "11990"
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    "0622257010",
+    "TFWS",
+    "40128"
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    "0626708210",
+    "TFWS",
+    "8750"
+   ],
+   [
+    "2024-25_round-III_MH.csv.gz",
+    "0627484110",
+    "TFWS",
+    "61818"
    ]
   ],
   "CONFLICTING_MERIT_PERCENTILE": [
