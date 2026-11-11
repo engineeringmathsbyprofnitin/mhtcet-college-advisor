@@ -65,6 +65,8 @@ test("real data: missing data is reported, not invented", { skip }, async () => 
   const r = await run(); const x = r.results[0];
   assert.equal(x.vacancy.value, null); assert.equal(x.fee.value, null); assert.equal(x.placement, null);
 });
-test("real data: a district choice cannot match yet (districts not available) so nothing is wrongly shown", { skip }, async () => {
-  const r = await run({ districts: ["Pune"] }); assert.equal(r.results.length, 0);
+test("real data: a district choice is accepted; it cannot be applied (no district data) so all districts are searched and a warning says so", { skip }, async () => {
+  const r = await run({ districts: ["Pune"] }); assert.ok(r.results.length > 20);
+  assert.ok(r.meta.warnings.some(w => /District data is not available yet/.test(w)));
+  const any = await run({ districts: ["ANY"] }); assert.ok(!any.meta.warnings.some(w => /District data is not available yet/.test(w)));
 });

@@ -8,6 +8,14 @@ NODE = shutil.which("node")
 def has_jsdom():
     return bool(NODE) and subprocess.run([NODE, "-e", "require('jsdom')"], capture_output=True, cwd=ROOT, env=os.environ).returncode == 0
 
+class Css(unittest.TestCase):
+    def test_hidden_result_rows_stay_hidden_on_phones(self):
+        """Phone layout makes `table.results tbody` a block; the hidden rows (results 6-20) need a rule at least as specific, or all 20 show at once."""
+        css = open(os.path.join(ROOT, "frontend", "styles.css"), encoding="utf-8").read()
+        self.assertIn("table.results,table.results tbody{display:block", css)
+        self.assertIn("table.results tbody[hidden]{display:none}", css)
+        self.assertNotRegex(css, r"(?m)^\s*tbody\[hidden\]\{display:none\}")
+
 @unittest.skipUnless(NODE, "node not installed")
 class Config(unittest.TestCase):
     def test_home_university_list_equals_the_data(self):

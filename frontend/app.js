@@ -100,7 +100,6 @@
   }
   // ---- real data: build the form lists from the data itself (categories, candidate types, branches), show home university, lock districts
   if (C.PREVIEW) $("previewBanner").hidden = false;
-  var districtsLocked = false;
   function refill(sel, items, placeholder) { var keep = sel.value; fillSelect(sel, items, placeholder); if (keep && items.indexOf(keep) >= 0) sel.value = keep; }
   function phaseText(dv, year) {
     var kv = {}; String((dv && dv.row_count_summary) || "").split(";").forEach(function (p) { var i = p.indexOf("="); if (i > 0) kv[p.slice(0, i)] = p.slice(i + 1); });
@@ -114,7 +113,13 @@
     DataLoader.getBase({ baseUrl: C.DATA_BASE_URL, fetchFn: timedFetch, manifest: m }).then(function (B) {
       var t = B.tables, st = t.seat_types || [];
       var cts = Array.from(new Set(st.map(function (x) { return x.candidate_type; }))).sort();
-      if (cts.length) refill($("candidateType"), cts, "Select…");
+      if (cts.length) {                                  // all candidate types stay visible; those without data are shown but cannot be chosen yet
+        var ct = $("candidateType"), keep = ct.value; ct.textContent = "";
+        [["", "Select…"]].concat(C.candidateTypes.map(function (x) { return [x, cts.indexOf(x) >= 0 ? x : x + " (coming soon)"]; })).forEach(function (p) {
+          var o = document.createElement("option"); o.value = p[0]; o.textContent = p[1]; if (p[0] && cts.indexOf(p[0]) < 0) o.disabled = true; ct.appendChild(o);
+        });
+        if (keep && cts.indexOf(keep) >= 0) ct.value = keep;
+      }
       var cats = Array.from(new Set(st.filter(function (x) { return !x.family || x.family === "regular"; }).map(function (x) { return x.category; })));
       cats.sort(function (a, b) { return (a.toUpperCase() === "OPEN" ? -1 : b.toUpperCase() === "OPEN" ? 1 : a < b ? -1 : 1); });
       if (cats.length) refill($("category"), cats, "Select…");
@@ -126,18 +131,11 @@
         $("huField").hidden = false; fillSelect($("homeUniversity"), C.homeUniversities, "Not sure / skip");
         checkList($("extras"), C.extraEligibility.filter(function (x) { return fam[x.id]; }), "extras");
       }
-      if ((t.colleges || []).length && t.colleges.every(function (c) { return !c.district || c.district === "Not available"; })) {
-        districtsLocked = true; lockDistricts();
-      }
+      if ((t.colleges || []).length && t.colleges.every(function (c) { return !c.district || c.district === "Not available"; })) { $("districtNote").hidden = false; $("anyDistrict").checked = true; $("anyDistrict").dispatchEvent(new Event("change")); }   // ticked by default; the student can untick and choose districts, the engine says they are not applied yet
       var dv = (t.data_version || []).filter(function (r) { return r.is_last_known_good === "TRUE"; })[0];
       var txt = phaseText(dv, m.current_admission_year);
       if (txt) { $("phaseBanner").textContent = txt; $("phaseBanner").hidden = false; }
     }).catch(function () { /* the header already reports data problems; the form keeps its built-in lists */ });
-  }
-  function lockDistricts() {
-    $("anyDistrict").checked = true; $("anyDistrict").disabled = true;
-    $("districts").querySelectorAll("select").forEach(function (s) { s.disabled = true; }); $("addDistrict").disabled = true;
-    $("districtNote").hidden = false;
   }
   function timedFetch(url, init) {
     var ctl = typeof AbortController !== "undefined" ? new AbortController() : null, t = ctl ? setTimeout(function () { ctl.abort(); }, 20000) : null;
@@ -221,7 +219,6 @@
       clearErrs(); $("results").hidden = true; $("results").textContent = ""; balanced.checked = true;
       $("districts").querySelectorAll("select").forEach(function (s) { s.disabled = false; });
       $("addDistrict").disabled = false;
-      if (districtsLocked) lockDistricts();
     }, 0);
   });
 })();

@@ -261,7 +261,11 @@
     var accBy = groupBy(data.accreditation, function (r) { return r.college_code; });
 
     var branchRank = new Map(input.branches.map(function (b, i) { return [norm(b), i + 1]; }));
+    // Districts are not printed in the official cutoff lists. If NO college has a district in the loaded data, a district preference cannot be applied:
+    // say so and search all districts instead of hiding every college.
+    var districtDataKnown = data.colleges.some(function (c) { return c.district && c.district !== "Not available"; });
     var anyDistrict = input.districts.length === 1 && input.districts[0] === "ANY";
+    if (!anyDistrict && !districtDataKnown) { anyDistrict = true; warnings.push("District data is not available yet, so your district choice could not be applied and all districts were searched."); }
     var districtRank = new Map(anyDistrict ? [] : input.districts.map(function (d, i) { return [normDistrict(d), i + 1]; }));
     var matchedBranchNames = new Set();
 
@@ -465,7 +469,7 @@
   function explain(c, input, curYear, vac, vacRound, plc, teaching, infra, acc, anyDistrict, sc, cfg) {
     var L = [], p = input.percentile;
     L.push("Matches your branch choice #" + c.br + " (" + c.b.branch_name + ").");
-    L.push(anyDistrict ? "Located in " + c.col.district + " (you chose any district)." : "Located in " + c.col.district + ", your district choice #" + c.dr + ".");
+    if (c.col.district && c.col.district !== "Not available") L.push(anyDistrict ? "Located in " + c.col.district + " (you chose any district)." : "Located in " + c.col.district + ", your district choice #" + c.dr + "."); else L.push("District not available for this college yet.");
     var parts = c.points.map(function (pt) { return (pt.label === "current" ? "current " + curYear : "year " + c.hist[pt.age - 1].year) + ": " + pt.value.toFixed(2); });
     if ((c.cur && c.cur.unclear) || c.hist.some(function (h) { return h.homeUniversityUnclear; })) L.push("Home university unclear for this course in some lists, so the harder of the two possible cutoffs was used.");
     L.push("Your percentile " + p + " compared with cutoffs (" + parts.join("; ") + "); expected cutoff about " + c.expected.toFixed(2) + (c.trendAdj > 0 ? " (includes +" + c.trendAdj.toFixed(2) + " because earlier cutoffs were rising)" : "") + ".");

@@ -23,12 +23,14 @@ T("form lists come from the real data; home university, claims and district lock
   const B = await boot();
   assert.match(B.$("dataStatus").textContent, /REAL-2026-27-RIV-/); assert.equal(B.$("dataBanner").hidden, true);
   assert.equal(B.$("phaseBanner").hidden, false); assert.match(B.$("phaseBanner").textContent, /rounds I, II, III, IV are published \(all four rounds\)/);
-  assert.deepEqual(opts(B.$("candidateType")), ["", "Maharashtra State candidate"]);
+  assert.deepEqual(opts(B.$("candidateType")), ["", "Maharashtra State candidate", "All India candidate", "Other Than Maharashtra (OMS) candidate"]);
+  assert.deepEqual(Array.from(B.$("candidateType").options).map(o => o.disabled), [false, false, true, true]);
+  assert.match(B.$("candidateType").options[2].textContent, /coming soon/);
   const cats = opts(B.$("category")); assert.equal(cats[1], "OPEN"); ["SC", "ST", "VJ", "NT1", "NT2", "NT3", "OBC", "SEBC"].forEach(c => assert.ok(cats.includes(c), c));
   const hu = opts(B.$("homeUniversity")); assert.equal(hu.length, 13); assert.ok(hu.includes("Savitribai Phule Pune University"));
   const ex = Array.from(B.d.querySelectorAll("input[name=extras]")).map(x => x.value).sort(); assert.deepEqual(ex, ["defence", "ews", "orphan", "pwd", "tfws"]);
   assert.ok(opts(B.$("branches").querySelector("select")).includes("Computer Engineering"));
-  assert.equal(B.$("anyDistrict").checked, true); assert.equal(B.$("anyDistrict").disabled, true); assert.equal(B.$("districtNote").hidden, false);
+  assert.equal(B.$("anyDistrict").checked, true); assert.equal(B.$("anyDistrict").disabled, false); B.$("anyDistrict").click(); assert.equal(B.$("addDistrict").disabled, false); assert.equal(B.$("districtNote").hidden, false);
 });
 T("a student gets real results with the four round figures; no test-data banner", async () => {
   const B = await boot();
@@ -50,9 +52,15 @@ T("without a home university the page warns", async () => {
   for (let i = 0; i < 100 && !B.d.querySelector("#resultsTable"); i++) await sleep(50);
   assert.match(B.$("results").textContent, /did not choose a home university/);
 });
-T("clearing the form keeps districts locked", async () => {
-  const B = await boot(); B.$("form").reset(); await sleep(50);
-  assert.equal(B.$("anyDistrict").checked, true); assert.equal(B.$("anyDistrict").disabled, true);
+T("a district choice is accepted and the page explains it is not applied yet", async () => {
+  const B = await boot();
+  B.$("percentile").value = "92"; B.$("candidateType").value = "Maharashtra State candidate"; B.$("category").value = "OPEN";
+  B.$("branches").querySelector("select").value = "Computer Engineering"; B.$("maxFee").value = "1000000"; B.$("homeUniversity").value = "Mumbai University";
+  B.$("anyDistrict").click(); B.$("districts").querySelector("select").value = "Pune";   // untick "Any district", choose Pune
+  B.$("form").dispatchEvent(new B.w.Event("submit", { cancelable: true, bubbles: true }));
+  for (let i = 0; i < 100 && !B.d.querySelector("#resultsTable"); i++) await sleep(50);
+  assert.ok(B.d.querySelector("#resultsTable"), B.$("results").textContent.slice(0, 300));
+  assert.match(B.$("results").textContent, /District data is not available yet/);
 });
 T("preview address (?preview=1) loads data-real and shows the preview banner; the normal address does not", async () => {
   const P = await boot("?preview=1");

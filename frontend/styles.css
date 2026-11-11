@@ -66,7 +66,7 @@ tr.why summary{cursor:pointer;color:var(--brand);font-weight:600;min-height:32px
   .table-scroll{overflow:visible;border:0;background:none}
   table.results,table.results tbody{display:block;min-width:0}
   table.results thead{position:absolute;left:-9999px}
-  tbody[hidden]{display:none}
+  table.results tbody[hidden]{display:none}
   tr.result{display:block;background:#fff;border:1px solid var(--line);border-radius:10px 10px 0 0;margin-top:14px;padding:6px 10px}
   tr.why{display:block;background:#fafbff;border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px}
   table.results td{display:flex;justify-content:space-between;gap:12px;border:0;border-bottom:1px dashed var(--line);padding:6px 0}
