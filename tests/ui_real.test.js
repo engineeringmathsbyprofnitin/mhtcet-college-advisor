@@ -6,11 +6,11 @@ let JSDOM = null; try { ({ JSDOM } = require("jsdom")); } catch (e) { }
 const DIR = process.env.REAL_DATA_DIR, FE = path.join(__dirname, "..", "frontend");
 const T = (name, fn) => test(name, { skip: !JSDOM ? "jsdom is not installed" : !DIR ? "REAL_DATA_DIR not set" : false }, fn);
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-async function boot() {
+async function boot(search) {
   const html = fs.readFileSync(path.join(FE, "index.html"), "utf8").replace(/<script src="[^"]+"><\/script>/g, "");
-  const dom = new JSDOM(html, { runScripts: "outside-only", url: "http://localhost/frontend/index.html" }), w = dom.window;
+  const dom = new JSDOM(html, { runScripts: "outside-only", url: "http://localhost/frontend/index.html" + (search || "") }), w = dom.window;
   w.TextDecoder = util.TextDecoder; w.HTMLElement.prototype.scrollIntoView = function () {};
-  w.fetch = async (url) => { const p = path.join(DIR, url.replace(/^data\//, "")); if (!fs.existsSync(p)) return { ok: false, status: 404, arrayBuffer: async () => new ArrayBuffer(0) };
+  w.fetch = async (url) => { const p = path.join(DIR, url.replace(/^data(-real)?\//, "")); if (!fs.existsSync(p)) return { ok: false, status: 404, arrayBuffer: async () => new ArrayBuffer(0) };
     const b = fs.readFileSync(p); return { ok: true, status: 200, arrayBuffer: async () => b.buffer.slice(b.byteOffset, b.byteOffset + b.length) }; };
   ["config.js", "engine.js", "dataloader.js", "results.js", "app.js"].forEach(f => w.eval(fs.readFileSync(path.join(FE, f), "utf8")));
   for (let i = 0; i < 60 && document_hidden(w); i++) await sleep(50);
@@ -53,4 +53,10 @@ T("without a home university the page warns", async () => {
 T("clearing the form keeps districts locked", async () => {
   const B = await boot(); B.$("form").reset(); await sleep(50);
   assert.equal(B.$("anyDistrict").checked, true); assert.equal(B.$("anyDistrict").disabled, true);
+});
+T("preview address (?preview=1) loads data-real and shows the preview banner; the normal address does not", async () => {
+  const P = await boot("?preview=1");
+  assert.equal(P.$("previewBanner").hidden, false); assert.match(P.$("dataStatus").textContent, /REAL-2026-27-RIV-/);
+  const N = await boot("");
+  assert.equal(N.w.APP_CONFIG.DATA_BASE_URL, "data/");
 });

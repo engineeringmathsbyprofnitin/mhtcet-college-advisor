@@ -25,7 +25,7 @@ class Page(unittest.TestCase):
     def tearDownClass(cls): shutil.rmtree(cls.d)
     def test_real_data_page(self):
         r = subprocess.run([NODE, "--test", os.path.join(ROOT, "tests", "ui_real.test.js")], env=dict(os.environ, REAL_DATA_DIR=self.d), capture_output=True, text=True, cwd=ROOT)
-        self.assertEqual(r.returncode, 0, r.stdout[-1500:]); self.assertIn("# pass 4", r.stdout); self.assertIn("# skipped 0", r.stdout)
+        self.assertEqual(r.returncode, 0, r.stdout[-1500:]); self.assertIn("# pass 5", r.stdout); self.assertIn("# skipped 0", r.stdout)
     def test_synthetic_page_unchanged(self):
         r = subprocess.run([NODE, "--test", os.path.join(ROOT, "tests", "ui_stage6.test.js")], capture_output=True, text=True, cwd=ROOT)
         self.assertEqual(r.returncode, 0, r.stdout[-1500:]); self.assertIn("# pass 21", r.stdout)

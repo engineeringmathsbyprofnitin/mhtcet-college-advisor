@@ -1,9 +1,15 @@
 /* config.js - settings and PROVISIONAL option lists.
    IMPORTANT: category, candidate-type and branch lists below are placeholders typed by hand.
    In Stages 7-9 they will be replaced by lists taken from official CET Cell data. */
+/* DATA FOLDERS: "data/" = the current public data; "data-real/" = the real CET Cell data built by the "Publish website data" workflow.
+   PREVIEW: open the page with ?preview=1 at the end of the address to see the real data before the public does.
+   GO PUBLIC (one line): on the next line change "data/" to "data-real/". */
+var PUBLIC_DATA_FOLDER = "data/";
+var IS_PREVIEW = /(^|[?&])preview=1(&|$)/.test((window.location && window.location.search) || "");
 window.APP_CONFIG = {
   DATA_MODE: "static",       // "static" = the browser loads published data files and runs the engine itself (chosen design).
-  DATA_BASE_URL: "data/",    // folder of the published data files, relative to the page. Can be changed to your own hosting later.
+  PREVIEW: IS_PREVIEW,       // true when the address ends with ?preview=1
+  DATA_BASE_URL: IS_PREVIEW ? "data-real/" : PUBLIC_DATA_FOLDER,   // folder of the published data files, relative to the page. Can be changed to your own hosting later.
   API_URL: "",               // optional: Apps Script address (only used if DATA_MODE is "api"; not needed for the static design).
   candidateTypes: [
     "Maharashtra State candidate",

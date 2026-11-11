@@ -99,6 +99,7 @@
     }).catch(function () { $("dataStatus").textContent = "The data could not be loaded. Please check your internet connection and reload the page."; });
   }
   // ---- real data: build the form lists from the data itself (categories, candidate types, branches), show home university, lock districts
+  if (C.PREVIEW) $("previewBanner").hidden = false;
   var districtsLocked = false;
   function refill(sel, items, placeholder) { var keep = sel.value; fillSelect(sel, items, placeholder); if (keep && items.indexOf(keep) >= 0) sel.value = keep; }
   function phaseText(dv, year) {
