@@ -1,0 +1,77 @@
+name: Publish website data (preview)
+
+# Builds the website's data files from the read cutoff lists (Stage 10c) and saves them in frontend/data-real.
+# They are shown on the PREVIEW page (add ?preview=1 to the web address). The public page keeps its current data until you make the one-line
+# change in frontend/config.js (see docs/STAGE10C3C.md). Nothing is replaced unless every check below succeeds; otherwise the previous files stay.
+# Runs by hand (Actions tab -> this workflow -> Run workflow) and automatically after "Read the archived documents" finishes successfully.
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Read the archived documents"]
+    types: [completed]
+
+permissions:
+  contents: write              # saves the data files into the repository
+
+concurrency:
+  group: publish-website-data
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: "Self-tests (offline)"
+        run: python -m unittest discover -s tests
+
+      - name: "Decide the admission year and the rounds needed (automatic plan)"
+        run: python -m ingestion.plan
+
+      - name: "Check the read cutoff data"
+        run: python -m ingestion.validate_cutoffs
+
+      - name: "Build the website tables"
+        run: python -m ingestion.build_tables
+
+      - name: "Package and validate the website data files"
+        run: python -m ingestion.package_real build/data-real
+
+      - name: "Replace the preview data (only because every step above succeeded)"
+        run: |
+          rm -rf frontend/data-real
+          cp -r build/data-real frontend/data-real
+          ls frontend/data-real/cutoffs | wc -l
+
+      - name: "Save in the repository"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add frontend/data-real data/normalized/tables data/normalized/data_plan.json data/normalized/validation_report.json
+          if git diff --cached --quiet; then
+            echo "Website data unchanged."
+          else
+            git commit -m "Publish website data (preview)"
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: "Keep the reports with this run"
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: website-data-reports
+          path: |
+            data/normalized/tables/build_report.json
+            data/normalized/validation_report.json
+            data/normalized/data_plan.json
+          if-no-files-found: ignore
