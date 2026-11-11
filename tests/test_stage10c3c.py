@@ -1,10 +1,14 @@
 """Stage 10c-3c: the publish workflow and the preview / go-public switch. Run: python -m unittest tests/test_stage10c3c.py -v"""
 import os, re, shutil, subprocess, sys, unittest
-import yaml
+try:
+    import yaml                      # not installed on a bare machine; the publish workflow installs it
+except ImportError:
+    yaml = None
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 NODE = shutil.which("node")
 WF = os.path.join(ROOT, ".github", "workflows", "publish-website-data.yml")
 
+@unittest.skipUnless(yaml, "PyYAML not installed (pip install pyyaml)")
 class Workflow(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
