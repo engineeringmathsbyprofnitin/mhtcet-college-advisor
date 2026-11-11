@@ -14,6 +14,7 @@
   <p class="status" id="dataStatus" role="status">Checking data…</p>
 </header>
 <div id="dataBanner" class="banner danger" role="alert" hidden></div>
+<div id="phaseBanner" class="notice" role="status" hidden></div>
 
 <main>
 <form id="form" novalidate>
@@ -41,6 +42,11 @@
       <select id="category" aria-describedby="category-err"></select>
       <small class="err" id="category-err" role="alert"></small>
     </div>
+    <div class="field" id="huField" hidden>
+      <label for="homeUniversity">Home university</label>
+      <select id="homeUniversity" aria-describedby="hu-help"></select>
+      <small id="hu-help">The university area where you passed HSC (12th). Some seats are for students of the college's own university and some for other students, so this changes your result. If you are not sure, leave it blank: both cases are checked and the harder cutoff is used.</small>
+    </div>
     <div class="field">
       <label for="gender">Gender (optional)</label>
       <select id="gender"></select>
@@ -63,6 +69,7 @@
 
   <fieldset>
     <legend>C. Preferred districts <span class="req">*</span></legend>
+    <p class="notice" id="districtNote" hidden>District data coming soon: the CET Cell cutoff lists do not print districts, so all districts are searched for now.</p>
     <label class="inline"><input type="checkbox" id="anyDistrict"> Any district in Maharashtra</label>
     <p class="hint">Otherwise choose in order of preference: 1 is your top choice.</p>
     <div id="districts"></div>

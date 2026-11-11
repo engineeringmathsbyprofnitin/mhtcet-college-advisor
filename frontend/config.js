@@ -13,7 +13,16 @@ window.APP_CONFIG = {
   categories: [
     "Open", "OBC", "SC", "ST", "VJ/DT-A", "NT-B", "NT-C", "NT-D", "SBC", "EWS"
   ],
+  // Home universities as printed in the CET Cell lists (the two non-university markers are left out). A test keeps this list equal to the data.
+  homeUniversities: [
+    "Dr. Babasaheb Ambedkar Marathwada University", "Dr. Babasaheb Ambedkar Technological University,Lonere", "Gondwana University",
+    "Kavayitri Bahinabai Chaudhari North Maharashtra University, Jalgaon", "Mumbai University", "Punyashlok Ahilyadevi Holkar Solapur University",
+    "Rashtrasant Tukadoji Maharaj Nagpur University", "SNDT Women's University", "Sant Gadge Baba Amravati University",
+    "Savitribai Phule Pune University", "Shivaji University", "Swami Ramanand Teerth Marathwada University, Nanded"
+  ],
   extraEligibility: [
+    { id: "ews", label: "Economically Weaker Section (EWS) claim" },
+    { id: "orphan", label: "Orphan category claim" },
     { id: "tfws", label: "Applying for TFWS (Tuition Fee Waiver Scheme) seats" },
     { id: "defence", label: "Defence-category claim" },
     { id: "pwd", label: "Person with Disability (PWD) claim" }

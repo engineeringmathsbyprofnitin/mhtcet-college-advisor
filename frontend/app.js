@@ -36,6 +36,7 @@
   fillSelect($("gender"), C.genders, "Prefer not to answer");
 
   function checkList(container, items, name) {
+    container.textContent = "";
     items.forEach(function (it) {
       var l = document.createElement("label");
       var c = document.createElement("input");
@@ -93,8 +94,49 @@
       var txt = "Data version " + m.data_version + " \u00B7 admission year " + m.current_admission_year + " \u00B7 last updated " + (m.last_successful_update ? m.last_successful_update.slice(0, 10) : "unknown");
       if (days !== null && !isNaN(days) && days > 14) txt += " \u00B7 this data may be out of date";
       $("dataStatus").textContent = txt;
+      if (!m.is_synthetic) enrichFromData(m);
       if (m.is_synthetic) { $("dataBanner").textContent = "TEST DATA: every college and number on this site is made up for testing. Do not use it to make decisions."; $("dataBanner").hidden = false; }
     }).catch(function () { $("dataStatus").textContent = "The data could not be loaded. Please check your internet connection and reload the page."; });
+  }
+  // ---- real data: build the form lists from the data itself (categories, candidate types, branches), show home university, lock districts
+  var districtsLocked = false;
+  function refill(sel, items, placeholder) { var keep = sel.value; fillSelect(sel, items, placeholder); if (keep && items.indexOf(keep) >= 0) sel.value = keep; }
+  function phaseText(dv, year) {
+    var kv = {}; String((dv && dv.row_count_summary) || "").split(";").forEach(function (p) { var i = p.indexOf("="); if (i > 0) kv[p.slice(0, i)] = p.slice(i + 1); });
+    var rounds = (kv.rounds || "").split("+").filter(Boolean);
+    if (!rounds.length) return "";
+    if (kv.phase === "previous_cycle_latest") return "Cutoffs for the new admission year are not published yet. These results use " + year + " (the latest published year; CAP rounds " + rounds.join(", ") + ") and the three years before it. They are last year's figures, not a prediction for this year.";
+    if (!kv.next || kv.next === "none") return "Admission year " + year + ": CAP rounds " + rounds.join(", ") + " are published (all four rounds). Each result shows the cutoff of every round.";
+    return "Admission year " + year + ": CAP rounds " + rounds.join(", ") + " are published. Round " + kv.next + " is expected next and is not published yet.";
+  }
+  function enrichFromData(m) {
+    DataLoader.getBase({ baseUrl: C.DATA_BASE_URL, fetchFn: timedFetch, manifest: m }).then(function (B) {
+      var t = B.tables, st = t.seat_types || [];
+      var cts = Array.from(new Set(st.map(function (x) { return x.candidate_type; }))).sort();
+      if (cts.length) refill($("candidateType"), cts, "Select…");
+      var cats = Array.from(new Set(st.filter(function (x) { return !x.family || x.family === "regular"; }).map(function (x) { return x.category; })));
+      cats.sort(function (a, b) { return (a.toUpperCase() === "OPEN" ? -1 : b.toUpperCase() === "OPEN" ? 1 : a < b ? -1 : 1); });
+      if (cats.length) refill($("category"), cats, "Select…");
+      var cnt = {}; (t.branches || []).forEach(function (b) { cnt[b.branch_name] = (cnt[b.branch_name] || 0) + 1; });
+      var names = Object.keys(cnt).sort(function (a, b) { return cnt[b] - cnt[a] || (a < b ? -1 : 1); });
+      if (names.length) { C.branches = names; $("branches").textContent = ""; for (var i = 0; i < 3; i++) addRow("branches", names, "Branch"); }
+      var fam = {}; st.forEach(function (x) { if (x.family) fam[x.family] = true; });
+      if (fam.regular) {                                  // data with seat families: home-university rules and claims apply
+        $("huField").hidden = false; fillSelect($("homeUniversity"), C.homeUniversities, "Not sure / skip");
+        checkList($("extras"), C.extraEligibility.filter(function (x) { return fam[x.id]; }), "extras");
+      }
+      if ((t.colleges || []).length && t.colleges.every(function (c) { return !c.district || c.district === "Not available"; })) {
+        districtsLocked = true; lockDistricts();
+      }
+      var dv = (t.data_version || []).filter(function (r) { return r.is_last_known_good === "TRUE"; })[0];
+      var txt = phaseText(dv, m.current_admission_year);
+      if (txt) { $("phaseBanner").textContent = txt; $("phaseBanner").hidden = false; }
+    }).catch(function () { /* the header already reports data problems; the form keeps its built-in lists */ });
+  }
+  function lockDistricts() {
+    $("anyDistrict").checked = true; $("anyDistrict").disabled = true;
+    $("districts").querySelectorAll("select").forEach(function (s) { s.disabled = true; }); $("addDistrict").disabled = true;
+    $("districtNote").hidden = false;
   }
   function timedFetch(url, init) {
     var ctl = typeof AbortController !== "undefined" ? new AbortController() : null, t = ctl ? setTimeout(function () { ctl.abort(); }, 20000) : null;
@@ -147,6 +189,7 @@
       candidateType: $("candidateType").value,
       category: $("category").value,
       gender: $("gender").value || null,
+      homeUniversity: ($("huField").hidden ? "" : $("homeUniversity").value) || undefined,
       extraEligibility: checked("extras"),
       branches: br,
       districts: any ? ["ANY"] : ds,
@@ -177,6 +220,7 @@
       clearErrs(); $("results").hidden = true; $("results").textContent = ""; balanced.checked = true;
       $("districts").querySelectorAll("select").forEach(function (s) { s.disabled = false; });
       $("addDistrict").disabled = false;
+      if (districtsLocked) lockDistricts();
     }, 0);
   });
 })();

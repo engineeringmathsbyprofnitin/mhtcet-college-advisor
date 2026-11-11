@@ -72,7 +72,13 @@
       tr.appendChild(cell(doc, "Cutoff " + y, h && h.value !== null ? [el(doc, "span", { text: fmtPct(h.value) }), small(doc, "CAP Round " + h.round + " \u00B7 " + h.seatType)] : noteLine(doc, NA)));
     }
     var c = r.currentCutoff;
-    tr.appendChild(cell(doc, "Latest current cutoff", c ? [el(doc, "span", { text: fmtPct(c.value) }), small(doc, "CAP Round " + c.round + " \u00B7 " + c.year + " \u00B7 " + c.seatType)] : noteLine(doc, NA)));
+    var curKids = c ? [el(doc, "span", { text: fmtPct(c.value) }), small(doc, "CAP Round " + c.round + " \u00B7 " + c.year + " \u00B7 " + c.seatType)] : noteLine(doc, NA);
+    if (r.currentRounds) {                       // the cutoff of every CAP round of the current year: I, II, III, IV
+      var rr = ["I", "II", "III", "IV"].map(function (k) { var x = r.currentRounds[k]; return "Round " + k + ": " + (x ? fmtPct(x.value) : "\u2013"); });
+      curKids.push(el(doc, "small", { class: "sub rounds", text: rr.join(" \u00B7 ") }));
+    }
+    if (c && c.homeUniversityUnclear) curKids.push(small(doc, "Home university unclear for this course: the harder figure is shown"));
+    tr.appendChild(cell(doc, "Latest current cutoff", curKids));
     var v = r.vacancy;
     tr.appendChild(cell(doc, "Latest vacancy", v && v.value !== null ? [el(doc, "span", { text: String(v.value) + " seat(s)" }), small(doc, "CAP Round " + v.round)] : noteLine(doc, "Vacancy data unavailable")));
     var f = r.fee, fk;

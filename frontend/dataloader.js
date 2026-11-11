@@ -64,6 +64,20 @@
     });
   }
 
+  /** Loads the small base tables (colleges, branches, seat types, data version...) so the form can build its lists from the real data. */
+  function getBase(options) {
+    var o = options || {}, base = o.baseUrl || "data/", log = { files: [], bytes: 0 };
+    var opts = { fetchFn: o.fetchFn || function (u, init) { return fetch(u, init); }, verify: o.verify || defaultVerify, fetchOptions: { cache: "no-cache" } };
+    var mp = o.manifest ? Promise.resolve(o.manifest) : getManifest(o);
+    return mp.then(function (manifest) {
+      opts.fetchOptions = undefined;
+      return getVerified(base, manifest.base, opts, log).then(function (bt) {
+        var tables = {}; BASE_TABLES.forEach(function (t) { if (bt[t]) tables[t] = expand(bt[t]); });
+        return { manifest: manifest, tables: tables };
+      });
+    });
+  }
+
   /** Loads everything needed for one student and returns {data, manifest, files, bytes}. */
   function loadForStudent(student, options) {
     var o = options || {};
@@ -104,5 +118,5 @@
     });
   }
 
-  return { loadForStudent: loadForStudent, recommend: recommend, getManifest: getManifest, expand: expand };
+  return { loadForStudent: loadForStudent, recommend: recommend, getManifest: getManifest, getBase: getBase, expand: expand };
 });

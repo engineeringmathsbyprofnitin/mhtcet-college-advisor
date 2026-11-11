@@ -84,3 +84,7 @@ tr.why summary{cursor:pointer;color:var(--brand);font-weight:600;min-height:32px
   tr.why details{display:block}
   tr.why details>*:not(summary){display:block}
 }
+
+/* Stage 10c-3b: round figures row and phase banner */
+.rounds { display: block; font-variant-numeric: tabular-nums; margin-top: .25rem; }
+#phaseBanner { margin: 0 auto; max-width: 60rem; padding: .6rem 1rem; }
