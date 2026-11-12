@@ -1,6 +1,6 @@
 """Stage 10c-3b: the form and results page on real data. The page tests need Node and jsdom (npm install jsdom); without jsdom they are skipped.
 Run: python -m unittest tests/test_stage10c3b.py -v"""
-import csv, json, os, shutil, subprocess, sys, tempfile, unittest
+import csv, json, os, re, shutil, subprocess, sys, tempfile, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from ingestion import package_real as PR
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -33,7 +33,7 @@ class Page(unittest.TestCase):
     def tearDownClass(cls): shutil.rmtree(cls.d)
     def test_real_data_page(self):
         r = subprocess.run([NODE, "--test", os.path.join(ROOT, "tests", "ui_real.test.js")], env=dict(os.environ, REAL_DATA_DIR=self.d), capture_output=True, text=True, cwd=ROOT)
-        self.assertEqual(r.returncode, 0, r.stdout[-1500:]); self.assertIn("# pass 5", r.stdout); self.assertIn("# skipped 0", r.stdout)
+        self.assertEqual(r.returncode, 0, r.stdout[-1500:]); self.assertIn("# fail 0", r.stdout); self.assertIn("# skipped 0", r.stdout); self.assertGreaterEqual(int(re.search(r"# pass (\d+)", r.stdout).group(1)), 6)
     def test_synthetic_page_unchanged(self):
         r = subprocess.run([NODE, "--test", os.path.join(ROOT, "tests", "ui_stage6.test.js")], capture_output=True, text=True, cwd=ROOT)
         self.assertEqual(r.returncode, 0, r.stdout[-1500:]); self.assertIn("# pass 21", r.stdout)

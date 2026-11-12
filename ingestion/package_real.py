@@ -26,6 +26,10 @@ def assemble(folder, plan=None):
     with open(os.path.join(folder, "data_version.csv"), "w", newline="") as f:
         w = csv.writer(f, lineterminator="\n"); w.writerow("data_version,created_at,is_last_known_good,admission_year,row_count_summary,notes,is_synthetic".split(","))
         w.writerow([ver, json.load(open(P.DISCOVERY))["generated_at"], "TRUE", plan["current_year"], summary, "Real CET Cell cutoff lists; fees, vacancies, accreditation, placements not yet available", "FALSE"])
+    stamp = json.load(open(P.DISCOVERY))["generated_at"]
+    with open(os.path.join(folder, "refresh_status.csv"), "w", newline="") as f:      # the "last successful data update" shown on the page
+        w = csv.writer(f, lineterminator="\n"); w.writerow("run_id,started_at,finished_at,status,admission_year_detected,data_version_published,message,is_synthetic".split(","))
+        w.writerow(["RUN-" + ver, stamp, stamp, "success", plan["current_year"], ver, "Built from the archived CET Cell cutoff lists (time = when the source documents were last discovered)", "FALSE"])
     return ver
 
 def main(out):

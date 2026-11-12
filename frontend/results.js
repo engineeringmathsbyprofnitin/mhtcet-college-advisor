@@ -161,7 +161,14 @@
     rootEl.appendChild(el(doc, "div", { class: "datainfo" }, info.map(function (t) { return el(doc, "p", { text: t }); })));
     rootEl.appendChild(el(doc, "p", { class: "notice", text: "This is guidance based on past cutoffs, not a prediction or a guarantee. Final eligibility, option selection and admission depend on official CET Cell rules, the CAP process, seat availability and your verified documents." }));
     if (list.length) {
-      var pb = el(doc, "button", { type: "button", class: "secondary no-print", id: "printBtn", text: "Print or save as PDF" });
+      var dl = el(doc, "button", { type: "button", class: "no-print", id: "pdfBtn", text: "Download PDF" });
+      dl.addEventListener("click", function () {
+        if (opts.downloadPdf) opts.downloadPdf(res);
+        else if (doc.defaultView && doc.defaultView.PdfExport) doc.defaultView.PdfExport.download(res, doc);
+        else if (doc.defaultView && doc.defaultView.print) doc.defaultView.print();
+      });
+      rootEl.appendChild(dl);
+      var pb = el(doc, "button", { type: "button", class: "secondary no-print", id: "printBtn", text: "Print" });
       pb.addEventListener("click", function () { if (opts.print) opts.print(); else if (doc.defaultView && doc.defaultView.print) doc.defaultView.print(); });
       rootEl.appendChild(pb);
     }

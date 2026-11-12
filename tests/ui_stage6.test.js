@@ -22,7 +22,7 @@ function boot(o) {
     return { ok: true, status: 200, arrayBuffer: async () => buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.length) };
   };
   if (o.verify) Object.defineProperty(w, "crypto", { value: require("crypto").webcrypto, configurable: true });
-  ["config.js", "engine.js", "dataloader.js", "results.js", "app.js"].forEach(f => w.eval(fs.readFileSync(path.join(FE, f), "utf8")));
+  ["config.js", "engine.js", "dataloader.js", "pdfexport.js", "results.js", "app.js"].forEach(f => w.eval(fs.readFileSync(path.join(FE, f), "utf8")));
   return { w, d: w.document, $: id => w.document.getElementById(id), calls };
 }
 function fill(B, v) {
@@ -153,5 +153,5 @@ T("nothing the student types is sent anywhere: only data-file requests are made,
   assert.ok(!B.calls.some(u => /93\.5|200000|Pune/i.test(u)));
 });
 test("source code never uses innerHTML or storage APIs", () => {
-  ["app.js", "results.js", "dataloader.js"].forEach(f => { const s = fs.readFileSync(path.join(FE, f), "utf8"); assert.ok(!/innerHTML|outerHTML|insertAdjacentHTML|document\.write|localStorage|sessionStorage|eval\(/.test(s), f); });
+  ["app.js", "results.js", "dataloader.js", "pdfexport.js"].forEach(f => { const s = fs.readFileSync(path.join(FE, f), "utf8"); assert.ok(!/innerHTML|outerHTML|insertAdjacentHTML|document\.write|localStorage|sessionStorage|eval\(/.test(s), f); });
 });

@@ -38,5 +38,7 @@ Home-university dropdown; Round IV vacancy = provisional position vs ACAP list; 
 
 ## Stage 10c-3d fixes after phone test (show-more bug, candidate types, district always available, docs/STAGE10C3D.md)
 
+## Stage 10c-3e Download PDF built (docs/STAGE10C3E.md)
+
 ## Next task
 Owner runs the reading workflow; then Stage 10 (validation, which seat codes apply to which student, historical comparison and current-round fallback), split into small parts.

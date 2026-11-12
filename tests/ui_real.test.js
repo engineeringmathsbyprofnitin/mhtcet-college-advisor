@@ -12,7 +12,7 @@ async function boot(search) {
   w.TextDecoder = util.TextDecoder; w.HTMLElement.prototype.scrollIntoView = function () {};
   w.fetch = async (url) => { const p = path.join(DIR, url.replace(/^data(-real)?\//, "")); if (!fs.existsSync(p)) return { ok: false, status: 404, arrayBuffer: async () => new ArrayBuffer(0) };
     const b = fs.readFileSync(p); return { ok: true, status: 200, arrayBuffer: async () => b.buffer.slice(b.byteOffset, b.byteOffset + b.length) }; };
-  ["config.js", "engine.js", "dataloader.js", "results.js", "app.js"].forEach(f => w.eval(fs.readFileSync(path.join(FE, f), "utf8")));
+  ["config.js", "engine.js", "dataloader.js", "pdfexport.js", "results.js", "app.js"].forEach(f => w.eval(fs.readFileSync(path.join(FE, f), "utf8")));
   for (let i = 0; i < 60 && document_hidden(w); i++) await sleep(50);
   return { w, d: w.document, $: id => w.document.getElementById(id) };
 }
@@ -67,4 +67,14 @@ T("preview address (?preview=1) loads data-real and shows the preview banner; th
   assert.equal(P.$("previewBanner").hidden, false); assert.match(P.$("dataStatus").textContent, /REAL-2026-27-RIV-/);
   const N = await boot("");
   assert.equal(N.w.APP_CONFIG.DATA_BASE_URL, "data/");
+});
+T("the Download PDF button builds the report from the shown results (no print dialog needed)", async () => {
+  const B = await boot(); let got = null;
+  B.w.PdfExport.download = (res) => { got = res; };
+  B.$("percentile").value = "92"; B.$("candidateType").value = "Maharashtra State candidate"; B.$("category").value = "OPEN"; B.$("homeUniversity").value = "Mumbai University";
+  B.$("branches").querySelector("select").value = "Computer Engineering"; B.$("maxFee").value = "1000000";
+  B.$("form").dispatchEvent(new B.w.Event("submit", { cancelable: true, bubbles: true }));
+  for (let i = 0; i < 100 && !B.d.querySelector("#resultsTable"); i++) await sleep(50);
+  const btn = B.d.getElementById("pdfBtn"); assert.ok(btn); assert.equal(btn.textContent, "Download PDF"); btn.click();
+  assert.ok(got && got.results.length > 5);
 });
