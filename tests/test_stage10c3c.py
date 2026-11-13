@@ -17,7 +17,7 @@ class Workflow(unittest.TestCase):
     def idx(self, text): return next(i for i, r in enumerate(self.runs) if text in r)
     def test_triggers(self):
         on = self.y[True] if True in self.y else self.y["on"]          # PyYAML reads the key `on` as True
-        self.assertIn("workflow_dispatch", on); self.assertEqual(on["workflow_run"]["workflows"], ["Read the archived documents"])
+        self.assertIn("workflow_dispatch", on); self.assertEqual(on["workflow_run"]["workflows"], ["Read the archived documents", "Read institute information"])
         self.assertIn("conclusion == 'success'", self.y["jobs"]["publish"]["if"])
     def test_permissions_are_minimal(self): self.assertEqual(self.y["permissions"], {"contents": "write"})
     def test_order_tests_then_validate_then_build_then_package_then_replace_then_commit(self):
@@ -46,3 +46,16 @@ class Switch(unittest.TestCase):
         src = open(os.path.join(ROOT, "frontend", "config.js"), encoding="utf-8").read()
         self.assertEqual(len(re.findall(r'^var PUBLIC_DATA_FOLDER = "data/";', src, re.M)), 1)
 if __name__ == "__main__": unittest.main()
+
+
+@unittest.skipUnless(yaml, "PyYAML not installed (pip install pyyaml)")
+class InstitutesWorkflow(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.y = yaml.safe_load(open(os.path.join(ROOT, ".github", "workflows", "read-institutes.yml"), encoding="utf-8")); cls.steps = cls.y["jobs"]["read"]["steps"]; cls.runs = [s.get("run", "") for s in cls.steps]
+    def test_name_matches_the_publish_trigger(self): self.assertEqual(self.y["name"], "Read institute information")
+    def test_runs_by_hand_and_weekly_with_minimal_permissions(self):
+        on = self.y[True] if True in self.y else self.y["on"]; self.assertIn("workflow_dispatch", on); self.assertIn("schedule", on); self.assertEqual(self.y["permissions"], {"contents": "write"})
+    def test_tests_before_reading_before_saving_only_the_institutes_folder(self):
+        i = [next(k for k, r in enumerate(self.runs) if x in r) for x in ("unittest tests/test_stage10d.py", "ingestion.institutes", "git commit")]
+        self.assertEqual(i, sorted(i)); add = self.runs[i[2]]; self.assertIn("git add data/normalized/institutes", add); self.assertNotIn("git add .", add)

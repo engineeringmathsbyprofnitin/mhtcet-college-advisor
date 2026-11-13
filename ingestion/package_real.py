@@ -11,7 +11,8 @@ T = os.path.join(ROOT, "data", "normalized", "tables")
 TEMPLATES = os.path.join(ROOT, "database", "templates")
 REAL = ["colleges", "branches", "seat_types", "source_documents", "current_cutoffs", "historical_cutoffs"]
 
-def assemble(folder, plan=None):
+def assemble(folder, plan=None, tables=None):
+    T = tables or globals()["T"]
     plan = plan or P.make_plan(json.load(open(P.DISCOVERY))["admission_year"])
     for f in os.listdir(TEMPLATES):                     # header-only tables first (vacancies, fees, ... = none yet)
         shutil.copy(os.path.join(TEMPLATES, f), os.path.join(folder, f))
@@ -32,10 +33,10 @@ def assemble(folder, plan=None):
         w.writerow(["RUN-" + ver, stamp, stamp, "success", plan["current_year"], ver, "Built from the archived CET Cell cutoff lists (time = when the source documents were last discovered)", "FALSE"])
     return ver
 
-def main(out):
+def main(out, tables=None):
     folder = tempfile.mkdtemp()
     try:
-        ver = assemble(folder)
+        ver = assemble(folder, tables=tables)
         m = X.publish(folder, out, now="1970-01-01T00:00:00Z")
         return ver, m
     finally: shutil.rmtree(folder)

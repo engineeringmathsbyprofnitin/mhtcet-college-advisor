@@ -23,12 +23,13 @@ def printed_values(rows):
         if r["home_university"]: d[r["choice_code"]].add(r["home_university"])
     return d
 
-def resolve_hu(row, printed):
+def resolve_hu(row, printed, inst_uni=None, cur_year=None):
     """(home_university, basis). Never guesses: several printed values or none -> 'unknown' for the home-university sections."""
     if row["home_university"]: return row["home_university"], "printed"
     if row["section"] not in HU_SECTIONS: return "", "not_needed"
     v = printed.get(row["choice_code"], set())
     if len(v) == 1: return next(iter(v)), "inferred"
+    if inst_uni and row["year_label"] == cur_year and inst_uni.get(row["choice_code"]): return inst_uni[row["choice_code"]], "institute_page"   # official Institute Summary page of the current year
     return "", "unknown"
 
 def printed_zero(r):
@@ -37,7 +38,7 @@ def printed_zero(r):
     try: return float(r["percentile"]) <= 0
     except (ValueError, KeyError): return False
 
-def collapse(rows, printed):
+def collapse(rows, printed, inst_uni=None, cur_year=None):
     """One closing row per (year, round, course, section, seat code); lowest percentile wins; blank percentiles are skipped (never zero)."""
     out = {}
     for r in rows:
@@ -46,7 +47,7 @@ def collapse(rows, printed):
         if k not in out or float(r["percentile"]) < float(out[k]["percentile"]): out[k] = r
     res = []
     for k, r in out.items():
-        hu, basis = resolve_hu(r, printed)
+        hu, basis = resolve_hu(r, printed, inst_uni, cur_year)
         cid = "CUT" + hashlib.sha1("|".join(k).encode()).hexdigest()[:12].upper()
         res.append({"cutoff_id": cid, "choice_code": r["choice_code"], "admission_year": r["year_label"], "cap_round": r["cap_round"], "seat_type_code": r["seat_code"],
                     "cutoff_percentile": r["percentile"], "cutoff_rank": "", "published_date": "", "source_doc_id": doc_id(r["source_sha256"]), "retrieved_date": "",
@@ -63,6 +64,19 @@ def seat_type_rows(seat_codes):
                     "gender_scope": i.get("gender_scope", ""), "seat_level": {"H": "Home University", "O": "Other Than Home University", "S": "State Level"}.get(c[-1], ""),
                     "description": "family=%s variant=%s (official legend: first letter G/L, last letter H/O/S)" % (i["family"], i.get("variant", "")), "is_provisional": "FALSE", "family": i["family"], "variant": i.get("variant", "")})
     return out
+
+def load_institutes(base, known_unis):
+    """Official institute pages (Stage 10d): ({institute_code: row}, {choice_code: university}). Empty when the files do not exist yet."""
+    d = os.path.join(base, "institutes")
+    if not (os.path.exists(os.path.join(d, "institutes.csv")) and os.path.exists(os.path.join(d, "institute_courses.csv"))): return {}, {}
+    with open(os.path.join(d, "institutes.csv"), newline="", encoding="utf-8") as f: insts = {r["institute_code"]: r for r in csv.DictReader(f)}
+    with open(os.path.join(d, "institute_courses.csv"), newline="", encoding="utf-8") as f:
+        uni = {r["choice_code"]: r["university"] for r in csv.DictReader(f) if r["university"] in known_unis}
+    return insts, uni
+
+def autonomy(v):
+    v = (v or "").strip().lower()
+    return "non_autonomous" if v.startswith("non") else "autonomous" if v == "autonomous" else "unknown"
 
 def read_gz(p):
     with gzip.open(p, "rt", newline="", encoding="utf-8") as f: return list(csv.DictReader(f))
@@ -83,9 +97,11 @@ def build(base=N, plan=None, outdir=None):
             if (rows[0]["year_label"], rows[0]["cap_round"]) in need: sel.append((need[(rows[0]["year_label"], rows[0]["cap_round"])], rows))
     printed = printed_values(allrows)
     zeros = sum(1 for _, rows in sel for r in rows if r["percentile"] and printed_zero(r))
-    cur = collapse([r for role, rows in sel if role == "current" for r in rows], printed)
-    his = collapse([r for role, rows in sel if role == "history" for r in rows], printed)
     mdir = os.path.join(base, "master")
+    with open(os.path.join(mdir, "home_universities.csv"), newline="", encoding="utf-8") as f: known_unis = {r["home_university"] for r in csv.DictReader(f)}
+    insts, inst_uni = load_institutes(base, known_unis)
+    cur = collapse([r for role, rows in sel if role == "current" for r in rows], printed, inst_uni, plan["current_year"])
+    his = collapse([r for role, rows in sel if role == "history" for r in rows], printed, inst_uni, plan["current_year"])
     def rd(n):
         with open(os.path.join(mdir, n), newline="", encoding="utf-8") as f: return list(csv.DictReader(f))
     used = {r["choice_code"] for r in cur + his}
@@ -96,9 +112,12 @@ def build(base=N, plan=None, outdir=None):
     col_doc = {}
     for c in courses: col_doc[c["institute_code"]] = latest_doc[c["choice_code"]]
     ccodes = sorted({c["institute_code"] for c in courses})
-    col_rows = [{"college_code": ic, "college_name": colleges[ic]["institute_name"], "district": NA, "city": "", "college_type": colleges[ic]["status_latest"],
-                 "status": "active", "previous_college_code": "", "college_website": "", "autonomy_status": "autonomous" if colleges[ic]["home_university_latest"] == "Autonomous Institute" else "unknown",
-                 "campus_area_acres": "", "source_doc_id": col_doc[ic], "retrieved_date": "", "validation_status": "validated", "is_synthetic": "FALSE"} for ic in ccodes]
+    def inst_doc(ic): return "DOC-" + insts[ic]["page_sha256"][:16]
+    col_rows = [{"college_code": ic, "college_name": colleges[ic]["institute_name"], "district": (insts[ic]["district"] or NA) if ic in insts else NA, "city": "",
+                 "college_type": insts[ic]["status"] if ic in insts else colleges[ic]["status_latest"],
+                 "status": "active", "previous_college_code": "", "college_website": "",
+                 "autonomy_status": autonomy(insts[ic]["autonomy_status"]) if ic in insts else ("autonomous" if colleges[ic]["home_university_latest"] == "Autonomous Institute" else "unknown"),
+                 "campus_area_acres": "", "source_doc_id": inst_doc(ic) if ic in insts else col_doc[ic], "retrieved_date": "", "validation_status": "validated", "is_synthetic": "FALSE"} for ic in ccodes]
     sha_of = {r["source_doc_id"] for r in cur + his}
     yr_rd = {doc_id(r["source_sha256"]): (r["year_label"], r["cap_round"]) for _, rows in sel for r in rows}
     br_rows = [{"choice_code": c["choice_code"], "college_code": c["institute_code"], "branch_code": c["choice_code"][5:], "branch_name": c["course_name"], "branch_group": "",
@@ -109,6 +128,11 @@ def build(base=N, plan=None, outdir=None):
         if doc_id(sha) in sha_of:
             docs.append({"doc_id": doc_id(sha), "source_name": "CET Cell Maharashtra", "source_url": m["urls"][0], "filename": m["asset_name"], "sha256": sha, "admission_year": yr_rd[doc_id(sha)][0],
                          "doc_type": "cutoff", "cap_round": yr_rd[doc_id(sha)][1], "published_date": "", "retrieved_date": "", "validation_status": "validated", "is_synthetic": "FALSE"})
+    for ic in ccodes:                                              # one source-document row per official institute page that was used
+        if ic in insts:
+            i = insts[ic]; docs.append({"doc_id": inst_doc(ic), "source_name": "CET Cell Maharashtra - Institute Summary page", "source_url": i["source_url"], "filename": "frmInstituteSummary_%s.html" % ic,
+                                        "sha256": i["page_sha256"], "admission_year": i["admission_year"], "doc_type": "college_list", "cap_round": "", "published_date": "", "retrieved_date": i["retrieved_at"][:10],
+                                        "validation_status": "validated", "is_synthetic": "FALSE"})
     sc = EL.load_seat_codes(os.path.join(mdir, "seat_codes.csv"))
     write_csv(os.path.join(outdir, "current_cutoffs.csv.gz"), CUT_COLS, cur, gz=True)
     write_csv(os.path.join(outdir, "historical_cutoffs.csv.gz"), CUT_COLS, his, gz=True)
@@ -118,7 +142,7 @@ def build(base=N, plan=None, outdir=None):
     basis = defaultdict(int)
     for r in cur + his: basis[r["home_university_basis"]] += 1
     rep = {"current_year": plan["current_year"], "current_rows": len(cur), "history_rows": len(his), "colleges": len(col_rows), "branches": len(br_rows), "seat_types": len(st),
-           "source_documents": len(docs), "home_university_basis": dict(basis), "excluded_printed_zero_percentile_cells": zeros, "district": "Not available for every college (not printed in the lists)"}
+           "source_documents": len(docs), "home_university_basis": dict(basis), "excluded_printed_zero_percentile_cells": zeros, "district": "from the official Institute Summary pages" if insts else "Not available (institute pages not read yet)", "colleges_with_district": sum(1 for r in col_rows if r["district"] != NA)}
     json.dump(rep, open(os.path.join(outdir, "build_report.json"), "w"), indent=1)
     return rep
 

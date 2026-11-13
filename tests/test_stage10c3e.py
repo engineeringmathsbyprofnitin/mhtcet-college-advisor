@@ -8,6 +8,19 @@ NODE, PDFINFO, PDFTOTEXT = shutil.which("node"), shutil.which("pdfinfo"), shutil
 def node(js):
     return subprocess.run([NODE, "-e", js], capture_output=True, text=True, cwd=ROOT, check=True).stdout
 
+class LastUpdate(unittest.TestCase):
+    def test_header_never_says_unknown_when_the_data_version_has_a_time(self):
+        """Owner saw 'last updated unknown': a package without a refresh-status row. The exporter now falls back to the data version's creation time."""
+        from ingestion import package_real as PR
+        sys.path.insert(0, os.path.join(ROOT, "database")); import export_static as X
+        d = tempfile.mkdtemp()
+        try:
+            PR.assemble(d)
+            hdr = open(os.path.join(d, "refresh_status.csv"), encoding="utf-8").readline(); open(os.path.join(d, "refresh_status.csv"), "w", encoding="utf-8").write(hdr)
+            m = X.publish(d, os.path.join(d, "out"), now="1970-01-01T00:00:00Z")
+            self.assertRegex(m["last_successful_update"], r"^20\d\d-\d\d-\d\dT")
+        finally: shutil.rmtree(d)
+
 @unittest.skipUnless(NODE, "node not installed")
 class Text(unittest.TestCase):
     def test_clean_and_wrap(self):

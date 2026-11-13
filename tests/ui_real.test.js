@@ -6,11 +6,11 @@ let JSDOM = null; try { ({ JSDOM } = require("jsdom")); } catch (e) { }
 const DIR = process.env.REAL_DATA_DIR, FE = path.join(__dirname, "..", "frontend");
 const T = (name, fn) => test(name, { skip: !JSDOM ? "jsdom is not installed" : !DIR ? "REAL_DATA_DIR not set" : false }, fn);
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-async function boot(search) {
+async function boot(search, dir) {
   const html = fs.readFileSync(path.join(FE, "index.html"), "utf8").replace(/<script src="[^"]+"><\/script>/g, "");
   const dom = new JSDOM(html, { runScripts: "outside-only", url: "http://localhost/frontend/index.html" + (search || "") }), w = dom.window;
   w.TextDecoder = util.TextDecoder; w.HTMLElement.prototype.scrollIntoView = function () {};
-  w.fetch = async (url) => { const p = path.join(DIR, url.replace(/^data(-real)?\//, "")); if (!fs.existsSync(p)) return { ok: false, status: 404, arrayBuffer: async () => new ArrayBuffer(0) };
+  w.fetch = async (url) => { const p = path.join(dir || DIR, url.replace(/^data(-real)?\//, "")); if (!fs.existsSync(p)) return { ok: false, status: 404, arrayBuffer: async () => new ArrayBuffer(0) };
     const b = fs.readFileSync(p); return { ok: true, status: 200, arrayBuffer: async () => b.buffer.slice(b.byteOffset, b.byteOffset + b.length) }; };
   ["config.js", "engine.js", "dataloader.js", "pdfexport.js", "results.js", "app.js"].forEach(f => w.eval(fs.readFileSync(path.join(FE, f), "utf8")));
   for (let i = 0; i < 60 && document_hidden(w); i++) await sleep(50);
@@ -77,4 +77,16 @@ T("the Download PDF button builds the report from the shown results (no print di
   for (let i = 0; i < 100 && !B.d.querySelector("#resultsTable"); i++) await sleep(50);
   const btn = B.d.getElementById("pdfBtn"); assert.ok(btn); assert.equal(btn.textContent, "Download PDF"); btn.click();
   assert.ok(got && got.results.length > 5);
+});
+T("when the data has official districts the form offers exactly those and a district choice filters", async () => {
+  const D = process.env.DISTRICT_DATA_DIR; if (!D) return;
+  const B = await boot("", D);
+  assert.equal(B.$("anyDistrict").checked, false); assert.equal(B.$("districtNote").hidden, true);
+  const ds = opts(B.$("districts").querySelector("select")); assert.ok(ds.includes("Satara") && ds.includes("Amravati")); assert.ok(!ds.includes("Not available"));
+  B.$("percentile").value = "60"; B.$("candidateType").value = "Maharashtra State candidate"; B.$("category").value = "OPEN"; B.$("homeUniversity").value = "Mumbai University";
+  B.$("branches").querySelector("select").value = "Computer Science and Engineering"; B.$("maxFee").value = "1000000"; B.$("districts").querySelector("select").value = "Satara";
+  B.$("form").dispatchEvent(new B.w.Event("submit", { cancelable: true, bubbles: true }));
+  for (let i = 0; i < 100 && !B.d.querySelector("#resultsTable") && !/No colleges/i.test(B.$("results").textContent); i++) await sleep(50);
+  assert.ok(!/District data is not available yet/.test(B.$("results").textContent));
+  const rows = Array.from(B.d.querySelectorAll("tr.result")); rows.forEach(r => assert.match(r.textContent, /Satara/));
 });

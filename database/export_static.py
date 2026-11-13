@@ -73,7 +73,7 @@ def build(csv_folder, now):
                 "is_synthetic": lkg["is_synthetic"] == "TRUE", "generated_at": now, "last_successful_update": None,
                 "base": {}, "cutoffs": {}, "row_counts": {}}
     succ = sorted([r["finished_at"] for r in read(csv_folder, "refresh_status") if r["status"] == "success"])
-    manifest["last_successful_update"] = succ[-1] if succ else None
+    manifest["last_successful_update"] = succ[-1] if succ else (lkg.get("created_at") or None)      # no refresh row: use the time the data version was created
     b = dumps(base); name = "base.%s.json" % sha(b)[:10]
     files[name] = b; manifest["base"] = {"file": name, "sha256": sha(b), "bytes": len(b)}
     for t in BASE_TABLES: manifest["row_counts"][t] = len(base[t]["rows"])

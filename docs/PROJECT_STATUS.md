@@ -40,5 +40,7 @@ Home-university dropdown; Round IV vacancy = provisional position vs ACAP list; 
 
 ## Stage 10c-3e Download PDF built (docs/STAGE10C3E.md)
 
+## Stage 10d built (official institute pages: district etc., docs/STAGE10D.md); owner: upload, run 'Read institute information', then 'Publish website data'
+
 ## Next task
 Owner runs the reading workflow; then Stage 10 (validation, which seat codes apply to which student, historical comparison and current-round fallback), split into small parts.
