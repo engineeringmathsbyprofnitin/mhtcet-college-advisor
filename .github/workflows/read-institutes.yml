@@ -1,0 +1,58 @@
+name: Read institute information
+
+# Reads the CET Cell's public "Institute Summary" page of every participating engineering college (district, region, address, status,
+# autonomy, minority status, each course's university and intake) - Stage 10d. Polite: official host only, robots.txt obeyed, about 1 request per second
+# (about 7-10 minutes for ~390 colleges). Nothing is bypassed: a login or CAPTCHA stops the run. The saved files are replaced ONLY if every college was read
+# completely; otherwise the previous files stay and this run is red.
+# Runs by hand (Actions tab -> this workflow -> Run workflow) and every Monday. "Publish website data" starts automatically afterwards.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 4 * * 1"      # Mondays 04:15 UTC (about 09:45 in India)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: read-institutes
+  cancel-in-progress: false
+
+jobs:
+  read:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: "Self-tests (offline, no website is contacted)"
+        run: python -m unittest tests/test_stage10d.py
+
+      - name: "Read the institute pages (polite, robots.txt obeyed)"
+        run: python -m ingestion.institutes
+
+      - name: "Save in the repository"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/normalized/institutes
+          if git diff --cached --quiet; then
+            echo "Institute information unchanged."
+          else
+            git commit -m "Update institute information (district, region, university per course)"
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: "Keep the report with this run"
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: institutes-report
+          path: data/normalized/institutes/institutes_report.json
+          if-no-files-found: ignore
