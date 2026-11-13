@@ -7,7 +7,8 @@ every page's SHA-256 is recorded, the output is replaced ONLY if every institute
 Run: python -m ingestion.institutes [--out data/normalized/institutes] [--year 2026]"""
 import csv, hashlib, json, os, re, sys
 from html.parser import HTMLParser
-from .http_client import PoliteFetcher
+import time
+from .http_client import PoliteFetcher, BudgetExceeded
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 INFO_LABELS = {"Institute Code": "institute_code", "Institute Name": "institute_name", "Institute Address": "address", "Region": "region", "District": "district",
@@ -108,34 +109,57 @@ COURSE_OUT = ["choice_code", "institute_code", "course_name", "university", "sta
               "admission_year", "source_url", "retrieved_at"]
 
 
-def run(fetcher, year, now, base=None):
-    """Reads the list and every institute page. Returns (institutes, courses, report). report['complete'] is True only if nothing is missing."""
+def run(fetcher, year, now, base=None, log=lambda *a: None, probe=0, max_seconds=None, clock=time.monotonic):
+    """Reads the list and every institute page. Returns (institutes, courses, report). report['complete'] is True only if nothing is missing.
+    probe=N: reads only the list page and N pages (first, middle, last ...) to show what the site answers; never complete, nothing is saved.
+    max_seconds: stops cleanly (incomplete) when the run takes too long."""
     host = base or "https://fe%d.mahacet.org" % year
     label = "%d-%02d" % (year, (year + 1) % 100)
-    report = {"year": label, "problems": [], "complete": False, "requests": 0}
+    report = {"year": label, "problems": [], "complete": False, "requests": 0, "failures": []}
+    t_start = clock()
     lr = fetcher.fetch(host + "/StaticPages/frmInstituteList"); report["requests"] += 1
-    if lr.blocked or not lr.ok: report["problems"].append("list page not read: %s" % (lr.blocked or lr.status or lr.error)); return [], [], report
+    if lr.blocked or not lr.ok: report["problems"].append("list page not read: %s" % (lr.blocked or lr.status or lr.error)); log("list page failed:", lr.blocked or lr.status or lr.error); return [], [], report
     if looks_like_wall(lr.text): raise Wall("the institute list page asks for a login or CAPTCHA; stopped (nothing is bypassed)")
     codes, printed = institute_codes(lr.text)
     listed = list_rows(lr.text); report.update(codes_found=len(codes), count_printed_on_page=printed); report["warnings"] = []
+    log("list page read: %d institute codes found, the page prints %d" % (len(codes), printed))
     if not codes or len(codes) != printed: report["problems"].append("list page: found %d institute codes but the page prints %d" % (len(codes), printed)); return [], [], report
+    if hasattr(fetcher, "max_requests"): fetcher.max_requests = min(4000, len(codes) * 4 + 20)         # retries count as requests: leave room for them
+    todo = codes
+    if probe: todo = sorted({codes[0], codes[len(codes) // 2], codes[-1]} | set(codes[:max(0, probe - 3)]))[:probe]
     insts, courses = [], []
-    for code in codes:
-        url = "%s/StaticPages/frmInstituteSummary.aspx?InstituteCode=%s" % (host, code)
-        r = fetcher.fetch(url); report["requests"] += 1
-        if r.blocked or not r.ok: report["problems"].append("%s: page not read (%s)" % (code, r.blocked or r.status or r.error)); continue
-        if looks_like_wall(r.text): raise Wall("institute page %s asks for a login or CAPTCHA; stopped" % code)
-        info, cs, probs = parse_summary(r.text, code)
-        if probs: report["problems"] += ["%s: %s" % (code, p) for p in probs]; continue
-        sha = hashlib.sha256(r.body).hexdigest()
-        main_sum = sum(int(c["total_intake"]) for c in cs if c["choice_code"][-1].isdigit())          # codes with a letter suffix (e.g. 'T') are extra seats
-        printed_intake = (listed.get(code) or {}).get("intake", "")
-        if printed_intake.isdigit() and int(printed_intake) != main_sum: report["warnings"].append("%s: list page intake %s, course rows without a letter suffix add up to %d" % (code, printed_intake, main_sum))
-        insts.append(dict(info, total_intake=printed_intake or main_sum, admission_year=label, source_url=url, retrieved_at=now, page_sha256=sha))
-        courses += [dict(c, institute_code=code, admission_year=label, source_url=url, retrieved_at=now) for c in cs]
-    report["institutes_read"] = len(insts); report["courses_read"] = len(courses)
-    report["complete"] = not report["problems"] and len(insts) == len(codes)
+    try:
+        for n, code in enumerate(todo, 1):
+            if max_seconds and clock() - t_start > max_seconds:
+                report["problems"].append("stopped after %d of %d institutes: time limit of %d seconds reached" % (n - 1, len(todo), max_seconds)); break
+            url = "%s/StaticPages/frmInstituteSummary.aspx?InstituteCode=%s" % (host, code)
+            before = getattr(fetcher, "count", 0)
+            r = fetcher.fetch(url); report["requests"] += 1
+            tries = getattr(fetcher, "count", 0) - before
+            if r.blocked or not r.ok:
+                why = "%s: page not read (%s, %d attempt(s))" % (code, r.blocked or r.status or r.error, tries); report["problems"].append(why)
+                if len(report["failures"]) < 25: report["failures"].append(why)
+                log(why); continue
+            if looks_like_wall(r.text): raise Wall("institute page %s asks for a login or CAPTCHA; stopped" % code)
+            info, cs, probs = parse_summary(r.text, code)
+            if probs:
+                report["problems"] += ["%s: %s" % (code, p) for p in probs]
+                if len(report["failures"]) < 25: report["failures"] += ["%s: %s" % (code, p) for p in probs[:3]]
+                log("%s: read but not understood: %s" % (code, "; ".join(probs[:3]))); continue
+            sha = hashlib.sha256(r.body).hexdigest()
+            main_sum = sum(int(c["total_intake"]) for c in cs if c["choice_code"][-1].isdigit())          # codes with a letter suffix (e.g. 'T') are extra seats
+            printed_intake = (listed.get(code) or {}).get("intake", "")
+            if printed_intake.isdigit() and int(printed_intake) != main_sum: report["warnings"].append("%s: list page intake %s, course rows without a letter suffix add up to %d" % (code, printed_intake, main_sum))
+            insts.append(dict(info, total_intake=printed_intake or main_sum, admission_year=label, source_url=url, retrieved_at=now, page_sha256=sha))
+            courses += [dict(c, institute_code=code, admission_year=label, source_url=url, retrieved_at=now) for c in cs]
+            if probe: log("%s: ok (%d attempt(s)) district=%r region=%r courses=%d" % (code, tries, info.get("district"), info.get("region"), len(cs)))
+            elif n % 25 == 0: log("progress: %d of %d institutes, %d problem(s), %d request(s)" % (n, len(todo), len(report["problems"]), getattr(fetcher, "count", report["requests"])))
+    except BudgetExceeded as e:
+        report["problems"].append("request budget used up after %d institutes: %s" % (len(insts), e)); log("STOP:", e)
+    report["institutes_read"] = len(insts); report["courses_read"] = len(courses); report["requests"] = getattr(fetcher, "count", report["requests"])
+    report["complete"] = (not probe) and not report["problems"] and len(insts) == len(codes)
     report["districts"] = {d: sum(1 for i in insts if i["district"] == d) for d in sorted({i["district"] for i in insts})}
+    report["seconds"] = int(clock() - t_start)
     return insts, courses, report
 
 
@@ -152,14 +176,21 @@ def main(argv=None):
     from datetime import datetime, timezone
     from . import plan as P
     a = argparse.ArgumentParser(); a.add_argument("--out", default=os.path.join(ROOT, "data", "normalized", "institutes")); a.add_argument("--year", type=int)
-    a.add_argument("--delay", type=float, default=1.0); a = a.parse_args(argv)
+    a.add_argument("--delay", type=float, default=2.0, help="seconds between requests (the site answered slowly/unevenly at 1 second)")
+    a.add_argument("--probe", type=int, default=0, help="read only the list page and N institute pages, print what the site answers, save nothing")
+    a.add_argument("--max-minutes", type=int, default=40); a = a.parse_args(argv)
     year = a.year or int(P.make_plan(json.load(open(P.DISCOVERY))["admission_year"])["current_year"][:4])
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    try: insts, courses, rep = run(PoliteFetcher(min_delay=a.delay, max_requests=600), year, now)
+    def log(*x): print(*x, flush=True)
+    try: insts, courses, rep = run(PoliteFetcher(min_delay=a.delay, max_requests=200, max_retries=3), year, now, log=log, probe=a.probe, max_seconds=a.max_minutes * 60)
     except Wall as e: print("STOPPED:", e); return 2
-    print(json.dumps({k: rep.get(k) for k in ("year", "complete", "codes_found", "institutes_read", "courses_read", "requests")}))
+    print(json.dumps({k: rep.get(k) for k in ("year", "complete", "codes_found", "institutes_read", "courses_read", "requests", "seconds")}), flush=True)
+    if a.probe:
+        print("PROBE ONLY - nothing saved. Problems:", rep["problems"][:10]); return 0 if not rep["problems"] else 1
+    os.makedirs(a.out, exist_ok=True)
+    json.dump(rep, open(os.path.join(a.out, "institutes_last_run_report.json"), "w"), indent=1)       # always saved, so a failed run can be read
     if not rep["complete"]:
-        print("NOT COMPLETE - the previous files were kept. First problems:", rep["problems"][:10]); return 1
+        print("NOT COMPLETE - the previous files were kept. First problems:", rep["failures"][:10] or rep["problems"][:10]); return 1
     write(a.out, insts, courses, rep); print("districts:", rep["districts"]); return 0
 
 if __name__ == "__main__": sys.exit(main())

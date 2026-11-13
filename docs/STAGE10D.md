@@ -19,3 +19,11 @@ tests/test_stage10d.py (14) and tests/test_stage10c3c.py (+3 workflow tests). **
 ## NOT verified
 - The real page HTML; the first run on GitHub (about 8 minutes). Whether every institute page prints a district. Whether the "Accreditation" column carries NBA/NAAC data (only "-" seen); not used yet.
 - District spellings are used exactly as printed (e.g. a district renamed by the government may appear under one name only).
+
+## First live run (owner report): "request budget of 600 used up"
+The reader stopped after 600 requests (about 21 minutes) with no information. What is known: the list page was read and passed its count check, then the run made 600 requests; the pages number about 387, so roughly 1.5 requests were made per institute, which points to many retried requests (timeouts or temporary server errors), not to missing pages. What is NOT known: the exact server answers (the first version logged nothing). Fixes in this version:
+- request budget follows the list (4 per institute + 20; retries count) and running out is caught and reported instead of crashing;
+- every failed page is printed with its reason and number of attempts, progress every 25 institutes; `institutes_last_run_report.json` is always saved (and attached to the run);
+- gentler pace: 2 seconds between requests, up to 3 retries; a time limit of 40 minutes stops the run cleanly;
+- **quick probe**: Actions -> Read institute information -> Run workflow -> probe = 5 reads only the list and 5 pages (a minute) and shows what the site answers; nothing is saved. Use it first.
+Tests added (5): budget follows the list, budget exhaustion caught, failures logged with reasons, probe, time limit.

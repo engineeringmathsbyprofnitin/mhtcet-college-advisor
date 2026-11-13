@@ -61,9 +61,9 @@ class Run(unittest.TestCase):
         out = tempfile.mkdtemp(); real = I.PoliteFetcher
         try:
             I.PoliteFetcher = lambda **k: Fake(pages(**{HOST + "/StaticPages/frmInstituteSummary.aspx?InstituteCode=06305": R(status=404)}))
-            self.assertEqual(I.main(["--out", out, "--year", "2026"]), 1); self.assertEqual(os.listdir(out), [])
+            self.assertEqual(I.main(["--out", out, "--year", "2026"]), 1); self.assertEqual(os.listdir(out), ["institutes_last_run_report.json"])      # only the report, no data files
             I.PoliteFetcher = lambda **k: Fake(pages()); self.assertEqual(I.main(["--out", out, "--year", "2026"]), 0)
-            self.assertEqual(sorted(os.listdir(out)), ["institute_courses.csv", "institutes.csv", "institutes_report.json"])
+            self.assertEqual(sorted(os.listdir(out)), ["institute_courses.csv", "institutes.csv", "institutes_last_run_report.json", "institutes_report.json"])
         finally: I.PoliteFetcher = real; shutil.rmtree(out)
 
 class Build(unittest.TestCase):
@@ -89,6 +89,29 @@ class Build(unittest.TestCase):
         self.assertEqual(B.resolve_hu(row, {}, {"0000111110": "Mumbai University"}, "2026-27"), ("Mumbai University", "institute_page"))
         self.assertEqual(B.resolve_hu(dict(row, year_label="2025-26"), {}, {"0000111110": "Mumbai University"}, "2026-27")[1], "unknown")
         self.assertEqual(B.resolve_hu(row, {"0000111110": {"Pune", "X"}}, {"0000111110": "Mumbai University"}, "2026-27")[1], "institute_page")
+class Diagnostics(unittest.TestCase):
+    """The first live run died with 'request budget of 600 used up' and no information. Now: the budget follows the list, failures are logged, and a probe is quick."""
+    def test_budget_follows_the_number_of_institutes(self):
+        f = Fake(pages()); f.max_requests = 200; I.run(f, 2026, "t"); self.assertEqual(f.max_requests, 3 * 4 + 20)
+    def test_budget_exceeded_is_caught_and_reported(self):
+        class Tight(Fake):
+            count = 0
+            def fetch(self, url, **k):
+                self.count += 1
+                if self.count > 2: raise I.BudgetExceeded("request budget of 2 used up")
+                return super().fetch(url)
+        insts, _, rep = I.run(Tight(pages()), 2026, "t"); self.assertFalse(rep["complete"]); self.assertTrue(any("request budget" in p for p in rep["problems"]))
+    def test_failures_are_logged_with_the_reason_and_listed_in_the_report(self):
+        lines = []; _, _, rep = I.run(Fake(pages(**{HOST + "/StaticPages/frmInstituteSummary.aspx?InstituteCode=06305": R(status=503)})), 2026, "t", log=lines.append)
+        self.assertTrue(any("06305" in x and "503" in x for x in lines)); self.assertTrue(any("06305" in x for x in rep["failures"]))
+        self.assertTrue(any("list page read: 3 institute codes" in x for x in lines))
+    def test_probe_reads_a_few_pages_and_never_claims_completeness(self):
+        f = Fake(pages()); lines = []; insts, _, rep = I.run(f, 2026, "t", probe=2, log=lines.append)
+        self.assertFalse(rep["complete"]); self.assertEqual(len(insts), 2); self.assertEqual(len(f.calls), 3); self.assertTrue(any("district='Satara'" in x or "district='Amravati'" in x for x in lines))
+    def test_time_limit_stops_cleanly(self):
+        ticks = iter(range(0, 1000, 100)); _, _, rep = I.run(Fake(pages()), 2026, "t", max_seconds=150, clock=lambda: next(ticks))
+        self.assertFalse(rep["complete"]); self.assertTrue(any("time limit" in p for p in rep["problems"]))
+
 class Intake(unittest.TestCase):
     def test_intake_mismatch_is_a_warning_not_an_error(self):
         _, _, rep = I.run(Fake(pages(**{HOST + "/StaticPages/frmInstituteList": R(fx("list.html").replace("<td>480</td>", "<td>500</td>"))})), 2026, "t")
