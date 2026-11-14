@@ -1,0 +1,33 @@
+{
+ "files": [
+  {
+   "year": "2026-27",
+   "round": "IV",
+   "file": "FE2026_Vacancy_For_CAP4.pdf",
+   "sha256": "b3fc6ce1a4cebd44c4b118fd78407deaf30e6d718092cdba05b20b3c31d48da1",
+   "blocks": 2335,
+   "ghosts": 0,
+   "pages": [
+    1013,
+    1013
+   ],
+   "problems": [],
+   "unrecognised": [],
+   "institutes": 387,
+   "totals": {
+    "si": 194180,
+    "ms": 17639,
+    "minority": 1268,
+    "all_india": 4200,
+    "institute": 15683,
+    "vacant": 23107
+   },
+   "written": "2026-27_round-IV_vacancy.csv.gz"
+  }
+ ],
+ "notes": [
+  "2026-27: Round III file not used because Round IV exists"
+ ],
+ "problems": [],
+ "ok": true
+}
