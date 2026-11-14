@@ -62,7 +62,7 @@ T("valid request: ranked table, 5 leading rows, 'Show more' works", async () => 
 });
 T("all required report columns are present, with the right year headings", async () => {
   const B = boot(); await submit(B), h = hdrs(B);
-  assert.deepEqual(h, ["Rank", "College", "Branch", "Cutoff 2025-26", "Cutoff 2024-25", "Cutoff 2023-24", "Latest current cutoff (2026-27)", "Latest vacancy", "Annual fee", "Infrastructure", "Teaching", "Placement", "NBA accreditation", "NAAC grade", "Suitability"]);
+  assert.deepEqual(h, ["Rank", "College", "Branch", "Cutoff 2025-26", "Cutoff 2024-25", "Cutoff 2023-24", "Latest current cutoff (2026-27)", "Seats open going into Round III", "Annual fee", "Infrastructure", "Teaching", "Placement", "NBA accreditation", "NAAC grade", "Suitability"]);
   rows(B).forEach(r => assert.equal(r.querySelectorAll("td").length, h.length));
   const first = rows(B)[0].textContent; assert.match(first, /College code SYN\d+/); assert.match(first, /Branch code B\d+/); assert.match(first, /CAP Round/);
 });
@@ -73,7 +73,7 @@ T("missing data is shown as 'Not available' or 'Vacancy data unavailable', never
   const S = boot(); await submit(S, { br: ["Mechanical Engineering", "Civil Engineering"], dist: ["Sangli"], percentile: "70", fee: "900000" });   // this college has no fee data
   txt = S.$("results").textContent; assert.ok(!/undefined|NaN|null|\[object/.test(txt));
   rows(S).forEach(r => assert.match(r.querySelector('[data-label="Annual fee"]').textContent, /Not available/));
-  rows(S).forEach(r => assert.match(r.querySelector('[data-label="Latest vacancy"]').textContent, /seat\(s\)/));   // vacancy that exists is shown, not hidden
+  rows(S).forEach(r => assert.match(r.querySelector('[data-label="Seats open going into Round III"]').textContent, /seat\(s\)/));   // vacancy that exists is shown, not hidden
 });
 T("fee wording does not pass tuition off as total cost; estimates are labelled", async () => {
   const B = boot(); await submit(B); const t = B.$("results").textContent;
@@ -90,7 +90,7 @@ T("synthetic banner, disclaimer, data version and vacancy round are shown in the
   const B = boot(); await submit(B); const t = B.$("results").textContent;
   assert.ok(B.$("results").querySelector(".banner.danger[role=alert]")); assert.match(t, /TEST DATA/);
   assert.match(t, /Data version SYN-v1/); assert.match(t, /last successful data update: 2026-10-20/); assert.match(t, /2025-26, 2024-25, 2023-24/);
-  assert.match(t, /Vacancy figures come from CAP Round III/); assert.match(t, /not a prediction or a guarantee/);
+  assert.match(t, /Seats open going into Round III: the total for the course/); assert.match(t, /not a prediction or a guarantee/);
 });
 T("few results are reported honestly; zero results give guidance", async () => {
   const B = boot(); await submit(B, { br: ["Civil Engineering"], dist: ["Kolhapur"], percentile: "90", cat: "Open", gender: "", prio: ["balanced"] });

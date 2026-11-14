@@ -478,7 +478,7 @@
     L.push("Assessment: " + c.label + ". This is a rule-based guide from past cutoffs, not a probability or a guarantee.");
     if (c.cur && c.cur.round !== "IV") L.push("Current-year cutoff is from CAP Round " + c.cur.round + "; earlier rounds usually show higher cutoffs than the final round, so this may look tougher than the final outcome.");
     if (c.points.length < 3) L.push("Only " + c.points.length + " cutoff data point(s) available; treat with extra caution.");
-    if (vac) L.push("Latest genuine vacancy (CAP Round " + vacRound + "): " + vac.value + " seat(s). Vacancy does not guarantee admission.");
+    if (vac) L.push("Seats open going into Round " + vacRound + ": " + vac.value + " seat(s), the total for the course as printed by CET Cell (includes All India and Minority seats where printed; not specific to your category). This does not guarantee admission.");
     else L.push("Vacancy data unavailable.");
     if (c.fee.status === "ok") L.push("Fee: Rs " + c.fee.value + " per year (" + c.fee.type + ", " + c.fee.year + ") against your budget of Rs " + input.maxAnnualFeeINR + ".");
     else if (c.fee.status === "total_unavailable_tuition_known") L.push("Total yearly cost is not available; tuition alone is Rs " + c.fee.tuitionFloor + " (" + c.fee.year + "), and total cost will be higher.");

@@ -51,3 +51,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 11b built (docs/STAGE11B.md): vacancy tables + workflow "Read the vacancy lists"; owner upload and first run pending
 
 ## Stage 11c built (docs/STAGE11C.md): vacancy matched to website courses (tables/vacancy.csv); not yet shown on the page
+
+## Stage 11d built (docs/STAGE11D.md): vacancy packaged and shown as "Seats open going into Round IV" (page, PDF, explanation). Owner upload + workflow run pending. Stage 11 complete after that check.

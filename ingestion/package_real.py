@@ -11,6 +11,46 @@ T = os.path.join(ROOT, "data", "normalized", "tables")
 TEMPLATES = os.path.join(ROOT, "database", "templates")
 REAL = ["colleges", "branches", "seat_types", "source_documents", "current_cutoffs", "historical_cutoffs"]
 
+def add_vacancy(folder, T):
+    """Stage 11d-1: put the vacancy table (tables/vacancy.csv, built by ingestion/build_vacancy.py) into the website's `vacancies` table as one 'ALL' row per
+    course (the printed 'Vacant CAP Seats') plus one source_documents row of type vacancy_position. Only courses that are on the website (branches) are
+    packaged; others (a brand-new course without cutoff history) are counted, not shown. Returns a small report. No file = nothing added (page says unavailable)."""
+    src = os.path.join(T, "vacancy.csv")
+    rep = dict(added=0, skipped_not_on_website=0, round=None, year=None)
+    if not os.path.exists(src): return rep
+    with open(src, newline="", encoding="utf-8") as f: rows = list(csv.DictReader(f))
+    if not rows: return rep
+    with open(os.path.join(folder, "branches.csv"), newline="", encoding="utf-8") as f: on_site = {r["choice_code"] for r in csv.DictReader(f)}
+    man = json.load(open(os.path.join(ROOT, "data", "raw", "manifest.json")))["files"]
+    year, rnd = {r["admission_year"] for r in rows}, {r["vacancy_round"] for r in rows}
+    if len(year) != 1 or len(rnd) != 1 or rnd.pop() not in ("III", "IV"): raise SystemExit("vacancy table mixes years or rounds")
+    year = year.pop(); rnd = rows[0]["vacancy_round"]
+    docs = {}
+    for r in rows:
+        if r["choice_code"] not in on_site: rep["skipped_not_on_website"] += 1; continue
+        docs[r["source_doc_id"]] = r
+    vpath = os.path.join(folder, "vacancies.csv")
+    with open(vpath, newline="", encoding="utf-8") as f: header = next(csv.reader(f))
+    with open(vpath, "a", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=header, lineterminator="\r\n")
+        for r in rows:
+            if r["choice_code"] not in on_site: continue
+            w.writerow(dict(vacancy_id="VAC-%s-%s-ALL" % (r["choice_code"], rnd), choice_code=r["choice_code"], admission_year=year, cap_round=rnd, seat_type_code="ALL",
+                            vacancy_count=r["vacant_cap_seats"], published_date="", source_doc_id=r["source_doc_id"], retrieved_date="", validation_status="validated", is_synthetic="FALSE"))
+            rep["added"] += 1
+    spath = os.path.join(folder, "source_documents.csv")
+    with open(spath, newline="", encoding="utf-8") as f: sh = next(csv.reader(f))
+    with open(spath, "a", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=sh, lineterminator="\r\n")
+        for did, r in sorted(docs.items()):
+            sha = [k for k in man if "DOC-" + k[:16] == did]
+            if len(sha) != 1: raise SystemExit("vacancy source %s is not in the archive manifest" % did)
+            w.writerow(dict(doc_id=did, source_name="CET Cell Maharashtra", source_url=r["source_url"], filename=man[sha[0]]["asset_name"], sha256=sha[0], admission_year=year,
+                            doc_type="vacancy_position", cap_round=rnd, published_date="", retrieved_date="", validation_status="validated", is_synthetic="FALSE"))
+    rep.update(round=rnd, year=year)
+    return rep
+
+
 def assemble(folder, plan=None, tables=None):
     T = tables or globals()["T"]
     plan = plan or P.make_plan(json.load(open(P.DISCOVERY))["admission_year"])
@@ -19,14 +59,16 @@ def assemble(folder, plan=None, tables=None):
     for t in REAL:
         src = os.path.join(T, t + (".csv.gz" if t.endswith("cutoffs") else ".csv"))
         with (gzip.open(src, "rb") if src.endswith(".gz") else open(src, "rb")) as i, open(os.path.join(folder, t + ".csv"), "wb") as o: shutil.copyfileobj(i, o)
+    vrep = add_vacancy(folder, T)
+    print("vacancy rows packaged: %d (round %s, year %s); not on the website: %d" % (vrep["added"], vrep["round"], vrep["year"], vrep["skipped_not_on_website"]))
     h = hashlib.sha256()
-    for t in REAL[-2:]:
+    for t in REAL[-2:] + ["vacancies"]:
         with open(os.path.join(folder, t + ".csv"), "rb") as f: h.update(f.read())
     ver = "REAL-%s-R%s-%s" % (plan["current_year"], plan["latest_round"], h.hexdigest()[:8])
     summary = "rounds=%s;next=%s;phase=%s" % ("+".join(plan["rounds_done"]), plan["next_round_expected"] or "none", plan["year_status"])
     with open(os.path.join(folder, "data_version.csv"), "w", newline="") as f:
         w = csv.writer(f, lineterminator="\n"); w.writerow("data_version,created_at,is_last_known_good,admission_year,row_count_summary,notes,is_synthetic".split(","))
-        w.writerow([ver, json.load(open(P.DISCOVERY))["generated_at"], "TRUE", plan["current_year"], summary, "Real CET Cell cutoff lists; fees, vacancies, accreditation, placements not yet available", "FALSE"])
+        w.writerow([ver, json.load(open(P.DISCOVERY))["generated_at"], "TRUE", plan["current_year"], summary, "Real CET Cell cutoff lists and vacancy position; fees, accreditation, placements not yet available", "FALSE"])
     stamp = json.load(open(P.DISCOVERY))["generated_at"]
     with open(os.path.join(folder, "refresh_status.csv"), "w", newline="") as f:      # the "last successful data update" shown on the page
         w = csv.writer(f, lineterminator="\n"); w.writerow("run_id,started_at,finished_at,status,admission_year_detected,data_version_published,message,is_synthetic".split(","))

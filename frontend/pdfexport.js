@@ -47,7 +47,7 @@
       var c = r.currentCutoff, cr = r.currentRounds, rr = cr ? ["I", "II", "III", "IV"].map(function (k) { return "Round " + k + ": " + (cr[k] ? pct(cr[k].value) : "-"); }).join(" | ") : "";
       add("Current year" + (c ? " " + c.year : "") + " - latest: " + (c ? pct(c.value) + " (Round " + c.round + ", " + c.seatType + ")" : "Not available") + (rr ? " | " + rr : "") + (c && c.homeUniversityUnclear ? " | home university unclear: harder figure shown" : ""), { indent: 10 });
       var v = r.vacancy, f = r.fee;
-      add("Vacancy: " + (v && v.value !== null ? v.value + " seat(s) (Round " + v.round + ")" : "Vacancy data unavailable") + " | Annual fee: " + (f && f.status === "ok" ? "Rs " + Number(f.value).toLocaleString("en-IN") : "Not available"), { indent: 10 });
+      add((v && v.value !== null ? "Seats open going into Round " + v.round + ": " + v.value + " seat(s) (total for the course)" : "Vacancy data unavailable") + " | Annual fee: " + (f && f.status === "ok" ? "Rs " + Number(f.value).toLocaleString("en-IN") : "Not available"), { indent: 10 });
       (r.explanation || []).forEach(function (t) { add("- " + t, { indent: 10, s: 8 }); });
     });
     return L;
