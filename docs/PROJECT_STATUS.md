@@ -47,3 +47,5 @@ Owner runs the reading workflow; then Stage 10 (validation, which seat codes app
 
 ## Stage 11a built (vacancy PDF reader, docs/STAGE11A.md); owner upload pending
 Round IV file = seats open going into Round IV (owner confirmed); Round III file only as fallback; ACAP/court/seat-matrix never used. Dry run: Round IV 2,335 blocks / 1,013 pages / 0 problems; Round III 2,330 blocks / 946 pages / 0 problems. NOT verified: GitHub run, matching to website courses, engine/page/PDF display.
+
+## Stage 11b built (docs/STAGE11B.md): vacancy tables + workflow "Read the vacancy lists"; owner upload and first run pending
