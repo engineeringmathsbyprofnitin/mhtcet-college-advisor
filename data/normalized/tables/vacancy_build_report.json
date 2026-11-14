@@ -1,0 +1,77 @@
+{
+ "ok": true,
+ "year": "2026-27",
+ "status": "ok: vacancy of 2026-27 Round IV",
+ "round": "IV",
+ "rows": 2335,
+ "matched": 2334,
+ "new_courses": [
+  [
+   "0476699510",
+   "04766",
+   "Artificial Intelligence and Data Science"
+  ]
+ ],
+ "institute_mismatch": [],
+ "name_differences": [
+  [
+   "1600692110",
+   "Artificial Intelligence and Machine Learning Dr. Babasaheb Ambedkar Marathwada University",
+   "Artificial Intelligence and Machine Learning"
+  ],
+  [
+   "0280599510",
+   "Artificial Intelligence and Data Science Dr. Babasaheb Ambedkar Technological University,Lonere",
+   "Artificial Intelligence and Data Science"
+  ],
+  [
+   "1637391110",
+   "Computer Science and Engineering(Artificial Intelligence and Machine Learning) Gondwana University",
+   "Computer Science and Engineering(Artificial Intelligence and Machine Learning)"
+  ],
+  [
+   "0402693710",
+   "Computer Science and Social Sciences Hyderabad (Sind) National Collegiate University, Mumbai",
+   "Computer Science and Social Sciences"
+  ],
+  [
+   "0318299510",
+   "Artificial Intelligence and Data Science Kavayitri Bahinabai Chaudhari North Maharashtra University, Jalgaon",
+   "Artificial Intelligence and Data Science"
+  ],
+  [
+   "0538199510",
+   "Artificial Intelligence and Data Science Mumbai University",
+   "Artificial Intelligence and Data Science"
+  ],
+  [
+   "0372591110",
+   "Computer Science and Engineering(Artificial Intelligence and Machine Learning) Punyashlok Ahilyadevi Holkar Solapur University",
+   "Computer Science and Engineering(Artificial Intelligence and Machine Learning)"
+  ],
+  [
+   "0690199510",
+   "Artificial Intelligence and Data Science Rashtrasant Tukadoji Maharaj Nagpur University",
+   "Artificial Intelligence and Data Science"
+  ],
+  [
+   "0464861210",
+   "Mechanical Engineering Sant Gadge Baba Amravati University",
+   "Mechanical Engineering"
+  ],
+  [
+   "0127661210",
+   "Mechanical Engineering Savitribai Phule Pune University",
+   "Mechanical Engineering"
+  ],
+  [
+   "1635592110",
+   "Artificial Intelligence and Machine Learning Shivaji University",
+   "Artificial Intelligence and Machine Learning"
+  ]
+ ],
+ "current_courses_without_vacancy": 0,
+ "old_courses_without_vacancy": 176,
+ "problems": [],
+ "notes": []
+}
