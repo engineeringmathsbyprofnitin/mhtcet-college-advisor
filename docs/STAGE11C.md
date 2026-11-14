@@ -1,0 +1,8 @@
+# Stage 11c - match the vacancy to the website's courses
+
+Code: `ingestion/build_vacancy.py`; tests: `tests/test_stage11c.py` (13 tests); the workflow "Publish website data (preview)" now runs it after "Build the website tables" and also starts after "Read the vacancy lists".
+
+- Output: `data/normalized/tables/vacancy.csv` (one row per Choice Code: intake, printed vacancy, MS/Minority/All India/Institute seats, orphan seats, PWD/DEF, EWS/TFWS, match, source document id and official URL, per-category grid) and `vacancy_build_report.json`. The page does NOT show it yet (Stage 11d); the packaging step ignores it.
+- Rules: only the current admission year of the automatic plan; a vacancy table of any other year is ignored (never shown as current); Round IV, else Round III, never mixed; a missing course stays "Not available" (never zero); the institute code in the vacancy file must agree with the master table or the build FAILS (nothing written); a Choice Code unknown to the master tables is kept as `new_course`.
+- Real data (2026-27 Round IV): 2,335 rows, 2,334 matched by Choice Code, 1 new course (0476699510, institute 04766, AI and Data Science, intake 60, vacant 60: no cutoff history), 0 institute mismatches, every current-year course on the website has a vacancy row; the 176 website courses without one were last listed in 2023-24 to 2025-26 and are not offered in 2026-27.
+- Known wart: in 11 rows the course name printed in the vacancy file carries an extra line (a university name) or a space difference. Matching uses the Choice Code only and the website keeps the master name; the differences are listed in the report.

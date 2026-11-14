@@ -17,7 +17,7 @@ class Workflow(unittest.TestCase):
     def idx(self, text): return next(i for i, r in enumerate(self.runs) if text in r)
     def test_triggers(self):
         on = self.y[True] if True in self.y else self.y["on"]          # PyYAML reads the key `on` as True
-        self.assertIn("workflow_dispatch", on); self.assertEqual(on["workflow_run"]["workflows"], ["Read the archived documents", "Read institute information"])
+        self.assertIn("workflow_dispatch", on); self.assertEqual(on["workflow_run"]["workflows"], ["Read the archived documents", "Read institute information", "Read the vacancy lists"])
         self.assertIn("conclusion == 'success'", self.y["jobs"]["publish"]["if"])
     def test_permissions_are_minimal(self): self.assertEqual(self.y["permissions"], {"contents": "write"})
     def test_order_tests_then_validate_then_build_then_package_then_replace_then_commit(self):
