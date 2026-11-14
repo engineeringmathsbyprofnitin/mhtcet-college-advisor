@@ -3,7 +3,9 @@ independent Python eligibility rules (ingestion/eligibility.py). Skipped automat
 Run: python -m unittest tests/test_stage10c3a.py -v"""
 import csv, gzip, json, os, shutil, subprocess, sys, tempfile, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from ingestion import package_real as PR, eligibility as E
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import realpkg
+from ingestion import eligibility as E, package_real as PR
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 NODE = shutil.which("node")
 
@@ -11,9 +13,9 @@ NODE = shutil.which("node")
 class T(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.d = tempfile.mkdtemp(); cls.ver, cls.m = PR.main(cls.d)
+        cls.tables = realpkg.fresh_tables(); cls.d = tempfile.mkdtemp(); cls.ver, cls.m = PR.main(cls.d, tables=cls.tables)
     @classmethod
-    def tearDownClass(cls): shutil.rmtree(cls.d)
+    def tearDownClass(cls): shutil.rmtree(cls.d); shutil.rmtree(cls.tables, ignore_errors=True)
     def test_package_is_valid_small_and_real(self):
         self.assertTrue(self.m["is_synthetic"] is False); self.assertTrue(self.ver.startswith("REAL-2026-27-RIV-"))
         self.assertGreater(len(self.m["cutoffs"]), 90)
@@ -32,7 +34,7 @@ class T(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stderr[-800:])
         dump = json.load(open(out)); sc = E.load_seat_codes(os.path.join(ROOT, "data", "normalized", "master", "seat_codes.csv"))
         by = {}
-        with gzip.open(os.path.join(ROOT, "data", "normalized", "tables", "current_cutoffs.csv.gz"), "rt", newline="", encoding="utf-8") as f:
+        with gzip.open(os.path.join(self.tables, "current_cutoffs.csv.gz"), "rt", newline="", encoding="utf-8") as f:
             for x in csv.DictReader(f): by.setdefault((x["choice_code"], x["cap_round"]), []).append(x)
         HU4 = {E.S_HU_HU, E.S_HU_OHU, E.S_OHU_HU, E.S_OHU_OHU}; compared = exact = 0
         for v in dump.values():

@@ -2,6 +2,7 @@
 PDF's own structure. Skipped when node or poppler is missing. Run: python -m unittest tests/test_stage10c3e.py -v"""
 import json, os, re, shutil, subprocess, sys, tempfile, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 NODE, PDFINFO, PDFTOTEXT = shutil.which("node"), shutil.which("pdfinfo"), shutil.which("pdftotext")
 
@@ -12,14 +13,15 @@ class LastUpdate(unittest.TestCase):
     def test_header_never_says_unknown_when_the_data_version_has_a_time(self):
         """Owner saw 'last updated unknown': a package without a refresh-status row. The exporter now falls back to the data version's creation time."""
         from ingestion import package_real as PR
+        import realpkg
         sys.path.insert(0, os.path.join(ROOT, "database")); import export_static as X
-        d = tempfile.mkdtemp()
+        d = tempfile.mkdtemp(); t = realpkg.fresh_tables()
         try:
-            PR.assemble(d)
+            PR.assemble(d, tables=t)
             hdr = open(os.path.join(d, "refresh_status.csv"), encoding="utf-8").readline(); open(os.path.join(d, "refresh_status.csv"), "w", encoding="utf-8").write(hdr)
             m = X.publish(d, os.path.join(d, "out"), now="1970-01-01T00:00:00Z")
             self.assertRegex(m["last_successful_update"], r"^20\d\d-\d\d-\d\dT")
-        finally: shutil.rmtree(d)
+        finally: shutil.rmtree(d); shutil.rmtree(t, ignore_errors=True)
 
 @unittest.skipUnless(NODE, "node not installed")
 class Text(unittest.TestCase):
@@ -35,8 +37,8 @@ class Text(unittest.TestCase):
 class RealPdf(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        from ingestion import package_real as PR
-        cls.d = tempfile.mkdtemp(); PR.main(os.path.join(cls.d, "data")); cls.out = os.path.join(cls.d, "out"); os.makedirs(cls.out)
+        import realpkg
+        cls.d = tempfile.mkdtemp(); realpkg.package(os.path.join(cls.d, "data")); cls.out = os.path.join(cls.d, "out"); os.makedirs(cls.out)
         subprocess.run([NODE, os.path.join(ROOT, "tests", "helpers", "make_pdf.js")], env=dict(os.environ, REAL_DATA_DIR=os.path.join(cls.d, "data"), OUT_DIR=cls.out), check=True, capture_output=True)
         cls.pdf = os.path.join(cls.out, "real.pdf"); cls.meta = json.load(open(os.path.join(cls.out, "real.json")))
     @classmethod

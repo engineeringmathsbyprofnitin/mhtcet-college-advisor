@@ -2,7 +2,8 @@
 Run: python -m unittest tests/test_stage10c3b.py -v"""
 import csv, json, os, re, shutil, subprocess, sys, tempfile, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from ingestion import package_real as PR
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import realpkg
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 NODE = shutil.which("node")
 def has_jsdom():
@@ -28,7 +29,7 @@ class Config(unittest.TestCase):
 @unittest.skipUnless(has_jsdom(), "jsdom not installed (npm install jsdom)")
 class Page(unittest.TestCase):
     @classmethod
-    def setUpClass(cls): cls.d = tempfile.mkdtemp(); PR.main(cls.d)
+    def setUpClass(cls): cls.d = tempfile.mkdtemp(); realpkg.package(cls.d)
     @classmethod
     def tearDownClass(cls): shutil.rmtree(cls.d)
     def test_real_data_page(self):
