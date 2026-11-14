@@ -16,6 +16,7 @@ async function boot(search, dir) {
   for (let i = 0; i < 60 && document_hidden(w); i++) await sleep(50);
   return { w, d: w.document, $: id => w.document.getElementById(id) };
 }
+async function tickAny(B) { await sleep(300); if (!B.$("anyDistrict").checked) B.$("anyDistrict").click(); }
 const document_hidden = w => w.document.getElementById("huField").hidden;
 const opts = sel => Array.from(sel.options).map(o => o.value);
 
@@ -30,14 +31,14 @@ T("form lists come from the real data; home university, claims and district lock
   const hu = opts(B.$("homeUniversity")); assert.equal(hu.length, 13); assert.ok(hu.includes("Savitribai Phule Pune University"));
   const ex = Array.from(B.d.querySelectorAll("input[name=extras]")).map(x => x.value).sort(); assert.deepEqual(ex, ["defence", "ews", "orphan", "pwd", "tfws"]);
   assert.ok(opts(B.$("branches").querySelector("select")).includes("Computer Engineering"));
-  assert.equal(B.$("anyDistrict").checked, true); assert.equal(B.$("anyDistrict").disabled, false); B.$("anyDistrict").click(); assert.equal(B.$("addDistrict").disabled, false); assert.equal(B.$("districtNote").hidden, false);
+  assert.equal(B.$("districtNote").hidden, true); const dl = opts(B.$("districts").querySelector("select")); assert.ok(dl.includes("Pune") && dl.includes("Satara") && !dl.includes("Not available"));
 });
 T("a student gets real results with the four round figures; no test-data banner", async () => {
   const B = await boot();
   B.$("percentile").value = "92"; B.$("candidateType").value = "Maharashtra State candidate"; B.$("category").value = "OPEN"; B.$("gender").value = "Male";
   B.$("homeUniversity").value = "Savitribai Phule Pune University"; B.$("branches").querySelector("select").value = "Computer Engineering";
   B.$("maxFee").value = "1000000"; B.$("feeBasis").value = "total";
-  B.$("form").dispatchEvent(new B.w.Event("submit", { cancelable: true, bubbles: true }));
+  await tickAny(B); B.$("form").dispatchEvent(new B.w.Event("submit", { cancelable: true, bubbles: true }));
   for (let i = 0; i < 100 && !B.d.querySelector("#resultsTable"); i++) await sleep(50);
   assert.ok(B.d.querySelector("#resultsTable"), B.$("results").textContent.slice(0, 300));
   const r = B.d.querySelector("tr.result .rounds"); assert.ok(r); assert.match(r.textContent, /Round I: .*Round II: .*Round III: .*Round IV: /);
@@ -48,19 +49,9 @@ T("without a home university the page warns", async () => {
   const B = await boot();
   B.$("percentile").value = "92"; B.$("candidateType").value = "Maharashtra State candidate"; B.$("category").value = "OPEN";
   B.$("branches").querySelector("select").value = "Computer Engineering"; B.$("maxFee").value = "1000000";
-  B.$("form").dispatchEvent(new B.w.Event("submit", { cancelable: true, bubbles: true }));
+  await tickAny(B); B.$("form").dispatchEvent(new B.w.Event("submit", { cancelable: true, bubbles: true }));
   for (let i = 0; i < 100 && !B.d.querySelector("#resultsTable"); i++) await sleep(50);
   assert.match(B.$("results").textContent, /did not choose a home university/);
-});
-T("a district choice is accepted and the page explains it is not applied yet", async () => {
-  const B = await boot();
-  B.$("percentile").value = "92"; B.$("candidateType").value = "Maharashtra State candidate"; B.$("category").value = "OPEN";
-  B.$("branches").querySelector("select").value = "Computer Engineering"; B.$("maxFee").value = "1000000"; B.$("homeUniversity").value = "Mumbai University";
-  B.$("anyDistrict").click(); B.$("districts").querySelector("select").value = "Pune";   // untick "Any district", choose Pune
-  B.$("form").dispatchEvent(new B.w.Event("submit", { cancelable: true, bubbles: true }));
-  for (let i = 0; i < 100 && !B.d.querySelector("#resultsTable"); i++) await sleep(50);
-  assert.ok(B.d.querySelector("#resultsTable"), B.$("results").textContent.slice(0, 300));
-  assert.match(B.$("results").textContent, /District data is not available yet/);
 });
 T("preview address (?preview=1) loads data-real and shows the preview banner; the normal address does not", async () => {
   const P = await boot("?preview=1");
@@ -73,7 +64,7 @@ T("the Download PDF button builds the report from the shown results (no print di
   B.w.PdfExport.download = (res) => { got = res; };
   B.$("percentile").value = "92"; B.$("candidateType").value = "Maharashtra State candidate"; B.$("category").value = "OPEN"; B.$("homeUniversity").value = "Mumbai University";
   B.$("branches").querySelector("select").value = "Computer Engineering"; B.$("maxFee").value = "1000000";
-  B.$("form").dispatchEvent(new B.w.Event("submit", { cancelable: true, bubbles: true }));
+  await tickAny(B); B.$("form").dispatchEvent(new B.w.Event("submit", { cancelable: true, bubbles: true }));
   for (let i = 0; i < 100 && !B.d.querySelector("#resultsTable"); i++) await sleep(50);
   const btn = B.d.getElementById("pdfBtn"); assert.ok(btn); assert.equal(btn.textContent, "Download PDF"); btn.click();
   assert.ok(got && got.results.length > 5);

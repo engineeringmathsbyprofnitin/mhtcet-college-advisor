@@ -27,3 +27,7 @@ The reader stopped after 600 requests (about 21 minutes) with no information. Wh
 - gentler pace: 2 seconds between requests, up to 3 retries; a time limit of 40 minutes stops the run cleanly;
 - **quick probe**: Actions -> Read institute information -> Run workflow -> probe = 5 reads only the list and 5 pages (a minute) and shows what the site answers; nothing is saved. Use it first.
 Tests added (5): budget follows the list, budget exhaustion caught, failures logged with reasons, probe, time limit.
+
+## Live result and the next red run (owner report)
+The full run on GitHub succeeded: 387 institutes read, 0 problems, 34 districts (spellings as printed, e.g. Chhatrapati Sambhajinagar, Ahilyanagar, Dharashiv), 776 requests (about 2 per institute, which is why the first cap of 600 was too small). 16 of the 403 colleges in the cutoff lists are not in the 2026 institute list (older colleges): they keep "Not available" and appear only under "Any district".
+"Publish website data" then failed in its self-tests for one reason: an old test of mine insisted that every district was "Not available". Now that real districts exist it correctly failed (the workflow did its job and published nothing). Tests updated: districts must equal what the institute page prints; real-data and page tests now expect real districts and a filter that works; the "no district data" case is tested separately on a package built without the institute files.

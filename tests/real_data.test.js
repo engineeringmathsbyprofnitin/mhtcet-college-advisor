@@ -65,8 +65,10 @@ test("real data: missing data is reported, not invented", { skip }, async () => 
   const r = await run(); const x = r.results[0];
   assert.equal(x.vacancy.value, null); assert.equal(x.fee.value, null); assert.equal(x.placement, null);
 });
-test("real data: a district choice is accepted; it cannot be applied (no district data) so all districts are searched and a warning says so", { skip }, async () => {
-  const r = await run({ districts: ["Pune"] }); assert.ok(r.results.length > 20);
-  assert.ok(r.meta.warnings.some(w => /District data is not available yet/.test(w)));
-  const any = await run({ districts: ["ANY"] }); assert.ok(!any.meta.warnings.some(w => /District data is not available yet/.test(w)));
+test("real data: a district choice filters to that district (official district data)", { skip }, async () => {
+  const m = JSON.parse(fs.readFileSync(path.join(DIR, "manifest.json"), "utf8")); const any = await run({ districts: ["ANY"] });
+  const sat = await run({ districts: ["Satara"], branches: ["Computer Science and Engineering"] });
+  assert.ok(!sat.meta.warnings.some(w => /District data is not available yet/.test(w)));
+  assert.ok(sat.results.length > 0); sat.results.forEach(x => assert.equal(x.district, "Satara"));
+  assert.ok(any.results.length > 0);
 });

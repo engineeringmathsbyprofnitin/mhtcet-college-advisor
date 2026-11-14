@@ -52,7 +52,10 @@ class Real(unittest.TestCase):
             for r in self.t[n]: self.assertTrue(r["cutoff_percentile"]); self.assertGreater(float(r["cutoff_percentile"]), 0)
         self.assertEqual(self.rep["excluded_printed_zero_percentile_cells"], 16)
     def test_nothing_invented(self):
-        self.assertTrue(all(r["district"] == "Not available" for r in self.t["colleges"]))
+        # a district is either "Not available" or exactly what the college's official Institute Summary page prints (never guessed)
+        ip = os.path.join(ROOT, "data", "normalized", "institutes", "institutes.csv")
+        printed = {r["institute_code"]: r["district"] for r in csv.DictReader(open(ip, newline="", encoding="utf-8"))} if os.path.exists(ip) else {}
+        for r in self.t["colleges"]: self.assertEqual(r["district"], printed.get(r["college_code"]) or "Not available", r["college_code"])
         self.assertTrue(all(r["is_synthetic"] == "FALSE" for rows in self.t.values() for r in rows if "is_synthetic" in r))
     def test_unknown_home_university_rows_exist_and_are_flagged(self):
         b = self.rep["home_university_basis"]; self.assertGreater(b["unknown"], 0)

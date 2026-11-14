@@ -6,6 +6,6 @@ const fetchFn = async (u) => { const p = path.join(DIR, u.replace(/^data(-real)?
 (async () => {
   const run = d => L.recommend({ percentile: 60, admissionYear: "auto", candidateType: "Maharashtra State candidate", category: "OPEN", gender: "Male", extraEligibility: [], branches: ["Computer Science and Engineering"],
     districts: d, maxAnnualFeeINR: 1000000, feeBasis: "total", priorities: ["admission_chance"], homeUniversity: "Mumbai University" }, { baseUrl: "data/", fetchFn, Recommender: R, engineOptions: { asOfDate: "2026-11-10", maxResults: 100 } });
-  const sat = await run(["Satara"]), any = await run(["ANY"]);
+  const sat = await run([process.env.DISTRICT_PICK || "Satara"]), any = await run(["ANY"]);
   console.log(JSON.stringify({ satara: sat.results.map(r => r.district), anyCount: any.results.length, anyDistricts: Array.from(new Set(any.results.map(r => r.district))).sort(), warnings: sat.meta.warnings }));
 })().catch(e => { console.error(e); process.exit(1); });

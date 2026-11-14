@@ -6,6 +6,7 @@ from ingestion import institutes as I
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."); FX = os.path.join(ROOT, "tests", "fixtures", "institutes")
 def fx(n): return open(os.path.join(FX, n), encoding="utf-8").read()
 HOST = "https://fe2026.mahacet.org"
+NODE = shutil.which("node")
 
 class R:                                                  # minimal stand-in for http_client.Response
     def __init__(self, text="", status=200, blocked=None):
@@ -111,6 +112,21 @@ class Diagnostics(unittest.TestCase):
     def test_time_limit_stops_cleanly(self):
         ticks = iter(range(0, 1000, 100)); _, _, rep = I.run(Fake(pages()), 2026, "t", max_seconds=150, clock=lambda: next(ticks))
         self.assertFalse(rep["complete"]); self.assertTrue(any("time limit" in p for p in rep["problems"]))
+
+@unittest.skipUnless(NODE, "node not installed")
+class NoDistricts(unittest.TestCase):
+    """If a data package ever has no district at all (institute pages not read), a district choice must not hide every college: it is not applied and the page says so."""
+    def test_choice_not_applied_and_warning(self):
+        import subprocess
+        from ingestion import build_tables as B, package_real as PR
+        tmp = tempfile.mkdtemp()
+        try:
+            base = os.path.join(tmp, "n"); shutil.copytree(os.path.join(ROOT, "data", "normalized"), base, ignore=shutil.ignore_patterns("tables", "institutes"))
+            B.build(base=base, outdir=os.path.join(tmp, "tables")); data = os.path.join(tmp, "data"); PR.main(data, tables=os.path.join(tmp, "tables"))
+            r = subprocess.run([NODE, os.path.join(ROOT, "tests", "helpers", "district_check.js")], env=dict(os.environ, DISTRICT_DATA_DIR=data, DISTRICT_PICK="Pune"), capture_output=True, text=True, cwd=ROOT)
+            self.assertEqual(r.returncode, 0, r.stderr[-600:]); out = json.loads(r.stdout)
+            self.assertIn("District data is not available yet", " ".join(out["warnings"])); self.assertGreater(len(out["satara"]), 0)
+        finally: shutil.rmtree(tmp)
 
 class Intake(unittest.TestCase):
     def test_intake_mismatch_is_a_warning_not_an_error(self):
