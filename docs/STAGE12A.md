@@ -21,3 +21,6 @@ The page has no form: two buttons call plain GET addresses `admin/reports/ajax/g
 
 ## Phone layout fix (Stage 11d follow-up)
 On phones the lines inside one cell (value, round figures, warnings) were laid side by side and ran out of the card. Each cell's lines now sit in one inner box (`.cv`) that stacks and wraps (`frontend/results.js`, `frontend/styles.css`); test added to `tests/ui_stage6.test.js`. Not seen on a real phone yet.
+
+## First live run (red) and the fix
+The first live run stopped with: "expected exactly one 'ENGG' sub type, found 2". The portal's list has `ENGG` (Bachelor of Engineering/Bachelor of Technology) AND `ENGGWP` (Working Professional); my check matched both and refused to guess. Now the sub type is chosen by its exact code `ENGG`. The save step also failed because `data/normalized/fees` did not exist after a failed read: it now adds each folder only if it exists, and an unexpected error still writes a readable report.

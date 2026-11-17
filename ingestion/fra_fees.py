@@ -93,8 +93,9 @@ def read(site, year, fetcher, out_dir, raw_dir, today=None):
     st = fetcher.fetch(site + "admin/reports/ajax/get_sub_type_ajax.php?" + urlencode({"val1": "HT"}))
     if st.blocked or not st.ok: rep["problems"].append("sub type list not readable (%s %s)" % (st.blocked, st.status)); return _save(rep, out_dir)
     opts = sub_type_options(st.text); rep["sub_type_options"] = opts
-    eng = [o for o in opts if o[1].upper().startswith("ENGG")]
-    if len(eng) != 1: rep["problems"].append("expected exactly one 'ENGG' sub type, found %s of %s" % (len(eng), opts)); return _save(rep, out_dir)
+    # exact code ENGG ("Bachelor of Engineering/Bachelor of Technology"). Seen on the live list: ENGGWP (Working Professional), ME, ARCH ... are NOT this one.
+    eng = [o for o in opts if o[0].upper() == "ENGG"]
+    if len(eng) != 1 or not eng[0][1].upper().startswith("ENGG"): rep["problems"].append("expected exactly one sub type with code 'ENGG', found %s of %s" % (len(eng), opts)); return _save(rep, out_dir)
     sub = eng[0][0]
     all_rows, url_used = [], []
     def get(district):
@@ -156,10 +157,16 @@ def main(argv=None):
     year = plan["current_year"]
     if year not in FRA_SITES:
         print("FAIL: no known FRA portal address for %s (add it to FRA_SITES in ingestion/fra_fees.py)" % year); return 1
-    f = PoliteFetcher(min_delay=2.0, max_requests=60)
-    rep = read(FRA_SITES[year], year, f, os.path.join(ROOT, "build", "normalized", "fees"), os.path.join(ROOT, "data", "raw", "fees"))
+    out_dir, raw_dir = os.path.join(ROOT, "build", "normalized", "fees"), os.path.join(ROOT, "data", "raw", "fees")
+    try:
+        rep = read(FRA_SITES[year], year, PoliteFetcher(min_delay=2.0, max_requests=60), out_dir, raw_dir)
+    except Exception as e:                                       # never end without a report that can be read afterwards
+        import traceback
+        os.makedirs(raw_dir, exist_ok=True)
+        with open(os.path.join(raw_dir, "fra_fees_report.json"), "w", encoding="utf-8") as fh: json.dump(dict(ok=False, year=year, problems=["unexpected error: %s: %s" % (type(e).__name__, e)], trace=traceback.format_exc()[-3000:]), fh, indent=1)
+        print("FAIL: unexpected error: %s: %s" % (type(e).__name__, e)); return 1
     import shutil
-    shutil.copy(os.path.join(ROOT, "build", "normalized", "fees", "fra_fees_report.json"), os.path.join(ROOT, "data", "raw", "fees", "fra_fees_report.json"))   # kept even when the run fails
+    shutil.copy(os.path.join(out_dir, "fra_fees_report.json"), os.path.join(raw_dir, "fra_fees_report.json"))   # kept even when the run fails
     print("year %s | rows %d | requests %s | %s" % (year, rep["rows"], rep["requests"], rep["how"]))
     print("statuses:", rep["statuses"]); print("warnings:", len(rep["warnings"]), rep["warnings"][:5]); print("skipped rows:", rep["skipped_rows"][:5])
     for p in rep["problems"][:20]: print("FAIL:", p)

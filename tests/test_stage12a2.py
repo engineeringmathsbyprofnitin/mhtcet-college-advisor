@@ -4,7 +4,7 @@ from ingestion import fra_fees as F
 from ingestion.http_client import PoliteFetcher
 
 SITE = F.FRA_SITES["2026-27"]
-SUB = "<option value=''>Select  Sub Type</option><option value='ENGG'>ENGG - Bachelor of Engineering</option><option value='PHARM'>PHARM - Bachelor of Pharmacy</option>"
+SUB = "<option value=''>Select  Sub Type</option><option value='BBA'>BBA - Bachelor of Business Administration</option><option value='ENGGWP'>ENGGWP - Bachelor of Engineering (Working Professional)</option><option value='ENGG'>ENGG - Bachelor of Engineering/Bachelor of Technology</option><option value='ME'>ME - Master of Engineering/Masters of Technology</option><option value='PHARM'>PHARM - Bachelor of Pharmacy</option>"
 HEAD = "<tr><th>Sr. No.</th><th>Inst ID</th><th>Inst Name</th><th>District</th><th>Stream</th><th>Status</th><th>Date of Meeting</th><th>Tuition Fee</th><th>Development Fee</th><th>Total Fee</th></tr>"
 
 
@@ -88,11 +88,35 @@ class Bad(unittest.TestCase):
     def test_header_missing_a_column(self): self.fails(Fake(report=table(tr(1, "EN3139"), head=HEAD.replace("<th>Tuition Fee</th>", ""))), "columns missing")
     def test_no_table(self): self.fails(Fake(report="<p>No data</p>", by_district={}), "no table")
     def test_no_rows_at_all(self): self.fails(Fake(report=table()), "no rows")
-    def test_no_eng_subtype(self): self.fails(Fake(sub="<option value='P'>PHARM</option>"), "exactly one 'ENGG'")
-    def test_two_eng_subtypes(self): self.fails(Fake(sub=SUB + "<option value='E2'>ENGG - Direct Second Year</option>"), "exactly one 'ENGG'")
+    def test_no_eng_subtype(self): self.fails(Fake(sub="<option value='P'>PHARM</option>"), "exactly one sub type")
+    def test_two_eng_subtypes(self): self.fails(Fake(sub=SUB + "<option value='ENGG'>ENGG - copy</option>"), "exactly one sub type")
     def test_captcha(self): self.fails(Fake(report="<div>enter captcha</div>"), "CAPTCHA")
     def test_robots_disallow(self): self.fails(Fake(robots=(200, b"User-agent: *\nDisallow: /\n")), "not readable")
     def test_server_error(self): self.fails(Fake(status=500), "not readable")
+
+
+class SubType(unittest.TestCase):
+    def test_working_professional_and_masters_are_not_picked(self):
+        fake = Fake(); rep, _ = go(fake); self.assertTrue(rep["ok"], rep["problems"])
+        self.assertTrue(any("sub_type=ENGG&" in u for u in fake.calls)); self.assertFalse(any("ENGGWP" in u or "sub_type=ME&" in u for u in fake.calls if "get_report_ajax" in u))
+
+    def test_code_must_match_exactly(self):
+        rep, _ = go(Fake(sub="<option value='ENGGWP'>ENGGWP - Working Professional</option>")); self.assertFalse(rep["ok"])
+
+
+class Main(unittest.TestCase):
+    def test_unexpected_error_still_leaves_a_report(self):
+        import io, contextlib
+        orig = F.read; F.read = lambda *a, **k: 1 / 0
+        try:
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf): code = F.main()
+        finally: F.read = orig
+        self.assertEqual(code, 1); self.assertIn("FAIL: unexpected error", buf.getvalue())
+        r = json.load(open(os.path.join(F.ROOT, "data", "raw", "fees", "fra_fees_report.json"))); self.assertIn("ZeroDivisionError", r["problems"][0])
+        os.remove(os.path.join(F.ROOT, "data", "raw", "fees", "fra_fees_report.json"))
+        try: os.rmdir(os.path.join(F.ROOT, "data", "raw", "fees"))
+        except OSError: pass
 
 
 class Fallback(unittest.TestCase):
@@ -111,7 +135,7 @@ class Fallback(unittest.TestCase):
 
 
 class Helpers(unittest.TestCase):
-    def test_options(self): self.assertEqual(F.sub_type_options(SUB)[1], ("ENGG", "ENGG - Bachelor of Engineering"))
+    def test_options(self): self.assertEqual([o for o in F.sub_type_options(SUB) if o[0] == "ENGG"], [("ENGG", "ENGG - Bachelor of Engineering/Bachelor of Technology")])
     def test_money(self): self.assertEqual((F.money("1,23,000"), F.money(""), F.money("x")), ((123000, False), (None, False), (None, True)))
     def test_unknown_year_has_no_address(self): self.assertNotIn("2031-32", F.FRA_SITES)
     def test_site_is_official_host(self):
