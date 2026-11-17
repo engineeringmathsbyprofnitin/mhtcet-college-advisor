@@ -1,0 +1,392 @@
+{
+ "page": "https://ay26-27.mahafraportal.org/ssi_prp_25/outer.php?q=fee_search_report",
+ "steps": [
+  {
+   "step": "page",
+   "status": 200,
+   "blocked": null,
+   "error": null,
+   "bytes": 13929
+  }
+ ],
+ "verdict": "Form found but the Sub Type / District options are not in the HTML (probably loaded by JavaScript): no test search sent",
+ "robots": "allowed_all",
+ "forms": [
+  {
+   "action": "index.php",
+   "method": "POST",
+   "id": "home",
+   "fields": []
+  },
+  {
+   "action": "outer.php",
+   "method": "POST",
+   "id": "e11",
+   "fields": [
+    {
+     "kind": "input",
+     "name": "q",
+     "type": "hidden",
+     "value": "16"
+    }
+   ]
+  },
+  {
+   "action": "outer.php",
+   "method": "POST",
+   "id": "d",
+   "fields": [
+    {
+     "kind": "input",
+     "name": "q",
+     "type": "hidden",
+     "value": "20"
+    }
+   ]
+  },
+  {
+   "action": "outer.php",
+   "method": "POST",
+   "id": "b",
+   "fields": [
+    {
+     "kind": "input",
+     "name": "q",
+     "type": "hidden",
+     "value": "15"
+    }
+   ]
+  },
+  {
+   "action": "outer.php",
+   "method": "POST",
+   "id": "login",
+   "fields": [
+    {
+     "kind": "input",
+     "name": "q",
+     "type": "hidden",
+     "value": "6"
+    }
+   ]
+  },
+  {
+   "action": "",
+   "method": "(no form)",
+   "id": "",
+   "fields": [
+    {
+     "kind": "select",
+     "name": "type",
+     "id": "type",
+     "options": [
+      {
+       "value": "",
+       "text": "Select Type",
+       "selected": false
+      },
+      {
+       "value": "HT",
+       "text": "H&T",
+       "selected": false
+      },
+      {
+       "value": "MEDIC",
+       "text": "Medical",
+       "selected": false
+      },
+      {
+       "value": "AGRI",
+       "text": "Agriculture",
+       "selected": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "action": "",
+   "method": "(no form)",
+   "id": "",
+   "fields": [
+    {
+     "kind": "select",
+     "name": "sub_type",
+     "id": "sub_type",
+     "options": [
+      {
+       "value": "",
+       "text": "Select  Sub Type",
+       "selected": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "action": "",
+   "method": "(no form)",
+   "id": "",
+   "fields": [
+    {
+     "kind": "select",
+     "name": "district",
+     "id": "district",
+     "options": [
+      {
+       "value": "",
+       "text": "Select District",
+       "selected": false
+      },
+      {
+       "value": "all",
+       "text": "All District",
+       "selected": false
+      },
+      {
+       "value": " Dadara& Nagar Haveli",
+       "text": " Dadara& Nagar Haveli",
+       "selected": false
+      },
+      {
+       "value": "Ahilyanagar",
+       "text": "Ahilyanagar",
+       "selected": false
+      },
+      {
+       "value": "Ahmadnagar",
+       "text": "Ahmadnagar",
+       "selected": false
+      },
+      {
+       "value": "Ahmednagar",
+       "text": "Ahmednagar",
+       "selected": false
+      },
+      {
+       "value": "Akola",
+       "text": "Akola",
+       "selected": false
+      },
+      {
+       "value": "Amravati",
+       "text": "Amravati",
+       "selected": false
+      },
+      {
+       "value": "Beed",
+       "text": "Beed",
+       "selected": false
+      },
+      {
+       "value": "Bhandara",
+       "text": "Bhandara",
+       "selected": false
+      },
+      {
+       "value": "Buldhana",
+       "text": "Buldhana",
+       "selected": false
+      },
+      {
+       "value": "Chandrapur",
+       "text": "Chandrapur",
+       "selected": false
+      },
+      {
+       "value": "Chhatrapati Sambhaji Nagar",
+       "text": "Chhatrapati Sambhaji Nagar",
+       "selected": false
+      },
+      {
+       "value": "Dharashiv",
+       "text": "Dharashiv",
+       "selected": false
+      },
+      {
+       "value": "Dhule",
+       "text": "Dhule",
+       "selected": false
+      },
+      {
+       "value": "Gadchiroli",
+       "text": "Gadchiroli",
+       "selected": false
+      },
+      {
+       "value": "Gondiya",
+       "text": "Gondiya",
+       "selected": false
+      },
+      {
+       "value": "Hingoli",
+       "text": "Hingoli",
+       "selected": false
+      },
+      {
+       "value": "Jalgaon",
+       "text": "Jalgaon",
+       "selected": false
+      },
+      {
+       "value": "Jalna",
+       "text": "Jalna",
+       "selected": false
+      },
+      {
+       "value": "Kolhapur",
+       "text": "Kolhapur",
+       "selected": false
+      },
+      {
+       "value": "Latur",
+       "text": "Latur",
+       "selected": false
+      },
+      {
+       "value": "Mumbai City",
+       "text": "Mumbai City",
+       "selected": false
+      },
+      {
+       "value": "Mumbai suburban",
+       "text": "Mumbai suburban",
+       "selected": false
+      },
+      {
+       "value": "Mumbai-City",
+       "text": "Mumbai-City",
+       "selected": false
+      },
+      {
+       "value": "Mumbai-Suburban",
+       "text": "Mumbai-Suburban",
+       "selected": false
+      },
+      {
+       "value": "Nagpur",
+       "text": "Nagpur",
+       "selected": false
+      },
+      {
+       "value": "Nanded",
+       "text": "Nanded",
+       "selected": false
+      },
+      {
+       "value": "Nandurbar",
+       "text": "Nandurbar",
+       "selected": false
+      },
+      {
+       "value": "Nashik",
+       "text": "Nashik",
+       "selected": false
+      },
+      {
+       "value": "Palghar",
+       "text": "Palghar",
+       "selected": false
+      },
+      {
+       "value": "Parbhani",
+       "text": "Parbhani",
+       "selected": false
+      },
+      {
+       "value": "Pune",
+       "text": "Pune",
+       "selected": false
+      },
+      {
+       "value": "Raigad",
+       "text": "Raigad",
+       "selected": false
+      },
+      {
+       "value": "Ratnagiri",
+       "text": "Ratnagiri",
+       "selected": false
+      },
+      {
+       "value": "Sangli",
+       "text": "Sangli",
+       "selected": false
+      },
+      {
+       "value": "Satara",
+       "text": "Satara",
+       "selected": false
+      },
+      {
+       "value": "Sindhudurg",
+       "text": "Sindhudurg",
+       "selected": false
+      },
+      {
+       "value": "Solapur",
+       "text": "Solapur",
+       "selected": false
+      },
+      {
+       "value": "Thane",
+       "text": "Thane",
+       "selected": false
+      },
+      {
+       "value": "Wardha",
+       "text": "Wardha",
+       "selected": false
+      },
+      {
+       "value": "Washim",
+       "text": "Washim",
+       "selected": false
+      },
+      {
+       "value": "Yavatmal",
+       "text": "Yavatmal",
+       "selected": false
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "script_files": [
+  "css/vm.js",
+  "css/datetimepicker.js",
+  "css/reg1.js",
+  "js/sss_prp.js",
+  "https://code.jquery.com/jquery-1.9.1.min.js",
+  "js/datetimepicker.js",
+  "//code.jquery.com/jquery-1.12.4.js",
+  "//code.jquery.com/ui/1.12.1/jquery-ui.js",
+  "",
+  "",
+  ""
+ ],
+ "script_hints": [
+  "var xhttp = new XMLHttpRequest();",
+  "xhttp.open(\"GET\", \"admin/reports/ajax/get_report_ajax.php?sub_type=\"+sub_type+\"&district=\"+district+\"&institute=\"+institute+\"&type=\"+type, true);",
+  "var xhttp = new XMLHttpRequest();",
+  "xhttp.open(\"GET\", \"admin/reports/ajax/get_sub_type_ajax.php?val1=\"+val1, true);",
+  "source:\"http://sspnsamiti.com/admin/reports/search.php\","
+ ],
+ "tables_on_page": [
+  3
+ ],
+ "test_search": {
+  "chosen": {
+   "type": "H&T"
+  },
+  "method": "(no form)",
+  "action": "https://ay26-27.mahafraportal.org/ssi_prp_25/outer.php?q=fee_search_report",
+  "payload": [
+   [
+    "type",
+    "HT"
+   ]
+  ]
+ }
+}
