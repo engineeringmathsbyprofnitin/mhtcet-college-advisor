@@ -53,3 +53,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 11c built (docs/STAGE11C.md): vacancy matched to website courses (tables/vacancy.csv); not yet shown on the page
 
 ## Stage 11d built (docs/STAGE11D.md): vacancy packaged and shown as "Seats open going into Round IV" (page, PDF, explanation). Owner upload + workflow run pending. Stage 11 complete after that check.
+
+## Stage 12a-1 built (docs/STAGE12A.md): probe of the FRA fee page; owner upload + workflow run pending

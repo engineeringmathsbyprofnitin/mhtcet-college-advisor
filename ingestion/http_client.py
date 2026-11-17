@@ -15,7 +15,7 @@ from urllib.parse import urlparse, urljoin
 from urllib import robotparser
 
 USER_AGENT = "MHTCETCollegeAdvisorBot/0.1 (educational project; reads public CAP documents; contact via the project's GitHub repository)"
-ALLOWED_HOST_PATTERNS = [r"^([a-z0-9-]+\.)*mahacet\.org$", r"^([a-z0-9-]+\.)*mahacet\.org\.in$", r"^cappublicdocs\d{4}\.blob\.core\.windows\.net$"]
+ALLOWED_HOST_PATTERNS = [r"^([a-z0-9-]+\.)*mahacet\.org$", r"^([a-z0-9-]+\.)*mahacet\.org\.in$", r"^([a-z0-9-]+\.)*mahafraportal\.org$", r"^cappublicdocs\d{4}\.blob\.core\.windows\.net$"]
 TRANSIENT = {429, 500, 502, 503, 504}
 
 
@@ -47,8 +47,8 @@ class UrllibTransport:
         self.timeout = timeout
         self.opener = urllib.request.build_opener(self._NoRedirect)
 
-    def send(self, method, url, headers, max_bytes):
-        req = urllib.request.Request(url, method=method, headers=headers)
+    def send(self, method, url, headers, max_bytes, data=None):
+        req = urllib.request.Request(url, method=method, headers=headers, data=data)
         try:
             with self.opener.open(req, timeout=self.timeout) as r:
                 body = r.read(max_bytes) if method != "HEAD" else b""
@@ -74,7 +74,7 @@ class PoliteFetcher:
             gap = self.clock() - t
             if gap < self.min_delay: self.sleep(self.min_delay - gap)
 
-    def _send(self, method, url, headers=None, max_bytes=2_000_000):
+    def _send(self, method, url, headers=None, max_bytes=2_000_000, data=None):
         host = urlparse(url).netloc.lower()
         h = {"User-Agent": self.user_agent, "Accept": "*/*"}
         h.update(headers or {})
@@ -83,7 +83,7 @@ class PoliteFetcher:
             self._wait(host)
             self.count += 1; t0 = self.clock()
             try:
-                status, rh, body = self.transport.send(method, url, h, max_bytes)
+                status, rh, body = self.transport.send(method, url, h, max_bytes) if data is None else self.transport.send(method, url, h, max_bytes, data)
                 err = None
             except Exception as e:                               # timeouts, DNS, connection resets
                 status, rh, body, err = None, {}, b"", "%s: %s" % (type(e).__name__, e)
@@ -117,13 +117,13 @@ class PoliteFetcher:
         return self.robots[p.netloc.lower()].can_fetch(self.user_agent, url)
 
     # ---- public
-    def fetch(self, url, method="GET", headers=None, max_redirects=3, max_bytes=2_000_000):
+    def fetch(self, url, method="GET", headers=None, max_redirects=3, max_bytes=2_000_000, data=None):
         for _ in range(max_redirects + 1):
             p = urlparse(url)
             if p.scheme not in ("http", "https"): return Response(url, blocked="not_http")
             if not host_allowed(p.netloc): return Response(url, blocked="host_not_allowed")
             if not self.allowed_by_robots(url): return Response(url, blocked="robots_disallow_or_unreadable")
-            r = self._send(method, url, headers, max_bytes)
+            r = self._send(method, url, headers, max_bytes, data)
             if r.status in (301, 302, 303, 307, 308) and r.headers.get("location"):
                 url = urljoin(url, r.headers["location"]); continue
             r.url = url
