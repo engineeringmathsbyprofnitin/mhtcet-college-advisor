@@ -74,6 +74,18 @@ class Good(unittest.TestCase):
         rep, _ = go(Fake(report="<table><tr><td>" + GOOD + "</td></tr></table>")); self.assertTrue(rep["ok"], rep["problems"])
 
 
+class OtherCodes(unittest.TestCase):
+    def test_non_en_ids_are_kept_without_cet_code_and_warned(self):
+        rep, d = go(Fake(report=table(tr(1, "EN3139"), tr(2, "AR3439", "SOME ARCHITECTURE COLLEGE"), tr(3, "MB5152", "SOME MBA INSTITUTE"))))
+        self.assertTrue(rep["ok"], rep["problems"]); r = rows(d)
+        self.assertEqual([(x["inst_id"], x["cet_institute_code"]) for x in r], [("EN3139", "03139"), ("AR3439", ""), ("MB5152", "")])
+        self.assertEqual(sum("not an EN" in w for w in rep["warnings"]), 2)
+
+    def test_interim_order_status_kept_as_printed(self):
+        rep, d = go(Fake(report=table(tr(1, "EN4142", status="Interim Order of High Court"))))
+        self.assertTrue(rep["ok"]); self.assertEqual(rows(d)[0]["status"], "Interim Order of High Court"); self.assertFalse(any("new status" in w for w in rep["warnings"]))
+
+
 class Bad(unittest.TestCase):
     def fails(self, fake, text):
         rep, d = go(fake); self.assertFalse(rep["ok"]); self.assertTrue(any(text in p for p in rep["problems"]), rep["problems"])
@@ -82,6 +94,7 @@ class Bad(unittest.TestCase):
     def test_gap_in_serial_numbers(self): self.fails(Fake(report=table(tr(1, "EN3139"), tr(3, "EN3182"))), "Sr. No.")
     def test_other_stream(self): self.fails(Fake(report=table(tr(1, "EN3139", stream="PHARM"))), "not ENGG")
     def test_odd_institute_id(self): self.fails(Fake(report=table(tr(1, "XX12"))), "unexpected Inst ID")
+    def test_lowercase_or_numeric_id(self): self.fails(Fake(report=table(tr(1, "en3139"))), "unexpected Inst ID")
     def test_same_institute_twice_with_different_numbers(self): self.fails(Fake(report=table(tr(1, "EN3139"), tr(2, "EN3139", tot="1"))), "twice with different")
     def test_unreadable_number(self): self.fails(Fake(report=table(tr(1, "EN3139", t="abc"))), "unreadable tuition_fee")
     def test_unreadable_date(self): self.fails(Fake(report=table(tr(1, "EN3139", date="soon"))), "unreadable meeting date")
@@ -112,11 +125,12 @@ class Main(unittest.TestCase):
             buf = io.StringIO()
             with contextlib.redirect_stdout(buf): code = F.main()
         finally: F.read = orig
-        self.assertEqual(code, 1); self.assertIn("FAIL: unexpected error", buf.getvalue())
+        self.assertEqual(code, 1); self.assertIn("FAIL: unexpected error", buf.getvalue()); self.assertTrue(os.path.isdir(os.path.join(F.ROOT, "data", "normalized", "fees")))
         r = json.load(open(os.path.join(F.ROOT, "data", "raw", "fees", "fra_fees_report.json"))); self.assertIn("ZeroDivisionError", r["problems"][0])
         os.remove(os.path.join(F.ROOT, "data", "raw", "fees", "fra_fees_report.json"))
-        try: os.rmdir(os.path.join(F.ROOT, "data", "raw", "fees"))
-        except OSError: pass
+        for d in (("data", "raw", "fees"), ("data", "normalized", "fees")):
+            try: os.rmdir(os.path.join(F.ROOT, *d))
+            except OSError: pass
 
 
 class Fallback(unittest.TestCase):

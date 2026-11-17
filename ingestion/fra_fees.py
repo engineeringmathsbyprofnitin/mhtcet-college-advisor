@@ -17,7 +17,7 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 FRA_SITES = {"2026-27": "https://ay26-27.mahafraportal.org/ssi_prp_25/"}
 REQUIRED = ["sr. no.", "inst id", "inst name", "district", "stream", "status", "date of meeting", "tuition fee", "development fee", "total fee"]
 OUT_COLS = ["inst_id", "cet_institute_code", "inst_name", "district", "stream", "status", "meeting_date", "tuition_fee", "development_fee", "total_fee", "total_equals_parts", "source_url", "retrieved_date"]
-KNOWN_STATUS = {"Approved", "No Upward Revision"}
+KNOWN_STATUS = {"Approved", "No Upward Revision", "Interim Order of High Court"}      # the last one was seen on the live list (2 institutes)
 
 
 def norm(s): return re.sub(r"\s+", " ", (s or "").replace("\xa0", " ")).strip()
@@ -77,7 +77,8 @@ def check_rows(rows):
     if not all(s.isdigit() for s in srs) or [int(s) for s in srs] != list(range(1, len(rows) + 1)): problems.append("Sr. No. is not 1..%d without gaps (first values: %s)" % (len(rows), srs[:8]))
     seen = {}
     for r in rows:
-        if not re.fullmatch(r"EN\d{4,5}", r["inst_id"]): problems.append("unexpected Inst ID %r" % r["inst_id"])
+        if not re.fullmatch(r"[A-Z]{2}\d{4,5}", r["inst_id"]): problems.append("unexpected Inst ID %r" % r["inst_id"])
+        elif not r["inst_id"].startswith("EN"): warnings.append("%s: not an EN (engineering institute) code, kept but not linked to a CET Cell institute code" % r["inst_id"])
         if r["stream"] != "ENGG": problems.append("%s: stream %r is not ENGG" % (r["inst_id"], r["stream"]))
         if r["status"] not in KNOWN_STATUS: warnings.append("%s: new status %r" % (r["inst_id"], r["status"]))
         if r["total_fee"] is None: warnings.append("%s: no total fee printed" % r["inst_id"])
@@ -140,7 +141,7 @@ def read(site, year, fetcher, out_dir, raw_dir, today=None):
         for x in all_rows:
             eq = "" if None in (x["tuition_fee"], x["development_fee"], x["total_fee"]) else ("TRUE" if x["tuition_fee"] + x["development_fee"] == x["total_fee"] else "FALSE")
             if eq == "FALSE": rep["warnings"].append("%s: printed total %s != tuition %s + development %s" % (x["inst_id"], x["total_fee"], x["tuition_fee"], x["development_fee"]))
-            w_.writerow(dict(inst_id=x["inst_id"], cet_institute_code=x["inst_id"][2:].zfill(5), inst_name=x["inst_name"], district=x["district"], stream=x["stream"], status=x["status"],
+            w_.writerow(dict(inst_id=x["inst_id"], cet_institute_code=x["inst_id"][2:].zfill(5) if x["inst_id"].startswith("EN") else "", inst_name=x["inst_name"], district=x["district"], stream=x["stream"], status=x["status"],
                              meeting_date=x["meeting_date"], tuition_fee="" if x["tuition_fee"] is None else x["tuition_fee"], development_fee="" if x["development_fee"] is None else x["development_fee"],
                              total_fee="" if x["total_fee"] is None else x["total_fee"], total_equals_parts=eq, source_url=site + "outer.php?q=fee_search_report", retrieved_date=today))
     rep["ok"] = True
@@ -158,6 +159,7 @@ def main(argv=None):
     if year not in FRA_SITES:
         print("FAIL: no known FRA portal address for %s (add it to FRA_SITES in ingestion/fra_fees.py)" % year); return 1
     out_dir, raw_dir = os.path.join(ROOT, "build", "normalized", "fees"), os.path.join(ROOT, "data", "raw", "fees")
+    os.makedirs(os.path.join(ROOT, "data", "normalized", "fees"), exist_ok=True)     # an (empty) folder so that an older 'git add' of it cannot fail
     try:
         rep = read(FRA_SITES[year], year, PoliteFetcher(min_delay=2.0, max_requests=60), out_dir, raw_dir)
     except Exception as e:                                       # never end without a report that can be read afterwards
