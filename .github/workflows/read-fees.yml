@@ -1,0 +1,59 @@
+name: Read the approved fees
+
+# Stage 12a-2. Reads the engineering fees approved by the Fees Regulating Authority (official portal ay26-27.mahafraportal.org, public page,
+# no login) into a small table. Polite: robots.txt obeyed, one request for all districts (district by district only if that fails),
+# stops at any login or CAPTCHA, never bypasses anything. data/normalized/fees is replaced ONLY if every row was read and checked;
+# otherwise the previous data stays and this run is red. What the portal answered is always saved in data/raw/fees so a failure can be studied.
+# Run by hand (Actions tab -> this workflow -> Run workflow). Also every Monday.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 5 * * 1"        # Mondays 05:30 UTC
+
+permissions:
+  contents: write
+
+concurrency:
+  group: read-fees
+  cancel-in-progress: false
+
+jobs:
+  read:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: "Self-tests (offline, no website is contacted)"
+        run: python -m unittest tests/test_stage12a1.py tests/test_stage12a2.py
+
+      - name: "Read the approved fees"
+        id: read
+        run: python -m ingestion.fra_fees
+
+      - name: "Replace the fee data (only because the step above succeeded)"
+        if: success()
+        run: |
+          rm -rf data/normalized/fees
+          mkdir -p data/normalized
+          cp -r build/normalized/fees data/normalized/
+
+      - name: "Save in the repository (the fee data if the run succeeded, and always what the portal answered)"
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/raw/fees data/normalized/fees
+          if git diff --cached --quiet; then
+            echo "Nothing new to save."
+          else
+            git commit -m "Update approved fees (or fee portal answer)"
+            git pull --rebase origin main
+            git push
+          fi
