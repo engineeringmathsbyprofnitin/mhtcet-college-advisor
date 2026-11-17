@@ -37,5 +37,5 @@ class Page(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stdout[-1500:]); self.assertIn("# fail 0", r.stdout); self.assertIn("# skipped 0", r.stdout); self.assertGreaterEqual(int(re.search(r"# pass (\d+)", r.stdout).group(1)), 6)
     def test_synthetic_page_unchanged(self):
         r = subprocess.run([NODE, "--test", os.path.join(ROOT, "tests", "ui_stage6.test.js")], capture_output=True, text=True, cwd=ROOT)
-        self.assertEqual(r.returncode, 0, r.stdout[-1500:]); self.assertIn("# pass 21", r.stdout)
+        self.assertEqual(r.returncode, 0, r.stdout[-1500:]); self.assertIn("# pass 22", r.stdout)
 if __name__ == "__main__": unittest.main()

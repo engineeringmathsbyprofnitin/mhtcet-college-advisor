@@ -155,3 +155,12 @@ T("nothing the student types is sent anywhere: only data-file requests are made,
 test("source code never uses innerHTML or storage APIs", () => {
   ["app.js", "results.js", "dataloader.js", "pdfexport.js"].forEach(f => { const s = fs.readFileSync(path.join(FE, f), "utf8"); assert.ok(!/innerHTML|outerHTML|insertAdjacentHTML|document\.write|localStorage|sessionStorage|eval\(/.test(s), f); });
 });
+
+T("phone layout: every table cell keeps all its lines inside ONE inner box (.cv) so they stack and wrap on a phone", async () => {
+  const B = boot(); await submit(B, {});
+  const cells = B.d.querySelectorAll("tr.result td"); assert.ok(cells.length > 10);
+  cells.forEach(td => { assert.equal(td.children.length, 1, td.getAttribute("data-label")); assert.ok(td.firstElementChild.classList.contains("cv"), td.getAttribute("data-label")); });
+  const cut = B.d.querySelector('tr.result td[data-label^="Latest current cutoff"] .cv');
+  assert.ok(cut.children.length >= 2);                                      // value + its detail lines are inside the same box
+  const nba = B.d.querySelector('tr.result td[data-label="NBA accreditation"]'); assert.equal(nba.children.length, 1);
+});

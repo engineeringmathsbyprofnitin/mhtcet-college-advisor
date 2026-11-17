@@ -25,7 +25,8 @@
   function safeUrl(u) {
     try { var x = new URL(u); return (x.protocol === "https:" || x.protocol === "http:") && !/\.invalid$/i.test(x.hostname) ? x.href : null; } catch (e) { return null; }
   }
-  function cell(doc, label, kids, cls) { return el(doc, "td", { "data-label": label, class: cls || "" }, kids); }
+  // The values of a cell sit in ONE inner box (.cv) so that, on a phone, several lines stack under each other and wrap inside the card.
+  function cell(doc, label, kids, cls) { var td = el(doc, "td", { "data-label": label, class: cls || "" }); td.appendChild(el(doc, "div", { class: "cv" }, kids)); return td; }
   function noteLine(doc, main, sub) { return [el(doc, "span", { text: main }), sub ? small(doc, sub) : null]; }
 
   function accCell(doc, label, a, withGrade) {
@@ -94,7 +95,7 @@
     });
     var pl = r.placement;
     tr.appendChild(cell(doc, "Placement", pl ? [el(doc, "span", { text: pl.value + "% placed" }), small(doc, pl.year + " \u00B7 " + pl.scope + " level")] : noteLine(doc, NA)));
-    var nba = accCell(doc, "NBA accreditation", r.nba, false); if (r.nba) nba.appendChild(small(doc, "This program only")); tr.appendChild(nba);
+    var nba = accCell(doc, "NBA accreditation", r.nba, false); if (r.nba) nba.querySelector(".cv").appendChild(small(doc, "This program only")); tr.appendChild(nba);
     tr.appendChild(accCell(doc, "NAAC grade", r.naac, true));
     tr.appendChild(cell(doc, "Suitability", [el(doc, "span", { class: "badge " + suitClass(r.suitability), text: r.suitability }), small(doc, "Ranking score " + r.score)]));
 
