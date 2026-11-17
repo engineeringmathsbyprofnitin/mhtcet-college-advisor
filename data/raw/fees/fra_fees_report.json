@@ -1,0 +1,138 @@
+{
+ "year": "2026-27",
+ "site": "https://ay26-27.mahafraportal.org/ssi_prp_25/",
+ "ok": true,
+ "problems": [],
+ "warnings": [
+  "AR3439: not an EN (engineering institute) code, kept but not linked to a CET Cell institute code",
+  "AR4104: not an EN (engineering institute) code, kept but not linked to a CET Cell institute code",
+  "HM2508: not an EN (engineering institute) code, kept but not linked to a CET Cell institute code",
+  "MB5152: not an EN (engineering institute) code, kept but not linked to a CET Cell institute code",
+  "MB5509: not an EN (engineering institute) code, kept but not linked to a CET Cell institute code",
+  "MC5151: not an EN (engineering institute) code, kept but not linked to a CET Cell institute code",
+  "EN3194: printed total 136000 != tuition 0 + development 0"
+ ],
+ "rows": 319,
+ "requests": 3,
+ "how": "one request (All District)",
+ "statuses": {
+  "No Upward Revision": 106,
+  "Approved": 211,
+  "Interim Order of High Court": 2
+ },
+ "skipped_rows": [],
+ "sub_type_options": [
+  [
+   "",
+   "Select Sub Type"
+  ],
+  [
+   "BCA",
+   "BCA - Bachelor of Computer Applications"
+  ],
+  [
+   "BMS",
+   "BMS - Bachelor of Management Studies"
+  ],
+  [
+   "ENGGWP",
+   "ENGGWP - Bachelor of Engineering (Working Professional)"
+  ],
+  [
+   "MBAWP",
+   "MBAWP - Master of Business Administration/Master of Management Studies Working Professional"
+  ],
+  [
+   "BBA",
+   "BBA - Bachelor of Business Administration"
+  ],
+  [
+   "AA",
+   "AA - Bachelor in Fine Art"
+  ],
+  [
+   "BDES",
+   "BDES - Bachelor of Design"
+  ],
+  [
+   "ARCH",
+   "ARCH - Bachelor of Architecture"
+  ],
+  [
+   "MARC",
+   "MARC - Master of Architecture"
+  ],
+  [
+   "ENGG",
+   "ENGG - Bachelor of Engineering/Bachelor of Technology"
+  ],
+  [
+   "ME",
+   "ME - Master of Engineering/Masters of Technology"
+  ],
+  [
+   "MEWP",
+   "MEWP - Master of Engineering (Working Profession)"
+  ],
+  [
+   "PH",
+   "PH - Bachelor of Pharmacy"
+  ],
+  [
+   "MPH",
+   "MPH - Master of Pharmacy"
+  ],
+  [
+   "PHARMD",
+   "PHARMD - Doctor of Pharmacy (Pharm D)"
+  ],
+  [
+   "MBA",
+   "MBA - Master of Business Administration/Master of Management Studies"
+  ],
+  [
+   "MCA",
+   "MCA - Master of Computer Application"
+  ],
+  [
+   "MCAI",
+   "MCAI - Master of Computer Application (Integrated)"
+  ],
+  [
+   "HM",
+   "HM - Bachelor of Hotel Management and Catering Technology"
+  ],
+  [
+   "MHMCT",
+   "MHMCT - Master of Hotel Management and Catering Technology"
+  ],
+  [
+   "MHMCTI",
+   "MHMCTI - Master of Hotel Management and Catering Technology (Integrated)"
+  ],
+  [
+   "LLB3",
+   "LLB3 - Bachelor of Laws ( 3 Years )"
+  ],
+  [
+   "LLB5",
+   "LLB5 - Bachelor of Laws ( 5 Years )"
+  ],
+  [
+   "MCADD",
+   "MCADD - Dual Degree in Master of Computer Application"
+  ],
+  [
+   "MBAPT",
+   "MBA- Part Time"
+  ],
+  [
+   "PHARMD",
+   "Pharm D"
+  ],
+  [
+   "POLY2",
+   "Diploma in Engg & Technology-POLY 2"
+  ]
+ ]
+}
