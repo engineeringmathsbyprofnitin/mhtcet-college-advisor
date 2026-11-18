@@ -57,3 +57,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 12a-1 built (docs/STAGE12A.md): probe of the FRA fee page; owner upload + workflow run pending
 
 ## Stage 12a-2 built (docs/STAGE12A.md): fee reader + workflow "Read the approved fees" (owner upload + run pending); phone layout fix for cells
+
+## Stage 12a-3 built (docs/STAGE12A3.md): FRA fees linked (301 colleges) and shown; owner upload + publish run + phone check pending; 8 colleges wait for the owner to confirm the name match

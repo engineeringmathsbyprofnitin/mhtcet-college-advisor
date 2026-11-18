@@ -85,7 +85,7 @@
     var v = r.vacancy;
     tr.appendChild(cell(doc, vacHead, v && v.value !== null ? [el(doc, "span", { text: String(v.value) + " seat(s)" }), small(doc, "Total for the course, as printed by CET Cell (CAP Round " + v.round + ")")] : noteLine(doc, "Vacancy data unavailable")));
     var f = r.fee, fk;
-    if (f && f.status === "ok") fk = [el(doc, "span", { text: inr(f.value) + " per year" }), small(doc, (f.type === "tuition" ? "Tuition fee only; excludes hostel, transport and exam charges" : "Total yearly expenses") + " \u00B7 " + f.academicYear)];
+    if (f && f.status === "ok") fk = [el(doc, "span", { text: inr(f.value) + " per year" }), small(doc, (f.type === "tuition" ? "Tuition fee only; excludes hostel, transport and exam charges" : "Tuition + development fee approved by FRA; excludes hostel, transport and exam charges") + " \u00B7 " + f.academicYear)];
     else if (f && f.status === "total_unavailable_tuition_known") fk = [el(doc, "span", { text: "Total cost not available" }), small(doc, "Tuition alone: " + inr(f.tuitionLowerBound) + " (" + f.academicYear + "); total will be higher")];
     else fk = noteLine(doc, NA);
     tr.appendChild(cell(doc, "Annual fee", fk));

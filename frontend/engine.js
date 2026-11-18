@@ -481,6 +481,8 @@
     if (vac) L.push("Seats open going into Round " + vacRound + ": " + vac.value + " seat(s), the total for the course as printed by CET Cell (includes All India and Minority seats where printed; not specific to your category). This does not guarantee admission.");
     else L.push("Vacancy data unavailable.");
     if (c.fee.status === "ok") L.push("Fee: Rs " + c.fee.value + " per year (" + c.fee.type + ", " + c.fee.year + ") against your budget of Rs " + input.maxAnnualFeeINR + ".");
+    if (c.fee.status === "ok" && c.fee.type === "total") L.push("This total is the tuition + development fee approved by the Fees Regulating Authority for the first year; it does not include hostel, transport or exam charges.");
+    if (c.fee.status === "ok") { /* shown above */ }
     else if (c.fee.status === "total_unavailable_tuition_known") L.push("Total yearly cost is not available; tuition alone is Rs " + c.fee.tuitionFloor + " (" + c.fee.year + "), and total cost will be higher.");
     else L.push("Fee data not available; check the college before relying on your budget.");
     if (c.fee.year && c.fee.year !== curYear && c.fee.status !== "unavailable") L.push("Fee data is for " + c.fee.year + ", not " + curYear + ".");

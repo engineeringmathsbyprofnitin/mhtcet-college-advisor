@@ -120,17 +120,16 @@ class SubType(unittest.TestCase):
 class Main(unittest.TestCase):
     def test_unexpected_error_still_leaves_a_report(self):
         import io, contextlib
-        orig = F.read; F.read = lambda *a, **k: 1 / 0
+        tmp = tempfile.mkdtemp(); os.makedirs(os.path.join(tmp, "data", "normalized"))          # a scratch project folder: the real data folders are never touched
+        json.dump({"current_year": "2026-27"}, open(os.path.join(tmp, "data", "normalized", "data_plan.json"), "w"))
+        orig_read, orig_root = F.read, F.ROOT
+        F.read = lambda *a, **k: 1 / 0; F.ROOT = tmp
         try:
             buf = io.StringIO()
             with contextlib.redirect_stdout(buf): code = F.main()
-        finally: F.read = orig
-        self.assertEqual(code, 1); self.assertIn("FAIL: unexpected error", buf.getvalue()); self.assertTrue(os.path.isdir(os.path.join(F.ROOT, "data", "normalized", "fees")))
-        r = json.load(open(os.path.join(F.ROOT, "data", "raw", "fees", "fra_fees_report.json"))); self.assertIn("ZeroDivisionError", r["problems"][0])
-        os.remove(os.path.join(F.ROOT, "data", "raw", "fees", "fra_fees_report.json"))
-        for d in (("data", "raw", "fees"), ("data", "normalized", "fees")):
-            try: os.rmdir(os.path.join(F.ROOT, *d))
-            except OSError: pass
+        finally: F.read, F.ROOT = orig_read, orig_root
+        self.assertEqual(code, 1); self.assertIn("FAIL: unexpected error", buf.getvalue()); self.assertTrue(os.path.isdir(os.path.join(tmp, "data", "normalized", "fees")))
+        r = json.load(open(os.path.join(tmp, "data", "raw", "fees", "fra_fees_report.json"))); self.assertIn("ZeroDivisionError", r["problems"][0])
 
 
 class Fallback(unittest.TestCase):

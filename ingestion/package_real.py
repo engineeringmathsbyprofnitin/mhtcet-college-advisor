@@ -51,6 +51,39 @@ def add_vacancy(folder, T):
     return rep
 
 
+def _fra_url(year):
+    from ingestion import fra_fees
+    return fra_fees.FRA_SITES[year] + "outer.php?q=fee_search_report"
+
+
+def add_fees(folder, T):
+    """Stage 12a-3: tables/fees.csv (built by ingestion/build_fees.py) -> the website's `fees` table + one source_documents row (type fee_notice, the FRA
+    page and the SHA-256 of the saved answer in data/raw/fees). No fees.csv = nothing added (cards say 'Not available')."""
+    src = os.path.join(T, "fees.csv"); rep = dict(added=0)
+    if not os.path.exists(src): return rep
+    with open(src, newline="", encoding="utf-8") as f: rows = list(csv.DictReader(f))
+    if not rows: return rep
+    with open(os.path.join(folder, "colleges.csv"), newline="", encoding="utf-8") as f: on_site = {r["college_code"] for r in csv.DictReader(f)}
+    rows = [r for r in rows if r["college_code"] in on_site]
+    docs = {r["source_doc_id"] for r in rows}
+    if len(docs) != 1: raise SystemExit("fees come from %d source documents, expected 1" % len(docs))
+    doc = docs.pop(); year = rows[0]["academic_year"]
+    raw = os.path.join(ROOT, "data", "raw", "fees", "%s_engg_all.html" % year)
+    if not os.path.exists(raw): raise SystemExit("the saved FRA answer %s is missing" % raw)
+    sha = hashlib.sha256(open(raw, "rb").read()).hexdigest()
+    fp = os.path.join(folder, "fees.csv")
+    with open(fp, newline="", encoding="utf-8") as f: header = next(csv.reader(f))
+    with open(fp, "a", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=header, lineterminator="\r\n")
+        for r in rows: w.writerow({k: r.get(k, "") for k in header}); rep["added"] += 1
+    sp = os.path.join(folder, "source_documents.csv")
+    with open(sp, newline="", encoding="utf-8") as f: sh = next(csv.reader(f))
+    with open(sp, "a", newline="", encoding="utf-8") as f:
+        csv.DictWriter(f, fieldnames=sh, lineterminator="\r\n").writerow(dict(doc_id=doc, source_name="Fees Regulating Authority, Maharashtra", source_url=_fra_url(year), filename=os.path.basename(raw), sha256=sha,
+            admission_year=year, doc_type="fee_notice", cap_round="", published_date="", retrieved_date=rows[0]["retrieved_date"], validation_status="validated", is_synthetic="FALSE"))
+    return rep
+
+
 def assemble(folder, plan=None, tables=None):
     T = tables or globals()["T"]
     plan = plan or P.make_plan(json.load(open(P.DISCOVERY))["admission_year"])
@@ -59,16 +92,18 @@ def assemble(folder, plan=None, tables=None):
     for t in REAL:
         src = os.path.join(T, t + (".csv.gz" if t.endswith("cutoffs") else ".csv"))
         with (gzip.open(src, "rb") if src.endswith(".gz") else open(src, "rb")) as i, open(os.path.join(folder, t + ".csv"), "wb") as o: shutil.copyfileobj(i, o)
+    frep = add_fees(folder, T)
+    print("fee rows packaged: %d" % frep["added"])
     vrep = add_vacancy(folder, T)
     print("vacancy rows packaged: %d (round %s, year %s); not on the website: %d" % (vrep["added"], vrep["round"], vrep["year"], vrep["skipped_not_on_website"]))
     h = hashlib.sha256()
-    for t in REAL[-2:] + ["vacancies"]:
+    for t in REAL[-2:] + ["vacancies", "fees"]:
         with open(os.path.join(folder, t + ".csv"), "rb") as f: h.update(f.read())
     ver = "REAL-%s-R%s-%s" % (plan["current_year"], plan["latest_round"], h.hexdigest()[:8])
     summary = "rounds=%s;next=%s;phase=%s" % ("+".join(plan["rounds_done"]), plan["next_round_expected"] or "none", plan["year_status"])
     with open(os.path.join(folder, "data_version.csv"), "w", newline="") as f:
         w = csv.writer(f, lineterminator="\n"); w.writerow("data_version,created_at,is_last_known_good,admission_year,row_count_summary,notes,is_synthetic".split(","))
-        w.writerow([ver, json.load(open(P.DISCOVERY))["generated_at"], "TRUE", plan["current_year"], summary, "Real CET Cell cutoff lists and vacancy position; fees, accreditation, placements not yet available", "FALSE"])
+        w.writerow([ver, json.load(open(P.DISCOVERY))["generated_at"], "TRUE", plan["current_year"], summary, "Real CET Cell cutoff lists and vacancy position and FRA-approved fees; accreditation, placements not yet available", "FALSE"])
     stamp = json.load(open(P.DISCOVERY))["generated_at"]
     with open(os.path.join(folder, "refresh_status.csv"), "w", newline="") as f:      # the "last successful data update" shown on the page
         w = csv.writer(f, lineterminator="\n"); w.writerow("run_id,started_at,finished_at,status,admission_year_detected,data_version_published,message,is_synthetic".split(","))

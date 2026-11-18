@@ -78,7 +78,7 @@ T("missing data is shown as 'Not available' or 'Vacancy data unavailable', never
 T("fee wording does not pass tuition off as total cost; estimates are labelled", async () => {
   const B = boot(); await submit(B); const t = B.$("results").textContent;
   assert.match(t, /Tuition fee only; excludes hostel, transport and exam charges/); assert.match(t, /System estimate, not an official score/);
-  const B2 = boot(); await submit(B2, { basis: "total" }); assert.match(B2.$("results").textContent, /Total cost not available|Total yearly expenses/);
+  const B2 = boot(); await submit(B2, { basis: "total" }); assert.match(B2.$("results").textContent, /Total cost not available|Tuition \+ development fee approved by FRA/);
 });
 T("each result explains itself and lists sources; test links are not clickable", async () => {
   const B = boot(); await submit(B);

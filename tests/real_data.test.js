@@ -63,7 +63,7 @@ test("real data: only the needed cutoff files are downloaded and all verify", { 
 });
 test("real data: missing data is reported, not invented", { skip }, async () => {
   const r = await run(); const x = r.results[0];
-  assert.ok(x.vacancy.value === null || Number.isInteger(x.vacancy.value)); assert.equal(x.fee.value, null); assert.equal(x.placement, null);
+  assert.ok(x.vacancy.value === null || Number.isInteger(x.vacancy.value)); assert.ok(x.fee.value === null || Number.isInteger(x.fee.value)); assert.equal(x.placement, null);
 });
 test("real data: a district choice filters to that district (official district data)", { skip }, async () => {
   const m = JSON.parse(fs.readFileSync(path.join(DIR, "manifest.json"), "utf8")); const any = await run({ districts: ["ANY"] });
