@@ -15,7 +15,7 @@ from urllib.parse import urlparse, urljoin
 from urllib import robotparser
 
 USER_AGENT = "MHTCETCollegeAdvisorBot/0.1 (educational project; reads public CAP documents; contact via the project's GitHub repository)"
-ALLOWED_HOST_PATTERNS = [r"^([a-z0-9-]+\.)*mahacet\.org$", r"^([a-z0-9-]+\.)*mahacet\.org\.in$", r"^([a-z0-9-]+\.)*mahafraportal\.org$", r"^cappublicdocs\d{4}\.blob\.core\.windows\.net$"]
+ALLOWED_HOST_PATTERNS = [r"^([a-z0-9-]+\.)*mahacet\.org$", r"^([a-z0-9-]+\.)*mahacet\.org\.in$", r"^([a-z0-9-]+\.)*mahafraportal\.org$", r"^([a-z0-9-]+\.)*nbaind\.org$", r"^cappublicdocs\d{4}\.blob\.core\.windows\.net$"]
 TRANSIENT = {429, 500, 502, 503, 504}
 
 
