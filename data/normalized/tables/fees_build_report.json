@@ -1,0 +1,118 @@
+{
+ "ok": true,
+ "year": "2026-27",
+ "status": "ok: fees of 301 colleges for 2026-27",
+ "published_colleges": 301,
+ "rows": 601,
+ "tiers": {
+  "no_cet_code (not an EN code)": 6,
+  "published": 301,
+  "name_unverified (code matches, names differ: owner must confirm)": 8,
+  "college_not_on_website": 2,
+  "interim_order (fee not final)": 2
+ },
+ "not_published": {
+  "no_cet_code (not an EN code)": [
+   [
+    "AR3439",
+    "ANJUMAN-I-ISLAM'S KALSEKAR TECHNICAL CAMPUS, SCHOOL OF ARCHI",
+    ""
+   ],
+   [
+    "AR4104",
+    "KAVI KULGURU INSTITUTE OF TECHNOLOGY & SCIENCE, RAMTEK",
+    ""
+   ],
+   [
+    "HM2508",
+    "GRAMIN TECHNICAL AND MANAGEMENT CAMPUS NANDED",
+    ""
+   ],
+   [
+    "MB5152",
+    "G. H. RAISONI INSTITUTE OF BUSINESS MANAGEMENT, JALGAON",
+    ""
+   ],
+   [
+    "MB5509",
+    "SHRI SWAMI SAMARTH INSTITUTE OF MANAGEMENT AND TECHNOLOGY",
+    ""
+   ],
+   [
+    "MC5151",
+    "MET'S INSTITUTE OF ENGINEERING",
+    ""
+   ]
+  ],
+  "name_unverified (code matches, names differ: owner must confirm)": [
+   [
+    "EN2250",
+    "AURANGABAD COLLEGE OF ENGINEERING, NAYGAON SAVANGI, AURANGAB",
+    "CHHATRAPATI SAMBHAJI MAHARAJ COLLEGE OF ENGINEERING | score 0.00"
+   ],
+   [
+    "EN5390",
+    "KRANTIVEER VASANTRAO NARAYAN NAIK INSTITUTE OF ENGINEERING",
+    "K.V.N. Naik S. P. Sansth's Loknete Gopinathji Munde Institut | score 0.25"
+   ],
+   [
+    "EN5396",
+    "KHANDESH BAHHUUDESHIYA SANSTHA'S COLLEGE OF ENGINEERING & TE",
+    "College of Engineering and Technology ,North Maharashtra Kno | score 0.00"
+   ],
+   [
+    "EN6149",
+    "CHOUDHARY ATTARSINGH YADAV MEMORIAL EDUCATION TRUST'S, SIDDH",
+    "Siddhant College of Engineering, A/p Sudumbare, Tal.Maval, D | score 0.17"
+   ],
+   [
+    "EN6274",
+    "PUNE VIDYARTHI GRIHA'S COLLEGE OF ENGINEERING AND TECHNOLOGY",
+    "PVG's College of Engineering, Technology & Management | score 0.00"
+   ],
+   [
+    "EN6755",
+    "RAJARSHI SHAHU SCHOOL OF ENGG. & RESEARCH",
+    "JSPM Narhe Technical Campus, Pune. | score 0.00"
+   ],
+   [
+    "EN6768",
+    "P K TECHNICAL CAMPUS",
+    "P.K. Technical Campus, Pune. | score 0.00"
+   ],
+   [
+    "EN6815",
+    "VIDYA PRASARINI SABHA'S COLLEGE OF ENGINEERING & TECHNOLOGY,",
+    "DR. G.V.SHINGRE VPS COLLEGE OF ENGINEERING AND TECHNOLOGY, L | score 0.25"
+   ]
+  ],
+  "college_not_on_website": [
+   [
+    "EN3721",
+    "SIDDHIVINAYAK TECHNICAL CAMPUS, SCHOOL OF ENGINEERING & RESE",
+    ""
+   ],
+   [
+    "EN5180",
+    "NASHIK GRAMIN SHIKSHAN PRASARAK MANDAL'S BRAHMA VALLEY COLLE",
+    ""
+   ]
+  ],
+  "interim_order (fee not final)": [
+   [
+    "EN4142",
+    "G. H. RAISONI INSTITUTE OF ENGINEERING & TECHNOLOGY, NAGPUR ",
+    ""
+   ],
+   [
+    "EN6155",
+    "G.H.RAISONI COLLEGE OF ENGINEERING & MANAGEMENT, WAGHOLI, PU",
+    ""
+   ]
+  ]
+ },
+ "problems": [],
+ "notes": [
+  "EN3194 (03194): printed total 136000 vs tuition 0 + development 0 -> tuition not published, total published as printed"
+ ]
+}
