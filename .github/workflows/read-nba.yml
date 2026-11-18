@@ -1,0 +1,59 @@
+name: Read the NBA lists
+
+# Stage 12b-2. Reads the NBA accredited-programs Excel lists that the SITE OWNER downloaded by hand from www.nbaind.org (the site answers our
+# robot with HTTP 403, so nothing is fetched automatically and nothing is bypassed). The files and one line each in sources.csv are in
+# data/manual/nba/. data/normalized/nba is replaced ONLY if every listed file was read completely without problem; otherwise the previous data stays.
+# Runs by hand (Actions tab -> this workflow -> Run workflow) and whenever something in data/manual/nba changes.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "data/manual/nba/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: read-nba
+  cancel-in-progress: false
+
+jobs:
+  read:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: "Self-tests (offline)"
+        run: python -m unittest tests/test_stage12b2.py
+
+      - name: "Read the NBA lists"
+        run: python -m ingestion.nba_import
+
+      - name: "Replace the NBA data (only because the step above succeeded)"
+        if: success()
+        run: |
+          rm -rf data/normalized/nba
+          mkdir -p data/normalized
+          cp -r build/normalized/nba data/normalized/
+
+      - name: "Save the NBA data in the repository"
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/normalized/nba
+          if git diff --cached --quiet; then
+            echo "NBA data unchanged."
+          else
+            git commit -m "Update NBA tables"
+            git pull --rebase origin main
+            git push
+          fi
