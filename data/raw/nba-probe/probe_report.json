@@ -1,0 +1,15 @@
+{
+ "start": "https://www.nbaind.org/Home",
+ "steps": [
+  {
+   "step": "home",
+   "url": "https://www.nbaind.org/Home",
+   "status": 403,
+   "blocked": null,
+   "error": null,
+   "bytes": 118
+  }
+ ],
+ "verdict": "STOP: home not readable (None 403)",
+ "robots": "allowed_all"
+}
