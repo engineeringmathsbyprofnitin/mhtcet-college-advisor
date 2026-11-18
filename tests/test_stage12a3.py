@@ -95,6 +95,14 @@ class Real(unittest.TestCase):
         finally: shutil.rmtree(t, ignore_errors=True)
 
 
+class Confirmations(unittest.TestCase):
+    def test_committed_confirmation_file_is_well_formed(self):
+        rows = B.load(B.MANUAL); seen = set()
+        for r in rows:
+            self.assertRegex(r["inst_id"], r"^EN\d{4,5}$"); self.assertEqual(r["cet_institute_code"], r["inst_id"][2:].zfill(5))
+            self.assertTrue(r["confirmed_note"].strip()); self.assertNotIn(r["inst_id"], seen); seen.add(r["inst_id"])
+
+
 class AddFees(unittest.TestCase):
     def test_package_adds_rows_and_source_document(self):
         d = tempfile.mkdtemp(); t = tempfile.mkdtemp()
