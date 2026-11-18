@@ -3,11 +3,11 @@ name: Publish website data (preview)
 # Builds the website's data files from the read cutoff lists (Stage 10c) and saves them in frontend/data-real.
 # They are shown on the PREVIEW page (add ?preview=1 to the web address). The public page keeps its current data until you make the one-line
 # change in frontend/config.js (see docs/STAGE10C3C.md). Nothing is replaced unless every check below succeeds; otherwise the previous files stay.
-# Runs by hand (Actions tab -> this workflow -> Run workflow) and automatically after "Read the archived documents", "Read institute information" or "Read the vacancy lists" finishes successfully.
+# Runs by hand (Actions tab -> this workflow -> Run workflow) and automatically after "Read the archived documents", "Read institute information" "Read the vacancy lists" or "Read the approved fees" finishes successfully.
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Read the archived documents", "Read institute information", "Read the vacancy lists"]
+    workflows: ["Read the archived documents", "Read institute information", "Read the vacancy lists", "Read the approved fees"]
     types: [completed]
 
 permissions:
@@ -45,6 +45,9 @@ jobs:
 
       - name: "Build the website tables"
         run: python -m ingestion.build_tables
+
+      - name: "Match the approved fees to the website colleges (Stage 12a-3; writes tables/fees.csv)"
+        run: python -m ingestion.build_fees
 
       - name: "Match the vacancy to the website courses (Stage 11c; writes tables/vacancy.csv, not yet shown on the page)"
         run: python -m ingestion.build_vacancy
