@@ -1,13 +1,13 @@
 {
  "ok": true,
  "year": "2026-27",
- "status": "ok: fees of 301 colleges for 2026-27",
- "published_colleges": 301,
- "rows": 601,
+ "status": "ok: fees of 309 colleges for 2026-27",
+ "published_colleges": 309,
+ "rows": 617,
  "tiers": {
   "no_cet_code (not an EN code)": 6,
   "published": 301,
-  "name_unverified (code matches, names differ: owner must confirm)": 8,
+  "published (owner-confirmed name)": 8,
   "college_not_on_website": 2,
   "interim_order (fee not final)": 2
  },
@@ -42,48 +42,6 @@
     "MC5151",
     "MET'S INSTITUTE OF ENGINEERING",
     ""
-   ]
-  ],
-  "name_unverified (code matches, names differ: owner must confirm)": [
-   [
-    "EN2250",
-    "AURANGABAD COLLEGE OF ENGINEERING, NAYGAON SAVANGI, AURANGAB",
-    "CHHATRAPATI SAMBHAJI MAHARAJ COLLEGE OF ENGINEERING | score 0.00"
-   ],
-   [
-    "EN5390",
-    "KRANTIVEER VASANTRAO NARAYAN NAIK INSTITUTE OF ENGINEERING",
-    "K.V.N. Naik S. P. Sansth's Loknete Gopinathji Munde Institut | score 0.25"
-   ],
-   [
-    "EN5396",
-    "KHANDESH BAHHUUDESHIYA SANSTHA'S COLLEGE OF ENGINEERING & TE",
-    "College of Engineering and Technology ,North Maharashtra Kno | score 0.00"
-   ],
-   [
-    "EN6149",
-    "CHOUDHARY ATTARSINGH YADAV MEMORIAL EDUCATION TRUST'S, SIDDH",
-    "Siddhant College of Engineering, A/p Sudumbare, Tal.Maval, D | score 0.17"
-   ],
-   [
-    "EN6274",
-    "PUNE VIDYARTHI GRIHA'S COLLEGE OF ENGINEERING AND TECHNOLOGY",
-    "PVG's College of Engineering, Technology & Management | score 0.00"
-   ],
-   [
-    "EN6755",
-    "RAJARSHI SHAHU SCHOOL OF ENGG. & RESEARCH",
-    "JSPM Narhe Technical Campus, Pune. | score 0.00"
-   ],
-   [
-    "EN6768",
-    "P K TECHNICAL CAMPUS",
-    "P.K. Technical Campus, Pune. | score 0.00"
-   ],
-   [
-    "EN6815",
-    "VIDYA PRASARINI SABHA'S COLLEGE OF ENGINEERING & TECHNOLOGY,",
-    "DR. G.V.SHINGRE VPS COLLEGE OF ENGINEERING AND TECHNOLOGY, L | score 0.25"
    ]
   ],
   "college_not_on_website": [
