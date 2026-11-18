@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "files": [
+  {
+   "file": "NBA_UG_TierI_WA_2026-11-18.xlsx",
+   "tier": "UG Tier I (WA)",
+   "downloaded_on": "2026-11-18",
+   "rows": 258,
+   "sha256": "c802a105d8074ed884aa3154f6ba8bd9c54277bb2bb3629f98491abc59729cfd"
+  }
+ ],
+ "rows": 258,
+ "institutions": 42,
+ "programs": 50,
+ "no_end_date": 4,
+ "problems": [],
+ "warnings": []
+}
