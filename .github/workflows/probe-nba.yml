@@ -1,0 +1,48 @@
+name: Probe the NBA site
+
+# Stage 12b-1. A one-time look at the official National Board of Accreditation accredited-programs pages (www.nbaind.org).
+# It sends at most 6 requests (robots.txt, home page, up to 2 pages to find the links, the UG Tier I page), obeys robots.txt, stops at any
+# login or CAPTCHA on the data page, never bypasses anything and submits no search. It saves what it saw in data/raw/nba-probe/ so the real
+# NBA reader can be written on facts. Run by hand only.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe-nba
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: "Self-tests (offline, no website is contacted)"
+        run: python -m unittest tests/test_stage12b1.py
+
+      - name: "Probe the NBA pages (polite, robots.txt obeyed)"
+        run: python -m ingestion.nba_probe
+
+      - name: "Save what the probe saw in the repository"
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -e data/raw/nba-probe ]; then git add data/raw/nba-probe; fi
+          if git diff --cached --quiet; then
+            echo "Nothing new to save."
+          else
+            git commit -m "NBA probe result"
+            git pull --rebase origin main
+            git push
+          fi
