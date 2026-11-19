@@ -63,3 +63,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 12b-1 built (docs/STAGE12B.md): NBA probe + workflow "Probe the NBA site"; owner upload + run pending
 
 ## Stage 12b-2 built (docs/STAGE12B.md): NBA importer for the owner-downloaded Excel (258 rows/42 institutions, Tier I) + workflow "Read the NBA lists"; owner upload + run pending
+
+## Stage 12b-3a built (docs/STAGE12B3A.md): NBA institution matcher (101 linked, 86 doubtful, 28 no college); owner confirmation of the doubtful list pending
