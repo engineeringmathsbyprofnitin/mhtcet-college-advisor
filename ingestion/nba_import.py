@@ -3,7 +3,7 @@
 Why by hand: the NBA site answers our GitHub robot with HTTP 403, so nothing is fetched automatically (and nothing is bypassed). The owner downloads the
 official Excel files in his own browser and puts them in data/manual/nba/ with one line each in data/manual/nba/sources.csv (file, tier, downloaded_on, note).
 Rules: nothing invented or corrected; the printed period text is always kept; a date is derived ONLY when it is printed (an 'upto DD/MM/YYYY' date or a
-long-form date range); '3 YEARS W.E.F. <date>' gives a start date but NO end date (validity not known); an unreadable period is reported, not guessed;
+long-form date range); 'N YEARS W.E.F. <date>' gives start = the printed date and end = start + N years - 1 day, labelled as computed; an unreadable period is reported, not guessed;
 an unknown status is stored as 'unknown', never as 'not accredited'. Older and newer entries of the same program are both kept (the newest is used when matching).
 NBA accredits PROGRAMS, not colleges. Output: data/normalized/nba/nba_programs.csv + nba_report.json (replaced only if every listed file was read without problem).
 """
@@ -57,12 +57,23 @@ def _d(d, m, y):
     except ValueError: return None
 
 
+DATE = r"(\d{1,2})\s*[/.\-]\s*(\d{1,2})\s*[/.\-]\s*(\d{4})"
+
+
+def _add_years(d, n):
+    try: return d.replace(year=d.year + n)
+    except ValueError: return d.replace(year=d.year + n, day=28)          # 29 February -> 28 February
+
+
 def parse_period(text):
-    """-> (valid_from, valid_to, basis, problem). Only printed dates are used."""
+    """-> (valid_from, valid_to, basis, problem). Only printed facts are used.
+    1. a printed end date: 'upto DD/MM/YYYY', 'i.e. DD-MM-YYYY' or a long-form date range -> the latest date printed;
+    2. 'N YEARS W.E.F. <date>' (many spellings) -> start = the printed date, end = start + N years - 1 day (computed, and labelled as computed);
+    3. anything else -> no dates (reported), never guessed. Impossible calendar dates are a problem; an implausible start year (a typo such as 2202) is a warning."""
     t = norm(text)
-    upto = [_d(*x) for x in re.findall(r"(?:up\s*to)\s*(\d{1,2})[/-](\d{1,2})[/-](\d{4})", t, re.I)]
+    upto = [_d(*x) for x in re.findall(r"(?:up\s*to|i\s*\.?\s*e\s*\.?\s*,?)\s*" + DATE, t, re.I)]
     longd = [_d(d, MONTHS[mo.lower()], y) for d, mo, y in re.findall(r"(\d{1,2})(?:st|nd|rd|th)?\s+(" + "|".join(m.capitalize() for m in MONTHS) + r")\s+(\d{4})", t, re.I)]
-    wef = re.search(r"(\d+)\s*years?\s*w\.?e\.?f\.?\s*(\d{1,2})[/-](\d{1,2})[/-](\d{4})", t, re.I)
+    wef = re.search(r"(\d+)\s*(?:years?|yrs?)[^0-9]{0,30}?w\s*\.?\s*e\s*\.?\s*f\s*\.?\s*" + DATE, t, re.I)
     if None in upto or None in longd: return "", "", "unparsed", "impossible calendar date in %r" % t[:80]
     ends = upto + longd
     if ends:
@@ -72,8 +83,12 @@ def parse_period(text):
         if not (2012 <= vt.year <= 2040): return "", "", "unparsed", "end year %d out of range in %r" % (vt.year, t[:80])
         return (vf.isoformat() if vf else ""), vt.isoformat(), "printed 'upto' date" if upto else "printed date range", ""
     if wef:
-        d = _d(wef.group(2), wef.group(3), wef.group(4))
-        return (d.isoformat() if d else ""), "", "duration only (%s years w.e.f.; end date not printed)" % wef.group(1), "" if d else "impossible calendar date in %r" % t[:80]
+        n = int(wef.group(1)); d = _d(wef.group(2), wef.group(3), wef.group(4))
+        if d is None: return "", "", "unparsed", "impossible calendar date in %r" % t[:80]
+        if not (1990 <= d.year <= 2035): return "", "", "unparsed", "implausible start year %d in %r (not guessed)" % (d.year, t[:80])
+        if not 1 <= n <= 10: return "", "", "unparsed", "implausible duration %d years in %r" % (n, t[:80])
+        end = _add_years(d, n) - datetime.timedelta(days=1)
+        return d.isoformat(), end.isoformat(), "computed: %d years from the printed w.e.f. date (end date not printed)" % n, ""
     return "", "", "unparsed", "no date found in %r" % t[:80]
 
 

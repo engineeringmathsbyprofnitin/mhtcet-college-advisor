@@ -1,4 +1,4 @@
-import csv, datetime, os, shutil, sys, tempfile, unittest, zipfile
+import csv, datetime, os, re, shutil, sys, tempfile, unittest, zipfile
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from xml.sax.saxutils import escape
 from ingestion import nba_import as N
@@ -58,7 +58,16 @@ class Period(unittest.TestCase):
     def test_accredited_for_prefix_range(self): self.assertEqual(self.p("Accredited for Academic Year 1st July 2025 to 31st December 2025 and from 1st January 2026 to 31st December 2028")[1], "2028-12-31")
     def test_upto_then_further_range(self):
         self.assertEqual(self.p("Academic Year 2022-23, 2023-24 and 2024-25, i.e., upto 30/06/2025. Further Accredited from 1st July 2025 to 31st December 2025 and from 1st January 2026 to 31st December 2028")[1], "2028-12-31")
-    def test_wef_gives_start_but_no_end(self): self.assertEqual(self.p("3 YEARS W.E.F. 01-07-2018"), ("2018-07-01", "", "duration only (3 years w.e.f.; end date not printed)"))
+    def test_wef_computes_end_and_says_so(self): self.assertEqual(self.p("3 YEARS W.E.F. 01-07-2018"), ("2018-07-01", "2021-06-30", "computed: 3 years from the printed w.e.f. date (end date not printed)"))
+    def test_wef_spellings(self):
+        for t, vf, vt in (("3 YRS.W.E.F.04-05-2007", "2007-05-04", "2010-05-03"), ("3 YEARSW.E.F.19-07-2008", "2008-07-19", "2011-07-18"), ("3 years w.e.f 12.12.2003", "2003-12-12", "2006-12-11"),
+                          ("3 YEARS (GRADE C)W.E.F.24-04-2002", "2002-04-24", "2005-04-23"), ("3 YEAR W.E.F 15-2-2005", "2005-02-15", "2008-02-14"), ("5 years w.e.f 10.02.2009", "2009-02-10", "2014-02-09"),
+                          ("5 YEARS.W.E.F.19-07-2008", "2008-07-19", "2013-07-18"), ("3 YEARS GRADE B W.E.F. 01-07-2012", "2012-07-01", "2015-06-30")):
+            self.assertEqual(self.p(t)[:2], (vf, vt), t)
+    def test_wef_leap_day(self): self.assertEqual(self.p("3 YEARS W.E.F. 29-02-2020")[:2], ("2020-02-29", "2023-02-27"))
+    def test_wef_typo_year_is_not_guessed(self):
+        r = N.parse_period("3 years w.e.f. 16-08-2202"); self.assertEqual(r[:3], ("", "", "unparsed")); self.assertIn("implausible start year", r[3])
+    def test_ie_date_without_upto(self): self.assertEqual(self.p("Academic year 2023-24,2024-25 and 2025-26 i.e. 30-06-2026")[1], "2026-06-30")
     def test_no_date_is_unparsed_not_guessed(self): self.assertEqual(self.p("Academic Year 2024-25")[1:], ("", "unparsed"))
     def test_impossible_date_is_a_problem(self): self.assertIn("impossible", N.parse_period("upto 31/02/2027")[3])
     def test_end_year_out_of_range(self): self.assertIn("out of range", N.parse_period("upto 30/06/2099")[3])
@@ -83,8 +92,11 @@ class Build(unittest.TestCase):
     def test_inline_strings_also_read(self):
         rep, rows = run([good()], inline=True); self.assertTrue(rep["ok"]); self.assertEqual(rows[0]["program"], "Civil Engineering")
 
-    def test_wef_row_is_kept_without_end_date(self):
-        rep, rows = run([good(period="3 YEARS W.E.F. 01-07-2018")]); self.assertTrue(rep["ok"]); self.assertEqual((rows[0]["valid_from"], rows[0]["valid_to"]), ("2018-07-01", "")); self.assertEqual(rep["no_end_date"], 1)
+    def test_wef_row_gets_computed_end_labelled_as_computed(self):
+        rep, rows = run([good(period="3 YEARS W.E.F. 01-07-2018")]); self.assertTrue(rep["ok"]); self.assertEqual((rows[0]["valid_from"], rows[0]["valid_to"]), ("2018-07-01", "2021-06-30")); self.assertTrue(rows[0]["validity_basis"].startswith("computed")); self.assertEqual(rep["no_end_date"], 0)
+
+    def test_typo_year_row_kept_without_dates_with_warning(self):
+        rep, rows = run([good(period="3 years w.e.f. 16-08-2202")]); self.assertTrue(rep["ok"]); self.assertEqual((rows[0]["valid_from"], rows[0]["valid_to"]), ("", "")); self.assertTrue(any("implausible" in w for w in rep["warnings"]))
 
     def test_unreadable_period_is_a_warning_and_kept(self):
         rep, rows = run([good(period="Academic Year 2024-25")]); self.assertTrue(rep["ok"]); self.assertEqual(rows[0]["valid_to"], ""); self.assertTrue(any("no date found" in w for w in rep["warnings"]))
@@ -129,22 +141,37 @@ class Build(unittest.TestCase):
         d = setup([good()], tier=""); rep = N.build(manual=d, out_dir=tempfile.mkdtemp()); self.assertFalse(rep["ok"])
 
 
-@unittest.skipUnless(os.path.exists(REAL), "owner's NBA file not in the repository")
+REAL2 = os.path.join(N.MANUAL, "NBA_UG_TierII_2026-11-18.xlsx")
+
+
+@unittest.skipUnless(os.path.exists(REAL) and os.path.exists(REAL2), "owner's NBA files not in the repository")
 class RealFile(unittest.TestCase):
-    def test_real_file_numbers(self):
-        o = tempfile.mkdtemp(); rep = N.build(out_dir=o); self.assertTrue(rep["ok"], rep["problems"])
-        self.assertEqual((rep["rows"], rep["institutions"], rep["no_end_date"]), (258, 42, 4)); self.assertEqual(rep["warnings"], [])
-        rows = list(csv.DictReader(open(os.path.join(o, "nba_programs.csv"), encoding="utf-8")))
-        self.assertTrue(all(r["status"] == "accredited" and r["level"] == "Under Graduate" for r in rows))
-        self.assertEqual(sum(1 for r in rows if r["validity_basis"].startswith("duration only")), 4)
-        self.assertTrue(all(r["valid_to"] >= r["valid_from"] for r in rows if r["valid_to"] and r["valid_from"]))
+    @classmethod
+    def setUpClass(cls):
+        cls.o = tempfile.mkdtemp(); cls.rep = N.build(out_dir=cls.o)
+        cls.rows = list(csv.DictReader(open(os.path.join(cls.o, "nba_programs.csv"), encoding="utf-8"))) if cls.rep["ok"] else []
+
+    def test_real_numbers(self):
+        r = self.rep; self.assertTrue(r["ok"], r["problems"])
+        self.assertEqual([(f["tier"], f["rows"]) for f in r["files"]], [("UG Tier I (WA)", 258), ("UG Tier II", 1253)])
+        self.assertEqual((r["rows"], r["institutions"], r["no_end_date"]), (1511, 217, 3)); self.assertEqual(len(r["warnings"]), 4)
+
+    def test_every_row_is_accounted_for(self):
+        self.assertEqual(sum(1 for x in self.rows if not x["valid_to"]), 3)
+        self.assertEqual(sorted({(x["tier"], x["status"]) for x in self.rows}), [("UG Tier I (WA)", "accredited"), ("UG Tier II", "accredited"), ("UG Tier II", "unknown")])
+        self.assertTrue(all(x["level"] == "Under Graduate" for x in self.rows))
+        self.assertTrue(all(x["valid_to"] >= x["valid_from"] for x in self.rows if x["valid_to"] and x["valid_from"]))
+
+    def test_computed_ends_are_labelled(self):
+        c = [x for x in self.rows if x["validity_basis"].startswith("computed")]; self.assertEqual(len(c), 701)
+        for x in c: self.assertTrue(x["valid_from"] and x["valid_to"] and re.search(r"\d+\s*(years?|yrs?)", x["period_text"], re.I), x["period_text"])
 
     def test_reader_agrees_with_openpyxl(self):
         try: import openpyxl
         except ImportError: self.skipTest("openpyxl not installed")
-        ws = openpyxl.load_workbook(REAL).active
-        theirs = [[("" if c is None else str(c)) for c in r] for r in ws.iter_rows(values_only=True)]
-        self.assertEqual(N.read_xlsx(REAL), theirs)
+        for f in (REAL, REAL2):
+            theirs = [[("" if c is None else str(c)) for c in r] for r in openpyxl.load_workbook(f).active.iter_rows(values_only=True)]
+            self.assertEqual(N.read_xlsx(f), theirs)
 
 
 if __name__ == "__main__":
