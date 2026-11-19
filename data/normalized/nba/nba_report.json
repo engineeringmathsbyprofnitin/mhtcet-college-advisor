@@ -7,12 +7,24 @@
    "downloaded_on": "2026-11-18",
    "rows": 258,
    "sha256": "c802a105d8074ed884aa3154f6ba8bd9c54277bb2bb3629f98491abc59729cfd"
+  },
+  {
+   "file": "NBA_UG_TierII_2026-11-18.xlsx",
+   "tier": "UG Tier II",
+   "downloaded_on": "2026-11-18",
+   "rows": 1253,
+   "sha256": "f9004e1d60e64d7c8bb6b573e860a47ff23529a23675221f059545b71567171a"
   }
  ],
- "rows": 258,
- "institutions": 42,
- "programs": 50,
- "no_end_date": 4,
+ "rows": 1511,
+ "institutions": 217,
+ "programs": 113,
+ "no_end_date": 3,
  "problems": [],
- "warnings": []
+ "warnings": [
+  "NBA_UG_TierII_2026-11-18.xlsx row 713: status 'PROVISIONALLYACCREDITED' stored as unknown",
+  "NBA_UG_TierII_2026-11-18.xlsx row 786 (PVG's College of Engineering & Technolog / ELECTRICAL ENGINEERING): implausible start year 2202 in '3 years w.e.f. 16-08-2202' (not guessed)",
+  "NBA_UG_TierII_2026-11-18.xlsx row 1053 (ST. FRANCIS INSTITUTE OF TECH. (ENGG. CO / Information Technology): no date found in 'Academic Year 2016-2017 and 2017-2018'",
+  "NBA_UG_TierII_2026-11-18.xlsx row 1054 (ST. FRANCIS INSTITUTE OF TECH. (ENGG. CO / Computer Engineering): no date found in 'Academic Year 2016-2017 and 2017-2018'"
+ ]
 }
