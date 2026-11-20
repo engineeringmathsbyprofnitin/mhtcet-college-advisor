@@ -3,13 +3,18 @@ name: Read the NBA lists
 # Stage 12b-2. Reads the NBA accredited-programs Excel lists that the SITE OWNER downloaded by hand from www.nbaind.org (the site answers our
 # robot with HTTP 403, so nothing is fetched automatically and nothing is bypassed). The files and one line each in sources.csv are in
 # data/manual/nba/. data/normalized/nba is replaced ONLY if every listed file was read completely without problem; otherwise the previous data stays.
-# Runs by hand (Actions tab -> this workflow -> Run workflow) and whenever something in data/manual/nba changes.
+# Stage 12b-3c: after the NBA data is replaced, the link steps run too: NBA institutions -> website colleges (nba_match), NBA programs -> branches (nba_branch_match),
+# and the website's accreditation table (build_accreditation). Institutions or name pairs that still wait for the owner stay UNLINKED (see data/normalized/nba_link/*report.json);
+# the owner answers go in data/manual/nba_institution_confirmations.csv and data/manual/nba_program_rules.csv. Publishing to the website is still done by "Publish website data".
+# Runs by hand (Actions tab -> this workflow -> Run workflow) and whenever something in data/manual/nba or the two owner answer files changes.
 on:
   workflow_dispatch:
   push:
     branches: [main]
     paths:
       - "data/manual/nba/**"
+      - "data/manual/nba_institution_confirmations.csv"
+      - "data/manual/nba_program_rules.csv"
 
 permissions:
   contents: write
@@ -44,12 +49,19 @@ jobs:
           mkdir -p data/normalized
           cp -r build/normalized/nba data/normalized/
 
+      - name: "Link the NBA data to the website's colleges and branches"
+        if: success()
+        run: |
+          python -m ingestion.nba_match
+          python -m ingestion.nba_branch_match
+          python -m ingestion.build_accreditation
+
       - name: "Save the NBA data in the repository"
         if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/normalized/nba
+          git add data/normalized/nba data/normalized/nba_link data/normalized/tables/accreditation.csv data/normalized/tables/accreditation_sources.csv data/normalized/tables/accreditation_build_report.json
           if git diff --cached --quiet; then
             echo "NBA data unchanged."
           else
