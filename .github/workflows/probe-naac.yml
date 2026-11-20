@@ -1,0 +1,48 @@
+name: Probe the NAAC site
+
+# Stage 12c-1. A one-time look at the official NAAC site (www.naac.gov.in) to find the current list of accredited institutions (grade, CGPA, validity).
+# It sends at most 10 requests (robots.txt, home page, up to 2 pages to find the links, a HEAD check of up to 4 candidate files), obeys robots.txt, stops at any
+# login or CAPTCHA, never bypasses anything, downloads no list and submits no form. It saves what it saw in data/raw/naac-probe/ so the real
+# NAAC reader can be written on facts. Run by hand only.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe-naac
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: "Self-tests (offline, no website is contacted)"
+        run: python -m unittest tests/test_stage12c1.py
+
+      - name: "Probe the NAAC pages (polite, robots.txt obeyed)"
+        run: python -m ingestion.naac_probe
+
+      - name: "Save what the probe saw in the repository"
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -e data/raw/naac-probe ]; then git add data/raw/naac-probe; fi
+          if git diff --cached --quiet; then
+            echo "Nothing new to save."
+          else
+            git commit -m "NAAC probe result"
+            git pull --rebase origin main
+            git push
+          fi
