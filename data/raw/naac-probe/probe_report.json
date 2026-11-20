@@ -1,0 +1,17 @@
+{
+ "start": "https://www.naac.gov.in/",
+ "steps": [
+  {
+   "step": "home",
+   "url": "https://www.naac.gov.in/",
+   "status": null,
+   "blocked": "robots_disallow_or_unreadable",
+   "error": null,
+   "bytes": 0
+  }
+ ],
+ "verdict": "STOP: home not readable (blocked=robots_disallow_or_unreadable status=None error=None)",
+ "file_candidates": [],
+ "other_hosts_seen": [],
+ "robots": "unreadable"
+}
