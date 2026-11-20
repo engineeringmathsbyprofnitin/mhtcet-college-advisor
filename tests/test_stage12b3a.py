@@ -130,5 +130,25 @@ class RealData(unittest.TestCase):
                 self.assertNotEqual(M.place_state(r["nba_place"], col), "conflict", r["nba_institution"])
 
 
+class OwnerConfirmations(unittest.TestCase):
+    """The committed owner answers must be well-formed: each pair once, yes needs a real college code, and no pair is left doubtful."""
+    def test_file_is_valid_and_resolves_every_doubtful_pair(self):
+        path = os.path.join(ROOT, "data", "manual", "nba_institution_confirmations.csv")
+        if not os.path.exists(path): self.skipTest("no confirmations file yet")
+        with open(path, newline="", encoding="utf-8") as f: conf = list(csv.DictReader(f))
+        with open(os.path.join(ROOT, "data", "normalized", "tables", "colleges.csv"), newline="", encoding="utf-8") as f: codes = {c["college_code"] for c in csv.DictReader(f)}
+        keys = [(r["nba_institution"], r["nba_place"]) for r in conf]
+        self.assertEqual(len(keys), len(set(keys)))
+        for r in conf:
+            self.assertIn(r["decision"], ("yes", "no"))
+            if r["decision"] == "yes": self.assertIn(r["college_code"], codes, r["nba_institution"])
+            else: self.assertEqual(r["college_code"], "")
+        tmp = tempfile.mkdtemp()
+        try:
+            rep = M.build(base=os.path.join(ROOT, "data", "normalized"), manual=path, outdir=tmp)
+        finally: shutil.rmtree(tmp, ignore_errors=True)
+        self.assertTrue(rep["ok"], rep["problems"]); self.assertEqual(rep["counts"].get("doubtful", 0), 0); self.assertEqual(rep["unused_confirmations"], [])
+
+
 if __name__ == "__main__":
     unittest.main()
