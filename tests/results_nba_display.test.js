@@ -21,11 +21,12 @@ T("an ended NBA period is shown in grey with a readable end date, never hidden",
   const main = td.querySelector(".cv > span"); assert.equal(main.textContent, "Ended on 30 Jun 2025"); assert.ok(main.classList.contains("acc-ended"));
   assert.match(td.textContent, /Period has ended; renewal may be pending/); assert.match(td.textContent, /This program only/); assert.doesNotMatch(td.textContent, /Expired/);
 });
-T("a valid NBA period is not grey; an undated one says the date is not known; none says Not available", () => {
+T("a valid NBA period is not grey; an undated one says the date is not known; none says No NBA record found", () => {
   let td = draw(row({ nba: { status: "valid", grade: null, validTo: "2028-06-30" } }));
   assert.equal(td.querySelector(".cv > span").textContent, "Accredited (until 2028-06-30)"); assert.ok(!td.querySelector(".acc-ended"));
   td = draw(row({ nba: { status: "validity_unknown", grade: null, validTo: null } })); assert.match(td.textContent, /Accredited, validity date not known/); assert.ok(!td.querySelector(".acc-ended"));
-  td = draw(row({ nba: null })); assert.match(td.textContent, /Not available/);
+  td = draw(row({ nba: null }));
+  assert.equal(td.querySelector(".cv > span").textContent, "No NBA record found"); assert.ok(td.querySelector(".acc-ended")); assert.match(td.textContent, /does not mean the program is not accredited/); assert.doesNotMatch(td.textContent, /Not available/);
 });
 T("an odd date is shown as printed, not as 'NaN'", () => {
   const td = draw(row({ nba: { status: "expired", grade: null, validTo: "June 2025" } })); assert.equal(td.querySelector(".cv > span").textContent, "Ended on June 2025");

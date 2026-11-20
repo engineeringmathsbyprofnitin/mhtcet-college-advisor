@@ -30,6 +30,9 @@
   function noteLine(doc, main, sub) { return [el(doc, "span", { text: main }), sub ? small(doc, sub) : null]; }
 
   function accCell(doc, label, a, withGrade) {
+    if (!a && label === "NBA accreditation") {                 // no NBA row for this program: say so plainly; it is NOT a "not accredited" verdict
+      var none = noteLine(doc, "No NBA record found", "This does not mean the program is not accredited"); none[0].className = "acc-ended"; return cell(doc, label, none);
+    }
     if (!a) return cell(doc, label, noteLine(doc, NA));
     var s = a.status, main, expired = false;
     if (s === "valid") main = (withGrade && a.grade ? a.grade + " - " : "") + "Accredited" + (a.validTo ? " (until " + a.validTo + ")" : "");

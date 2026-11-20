@@ -66,10 +66,10 @@ T("all required report columns are present, with the right year headings", async
   rows(B).forEach(r => assert.equal(r.querySelectorAll("td").length, h.length));
   const first = rows(B)[0].textContent; assert.match(first, /College code SYN\d+/); assert.match(first, /Branch code B\d+/); assert.match(first, /CAP Round/);
 });
-T("missing data is shown as 'Not available' or 'Vacancy data unavailable', never as blanks, zero, null or NaN", async () => {
+T("missing data is shown as 'Not available', 'No NBA record found' or 'Vacancy data unavailable', never as blanks, zero, null or NaN", async () => {
   const B = boot(); await submit(B);                         // default student: some choices have no vacancy figure
   let txt = B.$("results").textContent;
-  assert.match(txt, /Not available/); assert.match(txt, /Vacancy data unavailable/); assert.ok(!/undefined|NaN|null|\[object/.test(txt));
+  assert.match(txt, /Not available|No NBA record found/); assert.match(txt, /Vacancy data unavailable/); assert.ok(!/undefined|NaN|null|\[object/.test(txt));
   const S = boot(); await submit(S, { br: ["Mechanical Engineering", "Civil Engineering"], dist: ["Sangli"], percentile: "70", fee: "900000" });   // this college has no fee data
   txt = S.$("results").textContent; assert.ok(!/undefined|NaN|null|\[object/.test(txt));
   rows(S).forEach(r => assert.match(r.querySelector('[data-label="Annual fee"]').textContent, /Not available/));
