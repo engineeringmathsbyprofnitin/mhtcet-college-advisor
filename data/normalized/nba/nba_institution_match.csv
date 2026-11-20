@@ -1,6 +1,6 @@
 nba_institution,nba_place,nba_rows,college_code,college_name,status,score,second_best,how
 Ajeenkya D Y Patil University,Pune,1,,,no_college,0.60,0.50,owner said: not a college on the website
-Amity University Maharashtra,Raigad,1,,,no_college,0.20,0.28,no plausible college (best score 0.20)
+Amity University Maharashtra,Raigad,1,,,no_college,0.20,0.28,owner said: not a college on the website
 Annasaheb Dange College of Engineering & Technology,,13,06283,"Annasaheb Dange College of Engineering and Technology, Ashta, Sangli",linked,0.75,0.42,owner confirmed
 BANSILAL RAMNATH AGARWAL CHARITABLE TRUST'S VISHWAKARMA INSTITUTE OF INFORMATION TECHNOLOGY,Pune,10,06273,"Bansilal Ramnath Agarawal Charitable Trust's Vishwakarma Institute of Technology, Bibwewadi, Pune",linked,0.80,0.47,"automatic (place confirmed): name score 0.80, clear lead"
 BHARATI VIDYAPEETH DEEMED UNIVERSITY COLLEGE OF ENGIEERING PUNE,Pune,8,,,no_college,0.65,0.53,owner said: not a college on the website
@@ -8,7 +8,7 @@ Bharatiya Vidya Bhavans Sardar Patel Institute of Technology,MUMBAI,5,03215,"Bha
 COEP Technological University,Pune,17,16006,COEP Technological University,linked,1.00,1.00,owner confirmed
 D.Y. Patil College of Engineering and Technology,,8,06250,"D.Y. Patil College of Engineering and Technology, Kolhapur",linked,0.85,0.78,owner confirmed
 "DEPARTMENT OF CHEMICAL TECHNOLOGY,DR BABASAHEB AMBEDKAR MARATHWADA UNIVERSITY,AURANGABAD",Aurangabad,1,02021,"University Department of Chemical Technology, Aurangabad",linked,0.74,0.38,"automatic (place confirmed): name score 0.74, clear lead"
-"DKTES,TEXTILE & ENGG. INSTITUTE",ICHALKARANJI,19,,,no_college,0.40,0.25,no plausible college (best score 0.40)
+"DKTES,TEXTILE & ENGG. INSTITUTE",ICHALKARANJI,19,06222,"Dattajirao Kadam Technical Education Society's Textile & Engineering Institute, Ichalkaranji.",linked,0.40,0.25,owner confirmed
 G H RAISONI COLLEGE OF ENGG AND MGT,PUNE,7,06155,"G.H.Raisoni College of Engineering & Management, Wagholi, Pune",linked,0.80,0.91,"automatic: name score 0.80, place ok"
 G. H. Raisoni College of Engineering & Management,Nagpur,7,04142,"G H Raisoni College of Engineering & Management, Nagpur",linked,0.91,0.68,"automatic: name score 0.91, place ok"
 G.H.RAISONI COLLEGE OF ENGG,Nagpur,13,04116,"Ankush Shikshan Sanstha's G.H.Raisoni College of Engineering, Nagpur",linked,0.80,0.74,owner confirmed
@@ -23,17 +23,17 @@ LAXMINARAYAN INSTITUTE OF TECHNOLOGY,Nagpur,2,04005,"Laxminarayan Institute of T
 "MAHARSHI KARVE STREE SHIKSHAN SAMSTHA'S CUMMINS COLLEGE OF ENGG FOR WOMEN, KARVENAGAR, PUNE",PUNE,21,06276,"MKSSS's Cummins College of Engineering for Women, Karvenagar,Pune",linked,0.63,0.36,owner confirmed
 "Mukesh Patel School of Technology Management and Engineering, Shirpur",Dhule,1,,,no_college,0.51,0.45,owner said: not a college on the website
 NAGAR YUWAK SHIKSHAN SANSTHA'S YESHWANTRAO CHAVAN COLLEGE OF ENGINEERING,WANADONGRI,26,04167,"Yeshwantrao Chavan College of Engineering,Wanadongri, Nagpur",linked,0.58,0.28,owner confirmed
-NARSEE MONJEE INSTITUTE OF MANAGEMENT STUDIES,MUMBAI,2,,,no_college,0.42,0.26,no plausible college (best score 0.42)
-NARSEE MONJEE INSTITUTE OF MANAGEMENT STUDIES,Mumbai-City,8,,,no_college,0.42,0.10,no plausible college (best score 0.42)
+NARSEE MONJEE INSTITUTE OF MANAGEMENT STUDIES,MUMBAI,2,,,no_college,0.42,0.26,owner said: not a college on the website
+NARSEE MONJEE INSTITUTE OF MANAGEMENT STUDIES,Mumbai-City,8,,,no_college,0.42,0.10,owner said: not a college on the website
 PIMPRI CHINCHWAD EDUCATION TRUST's PIMPRI CHINCHWAD COLLEGE OF ENGINEERING,Pune,17,06175,"Pimpri Chinchwad Education Trust, Pimpri Chinchwad College of Engineering, Pune",linked,0.94,0.84,owner confirmed
 RAJARAMBAPU INSTITUTE OF TECHNOLOGY,,10,06214,"K. E. Society's Rajarambapu Institute of Technology, Walwa, Sangli",linked,0.55,0.43,owner confirmed
 Sandip University,Nashik,1,,,no_college,0.55,0.43,owner said: not a college on the website
 Sanjivani Rural Educational Society's Sanjivani College of Engineering,KOPARGAON,12,05160,"Sanjivani Rural Education Society's Sanjivani College of Engineering, Kopargaon",linked,0.87,0.32,"automatic: name score 0.87, place ok"
 Sardar Patel College of Engineering,Mumbai-City,5,03014,"Sardar Patel College of Engineering, Andheri",linked,0.82,0.10,owner confirmed
-SGGS (SHRI GURU GOBIND SINGHJI) INSTITUTE OF ENGG AND TECHNOLOGY VISHNUPURI NANDED,NANDED,21,,,no_college,0.40,0.31,no plausible college (best score 0.40)
+SGGS (SHRI GURU GOBIND SINGHJI) INSTITUTE OF ENGG AND TECHNOLOGY VISHNUPURI NANDED,NANDED,21,02020,"Shri Guru Gobind Singhji Institute of Engineering and Technology, Nanded",linked,0.40,0.31,owner confirmed
 "SHARAD INSTITUTE OF TECHNOLOGY COLLEGE OF ENGINEERING, YADRAV",Kolhpur,6,06317,"Sharad Institute of Technology College of Engineering, Yadrav(Ichalkaranji)",linked,1.00,0.39,"automatic: name score 1.00, place ok"
 Shri Ramdeobaba College of Engineering and Management,Nagpur,16,04115,"Shri Ramdeobaba College of Engineering and Management, Nagpur",linked,0.88,0.37,"automatic: name score 0.88, place ok"
-Somaiya Vidyavihar University,,2,,,no_college,0.37,0.37,no plausible college (best score 0.37)
+Somaiya Vidyavihar University,,2,,,no_college,0.37,0.37,owner said: not a college on the website
 "Symbiosis Institute of Technology, Pune",Pune,4,,,no_college,0.51,0.43,owner said: not a college on the website
 Thakur College of Engineering & Technology,,18,03176,"Thakur College of Engineering and Technology, Kandivali, Mumbai",linked,0.68,0.59,owner confirmed
 VEERMATA JIJABAI TECHNOLOGICAL INSTITUTE,MUMBAI,26,03012,"Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",linked,0.81,0.29,"automatic: name score 0.81, place ok"
@@ -54,8 +54,8 @@ Anantrao Pawar College of Engineering and Research,Pune,2,06794,"Anantrao Pawar 
 Anjuman-i-Islam's M. H. Saboo Siddik College of Engineering,Mumbai,7,03183,"Anjuman-I-Islam's M.H. Saboo Siddik College of Engineering, Byculla, Mumbai",linked,0.87,0.11,"automatic: name score 0.87, place ok"
 ANJUMAN-I-ISLAM'S M.H. SABOO SIDDIK COLLEGE OF ENGINEERING,Mumbai-City,4,03183,"Anjuman-I-Islam's M.H. Saboo Siddik College of Engineering, Byculla, Mumbai",linked,0.87,0.04,"automatic: name score 0.87, place ok"
 ANURADHA ENGG COLLEGE ANURADHA NAGAR SAKEGAON ROAD,CHIKHLI,5,01119,ANURADHA COLLEGE OF ENGINEERING & TECHNOLOGY,linked,0.60,0.36,owner confirmed
-ARMY INSTITUTE OF TECHNOLOGY,PUNE,7,,,no_college,0.33,0.27,no plausible college (best score 0.33)
-Army Institute of Technology,Pune,8,,,no_college,0.33,0.27,no plausible college (best score 0.33)
+ARMY INSTITUTE OF TECHNOLOGY,PUNE,7,,,no_college,0.33,0.27,owner said: not a college on the website
+Army Institute of Technology,Pune,8,,,no_college,0.33,0.27,owner said: not a college on the website
 ARVIND GAVALI COLLEGE OF ENGINEERING,Satara,2,06545,"Samarth Education Trust's Arvind Gavali College Of Engineering Panwalewadi, Varye,Satara.",linked,0.57,0.20,owner confirmed
 BAPURAO DESHMUKH COLLEGE OF ENGINEERING,SEWAGRAM,3,04118,"Bapurao Deshmukh College of Engineering, Sevagram",linked,0.82,0.41,"automatic: name score 0.82, place ok"
 "Bapusaheb Shivajirao Deore College of Engineering, Dhule",Dhule,3,05103,"Shri Shivaji Vidya Prasarak Sanstha's Late Bapusaheb Shivaji Rao Deore College of Engineering,Dhule",linked,0.57,0.26,owner confirmed
@@ -63,11 +63,11 @@ BHARATI VIDYAPEETH COLLEGE OF ENGINEERING NAVI MUMBAI,Thane,5,03189,"Bharati Vid
 BHARATI VIDYAPEETH DEEMED UNIVERSITY COLLEGE OF ENGIEERING PUNE,PUNE,14,,,no_college,0.65,0.53,owner said: not a college on the website
 BHARATI VIDYAPEETH&#39;S COLLEGE OF ENGINEERING FOR WOMEN,Pune,3,06285,"Bharati Vidyapeeth's College of Engineering for Women, Katraj, Dhankawadi, Pune",linked,0.71,0.66,owner confirmed
 COLLEGE OF ENGINEERING,PUNE,17,16006,COEP Technological University,linked,0.48,0.40,owner confirmed
-D.K.T.E.SOCIETY'S TEXTILE & ENGINEERING INSTITUTE,ICHALKARANJI,12,,,no_college,0.40,0.25,no plausible college (best score 0.40)
+D.K.T.E.SOCIETY'S TEXTILE & ENGINEERING INSTITUTE,ICHALKARANJI,12,06222,"Dattajirao Kadam Technical Education Society's Textile & Engineering Institute, Ichalkaranji.",linked,0.40,0.25,owner confirmed
 D.N. PATEL COLLEGE OF ENGINEERING,SHAHADA,4,05164,"P.S.G.V.P. Mandal's D.N. Patel College of Engineering, Shahada, Dist. Nandurbar",linked,0.56,0.47,owner confirmed
 D.Y.PATIL COLLEGE OF ENGINEERING,PUNE,18,06272,"Dr. D. Y. Patil Pratishthan's D.Y.Patil College of Engineering Akurdi, Pune",linked,0.82,0.67,owner confirmed
 DATTA MEGHE COLLEGE OF ENGINEERING,NAVI MUMBAI,2,03187,"N.Y.S.S.'s Datta Meghe College of Engineering, Airoli, Navi Mumbai",linked,0.59,0.16,owner confirmed
-"DATTA MEGHE INSTITUTE OF ENGINEERING, TECHNOLOGY & RESEARCH",Wardha,4,,,no_college,0.22,0.33,no plausible college (best score 0.22)
+"DATTA MEGHE INSTITUTE OF ENGINEERING, TECHNOLOGY & RESEARCH",Wardha,4,,,no_college,0.22,0.33,owner said: not a college on the website
 Deogiri Institute of Engineering and Management Studies,Aurangabad,2,02114,"Deogiri Institute of Engineering and Management Studies, Aurangabad",linked,0.88,0.55,"automatic: name score 0.88, place ok"
 "Dr. Ashok Gujar Technical Institute's, Dr. Daulatrao Aher college of Engineering, Karad",Satara,2,06303,"Dr. Ashok Gujar Technical Institute's Dr. Daulatrao Aher College of Engineering, Karad",linked,1.00,0.33,"automatic: name score 1.00, place ok"
 DR. BABASAHEB AMBEDKAR TECHNOLOGICAL UNIVERSITY,Lonere,9,03033,"Dr. Babasaheb Ambedkar Technological University, Lonere",linked,0.87,0.53,"automatic: name score 0.87, place ok"
@@ -83,7 +83,7 @@ FR. CONCEICAO RODRIGUES INSTITUTE OF TECHNOLOGY,NAVI MUMBAI,19,03197,"Agnel Char
 G.H.RAISONI COLLEGE OF ENGG,NAGPUR,11,04116,"Ankush Shikshan Sanstha's G.H.Raisoni College of Engineering, Nagpur",linked,0.80,0.74,owner confirmed
 G.S. MANDALS MARATHWADA INSTITUTE OF TECHNOLOGY,AURANGABAD,2,02113,"G. S. Mandal's Maharashtra Institute of Technology, Aurangabad",linked,0.57,0.29,owner confirmed
 GHARDA FOUNDATION'S GHARDA INSTITUTE OF TECHNOLOGY,Ratnagiri,5,03216,GHARDA INSTITUTE OF TECHNOLOGY & MANAGEMENT,linked,0.87,0.27,"automatic: name score 0.87, place ok"
-GOVERNMENT COLLEGE OF ENGG PUNE GOVT COLLEGE OF ENGG SHIVAJI NAGAR PUNE,PUNE,8,,,no_college,0.44,0.42,no plausible college (best score 0.44)
+GOVERNMENT COLLEGE OF ENGG PUNE GOVT COLLEGE OF ENGG SHIVAJI NAGAR PUNE,PUNE,8,16006,COEP Technological University,linked,0.44,0.42,owner confirmed
 GOVERNMENT COLLEGE OF ENGINEERING,JALGAON,3,05004,"Government College of Engineering, Jalgaon",linked,0.76,0.81,"automatic (place confirmed): name score 0.76, clear lead"
 "Government College of Engineering and Research, Avasari Khurd",Pune,2,06004,"Government College of Engineering & Research, Avasari Khurd",linked,1.00,0.30,"automatic: name score 1.00, place ok"
 "Government College of Engineering, Amravati",Amravati,17,01002,"Government College of Engineering, Amravati",linked,1.00,0.55,"automatic: name score 1.00, place ok"
@@ -92,14 +92,14 @@ GOVERNMENT COLLEGE OF ENGINEERING,JALGAON,3,05004,"Government College of Enginee
 GOVT. COLLEGE OF ENGINEERING JALGAON,JALGAON,2,05004,"Government College of Engineering, Jalgaon",linked,1.00,0.56,"automatic: name score 1.00, place ok"
 "Guru Gobind Singh College of Engineering and Research Centre, Nashik",Nashik,3,05418,"Guru Gobind Singh College of Engineering & Research Centre, Nashik.",linked,1.00,0.51,"automatic: name score 1.00, place ok"
 HINDI SEVA MANDAL S(ESTD.1950)SHRI SANT GADGE BABA COLLEGE OF ENGG AND TECHNOLOGY BHUSAWAL,,3,05170,"Hindi Seva Mandal's Shri Sant Gadgebaba College of Engineering & Technology, Bhusawal",linked,0.75,0.49,owner confirmed
-INSTITUTE OF CHEMICAL TECH AUTONOMOUS UNIVERSITY OF MUMBAI NATHALAL PARIKH MARG,MUMBAI,10,,,no_college,0.45,0.37,no plausible college (best score 0.45)
+INSTITUTE OF CHEMICAL TECH AUTONOMOUS UNIVERSITY OF MUMBAI NATHALAL PARIKH MARG,MUMBAI,10,03036,"Institute of Chemical Technology, Matunga, Mumbai",linked,0.45,0.37,owner confirmed
 International Institute of Information Technology,Pune,2,06754,"International Institute of Information Technology (I²IT), Pune.",linked,0.91,0.42,"automatic: name score 0.91, place ok"
 Jawaharlal Darda Institute of Engineering and Technology,Yavatmal,6,01120,"Jawaharlal Darda Institute of Engineering and Technology, Yavatmal",linked,0.86,0.14,"automatic: name score 0.86, place ok"
 JAYAWANT SHIKSHAN PRASARAK MANDAL S RAJARSHI SHAHU COLLEGE OF ENGINEERING,PUNE,5,06141,"Jaywant Shikshan Prasarak Mandal's,Rajarshi Shahu College of Engineering, Tathawade, Pune",linked,0.81,0.25,"automatic: name score 0.81, place ok"
 JAYAWANTRAO SAWANT COLLEGE OF ENGINEERING,Pune,5,06145,"JSPM'S Jaywantrao Sawant College of Engineering,Pune",linked,0.78,0.53,"automatic (place confirmed): name score 0.78, clear lead"
 Jhulelal Institute of Technology,Nagpur,3,04139,"Samridhi Sarwajanik Charitable Trust, Jhulelal Institute of Technology, Nagpur",linked,0.56,0.34,owner confirmed
 JSPM's Bhivarabai Sawant Institute of Technology and Research,Pune,3,06311,"Jayawant Shikshan Prasarak Mandal, Bhivarabai Sawant Institute of Technology & Research, Wagholi",linked,0.69,0.52,owner confirmed
-JSPM'S IMPERIAL COLLEGE OF ENGINEERING AND RESEARCH,Pune,2,,,no_college,0.40,0.34,no plausible college (best score 0.40)
+JSPM'S IMPERIAL COLLEGE OF ENGINEERING AND RESEARCH,Pune,2,,,no_college,0.40,0.34,owner said: not a college on the website
 K.C. College of Engineering and Management Studies and Research,Thane,2,03210,"Excelsior Education Society's K.C. College of Engineering and Management Studies and Research, Kopri, Thane (E)",linked,0.70,0.42,"automatic (place confirmed): name score 0.70, clear lead"
 K.D.K COLLEGE OF ENGINEERING,Nagpur,6,04147,"K.D.K. College of Engineering, Nagpur",linked,0.84,0.29,"automatic: name score 0.84, place ok"
 K.E.SOCIETYS RAJARAMBAPU INSTITUTE OF TECHNOLOGY,ISLAMPUR,15,06214,"K. E. Society's Rajarambapu Institute of Technology, Walwa, Sangli",linked,0.75,0.32,owner confirmed
@@ -107,14 +107,14 @@ K.J. SOMAIYA COLLEGE OF ENGINEERING,MUMBAI,12,03209,K J Somaiya Institute of Tec
 K.J. Somaiya Institute of Technology,,4,03209,K J Somaiya Institute of Technology,linked,1.00,0.65,"automatic: name score 1.00, place unknown"
 "KAMAVEER KAKASAHEB WAGH EDUCATION SOCIETY S,K.K.WAGH INSTITUTE OF ENGINEERING EDUCATION AND RESEARCH",NASHIK,11,05121,"K. K. Wagh Institute of Engineering Education and Research, Nashik",linked,0.73,0.18,"automatic (place confirmed): name score 0.73, clear lead"
 "Karmaveer Kakasaheb Wagh Education Socity's, K. K. Wagh Institute of Engineering Education and Research",Nashik,14,05121,"K. K. Wagh Institute of Engineering Education and Research, Nashik",linked,0.67,0.23,"automatic (place confirmed): name score 0.67, clear lead"
-KARMAVIR DADASAHED KANNAMWAR COLLEGE OF ENGG. GREAT NAG ROAD NANDANVAN NAGPUR,NAGPUR,5,,,no_college,0.24,0.20,no plausible college (best score 0.24)
+KARMAVIR DADASAHED KANNAMWAR COLLEGE OF ENGG. GREAT NAG ROAD NANDANVAN NAGPUR,NAGPUR,5,04147,"K.D.K. College of Engineering, Nagpur",linked,0.24,0.20,owner confirmed
 "Kavikulguru Institute of Technology and Science, Ramtek",Nagpur,7,04104,"Kavi Kulguru Institute of Technology & Science, Ramtek",linked,0.62,0.22,owner confirmed
 KOLHAPUR INSTITUTE OF TECHNOLOGY'S COLLEGE OF ENGG.,KOLHAPUR,12,06267,"Kolhapur Institute of Technology's College of Engineering(Autonomous), Kolhapur",linked,1.00,0.67,"automatic: name score 1.00, place ok"
 LOKMANYA TILAK COLLEGE OF ENGG.,NAVI MUMBAI,2,03196,"Lokmanya Tilak College of Engineering, Kopar Khairane, Navi Mumbai",linked,0.58,0.50,owner confirmed
 Lokmanya Tilak College of Engineering,Thane,4,03196,"Lokmanya Tilak College of Engineering, Kopar Khairane, Navi Mumbai",linked,0.58,0.50,owner confirmed
 "M.H. Saboo Siddik College of Engineering, Byculla",Mumbai,2,03183,"Anjuman-I-Islam's M.H. Saboo Siddik College of Engineering, Byculla, Mumbai",linked,0.79,0.13,"automatic (place confirmed): name score 0.79, clear lead"
 "MAEER's MIT College of Engineering, Pune",Pune,4,,,no_college,0.52,0.39,owner said: not a college on the website
-"MAEERS, MIT COLLEGE OF ENGINEERING",Pune,3,,,no_college,0.39,0.23,no plausible college (best score 0.39)
+"MAEERS, MIT COLLEGE OF ENGINEERING",Pune,3,,,no_college,0.39,0.23,owner said: not a college on the website
 MAHARASHTRA ACADEMY OF ENGG. ALANDI,PUNE,10,06146,"MIT Academy of Engineering,Alandi, Pune",linked,0.65,0.30,owner confirmed
 "MAHARASHTRA ACADEMY OF ENGINEERING & EDUCATIONAL RESEARCH'S MAHARASHTRA INSTITUTE OF TECHNOLOGY, PUNE",PUNE,26,,,no_college,0.51,0.39,owner said: not a college on the website
 Maharashtra Institute of Technology,Aurangabad,5,02113,"G. S. Mandal's Maharashtra Institute of Technology, Aurangabad",linked,0.62,0.38,owner confirmed
@@ -123,26 +123,26 @@ MAOHARBHAI PATEL INSTITUTE OF ENGINEERING & TECHNOLOGY,GONDIA,4,04302,"Gondia Ed
 Maratha Vidya Prasarak Samaj's Karmaveer Adv. Baburao Ganpatrao Thakare College Of Engineering,Nashik,5,05108,"Maratha Vidya Prasarak Samaj's Karmaveer Adv. Baburao Ganpatrao Thakare College Of Engineering, Nashik",linked,0.96,0.09,"automatic: name score 0.96, place ok"
 Marathwada Mitra Mandals College of Engineering,Pune,5,06156,"Marathwada Mitra Mandal's College of Engineering, Karvenagar, Pune",linked,0.76,0.58,owner confirmed
 "Matoshri College of Engineering and Research Centre, Nashik",Nashik,5,05177,"Matoshri College of Engineering and Research Centre, Eklahare, Nashik",linked,0.87,0.62,"automatic: name score 0.87, place ok"
-"MCT's Rajiv Gandhi Institute of Technology, Mumbai",Mumbai-City,7,,,no_college,0.34,0.33,no plausible college (best score 0.34)
-METs Institute Of Engineering,Nashik,6,,,no_college,0.21,0.20,no plausible college (best score 0.21)
-MGM S JAWAHARLAL NEHRU ENGG COLLEGE MGM S CAMPUS N-6 CIDCO AURANGABAD MAHARASHTRA,AURANGABAD,5,,,no_college,0.31,0.26,no plausible college (best score 0.31)
-MGM's College of Engineering Nanded,Nanded,4,,,no_college,0.39,0.31,no plausible college (best score 0.39)
-"MGMS, COLLEGE OF ENGINEERING & TECHNOLOGY",PANVEL,4,,,no_college,0.43,0.42,no plausible college (best score 0.43)
+"MCT's Rajiv Gandhi Institute of Technology, Mumbai",Mumbai-City,7,03135,"Manjara Charitable Trust's Rajiv Gandhi Institute of Technology, Mumbai",linked,0.34,0.33,owner confirmed
+METs Institute Of Engineering,Nashik,6,05151,"MET Bhujbal Knowledge City MET League's Engineering College, Adgaon, Nashik.",linked,0.21,0.20,owner confirmed
+MGM S JAWAHARLAL NEHRU ENGG COLLEGE MGM S CAMPUS N-6 CIDCO AURANGABAD MAHARASHTRA,AURANGABAD,5,,,no_college,0.31,0.26,owner said: not a college on the website
+MGM's College of Engineering Nanded,Nanded,4,02127,"Mahatma Gandhi Missions College of Engineering, Hingoli Rd, Nanded.",linked,0.39,0.31,owner confirmed
+"MGMS, COLLEGE OF ENGINEERING & TECHNOLOGY",PANVEL,4,03175,"M.G.M.'s College of Engineering and Technology, Kamothe, Navi Mumbai",linked,0.43,0.42,owner confirmed
 "Modern Education Societyâ€™s Wadia College of Engineering, Pune",Pune,6,06281,"Modern Education Society's Wadia College of Engineering, Pune",linked,1.00,0.65,"automatic: name score 1.00, place ok"
 Nutan Maharashtra Institute of Engineering and Technology,Pune,4,06310,"Nutan Maharashtra Vidya Prasarak Mandal, Nutan Maharashtra Institute of Engineering &Technology, Talegaon station, Pune",linked,0.74,0.28,"automatic (place confirmed): name score 0.74, clear lead"
 "Padm. Dr. V B Kolte college of engineering, Malkapur",Buldhana,3,01182,"Padmashri Dr. V.B. Kolte College of Engineering, Malkapur, Buldhana",linked,0.70,0.15,"automatic (place confirmed): name score 0.70, clear lead"
 PADMABHOOSHAN VASANTRAODADA PATIL INSTITUTE OF TECHNOLOGY,BUDHGAON,5,06269,"Shetkari Shikshan Mandal's Pad. Vasantraodada Patil Institute of Technology, Budhgaon, Sangli",linked,0.48,0.49,owner confirmed
-PADMABHUSHAN VASANTDADA PATIL PRATISHTHANS COLLEGE OF ENGINEERING,MUMBAI,4,,,no_college,0.41,0.20,no plausible college (best score 0.41)
+PADMABHUSHAN VASANTDADA PATIL PRATISHTHANS COLLEGE OF ENGINEERING,MUMBAI,4,03188,"Vasantdada Patil Pratishthan's College Of Engineering and Visual Arts, Sion, Mumbai",linked,0.41,0.20,owner confirmed
 PADMASHREE DR.D.Y. PATIL PRATISHTHANS PADMASHREE DR.D.Y. PATIL INSTITUTE OF ENGG. & TECH.,"PIMPRI,PUNE",11,06207,"Dr. D. Y. Patil Unitech Society's Dr. D. Y. Patil Institute of Technology, Pimpri, Pune",linked,0.53,0.51,owner confirmed
 PADMASHRI DR.VITHALRAO VIKHE PATIL COLLEGE OF ENGINEERING,AHMEDNAGAR,4,05161,"Dr. Vithalrao Vikhe Patil College of Engineering, Ahmednagar",linked,0.77,0.16,"automatic (place confirmed): name score 0.77, clear lead"
 PCET's Pimpri Chinchwad College of Engineering & Research,Pune,4,06822,"Pimpri Chinchwad Education Trust's Pimpri Chinchwad College Of Engineering And Research, Ravet",linked,0.76,0.70,owner confirmed
 Pillai College of Engineering,,8,03207,"Mahatma Education Society's Pillai College of Engineering, New Panvel",linked,0.51,0.35,owner confirmed
 Pillai HOC College of Engineering and Technology,Raigad,6,03223,"Mahatma Education Society's Pillai HOC College of Engineering & Technology, Tal. Khalapur. Dist. Raigad",linked,0.58,0.41,owner confirmed
-PILLAI'S INSTITUTE OF INFORMATION TECHNOLOGY ENGINEERING MEDIA STUDIES AND RESEARCH,PANVEL,4,,,no_college,0.25,0.38,no plausible college (best score 0.25)
+PILLAI'S INSTITUTE OF INFORMATION TECHNOLOGY ENGINEERING MEDIA STUDIES AND RESEARCH,PANVEL,4,03207,"Mahatma Education Society's Pillai College of Engineering, New Panvel",linked,0.25,0.38,owner confirmed
 Pravara Rural Engineering College,Ahmadnagar,6,05139,"Pravara Rural College of Engineering, Loni, Pravaranagar, Ahmednagar.",linked,0.62,0.41,owner confirmed
 Pravara Rural Engineering College,Ahmednagar,7,05139,"Pravara Rural College of Engineering, Loni, Pravaranagar, Ahmednagar.",linked,0.62,0.41,owner confirmed
 PRIYADARSHINI BHAGWATI COLLEGE OF ENGINEERING NAGPUR,Nagpur,3,04177,"Priyadarshini Bhagwati College of Engineering, Harpur Nagar, Umred Road,Nagpur",linked,0.62,0.52,owner confirmed
-"PRIYADARSHINI COLLEGE OF ENGG, NEAR CRPF CAMPUS HINGNA ROAD, NAGPUR",NAGPUR,10,,,no_college,0.44,0.40,no plausible college (best score 0.44)
+"PRIYADARSHINI COLLEGE OF ENGG, NEAR CRPF CAMPUS HINGNA ROAD, NAGPUR",NAGPUR,10,04123,"Lokmanya Tilak Jankalyan Shikshan Sanstha, Priyadarshani College of Engineering, Nagpur",linked,0.44,0.40,owner confirmed
 Priyadarshini College of Engineering,Nagpur,14,04123,"Lokmanya Tilak Jankalyan Shikshan Sanstha, Priyadarshani College of Engineering, Nagpur",linked,0.47,0.35,owner confirmed
 Priyadarshini Institute of Engineering & Technology Nagpur,Nagpur,4,,,no_college,0.58,0.53,owner said: not a college on the website
 PROF. RAM MEGHE INSTITUTE OF TECHNOLOGY AND RESEARCH,Amravati,3,01105,"Prof. Ram Meghe Institute of Technology & Research, Amravati",linked,0.89,0.54,"automatic: name score 0.89, place ok"
@@ -151,12 +151,12 @@ PROF. RAM MEGHE INSTITUTE OF TECHNOLOGY AND RESEARCH,AMRAVATI,7,01105,"Prof. Ram
 Pune Institute of Computer Technology,Pune,4,06271,Pune Institute of Computer Technology,linked,1.00,0.44,"automatic: name score 1.00, place ok"
 "PVG's College of Engineering & Technology, Pune",Pune,4,06274,"PVG's College of Engineering, Technology & Management",linked,0.78,0.45,"automatic (place confirmed): name score 0.78, clear lead"
 "PVG'S College of Engineering, Technology & Management",Pune,6,06274,"PVG's College of Engineering, Technology & Management",linked,1.00,0.47,"automatic: name score 1.00, place ok"
-PVGS COLLEGE OF ENGINEERING & TECHNOLOGY,PUNE,4,,,no_college,0.37,0.28,no plausible college (best score 0.37)
+PVGS COLLEGE OF ENGINEERING & TECHNOLOGY,PUNE,4,06274,"PVG's College of Engineering, Technology & Management",linked,0.37,0.28,owner confirmed
 RAJENDRA MANE COLLEGE OF ENGG. & TECHNOLOGY,,1,03202,Rajendra Mane College of Engineering & Technology Ambav Deorukh,linked,0.72,0.38,owner confirmed
 RAJIV GANDHI COLLEGE OF ENGINEERING & RESEARCH,Nagpur,4,,,no_college,0.82,0.21,owner said: not a college on the website
 "Rajiv Gandhi College of Engineering, Research and Technology",Chandrapur,6,04163,Rajiv Gandhi College of Engineering Research & Technology Chandrapur,linked,0.87,0.23,"automatic: name score 0.87, place ok"
 RAMDEOBABA COLLEGE OF ENGINEERING & MANAGEMENT NAGPUR,NAGPUR,20,04115,"Shri Ramdeobaba College of Engineering and Management, Nagpur",linked,1.00,0.53,"automatic: name score 1.00, place ok"
-RAMRAO ADIK INSTITUTE OF TECHNOLOGY,NAVI MUMBAI,8,,,no_college,0.13,0.25,no plausible college (best score 0.13)
+RAMRAO ADIK INSTITUTE OF TECHNOLOGY,NAVI MUMBAI,8,,,no_college,0.13,0.25,owner said: not a college on the website
 "Rayat Shikshan Sanstha's Karmaveer Bhaurao Patil College of Engineering ,Satara",Satara,2,06270,"Rayat Shikshan Sanstha's Karmaveer Bhaurao Patil College of Engineering, Satara",linked,1.00,0.29,"automatic: name score 1.00, place ok"
 "RIZVI COLLEGE OF ENGINEERING, RIZVI EDUCATIONAL COMPLEX",MUMBAI,3,03201,"Rizvi Education Society's Rizvi College of Engineering, Bandra,Mumbai",linked,0.66,0.14,"automatic (place confirmed): name score 0.66, clear lead"
 "S B JAIN INSTITUTE OF TECHNOLOGY, MANAGEMENT AND RESEARCH",Nagpur,3,04137,"Sir Shantilal Badjate Charitable Trust's S. B. Jain Institute of technology, Management & Research, Nagpur",linked,0.67,0.30,"automatic (place confirmed): name score 0.67, clear lead"
@@ -179,7 +179,7 @@ SHRI SHIVAJI EDUCATION SOCIETY COLLEGE OF ENGG AND TECHNOLOGY AT POST BALBHULGAO
 Shri Vile Parle Kelavani Mandals Dwarkadas J Sanghvi College of Engineering,Mumbai-City,8,03199,"Shri Vile Parle Kelvani Mandal's Dwarkadas J. Sanghvi College of Engineering, Vile Parle,Mumbai",linked,0.96,0.58,owner confirmed
 Shri Vile Parle Kelavani Mandals Dwarkadas J. Sanghvi College of Engineering,Akola,7,03199,"Shri Vile Parle Kelvani Mandal's Dwarkadas J. Sanghvi College of Engineering, Vile Parle,Mumbai",linked,0.96,0.58,owner confirmed
 "Shri Vile Parle Kelavani Mandalâ€™s Institute Of Technology,Dhule",Dhule,4,05449,"Shri Vile Parle Kelavani Mandal's Institute of Technology, Dhule",linked,1.00,0.66,"automatic: name score 1.00, place ok"
-SHRI VITHAL EDUCATION & RESEARCH INSTITUTE COLLEGE OF ENGG.,PANDHARPUR,3,,,no_college,0.43,0.38,no plausible college (best score 0.43)
+SHRI VITHAL EDUCATION & RESEARCH INSTITUTE COLLEGE OF ENGG.,PANDHARPUR,3,06220,"SVERI's College of Engineering, Pandharpur",linked,0.43,0.38,owner confirmed
 SIES GRADUATE SCHOOL OF TECHNOLOGY,NAVI,7,03211,"S.I.E.S. Graduate School of Technology, Nerul, Navi Mumbai",linked,0.74,0.37,"automatic (place confirmed): name score 0.74, clear lead"
 SINHGAD INSTITUTE EDUCATION SOCIETY'S SINHGAD INSTITUTE OF TECHNOLOGY,PUNE,4,06185,"Sinhgad Institute of Technology, Kusgaon (BK) Lonavala",linked,0.64,0.59,owner confirmed
 "SINHGAD TECHNICAL EDUCATION SOCIETY S, SINHGAD COLLEGE OF ENGG.",PUNE,14,06177,"Sinhgad College of Engineering, Vadgaon (BK), Pune",linked,0.60,0.59,owner confirmed
@@ -189,7 +189,7 @@ SKN Sinhgad College of Engineering Pandharpur,Sholapur,3,06643,"S K N Sinhgad Co
 SMT.KASHIBAI NAVALE COLLEGE O ENGINEERING,PUNE,3,06178,"Sinhgad Technical Education Society's Smt. Kashibai Navale College of Engineering,Vadgaon,Pune",linked,0.64,0.24,owner confirmed
 SNJB's Late Sau. Kantabai Bhavarlalji Jain College of Engineering,Nashik,4,05173,"SNJB's Late Sau. Kantabai Bhavarlalji Jain College of Engineering, (Jain Gurukul), Neminagar,Chandwad,(Nashik)",linked,0.86,0.17,"automatic: name score 0.86, place ok"
 SOU. SUSHILA DANCHAND GHODAWAT CHARITABLE TRUST'S SANJAY GHODAWAT GROUP OF INSTITUTIONS,ATIGRE,2,06811,Sanjay Ghodawat Institute,linked,0.53,0.29,owner confirmed
-SRES COLLEGE OF ENGINEERING,KOPARGAON,9,,,no_college,0.16,0.31,no plausible college (best score 0.16)
+SRES COLLEGE OF ENGINEERING,KOPARGAON,9,05160,"Sanjivani Rural Education Society's Sanjivani College of Engineering, Kopargaon",linked,0.16,0.31,owner confirmed
 ST. FRANCIS INSTITUTE OF TECH. (ENGG. COLLEGE),MUMBAI,10,03204,"St. Francis Institute of Technology,Borivali, Mumbai",linked,0.77,0.25,"automatic (place confirmed): name score 0.77, clear lead"
 St. Vincent Pallotti College of Engineering and Technology,Nagpur,7,04174,"ST. Vincent Pallotti College of Engineering & Technology, Nagpur",linked,0.93,0.26,"automatic: name score 0.93, place ok"
 "SVERI'S COLLEGE OF ENGINEERING, PANDHARPUR",Sholapur,8,06220,"SVERI's College of Engineering, Pandharpur",linked,1.00,0.33,"automatic: name score 1.00, place ok"
@@ -212,5 +212,5 @@ WALCHAND INSTITUTE OF TECHNOLOGY,,6,06265,"Walchand Institute of Technology, Sol
 WALCHAND INSTITUTE OF TECHNOLOGY,SOLAPUR,9,06265,"Walchand Institute of Technology, Solapur",linked,0.81,0.39,"automatic: name score 0.81, place ok"
 Xavier Institute of Engineering,Mumbai-City,3,03214,"Xavier Institute Of Engineering C/O Xavier Technical Institute,Mahim,Mumbai",linked,0.65,0.15,owner confirmed
 "YASHODA TECHNICAL CAMPUS, SATARA",Satara,2,06757,"Yashoda Technical Campus, Wadhe, Satara.",linked,0.82,0.32,"automatic: name score 0.82, place ok"
-ZAGDU SINGH CHARITABLE TRUSTS THAKUR COLLEGE OF ENGG. & TECHNOLOGY,MUMBAI,3,,,no_college,0.40,0.34,no plausible college (best score 0.40)
+ZAGDU SINGH CHARITABLE TRUSTS THAKUR COLLEGE OF ENGG. & TECHNOLOGY,MUMBAI,3,03176,"Thakur College of Engineering and Technology, Kandivali, Mumbai",linked,0.40,0.34,owner confirmed
 "Zeal College of Engineering and Research,Pune",Pune,5,06298,"Zeal Education Society's Zeal College of Engineering & Reserch, Narhe, Pune",linked,0.90,0.83,owner confirmed

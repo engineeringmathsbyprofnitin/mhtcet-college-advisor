@@ -11,4 +11,5 @@ Status of each row:
 Name handling: initials are kept together (D.Y. = dy), text in brackets is ignored, "&" = "and", common abbreviations (Engg, Mgt, Govt...) are expanded, rare words weigh more than common ones (IDF).
 Known trap (tested): "D.Y. Patil College of Engineering and Technology" must not link to "Dr. V.K. Patil College" (Dharashiv).
 Known data quirk: some NBA names contain mojibake (for example an apostrophe shown as "â€™"); the matcher still works, the importer is not changed in this stage.
-Next: 12b-3a2 (owner confirms the doubtful list), 12b-3b (match programs to branches, write accreditation rows, package), 12b-3c (show on cards, tests, phone check).
+Owner answers: 86 doubtful + 28 unresolved pairs confirmed in data/manual/nba_institution_confirmations.csv (114 rows). Result: 192 institutions linked, 23 not on the website (private/deemed universities and colleges outside the CAP list). Note: JSPM Imperial College (Wagholi) is not in the website list, so it stays unlinked.
+Next: 12b-3b (match programs to branches, write accreditation rows, package), 12b-3c (show on cards, tests, phone check).
