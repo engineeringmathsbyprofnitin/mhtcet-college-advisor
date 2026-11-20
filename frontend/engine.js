@@ -487,8 +487,8 @@
     else L.push("Fee data not available; check the college before relying on your budget.");
     if (c.fee.year && c.fee.year !== curYear && c.fee.status !== "unavailable") L.push("Fee data is for " + c.fee.year + ", not " + curYear + ".");
     if (c.fee.status === "ok" && input.feeBasis === "tuition") L.push("This is a tuition fee and does not include hostel, transport or exam charges.");
-    if (acc.naac) L.push("NAAC: " + (acc.naac.grade || "grade not stated") + " (" + acc.naac.status + (acc.naac.validTo ? ", until " + acc.naac.validTo : "") + ").");
-    if (acc.nba) L.push("NBA for this program: " + acc.nba.status + (acc.nba.validTo ? " (until " + acc.nba.validTo + ")" : "") + ".");
+    if (acc.naac) L.push("NAAC: " + (acc.naac.grade || "grade not stated") + (acc.naac.status === "expired" ? " (ended" + (acc.naac.validTo ? " on " + acc.naac.validTo : "") + ")." : " (" + acc.naac.status + (acc.naac.validTo ? ", until " + acc.naac.validTo : "") + ")."));
+    if (acc.nba) L.push("NBA for this program: " + (acc.nba.status === "expired" ? "accreditation period ended" + (acc.nba.validTo ? " on " + acc.nba.validTo : "") + "." : acc.nba.status + (acc.nba.validTo ? " (until " + acc.nba.validTo + ")" : "") + "."));
     if (plc) L.push("Placement: " + plc.value + "% placed in " + plc.year + " (" + plc.scope + " level).");
     var est = []; if (teaching) est.push("teaching " + teaching.score + "/10"); if (infra) est.push("infrastructure " + infra.score + "/10");
     if (est.length) L.push("System estimates (not official scores): " + est.join(", ") + ".");

@@ -1,0 +1,7 @@
+# Stage 12b-3c - showing NBA on the card, workflow wiring
+
+- Card (frontend/results.js, styles.css): an NBA (or NAAC) period that has ended is shown in grey italics as "Ended on 30 Jun 2025" with the line "Period has ended; renewal may be pending". It is never hidden (owner decision, 2026-11-20). A valid period still reads "Accredited (until <date>)"; no end date reads "Accredited, validity date not known"; no NBA row reads "Not available". Odd dates are shown as printed.
+- Explanation line (engine.js, copy in recommendation/engine.js): "NBA for this program: accreditation period ended on <date>."
+- Workflow "Read the NBA lists": after replacing data/normalized/nba it now also runs nba_match, nba_branch_match and build_accreditation and saves data/normalized/nba_link and tables/accreditation*. It also starts when data/manual/nba_institution_confirmations.csv or nba_program_rules.csv change. A new NBA download can create institutions or name pairs that wait for the owner: they stay UNLINKED (listed in data/normalized/nba_link/*_report.json) and the offline test "owner confirmations resolve every doubtful pair" will then fail until the two owner answer files are extended - that is intended.
+- Tests: tests/results_nba_display.test.js (3), one new engine test; all JS tests pass with the real packaged data (110 tests, 6 skipped without extra settings).
+- The website only changes after the workflow "Publish website data" has run.

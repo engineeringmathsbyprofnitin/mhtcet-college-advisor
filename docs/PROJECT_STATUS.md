@@ -71,3 +71,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 12b-3a complete: all NBA institutions resolved (192 linked, 23 not on the website); next 12b-3b
 
 ## Stage 12b-3b built (docs/STAGE12B3B.md): programs matched to branches (1,177 of 1,357 rows), accreditation table 1,206 rows packaged; display + phone check next (12b-3c)
+
+## Stage 12b-3c built (docs/STAGE12B3C.md): ended NBA shown grey with date, NBA workflow now links + builds accreditation; owner to run "Publish website data" and check on phone

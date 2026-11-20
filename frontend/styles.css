@@ -15,6 +15,7 @@ input[type=text],select{width:100%;min-height:44px;padding:8px 10px;border:1px s
 input[type=checkbox]{width:20px;height:20px}
 :focus-visible{outline:3px solid #ffb703;outline-offset:2px}
 small{display:block;color:var(--muted);margin-top:4px}
+.acc-ended{color:var(--muted);font-style:italic}
 .hint{margin:6px 0 10px;color:var(--muted)}
 .err{color:var(--err);font-weight:600}
 .req{color:var(--err)}

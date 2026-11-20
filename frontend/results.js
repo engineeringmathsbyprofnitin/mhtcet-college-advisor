@@ -31,13 +31,19 @@
 
   function accCell(doc, label, a, withGrade) {
     if (!a) return cell(doc, label, noteLine(doc, NA));
-    var s = a.status, main;
+    var s = a.status, main, expired = false;
     if (s === "valid") main = (withGrade && a.grade ? a.grade + " - " : "") + "Accredited" + (a.validTo ? " (until " + a.validTo + ")" : "");
-    else if (s === "expired") main = (withGrade && a.grade ? a.grade + " - " : "") + "Expired" + (a.validTo ? " (" + a.validTo + ")" : "");
+    else if (s === "expired") { main = (withGrade && a.grade ? a.grade + " - " : "") + "Ended" + (a.validTo ? " on " + fmtDate(a.validTo) : ""); expired = true; }
     else if (s === "validity_unknown") main = (withGrade && a.grade ? a.grade + " - " : "") + "Accredited, validity date not known";
     else if (s === "not_accredited") main = "Not accredited";
     else main = NA;
-    return cell(doc, label, noteLine(doc, main));
+    var kids = noteLine(doc, main);
+    if (expired) { kids[0].className = "acc-ended"; kids.push(small(doc, "Period has ended; renewal may be pending")); }     // grey, never hidden
+    return cell(doc, label, kids);
+  }
+  var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function fmtDate(iso) {                                    // 2025-06-30 -> 30 Jun 2025 (no locale dependence); anything else is shown as printed
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || ""); return m && +m[2] >= 1 && +m[2] <= 12 ? (+m[3]) + " " + MONTHS[+m[2] - 1] + " " + m[1] : String(iso);
   }
 
   function suitClass(s) {

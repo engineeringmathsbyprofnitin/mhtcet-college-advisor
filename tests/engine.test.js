@@ -243,6 +243,13 @@ test("expired or undated accreditation is flagged and not scored; NBA absent is 
   D.accreditation[0].valid_to = "2030-01-01"; assert.equal(run(base(), D).results[0].componentScores.accreditation, 100);
   D.accreditation[0].valid_to = ""; assert.equal(run(base(), D).results[0].naac.status, "validity_unknown");
 });
+test("an ended NBA period is explained as 'ended on <date>', not 'expired (until ...)' ", () => {
+  const D = simple(80);
+  D.accreditation.push({ accreditation_id: "N1", college_code: "A", choice_code: "A-1", body: "NBA", scope: "program", status: "accredited", grade: "", valid_from: "", valid_to: "2025-06-30", source_doc_id: "D-CUT", validation_status: "validated" });
+  const x = run(base(), D).results.find(r => r.choiceCode === "A-1");
+  assert.equal(x.nba.status, "expired"); const line = x.explanation.find(t => t.startsWith("NBA for this program"));
+  assert.equal(line, "NBA for this program: accreditation period ended on 2025-06-30."); assert.ok(!/until/.test(line));
+});
 test("NBA on one program does not apply to other programs of the college", () => {
   const D = mini(); D.addCollege("A"); D.addBranch("A-1", "A"); D.addBranch("A-2", "A", "Civil Engineering");
   ["A-1", "A-2"].forEach(c => D.addCut("historical_cutoffs", c, "2025-26", "IV", "GOPENS", 80));
