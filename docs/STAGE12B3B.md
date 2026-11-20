@@ -1,0 +1,10 @@
+# Stage 12b-3b - NBA programs -> website branches -> accreditation rows
+
+1. `ingestion/nba_branch_match.py` matches every NBA programme row of a linked institution (12b-3a) to the branches of the SAME college. Only exact names count (spelling-only differences ignored: case, "&"/"and", Engg/Engineering, Textiles/Textile, Materials/Material, Telecommunications, [SW]/(Sandwich Pattern) = Sandwich). Close but different names are decided by the owner in `data/manual/nba_program_rules.csv` (nba_program, branch_name, decision yes/no; names in canonical form, see the report). A pair without a decision stays `unclear` and is never linked.
+   Result (first run): 1,357 rows -> 1,177 matched, 180 no related branch (not a CAP branch of that college, or the owner said no), 0 unclear.
+2. `ingestion/build_accreditation.py` writes `data/normalized/tables/accreditation.csv` (body NBA, scope program, one row per branch choice code and NBA validity; status accredited, or unknown if the NBA list does not say accredited) and `accreditation_sources.csv` (the two NBA Excel files with their SHA-256).
+   Result: 1,206 rows, 604 branches, 141 colleges; 3 rows have no end date (the website says "validity unknown"). The website itself decides valid / expired from valid_to and today's date; on 2026-11-20, 855 of the 1,206 rows are already past their end date.
+3. `ingestion/package_real.py` now adds these rows (only branches that are on the website) and one source_documents line per NBA file (type accreditation_list) when the website data is built.
+4. One NBA programme is attached to every choice code of the matched branch at that college (for example the regular and the second-year code): 28 such cases.
+5. Folder note: the match files live in `data/normalized/nba_link/`, NOT in `data/normalized/nba/`, because the "Read the NBA lists" workflow replaces that whole folder. After a new NBA download, re-run `nba_match.py`, `nba_branch_match.py`, `build_accreditation.py` (wiring them into a workflow is part of 12b-3c).
+Not done here: showing NBA on the cards and the phone check (12b-3c), NAAC.

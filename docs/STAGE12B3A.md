@@ -1,7 +1,7 @@
 # Stage 12b-3a - match NBA institutions to website colleges
 
 Input: `data/normalized/nba/nba_programs.csv` (NBA lists downloaded by the site owner) and `data/normalized/tables/colleges.csv`.
-Output: `data/normalized/nba/nba_institution_match.csv` (+ `nba_institution_match_report.json`), one row per NBA institution (name + place).
+Output: `data/normalized/nba_link/nba_institution_match.csv` (+ report) - in nba_link, not in nba, because the NBA workflow replaces the nba folder, one row per NBA institution (name + place).
 
 Status of each row:
 - `linked` - clear match. Automatic only when the name score is >= 0.80 with a clear lead over the second best, or 0.65-0.80 with a bigger lead AND the printed place found in the college name/district. A different known district blocks a link. The printed place is also a tie-breaker (two "Government College of Engineering" in different cities).

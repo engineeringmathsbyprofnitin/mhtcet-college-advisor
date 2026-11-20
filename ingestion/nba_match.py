@@ -6,7 +6,7 @@ Rules (never guess):
  - A pair that is plausible but not certain goes to the DOUBTFUL list; the owner confirms it in data/manual/nba_institution_confirmations.csv
    (column decision = yes + college_code, or no). Nothing doubtful is ever used until confirmed.
  - An NBA institution with no plausible college (for example a university that does not take part in CAP) is reported as 'no_college'.
-Output: data/normalized/nba/nba_institution_match.csv (+ nba_institution_match_report.json).
+Output: data/normalized/nba_link/nba_institution_match.csv (+ report). NOT inside data/normalized/nba, because the "Read the NBA lists" workflow replaces that whole folder.
 """
 import csv, difflib, functools, json, math, os, re, sys
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -102,7 +102,7 @@ def load_confirmations(path=MANUAL):
 
 
 def build(base=N, manual=MANUAL, outdir=None):
-    outdir = outdir or os.path.join(base, "nba")
+    outdir = outdir or os.path.join(base, "nba_link")
     nba = load(os.path.join(base, "nba", "nba_programs.csv")); colleges = load(os.path.join(base, "tables", "colleges.csv")); idf = make_idf(colleges)
     by_code = {c["college_code"]: c for c in colleges}; conf = load_confirmations(manual)
     insts = {}

@@ -69,3 +69,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 12b-3a2: owner confirmed 86 doubtful NBA pairs (data/manual/nba_institution_confirmations.csv): 175 institutions linked; 28 still unresolved (shown to owner)
 
 ## Stage 12b-3a complete: all NBA institutions resolved (192 linked, 23 not on the website); next 12b-3b
+
+## Stage 12b-3b built (docs/STAGE12B3B.md): programs matched to branches (1,177 of 1,357 rows), accreditation table 1,206 rows packaged; display + phone check next (12b-3c)

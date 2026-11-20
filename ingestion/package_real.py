@@ -84,6 +84,33 @@ def add_fees(folder, T):
     return rep
 
 
+def add_accreditation(folder, T):
+    """Stage 12b-3b: tables/accreditation.csv (built by ingestion/build_accreditation.py from the owner-downloaded NBA lists) -> the website's `accreditation` table
+    + one source_documents row per NBA Excel file (type accreditation_list, SHA-256 of the file). Only branches that are on the website. No file = nothing added."""
+    src = os.path.join(T, "accreditation.csv"); rep = dict(added=0, skipped_not_on_website=0)
+    if not os.path.exists(src): return rep
+    with open(src, newline="", encoding="utf-8") as f: rows = list(csv.DictReader(f))
+    with open(os.path.join(folder, "branches.csv"), newline="", encoding="utf-8") as f: on_site = {r["choice_code"] for r in csv.DictReader(f)}
+    keep = [r for r in rows if r["choice_code"] in on_site]; rep["skipped_not_on_website"] = len(rows) - len(keep)
+    if not keep: return rep
+    ap = os.path.join(folder, "accreditation.csv")
+    with open(ap, newline="", encoding="utf-8") as f: header = next(csv.reader(f))
+    with open(ap, "a", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=header, lineterminator="\r\n")
+        for r in keep: w.writerow({k: r.get(k, "") for k in header}); rep["added"] += 1
+    used = {r["source_doc_id"] for r in keep}
+    with open(os.path.join(T, "accreditation_sources.csv"), newline="", encoding="utf-8") as f: srcs = [r for r in csv.DictReader(f) if r["source_doc_id"] in used]
+    if {r["source_doc_id"] for r in srcs} != used: raise SystemExit("an accreditation row points to a source file that is not listed in accreditation_sources.csv")
+    sp = os.path.join(folder, "source_documents.csv")
+    with open(sp, newline="", encoding="utf-8") as f: sh = next(csv.reader(f))
+    with open(sp, "a", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=sh, lineterminator="\r\n")
+        for r in srcs: w.writerow(dict(doc_id=r["source_doc_id"], source_name="National Board of Accreditation (NBA), India - accredited engineering programmes, Maharashtra", source_url="https://www.nbaind.org/",
+                                    filename=r["filename"], sha256=r["sha256"], admission_year="", doc_type="accreditation_list", cap_round="", published_date="", retrieved_date=r["retrieved_date"],
+                                    validation_status="validated", is_synthetic="FALSE"))
+    return rep
+
+
 def assemble(folder, plan=None, tables=None):
     T = tables or globals()["T"]
     plan = plan or P.make_plan(json.load(open(P.DISCOVERY))["admission_year"])
@@ -94,16 +121,18 @@ def assemble(folder, plan=None, tables=None):
         with (gzip.open(src, "rb") if src.endswith(".gz") else open(src, "rb")) as i, open(os.path.join(folder, t + ".csv"), "wb") as o: shutil.copyfileobj(i, o)
     frep = add_fees(folder, T)
     print("fee rows packaged: %d" % frep["added"])
+    arep = add_accreditation(folder, T)
+    print("accreditation rows packaged: %d (NBA); not on the website: %d" % (arep["added"], arep["skipped_not_on_website"]))
     vrep = add_vacancy(folder, T)
     print("vacancy rows packaged: %d (round %s, year %s); not on the website: %d" % (vrep["added"], vrep["round"], vrep["year"], vrep["skipped_not_on_website"]))
     h = hashlib.sha256()
-    for t in REAL[-2:] + ["vacancies", "fees"]:
+    for t in REAL[-2:] + ["vacancies", "fees", "accreditation"]:
         with open(os.path.join(folder, t + ".csv"), "rb") as f: h.update(f.read())
     ver = "REAL-%s-R%s-%s" % (plan["current_year"], plan["latest_round"], h.hexdigest()[:8])
     summary = "rounds=%s;next=%s;phase=%s" % ("+".join(plan["rounds_done"]), plan["next_round_expected"] or "none", plan["year_status"])
     with open(os.path.join(folder, "data_version.csv"), "w", newline="") as f:
         w = csv.writer(f, lineterminator="\n"); w.writerow("data_version,created_at,is_last_known_good,admission_year,row_count_summary,notes,is_synthetic".split(","))
-        w.writerow([ver, json.load(open(P.DISCOVERY))["generated_at"], "TRUE", plan["current_year"], summary, "Real CET Cell cutoff lists and vacancy position and FRA-approved fees; accreditation, placements not yet available", "FALSE"])
+        w.writerow([ver, json.load(open(P.DISCOVERY))["generated_at"], "TRUE", plan["current_year"], summary, "Real CET Cell cutoff lists and vacancy position, FRA-approved fees and NBA programme accreditation; NAAC, placements not yet available", "FALSE"])
     stamp = json.load(open(P.DISCOVERY))["generated_at"]
     with open(os.path.join(folder, "refresh_status.csv"), "w", newline="") as f:      # the "last successful data update" shown on the page
         w = csv.writer(f, lineterminator="\n"); w.writerow("run_id,started_at,finished_at,status,admission_year_detected,data_version_published,message,is_synthetic".split(","))

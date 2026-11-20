@@ -1,0 +1,359 @@
+{
+ "ok": true,
+ "rows": 1357,
+ "counts": {
+  "matched": 1177,
+  "no_branch": 180
+ },
+ "pairs_waiting": [],
+ "multi_choice_code": [
+  [
+   "03215",
+   "Computer Engineering",
+   [
+    "0321524210",
+    "0321524510"
+   ]
+  ],
+  [
+   "06146",
+   "Computer Engineering",
+   [
+    "0614624510",
+    "0614624530E"
+   ]
+  ],
+  [
+   "06146",
+   "Electronics and Telecommunication Engineering",
+   [
+    "0614637210",
+    "0614637230E"
+   ]
+  ],
+  [
+   "06175",
+   "Civil Engineering",
+   [
+    "0617519110",
+    "0617519190L"
+   ]
+  ],
+  [
+   "06175",
+   "Computer Engineering",
+   [
+    "0617524510",
+    "0617524590L"
+   ]
+  ],
+  [
+   "06007",
+   "Information Technology",
+   [
+    "0600724610",
+    "0600724670U"
+   ]
+  ],
+  [
+   "06007",
+   "Information Technology",
+   [
+    "0600724610",
+    "0600724670U"
+   ]
+  ],
+  [
+   "06007",
+   "Computer Science and Engineering",
+   [
+    "0600724210",
+    "0600724270U"
+   ]
+  ],
+  [
+   "03215",
+   "Computer Engineering",
+   [
+    "0321524210",
+    "0321524510"
+   ]
+  ],
+  [
+   "03033",
+   "MECHANICAL ENGINEERING",
+   [
+    "0303361210",
+    "0303361213K"
+   ]
+  ],
+  [
+   "03033",
+   "ELECTRICAL ENGINEERING",
+   [
+    "0303329310",
+    "0303329313K"
+   ]
+  ],
+  [
+   "03033",
+   "ELECTRONICS AND TELECOMMUNICATION ENGINEERING",
+   [
+    "0303337210",
+    "0303337213K",
+    "0303337290L",
+    "0303337293LK"
+   ]
+  ],
+  [
+   "03033",
+   "CHEMICAL ENGINEERING",
+   [
+    "0303350710",
+    "0303350713K"
+   ]
+  ],
+  [
+   "03033",
+   "CHEMICAL ENGINEERING",
+   [
+    "0303350710",
+    "0303350713K"
+   ]
+  ],
+  [
+   "03033",
+   "MECHANICAL ENGINEERING",
+   [
+    "0303361210",
+    "0303361213K"
+   ]
+  ],
+  [
+   "03033",
+   "ELECTRICAL ENGINEERING",
+   [
+    "0303329310",
+    "0303329313K"
+   ]
+  ],
+  [
+   "03184",
+   "Computer Engineering",
+   [
+    "0318424210",
+    "0318424510"
+   ]
+  ],
+  [
+   "03184",
+   "Computer Engineering",
+   [
+    "0318424210",
+    "0318424510"
+   ]
+  ],
+  [
+   "03197",
+   "Computer Engineering",
+   [
+    "0319724210",
+    "0319724510"
+   ]
+  ],
+  [
+   "03197",
+   "Computer Engineering",
+   [
+    "0319724210",
+    "0319724510"
+   ]
+  ],
+  [
+   "03197",
+   "COMPUTER ENGINEERING",
+   [
+    "0319724210",
+    "0319724510"
+   ]
+  ],
+  [
+   "03197",
+   "COMPUTER ENGINEERING",
+   [
+    "0319724210",
+    "0319724510"
+   ]
+  ],
+  [
+   "03210",
+   "Computer Engineering",
+   [
+    "0321024230E",
+    "0321024510"
+   ]
+  ],
+  [
+   "06146",
+   "Electronics and Telecommunication Engineering",
+   [
+    "0614637210",
+    "0614637230E"
+   ]
+  ],
+  [
+   "06146",
+   "Computer Engineering",
+   [
+    "0614624510",
+    "0614624530E"
+   ]
+  ],
+  [
+   "06146",
+   "ELECTRONICS AND TELECOMMUNICATION ENGINEERING",
+   [
+    "0614637210",
+    "0614637230E"
+   ]
+  ],
+  [
+   "06146",
+   "COMPUTER ENGINEERING",
+   [
+    "0614624510",
+    "0614624530E"
+   ]
+  ],
+  [
+   "06146",
+   "COMPUTER ENGINEERING",
+   [
+    "0614624510",
+    "0614624530E"
+   ]
+  ],
+  [
+   "06146",
+   "ELECTRONICS AND TELECOMMUNICATION ENGINEERING",
+   [
+    "0614637210",
+    "0614637230E"
+   ]
+  ],
+  [
+   "06310",
+   "Computer Engineering",
+   [
+    "0631024210",
+    "0631024510"
+   ]
+  ],
+  [
+   "06175",
+   "COMPUTER ENGINEERING",
+   [
+    "0617524510",
+    "0617524590L"
+   ]
+  ],
+  [
+   "06175",
+   "Computer Engineering",
+   [
+    "0617524510",
+    "0617524590L"
+   ]
+  ],
+  [
+   "06175",
+   "Civil Engineering",
+   [
+    "0617519110",
+    "0617519190L"
+   ]
+  ],
+  [
+   "06175",
+   "Computer Engineering",
+   [
+    "0617524510",
+    "0617524590L"
+   ]
+  ],
+  [
+   "06139",
+   "Computer Engineering",
+   [
+    "0613924210",
+    "0613924510"
+   ]
+  ],
+  [
+   "03215",
+   "COMPUTER ENGINEERING",
+   [
+    "0321524210",
+    "0321524510"
+   ]
+  ],
+  [
+   "04174",
+   "Computer Science and Engineering",
+   [
+    "0417424210",
+    "0417424510"
+   ]
+  ],
+  [
+   "04174",
+   "Computer Science and Engineering",
+   [
+    "0417424210",
+    "0417424510"
+   ]
+  ],
+  [
+   "06007",
+   "COMPUTER ENGINEERING",
+   [
+    "0600724210",
+    "0600724270U"
+   ]
+  ],
+  [
+   "06007",
+   "COMPUTER SCIENCE AND ENGINEERING",
+   [
+    "0600724210",
+    "0600724270U"
+   ]
+  ],
+  [
+   "06007",
+   "COMPUTER SCIENCE AND ENGINEERING",
+   [
+    "0600724210",
+    "0600724270U"
+   ]
+  ],
+  [
+   "06298",
+   "Computer Engineering",
+   [
+    "0629824510",
+    "0629824530E"
+   ]
+  ],
+  [
+   "06298",
+   "Electronics & Telecommunications Engineering",
+   [
+    "0629837210",
+    "0629837230E"
+   ]
+  ]
+ ],
+ "unused_rules": [],
+ "problems": []
+}
