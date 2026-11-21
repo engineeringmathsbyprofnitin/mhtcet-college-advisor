@@ -77,3 +77,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 12b done: NBA shown on cards (ended = grey with date, none = "No NBA record found"); phone-checked by owner. Next: Stage 12c (NAAC)
 
 ## Stage 12c-1 built (docs/STAGE12C1.md): NAAC probe workflow; owner to run "Probe the NAAC site" and tell the result
+
+## Stage 12c-2 built (docs/STAGE12C2.md): NAAC probe failed (GitHub cannot read the site); owner file read: 2,324 Maharashtra rows, no end dates; next 12c-3 matching

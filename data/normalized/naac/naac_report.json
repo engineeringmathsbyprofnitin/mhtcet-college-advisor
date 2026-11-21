@@ -1,0 +1,28 @@
+{
+ "ok": true,
+ "files": [
+  {
+   "file": "Institutions_accredited_by_NAAC_having_valid_accreditation-as_on_14082025_1.xlsx",
+   "sha256": "cefa2d3f4baea8465f63b75feea74ee80f256b76fe89dd64d27a11901c2f2d41",
+   "list_as_on": "2025-08-14"
+  }
+ ],
+ "rows_read": 7566,
+ "rows_maharashtra": 2324,
+ "grades": {
+  "A++": 37,
+  "A+": 162,
+  "A": 326,
+  "B++": 430,
+  "B+": 453,
+  "B": 692,
+  "C": 224
+ },
+ "problems": [],
+ "warnings": [
+  "Track-Id MHCOGN10722 is used by rows [3510, 3511] (kept; AISHE id is the key)",
+  "Track-Id MHCOGN11049 is used by rows [3825, 3826] (kept; AISHE id is the key)",
+  "Track-Id MHCOGN11249 is used by rows [4042, 4043] (kept; AISHE id is the key)"
+ ],
+ "declared_more_than_5_years_before_list": 124
+}
