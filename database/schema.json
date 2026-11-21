@@ -1,6 +1,6 @@
 {
- "schema_version": "0.6",
- "note": "v0.6 (Stage 10c-3a): seat_types gains family + variant (optional). v0.5 (Stage 10c-2): cutoff tables gain section, stage, merit_no, merit_exam (v0.4) and home_university + home_university_basis (printed|inferred|unknown|not_needed), all optional; blank in synthetic data. Stage meanings are not defined by the official documents.",
+ "schema_version": "0.7",
+ "note": "v0.7 (Stage 12c-4): accreditation gains cgpa and listed_as_on (optional; the date of the NAAC list a grade comes from). v0.6 (Stage 10c-3a): seat_types gains family + variant (optional). v0.5 (Stage 10c-2): cutoff tables gain section, stage, merit_no, merit_exam (v0.4) and home_university + home_university_basis (printed|inferred|unknown|not_needed), all optional; blank in synthetic data. Stage meanings are not defined by the official documents.",
  "tables": {
   "colleges": {
    "description": "One row per college, keyed by its official college code. Never merge colleges by name similarity.",
@@ -801,12 +801,22 @@
      "required": false
     },
     {
+     "name": "cgpa",
+     "type": "float",
+     "required": false
+    },
+    {
      "name": "valid_from",
      "type": "date",
      "required": false
     },
     {
      "name": "valid_to",
+     "type": "date",
+     "required": false
+    },
+    {
+     "name": "listed_as_on",
      "type": "date",
      "required": false
     },

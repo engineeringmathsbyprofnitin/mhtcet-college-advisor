@@ -8,11 +8,11 @@ function row(over) {
   return Object.assign({ rank: 1, collegeName: "Test College", collegeCode: "06001", district: "Pune", branchName: "Civil Engineering", branchCode: "19110", historicalCutoffs: [null, null, null],
     currentCutoff: null, vacancy: null, fee: null, infrastructure: null, teaching: null, placement: null, nba: null, naac: null, suitability: "Possible but uncertain", score: 50, explanation: ["x"], sources: [], docIds: [] }, over);
 }
-function draw(r) {
+function draw(r, label) {
   const dom = new JSDOM("<body><div id='root'></div></body>"), root = dom.window.document.getElementById("root");
   const res = { ok: true, meta: { historicalYears: ["2023-24", "2024-25", "2025-26"], currentAdmissionYear: "2026-27", dataVersion: "T", usingSyntheticData: false, warnings: [], seatTypesUsed: [] }, results: [r], counts: { totalChoices: 1 }, insufficientData: [], sources: [] };
   RV.render(root, res, {});
-  const td = Array.from(root.querySelectorAll("td")).find(x => x.getAttribute("data-label") === "NBA accreditation");
+  const td = Array.from(root.querySelectorAll("td")).find(x => x.getAttribute("data-label") === (label || "NBA accreditation"));
   return td;
 }
 
@@ -30,4 +30,16 @@ T("a valid NBA period is not grey; an undated one says the date is not known; no
 });
 T("an odd date is shown as printed, not as 'NaN'", () => {
   const td = draw(row({ nba: { status: "expired", grade: null, validTo: "June 2025" } })); assert.equal(td.querySelector(".cv > span").textContent, "Ended on June 2025");
+});
+
+T("NAAC: grade, CGPA, declaration date and the list date, no valid / expired label", () => {
+  const td = draw(row({ naac: { status: "validity_unknown", grade: "B++", cgpa: "2.85", validFrom: "2024-07-19", validTo: null, listedAsOn: "2025-08-14" } }), "NAAC grade");
+  assert.equal(td.querySelector(".cv > span").textContent, "B++ (CGPA 2.85)"); assert.match(td.textContent, /Declared 19 Jul 2024/); assert.match(td.textContent, /On NAAC's list as on 14 Aug 2025/);
+  assert.doesNotMatch(td.textContent, /Accredited|Expired|Ended|until|validity/i); assert.ok(!td.querySelector(".acc-ended"));
+});
+T("NAAC without a record: grey 'No NAAC record found' with the not-a-verdict note; a row without CGPA or declaration date still draws", () => {
+  let td = draw(row({ naac: null }), "NAAC grade");
+  assert.equal(td.querySelector(".cv > span").textContent, "No NAAC record found"); assert.ok(td.querySelector(".acc-ended")); assert.match(td.textContent, /does not mean the college is not accredited/); assert.doesNotMatch(td.textContent, /Not available/);
+  td = draw(row({ naac: { status: "validity_unknown", grade: "A", cgpa: null, validFrom: null, validTo: null, listedAsOn: "2025-08-14" } }), "NAAC grade");
+  assert.equal(td.querySelector(".cv > span").textContent, "A"); assert.doesNotMatch(td.textContent, /Declared/); assert.match(td.textContent, /as on 14 Aug 2025/);
 });

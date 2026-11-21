@@ -177,8 +177,10 @@ Key: `accreditation_id`
 | scope* | str | one of: program, institution |
 | status* | str | one of: accredited, not_accredited, expired, unknown |
 | grade | str |  |
+| cgpa | float |  |
 | valid_from | date |  |
 | valid_to | date |  |
+| listed_as_on | date |  |
 
 ## placements
 Placement facts with year, metric and scope.

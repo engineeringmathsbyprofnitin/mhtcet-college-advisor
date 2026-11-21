@@ -133,8 +133,10 @@ class RealData(unittest.TestCase):
         if not os.path.exists(path): self.skipTest("accreditation.csv not built yet")
         rows = list(csv.DictReader(open(path, encoding="utf-8"))); br = {b["choice_code"]: b for b in csv.DictReader(open(os.path.join(SRC, "tables", "branches.csv"), encoding="utf-8"))}
         docs = {s["source_doc_id"] for s in csv.DictReader(open(os.path.join(SRC, "tables", "accreditation_sources.csv"), encoding="utf-8"))}
-        self.assertEqual(len({r["accreditation_id"] for r in rows}), len(rows)); self.assertGreater(len(rows), 1000)
-        for r in rows: self.assertEqual(br[r["choice_code"]]["college_code"], r["college_code"]); self.assertIn(r["source_doc_id"], docs); self.assertIn(r["status"], ("accredited", "unknown"))
+        self.assertEqual(len({r["accreditation_id"] for r in rows}), len(rows)); self.assertGreater(len([r for r in rows if r["body"] == "NBA"]), 1000)
+        for r in rows:
+            if r["body"] == "NBA": self.assertEqual(br[r["choice_code"]]["college_code"], r["college_code"])
+            self.assertIn(r["source_doc_id"], docs); self.assertIn(r["status"], ("accredited", "unknown"))
         with tempfile.TemporaryDirectory() as t:                                           # rebuilt from the committed match data it must equal the committed file
             A.build(base=SRC, outdir=t, today="2026-11-20")
             self.assertEqual(open(os.path.join(t, "accreditation.csv"), "rb").read(), open(path, "rb").read())
@@ -148,7 +150,7 @@ class RealData(unittest.TestCase):
             rep = PR.add_accreditation(t, os.path.join(SRC, "tables"))
             n = len(list(csv.DictReader(open(path, encoding="utf-8")))); self.assertEqual(rep["added"], n); self.assertEqual(rep["skipped_not_on_website"], 0)
             sd = [r for r in csv.DictReader(open(os.path.join(t, "source_documents.csv"), encoding="utf-8")) if r["doc_type"] == "accreditation_list"]
-            self.assertEqual(len(sd), 2); self.assertTrue(all(len(r["sha256"]) == 64 for r in sd))
+            self.assertEqual(len(sd), 3); self.assertTrue(all(len(r["sha256"]) == 64 for r in sd))               # two NBA files + the NAAC list
 
 
 if __name__ == "__main__":

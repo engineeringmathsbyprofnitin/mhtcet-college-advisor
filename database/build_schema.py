@@ -37,7 +37,7 @@ T = {
     desc="Fees with an explicit type, so tuition is never presented as total cost."),
  "accreditation": dict(pk=["accreditation_id"], cols=[C("accreditation_id","str",True),C("college_code","str",True,fk="colleges.college_code"),C("choice_code","str",False,fk="branches.choice_code"),
     C("body","str",True,enum=["NBA","NAAC"]),C("scope","str",True,enum=["program","institution"]),C("status","str",True,enum=["accredited","not_accredited","expired","unknown"]),
-    C("grade"),C("valid_from","date"),C("valid_to","date")], prov=True,
+    C("grade"),C("cgpa","float"),C("valid_from","date"),C("valid_to","date"),C("listed_as_on","date")], prov=True,
     desc="NBA applies per program (choice_code); NAAC per institution. Validity dates are stored so expired grades can be flagged."),
  "placements": dict(pk=["placement_id"], cols=[C("placement_id","str",True),C("college_code","str",True,fk="colleges.college_code"),C("choice_code","str",False,fk="branches.choice_code"),
     C("placement_year",Y,True),C("metric","str",True,enum=["placement_percent","median_package_lpa","average_package_lpa","highest_package_lpa","lowest_package_lpa","students_eligible","students_placed","companies_visited"]),
@@ -69,7 +69,7 @@ schema["seat_types"]["columns"]+=[dict(name="family",type="str",required=False),
 for _t in ("historical_cutoffs","current_cutoffs"):
     schema[_t]["columns"]+=[dict(name=n,type=ty,required=False) for n,ty in (("section","str"),("stage","str"),("merit_no","int"),("merit_exam","str"),("home_university","str"),("home_university_basis","str"))]
     schema[_t]["unique"]=["choice_code","admission_year","cap_round","seat_type_code","section","stage"]
-json.dump({"schema_version":"0.6","note":"v0.6 (Stage 10c-3a): seat_types gains family + variant (optional). v0.5 (Stage 10c-2): cutoff tables gain section, stage, merit_no, merit_exam (v0.4) and home_university + home_university_basis (printed|inferred|unknown|not_needed), all optional; blank in synthetic data. Stage meanings are not defined by the official documents.","tables":schema},open("schema.json","w"),indent=1)
+json.dump({"schema_version":"0.7","note":"v0.7 (Stage 12c-4): accreditation gains cgpa and listed_as_on (optional; the date of the NAAC list a grade comes from). v0.6 (Stage 10c-3a): seat_types gains family + variant (optional). v0.5 (Stage 10c-2): cutoff tables gain section, stage, merit_no, merit_exam (v0.4) and home_university + home_university_basis (printed|inferred|unknown|not_needed), all optional; blank in synthetic data. Stage meanings are not defined by the official documents.","tables":schema},open("schema.json","w"),indent=1)
 os.makedirs("templates",exist_ok=True)
 for name,t in schema.items():
     with open(f"templates/{name}.csv","w",newline="") as f: csv.writer(f).writerow([c["name"] for c in t["columns"]])

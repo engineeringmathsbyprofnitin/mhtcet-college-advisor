@@ -33,6 +33,14 @@
     if (!a && label === "NBA accreditation") {                 // no NBA row for this program: say so plainly; it is NOT a "not accredited" verdict
       var none = noteLine(doc, "No NBA record found", "This does not mean the program is not accredited"); none[0].className = "acc-ended"; return cell(doc, label, none);
     }
+    if (!a && label === "NAAC grade") {                         // the college is not in the NAAC list we have: not a "not accredited" verdict
+      var nn = noteLine(doc, "No NAAC record found", "This does not mean the college is not accredited"); nn[0].className = "acc-ended"; return cell(doc, label, nn);
+    }
+    if (a && a.listedAsOn) {                                    // NAAC list: exactly what NAAC printed, no valid / expired label (the list has no end date)
+      var lines = noteLine(doc, (a.grade || "Grade not stated") + (a.cgpa ? " (CGPA " + a.cgpa + ")" : ""));
+      if (a.validFrom) lines.push(small(doc, "Declared " + fmtDate(a.validFrom)));
+      lines.push(small(doc, "On NAAC's list as on " + fmtDate(a.listedAsOn))); return cell(doc, label, lines);
+    }
     if (!a) return cell(doc, label, noteLine(doc, NA));
     var s = a.status, main, expired = false;
     if (s === "valid") main = (withGrade && a.grade ? a.grade + " - " : "") + "Accredited" + (a.validTo ? " (until " + a.validTo + ")" : "");

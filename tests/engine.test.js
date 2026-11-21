@@ -250,6 +250,14 @@ test("an ended NBA period is explained as 'ended on <date>', not 'expired (until
   assert.equal(x.nba.status, "expired"); const line = x.explanation.find(t => t.startsWith("NBA for this program"));
   assert.equal(line, "NBA for this program: accreditation period ended on 2025-06-30."); assert.ok(!/until/.test(line));
 });
+test("a NAAC list row (grade, CGPA, declaration date, list date, no end date) is passed on as printed and explained without any valid/expired claim", () => {
+  const D = simple(80);
+  D.accreditation.push({ accreditation_id: "NAAC-A-1", college_code: "A", choice_code: "", body: "NAAC", scope: "institution", status: "accredited", grade: "B++", cgpa: "2.85", valid_from: "2024-07-19", valid_to: "", listed_as_on: "2025-08-14", source_doc_id: "D-CUT", validation_status: "validated" });
+  const x = run(base(), D).results.find(r => r.choiceCode === "A-1");
+  assert.deepEqual([x.naac.grade, x.naac.cgpa, x.naac.validFrom, x.naac.listedAsOn, x.naac.validTo], ["B++", "2.85", "2024-07-19", "2025-08-14", null]); assert.equal(x.naac.status, "validity_unknown");
+  const line = x.explanation.find(t => t.startsWith("NAAC:"));
+  assert.equal(line, "NAAC: grade B++ (CGPA 2.85), declared on 19 Jul 2024; on NAAC's list as on 14 Aug 2025. The list gives no end date."); assert.ok(!/valid|expired|until/i.test(line));
+});
 test("NBA on one program does not apply to other programs of the college", () => {
   const D = mini(); D.addCollege("A"); D.addBranch("A-1", "A"); D.addBranch("A-2", "A", "Civil Engineering");
   ["A-1", "A-2"].forEach(c => D.addCut("historical_cutoffs", c, "2025-26", "IV", "GOPENS", 80));

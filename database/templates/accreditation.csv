@@ -1,1 +1,1 @@
-accreditation_id,college_code,choice_code,body,scope,status,grade,valid_from,valid_to,source_doc_id,retrieved_date,validation_status,is_synthetic
+accreditation_id,college_code,choice_code,body,scope,status,grade,cgpa,valid_from,valid_to,listed_as_on,source_doc_id,retrieved_date,validation_status,is_synthetic

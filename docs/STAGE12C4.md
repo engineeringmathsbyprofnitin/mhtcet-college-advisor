@@ -1,0 +1,10 @@
+# Stage 12c-4 - NAAC rows, packaging and the card
+
+Data: `accreditation` gains two optional columns, `cgpa` (float) and `listed_as_on` (date: the date of the NAAC list the grade comes from) - schema v0.7 (database/build_schema.py is the source; schema.json, templates and SCHEMA.md are regenerated; data/synthetic/accreditation.csv only gets the two blank columns).
+`ingestion/build_accreditation.py` now also writes one NAAC row per website college linked to a NAAC record (233): body NAAC, scope institution, no choice_code, grade and CGPA as NAAC printed them, valid_from = date of declaration, valid_to EMPTY (the list has no end date; none is computed), listed_as_on = 2025-08-14. `accreditation_sources.csv` now lists, per source file, body, name, url and published date (NAAC list: published_date 2025-08-14). The NBA rows are unchanged (1,204).
+`ingestion/package_real.py`: NAAC rows are packaged for colleges on the website; one source_documents line per source file (3 in all: two NBA files and the NAAC list). The "Why this choice?" data version text now mentions the NAAC grade (list as on 14 Aug 2025).
+Engine (frontend/engine.js, copy recommendation/engine.js): the NAAC object carries grade, cgpa, validFrom, listedAsOn; a NAAC row without an end date has status "validity_unknown", so it does NOT add to the accreditation score (ranking is unchanged by NAAC). Explanation line: "NAAC: grade B++ (CGPA 2.85), declared on 19 Jul 2024; on NAAC's list as on 14 Aug 2025. The list gives no end date."
+Card (frontend/results.js): NAAC grade cell = "B++ (CGPA 2.85)", "Declared 19 Jul 2024", "On NAAC's list as on 14 Aug 2025" (no valid/expired label); no record = grey "No NAAC record found" + "This does not mean the college is not accredited" (owner decision, 2026-11-21).
+Checked on real packaged data in a Mumbai/Pune search: cards show for example "A+ (CGPA 3.26), Declared 18 Oct 2023, On NAAC's list as on 14 Aug 2025" and the grey no-record text.
+Tests: tests/test_stage12c4.py (6), tests/test_stage12b3b.py updated, engine and display tests extended.
+Next: 12c-5: workflow wiring for the NAAC files, "Publish website data", phone check.
