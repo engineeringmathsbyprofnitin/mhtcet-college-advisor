@@ -2,8 +2,8 @@
  "ok": true,
  "institutions": 215,
  "counts": {
-  "no_college": 23,
-  "linked": 192
+  "no_college": 24,
+  "linked": 191
  },
  "problems": [],
  "doubtful": [],
@@ -108,10 +108,6 @@
   "05161": [
    "Dr. Vithalrao Vikhe Patil College of Eng",
    "PADMASHRI DR.VITHALRAO VIKHE PATIL COLLE"
-  ],
-  "02113": [
-   "G.S. MANDALS MARATHWADA INSTITUTE OF TEC",
-   "Maharashtra Institute of Technology"
   ],
   "05004": [
    "GOVERNMENT COLLEGE OF ENGINEERING",

@@ -1,0 +1,14 @@
+{
+ "ok": true,
+ "colleges": 403,
+ "naac_rows": 2324,
+ "counts": {
+  "linked": 233,
+  "doubtful": 0,
+  "no_record": 170
+ },
+ "problems": [],
+ "doubtful": [],
+ "unused_confirmations": [],
+ "naac_used_twice": {}
+}

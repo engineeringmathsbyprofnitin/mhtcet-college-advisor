@@ -1,11 +1,11 @@
 {
  "ok": true,
- "rows": 1206,
+ "rows": 1204,
  "branches": 604,
  "colleges": 141,
  "sources": 2,
  "no_end_date": 3,
- "expired_on_build_date": 855,
- "build_date": "2026-11-20",
+ "expired_on_build_date": 853,
+ "build_date": "2026-11-21",
  "problems": []
 }

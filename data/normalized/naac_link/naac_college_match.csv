@@ -1,0 +1,404 @@
+college_code,college_name,district,aishe_id,naac_name,naac_grade,naac_cgpa,declared_on,status,score,second_best,how
+01002,"Government College of Engineering, Amravati",Amravati,C-43193,"GOVERNMENT COLLEGE OF ENGINEERING,AMRAVATI",B+,2.68,2021-09-07,linked,1.00,0.54,"automatic: name score 1.00, place ok"
+01005,"Sant Gadge Baba Amravati University,Amravati",Amravati,,,,,,no_record,0.49,0.32,owner said: no NAAC record for this college
+01012,"Government College of Engineering,Yavatmal",Yavatmal,C-42954,"GOVERNMENT COLLEGE OF EDUCATION, YAVATMAL",B,2.45,2024-01-17,linked,0.90,0.55,"automatic: name score 0.90, place ok"
+01101,"Shri Sant Gajanan Maharaj College of Engineering,Shegaon",Buldhana,C-42835,SHRI SANT GAJANAN MAHARAJ COLLEGE OF ENGINEERING SHEGAON,A+,3.29,2024-12-20,linked,1.00,0.85,"automatic: name score 1.00, place ok"
+01105,"Prof. Ram Meghe Institute of Technology & Research, Amravati",Amravati,C-43072,PROF RAM MEGHE INSTITUTE OF TECHNOLOGY AND RESEARCH,A+,3.43,2023-03-21,linked,0.90,0.55,"automatic: name score 0.90, place ok"
+01107,"P. R. Pote Patil College of Engineering & Management, Amravati",Amravati,C-43031,P. R POTE (PATIL) EDUCATION AND WELFARE TRUST'S GROUP OF INSTITUTIONS COLLEGE OF ENGINEERING AND MANAGEMENT,A++,3.59,2023-05-01,linked,0.68,0.41,"automatic (place confirmed): name score 0.68, clear lead"
+01114,"Sipna Shikshan Prasarak Mandal College of Engineering & Technology, Amravati",Amravati,C-43142,"SIPNA COLLEGE OF ENGINEERING AND TECHNOLOGY, AMRAVATI",A+,3.28,2023-09-14,linked,1.00,0.54,"automatic: name score 1.00, place ok"
+01116,"Shri Shivaji Education Society's College of Engineering and Technology, Akola",Akola,C-43169,"COLLEGE OF ENGINEERING AND TECHNOLOGY, AKOLA",A,3.06,2023-10-27,linked,0.84,0.42,"automatic: name score 0.84, place ok"
+01117,"Janata Shikshan Prasarak Mandal’s Babasaheb Naik College Of Engineering, Pusad",Yavatmal,,,,,,no_record,0.49,0.22,owner said: no NAAC record for this college
+01119,ANURADHA COLLEGE OF ENGINEERING & TECHNOLOGY,Buldhana,C-43097,"ANURADHA ENGINEERING COLLEGE, CHIKHLI",B++,2.77,2024-08-29,linked,0.69,0.14,"automatic (place confirmed): name score 0.69, clear lead"
+01120,"Jawaharlal Darda Institute of Engineering and Technology, Yavatmal",Yavatmal,C-43070,"JAWAHARLAL DARDA INSTITUTE OF ENGINEERING AND TECHNOLOGY, YAVATMAL",A+,3.26,2024-03-21,linked,1.00,0.47,"automatic: name score 1.00, place ok"
+01121,"Shri Hanuman Vyayam Prasarak Mandals College of Engineering & Technology, Amravati",Amravati,C-42949,HANUMAN VYAYAM PRASARAK MANDAL'S COLLEGE OF ENGINEERING AND TECHNOLOGY,A,3.19,2024-02-29,linked,0.89,0.53,"automatic: name score 0.89, place ok"
+01123,"Dr.Rajendra Gode Institute of Technology & Research, Amravati",Amravati,C-43132,DR. RAJENDRA GODE INSTITUTE OF TECHNOLOGY AND RESEARCH,A,3.16,2024-03-28,linked,0.90,0.37,"automatic: name score 0.90, place ok"
+01125,"Dwarka Bahu Uddeshiya Gramin Vikas Foundation, Rajarshi Shahu College of Engineering, Buldhana",Buldhana,,,,,,no_record,0.36,0.29,no plausible NAAC record (best score 0.36)
+01126,"Takshashila Institute of Engineering & Technology, Darapur, Amravati",Amravati,C-43134,"DR. SAU. KAMALTAI GAWAI INSTITUTE OF ENGINEERING AND TECHNOLOGY, DARAPUR",B++,2.85,2023-07-19,linked,0.49,0.45,owner confirmed
+01127,"Jagadambha Bahuuddeshiya Gramin Vikas Sanstha's Jagdambha College of Engineering and Technology, Yavatmal",Yavatmal,C-42910,"JAGADAMBHA COLLEGE OF ENGINEERING AND TECHNOLOGY, YAVATMAL",A+,3.26,2023-02-20,linked,0.89,0.39,"automatic: name score 0.89, place ok"
+01128,"Prof Ram Meghe College of Engineering and Management, Badnera",Amravati,C-43184,PROF. RAM MEGHE COLLEGE OF ENGINEERING AND MANAGEMENT,A+,3.29,2023-06-24,linked,0.85,0.52,"automatic: name score 0.85, place ok"
+01130,"Vision Buldhana Educational & Welfare Society's Pankaj Laddhad Institute of Technology & Management Studies, Yelgaon",Buldhana,C-42983,PANKAJ LADDHAD INSTITUTE OF TECHNOLOGY AND MANAGEMENT STUDIES,B,2.43,2024-11-21,linked,0.72,0.20,"automatic (place confirmed): name score 0.72, clear lead"
+01180,"Sanmati Engineering College, Sawargaon Barde, Washim",Washim,C-42896,SANMATI ENGINEERING COLLEGE,B,2.29,2019-10-18,linked,0.51,0.22,owner confirmed
+01182,"Padmashri Dr. V.B. Kolte College of Engineering, Malkapur, Buldhana",Buldhana,C-42916,"PADMASHRI DR. V. B. KOLTE COLLEGE OF ENGINEERING, MALKAPUR",B+,2.61,2024-01-25,linked,0.91,0.24,"automatic: name score 0.91, place ok"
+01265,"Mauli Group of Institutions, College of Engineering and Technology, Shegaon.",Buldhana,,,,,,no_record,0.37,0.11,no plausible NAAC record (best score 0.37)
+01268,"Siddhivinayak Technical Campus, School of Engineering & Research Technology, Shirasgon, Nile",Buldhana,,,,,,no_record,0.44,0.09,no plausible NAAC record (best score 0.44)
+01276,"Manav School of Engineering & Technology, Gut No. 1035 Nagpur Surat Highway, NH No. 6 Tal.Vyala, Balapur, Akola, 444302",Akola,,,,,,no_record,0.18,0.09,no plausible NAAC record (best score 0.18)
+01347,LET.DR. D. B. DOD COLLEGE OF ENGINEERING,Amravati,,,,,,no_record,0.19,0.17,no plausible NAAC record (best score 0.19)
+02008,"Government College of Engineering, Chhatrapati Sambhajinagar",Chhatrapati Sambhajinagar,C-34341,GOVERNMENT COLLEGE OF ENGINEERING AURANGABAD,B++,2.86,2025-05-29,linked,1.00,0.22,"automatic: name score 1.00, place ok"
+02015,"PURANMAL LAHOTI GOVERNMENT INSTITUTE OF ENGINEERING AND TECHNOLOGY, LATUR",Latur,,,,,,no_record,0.24,0.22,no plausible NAAC record (best score 0.24)
+02020,"Shri Guru Gobind Singhji Institute of Engineering and Technology, Nanded",Nanded,C-7592,"SHRI GURU GOBIND SINGHJI INSTITUTE OF ENGINEERING AND TECHNOLOGY, VISHNUPURI, NANDED",B++,2.91,2020-02-14,linked,0.90,0.37,"automatic: name score 0.90, place ok"
+02021,"University Department of Chemical Technology, Aurangabad",Chhatrapati Sambhajinagar,,,,,,no_record,0.45,0.44,no plausible NAAC record (best score 0.45)
+02032,"Institute of Chemical Technology, Mumbai Marathwada off campus, Jalna",Jalna,,,,,,no_record,0.31,0.23,no plausible NAAC record (best score 0.31)
+02037,"Deen Dayal Upadhyay Kaushal Kendra, Dr.Babasaheb Ambedkar Marathwada University, Chhatrapati Sambhaji nagar",Chhatrapati Sambhajinagar,,,,,,no_record,0.29,0.25,no plausible NAAC record (best score 0.29)
+02111,"Everest Education Society, Group of Institutions (Integrated Campus), Ohar",Chhatrapati Sambhajinagar,C-34489,EVEREST EDUCATIONAL SOCIETY'S GROUP OF INSTITUTIONS,B,2.09,2024-07-19,linked,0.83,0.50,"automatic: name score 0.83, place unknown"
+02112,"Shree Yash Pratishthan, Shreeyash College of Engineering and Technology, Aurangabad",Chhatrapati Sambhajinagar,C-34296,SHREEYASH PRATISHTHAN'S SHREEYASH COLLEGE OF ENGINEERING AND TECHNOLOGY,B+,2.66,2022-12-20,linked,0.55,0.54,owner confirmed
+02113,"G. S. Mandal's Maharashtra Institute of Technology, Aurangabad",Chhatrapati Sambhajinagar,,,,,,no_record,0.70,0.50,owner said: no NAAC record for this college
+02114,"Deogiri Institute of Engineering and Management Studies, Aurangabad",Chhatrapati Sambhajinagar,C-34671,DEOGIRI INSTITUTE OF ENGINEERING AND MANAGEMENT STUDIES,A,3.10,2021-08-10,linked,0.75,0.58,owner confirmed
+02116,"Matoshri Pratishan's Group of Institutions (Integrated Campus), Kupsarwadi , Nanded",Nanded,,,,,,no_record,0.23,0.22,no plausible NAAC record (best score 0.23)
+02127,"Mahatma Gandhi Missions College of Engineering, Hingoli Rd, Nanded.",Nanded,,,,,,no_record,0.31,0.29,no plausible NAAC record (best score 0.31)
+02129,"M.S. Bidve Engineering College, Latur",Latur,C-7593,M. S. BIDVE ENGINEERING COLLEGE,B,2.47,2024-12-13,linked,0.86,0.29,"automatic: name score 0.86, place ok"
+02130,"Terna Public Charitable Trust's College of Engineering, Osmanabad",Dharashiv,,,,,,no_record,0.35,0.34,no plausible NAAC record (best score 0.35)
+02131,"Shree Tuljabhavani College of Engineering, Tuljapur",Dharashiv,C-34286,SHRI TULJABHAVANI COLLEGE OF ENGINEERING,B+,2.51,2025-02-27,linked,0.63,0.38,owner confirmed
+02133,"Mahatma Basaweshwar Education Society's College of Engineering, Ambejogai",Beed,,,,,,no_record,0.20,0.30,no plausible NAAC record (best score 0.20)
+02134,"Peoples Education Society's College of Engineering, Aurangabad",Chhatrapati Sambhajinagar,C-34279,"P. E. S. COLLEGE OF ENGINEERING, AURANGABAD",B++,2.81,2023-12-15,linked,0.73,0.71,owner confirmed
+02135,"Hi-Tech Institute of Technology, Aurangabad",Chhatrapati Sambhajinagar,,,,,,no_record,0.51,0.61,owner said: no NAAC record for this college
+02136,"Aditya Engineering College , Beed",Beed,,,,,,no_record,0.37,0.27,no plausible NAAC record (best score 0.37)
+02137,"Nagnathappa Halge Engineering College, Parli, Beed",Beed,C-34600,NAGNATHAPPA HALGE COLLEGE OF ENGINEERING,B,2.39,2023-10-27,linked,0.74,0.21,"automatic (place confirmed): name score 0.74, clear lead"
+02138,"Matsyodari Shikshan Sansatha's College of Engineering and Technology, Jalna",Jalna,C-34516,"MATSYODARI SHIKSHAN SANSTHA'S COLLEGE OF ENGINEERING AND TECHNOLOGY, JALNA",B+,2.64,2019-07-15,linked,0.84,0.50,"automatic: name score 0.84, place ok"
+02146,"Adarsh Shikshan Prasarak Mandal's K. T. Patil College of Engineering and Technology, Osmanabad",Dharashiv,,,,,,no_record,0.42,0.42,no plausible NAAC record (best score 0.42)
+02189,"Vishweshwarayya Institute Of Engineering And Technology, Almala, Tq. Ausa, Dist. Latur",Latur,,,,,,no_record,0.30,0.26,no plausible NAAC record (best score 0.30)
+02250,CHHATRAPATI SAMBHAJI MAHARAJ COLLEGE OF ENGINEERING,Chhatrapati Sambhajinagar,,,,,,no_record,0.44,0.29,no plausible NAAC record (best score 0.44)
+02252,"Marathwada Shikshan Prasarak Mandal's Shri Shivaji Institute of Engineering and Management Studies, Parbhani",Parbhani,C-7470,"SHRI SHIVAJI INSTITUTE OF ENGINEERING AND MANAGEMENT STUDIES, PARBHANI",B,2.43,2024-12-06,linked,0.89,0.45,"automatic: name score 0.89, place ok"
+02254,"Vilasrao Deshmukh Foundation Group of Institutions, Latur",Latur,C-7289,"VILASRAO DESHMUKH FOUNDATION,GROUP OF INSTITUTIONS,LATUR",B,2.35,2024-03-09,linked,1.00,0.25,"automatic: name score 1.00, place ok"
+02282,"Mitthulalji Sarada Institute Of Technology, Nalwandi Road, Beed",Beed,,,,,,no_record,0.23,0.17,no plausible NAAC record (best score 0.23)
+02508,GRAMIN TECHNICAL AND MANAGEMENT CAMPUS NANDED.,Nanded,,,,,,no_record,0.43,0.43,no plausible NAAC record (best score 0.43)
+02516,International Centre Of Excellence In Engineering and Management (ICEEM),Chhatrapati Sambhajinagar,C-34345,INTERNATIONAL CENTRE OF EXCELLENCE IN ENGINEERING AND MANAGEMENT,B,2.46,2025-01-09,linked,1.00,0.26,"automatic: name score 1.00, place unknown"
+02522,"STMEI's Sandipani Technical Campus-Faculty of Engineering, Latur.",Latur,C-45177,STMEI'S SANDIPANI TECHNICAL CAMPUS FACULTY OF ENGINEERING,B,2.38,2019-09-09,linked,0.89,0.26,"automatic: name score 0.89, place ok"
+02533,"CSMSS Chh. Shahu College of Engineering, Aurangabad",Chhatrapati Sambhajinagar,C-51494,CSMSS CHH. SHAHU COLLEGE OF ENGINEERING,B++,2.96,2025-01-23,linked,0.78,0.58,owner confirmed
+02634,"Eaglewood Polytechnic Institute, A.P Phulepimpalgaon",Beed,,,,,,no_record,0.10,0.07,no plausible NAAC record (best score 0.10)
+02637,"Jijau Institute of Engineering Technology and Management, Khandgaon (Bendri), Taluka Naigaon, District Nanded",Nanded,,,,,,no_record,0.37,0.30,no plausible NAAC record (best score 0.37)
+02641,Dr. V.K. Patil College of Engineering & Technology,Dharashiv,,,,,,no_record,0.36,0.22,no plausible NAAC record (best score 0.36)
+02666,Mangaldeep College of Engineering,Chhatrapati Sambhajinagar,,,,,,no_record,0.05,0.04,no plausible NAAC record (best score 0.05)
+02758,Sant Eknath College of Engineering,Chhatrapati Sambhajinagar,,,,,,no_record,0.50,0.21,owner said: no NAAC record for this college
+02770,"Shetkari Shikshan Prasarak Mandal's Mahesh Institute of Engineering and Technology , Ashti",Beed,,,,,,no_record,0.25,0.25,no plausible NAAC record (best score 0.25)
+02771,Amolak College of Engineering Kada,Beed,,,,,,no_record,0.25,0.21,no plausible NAAC record (best score 0.25)
+02772,"JSPM College of Engineering, Latur",Latur,,,,,,no_record,0.35,0.32,no plausible NAAC record (best score 0.35)
+02777,CDS College of Engineering,Chhatrapati Sambhajinagar,,,,,,no_record,0.23,0.36,no plausible NAAC record (best score 0.23)
+02779,NKSPT INSTITUTE OF ENGINEERING AND TECHNOLOGY PATHIKAR CAMPUS,Jalna,,,,,,no_record,0.26,0.33,no plausible NAAC record (best score 0.26)
+02805,Urvara Pathrikar Engineering College,Chhatrapati Sambhajinagar,,,,,,no_record,0.05,0.00,no plausible NAAC record (best score 0.05)
+03012,"Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",Mumbai City,,,,,,no_record,0.11,0.11,no plausible NAAC record (best score 0.11)
+03014,"Sardar Patel College of Engineering, Andheri",Mumbai Suburban,C-34112,"Bharatiya Vidya Bhavan's SARDAR PATEL COLLEGE OF ENGINEERING, ANDHERI WEST MUMBAI",B++,2.81,2024-11-21,linked,0.61,0.41,owner confirmed
+03025,Svkm's Shri Bhagubhai Mafatlal Polytechnic & College of Engineering,Mumbai Suburban,,,,,,no_record,0.02,0.00,no plausible NAAC record (best score 0.02)
+03033,"Dr. Babasaheb Ambedkar Technological University, Lonere",Raigad,,,,,,no_record,0.50,0.19,owner said: no NAAC record for this college
+03035,"Usha Mittal Institute of Technology SNDT Women's University, Mumbai",Mumbai Suburban,,,,,,no_record,0.21,0.21,no plausible NAAC record (best score 0.21)
+03036,"Institute of Chemical Technology, Matunga, Mumbai",Mumbai City,,,,,,no_record,0.32,0.27,no plausible NAAC record (best score 0.32)
+03042,"Loknete Shamrao Peje Government College of Engineering, Ratnagiri",Ratnagiri,,,,,,no_record,0.09,0.09,no plausible NAAC record (best score 0.09)
+03135,"Manjara Charitable Trust's Rajiv Gandhi Institute of Technology, Mumbai",Mumbai Suburban,,,,,,no_record,0.29,0.25,no plausible NAAC record (best score 0.29)
+03139,"Vidyalankar Institute of Technology,Wadala, Mumbai",Mumbai City,,,,,,no_record,0.45,0.32,no plausible NAAC record (best score 0.45)
+03143,"Thakur Shyamnarayan Engineering College, Mumbai",Mumbai Suburban,,,,,,no_record,0.72,0.58,owner said: no NAAC record for this college
+03146,"Jawahar Education Society's Annasaheb Chudaman Patil College of Engineering,Kharghar, Navi Mumbai",Raigad,,,,,,no_record,0.42,0.36,no plausible NAAC record (best score 0.42)
+03147,"Saraswati Education Society, Yadavrao Tasgaonkar Institute of Engineering & Technology, Karjat",Raigad,C-33938,YADAVRAO TASGAONKAR INSTITUTE OF ENGINEERING AND TECHNOLOGY,B,2.39,2024-01-25,linked,0.78,0.58,owner confirmed
+03148,"Mahavir Education Trust's Shah & Anchor Kutchhi Engineering College, Mumbai",Mumbai Suburban,C-33550,SHAH AND ANCHOR KUTCHHI ENGINEERING COLLEGE,A,3.16,2021-10-20,linked,0.81,0.29,"automatic: name score 0.81, place ok"
+03154,"Saraswati Education Society's Saraswati College of Engineering,Kharghar Navi Mumbai",Raigad,C-33575,"SARASWATI COLLEGE OF ENGINEERING, KHARGHAR",A+,3.46,2023-01-24,linked,0.81,0.18,"automatic: name score 0.81, place ok"
+03175,"M.G.M.'s College of Engineering and Technology, Kamothe, Navi Mumbai",Raigad,C-33783,"MGM'S COLLEGE OF ENGINEERING AND TECHNOLOGY, KAMOTHE",B+,2.61,2020-02-14,linked,0.80,0.27,owner confirmed
+03176,"Thakur College of Engineering and Technology, Kandivali, Mumbai",Mumbai Suburban,,,,,,no_record,0.32,0.26,no plausible NAAC record (best score 0.32)
+03182,"Thadomal Shahani Engineering College, Bandra, Mumbai",Mumbai Suburban,C-33681,THADOMAL SHAHANI ENGINEERING COLLEGE,B++,2.94,2022-08-10,linked,0.76,0.21,"automatic (place confirmed): name score 0.76, clear lead"
+03183,"Anjuman-I-Islam's M.H. Saboo Siddik College of Engineering, Byculla, Mumbai",Mumbai City,C-33770,ANJUMAN-I-ISLAM'S M.H. SABOO SIDDIK COLLEGE OF ENGINEERING,B,2.39,2024-05-16,linked,0.85,0.17,"automatic: name score 0.85, place ok"
+03184,"Fr. Conceicao Rodrigues College of Engineering, Bandra,Mumbai",Mumbai Suburban,C-33981,FR. CONCEICAO RODRIGUES COLLEGE OF ENGINEERING,A,3.18,2023-06-02,linked,0.81,0.20,"automatic: name score 0.81, place ok"
+03185,"Vivekanand Education Society's Institute of Technology, Chembur, Mumbai",Mumbai Suburban,C-33895,VIVEKANAND EDUCATION SOCIETY'S INSTITUTE OF TECHNOLOGY,A,3.17,2022-12-13,linked,0.66,0.30,"automatic (place confirmed): name score 0.66, clear lead"
+03187,"N.Y.S.S.'s Datta Meghe College of Engineering, Airoli, Navi Mumbai",Thane,C-34200,DATTA MEGHE COLLEGE OF ENGINEERING,A,3.06,2023-12-07,linked,0.58,0.17,owner confirmed
+03188,"Vasantdada Patil Pratishthan's College Of Engineering and Visual Arts, Sion, Mumbai",Mumbai Suburban,C-33885,VASANTDADA PATIL PRATISHTHAN'S COLLEGE OF ENGINEERING AND VISUAL ARTS,A,3.04,2025-01-23,linked,0.79,0.20,"automatic (place confirmed): name score 0.79, clear lead"
+03189,"Bharati Vidyapeeth College of Engineering, Navi Mumbai",Thane,,,,,,no_record,0.54,0.43,owner said: no NAAC record for this college
+03190,"Terna Engineering College, Nerul, Navi Mumbai",Thane,C-34092,TERNA ENGINEERING COLLEGE,B++,2.82,2023-11-23,linked,0.55,0.39,owner confirmed
+03192,"Smt. Indira Gandhi College of Engineering, Navi Mumbai",Thane,C-33687,SMT. INDIRA GANDHI COLLEGE OF ENGINEERING,A,3.05,2023-01-10,linked,0.73,0.22,"automatic (place confirmed): name score 0.73, clear lead"
+03193,"Shivajirao S. Jondhale College of Engineering, Dombivali,Mumbai",Thane,C-34225,SHIVAJIRAO S. JONDHALE COLLEGE OF ENGINEERING,B+,2.60,2019-09-09,linked,0.69,0.74,owner confirmed
+03194,"Vidyavardhini's College of Engineering and Technology, Vasai",Palghar,C-34211,VIDYAVARDHINI'S COLLEGE OF ENGINEERING AND TECHNOLOGY,B++,2.87,2024-08-29,linked,0.78,0.21,"automatic (place confirmed): name score 0.78, clear lead"
+03196,"Lokmanya Tilak College of Engineering, Kopar Khairane, Navi Mumbai",Thane,C-33758,Lokmanya Tilak Jankalyan Shikshan Sanstha's Lokmanya Tilak College of Engineering,A,3.11,2023-05-01,linked,0.52,0.21,owner confirmed
+03197,"Agnel Charities' FR. C. Rodrigues Institute of Technology, Vashi, Navi Mumbai",Thane,C-33530,AGNEL CHARITIES FR. C. RODRIGUES INSTITUTE OF TECHNOLOGY,B++,2.99,2021-02-15,linked,0.79,0.35,owner confirmed
+03198,"Konkan Gyanpeeth College of Engineering, Karjat",Raigad,,,,,,no_record,0.36,0.30,no plausible NAAC record (best score 0.36)
+03199,"Shri Vile Parle Kelvani Mandal's Dwarkadas J. Sanghvi College of Engineering, Vile Parle,Mumbai",Mumbai Suburban,C-33777,SHRI VILE PARLE KELAVANI MANDAL'S DWARKADAS J. SANGHVI COLLEGE OF ENGINEERING,A,3.18,2019-10-18,linked,0.95,0.61,owner confirmed
+03200,"Hope Foundation and research center's Finolex Academy of Management and Technology, Ratnagiri",Ratnagiri,C-34021,FINOLEX ACADEMY OF MANAGEMENT AND TECHNOLOGY,B+,2.68,2024-06-22,linked,0.62,0.25,owner confirmed
+03201,"Rizvi Education Society's Rizvi College of Engineering, Bandra,Mumbai",Mumbai Suburban,C-34027,RIZVI COLLEGE OF ENGINEERING,B+,2.54,2019-11-15,linked,0.74,0.67,owner confirmed
+03202,Rajendra Mane College of Engineering & Technology Ambav Deorukh,Ratnagiri,C-34156,RAJENDRA MANE COLLEGE OF ENGINEERING AND TECHNOLOGY,B++,2.89,2023-04-21,linked,0.72,0.28,"automatic (place confirmed): name score 0.72, clear lead"
+03203,"Atharva College of Engineering,Malad(West),Mumbai",Mumbai Suburban,C-33761,ATHARVA COLLEGE OF ENGINEERING,A+,3.26,2023-10-18,linked,0.64,0.33,owner confirmed
+03204,"St. Francis Institute of Technology,Borivali, Mumbai",Mumbai Suburban,C-33882,ST. FRANCIS INSTITUTE OF TECHNOLOGY (ENGINEERING COLLEGE),A+,3.27,2022-08-23,linked,0.74,0.29,"automatic (place confirmed): name score 0.74, clear lead"
+03206,"S.S.P.M.'s College of Engineering, Kankavli",Sindhudurg,,,,,,no_record,0.63,0.25,owner said: no NAAC record for this college
+03207,"Mahatma Education Society's Pillai College of Engineering, New Panvel",Not available,C-33766,"MAHATMA EDUCATION SOCIETY'S PILLAI COLLEGE OF EDUCATION AND RESEARCH, NEW PANVEL",A+,3.32,2024-08-09,linked,0.89,0.57,"automatic: name score 0.89, place unknown"
+03208,"Don Bosco Institute of Technology, Mumbai",Mumbai Suburban,C-33880,The Bombay Salesian Society's Don Bosco Institute of Technology,A,3.05,2024-08-04,linked,0.70,0.67,owner confirmed
+03209,K J Somaiya Institute of Technology,Mumbai Suburban,,,,,,no_record,0.65,0.39,owner said: no NAAC record for this college
+03210,"Excelsior Education Society's K.C. College of Engineering and Management Studies and Research, Kopri, Thane (E)",Thane,C-34221,EXCELSSIOR EDUCATION SOCIETY'S K.C. COLLEGE OF ENGINEERING AND MANAGEMENT STUDIES AND RESEARCH,A,3.09,2024-10-30,linked,0.82,0.40,"automatic: name score 0.82, place ok"
+03211,"S.I.E.S. Graduate School of Technology, Nerul, Navi Mumbai",Thane,C-33861,SIES GRADUATE SCHOOL OF TECHNOLOGY,A+,3.28,2023-10-06,linked,0.71,0.16,"automatic (place confirmed): name score 0.71, clear lead"
+03212,"Watumull Institute of Engineering & Technology, Ulhasnagar",Thane,,,,,,no_record,0.55,0.29,owner said: no NAAC record for this college
+03214,"Xavier Institute Of Engineering C/O Xavier Technical Institute,Mahim,Mumbai",Mumbai City,C-33830,XAVIER INSTITUTE OF ENGINEERING,A+,3.31,2024-08-09,linked,0.65,0.39,"automatic (place confirmed): name score 0.65, clear lead"
+03215,"Bhartiya Vidya Bhavan's Sardar Patel Institute of Technology , Andheri, Mumbai",Mumbai Suburban,C-33773,BHARATIYA VIDYA BHAVAN'S SARDAR PATEL INSTITUTE OF TECHNOLOGY,A,3.21,2025-01-30,linked,0.85,0.83,owner confirmed
+03216,GHARDA INSTITUTE OF TECHNOLOGY & MANAGEMENT,Ratnagiri,C-33694,GHARDA FOUNDATION'S GHARDA INSTITUTE OF TECHNOLOGY,A,3.22,2023-01-17,linked,0.89,0.55,"automatic: name score 0.89, place ok"
+03217,"Vighnaharata Trust's Shivajirao S. Jondhale College of Engineering & Technology, Shahapur, Asangaon, Dist Thane",Thane,C-33937,SHIVAJIRAO S. JONDHLE COLLEGE OF ENGINEERING & TECHNOLOGY,B++,2.88,2025-06-06,linked,0.56,0.50,owner confirmed
+03218,"Aldel Education Trust's St. John College of Engineering & Management, Vevoor, Palghar",Palghar,C-33765,ALDEL EDUCATION TRUST'S ST. JOHN COLLEGE OF ENGINEERING AND MANAGEMENT,A+,3.29,2023-05-01,linked,0.78,0.55,"automatic (place confirmed): name score 0.78, clear lead"
+03219,"Koti Vidya Charitable Trust's Smt. Alamuri Ratnamala Institute of Engineering and Technology, Sapgaon, Tal. Shahapur",Thane,C-33794,KOTI VIDYA CHARITABLE TRUST'S ALAMURI RATNAMALA INSTITUTE OF ENGINEERING AND TECHNOLOGY,B+,2.64,2025-03-06,linked,0.79,0.15,"automatic (place confirmed): name score 0.79, clear lead"
+03220,Yadavrao Tasgaonkar College of Engineering & Management,Raigad,C-33958,YADAVRAO TASGAONKAR COLLEGE OF ENGINEERING AND MANAGEMENT,B,2.39,2024-02-22,linked,1.00,0.76,"automatic: name score 1.00, place ok"
+03221,"Vishnu Waman Thakur Charitable Trust's VIVA Institute of Technology, Virar",Palghar,C-34168,Vishnu Waman Thakur Charitable Trust's Viva Institute Of Technology,B++,2.78,2023-09-07,linked,0.90,0.38,"automatic: name score 0.90, place ok"
+03222,"Haji Jamaluddin Thim Trust's Theem College of Engineering, At. Villege Betegaon, Boisar",Palghar,,,,,,no_record,0.33,0.21,no plausible NAAC record (best score 0.33)
+03223,"Mahatma Education Society's Pillai HOC College of Engineering & Technology, Tal. Khalapur. Dist. Raigad",Raigad,C-34105,PILLAI HOC COLLEGE OF ENGINEERING AND TECHNOLOGY,A+,3.39,2024-06-22,linked,0.60,0.49,owner confirmed
+03224,"Leela Education Society, G.V. Acharya Institute of Engineering and Technology, Shelu, Karjat",Raigad,,,,,,no_record,0.25,0.24,no plausible NAAC record (best score 0.25)
+03257,"Vidya Prasarak Mandal's College of Engineering, Thane",Thane,,,,,,no_record,0.35,0.33,no plausible NAAC record (best score 0.35)
+03277,Pravin Rohidas Patil College of Engineering & Technology,Thane,,,,,,no_record,0.30,0.24,no plausible NAAC record (best score 0.30)
+03351,"Bharat College of Engineering, Kanhor, Badlapur(W)",Thane,C-34036,BHARAT COLLEGE OF ENGINEERING,B,2.22,2024-09-12,linked,0.57,0.28,owner confirmed
+03353,"Dilkap Research Institute Of Engineering and Management Studies, At.Mamdapur, Post- Neral, Tal- Karjat, Mumbai",Raigad,,,,,,no_record,0.34,0.33,no plausible NAAC record (best score 0.34)
+03423,"Shree L.R. Tiwari College of Engineering, Mira Road, Mumbai",Thane,C-46313,SHREE L.R. TIWARI COLLEGE OF ENGINEERING,B++,2.79,2024-10-03,linked,0.72,0.31,"automatic (place confirmed): name score 0.72, clear lead"
+03436,"B.R. Harne College of Engineering & Technology, Karav, Tal-Ambernath.",Thane,,,,,,no_record,0.22,0.15,no plausible NAAC record (best score 0.22)
+03439,Anjuman-I-Islam's Kalsekar Technical Campus School of Engineering & Technology,Raigad,C-45182,ANJUMAN-I-ISLAM'S KALSEKAR TECHNICAL CAMPUS,B++,2.92,2025-01-30,linked,0.81,0.21,"automatic: name score 0.81, place ok"
+03440,"Metropolitan Institute of Technology & Management, Sukhalwad, Sindhudurg.",Sindhudurg,C-45222,METROPOLITAN INSTITUTE OF TECHNOLOGY AND MANAGEMENT,B,2.47,2020-03-11,linked,0.69,0.34,"automatic (place confirmed): name score 0.69, clear lead"
+03445,"Vishwatmak Jangli Maharaj Ashram Trust (Kokamthan), Atma Malik Institute Of Technology & Research",Thane,C-45231,Vishwatmak Jangli Maharaj Ashram Trust (Kokamthan) Atma Malik Institute of Technology and Research,B,2.43,2023-11-30,linked,1.00,0.15,"automatic: name score 1.00, place ok"
+03447,"G.M.Vedak Institute of Technology, Tala, Raigad.",Raigad,C-45215,G. M. VEDAK INSTITUTE OF TECHNOLOGY,B,2.21,2023-06-10,linked,0.74,0.59,owner confirmed
+03460,"Universal College of Engineering,Kaman Dist. Palghar",Not available,C-45250,"VIDYA VIKAS EDUCATION TRUST, UNIVERSAL COLLEGE OF ENGINEERING",A,3.15,2024-12-06,linked,0.49,0.28,owner confirmed
+03462,"VPM's Maharshi Parshuram College of Engineering, Velneshwar, Ratnagiri.",Ratnagiri,C-45220,VPM'S MAHARSHI PARSHURAM COLLEGE OF ENGINEERING,B+,2.68,2024-12-20,linked,0.77,0.09,"automatic (place confirmed): name score 0.77, clear lead"
+03465,"Ideal Institute of Technology, Wada, Dist.Thane",Palghar,C-48550,IDEAL INSTITUTE OF TECHNOLOGY,B+,2.53,2024-09-21,linked,0.61,0.24,owner confirmed
+03467,"Vishwaniketan's Institute of Management Entrepreneurship and Engineering Technology(i MEET), Khalapur Dist Raigad",Raigad,C-48544,VISHWANIKETAN INSTITUTE OF MANAGEMENT ENTREPRENEURSHIP AND ENGINEERING TECHNOLOGY(IMEET),A+,3.29,2023-02-07,linked,0.75,0.26,"automatic (place confirmed): name score 0.75, clear lead"
+03470,YASHWANTRAO BHONSALE INSTITUTE OF TECHNOLOGY,Sindhudurg,,,,,,no_record,0.35,0.33,no plausible NAAC record (best score 0.35)
+03471,"New Horizon Institute of Technology & Management, Thane",Thane,C-49217,"NEW HORIZON INSTITUTE OF TECHNOLOGY AND MANAGEMENT, THANE",A,3.16,2024-09-21,linked,1.00,0.32,"automatic: name score 1.00, place ok"
+03475,"A. P. Shah Institute of Technology, Thane",Thane,,,,,,no_record,0.45,0.25,no plausible NAAC record (best score 0.45)
+03477,"Chhartrapati Shivaji Maharaj Institute of Technology, Shedung, Panvel",Raigad,C-56288,CHHATRAPATI SHIVAJI MAHARAJ INSTITUTE OF TECHNOLOGY,B++,2.91,2024-10-18,linked,0.77,0.20,"automatic (place confirmed): name score 0.77, clear lead"
+03503,"Indala College Of Engineering, Bapsai Tal.Kalyan",Thane,,,,,,no_record,0.31,0.14,no plausible NAAC record (best score 0.31)
+03546,Devi Mahalaxmi College of Engineering and Technology,Thane,,,,,,no_record,0.32,0.20,no plausible NAAC record (best score 0.32)
+03723,"Navjeevan Education Society's College of Engineering, Bhandup(W), Mumbai",Mumbai Suburban,,,,,,no_record,0.23,0.12,no plausible NAAC record (best score 0.23)
+03724,Thakur Shree DPS College of Engineering & Management,Palghar,,,,,,no_record,0.29,0.27,no plausible NAAC record (best score 0.29)
+03725,"MAEER's Maharashtra Institute of Technology, Thane",Thane,,,,,,no_record,0.46,0.23,owner said: no NAAC record for this college
+03726,IImperial College of Engineering,Thane,,,,,,no_record,0.00,0.00,no plausible NAAC record (best score 0.00)
+04004,"Government College of Engineering, Chandrapur",Chandrapur,C-18775,GOVERNMENT COLLEGE OF ENGINEERING CHANDRAPUR,B+,2.71,2024-09-05,linked,1.00,0.46,"automatic: name score 1.00, place ok"
+04005,"Laxminarayan Institute of Technology, Nagpur",Not available,C-61789,LAXMINARAYAN INSTITUTE OF TECHNOLOGY,A+,3.48,2022-08-23,linked,0.85,0.75,owner confirmed
+04025,"Government College of Engineering, Nagpur",Nagpur,C-56586,GOVERNMENT COLLEGE OF ENGINEERING NAGPUR,B++,2.93,2024-03-21,linked,1.00,0.57,"automatic: name score 1.00, place ok"
+04026,University Institute of Technology,Gadchiroli,,,,,,no_record,0.50,0.47,owner said: no NAAC record for this college
+04104,"Kavi Kulguru Institute of Technology & Science, Ramtek",Nagpur,C-18777,"KAVIKULGURU INSTITUTE OF TECHNOLOGY AND SCIENCE, RAMTEK",A,3.04,2024-05-30,linked,0.56,0.27,owner confirmed
+04115,"Shri Ramdeobaba College of Engineering and Management, Nagpur",Not available,C-18886,"SHRI RAMDEOBABA COLLEGE OF ENGINEERING AND MANAGEMENT, NAGPUR",A+,3.35,2021-08-10,linked,1.00,0.52,"automatic: name score 1.00, place unknown"
+04116,"Ankush Shikshan Sanstha's G.H.Raisoni College of Engineering, Nagpur",Nagpur,C-18817,"G. H. RAISONI COLLEGE OF ENGINEERING, NAGPUR",A++,3.55,2023-06-02,linked,0.84,0.67,owner confirmed
+04118,"Bapurao Deshmukh College of Engineering, Sevagram",Wardha,,,,,,no_record,0.11,0.00,no plausible NAAC record (best score 0.11)
+04123,"Lokmanya Tilak Jankalyan Shikshan Sanstha, Priyadarshani College of Engineering, Nagpur",Nagpur,C-18391,PRIYADARSHINI COLLEGE OF ENGINEERING,A+,3.45,2022-11-09,linked,0.50,0.42,owner confirmed
+04133,"Sanmarg Shikshan Sanstha's Smt. Radhikatai Pandav College of Engineering, Nagpur",Nagpur,C-18495,"SMT. RADHIKATAI PANDAV COLLEGE OF ENGINEERING, BAHADURA NEAR DIGHORI NAKA, UMRER ROAD, NAGPUR",B,2.28,2020-05-04,linked,0.47,0.38,owner confirmed
+04134,"Guru Nanak Institute of Engineering & Technology,Kalmeshwar, Nagpur",Nagpur,C-18808,GURU NANAK INSTITUTE OF TECHNOLOGY,B+,2.56,2025-05-29,linked,0.72,0.47,"automatic (place confirmed): name score 0.72, clear lead"
+04135,"Amar Seva Mandal's Shree Govindrao Vanjari College of Engineering & Technology, Nagpur",Nagpur,C-18634,GOVINDRAO WANJARI COLLEGE OF ENGINEERING AND TECHNOLOGY,B++,3.00,2025-05-19,linked,0.65,0.49,owner confirmed
+04136,"Lokmanya Tilak Jankalyan Shikshan Sastha, Priyadarshini J. L. College Of Engineering, Nagpur",Not available,,,,,,no_record,0.64,0.35,owner said: no NAAC record for this college
+04137,"Sir Shantilal Badjate Charitable Trust's S. B. Jain Institute of technology, Management & Research, Nagpur",Nagpur,,,,,,no_record,0.35,0.34,no plausible NAAC record (best score 0.35)
+04138,"Jaidev Education Society, J D College of Engineering and Management, Nagpur",Nagpur,,,,,,no_record,0.51,0.42,owner said: no NAAC record for this college
+04139,"Samridhi Sarwajanik Charitable Trust, Jhulelal Institute of Technology, Nagpur",Nagpur,C-18650,JHULELAL INSTITUTE OF TECHNOLOGY,A+,3.33,2022-05-03,linked,0.57,0.47,owner confirmed
+04141,"Shriram Gram Vikas Shikshan Sanstha, Vilasrao Deshmukh College of Engineering and Technology, Nagpur",Nagpur,,,,,,no_record,0.41,0.33,no plausible NAAC record (best score 0.41)
+04142,"G H Raisoni College of Engineering & Management, Nagpur",Nagpur,,,,,,no_record,0.93,0.73,owner said: no NAAC record for this college
+04143,"Sanmarg Shikshan Sanstha, Mandukarrao Pandav College of Engineering, Bhandara",Bhandara,C-18243,MADHUKARRAO PANDAV COLLEGE OF ENGINEERING,B,2.10,2024-03-28,linked,0.73,0.27,"automatic (place confirmed): name score 0.73, clear lead"
+04144,"Shri. Sai Shikshan Sanstha, Nagpur Institute of Technology, Nagpur",Nagpur,C-18725,"NAGPUR INSTITUTE OF TECHNOLOGY, NAGPUR",B++,2.99,2025-03-20,linked,0.83,0.47,"automatic: name score 0.83, place ok"
+04145,"Wainganga College of Engineering and Management, Dongargaon, Nagpur",Nagpur,C-18810,WAINGANGA COLLEGE OF ENGINEERING AND MANAGEMENT,A,3.03,2023-03-03,linked,0.71,0.51,owner confirmed
+04147,"K.D.K. College of Engineering, Nagpur",Nagpur,C-18630,"K. D. K. COLLEGE OF ENGINEERING, NAGPUR",B++,2.97,2024-07-19,linked,1.00,0.57,"automatic: name score 1.00, place ok"
+04151,"Tulsiramji Gaikwad Patil College of Engineering & Technology, Nagpur",Nagpur,C-18670,TULSIRAMJI GAIKWAD-PATIL COLLEGE OF ENGINEERING AND TECHNOLOGY,A+,3.32,2021-02-23,linked,0.92,0.48,"automatic: name score 0.92, place ok"
+04163,Rajiv Gandhi College of Engineering Research & Technology Chandrapur,Chandrapur,C-18207,"RAJIV GANDHI COLLEGE OF ENGINEERING, RESEARCH AND TECHNOLOGY, CHANDRAPUR",B+,2.71,2024-09-12,linked,1.00,0.46,"automatic: name score 1.00, place ok"
+04167,"Yeshwantrao Chavan College of Engineering,Wanadongri, Nagpur",Nagpur,C-18254,YESHWANTRAO CHAVAN COLLEGE OF ENGINEERING,A++,3.60,2022-05-17,linked,0.72,0.40,"automatic (place confirmed): name score 0.72, clear lead"
+04172,"Anjuman College of Engineering & Technology, Nagpur",Nagpur,C-18770,ANJUMAN COLLEGE OF ENGINEERING AND TECHNOLOGY,A+,3.36,2024-03-09,linked,0.85,0.64,"automatic: name score 0.85, place ok"
+04174,"ST. Vincent Pallotti College of Engineering & Technology, Nagpur",Nagpur,,,,,,no_record,0.45,0.37,no plausible NAAC record (best score 0.45)
+04175,"JMSS Shri Shankarprasad Agnihotri College of Engineering, Wardha",Wardha,C-18839,SHRI SHANKARPRASAD AGNIHOTRI COLLEGE OF ENGINEERING,B+,2.57,2024-03-14,linked,0.72,0.68,owner confirmed
+04177,"Priyadarshini Bhagwati College of Engineering, Harpur Nagar, Umred Road,Nagpur",Nagpur,C-18500,PRIYADARSHINI BHAGWATI COLLEGE OF ENGINEERING,A,3.02,2024-05-30,linked,0.54,0.35,owner confirmed
+04181,"Swaminarayan Siddhanta Institute Of Technology, Nagpur",Nagpur,C-18476,SWAMINARAYAN SIDDHANTA INSTITUTE OF TECHNOLOGY,B,2.22,2023-10-12,linked,0.90,0.58,"automatic: name score 0.90, place ok"
+04188,"Krushi Jivan Vikas Pratishthan, Ballarpur Institute of Technology, Mouza Bamni",Chandrapur,C-18901,BALLARPUR INSTITUTE OF TECHNOLOGY,B,2.13,2019-10-18,linked,0.45,0.20,owner confirmed
+04190,"M.D. Yergude Memorial Shikshan Prasarak Mandal's Shri Sai College of Engineering & Technology, Bhadrawati",Chandrapur,C-18892,"SHRI SAI COLLEGE OF ENGINEERING AND TECHNOLOGY, BHADRAWATI.",B+,2.70,2024-10-18,linked,0.67,0.26,"automatic (place confirmed): name score 0.67, clear lead"
+04192,"Maitraya Education Society, Nagarjuna Institute of Engineering Technology & Management, Nagpur",Nagpur,C-18934,NAGARJUNA INSTITUTE OF ENGINEERING TECHNOLOGY AND MANAGEMENT,B++,2.95,2025-02-20,linked,0.76,0.49,"automatic (place confirmed): name score 0.76, clear lead"
+04193,"K.D.M. Education Society, Vidharbha Institute of Technology,Umred Road ,Nagpur",Nagpur,C-18835,VIDARBHA INSTITUTE OF TECHNOLOGY,B++,2.96,2023-06-02,linked,0.53,0.42,owner confirmed
+04196,"Gurunanak Educational Society's Gurunanak Institute of Technology, Nagpur",Nagpur,,,,,,no_record,0.58,0.34,owner said: no NAAC record for this college
+04197,"Jai Mahakali Shikshan Sanstha, Agnihotri College of Engineering, Sindhi(Meghe)",Wardha,,,,,,no_record,0.43,0.42,no plausible NAAC record (best score 0.43)
+04285,"V M Institute of Engineering and Technology, Dongargaon, Nagpur",Not available,,,,,,no_record,0.53,0.43,owner said: no NAAC record for this college
+04302,"Gondia Education Society's Manoharbhai Patel Institute Of Engineering & Technology, Shahapur, Bhandara",Bhandara,C-18540,MANOHARBHAI PATEL INSTITUTE OF ENGINEERING AND TECHNOLOGY,B,2.29,2021-11-03,linked,0.68,0.46,"automatic (place confirmed): name score 0.68, clear lead"
+04304,"Cummins College of Engineering For Women, Sukhali (Gupchup), Tal. Hingna Hingna Nagpur",Nagpur,C-18376,CUMMINS COLLEGE OF ENGINEERING FOR WOMEN,A+,3.27,2024-07-12,linked,0.50,0.37,owner confirmed
+04613,"Suryodaya College of Engineering & Technology, Nagpur",Nagpur,C-18449,"SURYODAYA COLLEGE OF ENGINEERING AND TECHNOLOGY, NAGPUR",A+,3.27,2023-08-02,linked,1.00,0.54,"automatic: name score 1.00, place ok"
+04648,"R.V. Parankar College of Engineering & Technology, Arvi, Dist Wardha",Wardha,C-58222,R V PARANKAR COLLEGE OF ENGINEERING AND TECHNOLOGY,B+,2.51,2025-05-29,linked,0.72,0.36,"automatic (place confirmed): name score 0.72, clear lead"
+04649,"Bajaj Institute of Technology, Wardha",Wardha,C-58531,BAJAJ INSTITUTE OF TECHNOLOGY,A,3.13,2024-06-30,linked,0.81,0.41,"automatic: name score 0.81, place ok"
+04679,"Karanjekar College of Engineering & Management, Sakoli",Bhandara,,,,,,no_record,0.32,0.32,no plausible NAAC record (best score 0.32)
+04703,"Somayya Institute of Technology, Chandrapur",Chandrapur,,,,,,no_record,0.44,0.38,no plausible NAAC record (best score 0.44)
+04762,"Mata Mahakali College of Engineering & Technology, Warora",Chandrapur,,,,,,no_record,0.28,0.25,no plausible NAAC record (best score 0.28)
+04766,Dr. Arun Motghare College of Engineering and Technology,Bhandara,,,,,,no_record,0.53,0.27,owner said: no NAAC record for this college
+05003,"University Institute of Chemical Technology, North Maharashtra University, Jalgaon",Jalgaon,,,,,,no_record,0.46,0.21,owner said: no NAAC record for this college
+05004,"Government College of Engineering, Jalgaon",Jalgaon,C-8946,GOVERNMENT COLLEGE OF ENGINEERING JALGAON,B++,2.85,2024-09-21,linked,1.00,0.66,"automatic: name score 1.00, place ok"
+05103,"Shri Shivaji Vidya Prasarak Sanstha's Late Bapusaheb Shivaji Rao Deore College of Engineering,Dhule",Dhule,,,,,,no_record,0.30,0.25,no plausible NAAC record (best score 0.30)
+05104,"Shramsadhana Bombay Trust, College of Engineering & Technology, Jalgaon",Jalgaon,C-8977,SHRAM SADHANA BOMBAY TRUST'S COLLEGE OF ENGINEERING AND TECHNOLOGY,A,3.14,2022-09-06,linked,0.49,0.46,owner confirmed
+05106,"Khandesh College Education Society's College Of Engineering And Management, Jalgaon",Jalgaon,C-8815,KHANDESH COLLEGE EDUCATION SOCIETY'S COLLEGE OF ENGINEERING AND MANAGEMENT,B++,2.91,2022-09-21,linked,0.85,0.79,owner confirmed
+05108,"Maratha Vidya Prasarak Samaj's Karmaveer Adv. Baburao Ganpatrao Thakare College Of Engineering, Nashik",Nashik,C-41622,Maratha Vidya Prasarak Samaj's Karmaveer Adv. Baburao Ganpatrao Thakare College of Engineering,A++,3.51,2023-02-14,linked,0.96,0.40,"automatic: name score 0.96, place ok"
+05109,"Sandip Foundation, Sandip Institute of Technology and Research Centre, Mahiravani, Nashik",Nashik,,,,,,no_record,0.49,0.43,owner said: no NAAC record for this college
+05121,"K. K. Wagh Institute of Engineering Education and Research, Nashik",Nashik,,,,,,no_record,0.64,0.43,owner said: no NAAC record for this college
+05124,"Jagadamba Education Soc. Nashik's S.N.D. College of Engineering & Research, Babulgaon",Nashik,C-41834,"JAGDAMBA EDUCATION SOCIETY'S S.N.D. COLLEGE OF ENGINEERING AND RESEARCH CENTER .BABHULGAON, YEOLA.",B++,2.77,2023-02-14,linked,0.69,0.29,"automatic (place confirmed): name score 0.69, clear lead"
+05125,"Pravara Rural Education Society's Sir Visvesvaraya Institute of Technology, Chincholi Dist. Nashik",Nashik,,,,,,no_record,0.29,0.17,no plausible NAAC record (best score 0.29)
+05130,"Brahma Valley College of Engineering & Research, Trimbakeshwar, Nashik",Nashik,C-42053,BRAHMA VALLEY COLLEGE OF ENGINEERING AND RESEARCH INSTITUTE,A,3.01,2023-11-09,linked,0.75,0.32,"automatic (place confirmed): name score 0.75, clear lead"
+05139,"Pravara Rural College of Engineering, Loni, Pravaranagar, Ahmednagar.",Ahilyanagar,C-41639,"PRAVARA RURAL ENGINEERING COLLEGE, LONI",B++,2.98,2025-04-11,linked,0.74,0.73,owner confirmed
+05151,"MET Bhujbal Knowledge City MET League's Engineering College, Adgaon, Nashik.",Nashik,,,,,,no_record,0.20,0.17,no plausible NAAC record (best score 0.20)
+05152,"G H Raisoni College of Engineering and Management, Jalgaon",Jalgaon,,,,,,no_record,0.48,0.47,owner said: no NAAC record for this college
+05160,"Sanjivani Rural Education Society's Sanjivani College of Engineering, Kopargaon",Ahilyanagar,,,,,,no_record,0.36,0.36,no plausible NAAC record (best score 0.36)
+05161,"Dr. Vithalrao Vikhe Patil College of Engineering, Ahmednagar",Ahilyanagar,C-14045,"DR. VITHALRAO VIKHE PATIL FOUNDATION'S COLLEGE OF PHYSIOTHERAPY, AHMEDNAGAR (MH)",A,3.02,2021-08-17,linked,0.85,0.68,"automatic: name score 0.85, place unknown"
+05162,"Amrutvahini Sheti & Shikshan Vikas Sanstha's Amrutvahini College of Engineering, Sangamner",Ahilyanagar,C-41515,AMRUTVAHINI COLLEGE OF ENGINEERING,A+,3.40,2021-11-22,linked,0.72,0.40,owner confirmed
+05164,"P.S.G.V.P. Mandal's D.N. Patel College of Engineering, Shahada, Dist. Nandurbar",Nandurbar,C-8912,"POOJYA SANE GURUJI VIDYA PRASARAK MANDAL'S D N PATEL COLLEGE OF ENGINEERING, SHAHADA",B,2.22,2024-04-06,linked,0.52,0.42,owner confirmed
+05168,"T.M.E. Society's J.T.Mahajan College of Engineering, Faizpur",Jalgaon,,,,,,no_record,0.17,0.10,no plausible NAAC record (best score 0.17)
+05169,"Nagaon Education Society's Gangamai College of Engineering, Nagaon, Tal Dist Dhule",Dhule,C-8911,NAGAON EDUCATION SOCIETY'S GANGAMAI COLLEGE OF EDUCATION NAGAON TAL. AND DIST. DHULE,C,1.77,2025-02-27,linked,0.96,0.79,"automatic: name score 0.96, place ok"
+05170,"Hindi Seva Mandal's Shri Sant Gadgebaba College of Engineering & Technology, Bhusawal",Jalgaon,C-8830,HINDI SEVA MANDALS SHRI SANT GADGE BABA COLLEGE OF ENGINEERING AND TECHNOLOGY BHUSAWAL,A+,3.33,2024-08-04,linked,0.75,0.36,"automatic (place confirmed): name score 0.75, clear lead"
+05171,"Godavari Foundation's Godavari College Of Engineering, Jalgaon",Jalgaon,C-8836,"GODAVARI COLLEGE OF ENGNEERING, JALGAON",B+,2.52,2024-08-29,linked,1.00,0.50,"automatic: name score 1.00, place ok"
+05172,"R. C. Patel Institute of Technology, Shirpur",Dhule,,,,,,no_record,0.39,0.33,no plausible NAAC record (best score 0.39)
+05173,"SNJB's Late Sau. Kantabai Bhavarlalji Jain College of Engineering, (Jain Gurukul), Neminagar,Chandwad,(Nashik)",Nashik,C-41699,S. N. J. B'S LATE SAU. KANTABAI BHAVARLALJI JAIN COLLEGE OF ENGINEERING,A+,3.26,2023-10-12,linked,0.85,0.19,"automatic: name score 0.85, place ok"
+05177,"Matoshri College of Engineering and Research Centre, Eklahare, Nashik",Nashik,C-41960,MATOSHRI COLLEGE OF ENGINEERING AND RESEARCH CENTRE,B++,2.97,2022-09-06,linked,0.76,0.64,owner confirmed
+05179,"Vishwabharati Academy's College of Engineering, Ahmednagar",Ahilyanagar,C-41587,VISHWABHARATI ACADEMY'S COLLEGE OF ENGINEERING,B+,2.52,2024-07-05,linked,0.80,0.49,"automatic: name score 0.80, place unknown"
+05181,"Gokhale Education Society's, R.H. Sapat College of Engineering, Management Studies and Research, Nashik",Nashik,C-41921,"GOKHALE EDUCATION SOCIETY'S R. H. SAPAT COLLEGE OF ENGINEERING, MANAGEMENT STUDIES AND RESEARCH, NASHIK",B++,2.85,2025-01-16,linked,1.00,0.45,"automatic: name score 1.00, place ok"
+05182,"Kalyani Charitable Trust, Late Gambhirrao Natuba Sapkal College of Engineering, Anjaneri, Trimbakeshwar Road, Nashik",Nashik,C-42196,KALYANI CHARITABLE TRUST'S LATE G N SAPKAL COLLEGE OF ENGINEERING,B++,2.89,2024-07-12,linked,0.49,0.24,owner confirmed
+05184,"Amruta Vaishnavi Education & Welfare Trust's Shatabdi Institute of Engineering & Research, Agaskhind Tal. Sinnar",Nashik,,,,,,no_record,0.24,0.21,no plausible NAAC record (best score 0.24)
+05223,"SMT. SHARCHCHANDRIKA SURESH PATIL INSTITUTE OF TECHNOLOGY (ENGINEERING & POLYTECHNIC), CHOPDA",Jalgaon,,,,,,no_record,0.36,0.34,no plausible NAAC record (best score 0.36)
+05235,"Late Bhausaheb Hiray Smarnika Samiti Trust Sanchalit Polytechnic, Malegaon, Nashik",Nashik,,,,,,no_record,0.60,0.39,owner said: no NAAC record for this college
+05239,JAMIA INSTITUTE OF TECHNOLOGY,Nandurbar,,,,,,no_record,0.59,0.49,owner said: no NAAC record for this college
+05244,"MET's Institute of Technology Polytechnic, Bhujbal Knowledge City, Adgaon Nashik",Nashik,,,,,,no_record,0.27,0.15,no plausible NAAC record (best score 0.27)
+05249,"Trimurti Shikshan Prasarak Mandal, Trimurti Institute Of Technology, Paladhi Bk, Jalgaon",Jalgaon,,,,,,no_record,0.28,0.22,no plausible NAAC record (best score 0.28)
+05256,Matoshri Aasarabai Institute of Technology and Research Centre,Nashik,,,,,,no_record,0.63,0.36,owner said: no NAAC record for this college
+05263,"Matoshri Education Soceity, Matoshri Institute Of Technology, Dhanore, Nashik",Nashik,,,,,,no_record,0.35,0.34,no plausible NAAC record (best score 0.35)
+05303,"Hon. Shri. Babanrao Pachpute Vichardhara Trust, Group of Institutions (Integrated Campus)-Parikrama, Kashti Shrigondha,",Ahilyanagar,C-41501,"HON.SHRI BABANRAO PACHPUTE VICHARDHARA TRUST'S GROUP OF INSTITUTIONS FACULTY OF ENGINEERING,KASHTI",A,3.06,2024-04-18,linked,0.83,0.83,owner confirmed
+05322,"Jamia Institute Of Engineering And Management Studies, Akkalkuwa",Not available,C-50940,JAMIA INSTITUTE OF ENGINEERING AND MANAGEMENT STUDIES,B+,2.72,2024-01-25,linked,0.85,0.56,"automatic: name score 0.85, place unknown"
+05330,"PUNE VIDYARTHI GRIHA’S COLLEGE OF ENGINEERING & SHRIKRUSHNA S. DHAMANKAR INSTITUTE OF MANAGEMENT, NASHIK",Nashik,C-51605,"PUNE VIDYARTHI GRIHA'S COLLEGE OF ENGINEERING AND SHRIKRUSHNA S. DHAMANKAR INSTITUTE OF MANAGEMENT, NASHIK",A,3.11,2024-03-14,linked,1.00,0.53,"automatic: name score 1.00, place ok"
+05331,"Sandip Foundation's, Sandip Institute of Engineering & Management, Nashik",Nashik,C-44589,SANDIP INSTITUTE OF ENGINEERING AND MANAGEMENT,A,3.10,2024-03-28,linked,0.91,0.42,"automatic: name score 0.91, place ok"
+05365,"Vardhaman Education & Welfare Society, Ahinsa Institute of Technology, Post. Dondaicha, Dhule",Dhule,,,,,,no_record,0.31,0.21,no plausible NAAC record (best score 0.31)
+05370,"Kedareshwar Gramin Vikas Pratishthan, Samajbhushan Eknathrao Dhakane College, of Engineering, Shevgaon",Ahilyanagar,,,,,,no_record,0.13,0.12,no plausible NAAC record (best score 0.13)
+05380,"Adsul's Technical Campus, Chas Dist. Ahmednagar",Ahilyanagar,C-45862,ADSUL'S TECHNICAL CAMPUS,B++,2.84,2023-08-02,linked,0.55,0.38,owner confirmed
+05381,"Shri. Jaykumar Rawal Institute of Technology, Dondaicha.",Dhule,C-49529,SHRI JAYKUMAR RAWAL INSTITUTE OF TECHNOLOGY,B,2.37,2023-07-19,linked,0.85,0.50,"automatic: name score 0.85, place ok"
+05382,"Ahmednagar Jilha Maratha Vidya Prasarak Samajache, Shri. Chhatrapati Shivaji Maharaj College of Engineering, Nepti",Ahilyanagar,C-42126,"AHMEDNAGAR JILHA MARATHA VIDYA PRASARAK SAMAJ'S SHRI CHHATRAPATI SHIVAJI MAHARAJ COLLEGE OF ENGINEERING, NEPTI, AHMEDNAGAR",B+,2.67,2022-06-07,linked,0.89,0.53,"automatic: name score 0.89, place unknown"
+05390,"K.V.N. Naik S. P. Sansth's Loknete Gopinathji Munde Institute of Engineering Education & Research, Nashik.",Nashik,C-41603,"KVN NAIK S P SANSTHA'S LOKNETE GOPINATHJI MUNDE INSTITUTE OF ENGINEERING EDUCATION AND RESEARCH, NASHIK",B,2.46,2024-09-21,linked,0.94,0.26,"automatic: name score 0.94, place ok"
+05395,Ashok Institute of Engineering & Technology,Ahilyanagar,,,,,,no_record,0.43,0.41,no plausible NAAC record (best score 0.43)
+05396,"College of Engineering and Technology ,North Maharashtra Knowledge City, Jalgaon",Jalgaon,C-51710,KBS'S COLLEGE OF ENGINEERING & TECHNOLOGY NORTH MAHARASHTRA KNOWLEDGE CITY JALGAON,B,2.04,2023-10-06,linked,0.91,0.36,"automatic: name score 0.91, place ok"
+05399,"Sanghavi College of Engineering, Varvandi, Nashik.",Nashik,C-41333,SHREE MAHAVIR EDUCATION SOCIETY'S NASHIK SANGHAVI COLLEGE OF ENGINEERING,B+,2.53,2023-10-12,linked,0.61,0.31,owner confirmed
+05401,"Jawahar Education Society's Institute of Technology, Management & Research, Nashik.",Nashik,C-41619,"JAWAHAR EDUCATION SOCIETY'S, INSTITUTE OF TECHNOLOGY,MANAGEMENT AND RESEARCH, NASHIK",B++,2.76,2023-03-30,linked,1.00,0.52,"automatic: name score 1.00, place ok"
+05408,"Vidya Niketan College of Engineering, Bota Sangamner",Ahilyanagar,,,,,,no_record,0.44,0.26,no plausible NAAC record (best score 0.44)
+05409,"Rajiv Gandhi College of Engineering, At Post Karjule Hariya Tal.Parner, Dist.Ahmednagar",Ahilyanagar,,,,,,no_record,0.40,0.31,no plausible NAAC record (best score 0.40)
+05411,"Maulana Mukhtar Ahmad Nadvi Technical Campus, Malegaon.",Nashik,C-47550,Al Jamia Mohammediyah Education Society's Maulana Mukhtar Ahmad Nadvi Technical Campus,B+,2.74,2024-11-21,linked,0.71,0.09,"automatic (place confirmed): name score 0.71, clear lead"
+05413,"Netaji Subhashchandra Bose Edu Trust,Netaji Polytechnic.,Dhule",Dhule,,,,,,no_record,0.56,0.17,owner said: no NAAC record for this college
+05414,"Nikam Institute of Technology And Management Studies ,Dhule",Dhule,,,,,,no_record,0.39,0.48,no plausible NAAC record (best score 0.39)
+05418,"Guru Gobind Singh College of Engineering & Research Centre, Nashik.",Nashik,C-48617,"GURU GOBIND SINGH FOUNDATION'S, GURU GOBIND SINGH COLLEGE OF ENGINEERING AND RESEARCH CENTRE",A,3.05,2024-10-18,linked,0.94,0.46,"automatic: name score 0.94, place ok"
+05433,"R.C. Patel College of Engineering and Polytechnic, Shirpur",Dhule,,,,,,no_record,0.37,0.27,no plausible NAAC record (best score 0.37)
+05449,"Shri Vile Parle Kelavani Mandal's Institute of Technology, Dhule",Not available,C-58821,"SHRI VILE PARLE KELAVANI MANDAL'S INSTITUTE OF TECHNOLOGY, DHULE",B++,2.85,2025-01-16,linked,1.00,0.56,"automatic: name score 1.00, place unknown"
+05497,"P.G. College of Engineering & Technology, Nandurbar",Nandurbar,,,,,,no_record,0.42,0.40,no plausible NAAC record (best score 0.42)
+05509,"Shri Swami Samarth Institute of Management and Technology, Malwadi-Bota",Ahilyanagar,,,,,,no_record,0.35,0.25,no plausible NAAC record (best score 0.35)
+05513,"MKD Institute of Technology, Nadurbar",Nandurbar,,,,,,no_record,0.35,0.34,no plausible NAAC record (best score 0.35)
+05545,"Shri Vile Parle Kelavani Mandal's College of Engineering, Shirpur",Dhule,,,,,,no_record,0.64,0.32,owner said: no NAAC record for this college
+05597,VAMANRAO ITHAPE COLLEGE OF ENGINEERING AND MANAGEMENT,Ahilyanagar,,,,,,no_record,0.18,0.18,no plausible NAAC record (best score 0.18)
+05682,Sai College of Engineering and Technology,Ahilyanagar,,,,,,no_record,0.79,0.25,owner said: no NAAC record for this college
+05683,Saptashrungi College of Engineering and Polytechnic,Nashik,,,,,,no_record,0.16,0.15,no plausible NAAC record (best score 0.16)
+05686,Loknete Suhas Dwarkanath Kande College of Engineering Management and Research,Nashik,,,,,,no_record,0.27,0.26,no plausible NAAC record (best score 0.27)
+05688,MES Institute of Engineering and Technology,Ahilyanagar,,,,,,no_record,0.44,0.41,no plausible NAAC record (best score 0.44)
+06004,"Government College of Engineering & Research, Avasari Khurd",Pune,C-55912,"GOVERNMENT COLLEGE OF ENGINEERING AND RESEARCH, AVASARI (KH)",B,2.43,2025-01-30,linked,0.84,0.38,"automatic: name score 0.84, place ok"
+06005,"Government College of Engineering, Karad",Satara,,,,,,no_record,0.59,0.43,owner said: no NAAC record for this college
+06006,COEP Technological University,Not available,,,,,,no_record,0.23,0.00,no plausible NAAC record (best score 0.23)
+06007,"Walchand College of Engineering, Sangli",Sangli,C-11015,WALCHAND COLLEGE OF ENGINEERING,A,3.17,2023-12-07,linked,0.81,0.43,"automatic: name score 0.81, place ok"
+06028,SHIVAJI UNIVERSITY SCHOOL OF ENGINEERING AND TECHNOLOGY (DEPARTMENT OF TECHNOLOGY),Kolhapur,,,,,,no_record,0.31,0.22,no plausible NAAC record (best score 0.31)
+06036,"Government College of Engineering, Kolhapur",Kolhapur,,,,,,no_record,0.62,0.56,owner said: no NAAC record for this college
+06041,"Punyashlok Ahilyadevi Holkar Solapur University, Solapur",Solapur,,,,,,no_record,0.31,0.29,no plausible NAAC record (best score 0.31)
+06122,"TSSMS's Pd. Vasantdada Patil Institute of Technology, Bavdhan, Pune",Pune,,,,,,no_record,0.41,0.41,no plausible NAAC record (best score 0.41)
+06138,"Genba Sopanrao Moze Trust Parvatibai Genba Moze College of Engineering,Wagholi, Pune",Pune,,,,,,no_record,0.77,0.65,owner said: no NAAC record for this college
+06139,"Progressive Education Society's Modern College of Engineering, Pune",Pune,C-41767,PROGRESSIVE EDUCATION SOCIETY'S MODERN COLLEGE OF ENGINEERING,A++,3.66,2022-10-26,linked,0.90,0.66,"automatic: name score 0.90, place ok"
+06141,"Jaywant Shikshan Prasarak Mandal's,Rajarshi Shahu College of Engineering, Tathawade, Pune",Pune,C-41938,JAYAWANT SHIKSHAN PRASARAK MANDAL'S RAJARSHI SHAHU COLLAGE OF EDUCATION,B,2.18,2023-12-15,linked,0.74,0.37,"automatic (place confirmed): name score 0.74, clear lead"
+06144,"Genba Sopanrao Moze College of Engineering, Baner-Balewadi, Pune",Pune,C-41744,"GENBA SOPANRAO MOZE COLLEGE OF ENGINEERING, BALEWADI, PUNE",B++,2.85,2024-09-21,linked,0.90,0.56,"automatic: name score 0.90, place ok"
+06145,"JSPM'S Jaywantrao Sawant College of Engineering,Pune",Pune,C-42216,JAYAWANTRAO SAWANT COLLEGE OF ENGINEERING,A+,3.35,2023-11-23,linked,0.77,0.60,owner confirmed
+06146,"MIT Academy of Engineering,Alandi, Pune",Pune,C-41725,MIT ACADEMY OF ENGINEERING,A,3.15,2023-11-23,linked,0.73,0.52,"automatic (place confirmed): name score 0.73, clear lead"
+06149,"Siddhant College of Engineering, A/p Sudumbare, Tal.Maval, Dist-Pune",Pune,,,,,,no_record,0.33,0.30,no plausible NAAC record (best score 0.33)
+06155,"G.H.Raisoni College of Engineering & Management, Wagholi, Pune",Pune,C-41913,G. H. RAISONI COLLEGE OF ENGINEERING AND MANAGEMENT,A+,3.32,2022-05-24,linked,0.79,0.45,"automatic (place confirmed): name score 0.79, clear lead"
+06156,"Marathwada Mitra Mandal's College of Engineering, Karvenagar, Pune",Pune,C-41309,MARATHWADA MITRA MANDALS COLLEGE OF ENGINEERING,A++,3.60,2023-05-01,linked,0.74,0.53,"automatic (place confirmed): name score 0.74, clear lead"
+06175,"Pimpri Chinchwad Education Trust, Pimpri Chinchwad College of Engineering, Pune",Pune,,,,,,no_record,0.89,0.39,owner said: no NAAC record for this college
+06177,"Sinhgad College of Engineering, Vadgaon (BK), Pune",Pune,C-41391,SINHGAD TECHNICAL EDUCATION SOCIETY'S SINHGAD COLLEGE OF ENGINEERING,A+,3.31,2022-10-26,linked,0.58,0.58,owner confirmed
+06178,"Sinhgad Technical Education Society's Smt. Kashibai Navale College of Engineering,Vadgaon,Pune",Pune,C-41958,SINHGAD TECHNICAL EDUCATION SOCIETY SMT. KASHIBAI NAVALE COLLEGE OF ENGINEERING,A,3.04,2022-11-15,linked,0.84,0.79,owner confirmed
+06179,"Indira College of Engineering & Management, Pune",Pune,C-41944,INDIRA COLLEGE OF ENGINEERING AND MANAGEMENT,B++,2.92,2019-07-15,linked,0.87,0.63,"automatic: name score 0.87, place ok"
+06182,"Sinhgad Technical Education Society, Sinhgad Institute of Technology and Science, Narhe (Ambegaon)",Pune,C-41214,"SINHGAD INSTITUTE OF TECHNOLOGY AND SCIENCE, NARHE, PUNE",B++,2.97,2022-10-26,linked,0.84,0.82,owner confirmed
+06183,"Al-Ameen Educational and Medical Foundation, College of Engineering, Koregaon, Bhima",Pune,,,,,,no_record,0.23,0.21,no plausible NAAC record (best score 0.23)
+06184,"K. J.'s Educational Institut Trinity College of Engineering and Research, Pisoli, Haveli",Pune,C-41957,K.J's EDUCATIONAL INSTITUTES TRINITY COLLEGE OF ENGINEERING AND RESEARCH,A+,3.31,2023-06-24,linked,0.64,0.48,owner confirmed
+06185,"Sinhgad Institute of Technology, Kusgaon (BK) Lonavala",Pune,C-41599,Sinhgad Technical Education Society's Sinhgad Institute of Technology,A,3.12,2022-08-23,linked,0.72,0.56,owner confirmed
+06187,"Sinhgad Academy of Engineering, Kondhwa (BK) Kondhwa-Saswad Road, Pune",Pune,C-42102,SINHGAD ACADEMY OF ENGINEERING,A,3.19,2023-01-24,linked,0.59,0.47,owner confirmed
+06203,"Marathwada Mitra Mandal's Institute of Technology, Lohgaon, Pune",Pune,C-41943,MARATHWADA MITRA MANDAL'S INSTITUTE OF TECHNOLOGY,A,3.11,2024-07-19,linked,0.75,0.52,"automatic (place confirmed): name score 0.75, clear lead"
+06206,"Pune District Education Association's College of Engineering, Manjari(Bk), Hadapsar, Pune",Pune,C-41924,"PUNE DISTRICT EDUCATION ASSOCIATION'S COLLEGE OF ENGINEERING, MANJARI(BK), PUNE",B++,2.94,2023-03-21,linked,0.89,0.53,"automatic: name score 0.89, place ok"
+06207,"Dr. D. Y. Patil Unitech Society's Dr. D. Y. Patil Institute of Technology, Pimpri, Pune",Pune,C-42227,Dr. D. Y. PATIL INSTITUTE OF TECHNOLOGY,A++,3.74,2023-09-14,linked,0.74,0.54,"automatic (place confirmed): name score 0.74, clear lead"
+06214,"K. E. Society's Rajarambapu Institute of Technology, Walwa, Sangli",Sangli,C-11208,KASEGAON EDUCATION SOCIETY'S RAJARAMBAPU INSTITUTE OF TECHNOLOGY,A+,3.35,2022-08-10,linked,0.47,0.33,owner confirmed
+06217,"Shri. Balasaheb Mane Shikshan Prasarak Mandal's, Ashokrao Mane Group of Institutions",Kolhapur,C-11010,SHRI BALASAHEB MANE SHIKSHAN PRASARAK MANDALS ASHOKRAO MANE GROUP OF INSTITUTIONS,B+,2.61,2024-05-16,linked,1.00,0.47,"automatic: name score 1.00, place ok"
+06219,"KSGBS's Bharat- Ratna Indira Gandhi College of Engineering, Kegaon, Solapur",Solapur,C-15687,BHARAT-RATNA INDIRA GANDHI COLLEGE OF ENGINEERING,B,2.10,2024-02-07,linked,0.73,0.40,"automatic (place confirmed): name score 0.73, clear lead"
+06220,"SVERI's College of Engineering, Pandharpur",Solapur,C-15762,SVERI'S COLLEGE OF ENGINEERING,A+,3.46,2022-04-26,linked,0.78,0.29,"automatic (place confirmed): name score 0.78, clear lead"
+06222,"Dattajirao Kadam Technical Education Society's Textile & Engineering Institute, Ichalkaranji.",Kolhapur,C-11058,TEXTILE AND ENGINEERING INSTITUTE ICHALKARANJI,A+,3.30,2022-12-20,linked,0.68,0.25,"automatic (place confirmed): name score 0.68, clear lead"
+06223,"Pradnya Niketan Education Society's Nagesh Karajagi Orchid College of Engineering & Technology, Solapur",Solapur,C-15688,"PRADNYA NIKETAN EDUCATION SOCIETY NAGESH KARAJAGI ORCHID COLLEGE OF ENGINEERING AND TECHNOLOGY, SOLAPUR",A+,3.32,2024-03-21,linked,1.00,0.29,"automatic: name score 1.00, place ok"
+06250,"D.Y. Patil College of Engineering and Technology, Kolhapur",Kolhapur,,,,,,no_record,0.76,0.68,owner said: no NAAC record for this college
+06265,"Walchand Institute of Technology, Solapur",Solapur,,,,,,no_record,0.51,0.51,owner said: no NAAC record for this college
+06267,"Kolhapur Institute of Technology's College of Engineering(Autonomous), Kolhapur",Kolhapur,C-10996,KOLHAPUR INSTITUTE OF TECHNOLOGY'S COLLEGE OF ENGINEERING (AUTONOMOUS),A+,3.33,2023-09-07,linked,1.00,0.56,"automatic: name score 1.00, place ok"
+06268,"Tatyasaheb Kore Institute of Engineering and Technology, Warananagar",Kolhapur,,,,,,no_record,0.46,0.38,owner said: no NAAC record for this college
+06269,"Shetkari Shikshan Mandal's Pad. Vasantraodada Patil Institute of Technology, Budhgaon, Sangli",Sangli,C-41818,"The Shetkari Shikshan Mandal, Sangli, Padmabhooshan Vasantdada Patil Institute of Technology",B++,2.95,2024-05-30,linked,0.71,0.48,"automatic (place confirmed): name score 0.71, clear lead"
+06270,"Rayat Shikshan Sanstha's Karmaveer Bhaurao Patil College of Engineering, Satara",Satara,C-11018,"KARMAVEER BHAURAO PATIL COLLEGE OF ENGINEERING, SATARA",B++,2.87,2019-09-09,linked,0.89,0.31,"automatic: name score 0.89, place ok"
+06271,Pune Institute of Computer Technology,Pune,C-42072,SCTR'S PUNE INSTITUTE OF COMPUTER TECHNOLOGY,A+,3.42,2023-05-01,linked,0.78,0.51,"automatic (place confirmed): name score 0.78, clear lead"
+06272,"Dr. D. Y. Patil Pratishthan's D.Y.Patil College of Engineering Akurdi, Pune",Pune,C-41513,D. Y. PATIL COLLEGE OF ENGINEERING,A,3.22,2024-04-10,linked,0.80,0.65,owner confirmed
+06273,"Bansilal Ramnath Agarawal Charitable Trust's Vishwakarma Institute of Technology, Bibwewadi, Pune",Pune,C-41351,BANSILAL RAMNATH AGARWAL CHARITABLE TRUST'S VISHWAKARMA INSTITUTE OF TECHNOLOGY,A++,3.65,2024-05-30,linked,0.86,0.80,owner confirmed
+06274,"PVG's College of Engineering, Technology & Management",Pune,C-42143,PVG's COLLEGE OF ENGINEERING AND TECHNOLOGY AND G.K.PATE (WANI) INSTITUTE OF MANAGEMENT,A,3.10,2024-05-09,linked,0.66,0.47,owner confirmed
+06275,"Shivnagar Vidya Prasarak Mandal's College of Engineering, Malegaon-Baramati",Pune,C-41453,SHIVNAGAR VIDYA PRASARAK MANDAL'S COLLEGE OF ENGINEERING,B++,2.91,2023-06-10,linked,0.71,0.44,"automatic (place confirmed): name score 0.71, clear lead"
+06276,"MKSSS's Cummins College of Engineering for Women, Karvenagar,Pune",Pune,C-42242,MAHARSHI KARVE STREE SHIKSHAN SANSTHA'S CUMMINS COLLEGE OF ENGINEERING FOR WOMEN,A,3.16,2023-06-02,linked,0.45,0.37,owner confirmed
+06277,"Dr. J. J. Magdum Charitable Trust's Dr. J.J. Magdum College of Engineering, Jaysingpur",Kolhapur,C-11241,"DR. J. J. MAGDUM COLLEGE OF ENGINEERING, JAYSINGPUR",A,3.02,2023-02-20,linked,1.00,0.34,"automatic: name score 1.00, place ok"
+06278,"All India Shri Shivaji Memorial Society's College of Engineering, Pune",Pune,C-41227,"ALL INDIA SHRI SHIVAJI MEMORIAL SOCIETY'S COLLEGE OF ENGINEERING, PUNE",A+,3.47,2024-05-16,linked,1.00,0.66,"automatic: name score 1.00, place ok"
+06281,"Modern Education Society's Wadia College of Engineering, Pune",Pune,C-41607,MODERN EDUCATION SOCIETY'S COLLEGE OF ENGINEERING,A++,3.54,2022-10-11,linked,0.64,0.54,owner confirmed
+06282,"All India Shri Shivaji Memorial Society's Institute of Information Technology,Pune",Pune,,,,,,no_record,0.78,0.64,owner said: no NAAC record for this college
+06283,"Annasaheb Dange College of Engineering and Technology, Ashta, Sangli",Sangli,C-11099,SANT DNYANESHWAR SHIKSHAN SANSTH'S ANNASAHEB DANGE COLLEGE OF ENGINEERING AND TECHNOLOGY,A++,3.52,2023-07-08,linked,0.70,0.55,owner confirmed
+06284,"Vidya Pratishthan's Kamalnayan Bajaj Institute of Engineering & Technology, Baramati Dist.Pune",Pune,C-41689,VIDYA PRATISHTHAN'S KAMALNAYAN BAJAJ INSTITUTE OF ENGINEERING AND TECHNOLOGY,A+,3.26,2023-03-21,linked,0.80,0.53,"automatic (place confirmed): name score 0.80, clear lead"
+06285,"Bharati Vidyapeeth's College of Engineering for Women, Katraj, Dhankawadi, Pune",Pune,C-41377,BHARATI VIDYAPEETH'S COLLEGE OF ENGINEERING FOR WOMEN,A,3.15,2024-10-25,linked,0.67,0.58,owner confirmed
+06288,"Bharati Vidyapeeth's College of Engineering, Kolhapur",Kolhapur,C-11135,BHARATI VIDYAPEETH'S COLLEGE OF ENGINEERING KOLHAPUR,A+,3.38,2023-12-15,linked,1.00,0.51,"automatic: name score 1.00, place ok"
+06289,"B.R.A.C.T's Vishwakarma Institute of Information Technology, Kondhwa (Bk.), Pune",Not available,C-41497,BANSILAL RAMNATH AGARWAL CHARITABLE TRUST'S VISHWAKARMA INSTITUTE OF INFORMATION TECHNOLOGY,B+,2.54,2024-01-25,linked,0.47,0.42,owner confirmed
+06293,"Kai Amdar Bramhadevdada Mane Shikshan & Samajik Prathistan's Bramhadevdada Mane Institute of Technology, Solapur",Solapur,C-15774,"BRAHMDEVDADA MANE INSTITUTE OF TECHNOLOGY, SOLAPUR",B,2.45,2025-03-06,linked,0.74,0.41,"automatic (place confirmed): name score 0.74, clear lead"
+06298,"Zeal Education Society's Zeal College of Engineering & Reserch, Narhe, Pune",Pune,C-41988,ZEAL EDUCATION SOCIETY'S ZEAL COLLEGE OF ENGINEERING AND RESEARCH,A+,3.44,2023-06-24,linked,0.83,0.48,"automatic: name score 0.83, place ok"
+06303,"Dr. Ashok Gujar Technical Institute's Dr. Daulatrao Aher College of Engineering, Karad",Satara,C-11008,"DR. DAULATRAO AHER COLLEGE OF ENGINEERIN,KARAD",A,3.23,2022-12-20,linked,0.69,0.23,"automatic (place confirmed): name score 0.69, clear lead"
+06304,"Loknete Hanumantrao Charitable Trust's Adarsh Institute of Technology and Research Centre, Vita,Sangli",Sangli,C-11007,"Loknete Ma. Hanmantrao Patil Charitable Trust, Vita Adarsh Institute of Technology and Research Centre",B+,2.64,2024-04-06,linked,0.84,0.41,"automatic: name score 0.84, place ok"
+06305,"Late Narayandas Bhawandas Chhabada Institute of Engineering & Technology, Satara",Satara,,,,,,no_record,0.45,0.25,no plausible NAAC record (best score 0.45)
+06307,"Dhole Patil Education Society, Dhole Patil College of Engineering, Wagholi, Tal. Haveli",Pune,,,,,,no_record,0.35,0.32,no plausible NAAC record (best score 0.35)
+06308,"Shanti Education Society, A.G. Patil Institute of Technology, Soregaon, Solapur(North)",Solapur,C-15759,SHANTI EDUCATION SOCIETY'S A.G.PATIL INSTITUTE OF TECHNOLOGY,B++,2.85,2023-05-01,linked,0.79,0.35,"automatic (place confirmed): name score 0.79, clear lead"
+06310,"Nutan Maharashtra Vidya Prasarak Mandal, Nutan Maharashtra Institute of Engineering &Technology, Talegaon station, Pune",Pune,C-41640,NUTAN MAHARASHTRA INSTITUTE OF ENGINEERING AND TECHNOLOGY,B++,2.76,2024-10-03,linked,0.73,0.37,"automatic (place confirmed): name score 0.73, clear lead"
+06311,"Jayawant Shikshan Prasarak Mandal, Bhivarabai Sawant Institute of Technology & Research, Wagholi",Pune,C-42056,JSPM'S BHIVARABAI SAWANT INSTITUTE OF TECHNOLOGY AND RESEARCH,A+,3.35,2024-04-25,linked,0.69,0.52,owner confirmed
+06313,"Jaywant College of Engineering & Polytechnic , Kille Macchindragad Tal. Walva District- Sangali",Sangli,,,,,,no_record,0.23,0.21,no plausible NAAC record (best score 0.23)
+06315,Sanjeevan Group of Institutions,Kolhapur,,,,,,no_record,0.40,0.22,no plausible NAAC record (best score 0.40)
+06317,"Sharad Institute of Technology College of Engineering, Yadrav(Ichalkaranji)",Kolhapur,,,,,,no_record,0.49,0.23,owner said: no NAAC record for this college
+06318,"Abhinav Education Society's College of Engineering and Technology (Degree), Wadwadi",Not available,,,,,,no_record,0.54,0.41,owner said: no NAAC record for this college
+06319,"Shahajirao Patil Vikas Pratishthan, S.B.Patil College of Engineering, Vangali, Tal. Indapur",Pune,C-41982,"SHAHAJIRAO PATIL VIKAS PRATISHTHAN, S. B. PATIL COLLEGE OF ENGINEERING",A,3.17,2023-02-20,linked,0.73,0.35,"automatic (place confirmed): name score 0.73, clear lead"
+06320,"K.J.'s Educational Institute's K.J.College of Engineering & Management Research, Pisoli",Pune,C-42081,K J COLLEGE OF ENGINEERING AND MANAGEMENT RESEARCH,B++,2.79,2023-06-10,linked,0.82,0.68,owner confirmed
+06321,"Vidya Vikas Pratishthan Institute of Engineering and Technology, Solapur",Solapur,C-15734,"VIDYA VIKAS PRATISHTAN INSTITUTE OF ENGINEERING AND TECHNOLOGY, SOLAPUR",B+,2.75,2024-02-22,linked,0.82,0.51,"automatic: name score 0.82, place ok"
+06322,"Shree Gajanan Maharaj Shikshan Prasarak Manda'l Sharadchandra Pawar College of Engineering, Dumbarwadi",Pune,C-41824,"SHRI GAJANAN MAHARAJ SHIKSHAN PRASARAK MANDAL,SHARADCHANDRA PAWAR COLLEGE OF ENGINEERING",A,3.15,2024-08-09,linked,0.72,0.47,"automatic (place confirmed): name score 0.72, clear lead"
+06324,Rajgad Technical Campus,Pune,,,,,,no_record,0.40,0.38,no plausible NAAC record (best score 0.40)
+06325,"Alard Charitable Trust's Alard College of Engineering and Management, Pune",Not available,C-42123,"ALARD COLLEGE OF ENGINEERING AND MANAGEMENT , PUNE",B,2.16,2019-11-26,linked,1.00,0.47,"automatic: name score 1.00, place unknown"
+06326,Karmayogi Institute of Technology,Solapur,,,,,,no_record,0.37,0.46,no plausible NAAC record (best score 0.37)
+06402,"NEW INSTITUTE OF TECHNOLOGY,KOLHAPUR",Kolhapur,,,,,,no_record,0.75,0.70,owner said: no NAAC record for this college
+06419,"Nutan College of Engineering and Research, Talegaon Dabhade Tal. Maval, Pune",Not available,,,,,,no_record,0.30,0.29,no plausible NAAC record (best score 0.30)
+06444,"Shriram Institute Of Engineering & Technology, (Poly), Paniv",Solapur,,,,,,no_record,0.60,0.55,owner said: no NAAC record for this college
+06466,"Shree Santkrupa Shikshan Sanstha, Shree Santkrupa Institute Of Engineering & Technology, Karad",Satara,C-58643,"SHREE SANTKRUPA INSTITUTE OF ENGINEERING AND TECHNOLOGY, GHOGAON",B+,2.74,2024-09-12,linked,0.78,0.31,"automatic (place confirmed): name score 0.78, clear lead"
+06467,"Swami Vivekanand Institute Of Technology, Solapur",Solapur,,,,,,no_record,0.68,0.47,owner said: no NAAC record for this college
+06468,"Swami Vivekananda Shikshan Sanstha, Dr. Bapuji Salunkhe Institute Of Engineering & Technology,Kolhapur",Kolhapur,,,,,,no_record,0.58,0.49,owner said: no NAAC record for this college
+06545,"Samarth Education Trust's Arvind Gavali College Of Engineering Panwalewadi, Varye,Satara.",Satara,C-11245,Samarth Educational Trust Arvind Gavali College of Engineering,B++,2.92,2023-11-02,linked,0.70,0.27,"automatic (place confirmed): name score 0.70, clear lead"
+06609,"Jaihind College Of Engineering,Kuran",Pune,C-44591,"JCEI'S JAIHIND COLLEGE OF ENGINEERING,KURAN",A,3.08,2024-09-12,linked,0.83,0.00,"automatic: name score 0.83, place ok"
+06622,ISBM College Of Engineering Pune,Pune,C-48614,"ISBM College of Engineering, Pune.",B+,2.62,2025-06-06,linked,1.00,0.67,"automatic: name score 1.00, place ok"
+06625,"Universal College of Engineering & Research, Sasewadi",Pune,,,,,,no_record,0.38,0.35,no plausible NAAC record (best score 0.38)
+06628,"Dattakala Group Of Institutions, Swami - Chincholi Tal. Daund Dist. Pune",Pune,,,,,,no_record,0.54,0.33,owner said: no NAAC record for this college
+06632,Navsahyadri Education Society's Group of Institutions,Pune,C-47553,NAVSAHYADRI EDUCATION SOCIETY'S GROUP OF INSTITUTIONS,B++,2.89,2025-01-23,linked,1.00,0.61,"automatic: name score 1.00, place ok"
+06634,"KJEI's Trinity Academy of Engineering, Yewalewadi, Pune",Pune,C-51485,KJ'S EDUCATIONAL INSTITUTES TRINITY ACADEMY OF ENGINEERING,A+,3.38,2023-05-19,linked,0.55,0.36,owner confirmed
+06635,Samarth College of Engineering and Management,Pune,,,,,,no_record,0.54,0.47,owner said: no NAAC record for this college
+06640,"N. B. Navale Sinhgad College of Engineering, Kegaon, solapur",Solapur,C-15716,"N. B. NAVALE SINHGAD COLLEGE OF ENGINEERING, KEGAON, SOLAPUR",A,3.15,2024-03-28,linked,1.00,0.36,"automatic: name score 1.00, place ok"
+06643,"S K N Sinhgad College of Engineering, Korti Tal. Pandharpur Dist Solapur",Solapur,C-15745,SKN SINHGAD COLLEGE OF ENGINEERING,A+,3.28,2023-05-01,linked,0.53,0.44,owner confirmed
+06644,"Shri. Ambabai Talim Sanstha's Sanjay Bhokare Group of Institutes, Miraj",Sangli,C-49105,SHRI AMBABAI TALIM SANSTHAS SANJAY BHOKARE GROUP OF INSTITUTES,A,3.05,2023-04-21,linked,0.91,0.26,"automatic: name score 0.91, place ok"
+06649,"TSSM's Bhivarabai Sawant College of Engineering and Research, Narhe, Pune",Pune,C-44585,TSSM'S BHIVARABAI SAWANT COLLEGE OF ENGINEERING AND RESEARCH,A,3.08,2019-07-15,linked,0.85,0.49,"automatic: name score 0.85, place ok"
+06714,"APPASAHEB ALIAS SA.RE.PATIL INSTITUTE OF TECHNOLOGY, Dattanagar Tal-Shirol, Dist Kolhapur",Kolhapur,,,,,,no_record,0.31,0.27,no plausible NAAC record (best score 0.31)
+06715,Babasaheb Phadtare Engineering & Technology Kalamb-Walchandnagar Tal Indapur Dist Pune,Pune,,,,,,no_record,0.61,0.27,owner said: no NAAC record for this college
+06725,"New Satara Shikshan Sankul,New Satara College of Engineering & Management, Pandharpur",Solapur,,,,,,no_record,0.36,0.26,no plausible NAAC record (best score 0.36)
+06732,"Ajeenkya DY Patil School of Engineering, Lohegaon, Pune",Pune,C-46648,DR D Y PATIL EDUCATIONAL ENTERPRISES CHARITABLE TRUST'S AJEENKYA DY PATIL SCHOOL OF ENGINEERING,A,3.19,2025-03-13,linked,0.74,0.50,"automatic (place confirmed): name score 0.74, clear lead"
+06754,"International Institute of Information Technology (I²IT), Pune.",Pune,C-41681,INTERNATIONAL INSTITUTE OF INFORMATION TECHNOLOGY,A,3.13,2024-10-03,linked,0.90,0.56,"automatic: name score 0.90, place ok"
+06755,"JSPM Narhe Technical Campus, Pune.",Pune,C-45874,JSPM NARHE TECHNICAL CAMPUS,A,3.05,2025-02-06,linked,0.90,0.57,"automatic: name score 0.90, place ok"
+06756,"Fabtech Technical Campus College of Engineering and Research, Sangola",Solapur,C-49336,"FABTECH TECHNICAL CAMPUS, COLLEGE OF ENGINEERING AND RESEARCH",A,3.08,2024-03-21,linked,0.85,0.40,"automatic: name score 0.85, place ok"
+06757,"Yashoda Technical Campus, Wadhe, Satara.",Satara,C-11075,YASHODA TECHNICAL CAMPUS SATARA,B+,2.71,2025-02-06,linked,0.81,0.29,"automatic: name score 0.81, place ok"
+06758,"Sahyadri Valley College of Engineering & Technology, Rajuri, Pune.",Pune,C-41470,SAHYADRI VALLEY COLLEGE OF ENGINEERING AND TECHNOLOGY,B,2.27,2023-10-18,linked,0.79,0.40,"automatic (place confirmed): name score 0.79, clear lead"
+06759,"Shree Ramchandra College of Engineering, Lonikand,Pune",Pune,C-41486,SHREE RAMCHANDRA COLLEGE OF ENGINEERING LONIKAND PUNE,B++,2.94,2022-12-20,linked,1.00,0.44,"automatic: name score 1.00, place ok"
+06762,"Nanasaheb Mahadik College of Engineering,Walwa, Sangli.",Sangli,,,,,,no_record,0.29,0.26,no plausible NAAC record (best score 0.29)
+06766,Phaltan Education Society's College of Engineering Thakurki Tal- Phaltan Dist-Satara,Satara,C-48656,PHALTAN EDUCATION SOCIETY'S COLLEGE OF ENGINEERING,A,3.07,2024-10-30,linked,0.62,0.44,owner confirmed
+06767,"Suman Ramesh Tulsiani Technical Campus: Faculty of Engineering, Kamshet,Pune.",Pune,C-45898,SUMAN RAMESH TULSIANI TECHNICAL CAMPUS-FACULTY OF ENGINEERING,B+,2.55,2024-10-25,linked,0.83,0.27,"automatic: name score 0.83, place ok"
+06768,"P.K. Technical Campus, Pune.",Pune,C-45889,P K TECHNICAL CAMPUS,B,2.08,2019-07-15,linked,0.86,0.38,"automatic: name score 0.86, place ok"
+06769,"Rasiklal M. Dhariwal Sinhgad Technical Institutes Campus, Warje, Pune.",Pune,C-45896,SINHGAD TECHNICAL EDUCATION SOCIETY RASIKLAL M. DHARIWAL SINHGAD TECHNICAL INSTITUTES CAMPUS,A++,3.59,2023-09-07,linked,0.81,0.48,"automatic: name score 0.81, place ok"
+06770,"SKN Sinhgad Institute of Technology & Science, Kusgaon(BK),Pune.",Pune,C-45897,SKN SINHGAD INSTITUTE OF TECHNOLOGY AND SCIENCE,A,3.03,2023-05-01,linked,0.79,0.63,owner confirmed
+06771,"Flora Institute of Technology, Khopi, Near Khed Shivapur Toll Plaza, Pune",Pune,,,,,,no_record,0.23,0.22,no plausible NAAC record (best score 0.23)
+06772,"NBN Sinhgad Technical Institutes Campus, Pune",Pune,C-45895,SINHGAD TECHNICAL EDUCATION SOCIETY'S NBN SINHGAD TECHNICAL INSTITUTES CAMPUS,A,3.25,2023-06-24,linked,0.90,0.64,"automatic: name score 0.90, place ok"
+06780,"D.Y.Patil Education Society's,D.Y.Patil Technical Campus, Faculty of Engineering & Faculty of Management,Talsande,Kolhapur.",Kolhapur,C-11157,D Y PATIL TECHNICAL CAMPUS FACULTY OF ENGINEERING AND FACULTY OF MANAGEMENT,A,3.25,2024-02-22,linked,0.81,0.63,"automatic: name score 0.81, place ok"
+06781,"Bhagwant Institute of Technology, Barshi",Solapur,C-48493,BHAGWANT INSTITUTE OF TECHNOLOGY,B+,2.75,2019-10-18,linked,0.80,0.36,owner confirmed
+06782,"Sahakar Maharshee Shankarrao Mohite Patil Institute of Technology & Research, Akluj",Solapur,C-45127,Shankarrao Mohite-Patil Charitable Hospital Trust's SAHAKAR MAHARSHI SHANKARRAO MOHITE-PATIL INSTITUTE OF TECHNOLOGY AND RESEARCH,A,3.14,2024-05-30,linked,0.75,0.53,"automatic (place confirmed): name score 0.75, clear lead"
+06794,"Anantrao Pawar College of Engineering & Research, Pune",Pune,C-41484,AKHIL BHARATIYA MARATHA SHIKSHAN PARISHAD PUNE ANANTRAO PAWAR COLLEGE OF ENGINEERING AND RESEARCH,A,3.11,2024-04-10,linked,0.64,0.56,owner confirmed
+06795,"Shri.Someshwar Shikshan Prasarak Mandal, Sharadchandra Pawar College of Engineering & Technology, Someshwar Nagar",Pune,C-41260,SHARADCHANDRA PAWAR COLLEGE OF ENGINEERING AND TECHNOLOGY,B,2.27,2023-06-10,linked,0.64,0.47,owner confirmed
+06796,"Bharati Vidyapeeth's College of Engineering,Lavale, Pune",Pune,C-41597,"BHARATI VIDYAPEETH'S COLLEGE OF ENGINEERING, LAVALE, PUNE",B++,2.82,2024-11-08,linked,1.00,0.66,"automatic: name score 1.00, place ok"
+06797,"Dnyanshree Institute Engineering and Technology, Satara",Satara,C-48655,"DNYANSHREE INSTITUTE OF ENGINEERING AND TECHNOLOGY, SATARA.",B+,2.55,2023-10-12,linked,1.00,0.35,"automatic: name score 1.00, place ok"
+06799,"Shivganga Charitable Trust, Sangli Vishveshwarya Technical Campus, Faculty of Diploma Engineering, Patgaon, Miraj",Sangli,,,,,,no_record,0.22,0.20,no plausible NAAC record (best score 0.22)
+06802,"Dr. D.Y.Patil Institute of Engineering, Management & Reseach, Akurdi, Pune",Not available,,,,,,no_record,0.71,0.64,owner said: no NAAC record for this college
+06803,"Sant Gajanan Maharaj College of Engineering, Gadhinglaj",Kolhapur,C-48662,SANT GAJANAN MAHARAJ COLLEGE OF ENGINEERING,B++,2.77,2019-10-18,linked,0.86,0.37,"automatic: name score 0.86, place ok"
+06808,"Keystone School of Engineering, Pune",Pune,C-45882,KEYSTONE SCHOOL OF ENGINEERING,A,3.14,2023-11-09,linked,0.89,0.48,"automatic: name score 0.89, place ok"
+06811,Sanjay Ghodawat Institute,Kolhapur,,,,,,no_record,0.24,0.08,no plausible NAAC record (best score 0.24)
+06814,"K.P. Patil Institute ( Polytechnic ), Bhudargad, Dist.Kolhapur",Kolhapur,,,,,,no_record,0.35,0.34,no plausible NAAC record (best score 0.35)
+06815,"DR. G.V.SHINGRE VPS COLLEGE OF ENGINEERING AND TECHNOLOGY, LONAVALA, MAUJE WAKSAI, TAL MAVAL, DIST PUNE",Pune,,,,,,no_record,0.26,0.25,no plausible NAAC record (best score 0.26)
+06822,"Pimpri Chinchwad Education Trust's Pimpri Chinchwad College Of Engineering And Research, Ravet",Pune,C-49660,PIMPRI CHINCHWAD EDUCATION TRUST'S PIMPRI CHINCHWAD COLLEGE OF ENGINEERING AND RESEARCH,A++,3.54,2023-05-19,linked,0.89,0.26,owner confirmed
+06834,"Dr.D.Y.Patil College Of Engineering & Innovation,Talegaon",Pune,C-50614,DR. D. Y. PATIL COLLEGE OF ENGINEERING AND INNOVATION,A,3.10,2024-01-01,linked,0.86,0.65,"automatic: name score 0.86, place ok"
+06839,"Dr. D Y Patil Pratishthan's College of Engineering, Kolhapur",Kolhapur,C-50894,Dr. D. Y. Patil Pratisthan's College of Engineering,B+,2.69,2024-10-03,linked,0.83,0.61,"automatic: name score 0.83, place ok"
+06878,"Dr. A. D. Shinde College Of Engineering, Tal.Gadhinglaj, Kolhapur",Kolhapur,C-50898,DR.A.D.SHINDE COLLEGE OF ENGINEERING,B+,2.67,2024-02-07,linked,0.68,0.51,owner confirmed
+06901,"MAEER's MIT College of Railway Engineering and Research, Jamgaon, Barshi",Solapur,,,,,,no_record,0.27,0.24,no plausible NAAC record (best score 0.27)
+06938,Shree Siddheshwar Women's College Of Engineering Solapur.,Solapur,,,,,,no_record,0.33,0.30,no plausible NAAC record (best score 0.33)
+06991,"Dr. D.Y. Patil Technical Campus, Varale, Talegaon, Pune",Pune,,,,,,no_record,0.39,0.38,no plausible NAAC record (best score 0.39)
+14005,"Laxminarayan Innovation Technological University, Nagpur",Nagpur,,,,,,no_record,0.33,0.32,no plausible NAAC record (best score 0.33)
+16006,COEP Technological University,Pune,,,,,,no_record,0.00,0.00,no plausible NAAC record (best score 0.00)
+16121,"Shri. Anandrao Abitkar College of Engineering, Pal",Kolhapur,,,,,,no_record,0.02,0.39,no plausible NAAC record (best score 0.02)
+16126,"Tatyasaheb Kore Institute of Engineering and Technology, Yelur",Not available,,,,,,no_record,0.46,0.38,owner said: no NAAC record for this college
+16351,"Vidya Niketan Institute of Engineering & Technology, Lakhewadi",Pune,,,,,,no_record,0.47,0.36,owner said: no NAAC record for this college
+16352,"Yashoda Mahadeo Kakade College of Engineering, Talegaon",Pune,,,,,,no_record,0.31,0.14,no plausible NAAC record (best score 0.31)
+16354,"DNYANVILAS COLLEGE OF ENGINEERING PIMPRI -CHINCHWAD , PUNE",Pune,,,,,,no_record,0.71,0.43,owner said: no NAAC record for this college
+16355,Audyogik Shikshan Mandal's Nextgen Technical Campus,Pune,,,,,,no_record,0.34,0.30,no plausible NAAC record (best score 0.34)
+16357,MES MUKUNDDAS LOHIA COLLEGE OF ENGINEERING,Pune,,,,,,no_record,0.36,0.00,no plausible NAAC record (best score 0.36)
+16361,"Zeal College of Engineering & Research, Induri, Pune (Off Campus-Induri)",Not available,,,,,,no_record,0.71,0.46,owner said: no NAAC record for this college
+16371,Kai. Nirmalatai Pingle Institute of Engineering & Management studies,Pune,,,,,,no_record,0.41,0.37,no plausible NAAC record (best score 0.41)
+16372,Sawkar Women's Institute of Technology,Satara,,,,,,no_record,0.29,0.25,no plausible NAAC record (best score 0.29)
+16373,SJVPM College of Engineering,Pune,,,,,,no_record,0.00,0.00,no plausible NAAC record (best score 0.00)
