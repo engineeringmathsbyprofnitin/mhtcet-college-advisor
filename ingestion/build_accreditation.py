@@ -6,6 +6,8 @@ valid / expired / validity unknown from valid_to and today's date) or 'unknown' 
 Also writes tables/accreditation_sources.csv (one line per NBA Excel file: its SHA-256 and download date) so the packaging step can add the source document.
 Stage 12c-4: NAAC rows are added too, one per website college linked to a NAAC record (data/normalized/naac_link/naac_college_match.csv): body=NAAC, scope=institution, no choice_code,
 grade and cgpa as NAAC printed them, valid_from = the date of declaration, valid_to EMPTY (the NAAC list has no end date and none is computed), listed_as_on = the date of the NAAC list.
+Transition rows (Stage 12c-5): a college WITHOUT a graded record that matches a row of the NAAC sheet "Transition Autonomous Colleges" gets body=NAAC, scope=institution, status accredited,
+grade and cgpa EMPTY, valid_from empty, valid_to = the extended validity date, listed_as_on = the list date.
 Nothing is invented: rows with no matched branch / no NAAC record are not written.
 """
 import csv, datetime, json, os, sys
@@ -54,6 +56,20 @@ def build(base=N, outdir=None, today=None):
                                                          source_name="National Assessment and Accreditation Council (NAAC), India - institutions with valid accreditation (list as on %s)" % n["list_as_on"], source_url="https://www.naac.gov.in/")
             recs.append(dict(college_code=r["college_code"], choice_code="", body="NAAC", scope="institution", status="accredited", grade=n["grade"], cgpa=n["cgpa"], valid_from=n["declared_on"], valid_to="",
                              listed_as_on=n["list_as_on"], source_doc_id=doc_id(sha), retrieved_date="", validation_status="validated", is_synthetic="FALSE")); naac_n += 1
+    tn = 0; tm = os.path.join(base, "naac_link", "naac_transition_match.csv")
+    if os.path.exists(tm):                                  # colleges without a graded record that NAAC lists as autonomous colleges in transition: extended validity date, NO grade
+        tr = {r["source_row"]: r for r in load(os.path.join(base, "naac", "naac_transition.csv"))}; colleges = {c["college_code"] for c in load(os.path.join(base, "tables", "colleges.csv"))}
+        have = {x["college_code"] for x in recs if x["body"] == "NAAC"}
+        for r in load(tm):
+            if r["status"] != "linked": continue
+            t = tr.get(r["source_row"])
+            if t is None: problems.append("transition row %s of college %s is not in naac_transition.csv" % (r["source_row"], r["college_code"])); continue
+            if r["college_code"] not in colleges: problems.append("college %s is not a website college" % r["college_code"]); continue
+            if r["college_code"] in have: problems.append("college %s has a graded NAAC record and a transition row" % r["college_code"]); continue
+            sha = t["source_sha256"]; srcs.setdefault(sha, dict(source_doc_id=doc_id(sha), body="NAAC", filename=t["source_file"], sha256=sha, retrieved_date="", published_date=t["list_as_on"],
+                                                               source_name="National Assessment and Accreditation Council (NAAC), India - institutions with valid accreditation (list as on %s)" % t["list_as_on"], source_url="https://www.naac.gov.in/"))
+            recs.append(dict(college_code=r["college_code"], choice_code="", body="NAAC", scope="institution", status="accredited", grade="", cgpa="", valid_from="", valid_to=t["extended_until"],
+                             listed_as_on=t["list_as_on"], source_doc_id=doc_id(sha), retrieved_date="", validation_status="validated", is_synthetic="FALSE")); tn += 1
     recs.sort(key=lambda x: (x["body"] != "NBA", x["college_code"], x["choice_code"], x["valid_to"] or "9999", x["valid_from"]))
     counter = {}
     for x in recs:
@@ -64,7 +80,7 @@ def build(base=N, outdir=None, today=None):
     with open(os.path.join(outdir, "accreditation_sources.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=SRC_COLS, lineterminator="\r\n"); w.writeheader(); w.writerows(sorted(srcs.values(), key=lambda x: (x["body"], x["filename"])))
     expired = sum(1 for x in recs if x["body"] == "NBA" and x["status"] == "accredited" and x["valid_to"] and x["valid_to"] < today)
-    rep = dict(ok=not problems, rows=len(recs), nba_rows=len(recs) - naac_n, naac_rows=naac_n, branches=len({x["choice_code"] for x in recs if x["choice_code"]}), colleges=len({x["college_code"] for x in recs}), sources=len(srcs),
+    rep = dict(ok=not problems, rows=len(recs), nba_rows=len(recs) - naac_n - tn, naac_rows=naac_n, naac_transition_rows=tn, branches=len({x["choice_code"] for x in recs if x["choice_code"]}), colleges=len({x["college_code"] for x in recs}), sources=len(srcs),
                no_end_date=sum(1 for x in recs if x["body"] == "NBA" and x["status"] == "accredited" and not x["valid_to"]), expired_on_build_date=expired, build_date=today, problems=problems[:20])
     with open(os.path.join(outdir, "accreditation_build_report.json"), "w", encoding="utf-8") as fh: json.dump(rep, fh, indent=1)
     return rep

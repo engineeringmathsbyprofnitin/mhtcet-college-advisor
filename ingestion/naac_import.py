@@ -3,7 +3,8 @@
 The file is the official NAAC list "Institutions accredited by NAAC having valid accreditation as on <date>" (sheet "Colleges": HEI Name, Track-Id, Aishe-Id, Affiliating University,
 Address, Current Cycle Number, Current CGPA, Current Grade, Date Of Declaration). It does NOT contain an end date, and 400+ rows are older than five years at the list date, so no
 end date is ever computed here: only the declaration date, the grade and the date of the list are kept (the website says "on NAAC's list as on <date>").
-The sheet "Transition Autonomous Colleges" (extended validity, no grade) is not used.
+The sheet "Transition Autonomous Colleges" (autonomous colleges whose accreditation was extended; name + address in one cell, State, "Extended validity upto"; NO grade) is read into
+data/normalized/naac/naac_transition.csv (Maharashtra rows): the website shows "accreditation extended until <date>, grade not stated" for such a college that has no graded record.
 Nothing is guessed: a row whose state cannot be read from the address, whose grade is unknown, or whose date does not parse is reported as a problem.
 """
 import csv, datetime, hashlib, json, os, re, sys, zipfile
@@ -13,6 +14,7 @@ SRC = os.path.join(ROOT, "data", "manual", "naac")
 OUT = os.path.join(ROOT, "data", "normalized", "naac")
 NEED = ["HEI Name", "Track-Id", "Aishe-Id", "Affiliating University", "Address", "Current Cycle Number", "Current CGPA", "Current Grade", "Date Of Declaration"]
 GRADE_BANDS = {"A++": (3.51, 4.00), "A+": (3.26, 3.50), "A": (3.01, 3.25), "B++": (2.76, 3.00), "B+": (2.51, 2.75), "B": (2.01, 2.50), "C": (1.51, 2.00)}
+TCOLS = ["source_row", "sl_no", "name", "text", "state", "extended_until", "list_as_on", "source_file", "source_sha256"]
 COLS = ["source_row", "track_id", "aishe_id", "name", "affiliating_university", "address", "locality_hint", "district_hint", "state", "pin", "cycle", "cgpa", "grade", "declared_on", "list_as_on", "source_file", "source_sha256"]
 
 
@@ -96,6 +98,39 @@ def read_file(path):
     return out, []
 
 
+def parse_date(x):
+    """Excel serial number (45657), dd/mm/yyyy, dd-mm-yyyy, dd.mm.yyyy or the typo 31/122025 -> ISO date; None when it cannot be read."""
+    x = clean(x)
+    try: return (datetime.date(1899, 12, 30) + datetime.timedelta(days=int(float(x)))).isoformat()
+    except (ValueError, OverflowError): pass
+    m = re.fullmatch(r"(\d{1,2})\D?(\d{1,2})\D?(\d{4})", x)
+    if m:
+        try: return datetime.date(int(m.group(3)), int(m.group(2)), int(m.group(1))).isoformat()
+        except ValueError: return None
+    return None
+
+
+def transition_name(text):
+    """The cell holds name and address together: the name is what comes before '(Autonomous' or the first comma."""
+    return clean(re.split(r"\(\s*autonomous|,", clean(text), maxsplit=1, flags=re.I)[0])
+
+
+def read_transition(path, asof, sha, fn, rep):
+    try: allrows = read_sheet(path, "Transition Autonomous Colleges")
+    except KeyError: rep["warnings"].append("sheet 'Transition Autonomous Colleges' not found: no transition rows"); return []
+    head = [clean(x) for x in allrows[0]] if allrows else []; need = ["Sl. No.", "HEI Name", "State", "Extended validity upto"]
+    if any(c not in head for c in need): rep["problems"].append("transition sheet: column(s) missing: " + ", ".join(c for c in need if c not in head)); return []
+    ix = {c: head.index(c) for c in need}; out = []; rep["transition_rows_read"] = len(allrows) - 1
+    for i, r in enumerate(allrows[1:], 2):
+        if all(v in (None, "") for v in r): continue
+        g = lambda c: r[ix[c]] if ix[c] < len(r) else ""
+        if clean(g("State")).lower() != "maharashtra": continue
+        d = parse_date(g("Extended validity upto"))
+        if d is None: rep["problems"].append("transition row %d: date %r not readable" % (i, g("Extended validity upto"))); continue
+        out.append(dict(source_row=i, sl_no=clean(g("Sl. No.")), name=transition_name(g("HEI Name")), text=clean(g("HEI Name")), state="Maharashtra", extended_until=d, list_as_on=asof, source_file=fn, source_sha256=sha))
+    return out
+
+
 def build(src=SRC, out=OUT):
     rep = dict(ok=False, files=[], rows_read=0, rows_maharashtra=0, grades={}, problems=[], warnings=[]); os.makedirs(out, exist_ok=True)
     files = sorted(f for f in os.listdir(src) if f.lower().endswith(".xlsx") and not f.startswith("~")) if os.path.isdir(src) else []
@@ -126,18 +161,21 @@ def build(src=SRC, out=OUT):
         seen[aid] = i
         res.append(dict(source_row=i, track_id=clean(r["Track-Id"]), aishe_id=aid, name=clean(r["HEI Name"]), affiliating_university=undouble(r["Affiliating University"]), address=clean(str(r["Address"])),
                         locality_hint=ad["locality_hint"], district_hint=ad["district_hint"], state="Maharashtra", pin=ad["pin"], cycle=cyc, cgpa="%.2f" % cg, grade=g, declared_on=dec.isoformat(), list_as_on=asof, source_file=fn, source_sha256=sha))
+    trans = read_transition(path, asof, sha, fn, rep); rep["transition_rows_maharashtra"] = len(trans)
     rep["rows_maharashtra"] = len(res); rep["grades"] = {g: sum(1 for x in res if x["grade"] == g) for g in GRADE_BANDS}
     tr = {}
     for x in res: tr.setdefault(x["track_id"], []).append(x["source_row"])
     rep["warnings"] += ["Track-Id %s is used by rows %s (kept; AISHE id is the key)" % (k, v) for k, v in tr.items() if len(v) > 1]
     if asof: rep["declared_more_than_5_years_before_list"] = sum(1 for x in res if x["declared_on"] < (datetime.date.fromisoformat(asof).replace(year=datetime.date.fromisoformat(asof).year - 5)).isoformat())
     rep["ok"] = not rep["problems"] and bool(res)
-    return _save(rep, out, res)
+    return _save(rep, out, res, trans)
 
 
-def _save(rep, out, rows):
+def _save(rep, out, rows, trans=()):
     with open(os.path.join(out, "naac_institutions.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=COLS, lineterminator="\r\n"); w.writeheader(); w.writerows(rows)
+    with open(os.path.join(out, "naac_transition.csv"), "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=TCOLS, lineterminator="\r\n"); w.writeheader(); w.writerows(trans)
     with open(os.path.join(out, "naac_report.json"), "w", encoding="utf-8") as fh: json.dump(rep, fh, indent=1, ensure_ascii=False)
     return rep
 

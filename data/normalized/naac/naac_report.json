@@ -24,5 +24,7 @@
   "Track-Id MHCOGN11049 is used by rows [3825, 3826] (kept; AISHE id is the key)",
   "Track-Id MHCOGN11249 is used by rows [4042, 4043] (kept; AISHE id is the key)"
  ],
+ "transition_rows_read": 290,
+ "transition_rows_maharashtra": 113,
  "declared_more_than_5_years_before_list": 124
 }

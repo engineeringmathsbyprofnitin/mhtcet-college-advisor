@@ -1224,6 +1224,7 @@ NAAC-02008-1,02008,,NAAC,institution,accredited,B++,2.86,2025-05-29,,2025-08-14,
 NAAC-02020-1,02020,,NAAC,institution,accredited,B++,2.91,2020-02-14,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-02111-1,02111,,NAAC,institution,accredited,B,2.09,2024-07-19,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-02112-1,02112,,NAAC,institution,accredited,B+,2.66,2022-12-20,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-02113-1,02113,,NAAC,institution,accredited,,,,2026-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-02114-1,02114,,NAAC,institution,accredited,A,3.10,2021-08-10,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-02129-1,02129,,NAAC,institution,accredited,B,2.47,2024-12-13,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-02131-1,02131,,NAAC,institution,accredited,B+,2.51,2025-02-27,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
@@ -1236,10 +1237,12 @@ NAAC-02516-1,02516,,NAAC,institution,accredited,B,2.46,2025-01-09,,2025-08-14,DO
 NAAC-02522-1,02522,,NAAC,institution,accredited,B,2.38,2019-09-09,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-02533-1,02533,,NAAC,institution,accredited,B++,2.96,2025-01-23,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-03014-1,03014,,NAAC,institution,accredited,B++,2.81,2024-11-21,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-03139-1,03139,,NAAC,institution,accredited,,,,2027-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-03147-1,03147,,NAAC,institution,accredited,B,2.39,2024-01-25,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-03148-1,03148,,NAAC,institution,accredited,A,3.16,2021-10-20,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-03154-1,03154,,NAAC,institution,accredited,A+,3.46,2023-01-24,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-03175-1,03175,,NAAC,institution,accredited,B+,2.61,2020-02-14,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-03176-1,03176,,NAAC,institution,accredited,,,,2024-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-03182-1,03182,,NAAC,institution,accredited,B++,2.94,2022-08-10,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-03183-1,03183,,NAAC,institution,accredited,B,2.39,2024-05-16,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-03184-1,03184,,NAAC,institution,accredited,A,3.18,2023-06-02,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
@@ -1260,6 +1263,7 @@ NAAC-03203-1,03203,,NAAC,institution,accredited,A+,3.26,2023-10-18,,2025-08-14,D
 NAAC-03204-1,03204,,NAAC,institution,accredited,A+,3.27,2022-08-23,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-03207-1,03207,,NAAC,institution,accredited,A+,3.32,2024-08-09,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-03208-1,03208,,NAAC,institution,accredited,A,3.05,2024-08-04,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-03209-1,03209,,NAAC,institution,accredited,,,,2026-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-03210-1,03210,,NAAC,institution,accredited,A,3.09,2024-10-30,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-03211-1,03211,,NAAC,institution,accredited,A+,3.28,2023-10-06,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-03214-1,03214,,NAAC,institution,accredited,A+,3.31,2024-08-09,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
@@ -1293,6 +1297,9 @@ NAAC-04123-1,04123,,NAAC,institution,accredited,A+,3.45,2022-11-09,,2025-08-14,D
 NAAC-04133-1,04133,,NAAC,institution,accredited,B,2.28,2020-05-04,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-04134-1,04134,,NAAC,institution,accredited,B+,2.56,2025-05-29,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-04135-1,04135,,NAAC,institution,accredited,B++,3.00,2025-05-19,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-04136-1,04136,,NAAC,institution,accredited,,,,2027-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-04137-1,04137,,NAAC,institution,accredited,,,,2025-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-04138-1,04138,,NAAC,institution,accredited,,,,2024-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-04139-1,04139,,NAAC,institution,accredited,A+,3.33,2022-05-03,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-04143-1,04143,,NAAC,institution,accredited,B,2.10,2024-03-28,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-04144-1,04144,,NAAC,institution,accredited,B++,2.99,2025-03-20,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
@@ -1302,6 +1309,7 @@ NAAC-04151-1,04151,,NAAC,institution,accredited,A+,3.32,2021-02-23,,2025-08-14,D
 NAAC-04163-1,04163,,NAAC,institution,accredited,B+,2.71,2024-09-12,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-04167-1,04167,,NAAC,institution,accredited,A++,3.60,2022-05-17,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-04172-1,04172,,NAAC,institution,accredited,A+,3.36,2024-03-09,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-04174-1,04174,,NAAC,institution,accredited,,,,2026-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-04175-1,04175,,NAAC,institution,accredited,B+,2.57,2024-03-14,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-04177-1,04177,,NAAC,institution,accredited,A,3.02,2024-05-30,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-04181-1,04181,,NAAC,institution,accredited,B,2.22,2023-10-12,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
@@ -1318,15 +1326,19 @@ NAAC-05004-1,05004,,NAAC,institution,accredited,B++,2.85,2024-09-21,,2025-08-14,
 NAAC-05104-1,05104,,NAAC,institution,accredited,A,3.14,2022-09-06,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05106-1,05106,,NAAC,institution,accredited,B++,2.91,2022-09-21,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05108-1,05108,,NAAC,institution,accredited,A++,3.51,2023-02-14,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-05109-1,05109,,NAAC,institution,accredited,,,,2028-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-05121-1,05121,,NAAC,institution,accredited,,,,2027-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05124-1,05124,,NAAC,institution,accredited,B++,2.77,2023-02-14,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05130-1,05130,,NAAC,institution,accredited,A,3.01,2023-11-09,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05139-1,05139,,NAAC,institution,accredited,B++,2.98,2025-04-11,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-05160-1,05160,,NAAC,institution,accredited,,,,2024-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05161-1,05161,,NAAC,institution,accredited,A,3.02,2021-08-17,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05162-1,05162,,NAAC,institution,accredited,A+,3.40,2021-11-22,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05164-1,05164,,NAAC,institution,accredited,B,2.22,2024-04-06,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05169-1,05169,,NAAC,institution,accredited,C,1.77,2025-02-27,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05170-1,05170,,NAAC,institution,accredited,A+,3.33,2024-08-04,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05171-1,05171,,NAAC,institution,accredited,B+,2.52,2024-08-29,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-05172-1,05172,,NAAC,institution,accredited,,,,2025-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05173-1,05173,,NAAC,institution,accredited,A+,3.26,2023-10-12,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05177-1,05177,,NAAC,institution,accredited,B++,2.97,2022-09-06,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-05179-1,05179,,NAAC,institution,accredited,B+,2.52,2024-07-05,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
@@ -1355,6 +1367,7 @@ NAAC-06145-1,06145,,NAAC,institution,accredited,A+,3.35,2023-11-23,,2025-08-14,D
 NAAC-06146-1,06146,,NAAC,institution,accredited,A,3.15,2023-11-23,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06155-1,06155,,NAAC,institution,accredited,A+,3.32,2022-05-24,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06156-1,06156,,NAAC,institution,accredited,A++,3.60,2023-05-01,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-06175-1,06175,,NAAC,institution,accredited,,,,2025-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06177-1,06177,,NAAC,institution,accredited,A+,3.31,2022-10-26,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06178-1,06178,,NAAC,institution,accredited,A,3.04,2022-11-15,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06179-1,06179,,NAAC,institution,accredited,B++,2.92,2019-07-15,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
@@ -1371,7 +1384,10 @@ NAAC-06219-1,06219,,NAAC,institution,accredited,B,2.10,2024-02-07,,2025-08-14,DO
 NAAC-06220-1,06220,,NAAC,institution,accredited,A+,3.46,2022-04-26,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06222-1,06222,,NAAC,institution,accredited,A+,3.30,2022-12-20,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06223-1,06223,,NAAC,institution,accredited,A+,3.32,2024-03-21,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-06250-1,06250,,NAAC,institution,accredited,,,,2025-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-06265-1,06265,,NAAC,institution,accredited,,,,2026-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06267-1,06267,,NAAC,institution,accredited,A+,3.33,2023-09-07,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-06268-1,06268,,NAAC,institution,accredited,,,,2025-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06269-1,06269,,NAAC,institution,accredited,B++,2.95,2024-05-30,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06270-1,06270,,NAAC,institution,accredited,B++,2.87,2019-09-09,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06271-1,06271,,NAAC,institution,accredited,A+,3.42,2023-05-01,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
@@ -1395,6 +1411,7 @@ NAAC-06304-1,06304,,NAAC,institution,accredited,B+,2.64,2024-04-06,,2025-08-14,D
 NAAC-06308-1,06308,,NAAC,institution,accredited,B++,2.85,2023-05-01,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06310-1,06310,,NAAC,institution,accredited,B++,2.76,2024-10-03,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06311-1,06311,,NAAC,institution,accredited,A+,3.35,2024-04-25,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
+NAAC-06317-1,06317,,NAAC,institution,accredited,,,,2025-12-31,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06319-1,06319,,NAAC,institution,accredited,A,3.17,2023-02-20,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06320-1,06320,,NAAC,institution,accredited,B++,2.79,2023-06-10,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE
 NAAC-06321-1,06321,,NAAC,institution,accredited,B+,2.75,2024-02-22,,2025-08-14,DOC-cefa2d3f4baea846,,validated,FALSE

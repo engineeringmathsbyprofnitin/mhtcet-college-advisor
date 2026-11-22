@@ -31,7 +31,7 @@ NAAC = [("C-1", "GOVERNMENT COLLEGE OF ENGINEERING AURANGABAD", "x, Aurangabad, 
         ("C-3", "RIZVI COLLEGE OF ENGINEERING", "x, Mumbai, Mumbai, Maharashtra, 400050", "Mumbai", "B+"),
         ("C-4", "ABC COLLEGE OF ENGINEERING PUNE", "x, Pune, Pune, Maharashtra, 411001", "Pune", "A")]
 COLS = [("02008", "Government College of Engineering, Chhatrapati Sambhajinagar", "Chhatrapati Sambhajinagar"), ("03201", "Rizvi College of Engineering", "Mumbai Suburban"),
-        ("06999", "Zed Institute of Technology", "Pune")]
+        ("06999", "Zephyr Polytechnic", "Pune")]
 
 
 class Helpers(unittest.TestCase):
@@ -76,6 +76,47 @@ class Matching(unittest.TestCase):
         rep, rows = run(NAAC, COLS); self.assertEqual(rows["06999"]["naac_grade"], ""); self.assertEqual(rows["02008"]["naac_grade"], "B++")
 
 
+TC = ["source_row", "sl_no", "name", "text", "state", "extended_until", "list_as_on", "source_file", "source_sha256"]
+
+
+def run_t(trans, colleges, graded=(), confirm=()):
+    tmp = tempfile.mkdtemp(); base = os.path.join(tmp, "n")
+    put(os.path.join(base, "naac", "naac_transition.csv"), TC, [dict(source_row=i, name=n, text=tx, extended_until=u) for i, (n, tx, u) in enumerate(trans, 2)])
+    put(os.path.join(base, "tables", "colleges.csv"), CC, [dict(college_code=c, college_name=n, district=d) for c, n, d in colleges])
+    put(os.path.join(base, "naac_link", "naac_college_match.csv"), ["college_code", "status"], [dict(college_code=c, status="linked") for c in graded])
+    man = os.path.join(tmp, "c.csv")
+    with open(man, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f); w.writerow(["college_code", "source_row", "decision"]); w.writerows(confirm)
+    rep = X.build_transition(base=base, manual=man, outdir=os.path.join(base, "naac_link"))
+    rows = {r["college_code"]: r for r in csv.DictReader(open(os.path.join(base, "naac_link", "naac_transition_match.csv"), encoding="utf-8"))}
+    shutil.rmtree(tmp, ignore_errors=True); return rep, rows
+
+
+TR = [("K J Somaiya Institute of Engineering and Information Technology", "K J Somaiya Institute of Engineering and Information Technology(Autonomous), Sion East Mumbai", "2026-12-31"),
+      ("Maharashtra Institute of Technology", "Maharashtra Institute of Technology, Off. Beed Bypass, Aurangabad-431010", "2026-12-31"), ("Walchand Institute of Technology", "Walchand Institute of Technology, Solapur", "2025-12-31")]
+TCOLS = [("03209", "K J Somaiya Institute of Engineering and Information Technology", "Mumbai Suburban"), ("02113", "G. S. Mandal's Maharashtra Institute of Technology", "Chhatrapati Sambhajinagar"),
+         ("06265", "Walchand Institute of Technology, Solapur", "Solapur"), ("06999", "Zephyr Polytechnic", "Pune")]
+
+
+class TransitionMatching(unittest.TestCase):
+    def test_links_by_name_and_place_and_leaves_others_without_record(self):
+        rep, rows = run_t(TR, TCOLS)
+        self.assertTrue(rep["ok"], rep["problems"]); self.assertEqual((rows["03209"]["status"], rows["03209"]["source_row"], rows["03209"]["extended_until"]), ("linked", "2", "2026-12-31"))
+        self.assertEqual(rows["06999"]["status"], "no_record"); self.assertEqual(rows["06999"]["source_row"], "")
+
+    def test_a_college_with_a_graded_record_is_not_considered(self):
+        rep, rows = run_t(TR, TCOLS, graded=["03209"]); self.assertNotIn("03209", rows); self.assertEqual(rep["colleges_considered"], 3)
+
+    def test_two_colleges_claiming_one_row_are_both_left_to_the_owner(self):
+        rep, rows = run_t([TR[0]], [("03209", "K J Somaiya Institute of Engineering and Information Technology", "Mumbai Suburban"), ("03299", "K J Somaiya Institute of Engineering and Information Technology", "Mumbai Suburban")])
+        self.assertEqual({r["status"] for r in rows.values()}, {"doubtful"}); self.assertTrue(rep["used_twice"]); self.assertTrue(all(r["source_row"] == "" for r in rows.values()))
+
+    def test_owner_yes_no_and_a_bad_row_number(self):
+        rep, rows = run_t(TR, TCOLS, confirm=[("06999", "4", "yes"), ("03209", "", "no")])
+        self.assertEqual((rows["06999"]["status"], rows["06999"]["source_row"]), ("linked", "4")); self.assertEqual(rows["03209"]["status"], "no_record")
+        rep, rows = run_t(TR, TCOLS, confirm=[("06999", "99", "yes")]); self.assertFalse(rep["ok"] and rows["06999"]["status"] == "linked"); self.assertEqual(rows["06999"]["source_row"], "")
+
+
 class RealData(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -95,6 +136,19 @@ class RealData(unittest.TestCase):
         for r in self.rows.values():
             if r["status"] == "linked": n = self.naac[r["aishe_id"]]; self.assertEqual((r["naac_grade"], r["naac_cgpa"], r["declared_on"]), (n["grade"], n["cgpa"], n["declared_on"]))
             else: self.assertEqual((r["aishe_id"], r["naac_grade"]), ("", ""))
+
+    def test_transition_pass_on_the_real_data(self):
+        tmp = tempfile.mkdtemp()
+        try:
+            shutil.copytree(os.path.join(SRC, "naac_link"), os.path.join(tmp, "naac_link")); rep = X.build_transition(base=SRC, outdir=os.path.join(tmp, "naac_link"))
+            self.assertTrue(rep["ok"], rep["problems"]); self.assertEqual(rep["counts"]["doubtful"], 0); self.assertEqual(rep["unused_confirmations"], [])
+            rows = {r["college_code"]: r for r in csv.DictReader(open(os.path.join(tmp, "naac_link", "naac_transition_match.csv"), encoding="utf-8"))}
+            graded = {c for c, r in self.rows.items() if r["status"] == "linked"}; self.assertFalse(graded & set(rows))                        # never both a grade and a transition row
+            self.assertEqual((rows["03209"]["status"], rows["03209"]["extended_until"]), ("linked", "2026-12-31"))                              # K J Somaiya Institute of Technology
+            self.assertEqual(rows["03176"]["extended_until"], "2024-12-31"); self.assertEqual(rows["02113"]["extended_until"], "2026-12-31")   # Thakur (ended), Maharashtra IT Aurangabad
+            self.assertEqual(rows["04142"]["status"], "no_record"); self.assertEqual(rows["05152"]["status"], "no_record")                      # the Raisoni row has no address: never guessed
+            ids = [r["source_row"] for r in rows.values() if r["status"] == "linked"]; self.assertEqual(len(ids), len(set(ids)))
+        finally: shutil.rmtree(tmp, ignore_errors=True)
 
     def test_known_traps(self):
         g = lambda c: self.rows[c]["aishe_id"]

@@ -1,13 +1,14 @@
 {
  "ok": true,
- "rows": 1437,
+ "rows": 1454,
  "nba_rows": 1204,
  "naac_rows": 233,
+ "naac_transition_rows": 17,
  "branches": 604,
- "colleges": 262,
+ "colleges": 265,
  "sources": 3,
  "no_end_date": 3,
  "expired_on_build_date": 853,
- "build_date": "2026-11-21",
+ "build_date": "2026-11-22",
  "problems": []
 }

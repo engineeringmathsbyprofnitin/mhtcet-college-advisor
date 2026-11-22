@@ -82,6 +82,30 @@ class Import(unittest.TestCase):
             rep = I.build(src=t, out=os.path.join(t, "o")); self.assertFalse(rep["ok"]); self.assertTrue(any("no .xlsx" in p for p in rep["problems"]))
 
 
+class Transition(unittest.TestCase):
+    def run_t(self, trows):
+        tmp = tempfile.mkdtemp(); src = os.path.join(tmp, "s"); os.makedirs(src)
+        write_xlsx(os.path.join(src, "x_as_on_14082025_1.xlsx"), [("Colleges", [HEAD, row(1)]), ("Transition Autonomous Colleges", [["Sl. No.", "HEI Name", "State", "Extended validity upto"]] + trows)])
+        out = os.path.join(tmp, "o"); rep = I.build(src=src, out=out); data = list(csv.DictReader(open(os.path.join(out, "naac_transition.csv"), encoding="utf-8"))); shutil.rmtree(tmp, ignore_errors=True); return rep, data
+
+    def test_dates_in_every_shape_and_only_maharashtra(self):
+        rep, data = self.run_t([[1, "A College of Engineering (Autonomous), Road, Pune", "Maharashtra", 46387], [2, "B Institute, Mumbai", "Maharashtra", "31/122025"], [3, "C Institute", "Maharashtra", "31-12-2027"],
+                                [4, "D College, Chennai", "Tamil Nadu", 46387]])
+        self.assertTrue(rep["ok"], rep["problems"]); self.assertEqual([(d["name"], d["extended_until"]) for d in data], [("A College of Engineering", "2026-12-31"), ("B Institute", "2025-12-31"), ("C Institute", "2027-12-31")])
+        self.assertEqual((rep["transition_rows_read"], rep["transition_rows_maharashtra"]), (4, 3)); self.assertEqual(data[0]["list_as_on"], "2025-08-14")
+
+    def test_an_unreadable_date_is_a_problem_and_a_missing_sheet_only_a_warning(self):
+        rep, data = self.run_t([[1, "A College", "Maharashtra", "soon"]]); self.assertFalse(rep["ok"]); self.assertTrue(any("not readable" in p for p in rep["problems"])); self.assertEqual(data, [])
+        tmp, src = mk([row(1)])
+        try:
+            write_xlsx(os.path.join(src, os.listdir(src)[0]), [("Colleges", [HEAD, row(1)])]); rep = I.build(src=src, out=os.path.join(tmp, "o")); self.assertTrue(rep["ok"]); self.assertTrue(any("Transition" in w for w in rep["warnings"]))
+        finally: shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_name_is_cut_before_autonomous_or_the_first_comma(self):
+        self.assertEqual(I.transition_name("K J Somaiya Institute of Engineering and Information Technology(Autonomous), Somaiya Ayurvihar Complex, Sion"), "K J Somaiya Institute of Engineering and Information Technology")
+        self.assertEqual(I.transition_name("Vidyalankar Institute of Technology, Vidyalankar College Marg, Wadala"), "Vidyalankar Institute of Technology"); self.assertEqual(I.transition_name("G.H. Raisoni College of Engineering and Management"), "G.H. Raisoni College of Engineering and Management")
+
+
 class Reader(unittest.TestCase):
     def test_reads_the_named_sheet_not_the_first_one(self):
         tmp = tempfile.mkdtemp(); p = os.path.join(tmp, "x.xlsx"); write_xlsx(p, [("Other", [["a", "b"], [1, 2]]), ("Colleges", [["h1", "h2"], ["x", 3.5], [None, 4]])])
@@ -121,7 +145,7 @@ class RealFile(unittest.TestCase):
         if not (os.path.isdir(src) and any(f.endswith(".xlsx") for f in os.listdir(src))): self.skipTest("no NAAC list in this checkout")
         with tempfile.TemporaryDirectory() as t:
             rep = I.build(src=src, out=t); self.assertTrue(rep["ok"], rep["problems"][:5]); self.assertEqual(rep["rows_read"], 7566); self.assertEqual(rep["rows_maharashtra"], 2324)
-            self.assertEqual(rep["files"][0]["list_as_on"], "2025-08-14"); self.assertEqual(sum(rep["grades"].values()), 2324); self.assertEqual(rep["grades"]["A++"], 37)
+            self.assertEqual(rep["files"][0]["list_as_on"], "2025-08-14"); self.assertEqual(rep["transition_rows_maharashtra"], 113); self.assertEqual(sum(rep["grades"].values()), 2324); self.assertEqual(rep["grades"]["A++"], 37)
             data = list(csv.DictReader(open(os.path.join(t, "naac_institutions.csv"), encoding="utf-8")))
             kdk = [x for x in data if "K. D. K. COLLEGE OF ENGINEERING" in x["name"]]; self.assertEqual(len(kdk), 1); self.assertEqual((kdk[0]["grade"], kdk[0]["declared_on"]), ("B++", "2024-07-19"))
             self.assertTrue(all(x["state"] == "Maharashtra" and x["declared_on"] <= "2025-08-14" for x in data)); self.assertEqual(len({x["aishe_id"] for x in data}), len(data))

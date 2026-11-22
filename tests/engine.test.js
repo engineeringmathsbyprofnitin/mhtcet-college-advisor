@@ -258,6 +258,14 @@ test("a NAAC list row (grade, CGPA, declaration date, list date, no end date) is
   const line = x.explanation.find(t => t.startsWith("NAAC:"));
   assert.equal(line, "NAAC: grade B++ (CGPA 2.85), declared on 19 Jul 2024; on NAAC's list as on 14 Aug 2025. The list gives no end date."); assert.ok(!/valid|expired|until/i.test(line));
 });
+test("a NAAC transition row (extended validity date, no grade) is explained by its date and never scored; an ended extension is said to have ended", () => {
+  const mk = (to) => { const D = simple(80); D.accreditation.push({ accreditation_id: "NAAC-A-1", college_code: "A", choice_code: "", body: "NAAC", scope: "institution", status: "accredited", grade: "", cgpa: "", valid_from: "", valid_to: to, listed_as_on: "2025-08-14", source_doc_id: "D-CUT", validation_status: "validated" }); return D; };
+  let x = run(base(), mk("2099-12-31")).results.find(r => r.choiceCode === "A-1"); const plain = run(base(), simple(80)).results.find(r => r.choiceCode === "A-1");
+  assert.equal(x.naac.status, "valid"); assert.equal(x.naac.grade, null); assert.equal(x.score, plain.score);                       // no grade = no effect on the ranking score
+  assert.equal(x.explanation.find(t => t.startsWith("NAAC:")), "NAAC: accreditation extended until 31 Dec 2099 (autonomous college in NAAC's transition list; grade not stated); list as on 14 Aug 2025.");
+  x = run(base(), mk("2024-12-31")).results.find(r => r.choiceCode === "A-1"); assert.equal(x.naac.status, "expired");
+  assert.equal(x.explanation.find(t => t.startsWith("NAAC:")), "NAAC: extended validity ended on 31 Dec 2024 (autonomous college in NAAC's transition list; grade not stated); list as on 14 Aug 2025.");
+});
 test("NBA on one program does not apply to other programs of the college", () => {
   const D = mini(); D.addCollege("A"); D.addBranch("A-1", "A"); D.addBranch("A-2", "A", "Civil Engineering");
   ["A-1", "A-2"].forEach(c => D.addCut("historical_cutoffs", c, "2025-26", "IV", "GOPENS", 80));

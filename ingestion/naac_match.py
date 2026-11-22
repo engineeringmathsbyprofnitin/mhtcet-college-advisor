@@ -5,13 +5,17 @@ Same strict rules as the NBA matching (nba_match.py, never guess):
    (the website college's district must appear in the NAAC address, or the address names no known district at all);
  - 'doubtful' when plausible but not certain: waits for the owner in data/manual/naac_confirmations.csv (college_code, aishe_id, decision yes/no);
  - 'no_record' when no plausible NAAC record exists (the college is not on the list, which is NOT a "not accredited" verdict).
-Output: data/normalized/naac_link/naac_college_match.csv (+ report). Two colleges are never linked to the same NAAC record without the owner's yes.
+Output: data/normalized/naac_link/naac_college_match.csv (+ report).
+Second pass (build_transition): website colleges WITHOUT a graded record are matched, with the same rules, to the NAAC sheet "Transition Autonomous Colleges" (autonomous colleges whose
+accreditation was extended; no grade) -> naac_transition_match.csv; owner answers in data/manual/naac_transition_confirmations.csv (college_code, source_row, decision yes/no). Two colleges are never linked to the same NAAC record without the owner's yes.
 """
 import collections, csv, json, os, sys
 from ingestion import nba_match as M
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 N = os.path.join(ROOT, "data", "normalized")
 MANUAL = os.path.join(ROOT, "data", "manual", "naac_confirmations.csv")
+MANUAL_T = os.path.join(ROOT, "data", "manual", "naac_transition_confirmations.csv")
+T_COLS = ["college_code", "college_name", "district", "source_row", "naac_name", "extended_until", "status", "score", "second_best", "how"]
 OUT_COLS = ["college_code", "college_name", "district", "aishe_id", "naac_name", "naac_grade", "naac_cgpa", "declared_on", "status", "score", "second_best", "how"]
 
 
@@ -103,10 +107,58 @@ def build(base=N, manual=MANUAL, outdir=None):
     return rep
 
 
+def build_transition(base=N, manual=MANUAL_T, outdir=None):
+    outdir = outdir or os.path.join(base, "naac_link")
+    colleges = M.load(os.path.join(base, "tables", "colleges.csv")); trans = M.load(os.path.join(base, "naac", "naac_transition.csv"))
+    graded = {r["college_code"] for r in M.load(os.path.join(outdir, "naac_college_match.csv")) if r["status"] == "linked"}
+    idf = M.make_idf(colleges + [dict(college_name=t["name"]) for t in trans]); by_row = {t["source_row"]: t for t in trans}
+    conf = {}
+    if os.path.exists(manual):
+        for r in M.load(manual): conf[r["college_code"].strip()] = (r["decision"].strip().lower(), r.get("source_row", "").strip())
+    rows, rep, seen = [], dict(ok=False, colleges_considered=0, transition_rows=len(trans), counts={}, problems=[], doubtful=[], unused_confirmations=[], used_twice={}), set()
+    for c in colleges:
+        if c["college_code"] in graded: continue                       # a graded record is already shown; the transition list adds nothing to the card
+        rep["colleges_considered"] += 1
+        ranked = sorted(((name_score(t["name"], c["college_name"], idf), place_vs_address(c, dict(address=t["text"], name=t["name"], district_hint="")), t) for t in trans), key=lambda x: -M.adj(x[0], x[1]))[:3]
+        if len(ranked) < 2: ranked += [(0.0, "unknown", dict(source_row="", name="", extended_until=""))] * (2 - len(ranked))
+        (s1, ps, t1), (s2, p2, _t2) = ranked[0], ranked[1]
+        row = dict(college_code=c["college_code"], college_name=c["college_name"], district=c["district"], source_row="", naac_name="", extended_until="", status="", score="%.2f" % s1, second_best="%.2f" % s2, how="")
+        def link(t, how): row.update(source_row=t["source_row"], naac_name=t["name"], extended_until=t["extended_until"], status="linked", how=how)
+        if c["college_code"] in conf:
+            seen.add(c["college_code"]); d, sr = conf[c["college_code"]]
+            if d == "yes" and sr in by_row: link(by_row[sr], "owner confirmed")
+            elif d == "no": row.update(status="no_record", how="owner said: not in the transition list")
+            else: rep["problems"].append("bad confirmation for %s" % c["college_code"]); row.update(status="doubtful", how="confirmation not understood")
+        elif s1 >= M.AUTO_MIN and M.adj(s1, ps) - M.adj(s2, p2) >= M.AUTO_MARGIN and s1 - s2 >= 0.05 and ps != "conflict": link(t1, "automatic: name score %.2f, place %s" % (s1, ps))
+        elif s1 >= M.DOUBT_MIN:
+            row.update(status="doubtful", how="candidate row %s (%.2f), place %s" % (t1["source_row"], s1, ps))
+            rep["doubtful"].append([c["college_code"], c["college_name"][:70], c["district"], [[t["source_row"], t["name"][:70], t["extended_until"], round(sc, 2)] for sc, _p, t in ranked]])
+        else: row.update(status="no_record", how="not in the transition list (best score %.2f)" % s1)
+        rows.append(row)
+    rep["unused_confirmations"] = sorted(set(conf) - seen)
+    use = {}
+    for r in rows:
+        if r["status"] == "linked": use.setdefault(r["source_row"], []).append(r["college_code"])
+    rep["used_twice"] = {k: v for k, v in use.items() if len(v) > 1}
+    for k, v in rep["used_twice"].items():
+        for r in rows:
+            if r["college_code"] in v and r["how"].startswith("automatic"):
+                r.update(status="doubtful", how="two colleges claim transition row %s (%s)" % (k, ", ".join(v)), source_row="", naac_name="", extended_until="")
+                rep["doubtful"].append([r["college_code"], r["college_name"][:70], r["district"], [[k, by_row[k]["name"][:70], by_row[k]["extended_until"], float(r["score"])]]])
+    rep["counts"] = {k: sum(1 for r in rows if r["status"] == k) for k in ("linked", "doubtful", "no_record")}
+    rep["ok"] = not rep["problems"]
+    with open(os.path.join(outdir, "naac_transition_match.csv"), "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=T_COLS, lineterminator="\r\n"); w.writeheader(); w.writerows(rows)
+    with open(os.path.join(outdir, "naac_transition_match_report.json"), "w", encoding="utf-8") as fh: json.dump(rep, fh, indent=1, ensure_ascii=False)
+    return rep
+
+
 def main():
     rep = build(); print("colleges:", rep["colleges"], "counts:", rep["counts"], "ok:", rep["ok"])
     for p in rep["problems"][:20]: print("FAIL:", p)
-    return 0 if rep["ok"] else 1
+    rt = build_transition(); print("transition: colleges considered:", rt["colleges_considered"], "counts:", rt["counts"], "ok:", rt["ok"])
+    for p in rt["problems"][:20]: print("FAIL:", p)
+    return 0 if rep["ok"] and rt["ok"] else 1
 
 
 if __name__ == "__main__":

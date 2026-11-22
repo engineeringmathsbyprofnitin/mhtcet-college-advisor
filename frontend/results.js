@@ -36,7 +36,12 @@
     if (!a && label === "NAAC grade") {                         // the college is not in the NAAC list we have: not a "not accredited" verdict
       var nn = noteLine(doc, "No NAAC record found", "This does not mean the college is not accredited"); nn[0].className = "acc-ended"; return cell(doc, label, nn);
     }
-    if (a && a.listedAsOn) {                                    // NAAC list: exactly what NAAC printed, no valid / expired label (the list has no end date)
+    if (a && a.listedAsOn && a.validTo && !a.grade) {            // NAAC "Transition Autonomous Colleges" sheet: an extended validity date and NO grade
+      var ended = a.status === "expired", tl = noteLine(doc, ended ? "Extended validity ended on " + fmtDate(a.validTo) : "Accreditation extended until " + fmtDate(a.validTo));
+      if (ended) tl[0].className = "acc-ended";
+      tl.push(small(doc, "Autonomous college in NAAC's transition list; grade not stated")); tl.push(small(doc, "On NAAC's list as on " + fmtDate(a.listedAsOn))); return cell(doc, label, tl);
+    }
+    if (a && a.listedAsOn && !a.validTo) {                      // NAAC graded list: exactly what NAAC printed, no valid / expired label (the list has no end date)
       var lines = noteLine(doc, (a.grade || "Grade not stated") + (a.cgpa ? " (CGPA " + a.cgpa + ")" : ""));
       if (a.validFrom) lines.push(small(doc, "Declared " + fmtDate(a.validFrom)));
       lines.push(small(doc, "On NAAC's list as on " + fmtDate(a.listedAsOn))); return cell(doc, label, lines);

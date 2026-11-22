@@ -49,16 +49,45 @@ class Build(unittest.TestCase):
         finally: shutil.rmtree(tmp, ignore_errors=True)
 
 
+class TransitionRows(unittest.TestCase):
+    def test_transition_row_has_a_date_and_no_grade(self):
+        tmp, base = fixture(status="no_record")
+        put(os.path.join(base, "naac", "naac_transition.csv"), ["source_row", "sl_no", "name", "text", "state", "extended_until", "list_as_on", "source_file", "source_sha256"],
+            [dict(source_row="5", name="B COLLEGE", extended_until="2026-12-31", list_as_on="2025-08-14", source_file="naac.xlsx", source_sha256=SHA)])
+        put(os.path.join(base, "naac_link", "naac_transition_match.csv"), ["college_code", "source_row", "status"], [dict(college_code="06002", source_row="5", status="linked"), dict(college_code="06001", status="no_record")])
+        out = os.path.join(tmp, "t"); os.makedirs(out); shutil.copy(os.path.join(base, "tables", "branches.csv"), out)
+        try:
+            rep = A.build(base=base, outdir=out); rows = list(csv.DictReader(open(os.path.join(out, "accreditation.csv"), encoding="utf-8")))
+            self.assertTrue(rep["ok"], rep["problems"]); self.assertEqual((rep["naac_rows"], rep["naac_transition_rows"]), (0, 1)); x = rows[0]
+            self.assertEqual((x["college_code"], x["body"], x["scope"], x["grade"], x["cgpa"], x["valid_from"], x["valid_to"], x["listed_as_on"]), ("06002", "NAAC", "institution", "", "", "", "2026-12-31", "2025-08-14"))
+        finally: shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_a_college_cannot_have_a_graded_and_a_transition_row(self):
+        tmp, base = fixture()
+        put(os.path.join(base, "naac", "naac_transition.csv"), ["source_row", "sl_no", "name", "text", "state", "extended_until", "list_as_on", "source_file", "source_sha256"],
+            [dict(source_row="5", name="A COLLEGE", extended_until="2026-12-31", list_as_on="2025-08-14", source_file="naac.xlsx", source_sha256=SHA)])
+        put(os.path.join(base, "naac_link", "naac_transition_match.csv"), ["college_code", "source_row", "status"], [dict(college_code="06001", source_row="5", status="linked")])
+        out = os.path.join(tmp, "t"); os.makedirs(out)
+        try: rep = A.build(base=base, outdir=out); self.assertFalse(rep["ok"]); self.assertTrue(any("graded NAAC record and a transition row" in p for p in rep["problems"]))
+        finally: shutil.rmtree(tmp, ignore_errors=True)
+
+
 class Real(unittest.TestCase):
     def setUp(self):
         if not os.path.exists(os.path.join(SRC, "naac_link", "naac_college_match.csv")): self.skipTest("no NAAC link data")
         self.rows = list(csv.DictReader(open(os.path.join(SRC, "tables", "accreditation.csv"), encoding="utf-8")))
 
     def test_committed_table_has_one_naac_row_per_linked_college(self):
-        naac = [r for r in self.rows if r["body"] == "NAAC"]; linked = [r for r in csv.DictReader(open(os.path.join(SRC, "naac_link", "naac_college_match.csv"), encoding="utf-8")) if r["status"] == "linked"]
+        naac = [r for r in self.rows if r["body"] == "NAAC" and r["grade"]]; linked = [r for r in csv.DictReader(open(os.path.join(SRC, "naac_link", "naac_college_match.csv"), encoding="utf-8")) if r["status"] == "linked"]
         self.assertEqual(len(naac), len(linked)); self.assertEqual({r["college_code"] for r in naac}, {r["college_code"] for r in linked})
         for r in naac: self.assertEqual((r["scope"], r["choice_code"], r["valid_to"], r["listed_as_on"], r["status"]), ("institution", "", "", "2025-08-14", "accredited")); self.assertRegex(r["valid_from"], r"^\d{4}-\d{2}-\d{2}$"); self.assertIn(r["grade"], ("A++", "A+", "A", "B++", "B+", "B", "C"))
         self.assertTrue(all(r["cgpa"] == "" for r in self.rows if r["body"] == "NBA")); self.assertEqual(len({r["accreditation_id"] for r in self.rows}), len(self.rows))
+
+    def test_transition_rows_are_dated_without_a_grade_and_never_double_a_graded_college(self):
+        tr = [r for r in self.rows if r["body"] == "NAAC" and not r["grade"]]; graded = {r["college_code"] for r in self.rows if r["body"] == "NAAC" and r["grade"]}
+        self.assertGreaterEqual(len(tr), 10)
+        for r in tr: self.assertEqual((r["cgpa"], r["valid_from"], r["listed_as_on"], r["choice_code"], r["scope"]), ("", "", "2025-08-14", "", "institution")); self.assertRegex(r["valid_to"], r"^\d{4}-\d{2}-\d{2}$"); self.assertNotIn(r["college_code"], graded)
+        self.assertIn("03209", {r["college_code"] for r in tr})                                                  # K J Somaiya Institute of Technology
 
     def test_packaging_carries_naac_rows_and_a_naac_source_document(self):
         with tempfile.TemporaryDirectory() as t:

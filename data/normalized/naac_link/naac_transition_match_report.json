@@ -1,0 +1,14 @@
+{
+ "ok": true,
+ "colleges_considered": 170,
+ "transition_rows": 113,
+ "counts": {
+  "linked": 17,
+  "doubtful": 0,
+  "no_record": 153
+ },
+ "problems": [],
+ "doubtful": [],
+ "unused_confirmations": [],
+ "used_twice": {}
+}

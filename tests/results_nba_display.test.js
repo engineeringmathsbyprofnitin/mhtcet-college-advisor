@@ -43,3 +43,10 @@ T("NAAC without a record: grey 'No NAAC record found' with the not-a-verdict not
   td = draw(row({ naac: { status: "validity_unknown", grade: "A", cgpa: null, validFrom: null, validTo: null, listedAsOn: "2025-08-14" } }), "NAAC grade");
   assert.equal(td.querySelector(".cv > span").textContent, "A"); assert.doesNotMatch(td.textContent, /Declared/); assert.match(td.textContent, /as on 14 Aug 2025/);
 });
+
+T("NAAC transition row: 'extended until <date>' (valid) or grey 'Extended validity ended on <date>', never a grade", () => {
+  let td = draw(row({ naac: { status: "valid", grade: null, cgpa: null, validFrom: null, validTo: "2026-12-31", listedAsOn: "2025-08-14" } }), "NAAC grade");
+  assert.equal(td.querySelector(".cv > span").textContent, "Accreditation extended until 31 Dec 2026"); assert.ok(!td.querySelector(".acc-ended")); assert.match(td.textContent, /transition list; grade not stated/); assert.match(td.textContent, /as on 14 Aug 2025/); assert.doesNotMatch(td.textContent, /CGPA|Declared/);
+  td = draw(row({ naac: { status: "expired", grade: null, cgpa: null, validFrom: null, validTo: "2024-12-31", listedAsOn: "2025-08-14" } }), "NAAC grade");
+  assert.equal(td.querySelector(".cv > span").textContent, "Extended validity ended on 31 Dec 2024"); assert.ok(td.querySelector(".acc-ended")); assert.match(td.textContent, /grade not stated/);
+});
