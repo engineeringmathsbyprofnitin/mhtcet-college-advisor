@@ -83,3 +83,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 12c-3 built (docs/STAGE12C3.md): 233 colleges linked to NAAC records, 170 no record; NBA Marathwada/Maharashtra mapping corrected; next 12c-4 (rows, packaging, card)
 
 ## Stage 12c-4 built (docs/STAGE12C4.md): NAAC rows (233) packaged, card shows grade, CGPA, declaration date and list date, "No NAAC record found" in grey; owner to run "Publish website data" and check on phone
+
+## Fix after the failed "Publish website data" run: NAAC reader and tests no longer need openpyxl (GitHub self-test step has only PyYAML); owner to upload and run it again

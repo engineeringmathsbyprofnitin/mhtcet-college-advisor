@@ -6,7 +6,8 @@ end date is ever computed here: only the declaration date, the grade and the dat
 The sheet "Transition Autonomous Colleges" (extended validity, no grade) is not used.
 Nothing is guessed: a row whose state cannot be read from the address, whose grade is unknown, or whose date does not parse is reported as a problem.
 """
-import csv, datetime, hashlib, json, os, re, sys
+import csv, datetime, hashlib, json, os, re, sys, zipfile
+import xml.etree.ElementTree as ET
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 SRC = os.path.join(ROOT, "data", "manual", "naac")
 OUT = os.path.join(ROOT, "data", "normalized", "naac")
@@ -45,17 +46,53 @@ def list_date(filename):
     except ValueError: return ""
 
 
+NS = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main", "r": "http://schemas.openxmlformats.org/officeDocument/2006/relationships"}
+
+
+def sheet_names(path):
+    with zipfile.ZipFile(path) as z: return [x.get("name") for x in ET.fromstring(z.read("xl/workbook.xml")).iter("{%s}sheet" % NS["m"])]
+
+
+def read_sheet(path, name):
+    """Stdlib-only reader of ONE named worksheet -> list of rows (lists of str); no extra package is needed in GitHub Actions (same idea as the NBA reader)."""
+    with zipfile.ZipFile(path) as z:
+        names = z.namelist(); sst = []
+        if "xl/sharedStrings.xml" in names:
+            for si in ET.fromstring(z.read("xl/sharedStrings.xml")).findall("m:si", NS): sst.append("".join(t.text or "" for t in si.iter("{%s}t" % NS["m"])))
+        rid = None
+        for sh in ET.fromstring(z.read("xl/workbook.xml")).iter("{%s}sheet" % NS["m"]):
+            if sh.get("name") == name: rid = sh.get("{%s}id" % NS["r"])
+        if rid is None: raise KeyError(name)
+        target = None
+        for rel in ET.fromstring(z.read("xl/_rels/workbook.xml.rels")):
+            if rel.get("Id") == rid: target = rel.get("Target")
+        target = target.lstrip("/"); target = target if target.startswith("xl/") else "xl/" + target
+        rows = []
+        for r in ET.fromstring(z.read(target)).iter("{%s}row" % NS["m"]):
+            cells = {}
+            for c in r.findall("m:c", NS):
+                col = re.match(r"[A-Z]+", c.get("r")).group(0); idx = 0
+                for ch in col: idx = idx * 26 + ord(ch) - 64
+                t = c.get("t"); v = c.find("m:v", NS)
+                if t == "s": val = sst[int(v.text)] if v is not None and v.text is not None else ""
+                elif t == "inlineStr": val = "".join(x.text or "" for x in c.iter("{%s}t" % NS["m"]))
+                else: val = v.text if v is not None and v.text is not None else ""
+                cells[idx] = val
+            rows.append([cells.get(i, "") for i in range(1, (max(cells) if cells else 0) + 1)])
+        return rows
+
+
 def read_file(path):
-    from openpyxl import load_workbook
-    wb = load_workbook(path, read_only=True, data_only=True)
-    if "Colleges" not in wb.sheetnames: return None, ["sheet 'Colleges' is missing (found: %s)" % ", ".join(wb.sheetnames)]
-    rows = wb["Colleges"].iter_rows(values_only=True); head = [clean(x) for x in next(rows)]
-    miss = [c for c in NEED if c not in head]
+    try: allrows = read_sheet(path, "Colleges")
+    except KeyError: return None, ["sheet 'Colleges' is missing (found: %s)" % ", ".join(sheet_names(path))]
+    except (zipfile.BadZipFile, KeyError, ET.ParseError, AttributeError) as e: return None, ["the file cannot be read as an Excel file (%s)" % type(e).__name__]
+    if not allrows: return None, ["sheet 'Colleges' is empty"]
+    head = [clean(x) for x in allrows[0]]; miss = [c for c in NEED if c not in head]
     if miss: return None, ["column(s) missing: " + ", ".join(miss)]
     ix = {c: head.index(c) for c in head}; out = []
-    for r in rows:
-        if r is None or all(v in (None, "") for v in r): continue
-        out.append({c: r[ix[c]] if ix[c] < len(r) else None for c in head})
+    for r in allrows[1:]:
+        if all(v in (None, "") for v in r): continue
+        out.append({c: (r[ix[c]] if ix[c] < len(r) else "") for c in head})
     return out, []
 
 
@@ -82,7 +119,7 @@ def build(src=SRC, out=OUT):
         try: dec = datetime.datetime.strptime(clean(r["Date Of Declaration"]), "%d-%m-%Y").date()
         except ValueError: rep["problems"].append("row %d: date %r not dd-mm-yyyy" % (i, r["Date Of Declaration"])); continue
         if asof and dec.isoformat() > asof: rep["problems"].append("row %d: declaration date %s is after the list date %s" % (i, dec, asof)); continue
-        try: cyc = int(r["Current Cycle Number"])
+        try: cyc = int(float(r["Current Cycle Number"]))
         except (TypeError, ValueError): rep["problems"].append("row %d: cycle %r is not a number" % (i, r["Current Cycle Number"])); continue
         aid = clean(r["Aishe-Id"])
         if aid in seen: rep["problems"].append("row %d: AISHE id %s already used in row %d" % (i, aid, seen[aid])); continue

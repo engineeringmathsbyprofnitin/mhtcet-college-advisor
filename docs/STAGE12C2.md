@@ -9,3 +9,5 @@ Important facts for the next parts:
 - The list is from 14 Aug 2025: colleges accredited after that date are missing, and accreditations that ended after it are still listed. A newer list must be downloaded and uploaded to refresh.
 - Locality/district parts of the address are only hints (columns locality_hint, district_hint); matching to website colleges (12c-3) uses the name and the full address text.
 Next: 12c-3 match NAAC institutions to the website colleges (owner confirms doubtful pairs, as for NBA), 12c-4 accreditation rows + packaging + card display, 12c-5 workflow wiring and phone check.
+
+- Fix (2026-11-21): the reader and its tests use only the standard library (a named-sheet .xlsx reader, like the NBA one). The first version imported openpyxl, which is not installed in the "Publish website data" self-test step, so that step failed. A test now guards against any top-level openpyxl/pandas/numpy import.

@@ -1,18 +1,34 @@
 """Stage 12c-2: NAAC list reader (owner-downloaded Excel). Temp folders only."""
-import csv, json, os, shutil, sys, tempfile, unittest
+import csv, json, os, shutil, sys, tempfile, unittest, zipfile
+from xml.sax.saxutils import escape
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-from openpyxl import Workbook
 from ingestion import naac_import as I
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 HEAD = ["Sl No", "HEI Name", "Track-Id", "Aishe-Id", "Affiliating University", "Address", "Current Cycle Number", "Current CGPA", "Current Grade", "Date Of Declaration"]
 
 
+def write_xlsx(path, sheets):
+    """A minimal valid .xlsx with several named sheets, built with the standard library (GitHub's test runner has no openpyxl). Numbers are numeric cells, text is inline text."""
+    ns = 'xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"'; rel = 'xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"'
+    def col(i): return "ABCDEFGHIJKLMNOP"[i]
+    with zipfile.ZipFile(path, "w") as z:
+        z.writestr("[Content_Types].xml", '<?xml version="1.0"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"/>')
+        z.writestr("xl/workbook.xml", '<?xml version="1.0"?><workbook %s %s><sheets>%s</sheets></workbook>' % (ns, rel, "".join('<sheet name="%s" sheetId="%d" r:id="rId%d"/>' % (escape(n), i, i) for i, (n, _r) in enumerate(sheets, 1))))
+        z.writestr("xl/_rels/workbook.xml.rels", '<?xml version="1.0"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">%s</Relationships>' % "".join('<Relationship Id="rId%d" Target="worksheets/sheet%d.xml"/>' % (i, i) for i in range(1, len(sheets) + 1)))
+        for i, (n, rows) in enumerate(sheets, 1):
+            body = []
+            for r, row in enumerate(rows, 1):
+                cs = []
+                for c, v in enumerate(row):
+                    if v is None: continue
+                    cs.append('<c r="%s%d"><v>%s</v></c>' % (col(c), r, v) if isinstance(v, (int, float)) else '<c r="%s%d" t="inlineStr"><is><t xml:space="preserve">%s</t></is></c>' % (col(c), r, escape(str(v))))
+                body.append('<row r="%d">%s</row>' % (r, "".join(cs)))
+            z.writestr("xl/worksheets/sheet%d.xml" % i, '<?xml version="1.0"?><worksheet %s><sheetData>%s</sheetData></worksheet>' % (ns, "".join(body)))
+
+
 def mk(rows, name="Institutions_accredited_by_NAAC_having_valid_accreditation-as_on_14082025_1.xlsx", sheet="Colleges", head=HEAD):
     tmp = tempfile.mkdtemp(); src = os.path.join(tmp, "src"); os.makedirs(src)
-    wb = Workbook(); ws = wb.active; ws.title = sheet; ws.append(head)
-    for r in rows: ws.append(r)
-    wb.create_sheet("Transition Autonomous Colleges").append(["Sl. No.", "HEI Name", "State", "Extended validity upto"])
-    wb.save(os.path.join(src, name)); return tmp, src
+    write_xlsx(os.path.join(src, name), [(sheet, [head] + rows), ("Transition Autonomous Colleges", [["Sl. No.", "HEI Name", "State", "Extended validity upto"]])]); return tmp, src
 
 
 def run(rows, **k):
@@ -64,6 +80,39 @@ class Import(unittest.TestCase):
         rep, data = run([row(1)], name="list_without_date.xlsx"); self.assertFalse(rep["ok"]); self.assertTrue(any("list date" in p for p in rep["problems"]))
         with tempfile.TemporaryDirectory() as t:
             rep = I.build(src=t, out=os.path.join(t, "o")); self.assertFalse(rep["ok"]); self.assertTrue(any("no .xlsx" in p for p in rep["problems"]))
+
+
+class Reader(unittest.TestCase):
+    def test_reads_the_named_sheet_not_the_first_one(self):
+        tmp = tempfile.mkdtemp(); p = os.path.join(tmp, "x.xlsx"); write_xlsx(p, [("Other", [["a", "b"], [1, 2]]), ("Colleges", [["h1", "h2"], ["x", 3.5], [None, 4]])])
+        try:
+            self.assertEqual(I.read_sheet(p, "Colleges"), [["h1", "h2"], ["x", "3.5"], ["", "4"]]); self.assertEqual(I.sheet_names(p), ["Other", "Colleges"]); self.assertRaises(KeyError, I.read_sheet, p, "Nope")
+        finally: shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_not_an_excel_file_is_a_problem_not_a_crash(self):
+        tmp = tempfile.mkdtemp(); src = os.path.join(tmp, "s"); os.makedirs(src); open(os.path.join(src, "x_as_on_14082025.xlsx"), "wb").write(b"this is not a zip")
+        try: rep = I.build(src=src, out=os.path.join(tmp, "o")); self.assertFalse(rep["ok"]); self.assertTrue(any("cannot be read" in p for p in rep["problems"]))
+        finally: shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_agrees_with_openpyxl_on_the_real_file_when_it_is_installed(self):
+        try: import openpyxl
+        except ImportError: self.skipTest("openpyxl not installed")
+        f = os.path.join(ROOT, "data", "manual", "naac", "Institutions_accredited_by_NAAC_having_valid_accreditation-as_on_14082025_1.xlsx")
+        if not os.path.exists(f): self.skipTest("no NAAC list in this checkout")
+        theirs = [[("" if c is None else str(c)) for c in r] for r in openpyxl.load_workbook(f, read_only=True)["Colleges"].iter_rows(values_only=True)]
+        mine = I.read_sheet(f, "Colleges"); self.assertEqual(len(mine), len(theirs)); self.assertEqual(mine[0][:9], theirs[0][:9]); self.assertEqual([r[1] for r in mine[1:50]], [r[1] for r in theirs[1:50]])
+
+
+class GitHubRunner(unittest.TestCase):
+    def test_no_module_needs_an_extra_package_at_import(self):
+        """GitHub's self-test step installs only PyYAML: a top-level 'import openpyxl' (or pandas / numpy) in a test or ingestion module would fail the whole step."""
+        bad = []
+        for d in ("tests", "ingestion"):
+            for f in sorted(os.listdir(os.path.join(ROOT, d))):
+                if f.endswith(".py"):
+                    for i, line in enumerate(open(os.path.join(ROOT, d, f), encoding="utf-8"), 1):
+                        if line.startswith(("import openpyxl", "from openpyxl", "import pandas", "from pandas", "import numpy", "from numpy")): bad.append("%s/%s:%d" % (d, f, i))
+        self.assertEqual(bad, [])
 
 
 class RealFile(unittest.TestCase):
