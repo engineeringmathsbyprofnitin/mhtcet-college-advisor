@@ -87,3 +87,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Fix after the failed "Publish website data" run: NAAC reader and tests no longer need openpyxl (GitHub self-test step has only PyYAML); owner to upload and run it again
 
 ## Stage 12c-5 built (docs/STAGE12C5.md): NAAC transition sheet used: 17 more colleges show "accreditation extended until <date>"; owner to upload, run "Publish website data" and check K J Somaiya on phone
+
+## Fix: backend/apps-script/Engine.gs (third engine copy) brought up to date with frontend/engine.js; a test now keeps all three identical

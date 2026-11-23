@@ -30,8 +30,10 @@ const INPUT = (o) => Object.assign({ percentile: 93.5, admissionYear: "auto", ca
   branches: ["Computer Science and Engineering", "Information Technology", "Computer Engineering"], districts: ["Pune", "Mumbai Suburban"], maxAnnualFeeINR: 200000, feeBasis: "tuition", priorities: ["placements"] }, o || {});
 const clean = r => { const c = clone(r); if (c.meta) { delete c.meta.dataFiles; delete c.meta.dataBytesDownloaded; delete c.meta.dataGeneratedAt; } return c; };
 
-test("frontend/engine.js is an exact copy of recommendation/engine.js", () => {
-  assert.equal(fs.readFileSync(path.join(ROOT, "frontend/engine.js"), "utf8"), fs.readFileSync(path.join(ROOT, "recommendation/engine.js"), "utf8"));
+test("frontend/engine.js is an exact copy of recommendation/engine.js and of backend/apps-script/Engine.gs", () => {
+  const a = fs.readFileSync(path.join(ROOT, "frontend/engine.js"), "utf8");
+  assert.equal(a, fs.readFileSync(path.join(ROOT, "recommendation/engine.js"), "utf8"));
+  assert.equal(a, fs.readFileSync(path.join(ROOT, "backend/apps-script/Engine.gs"), "utf8"));         // the third copy (Google Apps Script) was forgotten in Stage 12b/12c once
 });
 test("published files have content-hash names and match the manifest", () => {
   const m = JSON.parse(fs.readFileSync(path.join(ROOT, "frontend/data/manifest.json"), "utf8")), crypto = require("crypto");
