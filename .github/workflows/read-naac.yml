@@ -1,0 +1,66 @@
+name: Read the NAAC list
+
+# Stage 12c-6. Reads the NAAC "institutions with valid accreditation" Excel list that the SITE OWNER downloaded by hand from www.naac.gov.in
+# (GitHub's robot cannot read that site, so nothing is fetched automatically and nothing is bypassed). The ONE .xlsx file is in data/manual/naac/.
+# Steps: read the list (naac_import) -> link website colleges to graded records and to the transition list (naac_match, both passes)
+# -> rebuild the website's accreditation table (build_accreditation, which also keeps the NBA rows).
+# Colleges that still wait for the owner stay UNLINKED (see data/normalized/naac_link/*report.json); the owner answers go in
+# data/manual/naac_confirmations.csv and data/manual/naac_transition_confirmations.csv.
+# This workflow does NOT start "Publish website data (preview)": after it, run that workflow by hand to put the new data on the preview page.
+# Runs by hand (Actions tab -> this workflow -> Run workflow) and whenever something in data/manual/naac or the two owner answer files changes.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "data/manual/naac/**"
+      - "data/manual/naac_confirmations.csv"
+      - "data/manual/naac_transition_confirmations.csv"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: read-naac
+  cancel-in-progress: false
+
+jobs:
+  read:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: "Self-tests (offline)"
+        run: python -m unittest tests/test_stage12c2.py tests/test_stage12c3.py tests/test_stage12c4.py
+
+      - name: "Read the NAAC list"
+        run: python -m ingestion.naac_import
+
+      - name: "Link the NAAC data to the website's colleges"
+        if: success()
+        run: python -m ingestion.naac_match
+
+      - name: "Rebuild the accreditation table"
+        if: success()
+        run: python -m ingestion.build_accreditation
+
+      - name: "Save the NAAC data in the repository"
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/normalized/naac data/normalized/naac_link data/normalized/tables/accreditation.csv data/normalized/tables/accreditation_sources.csv data/normalized/tables/accreditation_build_report.json
+          if git diff --cached --quiet; then
+            echo "NAAC data unchanged."
+          else
+            git commit -m "Update NAAC tables"
+            git pull --rebase origin main
+            git push
+          fi
