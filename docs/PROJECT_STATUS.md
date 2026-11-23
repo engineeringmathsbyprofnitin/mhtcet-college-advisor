@@ -97,3 +97,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 13c built (docs/STAGE13C.md): default ranking = "best college I can realistically get" (new "strength" component from past cutoffs; engine only, so "Publish website data" does not need to be run); the three engine copies updated; owner to upload and check on the phone with ?preview=1
 
 ## Stage 13b recorded (docs/STAGE13B.md): owner chose A, default ranking = "best college I can realistically get"; implemented in 13c
+
+## Stage 13d-1 built (docs/STAGE13D1.md): fixed the current-year cutoff ignoring the student's home university (engine only; three copies identical); round figures that rise are real data; owner to upload. Next 13d-2: NAAC/NBA in ranking, more test students

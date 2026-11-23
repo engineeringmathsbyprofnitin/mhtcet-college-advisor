@@ -49,7 +49,8 @@ test("real data: no home university chosen -> warning and the harder cutoff (nev
   assert.ok(none.meta.warnings.some(w => /did not choose a home university/.test(w)));
   const mp = new Map(pune.results.map(x => [x.choiceCode, x]));
   let compared = 0;
-  for (const x of none.results) { const y = mp.get(x.choiceCode); if (y && x.currentCutoff && y.currentCutoff) { compared++; assert.ok(x.currentCutoff.value >= y.currentCutoff.value - 1e-9, x.choiceCode); } }
+  for (const x of none.results) { const y = mp.get(x.choiceCode); if (y && x.currentCutoff && y.currentCutoff && x.currentCutoff.round === y.currentCutoff.round) { compared++;   // Stage 13d: only the same CAP round is comparable (with a home university the engine may have to fall back to an earlier round)
+    assert.ok(x.currentCutoff.value >= y.currentCutoff.value - 1e-9, x.choiceCode); } }
   assert.ok(compared > 10);
 });
 test("real data: all four rounds of the current year are available per result", { skip }, async () => {
@@ -80,4 +81,17 @@ test("real data (Stage 13): default ranking differs by percentile and puts stron
   assert.ok(hi.results.slice(0, 5).every(r => r.expectedCutoff >= 90), "top 5 at 99.5 are colleges with cutoffs of 90 or more");
   const ac = await run({ percentile: 99.5, priorities: ["admission_chance"] });
   assert.equal(ac.results[0].componentScores.fit, 100);
+});
+
+test("real data (Stage 13d): the cutoff used for ranking is the same one shown for that round, and respects the student's home university", { skip }, async () => {
+  const r = await run({ percentile: 92, priorities: ["balanced"] }); let n = 0;
+  r.results.forEach(x => {
+    if (!x.currentCutoff) return; n++;
+    const shown = x.currentRounds[x.currentCutoff.round];
+    assert.ok(shown && Math.abs(shown.value - x.currentCutoff.value) < 1e-9, x.choiceCode + ": used and shown figures differ");
+    assert.equal(x.currentCutoff.homeUniversityUnclear, false);
+  });
+  assert.ok(n > 100);
+  const none = await run({ percentile: 92, priorities: ["balanced"], homeUniversity: "" });
+  assert.ok(none.results.some(x => x.currentCutoff && x.currentCutoff.homeUniversityUnclear), "without a home university the harder-of-two rule still applies");
 });

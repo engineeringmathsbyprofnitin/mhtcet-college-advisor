@@ -288,7 +288,7 @@
       funnel.afterFee++;
 
       // cutoffs
-      var points = [], cur = pickCutoff(curBy.get(b.choice_code), eligible, cfg);
+      var points = [], cur = pickCutoff(curBy.get(b.choice_code), eligible, cfg, student);
       if (cur) points.push({ label: "current", age: 0, value: cur.value, w: cfg.currentWeightByRound[cur.round] !== undefined ? cfg.currentWeightByRound[cur.round] : cfg.evidenceWeights.current });
       var hist = histYears.map(function (y, i) {
         var h = pickCutoff(histBy.get(b.choice_code + "|" + y), eligible, cfg, student);
