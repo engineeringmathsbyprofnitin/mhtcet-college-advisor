@@ -27,18 +27,18 @@
     maxResults: 20,
     topCount: 5,
     asOfDate: null,                            // YYYY-MM-DD used to judge accreditation validity
-    weights: {                                 // each row sums to 1.00
-      balanced:        { fit: .30, branch: .15, district: .10, placement: .12, teaching: .12, infrastructure: .10, fee: .06, accreditation: .05 },
-      placements:      { fit: .30, branch: .15, district: .10, placement: .25, teaching: .08, infrastructure: .05, fee: .03, accreditation: .04 },
-      teaching:        { fit: .30, branch: .15, district: .10, placement: .06, teaching: .22, infrastructure: .04, fee: .03, accreditation: .10 },
-      infrastructure:  { fit: .30, branch: .15, district: .10, placement: .05, teaching: .08, infrastructure: .25, fee: .03, accreditation: .04 },
-      low_fees:        { fit: .30, branch: .15, district: .10, placement: .06, teaching: .05, infrastructure: .04, fee: .27, accreditation: .03 },
-      admission_chance:{ fit: .55, branch: .12, district: .08, placement: .06, teaching: .06, infrastructure: .05, fee: .04, accreditation: .04 }
+    weights: {                                 // each row sums to 1.00 (strength = how strong the college's past cutoffs are; Stage 13)
+      balanced:        { fit: .25, strength: .20, branch: .12, district: .08, placement: .10, teaching: .09, infrastructure: .08, fee: .04, accreditation: .04 },
+      placements:      { fit: .25, strength: .15, branch: .12, district: .08, placement: .22, teaching: .06, infrastructure: .04, fee: .03, accreditation: .05 },
+      teaching:        { fit: .25, strength: .15, branch: .12, district: .08, placement: .05, teaching: .20, infrastructure: .03, fee: .02, accreditation: .10 },
+      infrastructure:  { fit: .25, strength: .15, branch: .12, district: .08, placement: .04, teaching: .06, infrastructure: .22, fee: .03, accreditation: .05 },
+      low_fees:        { fit: .25, strength: .10, branch: .12, district: .08, placement: .05, teaching: .04, infrastructure: .03, fee: .30, accreditation: .03 },
+      admission_chance:{ fit: .55, strength: 0, branch: .12, district: .08, placement: .06, teaching: .06, infrastructure: .05, fee: .04, accreditation: .04 }
     }
   };
   var GRADE_SCORE = { "A++": 100, "A+": 85, "A": 70, "B++": 55, "B+": 40, "B": 30, "C": 20 };
   var DISTRICT_ALIASES = { "ahmednagar": "ahilyanagar", "aurangabad": "chhatrapati sambhajinagar", "osmanabad": "dharashiv" };
-  var COMPONENTS = ["fit", "branch", "district", "placement", "teaching", "infrastructure", "fee", "accreditation"];
+  var COMPONENTS = ["fit", "strength", "branch", "district", "placement", "teaching", "infrastructure", "fee", "accreditation"];
 
   /* ---------- helpers ---------- */
   function yearStart(y) {
@@ -336,6 +336,7 @@
 
       var sc = {
         fit: clamp(70 + 6 * c.margin, 0, 100),
+        strength: clamp(Math.min(c.expected, input.percentile), 0, 100),   // derived from past cutoffs; never above the student's own percentile
         branch: Math.max(40, 100 - 15 * (c.br - 1)),
         district: anyDistrict ? 70 : Math.max(40, 100 - 15 * (c.dr - 1)),
         placement: plc ? clamp(plc.value, 0, 100) : null,
@@ -477,6 +478,7 @@
     L.push("Your percentile " + p + " compared with cutoffs (" + parts.join("; ") + "); expected cutoff about " + c.expected.toFixed(2) + (c.trendAdj > 0 ? " (includes +" + c.trendAdj.toFixed(2) + " because earlier cutoffs were rising)" : "") + ".");
     var fac = cfg.scale.anchor / clamp(100 - c.expected, cfg.scale.minDistance, cfg.scale.maxDistance);
     if (fac > 1.5) L.push("At this cutoff level a small percentile gap means many ranks, so gaps are weighted more heavily.");
+    L.push("Strength: this college's expected cutoff (about " + c.expected.toFixed(2) + ") is derived from past cutoffs and is used as a strength signal in the ranking; it is not an official quality score.");
     L.push("Assessment: " + c.label + ". This is a rule-based guide from past cutoffs, not a probability or a guarantee.");
     if (c.cur && c.cur.round !== "IV") L.push("Current-year cutoff is from CAP Round " + c.cur.round + "; earlier rounds usually show higher cutoffs than the final round, so this may look tougher than the final outcome.");
     if (c.points.length < 3) L.push("Only " + c.points.length + " cutoff data point(s) available; treat with extra caution.");

@@ -72,3 +72,12 @@ test("real data: a district choice filters to that district (official district d
   assert.ok(sat.results.length > 0); sat.results.forEach(x => assert.equal(x.district, "Satara"));
   assert.ok(any.results.length > 0);
 });
+
+test("real data (Stage 13): default ranking differs by percentile and puts strong colleges first for a high percentile", { skip }, async () => {
+  const hi = await run({ percentile: 99.5, priorities: ["balanced"] }), mid = await run({ percentile: 92, priorities: ["balanced"] });
+  const a = hi.results.slice(0, 20).map(r => r.choiceCode), b = mid.results.slice(0, 20).map(r => r.choiceCode);
+  assert.ok(a.filter(c => b.includes(c)).length <= 5, "top 20 for 99.5 and 92 must be (almost) different");
+  assert.ok(hi.results.slice(0, 5).every(r => r.expectedCutoff >= 90), "top 5 at 99.5 are colleges with cutoffs of 90 or more");
+  const ac = await run({ percentile: 99.5, priorities: ["admission_chance"] });
+  assert.equal(ac.results[0].componentScores.fit, 100);
+});

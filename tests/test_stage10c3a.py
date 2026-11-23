@@ -27,7 +27,7 @@ class T(unittest.TestCase):
         cols = t["columns"]; r = t["rows"][0]; self.assertIsInstance(r[cols.index("section")], int)
     def test_browser_loader_and_engine_on_real_data(self):
         r = subprocess.run([NODE, "--test", os.path.join(ROOT, "tests", "real_data.test.js")], env=dict(os.environ, REAL_DATA_DIR=self.d), capture_output=True, text=True)
-        self.assertEqual(r.returncode, 0, r.stdout[-1500:] + r.stderr[-500:]); self.assertIn("# pass 10", r.stdout); self.assertIn("# skipped 0", r.stdout)
+        self.assertEqual(r.returncode, 0, r.stdout[-1500:] + r.stderr[-500:]); self.assertIn("# pass 11", r.stdout); self.assertIn("# skipped 0", r.stdout)
     def test_engine_agrees_with_python_rules_for_two_students(self):
         out = os.path.join(self.d, "dump.json")
         r = subprocess.run([NODE, os.path.join(ROOT, "tests", "helpers", "dump_real.js")], env=dict(os.environ, REAL_DATA_DIR=self.d, DUMP_OUT=out), capture_output=True, text=True)

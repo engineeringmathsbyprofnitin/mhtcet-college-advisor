@@ -57,6 +57,7 @@ Vacancy never changes a label. It only nudges the ranking score by +1 or -1 poin
 Each component is scored 0-100. A component with **no data is left out and the others are re-scaled** (missing data is never turned into zero or an invented rating):
 - **fit** = 70 + 6 x scaled margin, limited to 0-100
 - **branch** = 100 - 15 x (rank - 1), minimum 40
+- **strength** (Stage 13) = the expected cutoff (a percentile, derived from past cutoffs, not an official quality score), limited to the student's own percentile so that an ambitious choice is not rewarded twice (its low fit already reflects the risk). It makes the default ranking mean "the best college I can realistically get"; the "Admission chance" priority has strength 0 and keeps meaning "most likely to get".
 - **district** = same for district rank; "ANY" = 70 for all
 - **placement** = placement percent
 - **teaching / infrastructure** = estimate x 10
@@ -69,14 +70,15 @@ Weights by priority (each column sums to 1; if several priorities are chosen, th
 
 | Component | Balanced | Placements | Teaching | Infrastructure | Lower fees | Admission chance |
 |---|---|---|---|---|---|---|
-| fit | .30 | .30 | .30 | .30 | .30 | .55 |
-| branch | .15 | .15 | .15 | .15 | .15 | .12 |
-| district | .10 | .10 | .10 | .10 | .10 | .08 |
-| placement | .12 | .25 | .06 | .05 | .06 | .06 |
-| teaching | .12 | .08 | .22 | .08 | .05 | .06 |
-| infrastructure | .10 | .05 | .04 | .25 | .04 | .05 |
-| fee | .06 | .03 | .03 | .03 | .27 | .04 |
-| accreditation | .05 | .04 | .10 | .04 | .03 | .04 |
+| fit | .25 | .25 | .25 | .25 | .25 | .55 |
+| strength (new in Stage 13) | .20 | .15 | .15 | .15 | .10 | 0 |
+| branch | .12 | .12 | .12 | .12 | .12 | .12 |
+| district | .08 | .08 | .08 | .08 | .08 | .08 |
+| placement | .10 | .22 | .05 | .04 | .05 | .06 |
+| teaching | .09 | .06 | .20 | .06 | .04 | .06 |
+| infrastructure | .08 | .04 | .03 | .22 | .03 | .05 |
+| fee | .04 | .03 | .02 | .03 | .30 | .04 |
+| accreditation | .04 | .05 | .10 | .05 | .03 | .04 |
 
 Ties are broken by branch preference rank, then district preference rank, then choice code (so results are stable).
 

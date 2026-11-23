@@ -224,6 +224,19 @@ test("all weight rows sum to 1", () => {
   Object.entries(R.DEFAULTS.weights).forEach(([k, w]) => assert.ok(Math.abs(Object.values(w).reduce((a, b) => a + b, 0) - 1) < 1e-9, k));
 });
 
+/* ---- Stage 13: strength ---- */
+test("strength is derived from the expected cutoff and never exceeds the student's percentile", () => {
+  const r = run(Object.assign(base(), { percentile: 90 }), simple(80)).results[0];
+  assert.ok(Math.abs(r.componentScores.strength - Math.min(r.expectedCutoff, 90)) < 1e-9);
+  assert.ok(r.explanation.some(l => /Strength: .*derived from past cutoffs/.test(l)));
+  const amb = run(Object.assign(base(), { percentile: 70 }), simple(80)).results;
+  amb.forEach(x => assert.ok(x.componentScores.strength <= 70 + 1e-9));
+});
+test("admission_chance priority gives strength no weight; other priorities give it some", () => {
+  const W = R.DEFAULTS.weights; assert.equal(W.admission_chance.strength, 0);
+  ["balanced", "placements", "teaching", "infrastructure", "low_fees"].forEach(k => assert.ok(W[k].strength > 0, k));
+});
+
 /* ---- missing data ---- */
 test("missing quality data is null and never treated as zero", () => {
   const r = run(base(), simple(80)).results[0];
