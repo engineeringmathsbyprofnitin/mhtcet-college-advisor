@@ -95,3 +95,17 @@ test("real data (Stage 13d): the cutoff used for ranking is the same one shown f
   const none = await run({ percentile: 92, priorities: ["balanced"], homeUniversity: "" });
   assert.ok(none.results.some(x => x.currentCutoff && x.currentCutoff.homeUniversityUnclear), "without a home university the harder-of-two rule still applies");
 });
+
+test("real data (Stage 13d): NAAC graded colleges get the small accreditation bonus; colleges with no record are neutral", { skip }, async () => {
+  const r = await run({ percentile: 92, priorities: ["balanced"] });
+  const graded = r.results.filter(x => x.naac && x.naac.grade), none = r.results.filter(x => !x.naac && !x.nba);
+  if (graded.length === 0) {   // the test harness packages tables without accreditation: then nothing may get a bonus
+    r.results.forEach(x => { assert.equal(x.componentScores.accreditation, null); assert.ok(!x.explanation.some(l => /^Ranking: accreditation/.test(l))); }); return;
+  }
+  assert.ok(graded.length > 20 && none.length > 20);
+  graded.forEach(x => { assert.notEqual(x.componentScores.accreditation, null); assert.ok(x.explanation.some(l => /^Ranking: accreditation gave this choice a small bonus/.test(l))); });
+  none.forEach(x => { assert.equal(x.componentScores.accreditation, null); assert.ok(!x.explanation.some(l => /^Ranking: accreditation/.test(l))); });
+  const off = await L.recommend({ percentile: 92, admissionYear: "auto", candidateType: "Maharashtra State candidate", category: "OPEN", gender: "Male", extraEligibility: [], branches: ["Computer Engineering"], districts: ["ANY"], maxAnnualFeeINR: 1000000, feeBasis: "total", priorities: ["balanced"], homeUniversity: PUNE }, { baseUrl: "data/", fetchFn, Recommender: R, engineOptions: { asOfDate: "2026-11-10", maxResults: 200, accreditationBonusFactor: 0 } });
+  const a = r.results.slice(0, 20).map(x => x.choiceCode), b = off.results.slice(0, 20).map(x => x.choiceCode);
+  assert.ok(a.filter(c => b.includes(c)).length >= 14, "the bonus is small: the top 20 stays mostly the same");
+});

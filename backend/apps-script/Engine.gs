@@ -24,6 +24,7 @@
     coverage: { floor: 0.9 },   // score is multiplied by floor + (1-floor) x share-of-weight-with-data
     trend: { weight: 0.5, maxAdjust: 3.0 },
     limitedEvidencePenalty: 0.85,
+    accreditationBonusFactor: 0.25,            // Stage 13d: accreditation adds weight x score x this factor to the final score (balanced: at most 1 point, like the vacancy nudge)
     maxResults: 20,
     topCount: 5,
     asOfDate: null,                            // YYYY-MM-DD used to judge accreditation validity
@@ -346,7 +347,7 @@
         accreditation: acc.score
       };
       var num = 0, den = 0, totalW = 0;
-      COMPONENTS.forEach(function (k) { totalW += wvec[k]; if (sc[k] !== null) { num += wvec[k] * sc[k]; den += wvec[k]; } });
+      COMPONENTS.forEach(function (k) { if (k === "accreditation") return; totalW += wvec[k]; if (sc[k] !== null) { num += wvec[k] * sc[k]; den += wvec[k]; } });   // accreditation is a bonus below, so having no record is neutral and a modest grade never ranks below no record
       var cover = totalW ? den / totalW : 0;
       var score = den ? num / den : 0;
       score *= cfg.coverage.floor + (1 - cfg.coverage.floor) * cover;   // more evidence breaks near-ties
@@ -355,6 +356,8 @@
       var vacNote = 0;
       if (vac && vac.value > 0) vacNote = 1; else if (vac && vac.value === 0) vacNote = -1;
       score += vacNote * 1.0;
+      var accBonus = sc.accreditation !== null ? round2(cfg.accreditationBonusFactor * wvec.accreditation * sc.accreditation) : 0;   // Stage 13d: at most 1 point (balanced) to 2.5 (teaching priority); no record = 0
+      score = Math.min(100, score + accBonus);
 
       var srcIds = new Set();
       [c.cur && c.cur.docId, vac && vac.docId, c.fee.docId, plc && plc.docId, teaching && teaching.docId, infra && infra.docId, acc.docIds].forEach(function (x) {
@@ -381,7 +384,7 @@
         nba: acc.nba, naac: acc.naac,
         suitability: c.label, expectedCutoff: round2(c.expected), marginVsExpected: round2(c.rawMargin), scaledMargin: round2(c.margin),
         componentScores: sc, dataCompleteness: round2(cover),
-        explanation: explain(c, input, currentYear, vac, vacRound, plc, teaching, infra, acc, anyDistrict, sc, cfg),
+        explanation: explain(c, input, currentYear, vac, vacRound, plc, teaching, infra, acc, anyDistrict, sc, cfg, accBonus),
         sources: sources, _tie: [c.br, c.dr]
       };
     });
@@ -461,7 +464,7 @@
     var nba = accStatus(nr, asOf), naac = accStatus(ar, asOf);
     var score = null, ids = [];
     if (nr) ids.push(nr.source_doc_id); if (ar) ids.push(ar.source_doc_id);
-    var naacOk = naac && naac.status === "valid" && GRADE_SCORE[naac.grade] !== undefined, nbaOk = nba && nba.status === "valid";
+    var naacOk = naac && GRADE_SCORE[naac.grade] !== undefined && (naac.status === "valid" || (naac.status === "validity_unknown" && !!naac.listedAsOn)), nbaOk = nba && nba.status === "valid";   // Stage 13d: a graded row on NAAC's official list counts (the list gives no end date); transition rows have no grade and do not count
     if (naacOk) score = Math.min(100, GRADE_SCORE[naac.grade] + (nbaOk ? 15 : 0));
     else if (nbaOk) score = 60;
     return { nba: nba, naac: naac, score: score, docIds: ids };
@@ -469,7 +472,7 @@
   function basicInfo(c) {
     return { choiceCode: c.b.choice_code, collegeName: c.col.college_name, branchName: c.b.branch_name, district: c.col.district, reason: "No usable cutoff data for your category in the last three years or the current year." };
   }
-  function explain(c, input, curYear, vac, vacRound, plc, teaching, infra, acc, anyDistrict, sc, cfg) {
+  function explain(c, input, curYear, vac, vacRound, plc, teaching, infra, acc, anyDistrict, sc, cfg, accBonus) {
     var L = [], p = input.percentile;
     L.push("Matches your branch choice #" + c.br + " (" + c.b.branch_name + ").");
     if (c.col.district && c.col.district !== "Not available") L.push(anyDistrict ? "Located in " + c.col.district + " (you chose any district)." : "Located in " + c.col.district + ", your district choice #" + c.dr + "."); else L.push("District not available for this college yet.");
@@ -495,6 +498,7 @@
     else if (acc.naac && acc.naac.listedAsOn && !acc.naac.validTo) L.push("NAAC: grade " + (acc.naac.grade || "not stated") + (acc.naac.cgpa ? " (CGPA " + acc.naac.cgpa + ")" : "") + (acc.naac.validFrom ? ", declared on " + dateText(acc.naac.validFrom) : "") + "; on NAAC's list as on " + dateText(acc.naac.listedAsOn) + ". The list gives no end date.");
     else if (acc.naac) L.push("NAAC: " + (acc.naac.grade || "grade not stated") + (acc.naac.status === "expired" ? " (ended" + (acc.naac.validTo ? " on " + acc.naac.validTo : "") + ")." : " (" + acc.naac.status + (acc.naac.validTo ? ", until " + acc.naac.validTo : "") + ")."));
     if (acc.nba) L.push("NBA for this program: " + (acc.nba.status === "expired" ? "accreditation period ended" + (acc.nba.validTo ? " on " + acc.nba.validTo : "") + "." : acc.nba.status + (acc.nba.validTo ? " (until " + acc.nba.validTo + ")" : "") + "."));
+    if (accBonus > 0) L.push("Ranking: accreditation gave this choice a small bonus of " + accBonus.toFixed(1) + " points (NAAC grade from the official list as on " + (acc.naac && acc.naac.listedAsOn ? dateText(acc.naac.listedAsOn) : "its date") + ", NBA only while its period is valid). Having no record adds or subtracts nothing.");
     if (plc) L.push("Placement: " + plc.value + "% placed in " + plc.year + " (" + plc.scope + " level).");
     var est = []; if (teaching) est.push("teaching " + teaching.score + "/10"); if (infra) est.push("infrastructure " + infra.score + "/10");
     if (est.length) L.push("System estimates (not official scores): " + est.join(", ") + ".");

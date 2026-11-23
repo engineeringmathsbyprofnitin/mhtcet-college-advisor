@@ -62,7 +62,7 @@ Each component is scored 0-100. A component with **no data is left out and the o
 - **placement** = placement percent
 - **teaching / infrastructure** = estimate x 10
 - **fee** = 100 - 70 x fee / budget
-- **accreditation** = NAAC grade (A++ 100, A+ 85, A 70, B++ 55, B+ 40, B 30, C 20) + 15 if the program has valid NBA; valid NBA alone = 60
+- **accreditation** (changed in Stage 13d) = NAAC grade (A++ 100, A+ 85, A 70, B++ 55, B+ 40, B 30, C 20) + 15 if the program has valid NBA; valid NBA alone = 60. A graded NAAC row counts while it is on NAAC's official list (the list gives no end date; its date is shown); an ended NBA period, a NAAC transition row (no grade) and "no record" give no score. It is NOT part of the weighted average any more: it is a **small bonus** added to the final score = 0.25 x accreditation weight x accreditation score (Balanced: at most 1 point; Teaching priority: at most 2.5). So having no record adds and subtracts nothing, and a modest grade can never rank below no record. "No record" means only "not in our lists".
 
 **Evidence-coverage factor (new in v0.2).** Leaving out missing components is fair, but it could let a college with little data edge past one with the same scores and more data. So the final score is multiplied by `0.90 + 0.10 x (share of the total weight that has data)`. A college with every component known is not reduced; the maximum reduction is small. The share is reported as `dataCompleteness`.
 

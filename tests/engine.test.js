@@ -256,6 +256,28 @@ test("expired or undated accreditation is flagged and not scored; NBA absent is 
   D.accreditation[0].valid_to = "2030-01-01"; assert.equal(run(base(), D).results[0].componentScores.accreditation, 100);
   D.accreditation[0].valid_to = ""; assert.equal(run(base(), D).results[0].naac.status, "validity_unknown");
 });
+/* ---- Stage 13d: accreditation is a small bonus; no record is neutral ---- */
+test("accreditation bonus: graded NAAC row on the official list counts; no record, transition row and ended NBA add nothing", () => {
+  const naac = (extra) => Object.assign({ accreditation_id: "X", college_code: "A", choice_code: "", body: "NAAC", scope: "institution", status: "accredited", grade: "B++", cgpa: "2.85", valid_from: "2024-07-19", valid_to: "", listed_as_on: "2025-08-14", source_doc_id: "D-CUT", validation_status: "validated" }, extra || {});
+  const none = run(base(), simple(80)).results[0];
+  assert.equal(none.componentScores.accreditation, null);
+  const D = simple(80); D.accreditation.push(naac());
+  const g = run(base(), D).results[0];
+  assert.equal(g.componentScores.accreditation, 55);                       // B++ on the list as on 14 Aug 2025 (no end date)
+  assert.ok(g.score >= none.score && g.score - none.score <= 1.01);        // bonus of at most about 1 point (balanced)
+  assert.ok(g.explanation.some(l => /^Ranking: accreditation gave this choice a small bonus/.test(l)));
+  const T = simple(80); T.accreditation.push(naac({ grade: "", cgpa: "", valid_from: "", valid_to: "2099-12-31" }));
+  assert.equal(run(base(), T).results[0].componentScores.accreditation, null);   // transition row: no grade, no bonus
+  assert.equal(run(base(), T).results[0].score, none.score);
+  const E = simple(80); E.accreditation.push({ accreditation_id: "N1", college_code: "A", choice_code: "A-1", body: "NBA", scope: "program", status: "accredited", grade: "", valid_from: "", valid_to: "2020-01-01", source_doc_id: "D-CUT", validation_status: "validated" });
+  assert.equal(run(base(), E).results[0].score, none.score);                      // ended NBA period: neutral, not a penalty
+});
+test("accreditation bonus never lowers a score and a lower grade never beats a higher one", () => {
+  const score = (grade) => { const D = simple(80); if (grade) D.accreditation.push({ accreditation_id: "X", college_code: "A", choice_code: "", body: "NAAC", scope: "institution", status: "accredited", grade: grade, valid_from: "2024-01-01", valid_to: "", listed_as_on: "2025-08-14", source_doc_id: "D-CUT", validation_status: "validated" }); return run(base(), D).results[0].score; };
+  const none = score(null), C = score("C"), B = score("B"), Bpp = score("B++"), A = score("A"), App = score("A++");
+  assert.ok(C >= none && B >= C && Bpp >= B && A >= Bpp && App >= A);
+});
+
 test("an ended NBA period is explained as 'ended on <date>', not 'expired (until ...)' ", () => {
   const D = simple(80);
   D.accreditation.push({ accreditation_id: "N1", college_code: "A", choice_code: "A-1", body: "NBA", scope: "program", status: "accredited", grade: "", valid_from: "", valid_to: "2025-06-30", source_doc_id: "D-CUT", validation_status: "validated" });
