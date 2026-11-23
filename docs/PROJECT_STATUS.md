@@ -91,3 +91,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Fix: backend/apps-script/Engine.gs (third engine copy) brought up to date with frontend/engine.js; a test now keeps all three identical
 
 ## Stage 12c-6 built (docs/STAGE12C6.md, docs/REFRESH_NBA_NAAC.md): workflow "Read the NAAC list" (by hand, and when data/manual/naac/** or the two NAAC answer files change; it does NOT start the publish workflow); owner to paste it as .github/workflows/read-naac.yml, run it once, then run "Publish website data (preview)"
+
+## Stage 13a done (docs/STAGE13A.md): ranking diagnosis on the real data. Same top 20 for 92 and 99.5 percentile because fit saturates at margin 5 and ties are broken by cheapest fee (no placement/teaching/infrastructure data yet). No code changed; owner to decide the ranking philosophy (13b)
