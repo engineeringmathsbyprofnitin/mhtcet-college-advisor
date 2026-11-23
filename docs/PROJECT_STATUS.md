@@ -95,3 +95,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 13a done (docs/STAGE13A.md): ranking diagnosis on the real data. Same top 20 for 92 and 99.5 percentile because fit saturates at margin 5 and ties are broken by cheapest fee (no placement/teaching/infrastructure data yet). No code changed; owner to decide the ranking philosophy (13b)
 
 ## Stage 13c built (docs/STAGE13C.md): default ranking = "best college I can realistically get" (new "strength" component from past cutoffs; engine only, so "Publish website data" does not need to be run); the three engine copies updated; owner to upload and check on the phone with ?preview=1
+
+## Stage 13b recorded (docs/STAGE13B.md): owner chose A, default ranking = "best college I can realistically get"; implemented in 13c
