@@ -57,7 +57,7 @@
    }
   ],
   "status": "confirmed",
-  "today": "2026-11-16",
+  "today": "2026-11-23",
   "vacancy_round": "IV",
   "vacancy_rounds_found": [
    "II",
@@ -1578,7 +1578,7 @@
    "year_label": "2025-26"
   }
  ],
- "generated_at": "2026-11-16T11:17:12Z",
+ "generated_at": "2026-11-23T12:39:55Z",
  "matrix": {
   "2023-24": {
    "cutoff": {
@@ -1698,56 +1698,56 @@
   {
    "error": null,
    "method": "GET",
-   "ms": 399,
+   "ms": 366,
    "status": 200,
    "url": "https://cetcell.mahacet.org/robots.txt"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 900,
+   "ms": 805,
    "status": 200,
    "url": "https://cetcell.mahacet.org/"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 1532,
+   "ms": 800,
    "status": 200,
    "url": "https://cetcell.mahacet.org/cap-_2026-27/"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 968,
+   "ms": 940,
    "status": 404,
    "url": "https://fe2026.mahacet.org/robots.txt"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 1236,
+   "ms": 1293,
    "status": 200,
    "url": "https://fe2026.mahacet.org/StaticPages/HomePage"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 808,
+   "ms": 894,
    "status": 400,
    "url": "https://cappublicdocs2026.blob.core.windows.net/robots.txt"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 806,
+   "ms": 857,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_ACAP.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 830,
+   "ms": 861,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_AI_CutOff.pdf"
   },
@@ -1761,273 +1761,273 @@
   {
    "error": null,
    "method": "HEAD",
-   "ms": 839,
+   "ms": 856,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP4_Diploma_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 800,
+   "ms": 863,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP4.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 808,
+   "ms": 858,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_MH_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 826,
+   "ms": 857,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP3_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 778,
+   "ms": 855,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP3.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 819,
+   "ms": 857,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP3_NewInstitute_CourtOder.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 783,
+   "ms": 857,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/FE2026_Vacancy_For_CAP2.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 780,
+   "ms": 866,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 829,
+   "ms": 863,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP2_MH_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 776,
+   "ms": 860,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_MH_CutOff_V1.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 805,
+   "ms": 860,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026ENGG_CAP1_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 881,
+   "ms": 862,
    "status": 200,
    "url": "https://cappublicdocs2026.blob.core.windows.net/documents/2026_fe_seatmatrix_V1.pdf"
   },
   {
    "error": null,
    "method": "HEAD",
-   "ms": 819,
+   "ms": 942,
    "status": 404,
    "url": "https://fe2026.mahacet.org/2023/2023SeatMatrix.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 834,
+   "ms": 853,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023SeatMatrix.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 875,
+   "ms": 867,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP1_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 761,
+   "ms": 858,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP1_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 756,
+   "ms": 857,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP2_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 767,
+   "ms": 918,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP2_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 807,
+   "ms": 865,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 769,
+   "ms": 858,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 820,
+   "ms": 873,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2023/2023ENGG_CAP3_CutOff_Diploma.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 882,
+   "ms": 853,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024SeatMatrix.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 805,
+   "ms": 863,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP1_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 799,
+   "ms": 855,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP1_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 798,
+   "ms": 913,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP2_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 803,
+   "ms": 965,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP2_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 826,
+   "ms": 854,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 758,
+   "ms": 857,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 757,
+   "ms": 861,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2024/2024ENGG_CAP3_CutOff_Diploma.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 781,
+   "ms": 860,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025SeatMatrix.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 795,
+   "ms": 877,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP1_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 815,
+   "ms": 859,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP1_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 752,
+   "ms": 1000,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP2_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 824,
+   "ms": 897,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP2_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 826,
+   "ms": 853,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP3_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 1067,
+   "ms": 954,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP3_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 824,
+   "ms": 878,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 781,
+   "ms": 860,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_AI_CutOff.pdf"
   },
   {
    "error": null,
    "method": "GET",
-   "ms": 749,
+   "ms": 851,
    "status": 206,
    "url": "https://fe2026.mahacet.org/2025/2025ENGG_CAP4_CutOff_Diploma.pdf"
   }
