@@ -27,6 +27,10 @@
    "Select Sub Type"
   ],
   [
+   "BBA",
+   "BBA - Bachelor of Business Administration"
+  ],
+  [
    "BCA",
    "BCA - Bachelor of Computer Applications"
   ],
@@ -41,10 +45,6 @@
   [
    "MBAWP",
    "MBAWP - Master of Business Administration/Master of Management Studies Working Professional"
-  ],
-  [
-   "BBA",
-   "BBA - Bachelor of Business Administration"
   ],
   [
    "AA",
@@ -67,12 +67,12 @@
    "ENGG - Bachelor of Engineering/Bachelor of Technology"
   ],
   [
-   "ME",
-   "ME - Master of Engineering/Masters of Technology"
-  ],
-  [
    "MEWP",
    "MEWP - Master of Engineering (Working Profession)"
+  ],
+  [
+   "ME",
+   "ME - Master of Engineering/Masters of Technology"
   ],
   [
    "PH",
@@ -103,12 +103,12 @@
    "HM - Bachelor of Hotel Management and Catering Technology"
   ],
   [
-   "MHMCT",
-   "MHMCT - Master of Hotel Management and Catering Technology"
-  ],
-  [
    "MHMCTI",
    "MHMCTI - Master of Hotel Management and Catering Technology (Integrated)"
+  ],
+  [
+   "MHMCT",
+   "MHMCT - Master of Hotel Management and Catering Technology"
   ],
   [
    "LLB3",
