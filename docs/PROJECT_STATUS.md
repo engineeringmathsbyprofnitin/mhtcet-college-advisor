@@ -89,3 +89,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 12c-5 built (docs/STAGE12C5.md): NAAC transition sheet used: 17 more colleges show "accreditation extended until <date>"; owner to upload, run "Publish website data" and check K J Somaiya on phone
 
 ## Fix: backend/apps-script/Engine.gs (third engine copy) brought up to date with frontend/engine.js; a test now keeps all three identical
+
+## Stage 12c-6 built (docs/STAGE12C6.md, docs/REFRESH_NBA_NAAC.md): workflow "Read the NAAC list" (by hand, and when data/manual/naac/** or the two NAAC answer files change; it does NOT start the publish workflow); owner to paste it as .github/workflows/read-naac.yml, run it once, then run "Publish website data (preview)"
