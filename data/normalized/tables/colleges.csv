@@ -1,404 +1,404 @@
 college_code,college_name,district,city,college_type,status,previous_college_code,college_website,autonomy_status,campus_area_acres,source_doc_id,retrieved_date,validation_status,is_synthetic
-01002,"Government College of Engineering, Amravati",Amravati,,Government,active,,,autonomous,,DOC-0302787bd1d9ed69,,validated,FALSE
-01005,"Sant Gadge Baba Amravati University,Amravati",Amravati,,University Department,active,,,non_autonomous,,DOC-5969f851061dacae,,validated,FALSE
-01012,"Government College of Engineering,Yavatmal",Yavatmal,,Government,active,,,non_autonomous,,DOC-95e3582bc0242a12,,validated,FALSE
-01101,"Shri Sant Gajanan Maharaj College of Engineering,Shegaon",Buldhana,,Un-Aided,active,,,autonomous,,DOC-4f1be2ef2cbfa9c3,,validated,FALSE
-01105,"Prof. Ram Meghe Institute of Technology & Research, Amravati",Amravati,,Un-Aided,active,,,autonomous,,DOC-4a209ef18225b168,,validated,FALSE
-01107,"P. R. Pote Patil College of Engineering & Management, Amravati",Amravati,,Un-Aided,active,,,autonomous,,DOC-fbd0a529877b399e,,validated,FALSE
-01114,"Sipna Shikshan Prasarak Mandal College of Engineering & Technology, Amravati",Amravati,,Un-Aided,active,,,autonomous,,DOC-7ca89fb14ae9b4f5,,validated,FALSE
-01116,"Shri Shivaji Education Society's College of Engineering and Technology, Akola",Akola,,Un-Aided,active,,,non_autonomous,,DOC-5c5ad3061e2f2e63,,validated,FALSE
-01117,"Janata Shikshan Prasarak Mandal’s Babasaheb Naik College Of Engineering, Pusad",Yavatmal,,Un-Aided,active,,,non_autonomous,,DOC-5ceb8fb08007cccb,,validated,FALSE
-01119,ANURADHA COLLEGE OF ENGINEERING & TECHNOLOGY,Buldhana,,Un-Aided,active,,,autonomous,,DOC-a5ce94d7fd7579fd,,validated,FALSE
-01120,"Jawaharlal Darda Institute of Engineering and Technology, Yavatmal",Yavatmal,,Un-Aided,active,,,autonomous,,DOC-0b39f3517bc054bd,,validated,FALSE
-01121,"Shri Hanuman Vyayam Prasarak Mandals College of Engineering & Technology, Amravati",Amravati,,Un-Aided,active,,,autonomous,,DOC-85a0722e030f0b12,,validated,FALSE
-01123,"Dr.Rajendra Gode Institute of Technology & Research, Amravati",Amravati,,Un-Aided,active,,,autonomous,,DOC-b597dbd21b4ec544,,validated,FALSE
-01125,"Dwarka Bahu Uddeshiya Gramin Vikas Foundation, Rajarshi Shahu College of Engineering, Buldhana",Buldhana,,Un-Aided,active,,,non_autonomous,,DOC-37ea7ea8806cbe15,,validated,FALSE
-01126,"Takshashila Institute of Engineering & Technology, Darapur, Amravati",Amravati,,Un-Aided,active,,,non_autonomous,,DOC-fe277dcb43568572,,validated,FALSE
-01127,"Jagadambha Bahuuddeshiya Gramin Vikas Sanstha's Jagdambha College of Engineering and Technology, Yavatmal",Yavatmal,,Un-Aided,active,,,autonomous,,DOC-35fd9b6c6b0de7fd,,validated,FALSE
-01128,"Prof Ram Meghe College of Engineering and Management, Badnera",Amravati,,Un-Aided,active,,,autonomous,,DOC-08b58ea084e4ba33,,validated,FALSE
-01130,"Vision Buldhana Educational & Welfare Society's Pankaj Laddhad Institute of Technology & Management Studies, Yelgaon",Buldhana,,Un-Aided,active,,,non_autonomous,,DOC-ca37d30502b60907,,validated,FALSE
-01180,"Sanmati Engineering College, Sawargaon Barde, Washim",Washim,,Un-Aided,active,,,non_autonomous,,DOC-c8a04557da4081bb,,validated,FALSE
-01182,"Padmashri Dr. V.B. Kolte College of Engineering, Malkapur, Buldhana",Buldhana,,Un-Aided,active,,,autonomous,,DOC-22a8272ba19eb38c,,validated,FALSE
-01265,"Mauli Group of Institutions, College of Engineering and Technology, Shegaon.",Buldhana,,Un-Aided,active,,,non_autonomous,,DOC-bd8443adc4554a44,,validated,FALSE
-01268,"Siddhivinayak Technical Campus, School of Engineering & Research Technology, Shirasgon, Nile",Buldhana,,Un-Aided,active,,,non_autonomous,,DOC-79d2664177deaa52,,validated,FALSE
-01276,"Manav School of Engineering & Technology, Gut No. 1035 Nagpur Surat Highway, NH No. 6 Tal.Vyala, Balapur, Akola, 444302",Akola,,Un-Aided,active,,,non_autonomous,,DOC-978a3b79a7fdba82,,validated,FALSE
-01347,LET.DR. D. B. DOD COLLEGE OF ENGINEERING,Amravati,,Un-Aided,active,,,non_autonomous,,DOC-94f24f17859f0836,,validated,FALSE
-02008,"Government College of Engineering, Chhatrapati Sambhajinagar",Chhatrapati Sambhajinagar,,Government,active,,,autonomous,,DOC-829cdf26fadd23d8,,validated,FALSE
-02015,"PURANMAL LAHOTI GOVERNMENT INSTITUTE OF ENGINEERING AND TECHNOLOGY, LATUR",Latur,,Government,active,,,non_autonomous,,DOC-235d8db4a026d9fb,,validated,FALSE
-02020,"Shri Guru Gobind Singhji Institute of Engineering and Technology, Nanded",Nanded,,Government-Aided,active,,,autonomous,,DOC-ea405e6e99316fc1,,validated,FALSE
-02021,"University Department of Chemical Technology, Aurangabad",Chhatrapati Sambhajinagar,,University Department,active,,,non_autonomous,,DOC-7cfb341f8e23d707,,validated,FALSE
-02032,"Institute of Chemical Technology, Mumbai Marathwada off campus, Jalna",Jalna,,University Managed,active,,,autonomous,,DOC-c9079f8f59dc4053,,validated,FALSE
-02037,"Deen Dayal Upadhyay Kaushal Kendra, Dr.Babasaheb Ambedkar Marathwada University, Chhatrapati Sambhaji nagar",Chhatrapati Sambhajinagar,,University Department,active,,,non_autonomous,,DOC-8bcdb2ea5ce223d1,,validated,FALSE
-02111,"Everest Education Society, Group of Institutions (Integrated Campus), Ohar",Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-3a9243811125f7b9,,validated,FALSE
-02112,"Shree Yash Pratishthan, Shreeyash College of Engineering and Technology, Aurangabad",Chhatrapati Sambhajinagar,,Un-Aided,active,,,autonomous,,DOC-a840c82c4b6fb4b7,,validated,FALSE
-02113,"G. S. Mandal's Maharashtra Institute of Technology, Aurangabad",Chhatrapati Sambhajinagar,,Un-Aided,active,,,autonomous,,DOC-76e5bd3f619b9ad8,,validated,FALSE
-02114,"Deogiri Institute of Engineering and Management Studies, Aurangabad",Chhatrapati Sambhajinagar,,Un-Aided,active,,,autonomous,,DOC-273083b11f874ef4,,validated,FALSE
-02116,"Matoshri Pratishan's Group of Institutions (Integrated Campus), Kupsarwadi , Nanded",Nanded,,Un-Aided,active,,,non_autonomous,,DOC-9c1f6c5a1144ea32,,validated,FALSE
-02127,"Mahatma Gandhi Missions College of Engineering, Hingoli Rd, Nanded.",Nanded,,Un-Aided,active,,,autonomous,,DOC-105ee6263e551c9a,,validated,FALSE
-02129,"M.S. Bidve Engineering College, Latur",Latur,,Un-Aided,active,,,non_autonomous,,DOC-4b87b1b8f1fbce4d,,validated,FALSE
-02130,"Terna Public Charitable Trust's College of Engineering, Osmanabad",Dharashiv,,Un-Aided,active,,,non_autonomous,,DOC-04257447cd912d34,,validated,FALSE
-02131,"Shree Tuljabhavani College of Engineering, Tuljapur",Dharashiv,,Un-Aided,active,,,non_autonomous,,DOC-e35f1c1c5a5e7748,,validated,FALSE
-02133,"Mahatma Basaweshwar Education Society's College of Engineering, Ambejogai",Beed,,Un-Aided,active,,,non_autonomous,,DOC-d2003dbd98b4fd1c,,validated,FALSE
-02134,"Peoples Education Society's College of Engineering, Aurangabad",Chhatrapati Sambhajinagar,,Un-Aided,active,,,autonomous,,DOC-97bde213ac35f675,,validated,FALSE
-02135,"Hi-Tech Institute of Technology, Aurangabad",Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-4331dd46b300845b,,validated,FALSE
-02136,"Aditya Engineering College , Beed",Beed,,Un-Aided,active,,,non_autonomous,,DOC-fb04c8284eff6a80,,validated,FALSE
-02137,"Nagnathappa Halge Engineering College, Parli, Beed",Beed,,Un-Aided,active,,,non_autonomous,,DOC-6407329f62a5eef9,,validated,FALSE
-02138,"Matsyodari Shikshan Sansatha's College of Engineering and Technology, Jalna",Jalna,,Un-Aided,active,,,non_autonomous,,DOC-f9b8091ae0a2dc96,,validated,FALSE
-02146,"Adarsh Shikshan Prasarak Mandal's K. T. Patil College of Engineering and Technology, Osmanabad",Dharashiv,,Un-Aided,active,,,non_autonomous,,DOC-f267e16852c78368,,validated,FALSE
-02189,"Vishweshwarayya Institute Of Engineering And Technology, Almala, Tq. Ausa, Dist. Latur",Latur,,Un-Aided,active,,,non_autonomous,,DOC-b24f81db850d3052,,validated,FALSE
-02250,CHHATRAPATI SAMBHAJI MAHARAJ COLLEGE OF ENGINEERING,Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-286f1355652432a9,,validated,FALSE
-02252,"Marathwada Shikshan Prasarak Mandal's Shri Shivaji Institute of Engineering and Management Studies, Parbhani",Parbhani,,Un-Aided,active,,,non_autonomous,,DOC-f7880b8a7291ac49,,validated,FALSE
-02254,"Vilasrao Deshmukh Foundation Group of Institutions, Latur",Latur,,Un-Aided,active,,,non_autonomous,,DOC-c7881a175bcc607b,,validated,FALSE
-02282,"Mitthulalji Sarada Institute Of Technology, Nalwandi Road, Beed",Beed,,Un-Aided,active,,,non_autonomous,,DOC-d07e628a034cb243,,validated,FALSE
-02508,GRAMIN TECHNICAL AND MANAGEMENT CAMPUS NANDED.,Nanded,,Un-Aided,active,,,non_autonomous,,DOC-cb03bd41afea8288,,validated,FALSE
-02516,International Centre Of Excellence In Engineering and Management (ICEEM),Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-ef8417122f8bc6c8,,validated,FALSE
-02522,"STMEI's Sandipani Technical Campus-Faculty of Engineering, Latur.",Latur,,Un-Aided,active,,,non_autonomous,,DOC-79c02e6428bd2720,,validated,FALSE
-02533,"CSMSS Chh. Shahu College of Engineering, Aurangabad",Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-eaf0d6dd8bf93711,,validated,FALSE
-02634,"Eaglewood Polytechnic Institute, A.P Phulepimpalgaon",Beed,,Un-Aided,active,,,non_autonomous,,DOC-c451e5a465af5805,,validated,FALSE
-02637,"Jijau Institute of Engineering Technology and Management, Khandgaon (Bendri), Taluka Naigaon, District Nanded",Nanded,,Un-Aided,active,,,non_autonomous,,DOC-c601688fa6ac60ba,,validated,FALSE
-02641,Dr. V.K. Patil College of Engineering & Technology,Dharashiv,,Un-Aided,active,,,non_autonomous,,DOC-cf9c92bdad61ec35,,validated,FALSE
-02666,Mangaldeep College of Engineering,Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-01025fa371f630b1,,validated,FALSE
-02758,Sant Eknath College of Engineering,Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-81d4e17ad6014104,,validated,FALSE
-02770,"Shetkari Shikshan Prasarak Mandal's Mahesh Institute of Engineering and Technology , Ashti",Beed,,Un-Aided,active,,,non_autonomous,,DOC-0925eaf9975bd5f0,,validated,FALSE
-02771,Amolak College of Engineering Kada,Beed,,Un-Aided,active,,,non_autonomous,,DOC-36bf014154f93dd8,,validated,FALSE
-02772,"JSPM College of Engineering, Latur",Latur,,Un-Aided,active,,,non_autonomous,,DOC-f2f248d37471c378,,validated,FALSE
-02777,CDS College of Engineering,Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-bcf8a6f826160d16,,validated,FALSE
-02779,NKSPT INSTITUTE OF ENGINEERING AND TECHNOLOGY PATHIKAR CAMPUS,Jalna,,Un-Aided,active,,,non_autonomous,,DOC-210df33cd8210996,,validated,FALSE
-02805,Urvara Pathrikar Engineering College,Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-b5989784551c9757,,validated,FALSE
-03012,"Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",Mumbai City,,Government-Aided,active,,,autonomous,,DOC-0e63cf05c5e85066,,validated,FALSE
-03014,"Sardar Patel College of Engineering, Andheri",Mumbai Suburban,,Government-Aided,active,,,autonomous,,DOC-c438c29c65dc4a98,,validated,FALSE
-03025,Svkm's Shri Bhagubhai Mafatlal Polytechnic & College of Engineering,Mumbai Suburban,,Government-Aided,active,,,non_autonomous,,DOC-084c0d6d4f463f64,,validated,FALSE
-03033,"Dr. Babasaheb Ambedkar Technological University, Lonere",Raigad,,University,active,,,non_autonomous,,DOC-0568d8c0de920f2d,,validated,FALSE
-03035,"Usha Mittal Institute of Technology SNDT Women's University, Mumbai",Mumbai Suburban,,University Managed (Un-Aided),active,,,non_autonomous,,DOC-c9ee2b443880d61b,,validated,FALSE
-03036,"Institute of Chemical Technology, Matunga, Mumbai",Mumbai City,,Deemed University,active,,,autonomous,,DOC-c4aa6ea21a0b6cb9,,validated,FALSE
-03042,"Loknete Shamrao Peje Government College of Engineering, Ratnagiri",Ratnagiri,,Government,active,,,non_autonomous,,DOC-566f283e094db7d2,,validated,FALSE
-03135,"Manjara Charitable Trust's Rajiv Gandhi Institute of Technology, Mumbai",Mumbai Suburban,,Un-Aided,active,,,non_autonomous,,DOC-a51cee985fceb853,,validated,FALSE
-03139,"Vidyalankar Institute of Technology,Wadala, Mumbai",Mumbai City,,Un-Aided,active,,,autonomous,,DOC-5d6848e9a5b2dc40,,validated,FALSE
-03143,"Thakur Shyamnarayan Engineering College, Mumbai",Mumbai Suburban,,Un-Aided,active,,,non_autonomous,,DOC-9df8c17d0786dc4b,,validated,FALSE
-03146,"Jawahar Education Society's Annasaheb Chudaman Patil College of Engineering,Kharghar, Navi Mumbai",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-9167cfa5468c254e,,validated,FALSE
-03147,"Saraswati Education Society, Yadavrao Tasgaonkar Institute of Engineering & Technology, Karjat",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-143f2b1f52d458fd,,validated,FALSE
-03148,"Mahavir Education Trust's Shah & Anchor Kutchhi Engineering College, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-989c07287143c7f4,,validated,FALSE
-03154,"Saraswati Education Society's Saraswati College of Engineering,Kharghar Navi Mumbai",Raigad,,Un-Aided,active,,,autonomous,,DOC-733e23952b4f607d,,validated,FALSE
-03175,"M.G.M.'s College of Engineering and Technology, Kamothe, Navi Mumbai",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-8ec12ae3b8047fb5,,validated,FALSE
-03176,"Thakur College of Engineering and Technology, Kandivali, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-c43c90086d0d4f43,,validated,FALSE
-03182,"Thadomal Shahani Engineering College, Bandra, Mumbai",Mumbai Suburban,,Un-Aided,active,,,non_autonomous,,DOC-c09b0f23bea420dc,,validated,FALSE
-03183,"Anjuman-I-Islam's M.H. Saboo Siddik College of Engineering, Byculla, Mumbai",Mumbai City,,Un-Aided,active,,,non_autonomous,,DOC-f82e5807e8677671,,validated,FALSE
-03184,"Fr. Conceicao Rodrigues College of Engineering, Bandra,Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-01e6ab95e859dd86,,validated,FALSE
-03185,"Vivekanand Education Society's Institute of Technology, Chembur, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-8ad2bb38b69590ca,,validated,FALSE
-03187,"N.Y.S.S.'s Datta Meghe College of Engineering, Airoli, Navi Mumbai",Thane,,Un-Aided,active,,,non_autonomous,,DOC-3c6ad5020f90fb43,,validated,FALSE
-03188,"Vasantdada Patil Pratishthan's College Of Engineering and Visual Arts, Sion, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-89ed6b24856c1f87,,validated,FALSE
-03189,"Bharati Vidyapeeth College of Engineering, Navi Mumbai",Thane,,Un-Aided,active,,,non_autonomous,,DOC-b023276d67848a69,,validated,FALSE
-03190,"Terna Engineering College, Nerul, Navi Mumbai",Thane,,Un-Aided,active,,,autonomous,,DOC-b22091efd3ef7cce,,validated,FALSE
-03192,"Smt. Indira Gandhi College of Engineering, Navi Mumbai",Thane,,Un-Aided,active,,,autonomous,,DOC-7ef3af566c28dbdd,,validated,FALSE
-03193,"Shivajirao S. Jondhale College of Engineering, Dombivali,Mumbai",Thane,,Un-Aided,active,,,non_autonomous,,DOC-39459189be178f4e,,validated,FALSE
-03194,"Vidyavardhini's College of Engineering and Technology, Vasai",Palghar,,Un-Aided,active,,,autonomous,,DOC-20caae0ee0766e66,,validated,FALSE
-03196,"Lokmanya Tilak College of Engineering, Kopar Khairane, Navi Mumbai",Thane,,Un-Aided,active,,,autonomous,,DOC-bc87b40429f128ce,,validated,FALSE
-03197,"Agnel Charities' FR. C. Rodrigues Institute of Technology, Vashi, Navi Mumbai",Thane,,Un-Aided,active,,,autonomous,,DOC-4d8573eafda947a1,,validated,FALSE
-03198,"Konkan Gyanpeeth College of Engineering, Karjat",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-665afb1305b22fb0,,validated,FALSE
-03199,"Shri Vile Parle Kelvani Mandal's Dwarkadas J. Sanghvi College of Engineering, Vile Parle,Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-c1d43e448099ac84,,validated,FALSE
-03200,"Hope Foundation and research center's Finolex Academy of Management and Technology, Ratnagiri",Ratnagiri,,Un-Aided,active,,,non_autonomous,,DOC-6b5936399b40ba77,,validated,FALSE
-03201,"Rizvi Education Society's Rizvi College of Engineering, Bandra,Mumbai",Mumbai Suburban,,Un-Aided,active,,,non_autonomous,,DOC-e79095281911c85e,,validated,FALSE
-03202,Rajendra Mane College of Engineering & Technology Ambav Deorukh,Ratnagiri,,Un-Aided,active,,,non_autonomous,,DOC-eae0727529b0a85b,,validated,FALSE
-03203,"Atharva College of Engineering,Malad(West),Mumbai",Mumbai Suburban,,Un-Aided,active,,,non_autonomous,,DOC-8d430235136b78ee,,validated,FALSE
-03204,"St. Francis Institute of Technology,Borivali, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-12739d9d08d2d147,,validated,FALSE
-03206,"S.S.P.M.'s College of Engineering, Kankavli",Sindhudurg,,Un-Aided,active,,,non_autonomous,,DOC-e633c8551374b231,,validated,FALSE
+01002,"Government College of Engineering, Amravati",Amravati,,Government,active,,,autonomous,,DOC-d5f6f4ebb307684b,,validated,FALSE
+01005,"Sant Gadge Baba Amravati University,Amravati",Amravati,,University Department,active,,,non_autonomous,,DOC-4c0986b5cda2723c,,validated,FALSE
+01012,"Government College of Engineering,Yavatmal",Yavatmal,,Government,active,,,non_autonomous,,DOC-d0d3c62e94bed382,,validated,FALSE
+01101,"Shri Sant Gajanan Maharaj College of Engineering,Shegaon",Buldhana,,Un-Aided,active,,,autonomous,,DOC-2b5011189e89b056,,validated,FALSE
+01105,"Prof. Ram Meghe Institute of Technology & Research, Amravati",Amravati,,Un-Aided,active,,,autonomous,,DOC-3c3d462387565736,,validated,FALSE
+01107,"P. R. Pote Patil College of Engineering & Management, Amravati",Amravati,,Un-Aided,active,,,autonomous,,DOC-daf0b01e3fd1752f,,validated,FALSE
+01114,"Sipna Shikshan Prasarak Mandal College of Engineering & Technology, Amravati",Amravati,,Un-Aided,active,,,autonomous,,DOC-63cf766931e849b7,,validated,FALSE
+01116,"Shri Shivaji Education Society's College of Engineering and Technology, Akola",Akola,,Un-Aided,active,,,non_autonomous,,DOC-4357ae0edb4ddb61,,validated,FALSE
+01117,"Janata Shikshan Prasarak Mandal’s Babasaheb Naik College Of Engineering, Pusad",Yavatmal,,Un-Aided,active,,,non_autonomous,,DOC-d7d7988fe9f8cbc5,,validated,FALSE
+01119,ANURADHA COLLEGE OF ENGINEERING & TECHNOLOGY,Buldhana,,Un-Aided,active,,,autonomous,,DOC-3d998cbae7694c2e,,validated,FALSE
+01120,"Jawaharlal Darda Institute of Engineering and Technology, Yavatmal",Yavatmal,,Un-Aided,active,,,autonomous,,DOC-6ae32da8884310e5,,validated,FALSE
+01121,"Shri Hanuman Vyayam Prasarak Mandals College of Engineering & Technology, Amravati",Amravati,,Un-Aided,active,,,autonomous,,DOC-beb38cef3afd0c55,,validated,FALSE
+01123,"Dr.Rajendra Gode Institute of Technology & Research, Amravati",Amravati,,Un-Aided,active,,,autonomous,,DOC-de9d45e9cb3dd66e,,validated,FALSE
+01125,"Dwarka Bahu Uddeshiya Gramin Vikas Foundation, Rajarshi Shahu College of Engineering, Buldhana",Buldhana,,Un-Aided,active,,,non_autonomous,,DOC-548d317e1921b37c,,validated,FALSE
+01126,"Takshashila Institute of Engineering & Technology, Darapur, Amravati",Amravati,,Un-Aided,active,,,non_autonomous,,DOC-2c13240e637dc596,,validated,FALSE
+01127,"Jagadambha Bahuuddeshiya Gramin Vikas Sanstha's Jagdambha College of Engineering and Technology, Yavatmal",Yavatmal,,Un-Aided,active,,,autonomous,,DOC-4b69686fdfff93d3,,validated,FALSE
+01128,"Prof Ram Meghe College of Engineering and Management, Badnera",Amravati,,Un-Aided,active,,,autonomous,,DOC-5756d08895d44ce5,,validated,FALSE
+01130,"Vision Buldhana Educational & Welfare Society's Pankaj Laddhad Institute of Technology & Management Studies, Yelgaon",Buldhana,,Un-Aided,active,,,non_autonomous,,DOC-67ef20f70f946697,,validated,FALSE
+01180,"Sanmati Engineering College, Sawargaon Barde, Washim",Washim,,Un-Aided,active,,,non_autonomous,,DOC-3075ac94c08c5c6e,,validated,FALSE
+01182,"Padmashri Dr. V.B. Kolte College of Engineering, Malkapur, Buldhana",Buldhana,,Un-Aided,active,,,autonomous,,DOC-f677d031b9bdfcc9,,validated,FALSE
+01265,"Mauli Group of Institutions, College of Engineering and Technology, Shegaon.",Buldhana,,Un-Aided,active,,,non_autonomous,,DOC-b652eec1f001da8d,,validated,FALSE
+01268,"Siddhivinayak Technical Campus, School of Engineering & Research Technology, Shirasgon, Nile",Buldhana,,Un-Aided,active,,,non_autonomous,,DOC-850634aee6b37377,,validated,FALSE
+01276,"Manav School of Engineering & Technology, Gut No. 1035 Nagpur Surat Highway, NH No. 6 Tal.Vyala, Balapur, Akola, 444302",Akola,,Un-Aided,active,,,non_autonomous,,DOC-7e38a684504f9f33,,validated,FALSE
+01347,LET.DR. D. B. DOD COLLEGE OF ENGINEERING,Amravati,,Un-Aided,active,,,non_autonomous,,DOC-7212bc2fd87a0e5f,,validated,FALSE
+02008,"Government College of Engineering, Chhatrapati Sambhajinagar",Chhatrapati Sambhajinagar,,Government,active,,,autonomous,,DOC-58c02954c318af8f,,validated,FALSE
+02015,"PURANMAL LAHOTI GOVERNMENT INSTITUTE OF ENGINEERING AND TECHNOLOGY, LATUR",Latur,,Government,active,,,non_autonomous,,DOC-70ca380f0b9b3f2b,,validated,FALSE
+02020,"Shri Guru Gobind Singhji Institute of Engineering and Technology, Nanded",Nanded,,Government-Aided,active,,,autonomous,,DOC-949dfa5d095c6913,,validated,FALSE
+02021,"University Department of Chemical Technology, Aurangabad",Chhatrapati Sambhajinagar,,University Department,active,,,non_autonomous,,DOC-b88e6000155da048,,validated,FALSE
+02032,"Institute of Chemical Technology, Mumbai Marathwada off campus, Jalna",Jalna,,University Managed,active,,,autonomous,,DOC-beb87b86ff07d84d,,validated,FALSE
+02037,"Deen Dayal Upadhyay Kaushal Kendra, Dr.Babasaheb Ambedkar Marathwada University, Chhatrapati Sambhaji nagar",Chhatrapati Sambhajinagar,,University Department,active,,,non_autonomous,,DOC-5bea303eb3e81589,,validated,FALSE
+02111,"Everest Education Society, Group of Institutions (Integrated Campus), Ohar",Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-13888342b3dc2f87,,validated,FALSE
+02112,"Shree Yash Pratishthan, Shreeyash College of Engineering and Technology, Aurangabad",Chhatrapati Sambhajinagar,,Un-Aided,active,,,autonomous,,DOC-fe3b99e6587fa9e7,,validated,FALSE
+02113,"G. S. Mandal's Maharashtra Institute of Technology, Aurangabad",Chhatrapati Sambhajinagar,,Un-Aided,active,,,autonomous,,DOC-63636340b18ba210,,validated,FALSE
+02114,"Deogiri Institute of Engineering and Management Studies, Aurangabad",Chhatrapati Sambhajinagar,,Un-Aided,active,,,autonomous,,DOC-4a544d018e22bc77,,validated,FALSE
+02116,"Matoshri Pratishan's Group of Institutions (Integrated Campus), Kupsarwadi , Nanded",Nanded,,Un-Aided,active,,,non_autonomous,,DOC-05b658275c9ac6be,,validated,FALSE
+02127,"Mahatma Gandhi Missions College of Engineering, Hingoli Rd, Nanded.",Nanded,,Un-Aided,active,,,autonomous,,DOC-9cdc11108fd6581d,,validated,FALSE
+02129,"M.S. Bidve Engineering College, Latur",Latur,,Un-Aided,active,,,non_autonomous,,DOC-ebf02b4dc488eb14,,validated,FALSE
+02130,"Terna Public Charitable Trust's College of Engineering, Osmanabad",Dharashiv,,Un-Aided,active,,,non_autonomous,,DOC-361f7c17c01e3617,,validated,FALSE
+02131,"Shree Tuljabhavani College of Engineering, Tuljapur",Dharashiv,,Un-Aided,active,,,non_autonomous,,DOC-d5052583194899a2,,validated,FALSE
+02133,"Mahatma Basaweshwar Education Society's College of Engineering, Ambejogai",Beed,,Un-Aided,active,,,non_autonomous,,DOC-f3cbf58a4b04447b,,validated,FALSE
+02134,"Peoples Education Society's College of Engineering, Aurangabad",Chhatrapati Sambhajinagar,,Un-Aided,active,,,autonomous,,DOC-de3c08da65eeaae7,,validated,FALSE
+02135,"Hi-Tech Institute of Technology, Aurangabad",Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-82078d2eea07c68c,,validated,FALSE
+02136,"Aditya Engineering College , Beed",Beed,,Un-Aided,active,,,non_autonomous,,DOC-d32752b01f5663dd,,validated,FALSE
+02137,"Nagnathappa Halge Engineering College, Parli, Beed",Beed,,Un-Aided,active,,,non_autonomous,,DOC-d2e1d3a1d482c567,,validated,FALSE
+02138,"Matsyodari Shikshan Sansatha's College of Engineering and Technology, Jalna",Jalna,,Un-Aided,active,,,non_autonomous,,DOC-8e7b521221b2372b,,validated,FALSE
+02146,"Adarsh Shikshan Prasarak Mandal's K. T. Patil College of Engineering and Technology, Osmanabad",Dharashiv,,Un-Aided,active,,,non_autonomous,,DOC-84209bd080f176bb,,validated,FALSE
+02189,"Vishweshwarayya Institute Of Engineering And Technology, Almala, Tq. Ausa, Dist. Latur",Latur,,Un-Aided,active,,,non_autonomous,,DOC-1e611ae9e3ec517a,,validated,FALSE
+02250,CHHATRAPATI SAMBHAJI MAHARAJ COLLEGE OF ENGINEERING,Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-2fc5e6c4425010c3,,validated,FALSE
+02252,"Marathwada Shikshan Prasarak Mandal's Shri Shivaji Institute of Engineering and Management Studies, Parbhani",Parbhani,,Un-Aided,active,,,non_autonomous,,DOC-5509255c34074729,,validated,FALSE
+02254,"Vilasrao Deshmukh Foundation Group of Institutions, Latur",Latur,,Un-Aided,active,,,non_autonomous,,DOC-e18218d93b113cf2,,validated,FALSE
+02282,"Mitthulalji Sarada Institute Of Technology, Nalwandi Road, Beed",Beed,,Un-Aided,active,,,non_autonomous,,DOC-96a068a8cb11bd2a,,validated,FALSE
+02508,GRAMIN TECHNICAL AND MANAGEMENT CAMPUS NANDED.,Nanded,,Un-Aided,active,,,non_autonomous,,DOC-a9212fabfe8f9e9e,,validated,FALSE
+02516,International Centre Of Excellence In Engineering and Management (ICEEM),Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-9f07761a49dab98b,,validated,FALSE
+02522,"STMEI's Sandipani Technical Campus-Faculty of Engineering, Latur.",Latur,,Un-Aided,active,,,non_autonomous,,DOC-d69a6d1b3602e345,,validated,FALSE
+02533,"CSMSS Chh. Shahu College of Engineering, Aurangabad",Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-ea9c92a2ee9d71ef,,validated,FALSE
+02634,"Eaglewood Polytechnic Institute, A.P Phulepimpalgaon",Beed,,Un-Aided,active,,,non_autonomous,,DOC-894fd076c4b6c4bf,,validated,FALSE
+02637,"Jijau Institute of Engineering Technology and Management, Khandgaon (Bendri), Taluka Naigaon, District Nanded",Nanded,,Un-Aided,active,,,non_autonomous,,DOC-d2a69ce98ea5757a,,validated,FALSE
+02641,Dr. V.K. Patil College of Engineering & Technology,Dharashiv,,Un-Aided,active,,,non_autonomous,,DOC-e5aa9fdd6c84e184,,validated,FALSE
+02666,Mangaldeep College of Engineering,Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-9f0f25a6bffb0594,,validated,FALSE
+02758,Sant Eknath College of Engineering,Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-2e428c325d4f08ff,,validated,FALSE
+02770,"Shetkari Shikshan Prasarak Mandal's Mahesh Institute of Engineering and Technology , Ashti",Beed,,Un-Aided,active,,,non_autonomous,,DOC-2fd7ce0a145d6afa,,validated,FALSE
+02771,Amolak College of Engineering Kada,Beed,,Un-Aided,active,,,non_autonomous,,DOC-84bfcb5a98ece11f,,validated,FALSE
+02772,"JSPM College of Engineering, Latur",Latur,,Un-Aided,active,,,non_autonomous,,DOC-2e324e01fd6d7e3d,,validated,FALSE
+02777,CDS College of Engineering,Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-4be8df2b9fe53dcc,,validated,FALSE
+02779,NKSPT INSTITUTE OF ENGINEERING AND TECHNOLOGY PATHIKAR CAMPUS,Jalna,,Un-Aided,active,,,non_autonomous,,DOC-3654a95262128274,,validated,FALSE
+02805,Urvara Pathrikar Engineering College,Chhatrapati Sambhajinagar,,Un-Aided,active,,,non_autonomous,,DOC-35f84d33d1916783,,validated,FALSE
+03012,"Veermata Jijabai Technological Institute(VJTI), Matunga, Mumbai",Mumbai City,,Government-Aided,active,,,autonomous,,DOC-29c535b84f17965d,,validated,FALSE
+03014,"Sardar Patel College of Engineering, Andheri",Mumbai Suburban,,Government-Aided,active,,,autonomous,,DOC-45a9e7fd5298b82e,,validated,FALSE
+03025,Svkm's Shri Bhagubhai Mafatlal Polytechnic & College of Engineering,Mumbai Suburban,,Government-Aided,active,,,non_autonomous,,DOC-64ee6d2762e3adf0,,validated,FALSE
+03033,"Dr. Babasaheb Ambedkar Technological University, Lonere",Raigad,,University,active,,,non_autonomous,,DOC-5914d0f594bb38a2,,validated,FALSE
+03035,"Usha Mittal Institute of Technology SNDT Women's University, Mumbai",Mumbai Suburban,,University Managed (Un-Aided),active,,,non_autonomous,,DOC-861afbbbb6531ad0,,validated,FALSE
+03036,"Institute of Chemical Technology, Matunga, Mumbai",Mumbai City,,Deemed University,active,,,autonomous,,DOC-b4f0b8d246b33cbf,,validated,FALSE
+03042,"Loknete Shamrao Peje Government College of Engineering, Ratnagiri",Ratnagiri,,Government,active,,,non_autonomous,,DOC-0023f41b91f6ec56,,validated,FALSE
+03135,"Manjara Charitable Trust's Rajiv Gandhi Institute of Technology, Mumbai",Mumbai Suburban,,Un-Aided,active,,,non_autonomous,,DOC-086de5fe0210f637,,validated,FALSE
+03139,"Vidyalankar Institute of Technology,Wadala, Mumbai",Mumbai City,,Un-Aided,active,,,autonomous,,DOC-05304fa484baa8ca,,validated,FALSE
+03143,"Thakur Shyamnarayan Engineering College, Mumbai",Mumbai Suburban,,Un-Aided,active,,,non_autonomous,,DOC-a3dc8558803422b4,,validated,FALSE
+03146,"Jawahar Education Society's Annasaheb Chudaman Patil College of Engineering,Kharghar, Navi Mumbai",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-41f4655403df2853,,validated,FALSE
+03147,"Saraswati Education Society, Yadavrao Tasgaonkar Institute of Engineering & Technology, Karjat",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-14598f12a6eeb863,,validated,FALSE
+03148,"Mahavir Education Trust's Shah & Anchor Kutchhi Engineering College, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-00fa4679cccf22ca,,validated,FALSE
+03154,"Saraswati Education Society's Saraswati College of Engineering,Kharghar Navi Mumbai",Raigad,,Un-Aided,active,,,autonomous,,DOC-ab23a0f315c26c5b,,validated,FALSE
+03175,"M.G.M.'s College of Engineering and Technology, Kamothe, Navi Mumbai",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-fc0b2111545e6fae,,validated,FALSE
+03176,"Thakur College of Engineering and Technology, Kandivali, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-35c9afc31889e273,,validated,FALSE
+03182,"Thadomal Shahani Engineering College, Bandra, Mumbai",Mumbai Suburban,,Un-Aided,active,,,non_autonomous,,DOC-1a7eb4a381bcff70,,validated,FALSE
+03183,"Anjuman-I-Islam's M.H. Saboo Siddik College of Engineering, Byculla, Mumbai",Mumbai City,,Un-Aided,active,,,non_autonomous,,DOC-0f427a22721cb833,,validated,FALSE
+03184,"Fr. Conceicao Rodrigues College of Engineering, Bandra,Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-7ea1ac853859da97,,validated,FALSE
+03185,"Vivekanand Education Society's Institute of Technology, Chembur, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-4b1031910c58c1f1,,validated,FALSE
+03187,"N.Y.S.S.'s Datta Meghe College of Engineering, Airoli, Navi Mumbai",Thane,,Un-Aided,active,,,non_autonomous,,DOC-6605fba18d946c4d,,validated,FALSE
+03188,"Vasantdada Patil Pratishthan's College Of Engineering and Visual Arts, Sion, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-3f5b70edc3b9a5a3,,validated,FALSE
+03189,"Bharati Vidyapeeth College of Engineering, Navi Mumbai",Thane,,Un-Aided,active,,,non_autonomous,,DOC-c449ba55be37129c,,validated,FALSE
+03190,"Terna Engineering College, Nerul, Navi Mumbai",Thane,,Un-Aided,active,,,autonomous,,DOC-c58909ae08370c3c,,validated,FALSE
+03192,"Smt. Indira Gandhi College of Engineering, Navi Mumbai",Thane,,Un-Aided,active,,,autonomous,,DOC-a77f740f1e79ad85,,validated,FALSE
+03193,"Shivajirao S. Jondhale College of Engineering, Dombivali,Mumbai",Thane,,Un-Aided,active,,,non_autonomous,,DOC-f3276e8170510ed7,,validated,FALSE
+03194,"Vidyavardhini's College of Engineering and Technology, Vasai",Palghar,,Un-Aided,active,,,autonomous,,DOC-e9f8702b4f9b5e3f,,validated,FALSE
+03196,"Lokmanya Tilak College of Engineering, Kopar Khairane, Navi Mumbai",Thane,,Un-Aided,active,,,autonomous,,DOC-f26f016459e0e3df,,validated,FALSE
+03197,"Agnel Charities' FR. C. Rodrigues Institute of Technology, Vashi, Navi Mumbai",Thane,,Un-Aided,active,,,autonomous,,DOC-51124e67f7d38811,,validated,FALSE
+03198,"Konkan Gyanpeeth College of Engineering, Karjat",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-1da46480b0e79496,,validated,FALSE
+03199,"Shri Vile Parle Kelvani Mandal's Dwarkadas J. Sanghvi College of Engineering, Vile Parle,Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-2fdc4765138555b0,,validated,FALSE
+03200,"Hope Foundation and research center's Finolex Academy of Management and Technology, Ratnagiri",Ratnagiri,,Un-Aided,active,,,non_autonomous,,DOC-4caefd550b9f6067,,validated,FALSE
+03201,"Rizvi Education Society's Rizvi College of Engineering, Bandra,Mumbai",Mumbai Suburban,,Un-Aided,active,,,non_autonomous,,DOC-7b5726f5172d7020,,validated,FALSE
+03202,Rajendra Mane College of Engineering & Technology Ambav Deorukh,Ratnagiri,,Un-Aided,active,,,non_autonomous,,DOC-77d9ceea1a1a2e71,,validated,FALSE
+03203,"Atharva College of Engineering,Malad(West),Mumbai",Mumbai Suburban,,Un-Aided,active,,,non_autonomous,,DOC-f141520eb0621e93,,validated,FALSE
+03204,"St. Francis Institute of Technology,Borivali, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-28d34f3aa92cb299,,validated,FALSE
+03206,"S.S.P.M.'s College of Engineering, Kankavli",Sindhudurg,,Un-Aided,active,,,non_autonomous,,DOC-075334274940983d,,validated,FALSE
 03207,"Mahatma Education Society's Pillai College of Engineering, New Panvel",Not available,,Un-Aided Autonomous Linguistic Minority - Malyalam,active,,,unknown,,DOC-58ca7fe5ca89dc7a,,validated,FALSE
-03208,"Don Bosco Institute of Technology, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-c6e6327b0fa05b24,,validated,FALSE
-03209,K J Somaiya Institute of Technology,Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-25a8405a8afe0b4f,,validated,FALSE
-03210,"Excelsior Education Society's K.C. College of Engineering and Management Studies and Research, Kopri, Thane (E)",Thane,,Un-Aided,active,,,non_autonomous,,DOC-24a3a5ccf15885c9,,validated,FALSE
-03211,"S.I.E.S. Graduate School of Technology, Nerul, Navi Mumbai",Thane,,Un-Aided,active,,,autonomous,,DOC-110872bebdb34991,,validated,FALSE
-03212,"Watumull Institute of Engineering & Technology, Ulhasnagar",Thane,,Un-Aided,active,,,non_autonomous,,DOC-7c18831d6f465d53,,validated,FALSE
-03214,"Xavier Institute Of Engineering C/O Xavier Technical Institute,Mahim,Mumbai",Mumbai City,,Un-Aided,active,,,autonomous,,DOC-1e811685f72ec210,,validated,FALSE
-03215,"Bhartiya Vidya Bhavan's Sardar Patel Institute of Technology , Andheri, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-1d8447c5a46e70cc,,validated,FALSE
-03216,GHARDA INSTITUTE OF TECHNOLOGY & MANAGEMENT,Ratnagiri,,Un-Aided,active,,,non_autonomous,,DOC-c6969dc1ec132fe4,,validated,FALSE
-03217,"Vighnaharata Trust's Shivajirao S. Jondhale College of Engineering & Technology, Shahapur, Asangaon, Dist Thane",Thane,,Un-Aided,active,,,non_autonomous,,DOC-c170e3d5146e4afb,,validated,FALSE
-03218,"Aldel Education Trust's St. John College of Engineering & Management, Vevoor, Palghar",Palghar,,Un-Aided,active,,,autonomous,,DOC-4c4c8f38a195147b,,validated,FALSE
-03219,"Koti Vidya Charitable Trust's Smt. Alamuri Ratnamala Institute of Engineering and Technology, Sapgaon, Tal. Shahapur",Thane,,Un-Aided,active,,,non_autonomous,,DOC-f75c004017e0fbf6,,validated,FALSE
-03220,Yadavrao Tasgaonkar College of Engineering & Management,Raigad,,Un-Aided,active,,,non_autonomous,,DOC-fd2afde82088e2e2,,validated,FALSE
-03221,"Vishnu Waman Thakur Charitable Trust's VIVA Institute of Technology, Virar",Palghar,,Un-Aided,active,,,autonomous,,DOC-61f4834d24e53cb1,,validated,FALSE
-03222,"Haji Jamaluddin Thim Trust's Theem College of Engineering, At. Villege Betegaon, Boisar",Palghar,,Un-Aided,active,,,non_autonomous,,DOC-5a27813dcfe05092,,validated,FALSE
-03223,"Mahatma Education Society's Pillai HOC College of Engineering & Technology, Tal. Khalapur. Dist. Raigad",Raigad,,Un-Aided,active,,,autonomous,,DOC-d0058765a30c5b07,,validated,FALSE
-03224,"Leela Education Society, G.V. Acharya Institute of Engineering and Technology, Shelu, Karjat",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-542246860f396590,,validated,FALSE
-03257,"Vidya Prasarak Mandal's College of Engineering, Thane",Thane,,Un-Aided,active,,,non_autonomous,,DOC-e46d15802f0dc01d,,validated,FALSE
-03277,Pravin Rohidas Patil College of Engineering & Technology,Thane,,Un-Aided,active,,,non_autonomous,,DOC-d733dde46d7fa4de,,validated,FALSE
-03351,"Bharat College of Engineering, Kanhor, Badlapur(W)",Thane,,Un-Aided,active,,,non_autonomous,,DOC-645e109fbd2cf32d,,validated,FALSE
-03353,"Dilkap Research Institute Of Engineering and Management Studies, At.Mamdapur, Post- Neral, Tal- Karjat, Mumbai",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-4509f46e849593a9,,validated,FALSE
-03423,"Shree L.R. Tiwari College of Engineering, Mira Road, Mumbai",Thane,,Un-Aided,active,,,autonomous,,DOC-1672b80ef7a4dc33,,validated,FALSE
-03436,"B.R. Harne College of Engineering & Technology, Karav, Tal-Ambernath.",Thane,,Un-Aided,active,,,non_autonomous,,DOC-ba80bbe7896d812e,,validated,FALSE
-03439,Anjuman-I-Islam's Kalsekar Technical Campus School of Engineering & Technology,Raigad,,Un-Aided,active,,,autonomous,,DOC-1c8109cae65b5952,,validated,FALSE
-03440,"Metropolitan Institute of Technology & Management, Sukhalwad, Sindhudurg.",Sindhudurg,,Un-Aided,active,,,non_autonomous,,DOC-56e7cc627036813d,,validated,FALSE
-03445,"Vishwatmak Jangli Maharaj Ashram Trust (Kokamthan), Atma Malik Institute Of Technology & Research",Thane,,Un-Aided,active,,,non_autonomous,,DOC-4fe33e496e6916f6,,validated,FALSE
-03447,"G.M.Vedak Institute of Technology, Tala, Raigad.",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-9226ef3f7ecf72f1,,validated,FALSE
+03208,"Don Bosco Institute of Technology, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-e86f34a7d3d8b58d,,validated,FALSE
+03209,K J Somaiya Institute of Technology,Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-2b65393c5f3c6f0b,,validated,FALSE
+03210,"Excelsior Education Society's K.C. College of Engineering and Management Studies and Research, Kopri, Thane (E)",Thane,,Un-Aided,active,,,non_autonomous,,DOC-8dd7d0dd50de87df,,validated,FALSE
+03211,"S.I.E.S. Graduate School of Technology, Nerul, Navi Mumbai",Thane,,Un-Aided,active,,,autonomous,,DOC-a4c924a42806422d,,validated,FALSE
+03212,"Watumull Institute of Engineering & Technology, Ulhasnagar",Thane,,Un-Aided,active,,,non_autonomous,,DOC-92e1d0f8042731b4,,validated,FALSE
+03214,"Xavier Institute Of Engineering C/O Xavier Technical Institute,Mahim,Mumbai",Mumbai City,,Un-Aided,active,,,autonomous,,DOC-ab5d03b5ed3a32d3,,validated,FALSE
+03215,"Bhartiya Vidya Bhavan's Sardar Patel Institute of Technology , Andheri, Mumbai",Mumbai Suburban,,Un-Aided,active,,,autonomous,,DOC-d4cf6455cfea7c39,,validated,FALSE
+03216,GHARDA INSTITUTE OF TECHNOLOGY & MANAGEMENT,Ratnagiri,,Un-Aided,active,,,non_autonomous,,DOC-954ef7f8a87ef44e,,validated,FALSE
+03217,"Vighnaharata Trust's Shivajirao S. Jondhale College of Engineering & Technology, Shahapur, Asangaon, Dist Thane",Thane,,Un-Aided,active,,,non_autonomous,,DOC-deba94253304001e,,validated,FALSE
+03218,"Aldel Education Trust's St. John College of Engineering & Management, Vevoor, Palghar",Palghar,,Un-Aided,active,,,autonomous,,DOC-cfb16783fe590c08,,validated,FALSE
+03219,"Koti Vidya Charitable Trust's Smt. Alamuri Ratnamala Institute of Engineering and Technology, Sapgaon, Tal. Shahapur",Thane,,Un-Aided,active,,,non_autonomous,,DOC-1713540ab40e256e,,validated,FALSE
+03220,Yadavrao Tasgaonkar College of Engineering & Management,Raigad,,Un-Aided,active,,,non_autonomous,,DOC-0b11e6e79c5f9f0e,,validated,FALSE
+03221,"Vishnu Waman Thakur Charitable Trust's VIVA Institute of Technology, Virar",Palghar,,Un-Aided,active,,,autonomous,,DOC-4fd3f2fa011e9371,,validated,FALSE
+03222,"Haji Jamaluddin Thim Trust's Theem College of Engineering, At. Villege Betegaon, Boisar",Palghar,,Un-Aided,active,,,non_autonomous,,DOC-e4c207c133f6093a,,validated,FALSE
+03223,"Mahatma Education Society's Pillai HOC College of Engineering & Technology, Tal. Khalapur. Dist. Raigad",Raigad,,Un-Aided,active,,,autonomous,,DOC-c33e989ad39f70f7,,validated,FALSE
+03224,"Leela Education Society, G.V. Acharya Institute of Engineering and Technology, Shelu, Karjat",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-e20ac7a594057af8,,validated,FALSE
+03257,"Vidya Prasarak Mandal's College of Engineering, Thane",Thane,,Un-Aided,active,,,non_autonomous,,DOC-08f719dace65829e,,validated,FALSE
+03277,Pravin Rohidas Patil College of Engineering & Technology,Thane,,Un-Aided,active,,,non_autonomous,,DOC-bd1e78274aee310f,,validated,FALSE
+03351,"Bharat College of Engineering, Kanhor, Badlapur(W)",Thane,,Un-Aided,active,,,non_autonomous,,DOC-1b6cd0fbc6433b98,,validated,FALSE
+03353,"Dilkap Research Institute Of Engineering and Management Studies, At.Mamdapur, Post- Neral, Tal- Karjat, Mumbai",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-1a8474602f3220c4,,validated,FALSE
+03423,"Shree L.R. Tiwari College of Engineering, Mira Road, Mumbai",Thane,,Un-Aided,active,,,autonomous,,DOC-73cd9988337f9145,,validated,FALSE
+03436,"B.R. Harne College of Engineering & Technology, Karav, Tal-Ambernath.",Thane,,Un-Aided,active,,,non_autonomous,,DOC-b635e8d1577bd818,,validated,FALSE
+03439,Anjuman-I-Islam's Kalsekar Technical Campus School of Engineering & Technology,Raigad,,Un-Aided,active,,,autonomous,,DOC-591dcb04aabd4dbe,,validated,FALSE
+03440,"Metropolitan Institute of Technology & Management, Sukhalwad, Sindhudurg.",Sindhudurg,,Un-Aided,active,,,non_autonomous,,DOC-bf38150d71242aa1,,validated,FALSE
+03445,"Vishwatmak Jangli Maharaj Ashram Trust (Kokamthan), Atma Malik Institute Of Technology & Research",Thane,,Un-Aided,active,,,non_autonomous,,DOC-9eba9818bfdb29a3,,validated,FALSE
+03447,"G.M.Vedak Institute of Technology, Tala, Raigad.",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-76708d6be045144f,,validated,FALSE
 03460,"Universal College of Engineering,Kaman Dist. Palghar",Not available,,Un-Aided Linguistic Minority - Gujarathi,active,,,unknown,,DOC-9db0899eaf0cd73a,,validated,FALSE
-03462,"VPM's Maharshi Parshuram College of Engineering, Velneshwar, Ratnagiri.",Ratnagiri,,Un-Aided,active,,,non_autonomous,,DOC-5e96444617ae484e,,validated,FALSE
-03465,"Ideal Institute of Technology, Wada, Dist.Thane",Palghar,,Un-Aided,active,,,non_autonomous,,DOC-5c2a2a4b886865cf,,validated,FALSE
-03467,"Vishwaniketan's Institute of Management Entrepreneurship and Engineering Technology(i MEET), Khalapur Dist Raigad",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-9d723c4e3387a0f0,,validated,FALSE
-03470,YASHWANTRAO BHONSALE INSTITUTE OF TECHNOLOGY,Sindhudurg,,Un-Aided,active,,,non_autonomous,,DOC-f0d731a0a7f0044f,,validated,FALSE
-03471,"New Horizon Institute of Technology & Management, Thane",Thane,,Un-Aided,active,,,non_autonomous,,DOC-cee0060c2ad4c1e9,,validated,FALSE
-03475,"A. P. Shah Institute of Technology, Thane",Thane,,Un-Aided,active,,,non_autonomous,,DOC-506067d3cf691954,,validated,FALSE
-03477,"Chhartrapati Shivaji Maharaj Institute of Technology, Shedung, Panvel",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-12874c171ef15e01,,validated,FALSE
-03503,"Indala College Of Engineering, Bapsai Tal.Kalyan",Thane,,Un-Aided,active,,,non_autonomous,,DOC-dd25745c62ebd1f5,,validated,FALSE
-03546,Devi Mahalaxmi College of Engineering and Technology,Thane,,Un-Aided,active,,,non_autonomous,,DOC-4ad3a1025faa7325,,validated,FALSE
-03723,"Navjeevan Education Society's College of Engineering, Bhandup(W), Mumbai",Mumbai Suburban,,Un-Aided,active,,,non_autonomous,,DOC-c2379a31735a4577,,validated,FALSE
-03724,Thakur Shree DPS College of Engineering & Management,Palghar,,Un-Aided,active,,,non_autonomous,,DOC-678c2f863b3ba2ff,,validated,FALSE
-03725,"MAEER's Maharashtra Institute of Technology, Thane",Thane,,Un-Aided,active,,,non_autonomous,,DOC-1cb2ed45ac8be9f5,,validated,FALSE
-03726,IImperial College of Engineering,Thane,,Un-Aided,active,,,non_autonomous,,DOC-a6c223453d1a7931,,validated,FALSE
-04004,"Government College of Engineering, Chandrapur",Chandrapur,,Government,active,,,non_autonomous,,DOC-07b8cca813dc0ef0,,validated,FALSE
+03462,"VPM's Maharshi Parshuram College of Engineering, Velneshwar, Ratnagiri.",Ratnagiri,,Un-Aided,active,,,non_autonomous,,DOC-1eddf3a4c93e559b,,validated,FALSE
+03465,"Ideal Institute of Technology, Wada, Dist.Thane",Palghar,,Un-Aided,active,,,non_autonomous,,DOC-67f6db4f4f6bf278,,validated,FALSE
+03467,"Vishwaniketan's Institute of Management Entrepreneurship and Engineering Technology(i MEET), Khalapur Dist Raigad",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-6221fc9239e1be39,,validated,FALSE
+03470,YASHWANTRAO BHONSALE INSTITUTE OF TECHNOLOGY,Sindhudurg,,Un-Aided,active,,,non_autonomous,,DOC-0eeb05c0c0efec7e,,validated,FALSE
+03471,"New Horizon Institute of Technology & Management, Thane",Thane,,Un-Aided,active,,,non_autonomous,,DOC-2563a5a30856f4f2,,validated,FALSE
+03475,"A. P. Shah Institute of Technology, Thane",Thane,,Un-Aided,active,,,non_autonomous,,DOC-75f56edc8ef1cd2b,,validated,FALSE
+03477,"Chhartrapati Shivaji Maharaj Institute of Technology, Shedung, Panvel",Raigad,,Un-Aided,active,,,non_autonomous,,DOC-607bd156f2368308,,validated,FALSE
+03503,"Indala College Of Engineering, Bapsai Tal.Kalyan",Thane,,Un-Aided,active,,,non_autonomous,,DOC-8a7a7c4be4d097cd,,validated,FALSE
+03546,Devi Mahalaxmi College of Engineering and Technology,Thane,,Un-Aided,active,,,non_autonomous,,DOC-1d5305bbb4a60505,,validated,FALSE
+03723,"Navjeevan Education Society's College of Engineering, Bhandup(W), Mumbai",Mumbai Suburban,,Un-Aided,active,,,non_autonomous,,DOC-229ba1116561e083,,validated,FALSE
+03724,Thakur Shree DPS College of Engineering & Management,Palghar,,Un-Aided,active,,,non_autonomous,,DOC-99e0440093cd81ec,,validated,FALSE
+03725,"MAEER's Maharashtra Institute of Technology, Thane",Thane,,Un-Aided,active,,,non_autonomous,,DOC-0414a9cbf54dd8e1,,validated,FALSE
+03726,IImperial College of Engineering,Thane,,Un-Aided,active,,,non_autonomous,,DOC-7a09c80551c750f0,,validated,FALSE
+04004,"Government College of Engineering, Chandrapur",Chandrapur,,Government,active,,,non_autonomous,,DOC-06676c5cb7fac85d,,validated,FALSE
 04005,"Laxminarayan Institute of Technology, Nagpur",Not available,,University Department,active,,,unknown,,DOC-0bedd926581d76eb,,validated,FALSE
-04025,"Government College of Engineering, Nagpur",Nagpur,,Government,active,,,non_autonomous,,DOC-8c412fd35cce3e92,,validated,FALSE
-04026,University Institute of Technology,Gadchiroli,,University Managed,active,,,non_autonomous,,DOC-97f3998e8b080db0,,validated,FALSE
-04104,"Kavi Kulguru Institute of Technology & Science, Ramtek",Nagpur,,Un-Aided,active,,,autonomous,,DOC-7b9699295a793db3,,validated,FALSE
+04025,"Government College of Engineering, Nagpur",Nagpur,,Government,active,,,non_autonomous,,DOC-a5846ce8989b63f0,,validated,FALSE
+04026,University Institute of Technology,Gadchiroli,,University Managed,active,,,non_autonomous,,DOC-b0cb1a668afa1835,,validated,FALSE
+04104,"Kavi Kulguru Institute of Technology & Science, Ramtek",Nagpur,,Un-Aided,active,,,autonomous,,DOC-a12199a7a269e265,,validated,FALSE
 04115,"Shri Ramdeobaba College of Engineering and Management, Nagpur",Not available,,Un-Aided Autonomous Linguistic Minority - Hindi,active,,,unknown,,DOC-0bedd926581d76eb,,validated,FALSE
-04116,"Ankush Shikshan Sanstha's G.H.Raisoni College of Engineering, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-f41635b5abb66b02,,validated,FALSE
-04118,"Bapurao Deshmukh College of Engineering, Sevagram",Wardha,,Un-Aided,active,,,non_autonomous,,DOC-934a96d85eec4ee5,,validated,FALSE
-04123,"Lokmanya Tilak Jankalyan Shikshan Sanstha, Priyadarshani College of Engineering, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-a882e0a143d3fb36,,validated,FALSE
-04133,"Sanmarg Shikshan Sanstha's Smt. Radhikatai Pandav College of Engineering, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-f8d7fc56e8da4b20,,validated,FALSE
-04134,"Guru Nanak Institute of Engineering & Technology,Kalmeshwar, Nagpur",Nagpur,,Un-Aided,active,,,non_autonomous,,DOC-3134e56a26fa00fb,,validated,FALSE
-04135,"Amar Seva Mandal's Shree Govindrao Vanjari College of Engineering & Technology, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-e600908b4a4812bd,,validated,FALSE
+04116,"Ankush Shikshan Sanstha's G.H.Raisoni College of Engineering, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-f99cb0a1bae31186,,validated,FALSE
+04118,"Bapurao Deshmukh College of Engineering, Sevagram",Wardha,,Un-Aided,active,,,non_autonomous,,DOC-59de644b60a1b64f,,validated,FALSE
+04123,"Lokmanya Tilak Jankalyan Shikshan Sanstha, Priyadarshani College of Engineering, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-82043cc681200241,,validated,FALSE
+04133,"Sanmarg Shikshan Sanstha's Smt. Radhikatai Pandav College of Engineering, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-e1197075c9d35d53,,validated,FALSE
+04134,"Guru Nanak Institute of Engineering & Technology,Kalmeshwar, Nagpur",Nagpur,,Un-Aided,active,,,non_autonomous,,DOC-7363bf6f11f5484c,,validated,FALSE
+04135,"Amar Seva Mandal's Shree Govindrao Vanjari College of Engineering & Technology, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-9756dd9ad5607ce8,,validated,FALSE
 04136,"Lokmanya Tilak Jankalyan Shikshan Sastha, Priyadarshini J. L. College Of Engineering, Nagpur",Not available,,Un-Aided Autonomous Linguistic Minority - Hindi,active,,,unknown,,DOC-9db0899eaf0cd73a,,validated,FALSE
-04137,"Sir Shantilal Badjate Charitable Trust's S. B. Jain Institute of technology, Management & Research, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-d43fef8520fbd7d9,,validated,FALSE
-04138,"Jaidev Education Society, J D College of Engineering and Management, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-c2ae63aa3e7fc0df,,validated,FALSE
-04139,"Samridhi Sarwajanik Charitable Trust, Jhulelal Institute of Technology, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-02683f710e56e72e,,validated,FALSE
-04141,"Shriram Gram Vikas Shikshan Sanstha, Vilasrao Deshmukh College of Engineering and Technology, Nagpur",Nagpur,,Un-Aided,active,,,non_autonomous,,DOC-aee01ed905979f84,,validated,FALSE
-04142,"G H Raisoni College of Engineering & Management, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-1708afd22f07b971,,validated,FALSE
-04143,"Sanmarg Shikshan Sanstha, Mandukarrao Pandav College of Engineering, Bhandara",Bhandara,,Un-Aided,active,,,autonomous,,DOC-3543196b43a21b73,,validated,FALSE
-04144,"Shri. Sai Shikshan Sanstha, Nagpur Institute of Technology, Nagpur",Nagpur,,Un-Aided,active,,,non_autonomous,,DOC-780a785dc29f24fc,,validated,FALSE
-04145,"Wainganga College of Engineering and Management, Dongargaon, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-cb086f499e2e0882,,validated,FALSE
-04147,"K.D.K. College of Engineering, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-224064fb000cfe9f,,validated,FALSE
-04151,"Tulsiramji Gaikwad Patil College of Engineering & Technology, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-5a52d05efc054c71,,validated,FALSE
-04163,Rajiv Gandhi College of Engineering Research & Technology Chandrapur,Chandrapur,,Un-Aided,active,,,non_autonomous,,DOC-44629fae2b6f7593,,validated,FALSE
-04167,"Yeshwantrao Chavan College of Engineering,Wanadongri, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-7bf4c9b5d5782c1f,,validated,FALSE
-04172,"Anjuman College of Engineering & Technology, Nagpur",Nagpur,,Un-Aided,active,,,non_autonomous,,DOC-d879231b29b0ea9f,,validated,FALSE
-04174,"ST. Vincent Pallotti College of Engineering & Technology, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-d0709b25982e11f0,,validated,FALSE
-04175,"JMSS Shri Shankarprasad Agnihotri College of Engineering, Wardha",Wardha,,Un-Aided,active,,,non_autonomous,,DOC-b9b34ab4ae48c297,,validated,FALSE
-04177,"Priyadarshini Bhagwati College of Engineering, Harpur Nagar, Umred Road,Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-651cce06d0b01f9c,,validated,FALSE
-04181,"Swaminarayan Siddhanta Institute Of Technology, Nagpur",Nagpur,,Un-Aided,active,,,non_autonomous,,DOC-ff6b819c7ae34dd7,,validated,FALSE
-04188,"Krushi Jivan Vikas Pratishthan, Ballarpur Institute of Technology, Mouza Bamni",Chandrapur,,Un-Aided,active,,,non_autonomous,,DOC-cf499f08f03b3443,,validated,FALSE
-04190,"M.D. Yergude Memorial Shikshan Prasarak Mandal's Shri Sai College of Engineering & Technology, Bhadrawati",Chandrapur,,Un-Aided,active,,,non_autonomous,,DOC-c19b744b6aec1bce,,validated,FALSE
-04192,"Maitraya Education Society, Nagarjuna Institute of Engineering Technology & Management, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-128f100ebef55603,,validated,FALSE
-04193,"K.D.M. Education Society, Vidharbha Institute of Technology,Umred Road ,Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-8607e079211f762c,,validated,FALSE
-04196,"Gurunanak Educational Society's Gurunanak Institute of Technology, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-faecb7ba936f9774,,validated,FALSE
-04197,"Jai Mahakali Shikshan Sanstha, Agnihotri College of Engineering, Sindhi(Meghe)",Wardha,,Un-Aided,active,,,non_autonomous,,DOC-decb6726ed60fcaa,,validated,FALSE
+04137,"Sir Shantilal Badjate Charitable Trust's S. B. Jain Institute of technology, Management & Research, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-93899abc0d94667b,,validated,FALSE
+04138,"Jaidev Education Society, J D College of Engineering and Management, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-ccbebdef6291b26e,,validated,FALSE
+04139,"Samridhi Sarwajanik Charitable Trust, Jhulelal Institute of Technology, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-04c244b63d34e51b,,validated,FALSE
+04141,"Shriram Gram Vikas Shikshan Sanstha, Vilasrao Deshmukh College of Engineering and Technology, Nagpur",Nagpur,,Un-Aided,active,,,non_autonomous,,DOC-c0313cd6421646f1,,validated,FALSE
+04142,"G H Raisoni College of Engineering & Management, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-af016bed2317aa80,,validated,FALSE
+04143,"Sanmarg Shikshan Sanstha, Mandukarrao Pandav College of Engineering, Bhandara",Bhandara,,Un-Aided,active,,,autonomous,,DOC-07b35e990b2ffb08,,validated,FALSE
+04144,"Shri. Sai Shikshan Sanstha, Nagpur Institute of Technology, Nagpur",Nagpur,,Un-Aided,active,,,non_autonomous,,DOC-9c77f20cdfa38ba3,,validated,FALSE
+04145,"Wainganga College of Engineering and Management, Dongargaon, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-0920a49a72448c5c,,validated,FALSE
+04147,"K.D.K. College of Engineering, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-3e8af9b03da05057,,validated,FALSE
+04151,"Tulsiramji Gaikwad Patil College of Engineering & Technology, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-2180729389cc84d8,,validated,FALSE
+04163,Rajiv Gandhi College of Engineering Research & Technology Chandrapur,Chandrapur,,Un-Aided,active,,,non_autonomous,,DOC-45d9e2e2515ee411,,validated,FALSE
+04167,"Yeshwantrao Chavan College of Engineering,Wanadongri, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-a1c8f42a0e0a2c31,,validated,FALSE
+04172,"Anjuman College of Engineering & Technology, Nagpur",Nagpur,,Un-Aided,active,,,non_autonomous,,DOC-bedcccb27d6f6364,,validated,FALSE
+04174,"ST. Vincent Pallotti College of Engineering & Technology, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-9fa83a7f13a9108b,,validated,FALSE
+04175,"JMSS Shri Shankarprasad Agnihotri College of Engineering, Wardha",Wardha,,Un-Aided,active,,,non_autonomous,,DOC-48c12fd9e5319ca0,,validated,FALSE
+04177,"Priyadarshini Bhagwati College of Engineering, Harpur Nagar, Umred Road,Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-d890b9a8142d6eee,,validated,FALSE
+04181,"Swaminarayan Siddhanta Institute Of Technology, Nagpur",Nagpur,,Un-Aided,active,,,non_autonomous,,DOC-d053538890e44026,,validated,FALSE
+04188,"Krushi Jivan Vikas Pratishthan, Ballarpur Institute of Technology, Mouza Bamni",Chandrapur,,Un-Aided,active,,,non_autonomous,,DOC-c78f6b725e8755f1,,validated,FALSE
+04190,"M.D. Yergude Memorial Shikshan Prasarak Mandal's Shri Sai College of Engineering & Technology, Bhadrawati",Chandrapur,,Un-Aided,active,,,non_autonomous,,DOC-7fd19a30a0ac3f53,,validated,FALSE
+04192,"Maitraya Education Society, Nagarjuna Institute of Engineering Technology & Management, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-b44c9a19c0752646,,validated,FALSE
+04193,"K.D.M. Education Society, Vidharbha Institute of Technology,Umred Road ,Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-d21f2b913402913b,,validated,FALSE
+04196,"Gurunanak Educational Society's Gurunanak Institute of Technology, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-5a7b20e522fcc340,,validated,FALSE
+04197,"Jai Mahakali Shikshan Sanstha, Agnihotri College of Engineering, Sindhi(Meghe)",Wardha,,Un-Aided,active,,,non_autonomous,,DOC-2244de06a5529b43,,validated,FALSE
 04285,"V M Institute of Engineering and Technology, Dongargaon, Nagpur",Not available,,Un-Aided,active,,,unknown,,DOC-9db0899eaf0cd73a,,validated,FALSE
-04302,"Gondia Education Society's Manoharbhai Patel Institute Of Engineering & Technology, Shahapur, Bhandara",Bhandara,,Un-Aided,active,,,non_autonomous,,DOC-f6b5c239ab178181,,validated,FALSE
-04304,"Cummins College of Engineering For Women, Sukhali (Gupchup), Tal. Hingna Hingna Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-d2bb1a6908974b3a,,validated,FALSE
-04613,"Suryodaya College of Engineering & Technology, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-dcfff98d6685455d,,validated,FALSE
-04648,"R.V. Parankar College of Engineering & Technology, Arvi, Dist Wardha",Wardha,,Un-Aided,active,,,non_autonomous,,DOC-acd22542e07fa810,,validated,FALSE
-04649,"Bajaj Institute of Technology, Wardha",Wardha,,Un-Aided,active,,,non_autonomous,,DOC-7d6bcd98adf82c0e,,validated,FALSE
-04679,"Karanjekar College of Engineering & Management, Sakoli",Bhandara,,Un-Aided,active,,,non_autonomous,,DOC-73dd6f7e7ab8492a,,validated,FALSE
-04703,"Somayya Institute of Technology, Chandrapur",Chandrapur,,Un-Aided,active,,,non_autonomous,,DOC-23f8f6702ccec025,,validated,FALSE
-04762,"Mata Mahakali College of Engineering & Technology, Warora",Chandrapur,,Un-Aided,active,,,non_autonomous,,DOC-71a948ed54891cb1,,validated,FALSE
-04766,Dr. Arun Motghare College of Engineering and Technology,Bhandara,,Un-Aided,active,,,non_autonomous,,DOC-483a4bc7164897f2,,validated,FALSE
-05003,"University Institute of Chemical Technology, North Maharashtra University, Jalgaon",Jalgaon,,University Department,active,,,non_autonomous,,DOC-22660e600a2cceef,,validated,FALSE
-05004,"Government College of Engineering, Jalgaon",Jalgaon,,Government,active,,,autonomous,,DOC-18244444960aab83,,validated,FALSE
-05103,"Shri Shivaji Vidya Prasarak Sanstha's Late Bapusaheb Shivaji Rao Deore College of Engineering,Dhule",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-17397e042b03999b,,validated,FALSE
-05104,"Shramsadhana Bombay Trust, College of Engineering & Technology, Jalgaon",Jalgaon,,Un-Aided,active,,,non_autonomous,,DOC-3542e0b83e303591,,validated,FALSE
-05106,"Khandesh College Education Society's College Of Engineering And Management, Jalgaon",Jalgaon,,Un-Aided,active,,,autonomous,,DOC-dbc3d70858c92d0b,,validated,FALSE
-05108,"Maratha Vidya Prasarak Samaj's Karmaveer Adv. Baburao Ganpatrao Thakare College Of Engineering, Nashik",Nashik,,Un-Aided,active,,,autonomous,,DOC-a7b622367f2cf735,,validated,FALSE
-05109,"Sandip Foundation, Sandip Institute of Technology and Research Centre, Mahiravani, Nashik",Nashik,,Un-Aided,active,,,autonomous,,DOC-d62aa2707aa0bb14,,validated,FALSE
-05121,"K. K. Wagh Institute of Engineering Education and Research, Nashik",Nashik,,Un-Aided,active,,,autonomous,,DOC-561073ea5c3e6c74,,validated,FALSE
-05124,"Jagadamba Education Soc. Nashik's S.N.D. College of Engineering & Research, Babulgaon",Nashik,,Un-Aided,active,,,autonomous,,DOC-85ac254c2e794f80,,validated,FALSE
-05125,"Pravara Rural Education Society's Sir Visvesvaraya Institute of Technology, Chincholi Dist. Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-cf6b1c35240c681b,,validated,FALSE
-05130,"Brahma Valley College of Engineering & Research, Trimbakeshwar, Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-72ceccb190651ad0,,validated,FALSE
-05139,"Pravara Rural College of Engineering, Loni, Pravaranagar, Ahmednagar.",Ahilyanagar,,Un-Aided,active,,,autonomous,,DOC-189e5654344e2dbb,,validated,FALSE
-05151,"MET Bhujbal Knowledge City MET League's Engineering College, Adgaon, Nashik.",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-cc623f4044d6ebe7,,validated,FALSE
-05152,"G H Raisoni College of Engineering and Management, Jalgaon",Jalgaon,,Un-Aided,active,,,autonomous,,DOC-8ffa3ad20312c879,,validated,FALSE
-05160,"Sanjivani Rural Education Society's Sanjivani College of Engineering, Kopargaon",Ahilyanagar,,Un-Aided,active,,,autonomous,,DOC-d505ac816bf8eebc,,validated,FALSE
-05161,"Dr. Vithalrao Vikhe Patil College of Engineering, Ahmednagar",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-a827f984fb3e4132,,validated,FALSE
-05162,"Amrutvahini Sheti & Shikshan Vikas Sanstha's Amrutvahini College of Engineering, Sangamner",Ahilyanagar,,Un-Aided,active,,,autonomous,,DOC-a82b981d7ee97e16,,validated,FALSE
-05164,"P.S.G.V.P. Mandal's D.N. Patel College of Engineering, Shahada, Dist. Nandurbar",Nandurbar,,Un-Aided,active,,,non_autonomous,,DOC-4bbee604b0c07a5d,,validated,FALSE
-05168,"T.M.E. Society's J.T.Mahajan College of Engineering, Faizpur",Jalgaon,,Un-Aided,active,,,non_autonomous,,DOC-961385b2a6abc1c9,,validated,FALSE
-05169,"Nagaon Education Society's Gangamai College of Engineering, Nagaon, Tal Dist Dhule",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-5f5b49c575a4e150,,validated,FALSE
-05170,"Hindi Seva Mandal's Shri Sant Gadgebaba College of Engineering & Technology, Bhusawal",Jalgaon,,Un-Aided,active,,,autonomous,,DOC-6166d526d64639e2,,validated,FALSE
-05171,"Godavari Foundation's Godavari College Of Engineering, Jalgaon",Jalgaon,,Un-Aided,active,,,autonomous,,DOC-423857d58ade6915,,validated,FALSE
-05172,"R. C. Patel Institute of Technology, Shirpur",Dhule,,Un-Aided,active,,,autonomous,,DOC-a94d99150622ee12,,validated,FALSE
-05173,"SNJB's Late Sau. Kantabai Bhavarlalji Jain College of Engineering, (Jain Gurukul), Neminagar,Chandwad,(Nashik)",Nashik,,Un-Aided,active,,,autonomous,,DOC-709fc788061ebccc,,validated,FALSE
-05177,"Matoshri College of Engineering and Research Centre, Eklahare, Nashik",Nashik,,Un-Aided,active,,,autonomous,,DOC-39d7b4cf8f293e04,,validated,FALSE
-05179,"Vishwabharati Academy's College of Engineering, Ahmednagar",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-0c3854d3cef0e06c,,validated,FALSE
-05181,"Gokhale Education Society's, R.H. Sapat College of Engineering, Management Studies and Research, Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-253ae888853c9cde,,validated,FALSE
-05182,"Kalyani Charitable Trust, Late Gambhirrao Natuba Sapkal College of Engineering, Anjaneri, Trimbakeshwar Road, Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-37c1fdc4c3f9ca37,,validated,FALSE
-05184,"Amruta Vaishnavi Education & Welfare Trust's Shatabdi Institute of Engineering & Research, Agaskhind Tal. Sinnar",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-ab76bc947d703fd6,,validated,FALSE
-05223,"SMT. SHARCHCHANDRIKA SURESH PATIL INSTITUTE OF TECHNOLOGY (ENGINEERING & POLYTECHNIC), CHOPDA",Jalgaon,,Un-Aided,active,,,non_autonomous,,DOC-7b717efb834bd792,,validated,FALSE
-05235,"Late Bhausaheb Hiray Smarnika Samiti Trust Sanchalit Polytechnic, Malegaon, Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-27f16e3dc90cfdae,,validated,FALSE
-05239,JAMIA INSTITUTE OF TECHNOLOGY,Nandurbar,,Un-Aided,active,,,non_autonomous,,DOC-a486db5c60669816,,validated,FALSE
-05244,"MET's Institute of Technology Polytechnic, Bhujbal Knowledge City, Adgaon Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-c768a23552f23a63,,validated,FALSE
-05249,"Trimurti Shikshan Prasarak Mandal, Trimurti Institute Of Technology, Paladhi Bk, Jalgaon",Jalgaon,,Un-Aided,active,,,non_autonomous,,DOC-b469b4cf73257ec0,,validated,FALSE
-05256,Matoshri Aasarabai Institute of Technology and Research Centre,Nashik,,Un-Aided,active,,,non_autonomous,,DOC-3918f4ff0a2c645d,,validated,FALSE
-05263,"Matoshri Education Soceity, Matoshri Institute Of Technology, Dhanore, Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-b046d5198432d4b6,,validated,FALSE
-05303,"Hon. Shri. Babanrao Pachpute Vichardhara Trust, Group of Institutions (Integrated Campus)-Parikrama, Kashti Shrigondha,",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-578d368494374615,,validated,FALSE
+04302,"Gondia Education Society's Manoharbhai Patel Institute Of Engineering & Technology, Shahapur, Bhandara",Bhandara,,Un-Aided,active,,,non_autonomous,,DOC-3d819be847694b01,,validated,FALSE
+04304,"Cummins College of Engineering For Women, Sukhali (Gupchup), Tal. Hingna Hingna Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-e05985c6e775c6b1,,validated,FALSE
+04613,"Suryodaya College of Engineering & Technology, Nagpur",Nagpur,,Un-Aided,active,,,autonomous,,DOC-a4a63e9e2c689dac,,validated,FALSE
+04648,"R.V. Parankar College of Engineering & Technology, Arvi, Dist Wardha",Wardha,,Un-Aided,active,,,non_autonomous,,DOC-b9aecba54f55f550,,validated,FALSE
+04649,"Bajaj Institute of Technology, Wardha",Wardha,,Un-Aided,active,,,non_autonomous,,DOC-a2ab3e0170202a63,,validated,FALSE
+04679,"Karanjekar College of Engineering & Management, Sakoli",Bhandara,,Un-Aided,active,,,non_autonomous,,DOC-54e489595b4438d7,,validated,FALSE
+04703,"Somayya Institute of Technology, Chandrapur",Chandrapur,,Un-Aided,active,,,non_autonomous,,DOC-f1600ef2aca73d21,,validated,FALSE
+04762,"Mata Mahakali College of Engineering & Technology, Warora",Chandrapur,,Un-Aided,active,,,non_autonomous,,DOC-2d4c4c9c33445d98,,validated,FALSE
+04766,Dr. Arun Motghare College of Engineering and Technology,Bhandara,,Un-Aided,active,,,non_autonomous,,DOC-658570ad95b18bf0,,validated,FALSE
+05003,"University Institute of Chemical Technology, North Maharashtra University, Jalgaon",Jalgaon,,University Department,active,,,non_autonomous,,DOC-4b91d6d9f61b2d38,,validated,FALSE
+05004,"Government College of Engineering, Jalgaon",Jalgaon,,Government,active,,,autonomous,,DOC-4022ddf3fd9aa00b,,validated,FALSE
+05103,"Shri Shivaji Vidya Prasarak Sanstha's Late Bapusaheb Shivaji Rao Deore College of Engineering,Dhule",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-56e3dca2c5d2614c,,validated,FALSE
+05104,"Shramsadhana Bombay Trust, College of Engineering & Technology, Jalgaon",Jalgaon,,Un-Aided,active,,,non_autonomous,,DOC-747f9f4f254d267b,,validated,FALSE
+05106,"Khandesh College Education Society's College Of Engineering And Management, Jalgaon",Jalgaon,,Un-Aided,active,,,autonomous,,DOC-542128dfb1361158,,validated,FALSE
+05108,"Maratha Vidya Prasarak Samaj's Karmaveer Adv. Baburao Ganpatrao Thakare College Of Engineering, Nashik",Nashik,,Un-Aided,active,,,autonomous,,DOC-4c3de101037462a5,,validated,FALSE
+05109,"Sandip Foundation, Sandip Institute of Technology and Research Centre, Mahiravani, Nashik",Nashik,,Un-Aided,active,,,autonomous,,DOC-01bce820a56dd5dc,,validated,FALSE
+05121,"K. K. Wagh Institute of Engineering Education and Research, Nashik",Nashik,,Un-Aided,active,,,autonomous,,DOC-0d95ef4473c526da,,validated,FALSE
+05124,"Jagadamba Education Soc. Nashik's S.N.D. College of Engineering & Research, Babulgaon",Nashik,,Un-Aided,active,,,autonomous,,DOC-319bd18d8cb008b8,,validated,FALSE
+05125,"Pravara Rural Education Society's Sir Visvesvaraya Institute of Technology, Chincholi Dist. Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-d3262b45a1e1966e,,validated,FALSE
+05130,"Brahma Valley College of Engineering & Research, Trimbakeshwar, Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-e98f41096b099f14,,validated,FALSE
+05139,"Pravara Rural College of Engineering, Loni, Pravaranagar, Ahmednagar.",Ahilyanagar,,Un-Aided,active,,,autonomous,,DOC-bf38479764d97be5,,validated,FALSE
+05151,"MET Bhujbal Knowledge City MET League's Engineering College, Adgaon, Nashik.",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-fafe782cd777cb1f,,validated,FALSE
+05152,"G H Raisoni College of Engineering and Management, Jalgaon",Jalgaon,,Un-Aided,active,,,autonomous,,DOC-7c227edaa52b06ee,,validated,FALSE
+05160,"Sanjivani Rural Education Society's Sanjivani College of Engineering, Kopargaon",Ahilyanagar,,Un-Aided,active,,,autonomous,,DOC-7ae36a959b0d0830,,validated,FALSE
+05161,"Dr. Vithalrao Vikhe Patil College of Engineering, Ahmednagar",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-31b18af066b22e93,,validated,FALSE
+05162,"Amrutvahini Sheti & Shikshan Vikas Sanstha's Amrutvahini College of Engineering, Sangamner",Ahilyanagar,,Un-Aided,active,,,autonomous,,DOC-4e6c46ca73adbf91,,validated,FALSE
+05164,"P.S.G.V.P. Mandal's D.N. Patel College of Engineering, Shahada, Dist. Nandurbar",Nandurbar,,Un-Aided,active,,,non_autonomous,,DOC-59b175cec0d3220f,,validated,FALSE
+05168,"T.M.E. Society's J.T.Mahajan College of Engineering, Faizpur",Jalgaon,,Un-Aided,active,,,non_autonomous,,DOC-986622cba822102a,,validated,FALSE
+05169,"Nagaon Education Society's Gangamai College of Engineering, Nagaon, Tal Dist Dhule",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-8c73bbef55deedc5,,validated,FALSE
+05170,"Hindi Seva Mandal's Shri Sant Gadgebaba College of Engineering & Technology, Bhusawal",Jalgaon,,Un-Aided,active,,,autonomous,,DOC-d6b5dc3e7742e307,,validated,FALSE
+05171,"Godavari Foundation's Godavari College Of Engineering, Jalgaon",Jalgaon,,Un-Aided,active,,,autonomous,,DOC-cd96a77e7940297e,,validated,FALSE
+05172,"R. C. Patel Institute of Technology, Shirpur",Dhule,,Un-Aided,active,,,autonomous,,DOC-e12669828bec0aaa,,validated,FALSE
+05173,"SNJB's Late Sau. Kantabai Bhavarlalji Jain College of Engineering, (Jain Gurukul), Neminagar,Chandwad,(Nashik)",Nashik,,Un-Aided,active,,,autonomous,,DOC-6758ea57ab439667,,validated,FALSE
+05177,"Matoshri College of Engineering and Research Centre, Eklahare, Nashik",Nashik,,Un-Aided,active,,,autonomous,,DOC-9e647d4ba8cb2c15,,validated,FALSE
+05179,"Vishwabharati Academy's College of Engineering, Ahmednagar",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-0829999e4683b24f,,validated,FALSE
+05181,"Gokhale Education Society's, R.H. Sapat College of Engineering, Management Studies and Research, Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-a38c190088b2567a,,validated,FALSE
+05182,"Kalyani Charitable Trust, Late Gambhirrao Natuba Sapkal College of Engineering, Anjaneri, Trimbakeshwar Road, Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-32c4a260b08970a7,,validated,FALSE
+05184,"Amruta Vaishnavi Education & Welfare Trust's Shatabdi Institute of Engineering & Research, Agaskhind Tal. Sinnar",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-25c5defcb7e11681,,validated,FALSE
+05223,"SMT. SHARCHCHANDRIKA SURESH PATIL INSTITUTE OF TECHNOLOGY (ENGINEERING & POLYTECHNIC), CHOPDA",Jalgaon,,Un-Aided,active,,,non_autonomous,,DOC-48fff185fddd57e4,,validated,FALSE
+05235,"Late Bhausaheb Hiray Smarnika Samiti Trust Sanchalit Polytechnic, Malegaon, Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-49514620e8fa3362,,validated,FALSE
+05239,JAMIA INSTITUTE OF TECHNOLOGY,Nandurbar,,Un-Aided,active,,,non_autonomous,,DOC-cf84342f6c3bad50,,validated,FALSE
+05244,"MET's Institute of Technology Polytechnic, Bhujbal Knowledge City, Adgaon Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-26f5e51540142401,,validated,FALSE
+05249,"Trimurti Shikshan Prasarak Mandal, Trimurti Institute Of Technology, Paladhi Bk, Jalgaon",Jalgaon,,Un-Aided,active,,,non_autonomous,,DOC-c65bbbf1670e5d6b,,validated,FALSE
+05256,Matoshri Aasarabai Institute of Technology and Research Centre,Nashik,,Un-Aided,active,,,non_autonomous,,DOC-54bb759fe4895b4f,,validated,FALSE
+05263,"Matoshri Education Soceity, Matoshri Institute Of Technology, Dhanore, Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-9590b7440cbc56ee,,validated,FALSE
+05303,"Hon. Shri. Babanrao Pachpute Vichardhara Trust, Group of Institutions (Integrated Campus)-Parikrama, Kashti Shrigondha,",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-27eb650d18824f20,,validated,FALSE
 05322,"Jamia Institute Of Engineering And Management Studies, Akkalkuwa",Not available,,Un-Aided Religious Minority - Muslim,active,,,unknown,,DOC-9db0899eaf0cd73a,,validated,FALSE
-05330,"PUNE VIDYARTHI GRIHA’S COLLEGE OF ENGINEERING & SHRIKRUSHNA S. DHAMANKAR INSTITUTE OF MANAGEMENT, NASHIK",Nashik,,Un-Aided,active,,,autonomous,,DOC-d38722a211baee7c,,validated,FALSE
-05331,"Sandip Foundation's, Sandip Institute of Engineering & Management, Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-25cb32a06cd243b6,,validated,FALSE
-05365,"Vardhaman Education & Welfare Society, Ahinsa Institute of Technology, Post. Dondaicha, Dhule",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-b4197ad8595ddec5,,validated,FALSE
-05370,"Kedareshwar Gramin Vikas Pratishthan, Samajbhushan Eknathrao Dhakane College, of Engineering, Shevgaon",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-47d7f7dc873dce78,,validated,FALSE
-05380,"Adsul's Technical Campus, Chas Dist. Ahmednagar",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-0852c3450f1b3ca9,,validated,FALSE
-05381,"Shri. Jaykumar Rawal Institute of Technology, Dondaicha.",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-5951b2e0992d24fa,,validated,FALSE
-05382,"Ahmednagar Jilha Maratha Vidya Prasarak Samajache, Shri. Chhatrapati Shivaji Maharaj College of Engineering, Nepti",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-980d575c3c9de996,,validated,FALSE
-05390,"K.V.N. Naik S. P. Sansth's Loknete Gopinathji Munde Institute of Engineering Education & Research, Nashik.",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-542653a35529dd5e,,validated,FALSE
-05395,Ashok Institute of Engineering & Technology,Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-5b9a3c497edcc469,,validated,FALSE
-05396,"College of Engineering and Technology ,North Maharashtra Knowledge City, Jalgaon",Jalgaon,,Un-Aided,active,,,non_autonomous,,DOC-c1d221803398c216,,validated,FALSE
-05399,"Sanghavi College of Engineering, Varvandi, Nashik.",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-41a7bcb0b7df470e,,validated,FALSE
-05401,"Jawahar Education Society's Institute of Technology, Management & Research, Nashik.",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-f7b72285c2e8858b,,validated,FALSE
-05408,"Vidya Niketan College of Engineering, Bota Sangamner",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-007c4889fc53bd11,,validated,FALSE
-05409,"Rajiv Gandhi College of Engineering, At Post Karjule Hariya Tal.Parner, Dist.Ahmednagar",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-21d2ae437e5a215f,,validated,FALSE
-05411,"Maulana Mukhtar Ahmad Nadvi Technical Campus, Malegaon.",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-64c303655762262c,,validated,FALSE
-05413,"Netaji Subhashchandra Bose Edu Trust,Netaji Polytechnic.,Dhule",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-f8fa0283320115ef,,validated,FALSE
-05414,"Nikam Institute of Technology And Management Studies ,Dhule",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-0101b1c540d00bed,,validated,FALSE
-05418,"Guru Gobind Singh College of Engineering & Research Centre, Nashik.",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-e6172b7e6d85e263,,validated,FALSE
-05433,"R.C. Patel College of Engineering and Polytechnic, Shirpur",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-6724a255afbf1e1c,,validated,FALSE
+05330,"PUNE VIDYARTHI GRIHA’S COLLEGE OF ENGINEERING & SHRIKRUSHNA S. DHAMANKAR INSTITUTE OF MANAGEMENT, NASHIK",Nashik,,Un-Aided,active,,,autonomous,,DOC-a91d980e5b7e2ed4,,validated,FALSE
+05331,"Sandip Foundation's, Sandip Institute of Engineering & Management, Nashik",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-d3aae3063f6d1d13,,validated,FALSE
+05365,"Vardhaman Education & Welfare Society, Ahinsa Institute of Technology, Post. Dondaicha, Dhule",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-9a438c9f686a4e4d,,validated,FALSE
+05370,"Kedareshwar Gramin Vikas Pratishthan, Samajbhushan Eknathrao Dhakane College, of Engineering, Shevgaon",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-1f31a5dd2ef53b32,,validated,FALSE
+05380,"Adsul's Technical Campus, Chas Dist. Ahmednagar",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-e3b3bf2850bc575f,,validated,FALSE
+05381,"Shri. Jaykumar Rawal Institute of Technology, Dondaicha.",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-7470778dbb409ed3,,validated,FALSE
+05382,"Ahmednagar Jilha Maratha Vidya Prasarak Samajache, Shri. Chhatrapati Shivaji Maharaj College of Engineering, Nepti",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-4e7c8b341f1ef076,,validated,FALSE
+05390,"K.V.N. Naik S. P. Sansth's Loknete Gopinathji Munde Institute of Engineering Education & Research, Nashik.",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-99a255539a515df0,,validated,FALSE
+05395,Ashok Institute of Engineering & Technology,Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-f4a1448f3b90b394,,validated,FALSE
+05396,"College of Engineering and Technology ,North Maharashtra Knowledge City, Jalgaon",Jalgaon,,Un-Aided,active,,,non_autonomous,,DOC-e425a8595742a537,,validated,FALSE
+05399,"Sanghavi College of Engineering, Varvandi, Nashik.",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-470bd19a874df39d,,validated,FALSE
+05401,"Jawahar Education Society's Institute of Technology, Management & Research, Nashik.",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-0fcd302bf14a1c80,,validated,FALSE
+05408,"Vidya Niketan College of Engineering, Bota Sangamner",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-ee50d484dc97e3d7,,validated,FALSE
+05409,"Rajiv Gandhi College of Engineering, At Post Karjule Hariya Tal.Parner, Dist.Ahmednagar",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-9ac7c51a54442368,,validated,FALSE
+05411,"Maulana Mukhtar Ahmad Nadvi Technical Campus, Malegaon.",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-b17ff3d6f00b819d,,validated,FALSE
+05413,"Netaji Subhashchandra Bose Edu Trust,Netaji Polytechnic.,Dhule",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-adaf12d3166a1a9d,,validated,FALSE
+05414,"Nikam Institute of Technology And Management Studies ,Dhule",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-4dc33f49af829312,,validated,FALSE
+05418,"Guru Gobind Singh College of Engineering & Research Centre, Nashik.",Nashik,,Un-Aided,active,,,non_autonomous,,DOC-1bc01c2068f37ce8,,validated,FALSE
+05433,"R.C. Patel College of Engineering and Polytechnic, Shirpur",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-45c3c72bb2a9e7c4,,validated,FALSE
 05449,"Shri Vile Parle Kelavani Mandal's Institute of Technology, Dhule",Not available,,Un-Aided Linguistic Minority - Gujarathi,active,,,unknown,,DOC-9db0899eaf0cd73a,,validated,FALSE
-05497,"P.G. College of Engineering & Technology, Nandurbar",Nandurbar,,Un-Aided,active,,,non_autonomous,,DOC-aae2bf803d3b5c3b,,validated,FALSE
-05509,"Shri Swami Samarth Institute of Management and Technology, Malwadi-Bota",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-b6b63f7bcafd2fcc,,validated,FALSE
-05513,"MKD Institute of Technology, Nadurbar",Nandurbar,,Un-Aided,active,,,non_autonomous,,DOC-e474ccbbcc6ee807,,validated,FALSE
-05545,"Shri Vile Parle Kelavani Mandal's College of Engineering, Shirpur",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-d9da987d39e35c8f,,validated,FALSE
-05597,VAMANRAO ITHAPE COLLEGE OF ENGINEERING AND MANAGEMENT,Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-5d428852916deb8d,,validated,FALSE
-05682,Sai College of Engineering and Technology,Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-0249185bff696d16,,validated,FALSE
-05683,Saptashrungi College of Engineering and Polytechnic,Nashik,,Un-Aided,active,,,non_autonomous,,DOC-472e44848acaa39e,,validated,FALSE
-05686,Loknete Suhas Dwarkanath Kande College of Engineering Management and Research,Nashik,,Un-Aided,active,,,non_autonomous,,DOC-ecb81ba822b01246,,validated,FALSE
-05688,MES Institute of Engineering and Technology,Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-78021c1533c84b2d,,validated,FALSE
-06004,"Government College of Engineering & Research, Avasari Khurd",Pune,,Government,active,,,non_autonomous,,DOC-f8bf48737397b84e,,validated,FALSE
-06005,"Government College of Engineering, Karad",Satara,,Government,active,,,autonomous,,DOC-2e84dda6281bb7b6,,validated,FALSE
+05497,"P.G. College of Engineering & Technology, Nandurbar",Nandurbar,,Un-Aided,active,,,non_autonomous,,DOC-e595e3ef064e4840,,validated,FALSE
+05509,"Shri Swami Samarth Institute of Management and Technology, Malwadi-Bota",Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-86d2ae77cdb6de2f,,validated,FALSE
+05513,"MKD Institute of Technology, Nadurbar",Nandurbar,,Un-Aided,active,,,non_autonomous,,DOC-f1cb4be180b0ca26,,validated,FALSE
+05545,"Shri Vile Parle Kelavani Mandal's College of Engineering, Shirpur",Dhule,,Un-Aided,active,,,non_autonomous,,DOC-206782826306dcdd,,validated,FALSE
+05597,VAMANRAO ITHAPE COLLEGE OF ENGINEERING AND MANAGEMENT,Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-75c0634afa678f70,,validated,FALSE
+05682,Sai College of Engineering and Technology,Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-a6c24e4d330ca698,,validated,FALSE
+05683,Saptashrungi College of Engineering and Polytechnic,Nashik,,Un-Aided,active,,,non_autonomous,,DOC-3d6cc759c0d6185b,,validated,FALSE
+05686,Loknete Suhas Dwarkanath Kande College of Engineering Management and Research,Nashik,,Un-Aided,active,,,non_autonomous,,DOC-470f7b544e1d6e70,,validated,FALSE
+05688,MES Institute of Engineering and Technology,Ahilyanagar,,Un-Aided,active,,,non_autonomous,,DOC-1e46256e94217e70,,validated,FALSE
+06004,"Government College of Engineering & Research, Avasari Khurd",Pune,,Government,active,,,non_autonomous,,DOC-d5617120b9fd9a85,,validated,FALSE
+06005,"Government College of Engineering, Karad",Satara,,Government,active,,,autonomous,,DOC-cdcdfd67e1ba2438,,validated,FALSE
 06006,COEP Technological University,Not available,,University Autonomous,active,,,unknown,,DOC-0bedd926581d76eb,,validated,FALSE
-06007,"Walchand College of Engineering, Sangli",Sangli,,Government-Aided,active,,,autonomous,,DOC-d70357e533acf5fa,,validated,FALSE
-06028,SHIVAJI UNIVERSITY SCHOOL OF ENGINEERING AND TECHNOLOGY (DEPARTMENT OF TECHNOLOGY),Kolhapur,,University Department,active,,,non_autonomous,,DOC-bed917a563b91a3c,,validated,FALSE
-06036,"Government College of Engineering, Kolhapur",Kolhapur,,Government,active,,,non_autonomous,,DOC-91d5dc71e43efdce,,validated,FALSE
-06041,"Punyashlok Ahilyadevi Holkar Solapur University, Solapur",Solapur,,University Department,active,,,non_autonomous,,DOC-46db0248191019a2,,validated,FALSE
-06122,"TSSMS's Pd. Vasantdada Patil Institute of Technology, Bavdhan, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-340d3005abacf90b,,validated,FALSE
-06138,"Genba Sopanrao Moze Trust Parvatibai Genba Moze College of Engineering,Wagholi, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-a9c4c14307c76402,,validated,FALSE
-06139,"Progressive Education Society's Modern College of Engineering, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-45d2121e52f82120,,validated,FALSE
-06141,"Jaywant Shikshan Prasarak Mandal's,Rajarshi Shahu College of Engineering, Tathawade, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-40df40070275a478,,validated,FALSE
-06144,"Genba Sopanrao Moze College of Engineering, Baner-Balewadi, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-218d4d0bf952eb00,,validated,FALSE
-06145,"JSPM'S Jaywantrao Sawant College of Engineering,Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-d01a294e574e5710,,validated,FALSE
-06146,"MIT Academy of Engineering,Alandi, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-c7bfd40b786d6991,,validated,FALSE
-06149,"Siddhant College of Engineering, A/p Sudumbare, Tal.Maval, Dist-Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-8b2b07251119d77a,,validated,FALSE
-06155,"G.H.Raisoni College of Engineering & Management, Wagholi, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-0736da263632ff28,,validated,FALSE
-06156,"Marathwada Mitra Mandal's College of Engineering, Karvenagar, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-6aefcc190b424617,,validated,FALSE
-06175,"Pimpri Chinchwad Education Trust, Pimpri Chinchwad College of Engineering, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-3e592eb14936fcc6,,validated,FALSE
-06177,"Sinhgad College of Engineering, Vadgaon (BK), Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-f5e4c7641fef9ba4,,validated,FALSE
-06178,"Sinhgad Technical Education Society's Smt. Kashibai Navale College of Engineering,Vadgaon,Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-138d79b571b4a3e9,,validated,FALSE
-06179,"Indira College of Engineering & Management, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-a0a1ef6c58011b3c,,validated,FALSE
-06182,"Sinhgad Technical Education Society, Sinhgad Institute of Technology and Science, Narhe (Ambegaon)",Pune,,Un-Aided,active,,,non_autonomous,,DOC-38322bd0373e26b6,,validated,FALSE
-06183,"Al-Ameen Educational and Medical Foundation, College of Engineering, Koregaon, Bhima",Pune,,Un-Aided,active,,,non_autonomous,,DOC-fb7e34f3e46a0f0c,,validated,FALSE
-06184,"K. J.'s Educational Institut Trinity College of Engineering and Research, Pisoli, Haveli",Pune,,Un-Aided,active,,,autonomous,,DOC-e63a4f0acee94790,,validated,FALSE
-06185,"Sinhgad Institute of Technology, Kusgaon (BK) Lonavala",Pune,,Un-Aided,active,,,non_autonomous,,DOC-3a551c7f72673544,,validated,FALSE
-06187,"Sinhgad Academy of Engineering, Kondhwa (BK) Kondhwa-Saswad Road, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-e32736f5ea9377c4,,validated,FALSE
-06203,"Marathwada Mitra Mandal's Institute of Technology, Lohgaon, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-877e2d0ca7148a76,,validated,FALSE
-06206,"Pune District Education Association's College of Engineering, Manjari(Bk), Hadapsar, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-c4360b8854aae8da,,validated,FALSE
-06207,"Dr. D. Y. Patil Unitech Society's Dr. D. Y. Patil Institute of Technology, Pimpri, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-c2e97887cb14c3eb,,validated,FALSE
-06214,"K. E. Society's Rajarambapu Institute of Technology, Walwa, Sangli",Sangli,,Un-Aided,active,,,autonomous,,DOC-016d1c0ef05d4257,,validated,FALSE
-06217,"Shri. Balasaheb Mane Shikshan Prasarak Mandal's, Ashokrao Mane Group of Institutions",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-11290be8bd43a7e7,,validated,FALSE
-06219,"KSGBS's Bharat- Ratna Indira Gandhi College of Engineering, Kegaon, Solapur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-d4431ab327e72b2d,,validated,FALSE
-06220,"SVERI's College of Engineering, Pandharpur",Solapur,,Un-Aided,active,,,autonomous,,DOC-91f445007bd2f013,,validated,FALSE
-06222,"Dattajirao Kadam Technical Education Society's Textile & Engineering Institute, Ichalkaranji.",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-65a0d947d0ddf5d2,,validated,FALSE
-06223,"Pradnya Niketan Education Society's Nagesh Karajagi Orchid College of Engineering & Technology, Solapur",Solapur,,Un-Aided,active,,,autonomous,,DOC-a3b510710773dc13,,validated,FALSE
-06250,"D.Y. Patil College of Engineering and Technology, Kolhapur",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-2d11f342d0171bc9,,validated,FALSE
-06265,"Walchand Institute of Technology, Solapur",Solapur,,Un-Aided,active,,,autonomous,,DOC-9953f72a04354262,,validated,FALSE
-06267,"Kolhapur Institute of Technology's College of Engineering(Autonomous), Kolhapur",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-58b5d80de6a902a0,,validated,FALSE
-06268,"Tatyasaheb Kore Institute of Engineering and Technology, Warananagar",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-c9ad924bf8f1966e,,validated,FALSE
-06269,"Shetkari Shikshan Mandal's Pad. Vasantraodada Patil Institute of Technology, Budhgaon, Sangli",Sangli,,Un-Aided,active,,,autonomous,,DOC-a3f5c6eeaf08c6e8,,validated,FALSE
-06270,"Rayat Shikshan Sanstha's Karmaveer Bhaurao Patil College of Engineering, Satara",Satara,,Un-Aided,active,,,autonomous,,DOC-d19fdd5e8f4c3bd2,,validated,FALSE
-06271,Pune Institute of Computer Technology,Pune,,Un-Aided,active,,,autonomous,,DOC-437b1aaadc258e10,,validated,FALSE
-06272,"Dr. D. Y. Patil Pratishthan's D.Y.Patil College of Engineering Akurdi, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-87c28ea687e74514,,validated,FALSE
-06273,"Bansilal Ramnath Agarawal Charitable Trust's Vishwakarma Institute of Technology, Bibwewadi, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-564298d090a9aea1,,validated,FALSE
-06274,"PVG's College of Engineering, Technology & Management",Pune,,Un-Aided,active,,,autonomous,,DOC-19187c0e9e70e3a3,,validated,FALSE
-06275,"Shivnagar Vidya Prasarak Mandal's College of Engineering, Malegaon-Baramati",Pune,,Un-Aided,active,,,non_autonomous,,DOC-b7af2a1efd0203fb,,validated,FALSE
-06276,"MKSSS's Cummins College of Engineering for Women, Karvenagar,Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-b9e532440fcfe3b1,,validated,FALSE
-06277,"Dr. J. J. Magdum Charitable Trust's Dr. J.J. Magdum College of Engineering, Jaysingpur",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-4553e0711a815349,,validated,FALSE
-06278,"All India Shri Shivaji Memorial Society's College of Engineering, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-da22c0b2ea0f88f6,,validated,FALSE
-06281,"Modern Education Society's Wadia College of Engineering, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-0527956e0083bc9e,,validated,FALSE
-06282,"All India Shri Shivaji Memorial Society's Institute of Information Technology,Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-91714d93ba3deeec,,validated,FALSE
-06283,"Annasaheb Dange College of Engineering and Technology, Ashta, Sangli",Sangli,,Un-Aided,active,,,autonomous,,DOC-3697fe963a437835,,validated,FALSE
-06284,"Vidya Pratishthan's Kamalnayan Bajaj Institute of Engineering & Technology, Baramati Dist.Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-6165ddecb9620c0d,,validated,FALSE
-06285,"Bharati Vidyapeeth's College of Engineering for Women, Katraj, Dhankawadi, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-2987ca4e20a1e8cc,,validated,FALSE
-06288,"Bharati Vidyapeeth's College of Engineering, Kolhapur",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-9cae9a5735e1f45a,,validated,FALSE
+06007,"Walchand College of Engineering, Sangli",Sangli,,Government-Aided,active,,,autonomous,,DOC-5a2ab85b95a8d9f0,,validated,FALSE
+06028,SHIVAJI UNIVERSITY SCHOOL OF ENGINEERING AND TECHNOLOGY (DEPARTMENT OF TECHNOLOGY),Kolhapur,,University Department,active,,,non_autonomous,,DOC-60186cada9843eee,,validated,FALSE
+06036,"Government College of Engineering, Kolhapur",Kolhapur,,Government,active,,,non_autonomous,,DOC-f33a094a7450dbdb,,validated,FALSE
+06041,"Punyashlok Ahilyadevi Holkar Solapur University, Solapur",Solapur,,University Department,active,,,non_autonomous,,DOC-8ae33289de1b0e6f,,validated,FALSE
+06122,"TSSMS's Pd. Vasantdada Patil Institute of Technology, Bavdhan, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-fdff6675ae4e4549,,validated,FALSE
+06138,"Genba Sopanrao Moze Trust Parvatibai Genba Moze College of Engineering,Wagholi, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-97258a46157dcd79,,validated,FALSE
+06139,"Progressive Education Society's Modern College of Engineering, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-7c15ee8b5b0d369c,,validated,FALSE
+06141,"Jaywant Shikshan Prasarak Mandal's,Rajarshi Shahu College of Engineering, Tathawade, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-236e51748ae2c558,,validated,FALSE
+06144,"Genba Sopanrao Moze College of Engineering, Baner-Balewadi, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-db1abe087e7711e7,,validated,FALSE
+06145,"JSPM'S Jaywantrao Sawant College of Engineering,Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-f8129861047600a1,,validated,FALSE
+06146,"MIT Academy of Engineering,Alandi, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-c136ff5a91cdac70,,validated,FALSE
+06149,"Siddhant College of Engineering, A/p Sudumbare, Tal.Maval, Dist-Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-0cbf8420d943738b,,validated,FALSE
+06155,"G.H.Raisoni College of Engineering & Management, Wagholi, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-bf10782bc39cffd6,,validated,FALSE
+06156,"Marathwada Mitra Mandal's College of Engineering, Karvenagar, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-fa4c2f8ec6a27fa9,,validated,FALSE
+06175,"Pimpri Chinchwad Education Trust, Pimpri Chinchwad College of Engineering, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-2282e57e2fee982c,,validated,FALSE
+06177,"Sinhgad College of Engineering, Vadgaon (BK), Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-4f96322fceaf5db3,,validated,FALSE
+06178,"Sinhgad Technical Education Society's Smt. Kashibai Navale College of Engineering,Vadgaon,Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-d734955dda91b8bd,,validated,FALSE
+06179,"Indira College of Engineering & Management, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-5951828e0e957071,,validated,FALSE
+06182,"Sinhgad Technical Education Society, Sinhgad Institute of Technology and Science, Narhe (Ambegaon)",Pune,,Un-Aided,active,,,non_autonomous,,DOC-445e89ca18431489,,validated,FALSE
+06183,"Al-Ameen Educational and Medical Foundation, College of Engineering, Koregaon, Bhima",Pune,,Un-Aided,active,,,non_autonomous,,DOC-efddc1a35921017c,,validated,FALSE
+06184,"K. J.'s Educational Institut Trinity College of Engineering and Research, Pisoli, Haveli",Pune,,Un-Aided,active,,,autonomous,,DOC-becc3a843b5a8e7e,,validated,FALSE
+06185,"Sinhgad Institute of Technology, Kusgaon (BK) Lonavala",Pune,,Un-Aided,active,,,non_autonomous,,DOC-291a771177143ed5,,validated,FALSE
+06187,"Sinhgad Academy of Engineering, Kondhwa (BK) Kondhwa-Saswad Road, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-d619803da33bd2cc,,validated,FALSE
+06203,"Marathwada Mitra Mandal's Institute of Technology, Lohgaon, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-78840abcfeef79a9,,validated,FALSE
+06206,"Pune District Education Association's College of Engineering, Manjari(Bk), Hadapsar, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-a28536ab96bdf4ce,,validated,FALSE
+06207,"Dr. D. Y. Patil Unitech Society's Dr. D. Y. Patil Institute of Technology, Pimpri, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-6dc9f6710b3c7102,,validated,FALSE
+06214,"K. E. Society's Rajarambapu Institute of Technology, Walwa, Sangli",Sangli,,Un-Aided,active,,,autonomous,,DOC-a5b17582b42e2275,,validated,FALSE
+06217,"Shri. Balasaheb Mane Shikshan Prasarak Mandal's, Ashokrao Mane Group of Institutions",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-19d083a472c364f8,,validated,FALSE
+06219,"KSGBS's Bharat- Ratna Indira Gandhi College of Engineering, Kegaon, Solapur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-93d79b670a1312fb,,validated,FALSE
+06220,"SVERI's College of Engineering, Pandharpur",Solapur,,Un-Aided,active,,,autonomous,,DOC-7043641b2e6d0e41,,validated,FALSE
+06222,"Dattajirao Kadam Technical Education Society's Textile & Engineering Institute, Ichalkaranji.",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-7a4e24fa166e087f,,validated,FALSE
+06223,"Pradnya Niketan Education Society's Nagesh Karajagi Orchid College of Engineering & Technology, Solapur",Solapur,,Un-Aided,active,,,autonomous,,DOC-8b8c0983a1f8a615,,validated,FALSE
+06250,"D.Y. Patil College of Engineering and Technology, Kolhapur",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-0fba81b3bce68658,,validated,FALSE
+06265,"Walchand Institute of Technology, Solapur",Solapur,,Un-Aided,active,,,autonomous,,DOC-709488e5a95db206,,validated,FALSE
+06267,"Kolhapur Institute of Technology's College of Engineering(Autonomous), Kolhapur",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-a97e2706809c64e9,,validated,FALSE
+06268,"Tatyasaheb Kore Institute of Engineering and Technology, Warananagar",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-3a160e3998731566,,validated,FALSE
+06269,"Shetkari Shikshan Mandal's Pad. Vasantraodada Patil Institute of Technology, Budhgaon, Sangli",Sangli,,Un-Aided,active,,,autonomous,,DOC-abe5ecf34cd1d639,,validated,FALSE
+06270,"Rayat Shikshan Sanstha's Karmaveer Bhaurao Patil College of Engineering, Satara",Satara,,Un-Aided,active,,,autonomous,,DOC-8e9613e246914691,,validated,FALSE
+06271,Pune Institute of Computer Technology,Pune,,Un-Aided,active,,,autonomous,,DOC-b8bd9b5b506378f0,,validated,FALSE
+06272,"Dr. D. Y. Patil Pratishthan's D.Y.Patil College of Engineering Akurdi, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-4ea5fa05207fadc7,,validated,FALSE
+06273,"Bansilal Ramnath Agarawal Charitable Trust's Vishwakarma Institute of Technology, Bibwewadi, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-50b8a89e991b1d4d,,validated,FALSE
+06274,"PVG's College of Engineering, Technology & Management",Pune,,Un-Aided,active,,,autonomous,,DOC-3d7471a2c014af7a,,validated,FALSE
+06275,"Shivnagar Vidya Prasarak Mandal's College of Engineering, Malegaon-Baramati",Pune,,Un-Aided,active,,,non_autonomous,,DOC-93fae6f6d897cbfe,,validated,FALSE
+06276,"MKSSS's Cummins College of Engineering for Women, Karvenagar,Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-595895264638805b,,validated,FALSE
+06277,"Dr. J. J. Magdum Charitable Trust's Dr. J.J. Magdum College of Engineering, Jaysingpur",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-bdddd4424ee54498,,validated,FALSE
+06278,"All India Shri Shivaji Memorial Society's College of Engineering, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-bf5e0180d1ff33a5,,validated,FALSE
+06281,"Modern Education Society's Wadia College of Engineering, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-5fef7555d51d3807,,validated,FALSE
+06282,"All India Shri Shivaji Memorial Society's Institute of Information Technology,Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-bd522ca059f12d51,,validated,FALSE
+06283,"Annasaheb Dange College of Engineering and Technology, Ashta, Sangli",Sangli,,Un-Aided,active,,,autonomous,,DOC-79321d5a0d220992,,validated,FALSE
+06284,"Vidya Pratishthan's Kamalnayan Bajaj Institute of Engineering & Technology, Baramati Dist.Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-b96dd8f4f0c2a913,,validated,FALSE
+06285,"Bharati Vidyapeeth's College of Engineering for Women, Katraj, Dhankawadi, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-c5c2d631f8ca7069,,validated,FALSE
+06288,"Bharati Vidyapeeth's College of Engineering, Kolhapur",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-d18b4816dfc1a536,,validated,FALSE
 06289,"B.R.A.C.T's Vishwakarma Institute of Information Technology, Kondhwa (Bk.), Pune",Not available,,Un-Aided Autonomous,active,,,unknown,,DOC-0bedd926581d76eb,,validated,FALSE
-06293,"Kai Amdar Bramhadevdada Mane Shikshan & Samajik Prathistan's Bramhadevdada Mane Institute of Technology, Solapur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-9c7ade9c6ac02cd7,,validated,FALSE
-06298,"Zeal Education Society's Zeal College of Engineering & Reserch, Narhe, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-fb32d4ddfc88b41c,,validated,FALSE
-06303,"Dr. Ashok Gujar Technical Institute's Dr. Daulatrao Aher College of Engineering, Karad",Satara,,Un-Aided,active,,,non_autonomous,,DOC-d4eb46d1c78f34cf,,validated,FALSE
-06304,"Loknete Hanumantrao Charitable Trust's Adarsh Institute of Technology and Research Centre, Vita,Sangli",Sangli,,Un-Aided,active,,,autonomous,,DOC-b49379876d3b288d,,validated,FALSE
-06305,"Late Narayandas Bhawandas Chhabada Institute of Engineering & Technology, Satara",Satara,,Un-Aided,active,,,autonomous,,DOC-efd8ddedb3a6b09c,,validated,FALSE
-06307,"Dhole Patil Education Society, Dhole Patil College of Engineering, Wagholi, Tal. Haveli",Pune,,Un-Aided,active,,,non_autonomous,,DOC-5b4fb7b288104a4c,,validated,FALSE
-06308,"Shanti Education Society, A.G. Patil Institute of Technology, Soregaon, Solapur(North)",Solapur,,Un-Aided,active,,,autonomous,,DOC-ea1abc2e9e2bb3d3,,validated,FALSE
-06310,"Nutan Maharashtra Vidya Prasarak Mandal, Nutan Maharashtra Institute of Engineering &Technology, Talegaon station, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-4f693e95c4a22b6e,,validated,FALSE
-06311,"Jayawant Shikshan Prasarak Mandal, Bhivarabai Sawant Institute of Technology & Research, Wagholi",Pune,,Un-Aided,active,,,non_autonomous,,DOC-3f476840df055118,,validated,FALSE
-06313,"Jaywant College of Engineering & Polytechnic , Kille Macchindragad Tal. Walva District- Sangali",Sangli,,Un-Aided,active,,,non_autonomous,,DOC-01dfd6595b6a02fc,,validated,FALSE
-06315,Sanjeevan Group of Institutions,Kolhapur,,Un-Aided,active,,,autonomous,,DOC-1b1a237530693a3d,,validated,FALSE
-06317,"Sharad Institute of Technology College of Engineering, Yadrav(Ichalkaranji)",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-72214005c544799b,,validated,FALSE
+06293,"Kai Amdar Bramhadevdada Mane Shikshan & Samajik Prathistan's Bramhadevdada Mane Institute of Technology, Solapur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-9958924cac77e76d,,validated,FALSE
+06298,"Zeal Education Society's Zeal College of Engineering & Reserch, Narhe, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-c2cb31818f3d6a79,,validated,FALSE
+06303,"Dr. Ashok Gujar Technical Institute's Dr. Daulatrao Aher College of Engineering, Karad",Satara,,Un-Aided,active,,,non_autonomous,,DOC-c7f8a80293034ed3,,validated,FALSE
+06304,"Loknete Hanumantrao Charitable Trust's Adarsh Institute of Technology and Research Centre, Vita,Sangli",Sangli,,Un-Aided,active,,,autonomous,,DOC-4604614aa388d4fd,,validated,FALSE
+06305,"Late Narayandas Bhawandas Chhabada Institute of Engineering & Technology, Satara",Satara,,Un-Aided,active,,,autonomous,,DOC-27b2637cb86188f6,,validated,FALSE
+06307,"Dhole Patil Education Society, Dhole Patil College of Engineering, Wagholi, Tal. Haveli",Pune,,Un-Aided,active,,,non_autonomous,,DOC-0ef8f07997c4b68d,,validated,FALSE
+06308,"Shanti Education Society, A.G. Patil Institute of Technology, Soregaon, Solapur(North)",Solapur,,Un-Aided,active,,,autonomous,,DOC-26c6e9081687487f,,validated,FALSE
+06310,"Nutan Maharashtra Vidya Prasarak Mandal, Nutan Maharashtra Institute of Engineering &Technology, Talegaon station, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-583ed5f3c9ed2281,,validated,FALSE
+06311,"Jayawant Shikshan Prasarak Mandal, Bhivarabai Sawant Institute of Technology & Research, Wagholi",Pune,,Un-Aided,active,,,non_autonomous,,DOC-2c7a462b8ac9d185,,validated,FALSE
+06313,"Jaywant College of Engineering & Polytechnic , Kille Macchindragad Tal. Walva District- Sangali",Sangli,,Un-Aided,active,,,non_autonomous,,DOC-f3cdfe462c57d264,,validated,FALSE
+06315,Sanjeevan Group of Institutions,Kolhapur,,Un-Aided,active,,,autonomous,,DOC-8f5f2486dfcbf3ea,,validated,FALSE
+06317,"Sharad Institute of Technology College of Engineering, Yadrav(Ichalkaranji)",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-9ff04d06edbb0307,,validated,FALSE
 06318,"Abhinav Education Society's College of Engineering and Technology (Degree), Wadwadi",Not available,,Un-Aided,active,,,unknown,,DOC-9db0899eaf0cd73a,,validated,FALSE
-06319,"Shahajirao Patil Vikas Pratishthan, S.B.Patil College of Engineering, Vangali, Tal. Indapur",Pune,,Un-Aided,active,,,non_autonomous,,DOC-8886e3a6a5593b31,,validated,FALSE
-06320,"K.J.'s Educational Institute's K.J.College of Engineering & Management Research, Pisoli",Pune,,Un-Aided,active,,,non_autonomous,,DOC-50413bf7036ae015,,validated,FALSE
-06321,"Vidya Vikas Pratishthan Institute of Engineering and Technology, Solapur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-30894bbf3c78556c,,validated,FALSE
-06322,"Shree Gajanan Maharaj Shikshan Prasarak Manda'l Sharadchandra Pawar College of Engineering, Dumbarwadi",Pune,,Un-Aided,active,,,non_autonomous,,DOC-e3924c241afe6c32,,validated,FALSE
-06324,Rajgad Technical Campus,Pune,,Un-Aided,active,,,non_autonomous,,DOC-6db7b86dccfa4591,,validated,FALSE
+06319,"Shahajirao Patil Vikas Pratishthan, S.B.Patil College of Engineering, Vangali, Tal. Indapur",Pune,,Un-Aided,active,,,non_autonomous,,DOC-ed059a880b6cf6dd,,validated,FALSE
+06320,"K.J.'s Educational Institute's K.J.College of Engineering & Management Research, Pisoli",Pune,,Un-Aided,active,,,non_autonomous,,DOC-0e7a90566d289521,,validated,FALSE
+06321,"Vidya Vikas Pratishthan Institute of Engineering and Technology, Solapur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-8bff6302e51f3597,,validated,FALSE
+06322,"Shree Gajanan Maharaj Shikshan Prasarak Manda'l Sharadchandra Pawar College of Engineering, Dumbarwadi",Pune,,Un-Aided,active,,,non_autonomous,,DOC-aeeb1feff543f470,,validated,FALSE
+06324,Rajgad Technical Campus,Pune,,Un-Aided,active,,,non_autonomous,,DOC-78310b3ba6358a9f,,validated,FALSE
 06325,"Alard Charitable Trust's Alard College of Engineering and Management, Pune",Not available,,Un-Aided Linguistic Minority - Hindi,active,,,unknown,,DOC-58ca7fe5ca89dc7a,,validated,FALSE
-06326,Karmayogi Institute of Technology,Solapur,,Un-Aided,active,,,non_autonomous,,DOC-d82ca5f622ee9ccd,,validated,FALSE
-06402,"NEW INSTITUTE OF TECHNOLOGY,KOLHAPUR",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-56630144b9899ced,,validated,FALSE
+06326,Karmayogi Institute of Technology,Solapur,,Un-Aided,active,,,non_autonomous,,DOC-9d1ebc8c27bb39de,,validated,FALSE
+06402,"NEW INSTITUTE OF TECHNOLOGY,KOLHAPUR",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-cf106ae8b0711860,,validated,FALSE
 06419,"Nutan College of Engineering and Research, Talegaon Dabhade Tal. Maval, Pune",Not available,,Un-Aided,active,,,unknown,,DOC-0bedd926581d76eb,,validated,FALSE
-06444,"Shriram Institute Of Engineering & Technology, (Poly), Paniv",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-d720e6894cc20ede,,validated,FALSE
-06466,"Shree Santkrupa Shikshan Sanstha, Shree Santkrupa Institute Of Engineering & Technology, Karad",Satara,,Un-Aided,active,,,non_autonomous,,DOC-12f90cd743dbe4f4,,validated,FALSE
-06467,"Swami Vivekanand Institute Of Technology, Solapur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-4be43661b0f036e2,,validated,FALSE
-06468,"Swami Vivekananda Shikshan Sanstha, Dr. Bapuji Salunkhe Institute Of Engineering & Technology,Kolhapur",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-5c127759bc29d0f6,,validated,FALSE
-06545,"Samarth Education Trust's Arvind Gavali College Of Engineering Panwalewadi, Varye,Satara.",Satara,,Un-Aided,active,,,autonomous,,DOC-f4cfa9386e726e47,,validated,FALSE
-06609,"Jaihind College Of Engineering,Kuran",Pune,,Un-Aided,active,,,non_autonomous,,DOC-877b87c841fbd26b,,validated,FALSE
-06622,ISBM College Of Engineering Pune,Pune,,Un-Aided,active,,,non_autonomous,,DOC-9101d848274098b0,,validated,FALSE
-06625,"Universal College of Engineering & Research, Sasewadi",Pune,,Un-Aided,active,,,non_autonomous,,DOC-32079c02b7bc538e,,validated,FALSE
-06628,"Dattakala Group Of Institutions, Swami - Chincholi Tal. Daund Dist. Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-5945411a25d4c06f,,validated,FALSE
-06632,Navsahyadri Education Society's Group of Institutions,Pune,,Un-Aided,active,,,autonomous,,DOC-9e224b9f105d16b2,,validated,FALSE
-06634,"KJEI's Trinity Academy of Engineering, Yewalewadi, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-c66e301b60b2356d,,validated,FALSE
-06635,Samarth College of Engineering and Management,Pune,,Un-Aided,active,,,non_autonomous,,DOC-3df06313f568c73f,,validated,FALSE
-06640,"N. B. Navale Sinhgad College of Engineering, Kegaon, solapur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-012ed19ed375fa83,,validated,FALSE
-06643,"S K N Sinhgad College of Engineering, Korti Tal. Pandharpur Dist Solapur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-7b46352c629628e1,,validated,FALSE
-06644,"Shri. Ambabai Talim Sanstha's Sanjay Bhokare Group of Institutes, Miraj",Sangli,,Un-Aided,active,,,autonomous,,DOC-3922853b69c851f4,,validated,FALSE
-06649,"TSSM's Bhivarabai Sawant College of Engineering and Research, Narhe, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-268f7abfdb1ce4dc,,validated,FALSE
-06714,"APPASAHEB ALIAS SA.RE.PATIL INSTITUTE OF TECHNOLOGY, Dattanagar Tal-Shirol, Dist Kolhapur",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-6027c93517a33655,,validated,FALSE
-06715,Babasaheb Phadtare Engineering & Technology Kalamb-Walchandnagar Tal Indapur Dist Pune,Pune,,Un-Aided,active,,,non_autonomous,,DOC-bafeda8cc555a84c,,validated,FALSE
-06725,"New Satara Shikshan Sankul,New Satara College of Engineering & Management, Pandharpur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-3d7e99f712dd5d14,,validated,FALSE
-06732,"Ajeenkya DY Patil School of Engineering, Lohegaon, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-fcf554ed5bcf7088,,validated,FALSE
-06754,"International Institute of Information Technology (I²IT), Pune.",Pune,,Un-Aided,active,,,autonomous,,DOC-45590be4d0dbff10,,validated,FALSE
-06755,"JSPM Narhe Technical Campus, Pune.",Pune,,Un-Aided,active,,,non_autonomous,,DOC-8e5593f96aebd4c1,,validated,FALSE
-06756,"Fabtech Technical Campus College of Engineering and Research, Sangola",Solapur,,Un-Aided,active,,,autonomous,,DOC-3197e3ce8dd2f138,,validated,FALSE
-06757,"Yashoda Technical Campus, Wadhe, Satara.",Satara,,Un-Aided,active,,,autonomous,,DOC-82bad2fdf082e01a,,validated,FALSE
-06758,"Sahyadri Valley College of Engineering & Technology, Rajuri, Pune.",Pune,,Un-Aided,active,,,non_autonomous,,DOC-55f05b0ac68a7fa2,,validated,FALSE
-06759,"Shree Ramchandra College of Engineering, Lonikand,Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-a36cebd4f49d8684,,validated,FALSE
-06762,"Nanasaheb Mahadik College of Engineering,Walwa, Sangli.",Sangli,,Un-Aided,active,,,non_autonomous,,DOC-27294a6cd81c4961,,validated,FALSE
-06766,Phaltan Education Society's College of Engineering Thakurki Tal- Phaltan Dist-Satara,Satara,,Un-Aided,active,,,autonomous,,DOC-d28bbf4fb414950e,,validated,FALSE
-06767,"Suman Ramesh Tulsiani Technical Campus: Faculty of Engineering, Kamshet,Pune.",Pune,,Un-Aided,active,,,non_autonomous,,DOC-2cdc508d49442017,,validated,FALSE
-06768,"P.K. Technical Campus, Pune.",Pune,,Un-Aided,active,,,non_autonomous,,DOC-5cdbdf529f390b9e,,validated,FALSE
-06769,"Rasiklal M. Dhariwal Sinhgad Technical Institutes Campus, Warje, Pune.",Pune,,Un-Aided,active,,,non_autonomous,,DOC-bbeb487b815ab448,,validated,FALSE
-06770,"SKN Sinhgad Institute of Technology & Science, Kusgaon(BK),Pune.",Pune,,Un-Aided,active,,,non_autonomous,,DOC-32bdc53cdc65cc5a,,validated,FALSE
-06771,"Flora Institute of Technology, Khopi, Near Khed Shivapur Toll Plaza, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-f7017671223e51da,,validated,FALSE
-06772,"NBN Sinhgad Technical Institutes Campus, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-27077f70d6051acd,,validated,FALSE
-06780,"D.Y.Patil Education Society's,D.Y.Patil Technical Campus, Faculty of Engineering & Faculty of Management,Talsande,Kolhapur.",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-31d4fa05f22a62d4,,validated,FALSE
-06781,"Bhagwant Institute of Technology, Barshi",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-c5b6c0d5177e3649,,validated,FALSE
-06782,"Sahakar Maharshee Shankarrao Mohite Patil Institute of Technology & Research, Akluj",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-21be2443dc2409ae,,validated,FALSE
-06794,"Anantrao Pawar College of Engineering & Research, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-673009ff5fc37e45,,validated,FALSE
-06795,"Shri.Someshwar Shikshan Prasarak Mandal, Sharadchandra Pawar College of Engineering & Technology, Someshwar Nagar",Pune,,Un-Aided,active,,,non_autonomous,,DOC-89ab179b807d5176,,validated,FALSE
-06796,"Bharati Vidyapeeth's College of Engineering,Lavale, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-c2ba028d0b22d1b1,,validated,FALSE
-06797,"Dnyanshree Institute Engineering and Technology, Satara",Satara,,Un-Aided,active,,,autonomous,,DOC-4b3c3fc60d0f7b20,,validated,FALSE
-06799,"Shivganga Charitable Trust, Sangli Vishveshwarya Technical Campus, Faculty of Diploma Engineering, Patgaon, Miraj",Sangli,,Un-Aided,active,,,non_autonomous,,DOC-dcc8b544902cc5b6,,validated,FALSE
+06444,"Shriram Institute Of Engineering & Technology, (Poly), Paniv",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-7db23debfc6cd531,,validated,FALSE
+06466,"Shree Santkrupa Shikshan Sanstha, Shree Santkrupa Institute Of Engineering & Technology, Karad",Satara,,Un-Aided,active,,,non_autonomous,,DOC-d0b538950c1c5c04,,validated,FALSE
+06467,"Swami Vivekanand Institute Of Technology, Solapur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-b664edb8907af677,,validated,FALSE
+06468,"Swami Vivekananda Shikshan Sanstha, Dr. Bapuji Salunkhe Institute Of Engineering & Technology,Kolhapur",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-9e10f9cec44ad668,,validated,FALSE
+06545,"Samarth Education Trust's Arvind Gavali College Of Engineering Panwalewadi, Varye,Satara.",Satara,,Un-Aided,active,,,autonomous,,DOC-b33a4347ce075137,,validated,FALSE
+06609,"Jaihind College Of Engineering,Kuran",Pune,,Un-Aided,active,,,non_autonomous,,DOC-5426db6c8826ab9e,,validated,FALSE
+06622,ISBM College Of Engineering Pune,Pune,,Un-Aided,active,,,non_autonomous,,DOC-2ec93ef7a4f2e5f5,,validated,FALSE
+06625,"Universal College of Engineering & Research, Sasewadi",Pune,,Un-Aided,active,,,non_autonomous,,DOC-eb9075ccad34fea7,,validated,FALSE
+06628,"Dattakala Group Of Institutions, Swami - Chincholi Tal. Daund Dist. Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-07a716f91ae85bd0,,validated,FALSE
+06632,Navsahyadri Education Society's Group of Institutions,Pune,,Un-Aided,active,,,autonomous,,DOC-3d4c90e555faf720,,validated,FALSE
+06634,"KJEI's Trinity Academy of Engineering, Yewalewadi, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-f18009ea15c16c09,,validated,FALSE
+06635,Samarth College of Engineering and Management,Pune,,Un-Aided,active,,,non_autonomous,,DOC-589963c123f29f47,,validated,FALSE
+06640,"N. B. Navale Sinhgad College of Engineering, Kegaon, solapur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-00236cf003f2348e,,validated,FALSE
+06643,"S K N Sinhgad College of Engineering, Korti Tal. Pandharpur Dist Solapur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-8ad13ecbd2b1d266,,validated,FALSE
+06644,"Shri. Ambabai Talim Sanstha's Sanjay Bhokare Group of Institutes, Miraj",Sangli,,Un-Aided,active,,,autonomous,,DOC-99eaa8d27af0d533,,validated,FALSE
+06649,"TSSM's Bhivarabai Sawant College of Engineering and Research, Narhe, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-d8c9b227ef2d069f,,validated,FALSE
+06714,"APPASAHEB ALIAS SA.RE.PATIL INSTITUTE OF TECHNOLOGY, Dattanagar Tal-Shirol, Dist Kolhapur",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-f9d0c239f3ce3a0e,,validated,FALSE
+06715,Babasaheb Phadtare Engineering & Technology Kalamb-Walchandnagar Tal Indapur Dist Pune,Pune,,Un-Aided,active,,,non_autonomous,,DOC-1249a574ce7eeef4,,validated,FALSE
+06725,"New Satara Shikshan Sankul,New Satara College of Engineering & Management, Pandharpur",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-714bd8698f3d9f80,,validated,FALSE
+06732,"Ajeenkya DY Patil School of Engineering, Lohegaon, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-b2ea2d21aa95bd24,,validated,FALSE
+06754,"International Institute of Information Technology (I²IT), Pune.",Pune,,Un-Aided,active,,,autonomous,,DOC-a98816fa4632b4e9,,validated,FALSE
+06755,"JSPM Narhe Technical Campus, Pune.",Pune,,Un-Aided,active,,,non_autonomous,,DOC-f370138170424c61,,validated,FALSE
+06756,"Fabtech Technical Campus College of Engineering and Research, Sangola",Solapur,,Un-Aided,active,,,autonomous,,DOC-cea4333481fa8431,,validated,FALSE
+06757,"Yashoda Technical Campus, Wadhe, Satara.",Satara,,Un-Aided,active,,,autonomous,,DOC-426b6c1fdf79f641,,validated,FALSE
+06758,"Sahyadri Valley College of Engineering & Technology, Rajuri, Pune.",Pune,,Un-Aided,active,,,non_autonomous,,DOC-f841ba2ae75fdcf2,,validated,FALSE
+06759,"Shree Ramchandra College of Engineering, Lonikand,Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-a4efb7500b687f79,,validated,FALSE
+06762,"Nanasaheb Mahadik College of Engineering,Walwa, Sangli.",Sangli,,Un-Aided,active,,,non_autonomous,,DOC-585fe00fa5e137ed,,validated,FALSE
+06766,Phaltan Education Society's College of Engineering Thakurki Tal- Phaltan Dist-Satara,Satara,,Un-Aided,active,,,autonomous,,DOC-c3e50adf5f0dc2cf,,validated,FALSE
+06767,"Suman Ramesh Tulsiani Technical Campus: Faculty of Engineering, Kamshet,Pune.",Pune,,Un-Aided,active,,,non_autonomous,,DOC-c5d5b79698873a2e,,validated,FALSE
+06768,"P.K. Technical Campus, Pune.",Pune,,Un-Aided,active,,,non_autonomous,,DOC-c3f02af526c3d657,,validated,FALSE
+06769,"Rasiklal M. Dhariwal Sinhgad Technical Institutes Campus, Warje, Pune.",Pune,,Un-Aided,active,,,non_autonomous,,DOC-c7331cf996cb9677,,validated,FALSE
+06770,"SKN Sinhgad Institute of Technology & Science, Kusgaon(BK),Pune.",Pune,,Un-Aided,active,,,non_autonomous,,DOC-b49277a88bcef248,,validated,FALSE
+06771,"Flora Institute of Technology, Khopi, Near Khed Shivapur Toll Plaza, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-407f2613c79488fc,,validated,FALSE
+06772,"NBN Sinhgad Technical Institutes Campus, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-ea07c8f599391a85,,validated,FALSE
+06780,"D.Y.Patil Education Society's,D.Y.Patil Technical Campus, Faculty of Engineering & Faculty of Management,Talsande,Kolhapur.",Kolhapur,,Un-Aided,active,,,autonomous,,DOC-04fe46c4ae3b5a8d,,validated,FALSE
+06781,"Bhagwant Institute of Technology, Barshi",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-e9bfb1a4b24bd3e6,,validated,FALSE
+06782,"Sahakar Maharshee Shankarrao Mohite Patil Institute of Technology & Research, Akluj",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-502ce25ba8fefe30,,validated,FALSE
+06794,"Anantrao Pawar College of Engineering & Research, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-30858f7bc74ee7f5,,validated,FALSE
+06795,"Shri.Someshwar Shikshan Prasarak Mandal, Sharadchandra Pawar College of Engineering & Technology, Someshwar Nagar",Pune,,Un-Aided,active,,,non_autonomous,,DOC-2491d853864e7a55,,validated,FALSE
+06796,"Bharati Vidyapeeth's College of Engineering,Lavale, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-218d91b1dedab8ae,,validated,FALSE
+06797,"Dnyanshree Institute Engineering and Technology, Satara",Satara,,Un-Aided,active,,,autonomous,,DOC-3d34d8e54eb33d86,,validated,FALSE
+06799,"Shivganga Charitable Trust, Sangli Vishveshwarya Technical Campus, Faculty of Diploma Engineering, Patgaon, Miraj",Sangli,,Un-Aided,active,,,non_autonomous,,DOC-817c77325367c0c3,,validated,FALSE
 06802,"Dr. D.Y.Patil Institute of Engineering, Management & Reseach, Akurdi, Pune",Not available,,Un-Aided,active,,,unknown,,DOC-0bedd926581d76eb,,validated,FALSE
-06803,"Sant Gajanan Maharaj College of Engineering, Gadhinglaj",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-7151cdefe6332744,,validated,FALSE
-06808,"Keystone School of Engineering, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-b6051c5bab69c476,,validated,FALSE
-06811,Sanjay Ghodawat Institute,Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-bb444bfe3a48f05c,,validated,FALSE
-06814,"K.P. Patil Institute ( Polytechnic ), Bhudargad, Dist.Kolhapur",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-84941ad7a6cf4a2a,,validated,FALSE
-06815,"DR. G.V.SHINGRE VPS COLLEGE OF ENGINEERING AND TECHNOLOGY, LONAVALA, MAUJE WAKSAI, TAL MAVAL, DIST PUNE",Pune,,Un-Aided,active,,,non_autonomous,,DOC-38c7408e14596669,,validated,FALSE
-06822,"Pimpri Chinchwad Education Trust's Pimpri Chinchwad College Of Engineering And Research, Ravet",Pune,,Un-Aided,active,,,autonomous,,DOC-28dee61fc8c00bbe,,validated,FALSE
-06834,"Dr.D.Y.Patil College Of Engineering & Innovation,Talegaon",Pune,,Un-Aided,active,,,autonomous,,DOC-a6ffdd3795e5d939,,validated,FALSE
-06839,"Dr. D Y Patil Pratishthan's College of Engineering, Kolhapur",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-4a200a3799b5091b,,validated,FALSE
-06878,"Dr. A. D. Shinde College Of Engineering, Tal.Gadhinglaj, Kolhapur",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-0b36dbb14f16e3d2,,validated,FALSE
-06901,"MAEER's MIT College of Railway Engineering and Research, Jamgaon, Barshi",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-c999738a1814b1b2,,validated,FALSE
-06938,Shree Siddheshwar Women's College Of Engineering Solapur.,Solapur,,Un-Aided,active,,,non_autonomous,,DOC-4ceb582468342ba1,,validated,FALSE
-06991,"Dr. D.Y. Patil Technical Campus, Varale, Talegaon, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-62bf8b80ad7515f5,,validated,FALSE
-14005,"Laxminarayan Innovation Technological University, Nagpur",Nagpur,,University,active,,,autonomous,,DOC-c3bca341c1f96f96,,validated,FALSE
-16006,COEP Technological University,Pune,,University,active,,,autonomous,,DOC-6bc1c31c259ed07d,,validated,FALSE
-16121,"Shri. Anandrao Abitkar College of Engineering, Pal",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-4827e7ed31042cba,,validated,FALSE
+06803,"Sant Gajanan Maharaj College of Engineering, Gadhinglaj",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-89248bb7e79dd54f,,validated,FALSE
+06808,"Keystone School of Engineering, Pune",Pune,,Un-Aided,active,,,autonomous,,DOC-d12f7ad174d99bf7,,validated,FALSE
+06811,Sanjay Ghodawat Institute,Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-de18d0fd4b1da9e2,,validated,FALSE
+06814,"K.P. Patil Institute ( Polytechnic ), Bhudargad, Dist.Kolhapur",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-ab5a5c914841bc69,,validated,FALSE
+06815,"DR. G.V.SHINGRE VPS COLLEGE OF ENGINEERING AND TECHNOLOGY, LONAVALA, MAUJE WAKSAI, TAL MAVAL, DIST PUNE",Pune,,Un-Aided,active,,,non_autonomous,,DOC-e7aca3ad6e105fee,,validated,FALSE
+06822,"Pimpri Chinchwad Education Trust's Pimpri Chinchwad College Of Engineering And Research, Ravet",Pune,,Un-Aided,active,,,autonomous,,DOC-62f857e8acbe1569,,validated,FALSE
+06834,"Dr.D.Y.Patil College Of Engineering & Innovation,Talegaon",Pune,,Un-Aided,active,,,autonomous,,DOC-533db14ec090e67d,,validated,FALSE
+06839,"Dr. D Y Patil Pratishthan's College of Engineering, Kolhapur",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-3cce19e47f3ff735,,validated,FALSE
+06878,"Dr. A. D. Shinde College Of Engineering, Tal.Gadhinglaj, Kolhapur",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-87e40d5240097f5a,,validated,FALSE
+06901,"MAEER's MIT College of Railway Engineering and Research, Jamgaon, Barshi",Solapur,,Un-Aided,active,,,non_autonomous,,DOC-9f1dacfbeb75411a,,validated,FALSE
+06938,Shree Siddheshwar Women's College Of Engineering Solapur.,Solapur,,Un-Aided,active,,,non_autonomous,,DOC-7ddfc692236ec4a2,,validated,FALSE
+06991,"Dr. D.Y. Patil Technical Campus, Varale, Talegaon, Pune",Pune,,Un-Aided,active,,,non_autonomous,,DOC-10cf8bda6e96a3fc,,validated,FALSE
+14005,"Laxminarayan Innovation Technological University, Nagpur",Nagpur,,University,active,,,autonomous,,DOC-152fa49673f16fe9,,validated,FALSE
+16006,COEP Technological University,Pune,,University,active,,,autonomous,,DOC-5e85ce55243e1803,,validated,FALSE
+16121,"Shri. Anandrao Abitkar College of Engineering, Pal",Kolhapur,,Un-Aided,active,,,non_autonomous,,DOC-059f175322094c7c,,validated,FALSE
 16126,"Tatyasaheb Kore Institute of Engineering and Technology, Yelur",Not available,,Un-Aided Autonomous,active,,,unknown,,DOC-9db0899eaf0cd73a,,validated,FALSE
-16351,"Vidya Niketan Institute of Engineering & Technology, Lakhewadi",Pune,,Un-Aided,active,,,non_autonomous,,DOC-9b5ad57c54f38371,,validated,FALSE
-16352,"Yashoda Mahadeo Kakade College of Engineering, Talegaon",Pune,,Un-Aided,active,,,non_autonomous,,DOC-b1dee87eee4dbe53,,validated,FALSE
-16354,"DNYANVILAS COLLEGE OF ENGINEERING PIMPRI -CHINCHWAD , PUNE",Pune,,Un-Aided,active,,,non_autonomous,,DOC-3de68976679f0c48,,validated,FALSE
-16355,Audyogik Shikshan Mandal's Nextgen Technical Campus,Pune,,Un-Aided,active,,,non_autonomous,,DOC-57fcced8a6da4a24,,validated,FALSE
-16357,MES MUKUNDDAS LOHIA COLLEGE OF ENGINEERING,Pune,,Un-Aided,active,,,non_autonomous,,DOC-5fc887f52fcab8b9,,validated,FALSE
+16351,"Vidya Niketan Institute of Engineering & Technology, Lakhewadi",Pune,,Un-Aided,active,,,non_autonomous,,DOC-4eb46126a17df41d,,validated,FALSE
+16352,"Yashoda Mahadeo Kakade College of Engineering, Talegaon",Pune,,Un-Aided,active,,,non_autonomous,,DOC-2e61310a4aa9ee9a,,validated,FALSE
+16354,"DNYANVILAS COLLEGE OF ENGINEERING PIMPRI -CHINCHWAD , PUNE",Pune,,Un-Aided,active,,,non_autonomous,,DOC-c46c42f3401c508f,,validated,FALSE
+16355,Audyogik Shikshan Mandal's Nextgen Technical Campus,Pune,,Un-Aided,active,,,non_autonomous,,DOC-a0ae74f8cc5e9d84,,validated,FALSE
+16357,MES MUKUNDDAS LOHIA COLLEGE OF ENGINEERING,Pune,,Un-Aided,active,,,non_autonomous,,DOC-233e90a09fcfd372,,validated,FALSE
 16361,"Zeal College of Engineering & Research, Induri, Pune (Off Campus-Induri)",Not available,,Un-Aided Autonomous,active,,,unknown,,DOC-58ca7fe5ca89dc7a,,validated,FALSE
-16371,Kai. Nirmalatai Pingle Institute of Engineering & Management studies,Pune,,Un-Aided,active,,,non_autonomous,,DOC-b62482ae872da3f4,,validated,FALSE
-16372,Sawkar Women's Institute of Technology,Satara,,Un-Aided,active,,,non_autonomous,,DOC-b6b70f2f1924c93f,,validated,FALSE
-16373,SJVPM College of Engineering,Pune,,Un-Aided,active,,,non_autonomous,,DOC-b6ce3e90252e5812,,validated,FALSE
+16371,Kai. Nirmalatai Pingle Institute of Engineering & Management studies,Pune,,Un-Aided,active,,,non_autonomous,,DOC-c088fc985cbf1b02,,validated,FALSE
+16372,Sawkar Women's Institute of Technology,Satara,,Un-Aided,active,,,non_autonomous,,DOC-4528a499f553760a,,validated,FALSE
+16373,SJVPM College of Engineering,Pune,,Un-Aided,active,,,non_autonomous,,DOC-ce404a6aa0feb21e,,validated,FALSE
