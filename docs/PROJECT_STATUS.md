@@ -101,3 +101,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 13d-1 built (docs/STAGE13D1.md): fixed the current-year cutoff ignoring the student's home university (engine only; three copies identical); round figures that rise are real data; owner to upload. Next 13d-2: NAAC/NBA in ranking, more test students
 
 ## Stage 13d-2 built (docs/STAGE13D2.md): accreditation (NAAC grade on the official list, valid NBA) is a small ranking bonus, no record = neutral; includes the 13d-1 fix; owner to upload (engine only: no workflow, no publish run)
+
+## Stage 13d-3 built (docs/STAGE13D3.md): 22 different students checked, no engine problem; the form now says that placement/teaching/infrastructure priorities have no data yet (note disappears when the data exists); owner to upload and check on the phone

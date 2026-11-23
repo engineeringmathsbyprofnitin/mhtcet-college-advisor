@@ -127,6 +127,8 @@
       var names = Object.keys(cnt).sort(function (a, b) { return cnt[b] - cnt[a] || (a < b ? -1 : 1); });
       if (names.length) { C.branches = names; $("branches").textContent = ""; for (var i = 0; i < 3; i++) addRow("branches", names, "Branch"); }
       var fam = {}; st.forEach(function (x) { if (x.family) fam[x.family] = true; });
+      var missing = []; if (!(t.placements || []).length) missing.push("placements"); if (!(t.quality_indicators || []).length) missing.push("teaching quality and infrastructure");
+      if (missing.length) { var pn = $("prioNote"); pn.textContent = "Data on " + missing.join(" and ") + " is not available yet, so choosing the matching priority does not change your list for now. Lower fees, Admission chance and accreditation do."; pn.hidden = false; }
       if (fam.regular) {                                  // data with seat families: home-university rules and claims apply
         $("huField").hidden = false; fillSelect($("homeUniversity"), C.homeUniversities, "Not sure / skip");
         checkList($("extras"), C.extraEligibility.filter(function (x) { return fam[x.id]; }), "extras");

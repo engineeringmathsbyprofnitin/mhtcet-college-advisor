@@ -81,3 +81,10 @@ T("when the data has official districts the form offers exactly those and a dist
   assert.ok(!/District data is not available yet/.test(B.$("results").textContent));
   const rows = Array.from(B.d.querySelectorAll("tr.result")); rows.forEach(r => assert.match(r.textContent, /Satara/));
 });
+
+T("Stage 13d: a note says that placement, teaching and infrastructure priorities have no data yet", async () => {
+  const B = await boot();
+  assert.equal(B.$("prioNote").hidden, false);
+  assert.match(B.$("prioNote").textContent, /placements and teaching quality and infrastructure is not available yet/);
+  assert.match(B.$("prioNote").textContent, /Lower fees, Admission chance and accreditation do/);
+});
