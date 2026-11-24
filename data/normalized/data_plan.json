@@ -1,6 +1,9 @@
 {
  "ok": true,
  "current_year": "2026-27",
+ "cutoff_year": "2026-27",
+ "admission_year": "2026-27",
+ "admission_year_has_cutoffs": true,
  "year_status": "confirmed",
  "rounds_done": [
   "I",
