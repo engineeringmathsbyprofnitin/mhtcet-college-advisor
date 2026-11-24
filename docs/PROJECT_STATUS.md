@@ -111,3 +111,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 14c built (docs/STAGE14C.md): daily discovery, cutoff reading, vacancy reading and publish (institutes and fees stay weekly); publish no longer chained; publish guard ignores time stamps so quiet days make no commit. Owner: upload files first, then paste the four workflows by hand
 
 ## Stage 14d-1 built (docs/STAGE14D1.md, docs/RECOVERY.md): "Data updated on <date>" line (date the data last really changed; notice after 10 days without change) and the owner's recovery guide. Next 14d-2: rehearsal test of the 2027-28 rollover
+
+## Stage 14d-2 built (docs/STAGE14D2.md): rollover rehearsal on pretend 2027 data (1 Jan switch and first 2027-28 round); found and fixed a bug (fees would have vanished after Round I of the new year); owner to upload

@@ -62,6 +62,17 @@ class VacancyAndFees(unittest.TestCase):
         rep = BF.build(base=base, plan=self.PLAN, manual=man); self.assertEqual(rep["year"], "2027-28")
         rows = list(csv.DictReader(open(os.path.join(base, "tables", "fees.csv"), encoding="utf-8"))); self.assertEqual({r["academic_year"] for r in rows}, {"2027-28"})
 
+    def test_fees_survive_when_the_cutoff_year_has_also_moved_to_the_new_year(self):
+        # found by the Stage 14d-2 rehearsal: Round I of 2027-28 published, FRA list of 2027-28 not yet
+        base, man = setup([frow()]); rep = BF.build(base=base, plan=dict(ok=True, current_year="2027-28", admission_year="2027-28"), manual=man)
+        self.assertTrue(rep["ok"], rep); self.assertEqual((rep["year"], rep["admission_year"]), ("2026-27", "2027-28"))
+        self.assertTrue(os.path.exists(os.path.join(base, "tables", "fees.csv")))
+
+    def test_a_later_years_list_is_never_used_for_an_earlier_admission_year(self):
+        base, man = setup([frow()]); src = os.path.join(base, "fees", "fra_fees_2026-27_engg.csv")
+        os.rename(src, os.path.join(base, "fees", "fra_fees_2028-29_engg.csv"))
+        rep = BF.build(base=base, plan=dict(ok=True, current_year="2026-27", admission_year="2026-27"), manual=man); self.assertTrue(rep["status"].startswith("unavailable"), rep["status"]); self.assertFalse(os.path.exists(os.path.join(base, "tables", "fees.csv")))
+
     def test_plans_without_the_new_field_behave_as_before(self):
         base, man = setup([frow()]); rep = BF.build(base=base, plan=dict(ok=True, current_year="2026-27"), manual=man)
         self.assertEqual((rep["year"], rep["admission_year"]), ("2026-27", "2026-27")); self.assertEqual(rep["notes"], [])
@@ -92,6 +103,13 @@ class FeeReaderYear(unittest.TestCase):
     def test_known_new_year_is_read(self):
         code, seen, out = self.run_main({"2026-27": "https://ay26-27.mahafraportal.org/x/", "2027-28": "https://ay27-28.mahafraportal.org/x/"})
         self.assertEqual((code, seen), (0, ["2027-28"])); self.assertNotIn("ACTION NEEDED", out)
+
+    def test_new_year_current_cutoff_year_also_keeps_the_old_list(self):
+        t = os.path  # plan whose cutoff year has moved on as well
+        VacancyAndFees.PLAN, saved = dict(VacancyAndFees.PLAN, current_year="2027-28", cutoff_year="2027-28"), VacancyAndFees.PLAN
+        try: code, seen, out = self.run_main({"2026-27": "https://ay26-27.mahafraportal.org/x/"})
+        finally: VacancyAndFees.PLAN = saved
+        self.assertEqual((code, seen), (0, ["2026-27"])); self.assertIn("ACTION NEEDED", out)
 
     def test_no_address_at_all_still_fails(self):
         code, seen, out = self.run_main({}); self.assertEqual((code, seen), (1, [])); self.assertIn("FAIL", out)

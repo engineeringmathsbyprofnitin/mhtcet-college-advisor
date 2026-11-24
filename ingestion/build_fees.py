@@ -35,8 +35,10 @@ def build(base=N, plan=None, outdir=None, manual=MANUAL):
     plan = plan or json.load(open(os.path.join(base, "data_plan.json"), encoding="utf-8"))
     adm = plan.get("admission_year", plan["current_year"]); outdir = outdir or os.path.join(base, "tables"); os.makedirs(outdir, exist_ok=True)
     year = adm   # Stage 14b: the fee list of the admission year if it exists; otherwise the newest list of an earlier year, which the cards label with its own year
-    for cand in (adm, plan["current_year"]):
-        if os.path.exists(os.path.join(base, "fees", "fra_fees_%s_engg.csv" % cand)): year = cand; break
+    have = sorted(f[len("fra_fees_"):-len("_engg.csv")] for f in (os.listdir(os.path.join(base, "fees")) if os.path.isdir(os.path.join(base, "fees")) else [])
+                  if f.startswith("fra_fees_") and f.endswith("_engg.csv"))
+    older = [y for y in have if y <= adm]          # labels like 2026-27 sort in time order; never a list of a LATER year than the admission year
+    if older: year = older[-1]                     # the admission year's own list if it exists, else the newest earlier one
     rep = dict(ok=False, year=year, admission_year=adm, status="", published_colleges=0, rows=0, tiers={}, not_published={}, problems=[], notes=[])
     if year != adm: rep["notes"].append("no fee list for the admission year %s yet; the fee list of %s is shown and labelled with its own year" % (adm, year))
     src = os.path.join(base, "fees", "fra_fees_%s_engg.csv" % year); out = os.path.join(outdir, "fees.csv")
