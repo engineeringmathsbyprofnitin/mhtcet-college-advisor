@@ -87,12 +87,18 @@
     $("addDistrict").disabled = e.target.checked;
   });
 
-  // ---- data header: version, admission year, freshness, synthetic warning
+  // ---- data header: when the data last REALLY changed (the daily run keeps the old time stamp when nothing changed), version, admission year
+  function dataStatusText(m, now) {
+    var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var t = m.last_successful_update ? Date.parse(m.last_successful_update) : NaN, ok = !isNaN(t), d = ok ? new Date(t) : null;
+    var txt = (ok ? "Data updated on " + d.getUTCDate() + " " + MON[d.getUTCMonth()] + " " + d.getUTCFullYear() : "Data update date unknown") + " \u00B7 data version " + m.data_version + " \u00B7 admission year " + m.current_admission_year;
+    var days = ok ? Math.floor((now - t) / 86400000) : null;
+    if (days !== null && days > 10) txt += " \u00B7 The data has not changed for " + days + " days. Outside the CAP season that can be normal; during CAP please also check the official CET Cell website.";
+    return txt;
+  }
   function showDataHeader() {
     DataLoader.getManifest({ baseUrl: C.DATA_BASE_URL, fetchFn: timedFetch }).then(function (m) {
-      var days = m.last_successful_update ? Math.floor((Date.now() - Date.parse(m.last_successful_update)) / 86400000) : null;
-      var txt = "Data version " + m.data_version + " \u00B7 admission year " + m.current_admission_year + " \u00B7 last updated " + (m.last_successful_update ? m.last_successful_update.slice(0, 10) : "unknown");
-      if (days !== null && !isNaN(days) && days > 14) txt += " \u00B7 this data may be out of date";
+      var txt = dataStatusText(m, Date.now());
       $("dataStatus").textContent = txt;
       if (!m.is_synthetic) enrichFromData(m);
       if (m.is_synthetic) { $("dataBanner").textContent = "TEST DATA: every college and number on this site is made up for testing. Do not use it to make decisions."; $("dataBanner").hidden = false; }
