@@ -103,3 +103,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 13d-2 built (docs/STAGE13D2.md): accreditation (NAAC grade on the official list, valid NBA) is a small ranking bonus, no record = neutral; includes the 13d-1 fix; owner to upload (engine only: no workflow, no publish run)
 
 ## Stage 13d-3 built (docs/STAGE13D3.md): 22 different students checked, no engine problem; the form now says that placement/teaching/infrastructure priorities have no data yet (note disappears when the data exists); owner to upload and check on the phone
+
+## Stage 13 wrap-up (docs/STAGE13.md, ROADMAP.md updated): Stage 13 done except the owner's phone check; public page deliberately stays on the old data; next: Stage 12d or Stage 14 (owner chooses)
