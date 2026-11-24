@@ -3,10 +3,14 @@ data/raw/discovery/latest.json) into a list of exactly which cutoff lists the we
   - current year = the newest year with reachable published cutoff documents (decided from evidence, not the calendar)
   - rounds done  = the cutoff rounds published for it; next round = the one after the latest (or none after Round IV)
   - history      = the three admission years before it, each with its LAST published round
+  - admission_year = the year the student applies for = the calendar year of the run (it changes on 1 January, even before any cutoff list of that year exists);
+    current_year / cutoff_year = the newest year with published cutoffs (it changes only when that year's Round I cutoff list appears). Until then the cutoffs of
+    the previous year (all rounds) and the three years before it are the best evidence for the Round I option form. Vacancy follows admission_year; fees follow it when published.
   - students may see every published round of the current year (I..latest); the newest one is the main figure.
 Run: python -m ingestion.plan   -> writes data/normalized/data_plan.json"""
 import json, os, sys
-from ingestion.admission_year import ROUND_ORDER
+from datetime import date
+from ingestion.admission_year import ROUND_ORDER, label
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 DISCOVERY = os.path.join(ROOT, "data", "raw", "discovery", "latest.json")
 OUT = os.path.join(ROOT, "data", "normalized", "data_plan.json")
@@ -16,6 +20,9 @@ def make_plan(decision):
     cur = decision.get("current_label")
     if not cur or decision.get("status") in (None, "unknown"):
         return {"ok": False, "problem": "admission year not established; keep the last validated data", "required_lists": [], "years": []}
+    try: cal = int(str(decision.get("calendar_today") or decision.get("today"))[:4])          # the admission year changes on 1 January (owner's rule, Stage 14b)
+    except ValueError: cal = None
+    cur_start = int(cur[:4]); adm_start = max(cal, cur_start) if cal else cur_start
     done = [r for r in ROUND_ORDER if r in (decision.get("current_cutoff_rounds") or [])]
     latest = done[-1] if done else None
     if latest is None:
@@ -27,7 +34,7 @@ def make_plan(decision):
         history.append({"label": p["label"], "rounds_published": rs, "round_used": rs[-1] if rs else None})
     required = [{"year": cur, "round": r, "role": "current"} for r in done]
     required += [{"year": h["label"], "round": h["round_used"], "role": "history"} for h in history if h["round_used"]]
-    return {"ok": True, "current_year": cur, "year_status": decision.get("status"), "rounds_done": done, "latest_round": latest,
+    return {"ok": True, "current_year": cur, "cutoff_year": cur, "admission_year": label(adm_start), "admission_year_has_cutoffs": adm_start == cur_start, "year_status": decision.get("status"), "rounds_done": done, "latest_round": latest,
             "next_round_expected": nxt, "cycle_note": ("all four CAP rounds are published; later supplementary lists are not used" if nxt is None
             else "round %s is the next expected; it is not published yet" % nxt),
             "history": history, "history_years_without_cutoffs": [h["label"] for h in history if not h["round_used"]],
@@ -36,6 +43,7 @@ def make_plan(decision):
 
 def main():
     d = json.load(open(DISCOVERY))["admission_year"]
+    d["calendar_today"] = date.today().isoformat()      # the admission year follows the day the plan is made, not the day of the last discovery run
     plan = make_plan(d)
     with open(OUT, "w") as f: json.dump(plan, f, indent=1)
     print(json.dumps({k: plan.get(k) for k in ("ok", "current_year", "rounds_done", "latest_round", "next_round_expected", "cycle_note")}, indent=1))

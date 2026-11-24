@@ -105,6 +105,7 @@
     var kv = {}; String((dv && dv.row_count_summary) || "").split(";").forEach(function (p) { var i = p.indexOf("="); if (i > 0) kv[p.slice(0, i)] = p.slice(i + 1); });
     var rounds = (kv.rounds || "").split("+").filter(Boolean);
     if (!rounds.length) return "";
+    if (kv.admission && kv.admission !== year) return "Admission year " + kv.admission + ": its cutoff lists are published only after the CAP Round I allotment, so they do not exist yet. To help with your Round I option form, these results use the cutoffs of " + year + " (CAP rounds " + rounds.join(", ") + ") and the three years before it. They are last year's figures, not a prediction for " + kv.admission + ". Fees and seat vacancy appear only when officially published (a fee shows the year it belongs to).";
     if (kv.phase === "previous_cycle_latest") return "Cutoffs for the new admission year are not published yet. These results use " + year + " (the latest published year; CAP rounds " + rounds.join(", ") + ") and the three years before it. They are last year's figures, not a prediction for this year.";
     if (!kv.next || kv.next === "none") return "Admission year " + year + ": CAP rounds " + rounds.join(", ") + " are published (all four rounds). Each result shows the cutoff of every round.";
     return "Admission year " + year + ": CAP rounds " + rounds.join(", ") + " are published. Round " + kv.next + " is expected next and is not published yet.";

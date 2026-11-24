@@ -105,3 +105,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 13d-3 built (docs/STAGE13D3.md): 22 different students checked, no engine problem; the form now says that placement/teaching/infrastructure priorities have no data yet (note disappears when the data exists); owner to upload and check on the phone
 
 ## Stage 13 wrap-up (docs/STAGE13.md, ROADMAP.md updated): Stage 13 done except the owner's phone check; public page deliberately stays on the old data; next: Stage 12d or Stage 14 (owner chooses)
+
+## Stage 14b built (docs/STAGE14B.md): admission year changes on 1 January (calendar rule); cutoffs stay evidence-based so the Round I option form uses last year's cutoffs with a clear banner; vacancy follows the admission year, fees show the newest list with its year; fee reader no longer fails when the new year's FRA address is unknown. Owner to upload; run "Publish website data (preview)" by hand afterwards

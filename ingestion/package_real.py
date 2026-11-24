@@ -130,7 +130,7 @@ def assemble(folder, plan=None, tables=None):
     for t in REAL[-2:] + ["vacancies", "fees", "accreditation"]:
         with open(os.path.join(folder, t + ".csv"), "rb") as f: h.update(f.read())
     ver = "REAL-%s-R%s-%s" % (plan["current_year"], plan["latest_round"], h.hexdigest()[:8])
-    summary = "rounds=%s;next=%s;phase=%s" % ("+".join(plan["rounds_done"]), plan["next_round_expected"] or "none", plan["year_status"])
+    summary = "rounds=%s;next=%s;phase=%s;admission=%s" % ("+".join(plan["rounds_done"]), plan["next_round_expected"] or "none", plan["year_status"], plan.get("admission_year", plan["current_year"]))
     with open(os.path.join(folder, "data_version.csv"), "w", newline="") as f:
         w = csv.writer(f, lineterminator="\n"); w.writerow("data_version,created_at,is_last_known_good,admission_year,row_count_summary,notes,is_synthetic".split(","))
         w.writerow([ver, json.load(open(P.DISCOVERY))["generated_at"], "TRUE", plan["current_year"], summary, "Real CET Cell cutoff lists and vacancy position, FRA-approved fees, NBA programme accreditation and the NAAC grade (list as on 14 Aug 2025); placements not yet available", "FALSE"])

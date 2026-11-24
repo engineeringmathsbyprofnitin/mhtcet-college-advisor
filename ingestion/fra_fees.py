@@ -155,7 +155,10 @@ def _save(rep, out_dir):
 
 def main(argv=None):
     plan = json.load(open(os.path.join(ROOT, "data", "normalized", "data_plan.json"), encoding="utf-8"))
-    year = plan["current_year"]
+    adm = plan.get("admission_year", plan["current_year"]); year = adm
+    if year not in FRA_SITES and plan["current_year"] in FRA_SITES:      # Stage 14b: keep refreshing the newest list we have while the new year's address is unknown
+        year = plan["current_year"]
+        print("ACTION NEEDED: no FRA portal address is known for the admission year %s. Add it to FRA_SITES in ingestion/fra_fees.py when the FRA publishes the new fee list. Meanwhile the list of %s is read again." % (adm, year))
     if year not in FRA_SITES:
         print("FAIL: no known FRA portal address for %s (add it to FRA_SITES in ingestion/fra_fees.py)" % year); return 1
     out_dir, raw_dir = os.path.join(ROOT, "build", "normalized", "fees"), os.path.join(ROOT, "data", "raw", "fees")

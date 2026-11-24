@@ -33,7 +33,7 @@ def find_tables(vdir):
 def build(base=N, plan=None, outdir=None, manifest_path=None):
     plan = plan or json.load(open(os.path.join(base, "data_plan.json"), encoding="utf-8"))
     if not plan.get("ok"): raise SystemExit("no valid plan")
-    year = plan["current_year"]
+    year = plan.get("admission_year", plan["current_year"])      # Stage 14b: the year the student applies for; last year's vacancy is never shown as this year's
     outdir = outdir or os.path.join(base, "tables"); os.makedirs(outdir, exist_ok=True)
     rep = dict(ok=False, year=year, status="", round=None, rows=0, matched=0, new_courses=[], institute_mismatch=[], name_differences=[],
                current_courses_without_vacancy=None, old_courses_without_vacancy=None, problems=[], notes=[])
