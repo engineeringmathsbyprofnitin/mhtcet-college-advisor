@@ -4,7 +4,7 @@ name: Discover and archive official documents
 # 2. Downloads the documents the project needs, but only new or changed ones, and checks each is a complete file (Stage 8).
 # 3. Stores the original files in GitHub Releases (one release per admission year) and records them in data/raw/manifest.json.
 # It does NOT read inside the documents yet.
-# Run by hand: Actions tab -> this workflow -> Run workflow. It also runs once a week.
+# Run by hand: Actions tab -> this workflow -> Run workflow. It also runs every day (Stage 14c).
 on:
   workflow_dispatch:
     inputs:
@@ -13,7 +13,7 @@ on:
         type: boolean
         default: false
   schedule:
-    - cron: "17 3 * * 1"      # Mondays 03:17 UTC (about 08:47 in India)
+    - cron: "17 3 * * *"      # every day 03:17 UTC (about 08:47 in India); only new or changed documents are downloaded
 
 permissions:
   contents: write              # saves reports into the repository and creates releases for the original files
