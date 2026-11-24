@@ -2,11 +2,11 @@ name: Read the archived documents
 
 # Reads the archived cutoff PDFs (State and All India lists) into normalized tables and builds the master tables (Stage 9).
 # The new tables are built in a temporary folder and replace data/normalized ONLY if everything is complete and problem-free;
-# otherwise the previous data is kept. Run by hand: Actions tab -> this workflow -> Run workflow. It also runs weekly, after the archive job.
+# otherwise the previous data is kept. Run by hand: Actions tab -> this workflow -> Run workflow. It also runs every day (Stage 14c), after the archive job.
 on:
   workflow_dispatch:
   schedule:
-    - cron: "47 4 * * 1"      # Mondays 04:47 UTC, about 90 minutes after the archive job
+    - cron: "47 4 * * *"      # every day 04:47 UTC, about 90 minutes after the archive job
 
 permissions:
   contents: write              # saves the normalized tables into the repository
