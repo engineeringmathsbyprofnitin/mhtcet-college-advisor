@@ -107,3 +107,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 13 wrap-up (docs/STAGE13.md, ROADMAP.md updated): Stage 13 done except the owner's phone check; public page deliberately stays on the old data; next: Stage 12d or Stage 14 (owner chooses)
 
 ## Stage 14b built (docs/STAGE14B.md): admission year changes on 1 January (calendar rule); cutoffs stay evidence-based so the Round I option form uses last year's cutoffs with a clear banner; vacancy follows the admission year, fees show the newest list with its year; fee reader no longer fails when the new year's FRA address is unknown. Owner to upload; run "Publish website data (preview)" by hand afterwards
+
+## Stage 14c built (docs/STAGE14C.md): daily discovery, cutoff reading, vacancy reading and publish (institutes and fees stay weekly); publish no longer chained; publish guard ignores time stamps so quiet days make no commit. Owner: upload files first, then paste the four workflows by hand

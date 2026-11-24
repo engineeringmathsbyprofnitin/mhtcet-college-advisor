@@ -24,7 +24,7 @@ class ReadNaacWorkflow(unittest.TestCase):
         self.assertEqual(self.y["name"], "Read the NAAC list")
         pub = yaml.safe_load(open(os.path.join(ROOT, ".github", "workflows", "publish-website-data.yml"), encoding="utf-8"))
         on = pub[True] if True in pub else pub["on"]
-        self.assertNotIn("Read the NAAC list", on["workflow_run"]["workflows"])
+        self.assertNotIn("workflow_run", on)          # Stage 14c: the publish workflow is no longer started by any other workflow (daily schedule + by hand)
 
     def test_steps_in_order(self):
         r = self.runs

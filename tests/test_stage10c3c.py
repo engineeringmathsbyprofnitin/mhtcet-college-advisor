@@ -17,8 +17,9 @@ class Workflow(unittest.TestCase):
     def idx(self, text): return next(i for i, r in enumerate(self.runs) if text in r)
     def test_triggers(self):
         on = self.y[True] if True in self.y else self.y["on"]          # PyYAML reads the key `on` as True
-        self.assertIn("workflow_dispatch", on); self.assertEqual(on["workflow_run"]["workflows"], ["Read the archived documents", "Read institute information", "Read the vacancy lists", "Read the approved fees"])
-        self.assertIn("conclusion == 'success'", self.y["jobs"]["publish"]["if"])
+        # Stage 14c (deliberate change): no longer chained after the reading workflows; one scheduled run every day at 06:30 UTC and the by-hand button
+        self.assertIn("workflow_dispatch", on); self.assertNotIn("workflow_run", on); self.assertEqual([c["cron"] for c in on["schedule"]], ["30 6 * * *"])
+        self.assertNotIn("if", self.y["jobs"]["publish"])
     def test_permissions_are_minimal(self): self.assertEqual(self.y["permissions"], {"contents": "write"})
     def test_order_tests_then_validate_then_build_then_package_then_replace_then_commit(self):
         order = [self.idx(x) for x in ("unittest discover", "ingestion.plan", "ingestion.validate_cutoffs", "ingestion.build_tables", "ingestion.package_real", "rm -rf frontend/data-real", "git commit")]
