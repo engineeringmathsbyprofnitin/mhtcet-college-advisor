@@ -3,12 +3,12 @@ name: Publish website data (preview)
 # Builds the website's data files from the read cutoff lists (Stage 10c) and saves them in frontend/data-real.
 # They are shown on the PREVIEW page (add ?preview=1 to the web address). The public page keeps its current data until you make the one-line
 # change in frontend/config.js (see docs/STAGE10C3C.md). Nothing is replaced unless every check below succeeds; otherwise the previous files stay.
-# Runs by hand (Actions tab -> this workflow -> Run workflow) and automatically after "Read the archived documents", "Read institute information" "Read the vacancy lists" or "Read the approved fees" finishes successfully.
+# Runs by hand (Actions tab -> this workflow -> Run workflow) and automatically once a day (Stage 14c). When nothing but time stamps differs from the published data,
+# the published files are kept and nothing is committed (ingestion/publish_guard.py).
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Read the archived documents", "Read institute information", "Read the vacancy lists", "Read the approved fees"]
-    types: [completed]
+  schedule:
+    - cron: "30 6 * * *"        # every day 06:30 UTC (12:00 in India), after the reading jobs of 03:17, 04:15 (Mondays), 04:47, 05:07 and 05:30 (Mondays)
 
 permissions:
   contents: write              # saves the data files into the repository
@@ -19,7 +19,6 @@ concurrency:
 
 jobs:
   publish:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
@@ -55,7 +54,12 @@ jobs:
       - name: "Package and validate the website data files"
         run: python -m ingestion.package_real build/data-real
 
-      - name: "Replace the preview data (only because every step above succeeded)"
+      - name: "Has anything really changed? (time stamps are ignored)"
+        id: guard
+        run: python -m ingestion.publish_guard frontend/data-real build/data-real
+
+      - name: "Replace the preview data (only because every step above succeeded and something changed)"
+        if: steps.guard.outputs.changed == 'true'
         run: |
           rm -rf frontend/data-real
           cp -r build/data-real frontend/data-real
