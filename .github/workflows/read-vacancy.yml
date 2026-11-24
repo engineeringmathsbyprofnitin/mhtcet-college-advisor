@@ -3,11 +3,11 @@ name: Read the vacancy lists
 # Reads the archived CAP vacancy position (Round IV = seats open going into Round IV; Round III only if there is no Round IV)
 # into small tables (Stage 11b). Built in a temporary folder; data/normalized/vacancy is replaced ONLY if every file was read
 # completely with no problem, otherwise the previous data is kept.
-# Run by hand: Actions tab -> this workflow -> Run workflow. Also runs weekly, after the other reading jobs.
+# Run by hand: Actions tab -> this workflow -> Run workflow. Also runs every day (Stage 14c), after the other reading jobs.
 on:
   workflow_dispatch:
   schedule:
-    - cron: "7 5 * * 1"        # Mondays 05:07 UTC
+    - cron: "7 5 * * *"        # every day 05:07 UTC
 
 permissions:
   contents: write              # saves the vacancy tables into the repository
