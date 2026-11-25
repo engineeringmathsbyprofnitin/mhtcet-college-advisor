@@ -91,7 +91,7 @@
   function dataStatusText(m, now) {
     var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     var t = m.last_successful_update ? Date.parse(m.last_successful_update) : NaN, ok = !isNaN(t), d = ok ? new Date(t) : null;
-    var txt = (ok ? "Data updated on " + d.getUTCDate() + " " + MON[d.getUTCMonth()] + " " + d.getUTCFullYear() : "Data update date unknown") + " \u00B7 data version " + m.data_version + " \u00B7 admission year " + m.current_admission_year;
+    var txt = (ok ? "Data updated on " + d.getUTCDate() + " " + MON[d.getUTCMonth()] + " " + d.getUTCFullYear() : "Data update date unknown") + " \u00B7 data version " + m.data_version + " \u00B7 latest cutoffs " + m.current_admission_year;
     var days = ok ? Math.floor((now - t) / 86400000) : null;
     if (days !== null && days > 10) txt += " \u00B7 The data has not changed for " + days + " days. Outside the CAP season that can be normal; during CAP please also check the official CET Cell website.";
     return txt;

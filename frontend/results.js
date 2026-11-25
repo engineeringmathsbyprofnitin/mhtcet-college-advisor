@@ -81,7 +81,7 @@
     return li;
   }
 
-  var vacHead = "Seats open (vacancy)";            // set in render(): "Seats open going into Round IV" (or III) once vacancy data exists
+  var admYear = null, vacHead = "Seats open (vacancy)";            // set in render(): "Seats open going into Round IV" (or III) once vacancy data exists
   function vacLabel(rd) { return rd ? "Seats open going into Round " + rd : "Seats open (vacancy)"; }
   function resultRows(doc, r, ncols, years) {
     var tr = el(doc, "tr", { class: "result" });
@@ -107,8 +107,9 @@
     var v = r.vacancy;
     tr.appendChild(cell(doc, vacHead, v && v.value !== null ? [el(doc, "span", { text: String(v.value) + " seat(s)" }), small(doc, "Total for the course, as printed by CET Cell (CAP Round " + v.round + ")")] : noteLine(doc, "Vacancy data unavailable")));
     var f = r.fee, fk;
-    if (f && f.status === "ok") fk = [el(doc, "span", { text: inr(f.value) + " per year" }), small(doc, (f.type === "tuition" ? "Tuition fee only; excludes hostel, transport and exam charges" : "Tuition + development fee approved by FRA; excludes hostel, transport and exam charges") + " \u00B7 " + f.academicYear)];
-    else if (f && f.status === "total_unavailable_tuition_known") fk = [el(doc, "span", { text: "Total cost not available" }), small(doc, "Tuition alone: " + inr(f.tuitionLowerBound) + " (" + f.academicYear + "); total will be higher")];
+    var older = f && f.academicYear && admYear && f.academicYear !== admYear ? " (the " + admYear + " fee is not published yet)" : "";   // Stage 14e: last known list, said plainly
+    if (f && f.status === "ok") fk = [el(doc, "span", { text: inr(f.value) + " per year" }), small(doc, (f.type === "tuition" ? "Tuition fee only; excludes hostel, transport and exam charges" : "Tuition + development fee approved by FRA; excludes hostel, transport and exam charges") + " \u00B7 " + f.academicYear + " fee list" + older)];
+    else if (f && f.status === "total_unavailable_tuition_known") fk = [el(doc, "span", { text: "Total cost not available" }), small(doc, "Tuition alone: " + inr(f.tuitionLowerBound) + " (" + f.academicYear + " fee list" + older + "); total will be higher")];
     else fk = noteLine(doc, NA);
     tr.appendChild(cell(doc, "Annual fee", fk));
     [["Infrastructure", r.infrastructure], ["Teaching", r.teaching]].forEach(function (p) {
@@ -140,13 +141,14 @@
     return el(doc, "ul", { class: "funnel" }, items.map(function (t) { return el(doc, "li", { text: t }); }));
   }
 
+  function yearsText(m) { return m.admissionYear && m.admissionYear !== m.currentAdmissionYear ? "admission year " + m.admissionYear + " (latest cutoffs: " + m.currentAdmissionYear + ")" : "current admission year " + m.currentAdmissionYear; }
   function render(rootEl, res, opts) {
     var doc = rootEl.ownerDocument; opts = opts || {};
     rootEl.textContent = ""; rootEl.hidden = false;
     var h = el(doc, "h2", { text: "Your recommended choices", tabindex: "-1", id: "resultsHeading" }); rootEl.appendChild(h);
     if (!res || !res.ok) { return renderProblem(rootEl, (res && res.errors && res.errors.join(" ")) || "Something went wrong."); }
     var m = res.meta, list = res.results;
-    vacHead = vacLabel(m.vacancyRoundUsed);
+    vacHead = vacLabel(m.vacancyRoundUsed); admYear = m.admissionYear || null;
     if (m.usingSyntheticData) rootEl.appendChild(el(doc, "p", { class: "banner danger", role: "alert", text: "TEST DATA: the colleges and numbers below are made up for testing. Do not use them to make any decision." }));
     (m.warnings || []).forEach(function (w) { rootEl.appendChild(el(doc, "p", { class: "notice", text: w })); });
     if (!list.length) {
@@ -180,7 +182,7 @@
       d.appendChild(ul); rootEl.appendChild(d);
     }
     var info = [
-      "Data version " + (m.dataVersion || NA) + " \u00B7 current admission year " + m.currentAdmissionYear + " \u00B7 last successful data update: " + (m.lastSuccessfulUpdate || NA),
+      "Data version " + (m.dataVersion || NA) + " \u00B7 " + yearsText(m) + " \u00B7 last successful data update: " + (m.lastSuccessfulUpdate || NA),
       "Compared with the past three admission years: " + (m.historicalYears || []).join(", ") + ". Cutoff groups used: " + ((m.seatTypesUsed || []).join(", ") || "none") + ".",
       m.vacancyRoundUsed ? "Seats open going into Round " + m.vacancyRoundUsed + ": the total for the course as printed in the official CET Cell vacancy position, including All India and Minority seats where printed. It is not specific to your category and does not guarantee admission." : "Vacancy data unavailable: no Round IV or Round III vacancy position was found for this admission year."
     ];

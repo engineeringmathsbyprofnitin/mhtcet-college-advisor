@@ -44,7 +44,7 @@ const hdrs = B => Array.from(B.d.querySelectorAll("#results thead th")).map(t =>
 
 T("page header shows data version, year and the test-data banner", async () => {
   const B = boot(); await sleep(50);
-  assert.match(B.$("dataStatus").textContent, /Data updated on 20 Oct 2026 .* data version SYN-v1 .* admission year 2026-27/);
+  assert.match(B.$("dataStatus").textContent, /Data updated on 20 Oct 2026 .* data version SYN-v1 .* latest cutoffs 2026-27/);
   assert.equal(B.$("dataBanner").hidden, false); assert.match(B.$("dataBanner").textContent, /TEST DATA/);
 });
 T("empty form shows errors and loads no data files beyond the header", async () => {

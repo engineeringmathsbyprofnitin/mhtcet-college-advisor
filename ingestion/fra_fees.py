@@ -20,6 +20,58 @@ OUT_COLS = ["inst_id", "cet_institute_code", "inst_name", "district", "stream", 
 KNOWN_STATUS = {"Approved", "No Upward Revision", "Interim Order of High Court"}      # the last one was seen on the live list (2 institutes)
 
 
+SITE_RE = re.compile(r"^https://ay(\d\d)-(\d\d)\.mahafraportal\.org/ssi_prp_(\d+)/$")
+
+
+def found_path(): return os.path.join(ROOT, "data", "raw", "fees", "fra_sites_found.json")
+
+
+def known_sites():
+    """The addresses written in the code plus the ones the robot found itself (data/raw/fees/fra_sites_found.json). Only well-formed official addresses are accepted."""
+    d = dict(FRA_SITES)
+    try:
+        with open(found_path(), encoding="utf-8") as f: extra = json.load(f)
+        d.update({y: u for y, u in extra.items() if isinstance(u, str) and SITE_RE.match(u) and re.fullmatch(r"\d{4}-\d{2}", y)})
+    except (OSError, ValueError, AttributeError): pass
+    return d
+
+
+def candidate_sites(year, known):
+    """Likely portal addresses of a year the code does not know yet: the host follows the year (ay27-28.mahafraportal.org); the folder number of the newest known year and the next two are tried.
+    These are guesses; a guess is only kept after the portal itself answers with the expected sub-type list (find_site), and read() then checks the whole fee table."""
+    older = sorted(y for y in known if y < year and SITE_RE.match(known[y]))
+    if not older or not re.fullmatch(r"\d{4}-\d{2}", year): return []
+    n = int(SITE_RE.match(known[older[-1]]).group(3)); host = "ay%s-%s.mahafraportal.org" % (year[2:4], year[5:7])
+    return ["https://%s/ssi_prp_%d/" % (host, k) for k in (n, n + 1, n + 2)]
+
+
+def find_site(year, known, fetcher, log=print):
+    """Ask each candidate for its sub-type list (one request each). Accept the first that lists exactly one sub type with code ENGG. Stop at any wall (robots, 401/403/429)."""
+    for cand in candidate_sites(year, known):
+        try: st = fetcher.fetch(cand + "admin/reports/ajax/get_sub_type_ajax.php?" + urlencode({"val1": "HT"}))
+        except Exception as e:
+            log("candidate %s: no answer (%s)" % (cand, type(e).__name__)); continue
+        if st.blocked:
+            log("candidate %s: blocked (%s) - stopping, no bypass" % (cand, st.blocked))
+            if st.blocked != "host_not_allowed": return None
+            continue
+        if st.status in (401, 403, 429): log("candidate %s: HTTP %s - a wall, stopping" % (cand, st.status)); return None
+        if not st.ok: log("candidate %s: HTTP %s" % (cand, st.status)); continue
+        eng = [o for o in sub_type_options(st.text) if o[0].upper() == "ENGG" and o[1].upper().startswith("ENGG")]
+        if len(eng) == 1: log("FOUND the FRA portal of %s: %s" % (year, cand)); return cand
+        log("candidate %s: answered but is not the expected fee portal" % cand)
+    return None
+
+
+def save_found(year, site):
+    path = found_path(); os.makedirs(os.path.dirname(path), exist_ok=True)
+    try:
+        with open(path, encoding="utf-8") as f: d = json.load(f)
+    except (OSError, ValueError): d = {}
+    d[year] = site
+    with open(path, "w", encoding="utf-8") as f: json.dump(d, f, indent=1, sort_keys=True)
+
+
 def norm(s): return re.sub(r"\s+", " ", (s or "").replace("\xa0", " ")).strip()
 
 
@@ -156,16 +208,20 @@ def _save(rep, out_dir):
 def main(argv=None):
     plan = json.load(open(os.path.join(ROOT, "data", "normalized", "data_plan.json"), encoding="utf-8"))
     adm = plan.get("admission_year", plan["current_year"]); year = adm
-    older = sorted(y for y in FRA_SITES if y <= adm)
-    if year not in FRA_SITES and older:      # Stage 14b: keep refreshing the newest list we have while the new year's address is unknown
+    fetcher = PoliteFetcher(min_delay=2.0, max_requests=60); sites = known_sites()
+    if year not in sites:                                                  # Stage 14e: look for the new year's portal ourselves
+        found = find_site(year, sites, fetcher)
+        if found: sites[year] = found; save_found(year, found)
+    older = sorted(y for y in sites if y <= adm)
+    if year not in sites and older:      # keep refreshing the newest list we have while the new year's address is unknown
         year = older[-1]
-        print("ACTION NEEDED: no FRA portal address is known for the admission year %s. Add it to FRA_SITES in ingestion/fra_fees.py when the FRA publishes the new fee list. Meanwhile the list of %s is read again." % (adm, year))
-    if year not in FRA_SITES:
+        print("ACTION NEEDED: the robot could not find the FRA portal of the admission year %s by itself. Send the address to the project helper (it goes into FRA_SITES in ingestion/fra_fees.py). Meanwhile the list of %s is read again." % (adm, year))
+    if year not in sites:
         print("FAIL: no known FRA portal address for %s (add it to FRA_SITES in ingestion/fra_fees.py)" % year); return 1
     out_dir, raw_dir = os.path.join(ROOT, "build", "normalized", "fees"), os.path.join(ROOT, "data", "raw", "fees")
     os.makedirs(os.path.join(ROOT, "data", "normalized", "fees"), exist_ok=True)     # an (empty) folder so that an older 'git add' of it cannot fail
     try:
-        rep = read(FRA_SITES[year], year, PoliteFetcher(min_delay=2.0, max_requests=60), out_dir, raw_dir)
+        rep = read(sites[year], year, fetcher, out_dir, raw_dir)
     except Exception as e:                                       # never end without a report that can be read afterwards
         import traceback
         os.makedirs(raw_dir, exist_ok=True)

@@ -53,7 +53,7 @@ def add_vacancy(folder, T):
 
 def _fra_url(year):
     from ingestion import fra_fees
-    return fra_fees.FRA_SITES[year] + "outer.php?q=fee_search_report"
+    return fra_fees.known_sites()[year] + "outer.php?q=fee_search_report"
 
 
 def add_fees(folder, T):

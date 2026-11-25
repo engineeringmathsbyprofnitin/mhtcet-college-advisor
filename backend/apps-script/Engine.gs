@@ -218,7 +218,7 @@
     if (input.extraEligibility && input.extraEligibility.length && !specialLoaded) warnings.push("Extra eligibility claims (" + input.extraEligibility.join(", ") + ") are not applied yet because no matching official cutoff data is loaded.");
 
     var meta = {
-      dataVersion: lkg ? lkg.data_version : null, currentAdmissionYear: currentYear, historicalYears: histYears,
+      dataVersion: lkg ? lkg.data_version : null, currentAdmissionYear: currentYear, admissionYear: admissionOf(lkg, currentYear), historicalYears: histYears,   // currentAdmissionYear = the year of the latest cutoffs; admissionYear = the year the student applies for (Stage 14b/14e)
       lastSuccessfulUpdate: null, usingSyntheticData: false, priorities: priorities, warnings: warnings
     };
     var succ = data.refresh_status.filter(function (r) { return r.status === "success"; }).sort(function (a, b) { return a.finished_at < b.finished_at ? 1 : -1; })[0];
@@ -444,6 +444,9 @@
   }
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   function dateText(iso) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || ""); return m && +m[2] >= 1 && +m[2] <= 12 ? (+m[3]) + " " + MONTHS[+m[2] - 1] + " " + m[1] : String(iso); }
+  function admissionOf(lkg, cur) {      // "admission=2027-28" in the data version's summary (Stage 14b); older packages: the cutoff year
+    var m = /(?:^|;)admission=([^;]+)/.exec(String((lkg && lkg.row_count_summary) || "")); return m ? m[1] : cur;
+  }
   function accStatus(row, asOf) {
     if (!row) return null;
     var o = { status: row.status, grade: row.grade || null, validTo: row.valid_to || null, validFrom: row.valid_from || null, cgpa: row.cgpa ? String(row.cgpa) : null, listedAsOn: row.listed_as_on || null };

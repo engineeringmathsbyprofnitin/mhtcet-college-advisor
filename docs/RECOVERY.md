@@ -23,7 +23,8 @@ Actions -> choose the workflow on the left -> **Run workflow** (green button) ->
 Open `frontend/config.js` in GitHub (pencil icon), find the line `var PUBLIC_DATA_FOLDER = "data-real/";` and change it back to `"data/"`, Commit. (Today the public page still uses "data/".)
 
 ## Once a year: the fee list of the new admission year
-When the FRA publishes the fees of the new year, tell me "FRA new year"; I add its web address in one line (ingestion/fra_fees.py). Until then the cards show the older fee list with its own year, and the weekly "Read the approved fees" log says ACTION NEEDED (not red).
+Nothing to do in the normal case: the weekly "Read the approved fees" run looks for the new year's FRA portal itself (it tries a few likely addresses on the official FRA host and keeps one only if the portal answers with the expected list). Until the FRA publishes the new list, the cards show the last known fees, labelled "2026-27 fee list (the 2027-28 fee is not published yet)".
+Only if the log of that run says **ACTION NEEDED** for several weeks after the FRA has published the new fees, tell me "FRA new year" and send the portal address (copy it from the browser); I prepare a one-line change for you. The run is not red in this case.
 
 ## Once or twice a year: NBA and NAAC lists
 Follow docs/REFRESH_NBA_NAAC.md (download the Excel list, replace the file, wait for the green run, then run the publish workflow by hand).

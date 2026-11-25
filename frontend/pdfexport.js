@@ -34,7 +34,7 @@
     var m = res.meta || {}, L = [];
     function add(t, o) { o = o || {}; L.push({ t: t, b: !!o.b, s: o.s || BODY, gap: o.gap || 0, indent: o.indent || 0 }); }
     add("MHT-CET College Advisor - your recommended choices", { b: true, s: 14 });
-    add("Data version " + (m.dataVersion || "Not available") + " | admission year " + (m.currentAdmissionYear || "Not available") + " | last successful data update: " + (m.lastSuccessfulUpdate || "Not available"), { gap: 4 });
+    add("Data version " + (m.dataVersion || "Not available") + " | " + (m.admissionYear && m.admissionYear !== m.currentAdmissionYear ? "admission year " + m.admissionYear + " (latest cutoffs: " + m.currentAdmissionYear + ")" : "admission year " + (m.currentAdmissionYear || "Not available")) + " | last successful data update: " + (m.lastSuccessfulUpdate || "Not available"), { gap: 4 });
     add("Compared with the past three admission years: " + (m.historicalYears || []).join(", ") + ". Cutoff groups used: " + ((m.seatTypesUsed || []).join(", ") || "none") + ".");
     add("This is guidance based on past cutoffs, not a prediction or a guarantee. Final eligibility, option selection and admission depend on official CET Cell rules, dates and seat availability.", { b: true, gap: 4 });
     (m.warnings || []).forEach(function (w) { add("Note: " + w, { gap: 3 }); });

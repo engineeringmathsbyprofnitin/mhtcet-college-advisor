@@ -113,3 +113,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 14d-1 built (docs/STAGE14D1.md, docs/RECOVERY.md): "Data updated on <date>" line (date the data last really changed; notice after 10 days without change) and the owner's recovery guide. Next 14d-2: rehearsal test of the 2027-28 rollover
 
 ## Stage 14d-2 built (docs/STAGE14D2.md): rollover rehearsal on pretend 2027 data (1 Jan switch and first 2027-28 round); found and fixed a bug (fees would have vanished after Round I of the new year); owner to upload
+
+## Stage 14e built (docs/STAGE14E.md): cards say which fee list they show; header says "latest cutoffs"; the weekly fee run looks for the new year's FRA portal itself (unverified against the real portal until the FRA opens it); RECOVERY.md updated

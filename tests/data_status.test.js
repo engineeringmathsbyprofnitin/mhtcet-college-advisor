@@ -8,7 +8,7 @@ const DAY = 86400000, M = (iso) => ({ last_successful_update: iso, data_version:
 const at = (iso, plusDays, h) => Date.parse(iso) + plusDays * DAY + (h || 0) * 3600000;
 test("fresh data: date of the last real change, version and admission year, no warning", () => {
   const t = dataStatusText(M("2026-11-23T12:39:55Z"), at("2026-11-23T12:39:55Z", 1));
-  assert.equal(t, "Data updated on 23 Nov 2026 \u00B7 data version REAL-2026-27-RIV-abc \u00B7 admission year 2026-27");
+  assert.equal(t, "Data updated on 23 Nov 2026 \u00B7 data version REAL-2026-27-RIV-abc \u00B7 latest cutoffs 2026-27");
 });
 test("exactly 10 days old: no warning; 11 days: warning with the number of days", () => {
   assert.doesNotMatch(dataStatusText(M("2026-11-23T12:39:55Z"), at("2026-11-23T12:39:55Z", 10, 1)), /has not changed/);

@@ -88,12 +88,16 @@ class FeeReaderYear(unittest.TestCase):
             seen.append(year); os.makedirs(out_dir, exist_ok=True); os.makedirs(raw_dir, exist_ok=True)
             json.dump({}, open(os.path.join(out_dir, "fra_fees_report.json"), "w"))
             return dict(ok=True, rows=1, requests=0, how="stub", statuses={}, warnings=[], skipped_rows=[], problems=[])
-        old = (FF.ROOT, FF.read, dict(FF.FRA_SITES)); FF.ROOT = tmp; FF.read = stub; FF.FRA_SITES.clear(); FF.FRA_SITES.update(sites)
+        class Nothing:                                   # Stage 14e: the address finder must never reach the network in a test
+            def fetch(self, url, **kw):
+                class R: blocked = ""; status = 404; ok = False; text = ""
+                return R()
+        old = (FF.ROOT, FF.read, dict(FF.FRA_SITES), FF.PoliteFetcher); FF.ROOT = tmp; FF.read = stub; FF.PoliteFetcher = lambda **kw: Nothing(); FF.FRA_SITES.clear(); FF.FRA_SITES.update(sites)
         buf = io.StringIO()
         try:
             with contextlib.redirect_stdout(buf): code = FF.main()
         finally:
-            FF.ROOT, FF.read = old[0], old[1]; FF.FRA_SITES.clear(); FF.FRA_SITES.update(old[2])
+            FF.ROOT, FF.read, FF.PoliteFetcher = old[0], old[1], old[3]; FF.FRA_SITES.clear(); FF.FRA_SITES.update(old[2])
         return code, seen, buf.getvalue()
 
     def test_unknown_new_year_keeps_reading_the_old_list_and_says_what_to_do(self):
