@@ -115,3 +115,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 14d-2 built (docs/STAGE14D2.md): rollover rehearsal on pretend 2027 data (1 Jan switch and first 2027-28 round); found and fixed a bug (fees would have vanished after Round I of the new year); owner to upload
 
 ## Stage 14e built (docs/STAGE14E.md): cards say which fee list they show; header says "latest cutoffs"; the weekly fee run looks for the new year's FRA portal itself (unverified against the real portal until the FRA opens it); RECOVERY.md updated
+
+## Stage 15a done (docs/STAGE15A.md): hardening audit, no code changed; page is already safe (no innerHTML, no storage, ES5, hash-checked data); weak spots: technical load messages, no CSP, no privacy line, no backup-hosting plan, engine accepts empty gender; proposed 15b
