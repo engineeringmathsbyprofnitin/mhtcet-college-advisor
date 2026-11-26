@@ -14,9 +14,9 @@ Method: code reading plus simulated failures and odd inputs run through the real
 ## Findings: weak spots (proposed for 15b)
 1. **Technical load messages.** A 404 on a data file reads "Could not load data/cutoffs/GOPENH.5b75....json (status 404)"; the Wi-Fi sign-in case reads "The data file data/manifest.json is damaged". Better: "The data was updated a moment ago. Please reload the page." and "The answer was not the data (a Wi-Fi sign-in page?). Check your connection and reload."
 2. **No Content-Security-Policy.** The page has no inline scripts or styles, so a strict policy is possible (scripts, styles, images and fetches only from the site itself). GitHub Pages cannot send headers, so it would be a meta tag. Risk: a wrong policy could blank the page, and no real browser is available here to test it; the owner would have to check it on the phone (one-line removal if it breaks).
-3. **No plain privacy line.** The page could say: "No cookies, no tracking. What you type stays in your browser." (true today, verified above).
+3. **(Corrected in 15b) Privacy line.** The footer already says that nothing a student enters is sent to or stored by us; this audit missed it. Only "no cookies, no tracking" was missing (true, verified above).
 4. **No backup hosting plan.** GitHub Pages has soft limits (about 100 GB a month). At about 0.5 MB a visit that is roughly 200,000 visits; a CAP-season peak could approach it. The page already builds its data address from one setting (DATA_BASE_URL in frontend/config.js), so a copy on another free host (Cloudflare Pages or Netlify) is possible; a written plan is missing (unverified: not tried here).
-5. **Empty gender is accepted by the engine** (returned 20 results); the form requires it, so students cannot hit this, but the engine should refuse it too (the same engine file is used by the optional backend).
+5. **(Decided in 15b: no change) Empty gender.** The engine accepts a missing gender but then applies only the general seats (G), never the ladies' seats, so it cannot over-promise; the form requires gender anyway. Making it mandatory would have broken 47 engine tests for no student benefit.
 
 ## Not checked (cannot be checked here)
 Real browsers (no browser in the sandbox), real phones, real network speed, GitHub Pages bandwidth.

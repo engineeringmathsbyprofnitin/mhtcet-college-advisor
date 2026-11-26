@@ -9,7 +9,7 @@
 })(this, function () {
   "use strict";
 
-  function LoadError(code, message) { var e = new Error(message); e.code = code; e.name = "LoadError"; return e; }
+  function LoadError(code, message, url) { var e = new Error(message); e.code = code; e.name = "LoadError"; if (url) e.url = url; return e; }   // e.url = the file, for diagnosis (not shown to students)
   var BASE_TABLES = ["colleges", "branches", "seat_types", "vacancies", "fees", "accreditation", "placements", "hostels",
     "quality_indicators", "source_documents", "refresh_status", "data_version"];
 
@@ -29,18 +29,18 @@
   function fetchBytes(url, opts) {
     var attempt = function (n) {
       return opts.fetchFn(url, opts.fetchOptions).then(function (res) {
-        if (!res.ok) throw LoadError("NETWORK", "Could not load " + url + " (status " + res.status + ").");
+        if (!res.ok) throw LoadError("NETWORK", res.status === 404 ? "The data was updated a moment ago. Please reload the page." : "The data server did not answer properly (status " + res.status + "). Please try again in a few minutes.", url);
         return res.arrayBuffer();
       }).catch(function (e) {
         if (n < 1) return attempt(n + 1);                // one retry for flaky mobile connections
-        throw e.name === "LoadError" ? e : LoadError("NETWORK", "Could not load " + url + ". Please check your internet connection and try again.");
+        throw e.name === "LoadError" ? e : LoadError("NETWORK", "Could not load the data. Please check your internet connection and try again.", url);
       });
     };
     return attempt(0);
   }
   function parse(bytes, url) {
     try { return JSON.parse(new TextDecoder("utf-8").decode(bytes)); }
-    catch (e) { throw LoadError("BAD_FILE", "The data file " + url + " is damaged."); }
+    catch (e) { throw LoadError("BAD_FILE", "What came back was not the data (a Wi-Fi sign-in page can cause this). Please check your connection and reload the page.", url); }
   }
   function getVerified(base, meta, opts, log) {
     var url = base + meta.file;

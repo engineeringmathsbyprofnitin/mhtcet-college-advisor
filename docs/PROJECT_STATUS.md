@@ -117,3 +117,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 14e built (docs/STAGE14E.md): cards say which fee list they show; header says "latest cutoffs"; the weekly fee run looks for the new year's FRA portal itself (unverified against the real portal until the FRA opens it); RECOVERY.md updated
 
 ## Stage 15a done (docs/STAGE15A.md): hardening audit, no code changed; page is already safe (no innerHTML, no storage, ES5, hash-checked data); weak spots: technical load messages, no CSP, no privacy line, no backup-hosting plan, engine accepts empty gender; proposed 15b
+
+## Stage 15b built (docs/STAGE15B.md, docs/HOSTING_BACKUP.md): Content-Security-Policy tag (owner must check the page and the PDF download on the phone), plain data-load messages, "no cookies, no tracking" line, backup hosting plan, audit corrections
