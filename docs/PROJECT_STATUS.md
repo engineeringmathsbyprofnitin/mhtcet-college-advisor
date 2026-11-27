@@ -119,3 +119,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 15a done (docs/STAGE15A.md): hardening audit, no code changed; page is already safe (no innerHTML, no storage, ES5, hash-checked data); weak spots: technical load messages, no CSP, no privacy line, no backup-hosting plan, engine accepts empty gender; proposed 15b
 
 ## Stage 15b built (docs/STAGE15B.md, docs/HOSTING_BACKUP.md): Content-Security-Policy tag (owner must check the page and the PDF download on the phone), plain data-load messages, "no cookies, no tracking" line, backup hosting plan, audit corrections
+
+## Stage 16a built (docs/STAGE16A.md): "How to read these results" section on the page (labels, cutoffs, order, sources, gaps), kept honest by tests; owner to upload and read it on the phone
