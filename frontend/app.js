@@ -131,7 +131,7 @@
       cats.sort(function (a, b) { return (a.toUpperCase() === "OPEN" ? -1 : b.toUpperCase() === "OPEN" ? 1 : a < b ? -1 : 1); });
       if (cats.length) refill($("category"), cats, "Select…");
       var cnt = {}; (t.branches || []).forEach(function (b) { cnt[b.branch_name] = (cnt[b.branch_name] || 0) + 1; });
-      var names = Object.keys(cnt).sort(function (a, b) { return cnt[b] - cnt[a] || (a < b ? -1 : 1); });
+      var names = Object.keys(cnt).sort(function (a, b) { var x = a.toLowerCase(), y = b.toLowerCase(); return x < y ? -1 : x > y ? 1 : (a < b ? -1 : a > b ? 1 : 0); });   // alphabetical, ignoring capital letters
       if (names.length) { C.branches = names; $("branches").textContent = ""; for (var i = 0; i < 3; i++) addRow("branches", names, "Branch"); }
       var fam = {}; st.forEach(function (x) { if (x.family) fam[x.family] = true; });
       var missing = []; if (!(t.placements || []).length) missing.push("placements"); if (!(t.quality_indicators || []).length) missing.push("teaching quality and infrastructure");
