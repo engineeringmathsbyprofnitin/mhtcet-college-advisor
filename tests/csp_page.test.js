@@ -21,7 +21,8 @@ test("the page needs nothing the policy blocks: no inline script or style, no ha
   const scripts = body.match(/<script\b[^>]*>[\s\S]*?<\/script>/gi) || []; assert.ok(scripts.length >= 5);
   scripts.forEach(s => { assert.match(s, /^<script src="[a-z-]+\.js"><\/script>$/, "inline or odd script: " + s.slice(0, 80)); });
   assert.doesNotMatch(body, /<style\b/i); assert.doesNotMatch(body, /\sstyle\s*=/i); assert.doesNotMatch(body, /\son[a-z]+\s*=/i); assert.doesNotMatch(body, /javascript:/i);
-  (body.match(/\s(?:src|href)="[^"]*"/gi) || []).forEach(a => assert.doesNotMatch(a, /(?:https?:)?\/\//, "foreign address in the page: " + a));
+  const FORM = "https://forms.gle/bVYF5XgabwBbMoup6";            // the ONE foreign address: the owner's feedback form, a plain link (links are not restricted by the policy)
+  (body.match(/\s(?:src|href)="[^"]*"/gi) || []).forEach(a => { if (a.trim() !== 'href="' + FORM + '"') assert.doesNotMatch(a, /(?:https?:)?\/\//, "foreign address in the page: " + a); });
   (body.match(/<link\b[^>]*>/gi) || []).forEach(l => assert.match(l, /rel="stylesheet" href="styles\.css"/));
 });
 test("the stylesheet has no imports or foreign addresses", () => {

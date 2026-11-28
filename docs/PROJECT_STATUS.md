@@ -121,3 +121,5 @@ Round IV file = seats open going into Round IV (owner confirmed); Round III file
 ## Stage 15b built (docs/STAGE15B.md, docs/HOSTING_BACKUP.md): Content-Security-Policy tag (owner must check the page and the PDF download on the phone), plain data-load messages, "no cookies, no tracking" line, backup hosting plan, audit corrections
 
 ## Stage 16a built (docs/STAGE16A.md): "How to read these results" section on the page (labels, cutoffs, order, sources, gaps), kept honest by tests; owner to upload and read it on the phone
+
+## Stage 16c-1 built (docs/STAGE16C1.md): feedback link (Google Form) in the footer; the page says the form is run by Google and may ask for an email; owner to upload (and consider turning off "Collect email addresses" in the form settings)
